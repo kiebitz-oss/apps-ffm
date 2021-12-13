@@ -1,0 +1,1 @@
+module '@carbon/icons-react';
