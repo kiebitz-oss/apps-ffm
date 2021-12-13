@@ -109,7 +109,7 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                 >
                                     <CheckmarkOutline16 />
                                     {selectedProviders.length} 
-                                    <Trans id="mediator.providers-list.button-verify">
+                                    <Trans id="mediator.providers-list.button-confirm">
                                         Anbieter bestätigen
                                     </Trans>
                                 </Button>
@@ -120,7 +120,7 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                 >
                                     <ErrorOutline16 />
                                     {selectedProviders.length} 
-                                    <Trans id="mediator.providers-list.button-unverify">
+                                    <Trans id="mediator.providers-list.button-unconfirm">
                                         Anbieter sperren
                                     </Trans>
                                 </Button>

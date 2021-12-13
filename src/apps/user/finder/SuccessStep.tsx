@@ -31,14 +31,11 @@ export const SuccessStep: React.FC = () => {
     }, [api, appointment, navigate]);
 
     const onCancel: MouseEventHandler<HTMLButtonElement> = () => {
-        if (state.appointment && state.provider) {
-            api.cancelAppointment(state.appointment.id, state.provider.id).then(
-                (result) => {
-                    console.log({ result });
-                    navigate('/user');
-                }
-            );
-        }
+        api.cancelAppointment(appointment.id, appointment.provider.id).then(
+            (result) => {
+                navigate('/user/finder');
+            }
+        );
     };
 
     // safeguard

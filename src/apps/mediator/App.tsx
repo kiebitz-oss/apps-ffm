@@ -8,8 +8,8 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import LogoutPage from './logout';
 import './mediator.css';
-import { ProviderShowPage } from './ProviderShowPage';
-import { ProvidersPage } from './ProvidersPage';
+import { ProvidersPage } from './providers';
+import { ProviderShowPage } from './providers/show';
 import WelcomePage from './WelcomePage';
 
 export default function MediatorApp() {

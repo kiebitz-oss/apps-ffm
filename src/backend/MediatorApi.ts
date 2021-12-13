@@ -26,15 +26,15 @@ export class MediatorApi {
         return providers[Number(providerId) - 1] || null;
     }
 
-    public async confirmProvider(providerId: string): Promise<boolean> {
+    public async confirmProvider(provider: Provider): Promise<boolean> {
         return false;
     }
 
-    public async unconfirmProvider(providerId: string): Promise<boolean> {
+    public async unconfirmProvider(provider: Provider): Promise<boolean> {
         return false;
     }
 
-    public async reconfirmProvider(providerId: string): Promise<boolean> {
+    public async reconfirmProvider(provider: Provider): Promise<boolean> {
         return false;
     }
 

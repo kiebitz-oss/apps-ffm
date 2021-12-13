@@ -117,13 +117,13 @@ export const ProviderShowPage: React.FC = () => {
             <div className="buttons-list">
                 {!provider.verified ? (
                     <Button variant="primary" size="sm">
-                        <Trans id="mediator.provider-show.button-verify">
+                        <Trans id="mediator.provider-show.button-confirm">
                             Anbieter bestätigen
                         </Trans>
                     </Button>
                 ) : (
                     <Button variant="secondary" size="sm">
-                        <Trans id="mediator.provider-show.button-unverify">
+                        <Trans id="mediator.provider-show.button-unconfirm">
                             Anbieter sperren
                         </Trans>
                     </Button>

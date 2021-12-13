@@ -4,10 +4,10 @@
 
 // @see https://headlessui.dev/react/dialog
 
-import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react';
+import React, { useState } from 'react';
 
-interface ModalProps {
+export interface ModalProps {
     onClose?: Function;
     open?: boolean;
 }
