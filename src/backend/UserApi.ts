@@ -1,4 +1,4 @@
-import { providers } from 'apps/data';
+import { appointments, providers } from 'apps/data';
 import { Appointment, PublicProvider } from 'types';
 
 export class UserApi {
@@ -14,7 +14,7 @@ export class UserApi {
         from?: Date,
         to?: Date
     ): Promise<Appointment[]> {
-        return [];
+        return appointments;
     }
 
     public async getAppointmentsByZipCode(
@@ -23,14 +23,16 @@ export class UserApi {
         from?: Date,
         to?: Date
     ): Promise<Appointment[]> {
-        return [];
+        return appointments;
     }
 
     public async getAppointment(
         id: string,
         providerId: string
     ): Promise<Appointment | null> {
-        return null;
+        return appointments[Number(id) - 1]
+            ? appointments[Number(id) - 1]
+            : null;
     }
 
     public async bookAppointment(

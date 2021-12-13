@@ -1,6 +1,6 @@
-import { Provider } from 'types';
+import type { Appointment, PublicProvider } from 'types';
 
-export const providers: Provider[] = [
+export const providers: PublicProvider[] = [
     {
         id: '1',
         name: 'Impfzentrum FFM',
@@ -66,7 +66,50 @@ export const providers: Provider[] = [
     },
 ];
 
-export const slots: any[] = [{}];
+export const appointments: Appointment[] = [
+    {
+        id: '1',
+        duration: 15,
+        date: new Date(),
+        provider: providers[0],
+        slots: [],
+    },
+    {
+        id: '2',
+        duration: 15,
+        date: new Date(),
+        provider: providers[1],
+        slots: [],
+    },
+    {
+        id: '3',
+        duration: 15,
+        date: new Date(),
+        provider: providers[2],
+        slots: [],
+    },
+    {
+        id: '4',
+        duration: 15,
+        date: new Date(),
+        provider: providers[3],
+        slots: [],
+    },
+    {
+        id: '5',
+        duration: 15,
+        date: new Date(),
+        provider: providers[1],
+        slots: [],
+    },
+    {
+        id: '6',
+        duration: 15,
+        date: new Date(),
+        provider: providers[1],
+        slots: [],
+    },
+];
 
 // export const providers: any[] = [
 //     {

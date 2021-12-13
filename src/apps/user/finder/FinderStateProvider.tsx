@@ -15,6 +15,7 @@ type ActionMap<M extends { [index: string]: unknown }> = {
 export enum Types {
     SET_DATE = 'SET_DATE',
     SET_PROVIDER = 'SET_PROVIDER',
+    SET_APPOINTMENT = 'SET_APPOINTMENT',
 }
 
 type Payload = {
@@ -23,6 +24,9 @@ type Payload = {
     };
     [Types.SET_PROVIDER]: {
         provider: PublicProvider;
+    };
+    [Types.SET_APPOINTMENT]: {
+        appointment: Appointment;
     };
 };
 
@@ -46,6 +50,8 @@ const reducer = (state: State, action: Actions /* | ShoppingCartActions */) => {
             return { ...state, date: action.payload.date };
         case Types.SET_PROVIDER:
             return { ...state, provider: action.payload.provider };
+        case Types.SET_APPOINTMENT:
+            return { ...state, appointment: action.payload.appointment };
         default:
             return state;
     }

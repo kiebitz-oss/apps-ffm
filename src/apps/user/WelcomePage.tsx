@@ -38,7 +38,7 @@ const StartPage: React.FC = () => {
                 />
 
                 <CheckboxField
-                    name="over12"
+                    name="booster"
                     label="Im Falle einer Boosterimpfung: Meine letzte Impfung liegt über 6 Monate zurück."
                     className="my-4"
                 />

@@ -1,13 +1,22 @@
 import { Trans } from '@lingui/macro';
 import { BackLink } from 'apps/common/BackLink';
 import { useUserApi } from 'hooks/useUserApi';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import { Link, Text, Title } from 'ui';
 import { useFinderState } from './FinderStateProvider';
 
 export const VerifyStep: React.FC = () => {
     const api = useUserApi();
     const { state } = useFinderState();
+    const navigate = useNavigate();
+    const appointment = state.appointment;
+
+    useEffect(() => {
+        if (!appointment || !appointment.provider) {
+            navigate('/user/finder');
+        }
+    }, [appointment, navigate]);
 
     const onBooking = () => {
         if (state.appointment && state.provider) {
@@ -52,13 +61,17 @@ export const VerifyStep: React.FC = () => {
 
                         <div className="p-4 mb-8 w-full font-semibold rounded-lg border-2 border-black md:px-16">
                             <address className="mb-2 text-center">
-                                <Title variant="h3">Latin Palace Changó</Title>
-                                <br /> Münchener Str. 57,
-                                <br /> 60327 Frankfurt am Main
+                                <Title variant="h3">
+                                    {appointment?.provider.name}
+                                </Title>
+                                <br /> {appointment?.provider.street}
+                                <br /> {appointment?.provider.zipCode}{' '}
+                                {appointment?.provider.city}
                             </address>
 
                             <time className="block text-lg text-center">
-                                21.12.21, 13:03 Uhr
+                                {appointment?.date.toLocaleDateString()},{' '}
+                                {appointment?.date.toLocaleTimeString()}
                             </time>
                         </div>
                     </div>

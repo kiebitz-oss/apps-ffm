@@ -1,3 +1,4 @@
+import { appointments } from 'apps/data';
 import type { Appointment, Provider, ProviderKeyPair } from 'types';
 import { ProviderSecretData } from 'types/ProviderSecretData';
 
@@ -26,7 +27,7 @@ export class ProviderApi {
     }
 
     public async getAppointments(): Promise<Appointment[]> {
-        return [];
+        return appointments;
     }
 
     public async publishAppointments(
