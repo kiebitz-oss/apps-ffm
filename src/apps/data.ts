@@ -73,6 +73,7 @@ export const appointments: Appointment[] = [
         date: new Date(),
         provider: providers[0],
         slots: [],
+        vaccine: 'mrna',
     },
     {
         id: '2',
@@ -80,6 +81,7 @@ export const appointments: Appointment[] = [
         date: new Date(),
         provider: providers[1],
         slots: [],
+        vaccine: 'moderna',
     },
     {
         id: '3',
@@ -87,6 +89,7 @@ export const appointments: Appointment[] = [
         date: new Date(),
         provider: providers[2],
         slots: [],
+        vaccine: 'biontech',
     },
     {
         id: '4',
@@ -94,6 +97,7 @@ export const appointments: Appointment[] = [
         date: new Date(),
         provider: providers[3],
         slots: [],
+        vaccine: 'biontech',
     },
     {
         id: '5',
@@ -101,6 +105,7 @@ export const appointments: Appointment[] = [
         date: new Date(),
         provider: providers[1],
         slots: [],
+        vaccine: 'biontech',
     },
     {
         id: '6',
@@ -108,6 +113,7 @@ export const appointments: Appointment[] = [
         date: new Date(),
         provider: providers[1],
         slots: [],
+        vaccine: 'mrna',
     },
 ];
 

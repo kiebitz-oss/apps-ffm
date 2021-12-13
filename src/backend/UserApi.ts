@@ -38,8 +38,8 @@ export class UserApi {
     public async bookAppointment(
         appointmentId: string,
         providerID: string
-    ): Promise<boolean> {
-        return true;
+    ): Promise<string> {
+        return '1234';
     }
 
     public async cancelAppointment(

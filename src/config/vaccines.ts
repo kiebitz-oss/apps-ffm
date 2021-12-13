@@ -1,41 +1,51 @@
+import { Vaccine } from 'types';
+
 type VaccineData = {
     id: string;
-    title: string;
+    name: string;
     anamnesisUrl: string;
     infosUrl: string;
     notice?: string;
 };
 
-export const vaccines: Record<string, Record<string, VaccineData>> = {
+export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
     de: {
-        MD: {
+        mrna: {
+            id: 'MRNA',
+            name: 'MRNA',
+            anamnesisUrl:
+                'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Einwilligung-de.pdf?__blob=publicationFile',
+            infosUrl:
+                'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
+        },
+        moderna: {
             id: 'MD',
-            title: 'Moderna',
+            name: 'Moderna',
 
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
         },
-        BT: {
+        biontech: {
             id: 'BT',
-            title: 'Biontech Pfizer (Comirnaty)',
+            name: 'Biontech Pfizer (Comirnaty)',
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
         },
-        AZ: {
+        astrazeneca: {
             id: 'AZ',
-            title: 'Astra Zeneca (Vaxzevria)',
+            name: 'Astra Zeneca (Vaxzevria)',
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
         },
-        JJ: {
+        'johnson-johnson': {
             id: 'JJ',
-            title: 'Johnson & Johnson',
+            name: 'Johnson & Johnson',
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:

@@ -1,22 +1,34 @@
 import { GeneratePdf16 } from '@carbon/icons-react';
 import { Trans } from '@lingui/macro';
+import { vaccines } from 'config/vaccines';
 import { useUserApi } from 'hooks/useUserApi';
-import React, { MouseEventHandler, useEffect } from 'react';
+import React, { MouseEventHandler, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Link, Text, Title } from 'ui';
+import { AppointmentCard } from '../common/AppointmentCard';
 import { useFinderState } from './FinderStateProvider';
 
 export const SuccessStep: React.FC = () => {
     const api = useUserApi();
     const { state } = useFinderState();
+    const [secret, setSecret] = useState<string | null>(null);
     const navigate = useNavigate();
-    const appointment = state.appointment;
+    const appointment = state.appointment!;
 
     useEffect(() => {
         if (!appointment || !appointment.provider) {
             navigate('/user/finder');
+        } else {
+            api.bookAppointment(appointment.id, appointment.provider.id)
+                .then((secret) => {
+                    setSecret(secret);
+                })
+                .catch((error) => {
+                    // @TODO handle failure
+                    console.error(error);
+                });
         }
-    }, [appointment, navigate]);
+    }, [api, appointment, navigate]);
 
     const onCancel: MouseEventHandler<HTMLButtonElement> = () => {
         if (state.appointment && state.provider) {
@@ -26,8 +38,6 @@ export const SuccessStep: React.FC = () => {
                     navigate('/user');
                 }
             );
-        } else {
-            // @TODO handle missing selections
         }
     };
 
@@ -67,21 +77,7 @@ export const SuccessStep: React.FC = () => {
                             </Trans>
                         </Title>
 
-                        <div className="flex flex-col p-4 w-full font-semibold rounded-lg border-2 border-black">
-                            <address className="mb-2 text-center">
-                                <Title variant="h3">
-                                    {appointment.provider.name}
-                                </Title>
-                                <br /> {appointment.provider.street}
-                                <br /> {appointment.provider.zipCode}{' '}
-                                {appointment.provider.city}
-                            </address>
-
-                            <time className="block text-lg text-center">
-                                {appointment.date.toLocaleDateString()},{' '}
-                                {appointment.date.toLocaleTimeString()}
-                            </time>
-                        </div>
+                        <AppointmentCard appointment={appointment} />
                     </div>
 
                     <div>
@@ -92,7 +88,7 @@ export const SuccessStep: React.FC = () => {
                         </Title>
 
                         <div className="flex justify-center items-center p-4 text-2xl font-bold text-white bg-black rounded-lg">
-                            IDKF
+                            {secret ? secret : 'Buchung läuft...'}
                         </div>
                     </div>
 
@@ -139,7 +135,7 @@ export const SuccessStep: React.FC = () => {
 
                         <div>
                             <Link
-                                href="/"
+                                href={vaccines.de[appointment.vaccine].infosUrl}
                                 external
                                 className="inline-flex gap-2 items-center py-2 px-4 mb-2 font-semibold text-blue-700 no-underline bg-blue-100 rounded-lg"
                             >
@@ -155,7 +151,10 @@ export const SuccessStep: React.FC = () => {
 
                         <div>
                             <Link
-                                href="/"
+                                href={
+                                    vaccines.de[appointment.vaccine]
+                                        .anamnesisUrl
+                                }
                                 external
                                 className="inline-flex gap-2 items-center py-2 px-4 mb-2 font-semibold text-blue-700 no-underline bg-blue-100 rounded-lg"
                             >

@@ -4,13 +4,14 @@ import { useUserApi } from 'hooks/useUserApi';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Link, Text, Title } from 'ui';
+import { AppointmentCard } from '../common/AppointmentCard';
 import { useFinderState } from './FinderStateProvider';
 
 export const VerifyStep: React.FC = () => {
     const api = useUserApi();
     const { state } = useFinderState();
     const navigate = useNavigate();
-    const appointment = state.appointment;
+    const appointment = state.appointment!;
 
     useEffect(() => {
         if (!appointment || !appointment.provider) {
@@ -59,21 +60,7 @@ export const VerifyStep: React.FC = () => {
                             </Trans>
                         </Title>
 
-                        <div className="p-4 mb-8 w-full font-semibold rounded-lg border-2 border-black md:px-16">
-                            <address className="mb-2 text-center">
-                                <Title variant="h3">
-                                    {appointment?.provider.name}
-                                </Title>
-                                <br /> {appointment?.provider.street}
-                                <br /> {appointment?.provider.zipCode}{' '}
-                                {appointment?.provider.city}
-                            </address>
-
-                            <time className="block text-lg text-center">
-                                {appointment?.date.toLocaleDateString()},{' '}
-                                {appointment?.date.toLocaleTimeString()}
-                            </time>
-                        </div>
+                        <AppointmentCard appointment={appointment} />
                     </div>
 
                     <Text className="italic md:mt-6 md:w-1/2">
