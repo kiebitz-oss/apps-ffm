@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
 import { BackLink } from 'apps/common/BackLink';
 import { ProviderCard } from 'apps/common/ProviderCard';
 import { useUserApi } from 'hooks/useUserApi';
@@ -62,7 +62,10 @@ export const LocationStep: React.FC = () => {
             </Text>
 
             <CheckboxField
-                label="Nur barrierefreie Impfzentren anzeigen"
+                label={t({
+                    id: 'user.finder.location.accessible.label',
+                    message: 'Nur barrierefreie Impfzentren anzeigen',
+                })}
                 name="accessible"
                 onChange={onFilterAccessibleChange}
             />

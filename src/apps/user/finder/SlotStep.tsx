@@ -1,5 +1,5 @@
 import { Edit24 } from '@carbon/icons-react';
-import { Trans } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
 import React, { ChangeEventHandler } from 'react';
 import { Button, InputField, Link, Title } from 'ui';
 import { Types, useFinderState } from './FinderStateProvider';
@@ -62,7 +62,10 @@ export const SlotStep: React.FC = () => {
                     <InputField
                         name="provider"
                         type="search"
-                        placeholder="Beliebige Impfstelle"
+                        placeholder={t({
+                            id: 'user.finder.slot.provider.placeholder',
+                            message: 'Beliebige Impfstelle',
+                        })}
                         value={state.provider?.name}
                     />
                     <Link
@@ -75,11 +78,13 @@ export const SlotStep: React.FC = () => {
                 <InputField
                     name="date"
                     type="datetime-local"
-                    placeholder="Sofort"
+                    placeholder={t({
+                        id: 'user.finder.slot.time.placeholder',
+                        message: 'Beliebige Zeit',
+                    })}
                     onChange={onDateChange}
                     defaultValue={state.date.toISOString().substring(0, 16)}
                 />
-                {/* <CheckboxField name="accessible" label="Barrierefrei" /> */}
             </div>
 
             <div className="flex flex-wrap gap-4">

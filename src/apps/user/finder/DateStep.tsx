@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
 import React from 'react';
 import { Form, InputField, Link, Text, Title } from 'ui';
 
@@ -19,13 +19,20 @@ export const DateStep: React.FC = () => {
 
             <Form className="flex flex-col gap-4">
                 <InputField
-                    label="Datum"
+                    label={t({
+                        id: 'user.finder.date.label',
+                        message: 'Datum',
+                    })}
                     type="date"
                     name="date"
                     className="mb-4 w-full"
                 />
+
                 <InputField
-                    label="Zeit"
+                    label={t({
+                        id: 'user.finder.time.label',
+                        message: 'Zeit',
+                    })}
                     type="time"
                     name="time"
                     className="mb-4 w-full"

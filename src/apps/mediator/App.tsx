@@ -9,8 +9,8 @@ import { Route, Routes } from 'react-router';
 import { ManagedAuthContext } from './context/AuthContext';
 import LogoutPage from './logout';
 import './mediator.css';
+import { ProviderShowPage } from './ProviderShowPage';
 import { ProvidersPage } from './ProvidersPage';
-import { ProviderShowPage } from './ProvidersShowPage';
 import WelcomePage from './WelcomePage';
 
 export default function MediatorApp() {

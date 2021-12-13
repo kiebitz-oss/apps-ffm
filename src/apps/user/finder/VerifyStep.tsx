@@ -45,7 +45,9 @@ export const VerifyStep: React.FC = () => {
                 <div className="flex flex-col md:flex-row md:gap-12">
                     <div className="md:w-1/2">
                         <Title variant="book" as="h3">
-                            <Trans>Ihr Termin</Trans>
+                            <Trans id="user.finder.verify.appointment.subtitle">
+                                Ihr Termin
+                            </Trans>
                         </Title>
 
                         <div className="p-4 mb-8 w-full font-semibold rounded-lg border-2 border-black md:px-16">
@@ -62,9 +64,11 @@ export const VerifyStep: React.FC = () => {
                     </div>
 
                     <Text className="italic md:mt-6 md:w-1/2">
-                        Die einzigartigste und größte Latin Diskothek in Hessen,
-                        die ausschließlich dem lateinamerikanischen Lebensgefühl
-                        gewidmet ist.
+                        <Trans id="user.finder.verify.appointment.description">
+                            Die einzigartigste und größte Latin Diskothek in
+                            Hessen, die ausschließlich dem lateinamerikanischen
+                            Lebensgefühl gewidmet ist.
+                        </Trans>
                     </Text>
                 </div>
 

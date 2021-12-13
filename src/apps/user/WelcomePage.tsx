@@ -15,7 +15,7 @@ const StartPage: React.FC = () => {
             </Title>
 
             <Text>
-                <Trans id="user.welcome.text">
+                <Trans id="user.welcome.intro">
                     Sie sind jetzt nur noch wenige Klicks von Ihrem Termin
                     entfernt.
                     <br />

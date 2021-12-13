@@ -61,21 +61,21 @@ const WelcomePage: React.FC = () => {
 
                 <div>
                     <Title>
-                        <Trans id="upload-key-pairs.title">
+                        <Trans id="mediator.welcome.upload-key-pairs">
                             Geheime Schlüssel laden
                         </Trans>
                     </Title>
 
                     {invalidFile && (
                         <Message variant="secondary">
-                            <Trans id="upload-key-pairs.invalid-file">
+                            <Trans id="mediator.welcome.upload-key-pairs.invalid-file">
                                 Die von Ihnen gewählte Datei ist ungültig.
                             </Trans>
                         </Message>
                     )}
 
                     {!invalidFile && (
-                        <Trans id="upload-key-pairs.notice">
+                        <Trans id="mediator.welcome.upload-key-pairs.notice">
                             Bitte laden Sie die Datei mit Ihren geheimen
                             Vermittlerschlüsseln.
                         </Trans>
@@ -86,7 +86,7 @@ const WelcomePage: React.FC = () => {
                             htmlFor="file-upload"
                             className="relative cursor-pointer button primary md"
                         >
-                            <Trans id="upload-key-pairs.input">
+                            <Trans id="mediator.welcome.upload-key-pairs.input">
                                 Datei auswählen
                             </Trans>
 
