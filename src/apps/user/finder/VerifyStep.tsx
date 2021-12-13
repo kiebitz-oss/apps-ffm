@@ -31,6 +31,11 @@ export const VerifyStep: React.FC = () => {
         }
     };
 
+    // safeguard
+    if (!appointment || !appointment.provider) {
+        return null;
+    }
+
     return (
         <main>
             <div className="xl:w-2/3">

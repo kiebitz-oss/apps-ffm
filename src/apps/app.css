@@ -394,6 +394,18 @@
 
     .tag {
         @apply bg-lime-100 p-2 rounded;
+
+        &.warning {
+            @apply bg-orange-100 text-orange-700;
+        }
+
+        &.success {
+            @apply bg-green-100 text-green-700;
+        }
+
+        &.error {
+            @apply bg-red-100 text-red-700;
+        }
     }
 
     .secret {

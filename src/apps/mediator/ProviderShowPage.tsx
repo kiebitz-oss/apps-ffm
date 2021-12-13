@@ -8,7 +8,6 @@ import { Button, Title } from 'ui';
 
 export const ProviderShowPage: React.FC = () => {
     const [provider, setProvider] = useState<Provider>();
-    const [verified] = useState<boolean>(true);
     const { id } = useParams();
     const api = useMediatorApi();
 
@@ -116,13 +115,17 @@ export const ProviderShowPage: React.FC = () => {
             </table>
 
             <div className="buttons-list">
-                {!verified ? (
+                {!provider.verified ? (
                     <Button variant="primary" size="sm">
-                        Anbieter bestätigen
+                        <Trans id="mediator.provider-show.button-verify">
+                            Anbieter bestätigen
+                        </Trans>
                     </Button>
                 ) : (
                     <Button variant="secondary" size="sm">
-                        Anbieter sperren
+                        <Trans id="mediator.provider-show.button-unverify">
+                            Anbieter sperren
+                        </Trans>
                     </Button>
                 )}
             </div>

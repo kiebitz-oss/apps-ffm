@@ -1,5 +1,6 @@
+import { t, Trans } from '@lingui/macro';
 import clsx from 'clsx';
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, useRef } from 'react';
 import type { Provider } from 'types';
 import { Link } from 'ui';
 import { Tag } from 'ui/Tag';
@@ -15,10 +16,11 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({
     selected = false,
     onSelect,
 }) => {
+    const ref = useRef<HTMLInputElement>(null);
     const providerLink = `/mediator/providers/${provider.id}`;
 
-    const onSelectToggle: ChangeEventHandler<HTMLInputElement> = (event) => {
-        onSelect(provider.id, event.currentTarget.checked);
+    const onSelectToggle: ChangeEventHandler<unknown> = () => {
+        onSelect(provider.id, !ref.current?.checked);
     };
 
     return (
@@ -27,6 +29,7 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({
             className={clsx('provider-table-row', {
                 ['selected']: selected,
             })}
+            onClick={onSelectToggle}
         >
             <td>
                 <input
@@ -36,6 +39,11 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({
                     onChange={onSelectToggle}
                     value={provider.id}
                     checked={selected}
+                    ref={ref}
+                    aria-label={t({
+                        id: 'mediator.provider-row.select-row',
+                        message: 'Impfanbieter auswählen oder abwählen',
+                    })}
                 />
             </td>
 
@@ -52,11 +60,25 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({
             </td>
 
             <td>
-                <Tag>{provider.verified ? 'bestätigt' : 'unbestätigt'}</Tag>
+                <Tag variant={provider.verified ? 'success' : 'warning'}>
+                    {provider.verified ? (
+                        <Trans id="mediator.provider-row.valid">
+                            bestätigt
+                        </Trans>
+                    ) : (
+                        <Trans id="mediator.provider-row.invalid">
+                            unbestätigt
+                        </Trans>
+                    )}
+                </Tag>
             </td>
 
             <td className="flex gap-4 justify-end">
-                <Link href={providerLink}>anzeigen</Link>
+                <Link href={providerLink}>
+                    <Trans id="mediator.provider-row.button-show">
+                        anzeigen
+                    </Trans>
+                </Link>
             </td>
         </tr>
     );

@@ -35,6 +35,11 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
     return (
         <>
             <table className="providers-table">
+                <caption className="sr-only">
+                    <Trans id="mediator.providers-list.caption">
+                        Tabelle der Impfanbieter
+                    </Trans>
+                </caption>
                 <thead>
                     <tr>
                         <th
@@ -52,7 +57,8 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                 }
                                 aria-label={t({
                                     id: 'mediator.providers-list.select-all',
-                                    message: 'Alle Impfanbieter auswählen',
+                                    message:
+                                        'Alle Impfanbieter auswählen oder abwählen',
                                 })}
                             />
                             &nbsp;
@@ -102,8 +108,10 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                     disabled={selectedProviders.length === 0}
                                 >
                                     <CheckmarkOutline16 />
-                                    {selectedProviders.length} Anbieter
-                                    bestätigen
+                                    {selectedProviders.length} 
+                                    <Trans id="mediator.providers-list.button-verify">
+                                        Anbieter bestätigen
+                                    </Trans>
                                 </Button>
                                 <Button
                                     variant="secondary"
@@ -111,7 +119,10 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                     disabled={selectedProviders.length === 0}
                                 >
                                     <ErrorOutline16 />
-                                    {selectedProviders.length} Anbieter sperren
+                                    {selectedProviders.length} 
+                                    <Trans id="mediator.providers-list.button-unverify">
+                                        Anbieter sperren
+                                    </Trans>
                                 </Button>
                             </div>
                         </th>
