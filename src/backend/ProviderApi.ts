@@ -27,9 +27,13 @@ export class ProviderApi {
         return true;
     }
 
-    public async getAppointments(): Promise<Appointment[]> {
+    public async refetchAppointments(): Promise<Appointment[]> {
         this.appointments = appointments;
 
+        return this.appointments;
+    }
+
+    public async getAppointments(): Promise<Appointment[]> {
         return this.appointments;
     }
 
