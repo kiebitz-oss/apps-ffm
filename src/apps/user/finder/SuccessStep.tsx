@@ -65,7 +65,7 @@ export const SuccessStep: React.FC = () => {
                         onClick={onCancel}
                         className="inline-flex gap-2 items-center py-4 px-8 mb-12 font-semibold text-red-700 no-underline bg-red-100 rounded-lg"
                     >
-                        <Trans id="user.finder.cancel-appointment.button">
+                        <Trans id="user.finder.success.cancel-button">
                             Um die Terminbuchung abzusagen, bitte hier klicken
                         </Trans>
                     </button>

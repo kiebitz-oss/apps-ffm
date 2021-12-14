@@ -1,7 +1,7 @@
 import { Edit24 } from '@carbon/icons-react';
 import { t, Trans } from '@lingui/macro';
 import { appointments } from 'apps/data';
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, MouseEventHandler } from 'react';
 import type { Appointment } from 'types';
 import { Button, InputField, Link, Title } from 'ui';
 import { Types, useFinderState } from './FinderStateProvider';
@@ -13,7 +13,7 @@ interface AppointmentCardProps {
 const AppointmentCard: React.FC<AppointmentCardProps> = ({ appointment }) => {
     const { dispatch } = useFinderState();
 
-    const onAppointmentSelect: ChangeEventHandler<HTMLInputElement> = (
+    const onAppointmentSelect: MouseEventHandler<HTMLAnchorElement> = (
         event
     ) => {
         const appointmentId = event.currentTarget.dataset.id;
@@ -51,12 +51,25 @@ const AppointmentCard: React.FC<AppointmentCardProps> = ({ appointment }) => {
             </address>
 
             <time className="block mb-6 text-center">
-                <span className="text-4xl font-semibold">15:23 Uhr</span>
+                <span className="text-4xl font-semibold">
+                    <Trans id="user.finder.appointment.card.time">
+                        {appointment.date.toLocaleTimeString()} Uhr
+                    </Trans>
+                </span>
                 <br />
-                <span className="text-xl font-semibold">am 19.12.21</span>
+                <span className="text-xl font-semibold">
+                    <Trans id="user.finder.appointment.card.date">
+                        am {appointment.date.toLocaleDateString()}
+                    </Trans>
+                </span>
             </time>
 
-            <p className="mb-6">Impfstoff: BioNTech/Pfizer</p>
+            <p className="mb-6">
+                <Trans id="user.finder.appointment.card.vaccine">
+                    Impfstoff
+                </Trans>
+                : {appointment.vaccine}
+            </p>
 
             <Button
                 className="group-hover:bg-blue-700 group-focus:bg-blue-700 shadow-lg select-none"

@@ -6,6 +6,7 @@ import localeData from 'dayjs/plugin/localeData';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import weekOfYear from 'dayjs/plugin/weekOfYear';
+import { AppointmentItem, AppointmentSet } from 'helpers/AppointmentSet';
 import { getHexId } from 'helpers/conversion';
 import React from 'react';
 import type { Appointment } from 'types';
@@ -21,54 +22,13 @@ dayjs.extend(isLeapYear);
 dayjs.locale('de');
 dayjs.tz.setDefault('Europe/Berlin');
 
-const enrichAppointments = (appointments: Appointment[]) => {
-    const sortedAppointments = appointments
-        .sort((a, b) => a.date.getTime() - b.date.getTime())
-        .map((oa) => ({ ...oa }));
-
-    let activeAppointments: Appointment[] = [];
-
-    for (const [i, oa] of sortedAppointments
-        // .filter((app) => app.slots > 0)
-        .entries()) {
-        oa.maxOverlap = 0;
-        oa.index = i;
-        oa.start = new Date(`${oa.timestamp}`);
-
-        // end of appointment (we calculate with 45 minute minimum duration)
-        oa.stop = new Date(
-            oa.start.getTime() + 1000 * 60 * Math.max(0, oa.duration)
-        );
-
-        activeAppointments = activeAppointments.filter(
-            (aa) => aa.stop > oa.start
-        );
-
-        oa.overlapsWith = [...activeAppointments];
-
-        for (const ova of oa.overlapsWith) {
-            ova.overlapsWith.push(oa);
-        }
-
-        activeAppointments.push(oa);
-
-        const na = activeAppointments.length - 1;
-
-        for (const aa of activeAppointments) {
-            if (na > aa.maxOverlap) aa.maxOverlap = na;
-        }
-    }
-
-    return sortedAppointments;
-};
-
 interface HourRowProps {
-    appointments: Appointment[];
+    appointmentItems: AppointmentItem[];
     date: Date;
     hour: number;
 }
 
-const HourRow: React.FC<HourRowProps> = ({ appointments, date, hour }) => {
+const HourRow: React.FC<HourRowProps> = ({ appointmentItems, date, hour }) => {
     const hourStartDate = new Date(
         date.toLocaleDateString('en-US') +
             ' ' +
@@ -79,43 +39,38 @@ const HourRow: React.FC<HourRowProps> = ({ appointments, date, hour }) => {
     const hourEndDate = new Date(hourStartDate);
     hourEndDate.setHours(hourStartDate.getHours() + 1);
 
-    const relevantAppointments: Appointment[] = [];
+    const relevantAppointments: AppointmentItem[] = [];
 
-    for (const appointment of appointments) {
-        // beginning of appointment
-        const appointmentDate = appointment.date;
-
-        // end of appointment
-        const appointmentEndDate = new Date(
-            appointmentDate.getTime() + 1000 * 60 * appointment.duration
-        );
-
+    for (const appointmentItem of appointmentItems) {
         let relevant = false;
 
         // starts in interval
-        if (appointmentDate >= hourStartDate && appointmentDate < hourEndDate) {
-            appointment.startsHere = true;
+        if (
+            appointmentItem.endDate >= hourStartDate &&
+            appointmentItem.startDate < hourEndDate
+        ) {
+            appointmentItem.startsHere = true;
             relevant = true;
         }
 
         // ends in interval
         if (
-            appointmentEndDate > hourStartDate &&
-            appointmentEndDate <= hourEndDate
+            appointmentItem.endDate > hourStartDate &&
+            appointmentItem.endDate <= hourEndDate
         ) {
             relevant = true;
         }
 
         // is in interval
         if (
-            appointmentDate <= hourStartDate &&
-            appointmentEndDate >= hourEndDate
+            appointmentItem.startDate <= hourStartDate &&
+            appointmentItem.endDate >= hourEndDate
         ) {
             relevant = true;
         }
 
         if (relevant) {
-            relevantAppointments.push(appointment);
+            relevantAppointments.push(appointmentItem);
         }
     }
 
@@ -130,11 +85,7 @@ const HourRow: React.FC<HourRowProps> = ({ appointments, date, hour }) => {
             })}
         >
             {hasAppointments && (
-                <CalendarAppointments
-                    // ots={ots}
-                    // ote={ote}
-                    appointments={relevantAppointments}
-                />
+                <CalendarAppointments appointmentItems={relevantAppointments} />
             )}
         </Link>
     );
@@ -174,21 +125,21 @@ interface DayColumnProps {
     date: Date;
     fromHour: number;
     toHour: number;
-    appointments: Appointment[];
+    appointmentItems: AppointmentItem[];
 }
 
 const DayColumn: React.FC<DayColumnProps> = ({
     date,
     fromHour,
     toHour,
-    appointments,
+    appointmentItems,
 }) => {
     const hourRows = [<DayLabelRow date={date} key="-" />];
 
     for (let i = fromHour; i <= toHour; i++) {
         hourRows.push(
             <HourRow
-                appointments={appointments}
+                appointmentItems={appointmentItems}
                 hour={i}
                 date={date}
                 key={`hour-row-${i}`}
@@ -217,23 +168,30 @@ const DayLabelColumn: React.FC<DayLabelPropsColumnProps> = ({
     return <div className="day-column day-label">{hourRows}</div>;
 };
 
-interface AppointmentItemProps {
-    appointment: Appointment;
+interface AppointmentCellProps {
+    appointmentItem: AppointmentItem;
 }
 
-const AppointmentItem: React.FC<AppointmentItemProps> = ({ appointment }) => {
-    const percentage = Math.floor((appointment.duration / 60) * 100);
-    const width = Math.floor(100 / (1 + appointment.maxOverlap));
-    const top = Math.floor((appointment.date.getMinutes() / 60) * 100);
-    const i = 0;
-    // appointment.overlapsWith.filter(
-    //     (oa) => oa.index < appointment.index
-    // ).length;
+const AppointmentCell: React.FC<AppointmentCellProps> = ({
+    appointmentItem,
+}) => {
+    const percentage = Math.floor(
+        (appointmentItem.appointment.duration / 60) * 100
+    );
+    const width = Math.floor(100 / (1 + appointmentItem.maxOverlap));
+    const top = Math.floor(
+        (appointmentItem.appointment.date.getMinutes() / 60) * 100
+    );
+
+    const i = appointmentItem.overlapsWith.filter(
+        (overlappingAppointment) =>
+            overlappingAppointment.index < appointmentItem.index
+    ).length;
 
     const left = Math.floor(i * width);
     const tiny = percentage < 33 || width < 50;
 
-    const hexId = getHexId(appointment.id);
+    const hexId = getHexId(appointmentItem.appointment.id);
     const action = 'week';
 
     return (
@@ -248,13 +206,13 @@ const AppointmentItem: React.FC<AppointmentItemProps> = ({ appointment }) => {
             className={clsx('appointment-item')}
         >
             <Tag className="open" size="sm">
-                {appointment.slots.length}
+                {appointmentItem.appointment.slots.length}
             </Tag>
             <Tag className="booked" size="sm">
-                {appointment.bookings.length}
+                {appointmentItem.appointment.bookings.length}
             </Tag>
             <Tag className="vaccine" size="sm">
-                {appointment.vaccine}
+                {appointmentItem.appointment.vaccine}
             </Tag>
             {/* <PropertyTags appointment={appointment} tiny /> */}
         </Link>
@@ -262,25 +220,23 @@ const AppointmentItem: React.FC<AppointmentItemProps> = ({ appointment }) => {
 };
 
 interface CalendarAppointmentsProps {
-    appointments: Appointment[];
+    appointmentItems: AppointmentItem[];
 }
 
 const CalendarAppointments: React.FC<CalendarAppointmentsProps> = ({
-    appointments,
+    appointmentItems,
 }) => {
-    const enrichedAppointments = enrichAppointments(appointments);
-
     return (
         <div className="appointments">
-            {enrichedAppointments
+            {appointmentItems
                 .filter(
-                    (appointment) => appointment.startsHere
+                    (appointment) => appointment.startDate
                     // && appointment.slots > 0
                 )
-                .map((appointment) => (
-                    <AppointmentItem
-                        key={appointment.id}
-                        appointment={appointment}
+                .map((appointmentItem) => (
+                    <AppointmentCell
+                        key={appointmentItem.appointment.id}
+                        appointmentItem={appointmentItem}
                     />
                 ))}
         </div>
@@ -297,9 +253,10 @@ interface WeekCalendarProps {
 export const WeekCalendar: React.FC<WeekCalendarProps> = ({
     week,
     appointments,
-    fromHour,
-    toHour,
+    fromHour = 8,
+    toHour = 19,
 }) => {
+    const appointmentSet = new AppointmentSet(appointments);
     const selectedWeekOfYear =
         week && week >= 1 && week <= 52 ? week : dayjs().week();
 
@@ -311,39 +268,10 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
     const endDate = new Date(startDate);
     endDate.setDate(endDate.getDate() + 7);
 
-    appointments.forEach((appointment) => {
-        const appStartDate = appointment.date;
-        const appEndDate = new Date(
-            appointment.date.getTime() + 1000 * 60 * appointment.duration
-        );
-
-        if (
-            appStartDate < startDate ||
-            appStartDate > endDate
-            // ||
-            // appointment.slots === 0
-        ) {
-            return;
-        }
-
-        const startHours = appStartDate.getHours();
-        const endHours = appEndDate.getHours();
-
-        if (fromHour === undefined || startHours < fromHour) {
-            fromHour = startHours;
-        }
-        if (toHour === undefined || endHours > toHour) {
-            toHour = endHours;
-        }
-    });
-
-    if (!fromHour || fromHour > 8) {
-        fromHour = 8;
-    }
-
-    if (!toHour || toHour < 19) {
-        toHour = 19; // hours are inclusive
-    }
+    const appointmentItems = appointmentSet.filterBetweenDates(
+        startDate,
+        endDate
+    );
 
     return (
         <React.Fragment>
@@ -375,7 +303,7 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
 
                     return (
                         <DayColumn
-                            appointments={appointments}
+                            appointmentItems={appointmentItems}
                             fromHour={fromHour}
                             toHour={toHour}
                             date={

@@ -173,51 +173,51 @@ msgstr "Alle Impfanbieter auswählen oder abwählen"
 msgid "mediator.providers-list.status"
 msgstr "Status"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:129
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:128
 msgid "mediator.providers.confirm-modal.button-confirm"
 msgstr "Anbieter bestätigen"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:85
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:84
 msgid "mediator.providers.confirm-modal.city"
 msgstr "Stadt"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:117
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:116
 msgid "mediator.providers.confirm-modal.description"
 msgstr "Beschreibung"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:101
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:100
 msgid "mediator.providers.confirm-modal.email"
 msgstr "E-Mail"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:55
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:54
 msgid "mediator.providers.confirm-modal.field"
 msgstr "Feld"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:46
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:45
 msgid "mediator.providers.confirm-modal.intro"
 msgstr "Wollen Sie den Anbieter wirklich freischalten?"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:69
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:68
 msgid "mediator.providers.confirm-modal.name"
 msgstr "Name"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:109
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:108
 msgid "mediator.providers.confirm-modal.phone"
 msgstr "Telefonnummer"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:77
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:76
 msgid "mediator.providers.confirm-modal.street"
 msgstr "Straße"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:38
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:37
 msgid "mediator.providers.confirm-modal.title"
 msgstr "Anbieter freischalten"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:60
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:59
 msgid "mediator.providers.confirm-modal.value"
 msgstr "Wert"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:93
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:92
 msgid "mediator.providers.confirm-modal.zip-code"
 msgstr "Postleitzahl"
 
@@ -451,14 +451,14 @@ msgid "provider.onboarding.zip-code.label"
 msgstr "Postleitzahl"
 
 #: src/apps/provider/common/ProviderDataSummary.tsx:129
-msgid "provider.provider-data.access-code.label"
-msgstr "Zugangscode (falls vorhanden)"
+#~ msgid "provider.provider-data.access-code.label"
+#~ msgstr "Zugangscode (falls vorhanden)"
 
 #: src/apps/provider/common/ProviderDataSummary.tsx:142
 msgid "provider.provider-data.accessible"
 msgstr "Barrierefreier Zugang zur Praxis/zum Impfzentrum"
 
-#: src/apps/provider/common/ProviderDataSummary.tsx:151
+#: src/apps/provider/common/ProviderDataSummary.tsx:153
 msgid "provider.provider-data.accessible-no"
 msgstr "Nein"
 
@@ -466,7 +466,7 @@ msgstr "Nein"
 msgid "provider.provider-data.accessible-yes"
 msgstr "Ja"
 
-#: src/apps/provider/common/ProviderDataSummary.tsx:77
+#: src/apps/provider/common/ProviderDataSummary.tsx:75
 msgid "provider.provider-data.city"
 msgstr "Ort"
 
@@ -482,11 +482,10 @@ msgstr "provider.provider-data.email"
 msgid "provider.provider-data.name"
 msgstr "Vollständiger Name"
 
-#: src/apps/provider/common/ProviderDataSummary.tsx:86
+#: src/apps/provider/common/ProviderDataSummary.tsx:85
 #: src/apps/provider/common/ProviderDataSummary.tsx:98
 #: src/apps/provider/common/ProviderDataSummary.tsx:111
 #: src/apps/provider/common/ProviderDataSummary.tsx:122
-#: src/apps/provider/common/ProviderDataSummary.tsx:135
 msgid "provider.provider-data.not-given"
 msgstr "(keine Angabe)"
 
@@ -506,7 +505,7 @@ msgstr "Telefonnummer"
 msgid "provider.provider-data.street"
 msgstr "Straße & Hausnummer"
 
-#: src/apps/provider/common/ProviderDataSummary.tsx:83
+#: src/apps/provider/common/ProviderDataSummary.tsx:79
 msgid "provider.provider-data.website"
 msgstr "Webseite"
 
@@ -630,29 +629,41 @@ msgstr "Kopieren"
 msgid "user.appointment-card.vaccine"
 msgstr "Impfstoff"
 
-#: src/apps/user/finder/appointmentStep.tsx:65
+#: src/apps/user/finder/appointmentStep.tsx:61
+msgid "user.finder.appointment.card.date"
+msgstr "am {0}"
+
+#: src/apps/user/finder/appointmentStep.tsx:78
 msgid "user.finder.appointment.card.submit"
 msgstr "Termin auswählen"
 
-#: src/apps/user/finder/appointmentStep.tsx:96
+#: src/apps/user/finder/appointmentStep.tsx:55
+msgid "user.finder.appointment.card.time"
+msgstr "{0} Uhr"
+
+#: src/apps/user/finder/appointmentStep.tsx:68
+msgid "user.finder.appointment.card.vaccine"
+msgstr "Impfstoff"
+
+#: src/apps/user/finder/appointmentStep.tsx:109
 msgid "user.finder.appointment.provider.placeholder"
 msgstr "Beliebige Impfstelle"
 
-#: src/apps/user/finder/appointmentStep.tsx:131
+#: src/apps/user/finder/appointmentStep.tsx:144
 msgid "user.finder.appointment.submit"
 msgstr "Weitere Termine laden"
 
-#: src/apps/user/finder/appointmentStep.tsx:112
+#: src/apps/user/finder/appointmentStep.tsx:125
 msgid "user.finder.appointment.time.placeholder"
 msgstr "Beliebige Zeit"
 
-#: src/apps/user/finder/appointmentStep.tsx:88
+#: src/apps/user/finder/appointmentStep.tsx:101
 msgid "user.finder.appointment.title"
 msgstr "Termine"
 
 #: src/apps/user/finder/SuccessStep.tsx:68
-msgid "user.finder.cancel-appointment.button"
-msgstr "Um die Terminbuchung abzusagen, bitte hier klicken"
+#~ msgid "user.finder.cancel-appointment.button"
+#~ msgstr "Um die Terminbuchung abzusagen, bitte hier klicken"
 
 #: src/apps/user/finder/DateStep.tsx:13
 msgid "user.finder.date.intro"
@@ -693,6 +704,10 @@ msgstr "Ihr Buchungscode"
 #: src/apps/user/finder/SuccessStep.tsx:77
 msgid "user.finder.success.appointment-title"
 msgstr "Ihr Termin"
+
+#: src/apps/user/finder/SuccessStep.tsx:68
+msgid "user.finder.success.cancel-button"
+msgstr "Um die Terminbuchung abzusagen, bitte hier klicken"
 
 #: src/apps/user/finder/SuccessStep.tsx:57
 msgid "user.finder.success.intro"

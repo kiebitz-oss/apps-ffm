@@ -173,51 +173,51 @@ msgstr ""
 msgid "mediator.providers-list.status"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:129
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:128
 msgid "mediator.providers.confirm-modal.button-confirm"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:85
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:84
 msgid "mediator.providers.confirm-modal.city"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:117
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:116
 msgid "mediator.providers.confirm-modal.description"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:101
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:100
 msgid "mediator.providers.confirm-modal.email"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:55
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:54
 msgid "mediator.providers.confirm-modal.field"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:46
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:45
 msgid "mediator.providers.confirm-modal.intro"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:69
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:68
 msgid "mediator.providers.confirm-modal.name"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:109
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:108
 msgid "mediator.providers.confirm-modal.phone"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:77
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:76
 msgid "mediator.providers.confirm-modal.street"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:38
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:37
 msgid "mediator.providers.confirm-modal.title"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:60
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:59
 msgid "mediator.providers.confirm-modal.value"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:93
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:92
 msgid "mediator.providers.confirm-modal.zip-code"
 msgstr ""
 
@@ -451,14 +451,14 @@ msgid "provider.onboarding.zip-code.label"
 msgstr ""
 
 #: src/apps/provider/common/ProviderDataSummary.tsx:129
-msgid "provider.provider-data.access-code.label"
-msgstr ""
+#~ msgid "provider.provider-data.access-code.label"
+#~ msgstr ""
 
 #: src/apps/provider/common/ProviderDataSummary.tsx:142
 msgid "provider.provider-data.accessible"
 msgstr ""
 
-#: src/apps/provider/common/ProviderDataSummary.tsx:151
+#: src/apps/provider/common/ProviderDataSummary.tsx:153
 msgid "provider.provider-data.accessible-no"
 msgstr ""
 
@@ -466,7 +466,7 @@ msgstr ""
 msgid "provider.provider-data.accessible-yes"
 msgstr ""
 
-#: src/apps/provider/common/ProviderDataSummary.tsx:77
+#: src/apps/provider/common/ProviderDataSummary.tsx:75
 msgid "provider.provider-data.city"
 msgstr ""
 
@@ -482,11 +482,10 @@ msgstr ""
 msgid "provider.provider-data.name"
 msgstr ""
 
-#: src/apps/provider/common/ProviderDataSummary.tsx:86
+#: src/apps/provider/common/ProviderDataSummary.tsx:85
 #: src/apps/provider/common/ProviderDataSummary.tsx:98
 #: src/apps/provider/common/ProviderDataSummary.tsx:111
 #: src/apps/provider/common/ProviderDataSummary.tsx:122
-#: src/apps/provider/common/ProviderDataSummary.tsx:135
 msgid "provider.provider-data.not-given"
 msgstr ""
 
@@ -506,7 +505,7 @@ msgstr ""
 msgid "provider.provider-data.street"
 msgstr ""
 
-#: src/apps/provider/common/ProviderDataSummary.tsx:83
+#: src/apps/provider/common/ProviderDataSummary.tsx:79
 msgid "provider.provider-data.website"
 msgstr ""
 
@@ -630,29 +629,41 @@ msgstr ""
 msgid "user.appointment-card.vaccine"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:65
+#: src/apps/user/finder/appointmentStep.tsx:61
+msgid "user.finder.appointment.card.date"
+msgstr ""
+
+#: src/apps/user/finder/appointmentStep.tsx:78
 msgid "user.finder.appointment.card.submit"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:96
+#: src/apps/user/finder/appointmentStep.tsx:55
+msgid "user.finder.appointment.card.time"
+msgstr ""
+
+#: src/apps/user/finder/appointmentStep.tsx:68
+msgid "user.finder.appointment.card.vaccine"
+msgstr ""
+
+#: src/apps/user/finder/appointmentStep.tsx:109
 msgid "user.finder.appointment.provider.placeholder"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:131
+#: src/apps/user/finder/appointmentStep.tsx:144
 msgid "user.finder.appointment.submit"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:112
+#: src/apps/user/finder/appointmentStep.tsx:125
 msgid "user.finder.appointment.time.placeholder"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:88
+#: src/apps/user/finder/appointmentStep.tsx:101
 msgid "user.finder.appointment.title"
 msgstr ""
 
 #: src/apps/user/finder/SuccessStep.tsx:68
-msgid "user.finder.cancel-appointment.button"
-msgstr ""
+#~ msgid "user.finder.cancel-appointment.button"
+#~ msgstr ""
 
 #: src/apps/user/finder/DateStep.tsx:13
 msgid "user.finder.date.intro"
@@ -692,6 +703,10 @@ msgstr ""
 
 #: src/apps/user/finder/SuccessStep.tsx:77
 msgid "user.finder.success.appointment-title"
+msgstr ""
+
+#: src/apps/user/finder/SuccessStep.tsx:68
+msgid "user.finder.success.cancel-button"
 msgstr ""
 
 #: src/apps/user/finder/SuccessStep.tsx:57

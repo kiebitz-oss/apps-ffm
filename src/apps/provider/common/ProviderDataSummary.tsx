@@ -70,23 +70,23 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
                             Postleitzahl
                         </Trans>
                     </dt>
-                    <dd>
-                        {provider.zipCode}
-                    </dd>
+                    <dd>{provider.zipCode}</dd>
                     <dt>
-                    <Trans id="provider.provider-data.city">Ort</Trans>
+                        <Trans id="provider.provider-data.city">Ort</Trans>
+                    </dt>
+                    <dd>{provider.city}</dd>
+                    <dt>
+                        <Trans id="provider.provider-data.website">
+                            Webseite
+                        </Trans>
                     </dt>
                     <dd>
-                        {provider.city}
-                    </dd>
-                    <dt>
-                        <Trans id="provider.provider-data.website">Webseite</Trans>
-                    </dt>
-                    <dd>{provider.website || (
+                        {provider.website || (
                             <Trans id="provider.provider-data.not-given">
                                 (keine Angabe)
                             </Trans>
-                        )}}</dd>
+                        )}
+                    </dd>
 
                     <dt>
                         <Trans id="provider.provider-data.description">
@@ -125,7 +125,7 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
                         )}
                     </dd>
 
-                    <dt>
+                    {/* <dt>
                         <Trans id="provider.provider-data.access-code.label">
                             Zugangscode (falls vorhanden)
                         </Trans>
@@ -136,7 +136,7 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
                                 (keine Angabe)
                             </Trans>
                         )}
-                    </dd>
+                    </dd> */}
 
                     <dt>
                         <Trans id="provider.provider-data.accessible">
@@ -146,9 +146,13 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
                     </dt>
                     <dd>
                         {provider.accessible ? (
-                            <Trans id="provider.provider-data.accessible-yes">Ja</Trans>
+                            <Trans id="provider.provider-data.accessible-yes">
+                                Ja
+                            </Trans>
                         ) : (
-                            <Trans id="provider.provider-data.accessible-no">Nein</Trans>
+                            <Trans id="provider.provider-data.accessible-no">
+                                Nein
+                            </Trans>
                         )}
                     </dd>
                 </dl>
