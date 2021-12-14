@@ -1,46 +1,64 @@
 import React from 'react';
+import { Control, Controller } from 'react-hook-form';
 
-interface QuestionBoxProps {
-    id: string;
-}
+type QuestionBoxProps = {
+    name: string;
+    control: Control;
+};
 
-export const QuestionBox: React.FC<QuestionBoxProps> = ({ children, id }) => {
+export const QuestionBox: React.FC<QuestionBoxProps> = ({
+    children,
+    control,
+    name,
+}) => {
     return (
-        <div className="p-4 w-full max-w-[500px] rounded-lg shadow-lg">
-            <div className="flex justify-between mb-2">
-                <h3 className="font-semibold">{children}</h3>
-                <div>?</div>
-            </div>
+        <Controller
+            control={control}
+            name={name}
+            render={({ field: { onChange, value } }) => {
+                return (
+                    <div className="p-4 w-full max-w-[500px] rounded-lg shadow-lg">
+                        <div className="flex justify-between mb-2">
+                            <h3 className="font-semibold">{children}</h3>
+                            <div>?</div>
+                        </div>
 
-            <div className="flex gap-8 items-center ml-2">
-                <label
-                    htmlFor={`${id}-yes`}
-                    className="flex gap-2 items-center font-semibold"
-                >
-                    <input
-                        className="radio"
-                        type="radio"
-                        id={`${id}-yes`}
-                        name={id}
-                        value="1"
-                    />
-                    ja
-                </label>
+                        <div className="flex gap-8 items-center ml-2">
+                            <label
+                                htmlFor={`${name}-yes`}
+                                className="flex gap-2 items-center font-semibold"
+                            >
+                                <input
+                                    className="radio"
+                                    type="radio"
+                                    id={`${name}-yes`}
+                                    name={name}
+                                    defaultChecked={value === true}
+                                    onChange={() => onChange(true)}
+                                    value="1"
+                                />
+                                ja
+                            </label>
 
-                <label
-                    htmlFor={`${id}-no`}
-                    className="flex gap-2 items-center font-semibold"
-                >
-                    <input
-                        className="radio"
-                        type="radio"
-                        id={`${id}-no`}
-                        name={id}
-                        value="0"
-                    />
-                    nein
-                </label>
-            </div>
-        </div>
+                            <label
+                                htmlFor={`${name}-no`}
+                                className="flex gap-2 items-center font-semibold"
+                            >
+                                <input
+                                    className="radio"
+                                    type="radio"
+                                    id={`${name}-no`}
+                                    name={name}
+                                    defaultChecked={value === false}
+                                    onChange={() => onChange(false)}
+                                    value="0"
+                                />
+                                nein
+                            </label>
+                        </div>
+                    </div>
+                );
+            }}
+        />
     );
 };

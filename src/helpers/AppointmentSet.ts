@@ -1,4 +1,19 @@
-import type { Appointment } from 'types';
+import dayjs from 'dayjs';
+import type { Appointment, Slot, Vaccine } from 'types';
+import { randomBytes } from './crypto';
+
+export const createSlot = (open = true): Slot => {
+    return {
+        id: randomBytes(32), // where the user can submit his confirmation
+        open,
+        status: randomBytes(32), // where the user can get the appointment status
+        cancel: randomBytes(32), // where the user can cancel his confirmation
+    };
+};
+
+export const createSlots = (number = 10) => {
+    return Array.from(Array(number)).map(createSlot);
+};
 
 export class AppointmentItem {
     public appointment: Appointment;
@@ -20,7 +35,43 @@ export class AppointmentItem {
 }
 
 export class AppointmentSet implements Iterable<AppointmentItem> {
-    protected appointmentItems: AppointmentItem[];
+    public appointmentItems: AppointmentItem[];
+
+    public static createAppointmentSet(
+        startAt: Date,
+        endAt: Date,
+        interval: number,
+        lanes: number,
+        vaccine: Vaccine
+    ) {
+        if (startAt > endAt) {
+            throw new Error("Can't start set before it's end.");
+        }
+
+        if (startAt == endAt) {
+            throw new Error("Start and end can't be equal.");
+        }
+
+        let startDayjs = dayjs(startAt);
+        const endDayjs = dayjs(endAt);
+        const appointments: Appointment[] = [];
+
+        do {
+            appointments.push({
+                id: randomBytes(30),
+                date: startDayjs.toDate(),
+                duration: interval,
+                slots: createSlots(lanes),
+                bookings: [],
+                vaccine: vaccine,
+                modified: true,
+            });
+
+            startDayjs = startDayjs.add(interval, 'minute');
+        } while (startDayjs < endDayjs);
+
+        return new AppointmentSet(appointments);
+    }
 
     constructor(appointments: Appointment[]) {
         let activeAppointmentItems: AppointmentItem[] = [];

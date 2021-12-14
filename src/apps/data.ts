@@ -1,18 +1,6 @@
+import { createSlots } from 'helpers/AppointmentSet';
 import { randomBytes } from 'helpers/crypto';
-import type { Appointment, PublicProvider, Slot } from 'types';
-
-export const createSlot = (open = true): Slot => {
-    return {
-        id: randomBytes(32), // where the user can submit his confirmation
-        open,
-        status: randomBytes(32), // where the user can get the appointment status
-        cancel: randomBytes(32), // where the user can cancel his confirmation
-    };
-};
-
-export const createSlots = (number = 10) => {
-    return Array.from(Array(number)).map(createSlot);
-};
+import type { Appointment, PublicProvider } from 'types';
 
 export const providers: PublicProvider[] = [
     {

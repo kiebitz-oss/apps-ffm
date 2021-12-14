@@ -5,6 +5,7 @@ import { ProviderSecretData } from 'types/ProviderSecretData';
 export class ProviderApi {
     protected secret: string | null = null;
     protected keyPair: ProviderKeyPair | null = null;
+    protected appointments: Appointment[] = [];
 
     public async authenticate(
         secret: string,
@@ -27,13 +28,39 @@ export class ProviderApi {
     }
 
     public async getAppointments(): Promise<Appointment[]> {
-        return appointments;
+        this.appointments = appointments;
+
+        return this.appointments;
     }
 
-    public async publishAppointments(
-        appointments: Appointment[]
+    public async createAppointments(
+        appointment: Appointment
     ): Promise<boolean> {
-        return false;
+        try {
+            appointment.modified = true;
+
+            this.appointments.push(appointment);
+
+            return true;
+        } catch (error) {
+            console.error(error);
+
+            return false;
+        }
+    }
+
+    public async publishAppointments(): Promise<boolean> {
+        try {
+            this.appointments.forEach((appointment) => {
+                appointment.modified = undefined;
+            });
+
+            return true;
+        } catch (error) {
+            console.error(error);
+
+            return false;
+        }
     }
 
     public async updateAppointment(appointment: Appointment): Promise<boolean> {
