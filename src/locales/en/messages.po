@@ -6,6 +6,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: src/ui/CopyToClipboardButton.tsx:28
 msgid "common.copy.failed"
@@ -724,14 +730,22 @@ msgstr ""
 msgid "user.finder.verify.title"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:52
+#: src/apps/user/WelcomePage.tsx:53
 msgid "user.welcome.button"
 msgstr ""
 
 #: src/apps/user/WelcomePage.tsx:18
-msgid "user.welcome.intro"
+#~ msgid "user.welcome.intro"
+#~ msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:19
+msgid "user.welcome.intro-1"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:14
+#: src/apps/user/WelcomePage.tsx:26
+msgid "user.welcome.intro-2"
+msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:15
 msgid "user.welcome.title"
 msgstr ""

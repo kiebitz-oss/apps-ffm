@@ -5,43 +5,44 @@
 import { Trans } from '@lingui/macro';
 import React from 'react';
 import { Link, Text, Title } from 'ui';
-import { CheckboxField } from 'ui/CheckboxField';
+import { Questionaire } from './common/questionaire/Questionaire';
+import { QuestionBox } from './common/questionaire/QuestionBox';
 
 const StartPage: React.FC = () => {
     return (
         <main>
-            <Title variant="h1" as="h2">
+            <Title variant="h1" as="h2" className="mb-6">
                 <Trans id="user.welcome.title">Willkommen!</Trans>
             </Title>
 
-            <Text>
-                <Trans id="user.welcome.intro">
+            <Text className="mb-4 max-w-[48ch]">
+                <Trans id="user.welcome.intro-1">
                     Sie sind jetzt nur noch wenige Klicks von Ihrem Termin
                     entfernt.
-                    <br />
+                </Trans>
+            </Text>
+
+            <Text className="mb-8 max-w-[48ch]">
+                <Trans id="user.welcome.intro-2">
                     Wir speichern generell keine persönlichen Daten, aber haben
                     ein paar Fragen, damit Sie den richtigen Impfstoff erhalten.
                 </Trans>
             </Text>
 
-            <form>
-                <CheckboxField
-                    name="over12"
-                    label="Ich bin älter als 12 Jahre."
-                    className="my-4"
-                />
+            <form className="w-full">
+                <Questionaire>
+                    <QuestionBox id="booster">
+                        Handelt es sich um eine Booster-Impfung?
+                    </QuestionBox>
 
-                <CheckboxField
-                    name="over30"
-                    label="Ich bin älter als 30 Jahre."
-                    className="my-4"
-                />
+                    <QuestionBox id="under30">
+                        Sind sie schwanger oder jünger als 30?
+                    </QuestionBox>
 
-                <CheckboxField
-                    name="booster"
-                    label="Im Falle einer Boosterimpfung: Meine letzte Impfung liegt über 6 Monate zurück."
-                    className="my-4"
-                />
+                    <QuestionBox id="under112">
+                        Sind Sie jünger als 12?
+                    </QuestionBox>
+                </Questionaire>
 
                 <Link
                     type="button"

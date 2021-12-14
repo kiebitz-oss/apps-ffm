@@ -44,7 +44,7 @@ export const LocationStep: React.FC = () => {
 
     return (
         <main>
-            <BackLink href="/user/finder/slot">
+            <BackLink href="/user/finder">
                 <Trans id="user.finder.location.back-link">
                     Zurück zu den Terminauswahl
                 </Trans>
@@ -82,7 +82,7 @@ export const LocationStep: React.FC = () => {
                     .map((provider) => (
                         <li key={provider.id}>
                             <Link
-                                href="/user/finder/slot"
+                                href="/user/finder"
                                 className="w-full no-underline "
                                 onClick={onClick}
                                 data-id={provider.id}

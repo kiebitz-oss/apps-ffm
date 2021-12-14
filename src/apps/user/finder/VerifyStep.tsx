@@ -39,7 +39,7 @@ export const VerifyStep: React.FC = () => {
     return (
         <main>
             <div className="xl:w-2/3">
-                <BackLink href="/user/finder/slot">
+                <BackLink href="/user/finder">
                     <Trans id="user.finder.verify.back-link">
                         zurück zum Terminauswahl
                     </Trans>

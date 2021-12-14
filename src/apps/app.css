@@ -141,6 +141,10 @@
         @apply form-checkbox default-focus outline-none flex items-center mt-1 mr-2;
     }
 
+    .radio {
+        @apply form-radio text-black border;
+    }
+
     .textarea {
         @apply form-textarea default-input;
     }
