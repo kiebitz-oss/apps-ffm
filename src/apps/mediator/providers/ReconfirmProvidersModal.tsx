@@ -1,5 +1,4 @@
 import { Trans } from '@lingui/macro';
-import { useMediatorApi } from 'hooks';
 import React, { useState } from 'react';
 import type { Provider } from 'types';
 import {
@@ -11,6 +10,7 @@ import {
     ModalProps,
     Title,
 } from 'ui';
+import { useMediatorApi } from '../common/MediatorApiContext';
 
 interface ReconfirmProvidersModalProps extends ModalProps {
     providers: Provider[];

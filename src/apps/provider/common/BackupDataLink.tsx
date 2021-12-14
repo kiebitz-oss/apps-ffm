@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { settings } from 'config/settings';
 import dayjs from 'dayjs';
 import { str2ab } from 'helpers/conversion';
-import { useProviderApi } from 'hooks/useProviderApi';
 import React, { useEffect, useState } from 'react';
 import { Message } from 'ui';
+import { useProviderApi } from './ProviderApiContext';
 
 interface BackupDataLinkProps {
     className?: string;

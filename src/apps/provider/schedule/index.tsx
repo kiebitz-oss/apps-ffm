@@ -3,11 +3,11 @@
 // README.md contains license information.
 
 import { WeekCalendar } from 'apps/provider/common/WeekCalendar';
-import { useProviderApi } from 'hooks/useProviderApi';
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import type { Appointment } from 'types';
 import { Button, Title } from 'ui';
+import { useProviderApi } from '../common/ProviderApiContext';
 import { CreateAppointmentModal } from './CreateAppointmentModal';
 
 const SchedulePage: React.FC = () => {

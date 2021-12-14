@@ -3,12 +3,12 @@
 // README.md contains license information.
 
 import { t, Trans } from '@lingui/macro';
-import { useProviderApi } from 'hooks/useProviderApi';
 import React from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { Form, InputField, SwitchField, Text, TextareaField, Title } from 'ui';
 import { FormSubmitButton } from 'ui/FormSubmitButton';
+import { useProviderApi } from '../common/ProviderApiContext';
 import { OnboardingData, Types, useOnboarding } from './OnboardingProvider';
 
 export const DataStep: React.FC = () => {

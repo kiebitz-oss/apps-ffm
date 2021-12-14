@@ -39,18 +39,14 @@ const HourRow: React.FC<HourRowProps> = ({ appointmentItems, date, hour }) => {
     const hourEndDate = new Date(hourStartDate);
     hourEndDate.setHours(hourStartDate.getHours() + 1);
 
-    const relevantAppointments: AppointmentItem[] = [];
-
-    for (const appointmentItem of appointmentItems) {
-        let relevant = false;
-
+    const relevantAppointments = appointmentItems.filter((appointmentItem) => {
         // starts in interval
         if (
-            appointmentItem.endDate >= hourStartDate &&
+            appointmentItem.startDate >= hourStartDate &&
             appointmentItem.startDate < hourEndDate
         ) {
             appointmentItem.startsHere = true;
-            relevant = true;
+            return true;
         }
 
         // ends in interval
@@ -58,7 +54,8 @@ const HourRow: React.FC<HourRowProps> = ({ appointmentItems, date, hour }) => {
             appointmentItem.endDate > hourStartDate &&
             appointmentItem.endDate <= hourEndDate
         ) {
-            relevant = true;
+            appointmentItem.startsHere = false;
+            return true;
         }
 
         // is in interval
@@ -66,13 +63,12 @@ const HourRow: React.FC<HourRowProps> = ({ appointmentItems, date, hour }) => {
             appointmentItem.startDate <= hourStartDate &&
             appointmentItem.endDate >= hourEndDate
         ) {
-            relevant = true;
+            appointmentItem.startsHere = false;
+            return true;
         }
 
-        if (relevant) {
-            relevantAppointments.push(appointmentItem);
-        }
-    }
+        return false;
+    });
 
     const hasAppointments = relevantAppointments.length > 0;
     const action = 'show';
@@ -230,8 +226,9 @@ const CalendarAppointments: React.FC<CalendarAppointmentsProps> = ({
         <div className="appointments">
             {appointmentItems
                 .filter(
-                    (appointment) => appointment.startDate
-                    // && appointment.slots > 0
+                    (appointmentItem) =>
+                        appointmentItem.startsHere &&
+                        appointmentItem.appointment.slots.length > 0
                 )
                 .map((appointmentItem) => (
                     <AppointmentCell

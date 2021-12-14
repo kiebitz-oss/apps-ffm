@@ -1,10 +1,10 @@
 import { Trans } from '@lingui/macro';
 import { BackLink } from 'apps/common/BackLink';
-import { useMediatorApi } from 'hooks';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import type { Provider } from 'types';
 import { Button, Title } from 'ui';
+import { useMediatorApi } from '../common/MediatorApiContext';
 import { ConfirmProviderModal } from './ConfirmProviderModal';
 import { UnconfirmProviderModal } from './UnconfirmProviderModal';
 

@@ -1,8 +1,8 @@
 import { Trans } from '@lingui/macro';
-import { useMediatorApi } from 'hooks';
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { Button, Text, Title } from 'ui';
+import { useMediatorApi } from './common/MediatorApiContext';
 
 const LogoutPage: React.FC = () => {
     const navigate = useNavigate();

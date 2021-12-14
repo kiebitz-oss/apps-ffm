@@ -1,7 +1,6 @@
 import { t, Trans } from '@lingui/macro';
 import { BackLink } from 'apps/common/BackLink';
 import { ProviderCard } from 'apps/common/ProviderCard';
-import { useUserApi } from 'hooks/useUserApi';
 import React, {
     ChangeEventHandler,
     MouseEventHandler,
@@ -11,6 +10,7 @@ import React, {
 import type { PublicProvider } from 'types';
 import { Link, Text, Title } from 'ui';
 import { CheckboxField } from 'ui/CheckboxField';
+import { useUserApi } from '../common/UserApiContext';
 import { Types, useFinderState } from './FinderStateProvider';
 
 export const LocationStep: React.FC = () => {

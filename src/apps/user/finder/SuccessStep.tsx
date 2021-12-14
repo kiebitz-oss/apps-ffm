@@ -1,11 +1,11 @@
 import { GeneratePdf16 } from '@carbon/icons-react';
 import { Trans } from '@lingui/macro';
 import { vaccines } from 'config/vaccines';
-import { useUserApi } from 'hooks/useUserApi';
 import React, { MouseEventHandler, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Link, Text, Title } from 'ui';
 import { AppointmentCard } from '../common/AppointmentCard';
+import { useUserApi } from '../common/UserApiContext';
 import { useFinderState } from './FinderStateProvider';
 
 export const SuccessStep: React.FC = () => {

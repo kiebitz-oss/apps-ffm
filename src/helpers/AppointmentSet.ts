@@ -68,45 +68,59 @@ export class AppointmentSet implements Iterable<AppointmentItem> {
             });
     }
 
-    public filterBetweenDates(from: Date, to: Date) {
-        return this.appointmentItems.filter((appointmentItem) => {
-            return (
-                appointmentItem.startDate > from &&
-                appointmentItem.endDate < to &&
-                appointmentItem.appointment.slots.length >= 0
-            );
-        });
+    public filterBetweenDates(
+        from: Date,
+        to: Date,
+        appointmentItems?: AppointmentItem[]
+    ) {
+        return (appointmentItems || this.appointmentItems).filter(
+            (appointmentItem) => {
+                return (
+                    appointmentItem.startDate > from &&
+                    appointmentItem.endDate < to &&
+                    appointmentItem.appointment.slots.length >= 0
+                );
+            }
+        );
     }
 
-    public filterRelevantAppointmentItems(from: Date, to: Date) {
-        return this.appointmentItems.filter((appointmentItem) => {
-            // starts in interval
-            if (
-                appointmentItem.endDate >= from &&
-                appointmentItem.startDate < to
-            ) {
-                appointmentItem.startsHere = true;
-                return true;
-            }
+    public filterRelevantAppointmentItems(
+        from: Date,
+        to: Date,
+        appointmentItems?: AppointmentItem[]
+    ) {
+        return (appointmentItems || this.appointmentItems).filter(
+            (appointmentItem) => {
+                // starts in interval
+                if (
+                    appointmentItem.startDate >= from &&
+                    appointmentItem.startDate < to
+                ) {
+                    appointmentItem.startsHere = true;
+                    return true;
+                }
 
-            // ends in interval
-            if (
-                appointmentItem.endDate > from &&
-                appointmentItem.endDate <= to
-            ) {
-                return true;
-            }
+                // ends in interval
+                if (
+                    appointmentItem.endDate > from &&
+                    appointmentItem.endDate <= to
+                ) {
+                    appointmentItem.startsHere = false;
+                    return true;
+                }
 
-            // is in interval
-            if (
-                appointmentItem.startDate <= from &&
-                appointmentItem.endDate >= to
-            ) {
-                return true;
-            }
+                // is in interval
+                if (
+                    appointmentItem.startDate <= from &&
+                    appointmentItem.endDate >= to
+                ) {
+                    appointmentItem.startsHere = false;
+                    return true;
+                }
 
-            return false;
-        });
+                return false;
+            }
+        );
     }
 
     [Symbol.iterator]() {

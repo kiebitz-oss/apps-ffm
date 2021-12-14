@@ -1,8 +1,8 @@
 import { Trans } from '@lingui/macro';
-import { useMediatorApi } from 'hooks';
 import React, { useEffect, useState } from 'react';
 import type { Provider } from 'types';
 import { Title } from 'ui';
+import { useMediatorApi } from '../common/MediatorApiContext';
 import { ProviderTable } from '../common/ProvidersList';
 
 export const ProvidersPage: React.FC = () => {

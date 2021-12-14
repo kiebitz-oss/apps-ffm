@@ -1,10 +1,10 @@
 import { Trans } from '@lingui/macro';
 import { BackLink } from 'apps/common/BackLink';
-import { useUserApi } from 'hooks/useUserApi';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Link, Text, Title } from 'ui';
 import { AppointmentCard } from '../common/AppointmentCard';
+import { useUserApi } from '../common/UserApiContext';
 import { useFinderState } from './FinderStateProvider';
 
 export const VerifyStep: React.FC = () => {
