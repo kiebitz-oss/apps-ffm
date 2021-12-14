@@ -10,7 +10,7 @@ import {
 } from 'react-hook-form';
 import { useLocation, useNavigate, useParams } from 'react-router';
 import { useEffectOnce } from 'react-use';
-import { Appointment } from 'types';
+import type { Appointment } from 'types';
 import {
     Button,
     Form,

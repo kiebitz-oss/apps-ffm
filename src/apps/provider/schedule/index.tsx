@@ -6,7 +6,7 @@ import { WeekCalendar } from 'apps/provider/common/WeekCalendar';
 import { useProviderApi } from 'hooks/useProviderApi';
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
-import { Appointment } from 'types';
+import type { Appointment } from 'types';
 import { Button, Title } from 'ui';
 import { CreateAppointmentModal } from './CreateAppointmentModal';
 

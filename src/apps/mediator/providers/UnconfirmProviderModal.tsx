@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { useMediatorApi } from 'hooks';
 import React from 'react';
-import { Provider } from 'types';
+import type { Provider } from 'types';
 import {
     Button,
     Modal,

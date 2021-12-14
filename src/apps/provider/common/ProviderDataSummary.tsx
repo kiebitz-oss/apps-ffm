@@ -2,16 +2,16 @@ import { Trans } from '@lingui/macro';
 import clsx from 'clsx';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { ProviderData } from 'types';
+import type { Provider } from 'types';
 import { Message, Text } from 'ui';
 
-interface ProviderDataProps {
-    provider: ProviderData;
+interface ProviderDataSummaryProps {
+    provider: Provider;
     changeHref?: string;
     verified?: boolean;
 }
 
-export const ProviderDataSummary: React.FC<ProviderDataProps> = ({
+export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
     provider,
     verified = false,
 }) => {

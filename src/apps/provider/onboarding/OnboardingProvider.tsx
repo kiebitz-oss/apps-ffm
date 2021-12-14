@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { ProviderData } from 'types';
+import type { Provider } from 'types';
 
 type ActionMap<M extends { [index: string]: unknown }> = {
     [Key in keyof M]: M[Key] extends undefined
@@ -12,12 +12,11 @@ type ActionMap<M extends { [index: string]: unknown }> = {
           };
 };
 
-export interface OnboardingData extends ProviderData {
+export interface OnboardingData extends Provider {
     website?: string;
     description?: string;
     phone?: string;
     email?: string;
-    accessible?: boolean;
     accessCode?: string;
 }
 

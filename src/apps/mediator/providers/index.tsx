@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { useMediatorApi } from 'hooks';
 import React, { useEffect, useState } from 'react';
-import { Provider } from 'types';
+import type { Provider } from 'types';
 import { Title } from 'ui';
 import { ProviderTable } from '../common/ProvidersList';
 
