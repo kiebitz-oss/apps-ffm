@@ -1,7 +1,6 @@
 import { Trans } from '@lingui/macro';
-import { useMediatorApi } from 'hooks/useMediatorApi';
+import { useMediatorApi } from 'hooks';
 import React from 'react';
-import { useNavigate } from 'react-router';
 import { Provider } from 'types';
 import {
     Button,
@@ -20,25 +19,22 @@ interface UnconfirmProviderModal extends ModalProps {
 
 export const UnconfirmProviderModal: React.FC<UnconfirmProviderModal> = ({
     provider,
+    onClose,
 }) => {
-    const navigate = useNavigate();
     const api = useMediatorApi();
-    const closeModal = () => navigate('/mediator/providers');
 
     const doUnconfirmProvider = () => {
-        api.unconfirmProvider(provider)
-            .then(() => {
-                navigate('/mediator/providers');
-            })
-            .then(() => {
-                closeModal();
-            });
+        api.unconfirmProvider(provider).then(() => {
+            if (onClose) {
+                onClose();
+            }
+        });
     };
 
     return (
-        <Modal onClose={closeModal}>
+        <Modal onClose={onClose}>
             <ModalHeader>
-                <Title>
+                <Title variant="h3" as="h2">
                     <Trans id="mediator.providers.unconfirm-modal.title">
                         Anbieter freischalten
                     </Trans>

@@ -3,6 +3,7 @@ import { t, Trans } from '@lingui/macro';
 import React, { ChangeEventHandler, useState } from 'react';
 import type { Provider } from 'types';
 import { Button } from 'ui';
+import { ReconfirmProvidersModal } from '../providers/ReconfirmProvidersModal';
 import { ProviderRow } from './ProviderRow';
 
 interface ProviderTableProps {
@@ -10,6 +11,7 @@ interface ProviderTableProps {
 }
 
 export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
+    const [modal, setModal] = useState<'confirm' | 'unconfirm' | null>(null);
     const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
 
     const onSelectAll: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -106,6 +108,7 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                     variant="primary"
                                     size="sm"
                                     disabled={selectedProviders.length === 0}
+                                    onClick={() => setModal('confirm')}
                                 >
                                     <CheckmarkOutline16 />
                                     {selectedProviders.length} 
@@ -117,6 +120,7 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                     variant="secondary"
                                     size="sm"
                                     disabled={selectedProviders.length === 0}
+                                    onClick={() => setModal('unconfirm')}
                                 >
                                     <ErrorOutline16 />
                                     {selectedProviders.length} 
@@ -129,6 +133,15 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                     </tr>
                 </tfoot>
             </table>
+
+            {modal && (
+                <ReconfirmProvidersModal
+                    providers={providers.filter((provider) =>
+                        selectedProviders.includes(provider.id)
+                    )}
+                    onClose={() => setModal(null)}
+                />
+            )}
         </>
     );
 };

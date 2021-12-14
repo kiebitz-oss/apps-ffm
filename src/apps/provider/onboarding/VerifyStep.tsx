@@ -35,11 +35,15 @@ export const VerifyStep: React.FC = () => {
                         type="button"
                         variant="secondary"
                     >
-                        <Trans id="provider-data.change">Anpassen</Trans>
+                        <Trans id="provider.onboarding.verify.edit-data">
+                            Anpassen
+                        </Trans>
                     </Link>
 
                     <Button onClick={submit}>
-                        <Trans id="provider.onboarding.continue">Weiter</Trans>
+                        <Trans id="provider.onboarding.verify.button">
+                            Weiter
+                        </Trans>
                     </Button>
                 </div>
             </div>

@@ -1,0 +1,15 @@
+.appointment-card {
+    @apply flex flex-col p-4 w-full font-semibold rounded-lg border-2 border-black default-focus;
+
+    & > address {
+        @apply mb-2 text-center;
+    }
+
+    & > time {
+        @apply block mb-10 text-lg text-center;
+    }
+
+    & > div {
+        @apply text-center;
+    }
+}

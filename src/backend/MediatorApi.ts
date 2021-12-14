@@ -27,15 +27,15 @@ export class MediatorApi {
     }
 
     public async confirmProvider(provider: Provider): Promise<boolean> {
-        return false;
+        return true;
     }
 
     public async unconfirmProvider(provider: Provider): Promise<boolean> {
-        return false;
+        return true;
     }
 
     public async reconfirmProvider(provider: Provider): Promise<boolean> {
-        return false;
+        return true;
     }
 
     public async backupData(): Promise<MediatorKeyPairs> {

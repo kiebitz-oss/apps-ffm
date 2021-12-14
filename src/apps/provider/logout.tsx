@@ -43,16 +43,16 @@ const LogOutPage: React.FC = () => {
     return (
         <main>
             <Title>
-                <Trans id="log-out-Box.title">Abmelden</Trans>
+                <Trans id="provider.logout.title">Abmelden</Trans>
             </Title>
 
             <Text>
                 {loggingOut ? (
-                    <Trans id="log-out-Box.logging-out">
+                    <Trans id="provider.logout.notice.logging-out">
                         Bitte warten, Sie werden abgemeldet...
                     </Trans>
                 ) : (
-                    <Trans id="log-out-Box.text">
+                    <Trans id="provider.logout.intro">
                         Möchten Sie sich wirklich abmelden? Bitte stellen Sie
                         sicher, dass Sie Ihren Datenschlüssel notiert und Ihre
                         Sicherungsdatei heruntergeladen haben . Nur damit können
@@ -65,19 +65,21 @@ const LogOutPage: React.FC = () => {
 
             <div className="flex flex-row justify-between">
                 <CopyToClipboardButton toCopy={secret}>
-                    Datenschlüssel kopieren
+                    <Trans id="provider.logout.copy-secret">
+                        Datenschlüssel kopieren
+                    </Trans>
                 </CopyToClipboardButton>
 
                 <BackupDataLink
                     downloadText={t({
-                        id: 'backup-Box.download-backup',
+                        id: 'provider.logout.download-backup',
                         message: 'Sicherungsdatei herunterladen',
                     })}
                 />
             </div>
 
             <Button onClick={logOut} disabled={loggingOut}>
-                <Trans id="log-out">Abmelden</Trans>
+                <Trans id="provider.logout.button">Abmelden</Trans>
             </Button>
         </main>
     );

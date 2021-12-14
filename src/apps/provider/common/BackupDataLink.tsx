@@ -1,8 +1,8 @@
 import { Trans } from '@lingui/macro';
 import clsx from 'clsx';
+import { settings } from 'config/settings';
 import dayjs from 'dayjs';
 import { str2ab } from 'helpers/conversion';
-import { useServiceName } from 'hooks';
 import { useProviderApi } from 'hooks/useProviderApi';
 import React, { useEffect, useState } from 'react';
 import { Message } from 'ui';
@@ -19,13 +19,13 @@ export const BackupDataLink: React.FC<BackupDataLinkProps> = ({
     downloadText,
 }) => {
     const api = useProviderApi();
-    const serviceName = useServiceName();
+
     const [blob, setBlob] = useState<Blob | null>(null);
 
     useEffect(() => {
-        api.backupData().then(({ data }) => {
+        api.backupData().then(({ keyPair }) => {
             setBlob(
-                new Blob([str2ab(JSON.stringify(data))], {
+                new Blob([str2ab(JSON.stringify(keyPair))], {
                     type: 'application/octet-stream',
                 })
             );
@@ -46,7 +46,7 @@ export const BackupDataLink: React.FC<BackupDataLinkProps> = ({
     const dateString = dayjs().format('YYYY-MM-DD-HH-mm');
 
     const filename =
-        `${serviceName}-backup-${dateString}-${providerName}.enc`.toLowerCase();
+        `${settings.title}-backup-${dateString}-${providerName}.enc`.toLowerCase();
 
     if (blob) {
         return (

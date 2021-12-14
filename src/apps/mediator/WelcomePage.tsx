@@ -3,7 +3,7 @@
 // README.md contains license information.
 
 import { Trans } from '@lingui/macro';
-import { useMediatorApi } from 'hooks/useMediatorApi';
+import { useMediatorApi } from 'hooks';
 import React, { ChangeEventHandler, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Message, Section, Title } from 'ui';

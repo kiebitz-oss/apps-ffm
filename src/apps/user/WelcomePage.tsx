@@ -49,7 +49,7 @@ const StartPage: React.FC = () => {
                     href="/user/finder"
                     className="mt-auto"
                 >
-                    <Trans id="user.welcome.title">Weiter zum Termin</Trans>
+                    <Trans id="user.welcome.button">Weiter zum Termin</Trans>
                 </Link>
             </form>
         </main>

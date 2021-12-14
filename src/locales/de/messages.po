@@ -1,943 +1,737 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-12-01 10:59+0100\n"
+"POT-Creation-Date: 2021-12-14 09:47+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: de\n"
 
-#: src/apps/mediator/dashboard/summary-box.tsx:30
-msgid "active"
-msgstr "Aktive Anbieter"
+#: src/ui/CopyToClipboardButton.tsx:28
+msgid "common.copy.failed"
+msgstr "Fehlgeschlagen"
 
-#: src/apps/user/dashboard/appointments.tsx:465
-msgid "appointment-date"
-msgstr "Datum"
+#: src/ui/CopyToClipboardButton.tsx:30
+msgid "common.copy.succeeded"
+msgstr "In der Zwischenablage"
 
-#: src/apps/user/dashboard/appointments.tsx:468
-msgid "appointment-duration"
-msgstr "Dauer"
+#: src/apps/common/DataSecret.tsx:16
+msgid "common.data-secret.text"
+msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn, um sich auf einem anderen PC (Tablet, Smartphone etc.) einzuloggen oder auf einem anderen Endgerät auf Ihre Termine zugreifen zu können."
 
-#: src/apps/provider/dashboard/schedule.tsx:206
-msgid "appointment-overview.delete.button"
-msgstr "Löschen bestätigen"
+#: src/apps/common/ErrorFallback.tsx:15
+msgid "common.error.common-error"
+msgstr "Es tut uns schrecklich leid aber es ist ein unerwarteter Fehler aufgetreten. Bitte <0>kontaktieren Sie uns zur Behebung</0>."
 
-#: src/apps/provider/dashboard/schedule.tsx:108
-msgid "appointment-overview.delete.cancel"
-msgstr "Abbrechen"
-
-#: src/apps/provider/dashboard/schedule.tsx:103
-msgid "appointment-overview.delete.confirm"
-msgstr "Löschen bestätigen"
-
-#: src/apps/provider/dashboard/schedule.tsx:121
-msgid "appointment-overview.delete.notice"
-msgstr "Wollen Sie diesen Termin wirklich löschen?"
-
-#: src/apps/provider/dashboard/schedule.tsx:113
-msgid "appointment-overview.delete.title"
-msgstr "Termin löschen"
-
-#: src/apps/provider/dashboard/schedule.tsx:166
-#: src/apps/provider/dashboard/schedule.tsx:628
-msgid "appointment-overview.details.booked"
-msgstr "Gebucht"
-
-#: src/apps/provider/dashboard/schedule.tsx:177
-msgid "appointment-overview.details.booking-codes"
-msgstr "Buchungscodes"
-
-#: src/apps/provider/dashboard/schedule.tsx:187
-#: src/apps/provider/dashboard/schedule.tsx:641
-msgid "appointment-overview.details.no-booked-slots"
-msgstr "Keine gebuchten Slots bisher. Sobald Buchungen vorhanden sind werden hier die Buchungscodes angezeigt."
-
-#: src/apps/provider/dashboard/schedule.tsx:160
-#: src/apps/provider/dashboard/schedule.tsx:624
-msgid "appointment-overview.details.slots"
-msgstr "Slots"
-
-#: src/apps/provider/dashboard/schedule.tsx:200
-msgid "appointment-overview.edit.button"
-msgstr "Bearbeiten"
-
-#: src/apps/provider/dashboard/schedule.tsx:138
-msgid "appointment-overview.title"
-msgstr "Terminübersicht"
-
-#: src/apps/user/dashboard/appointments.tsx:462
-msgid "appointment-preference"
-msgstr "Rang"
-
-#: src/apps/user/dashboard/appointments.tsx:471
-msgid "appointment-vaccine"
-msgstr "Impfstoff"
-
-#: src/apps/provider/dashboard/schedule.tsx:661
-msgid "appointments-list.title"
-msgstr "Buchungen"
-
-#: src/apps/user/dashboard/appointments.tsx:485
-msgid "appointments-notice"
-msgstr "Bitte wähle alle für Dich passenden Termine aus und bestätige anschließend Deine Auswahl. Beachte bitte, dass du pünktlich zum Termin erscheinst. Die angegebene Dauer entspricht dem maximal zu erwartenden Zeitbedarf."
-
-#: src/apps/provider/dashboard/settings.tsx:296
-msgid "backup"
-msgstr "Datenbackup anfertigen"
-
-#: src/apps/provider/dashboard/settings.tsx:123
-msgid "backup-modal.close"
-msgstr "Schließen"
-
-#: src/apps/provider/dashboard/settings.tsx:150
-#: src/apps/provider/dashboard/settings.tsx:227
-msgid "backup-modal.download-backup"
-msgstr "Sicherungsdatei herunterladen"
-
-#: src/apps/provider/dashboard/settings.tsx:127
-msgid "backup-modal.text"
-msgstr "Klicken Sie auf \"Datenbackup anfertigen\" um eine verschlüsselte Datei mit Ihren Einstellungen und Termindaten zu erzeugen. Bitte denken Sie daran, den Datenschlüssel zu notieren, ohne diesen sind die Daten nicht wiederherstellbar."
-
-#: src/apps/provider/dashboard/settings.tsx:118
-msgid "backup-modal.title"
-msgstr "Datenbackup anfertigen"
-
-#: src/apps/mediator/dashboard/summary-box.tsx:26
-msgid "booked"
-msgstr "Gebuchte Termine"
-
-#: src/apps/mediator/dashboard/stats.jsx:232
-msgid "bookingRate"
-msgstr "bookingRate"
-
-#: src/apps/user/dashboard/appointments.tsx:254
-msgid "cancel-appointment"
-msgstr "Termin absagen"
-
-#: src/apps/user/dashboard/appointments.tsx:510
-msgid "confirm-appointment"
-msgstr "Terminauswahl bestätigen"
-
-#: src/apps/user/setup/contact-data.tsx:52
-msgid "contact-data.access-code.description"
-msgstr "Zugangscodes sind nur für bestimmte Impfstellen notwendig. Wenn kein Zugangscode vorliegt, leer lassen."
-
-#: src/apps/user/setup/contact-data.tsx:48
-msgid "contact-data.access-code.label"
-msgstr "Zugangscode"
-
-#: src/apps/user/setup/verify.tsx:59
-msgid "contact-data.change"
-msgstr "Anpassen"
-
-#: src/apps/user/setup/finalize.tsx:239
-msgid "contact-data.distance.label"
-msgstr "Maximale Entfernung zum Impfort in Kilometern (km)"
-
-#: src/apps/user/setup/finalize.tsx:244
-msgid "contact-data.distance.notice"
-msgstr "Achtung: Du kannst den Radius derzeit nur 1x einstellen und nicht mehr ändern!"
-
-#: src/apps/user/setup/finalize.tsx:261
-msgid "contact-data.distance.option.10"
-msgstr "10 km"
-
-#: src/apps/user/setup/finalize.tsx:268
-msgid "contact-data.distance.option.20"
-msgstr "20 km"
-
-#: src/apps/user/setup/finalize.tsx:275
-msgid "contact-data.distance.option.30"
-msgstr "30 km"
-
-#: src/apps/user/setup/finalize.tsx:282
-msgid "contact-data.distance.option.40"
-msgstr "40 km"
-
-#: src/apps/user/setup/finalize.tsx:254
-msgid "contact-data.distance.option.5"
-msgstr "5 km"
-
-#: src/apps/user/setup/finalize.tsx:289
-msgid "contact-data.distance.option.50"
-msgstr "50 km"
-
-#: src/apps/user/setup/verify.tsx:42
-msgid "contact-data.email.label"
-msgstr "E-Mail Adresse"
-
-#: src/apps/user/setup/finalize.tsx:213
-#: src/apps/user/setup/finalize.tsx:221
-#: src/apps/user/setup/finalize.tsx:229
-msgid "contact-data.invalid-zip-code"
-msgstr "Bitte trage eine gültige Postleitzahl ein."
-
-#: src/apps/user/setup/verify.tsx:47
-msgid "contact-data.not-given"
-msgstr "(keine Angabe)"
-
-#: src/apps/user/setup/finalize.tsx:40
-msgid "contact-data.properties.location.title"
-msgstr "Impfort"
-
-#: src/apps/user/setup/finalize.tsx:45
-msgid "contact-data.properties.location.values.accessible"
-msgstr "Barrierefreier Impfort gewünscht"
-
-#: src/apps/user/setup/contact-data.tsx:71
-msgid "contact-data.save-and-continue"
-msgstr "Weiter"
-
-#: src/apps/user/setup/contact-data.tsx:69
-msgid "contact-data.saving"
-msgstr "Speichere..."
-
-#: src/apps/user/setup/finalize.tsx:204
-msgid "contact-data.zip-code"
-msgstr "Postleitzahl Deines Wohnorts"
-
-#: src/apps/provider/deleted.tsx:17
-#: src/apps/user/deleted.tsx:17
-msgid "data-deleted"
-msgstr "Daten erfolgreich gelöscht"
-
-#: src/apps/mediator/dashboard/stats.jsx:201
-msgid "dateSpan"
-msgstr "Zeige Daten von <0>{0}</0> bis <1>{1}</1>."
-
-#: src/apps/provider/dashboard/schedule.tsx:42
-msgid "day-1"
-msgstr "Montag"
-
-#: src/apps/provider/dashboard/schedule.tsx:43
-msgid "day-2"
-msgstr "Dienstag"
-
-#: src/apps/provider/dashboard/schedule.tsx:44
-msgid "day-3"
-msgstr "Mittwoch"
-
-#: src/apps/provider/dashboard/schedule.tsx:45
-msgid "day-4"
-msgstr "Donnerstag"
-
-#: src/apps/provider/dashboard/schedule.tsx:46
-msgid "day-5"
-msgstr "Freitag"
-
-#: src/apps/provider/dashboard/schedule.tsx:47
-msgid "day-6"
-msgstr "Samstag"
-
-#: src/apps/provider/dashboard/schedule.tsx:48
-msgid "day-7"
-msgstr "Sonntag"
-
-#: src/apps/provider/dashboard/settings.tsx:162
-#: src/apps/provider/dashboard/settings.tsx:306
-msgid "delete"
-msgstr "Konto löschen"
-
-#: src/apps/provider/dashboard/settings.tsx:166
-msgid "delete-modal.title"
-msgstr "Nutzer-Daten löschen"
-
-#: src/apps/provider/dashboard/schedule.tsx:888
-msgid "edit-appointment.title"
-msgstr "Termin bearbeiten"
-
-#: src/components/main-error-boundary.jsx:19
-msgid "errorBoundary.somethingWentWrong"
-msgstr "Es tut uns schrecklich leid aber es ist ein unerwarteter Fehler passiert. Bitte<0>kontaktieren Sie uns zur Behebung</0>."
-
-#: src/apps/user/dashboard/index.tsx:71
-msgid "go-back.button"
-msgstr "go-back.button"
-
-#: src/helpers/time.js:48
-msgid "hour-minute-string"
-msgstr "{hours} Stunden {remainingMinutes} Minuten"
-
-#: src/helpers/time.js:45
-msgid "hour-string"
+#: src/helpers/time.ts:34
+msgid "common.hours"
 msgstr "{hours} Stunden"
 
-#: src/apps/provider/dashboard/index.tsx:160
-msgid "invalid-key"
-msgstr "Ihre Daten wurden noch nicht verifiziert. Sie können bereits Termine anlegen, allerdings werden Impfwillige noch nicht über Ihre Termine benachrichtigt."
+#: src/helpers/time.ts:37
+msgid "common.hours-minutes"
+msgstr "{hours} Stunden {remainingMinutes} Minuten"
 
-#: src/apps/user/dashboard/appointments.tsx:244
-msgid "invitation-accepted.booking-code"
-msgstr "Buchungscode zur Vorlage: Bitte notieren!"
-
-#: src/apps/user/dashboard/appointments.tsx:186
-msgid "invitation-accepted.changed"
-msgstr "Details Deines Termins haben sich geändert!"
-
-#: src/apps/user/dashboard/appointments.tsx:126
-msgid "invitation-accepted.confirm-deletion"
-msgstr "Zurück zur Terminvergabe"
-
-#: src/apps/user/dashboard/appointments.tsx:207
-msgid "invitation-accepted.delete.cancel"
-msgstr "Abbrechen"
-
-#: src/apps/user/dashboard/appointments.tsx:202
-msgid "invitation-accepted.delete.confirm"
-msgstr "Bestätigen"
-
-#: src/apps/user/dashboard/appointments.tsx:219
-msgid "invitation-accepted.delete.notice"
-msgstr "Willst du den Termin wirklich absagen?"
-
-#: src/apps/user/dashboard/appointments.tsx:212
-msgid "invitation-accepted.delete.title"
-msgstr "Termin absagen"
-
-#: src/apps/user/dashboard/appointments.tsx:113
-msgid "invitation-accepted.deleted"
-msgstr "Der Termin wurde vom Arzt gelöscht. Sorry! Du kannst zurück zur Terminvergabe gehen, um neue Terminvorschläge zu erhalten."
-
-#: src/apps/user/dashboard/appointments.tsx:232
-msgid "invitation-accepted.title"
-msgstr "Termin bestätigt!"
-
-#: src/components/leave-guard.jsx:91
-msgid "leave.cancel"
+#: src/apps/common/LeaveModal.tsx:39
+msgid "common.leave.cancel-button"
 msgstr "Zurück"
 
-#: src/components/leave-guard.jsx:90
-msgid "leave.leave"
+#: src/apps/common/LeaveModal.tsx:34
+msgid "common.leave.submit-button"
 msgstr "Seite verlassen"
 
-#: src/components/leave-guard.jsx:99
-msgid "leave.text"
-msgstr "Es gibt ungespeicherte Änderungen auf der aktuellen Seite. Wollen Sie diese wirklich verlassen?"
-
-#: src/components/leave-guard.jsx:93
-msgid "leave.title"
+#: src/apps/common/LeaveModal.tsx:19
+msgid "common.leave.title"
 msgstr "Möchten Sie diese Seite wirklich verlassen?"
 
-#: src/apps/provider/restore.tsx:109
-#: src/apps/user/restore.tsx:74
-msgid "load-backup.failed"
-msgstr "Das Laden Deiner Daten ist leider fehlgeschlagen. Bitte prüfe Deinen Sicherheitscode."
-
-#: src/apps/provider/restore.tsx:155
-msgid "load-backup.input"
-msgstr "Sicherungsdatei wählen"
-
-#: src/apps/provider/restore.tsx:151
-msgid "load-backup.input.change"
-msgstr "{0}"
-
-#: src/apps/provider/restore.tsx:163
-msgid "load-backup.input.description"
-msgstr "Bitte laden Sie hier Ihre Sicherungsdatei (booster-impfen-backup-2021[Datum&Uhrzeit].enc) hoch."
-
-#: src/apps/provider/restore.tsx:37
-msgid "load-backup.invalid-file"
-msgstr "load-backup.invalid-file MISSING"
-
-#: src/apps/provider/restore.tsx:50
-#: src/apps/user/restore.tsx:37
-msgid "load-backup.invalid-secret"
-msgstr "load-backup.invalid-secret"
-
-#: src/apps/provider/restore.tsx:179
-#: src/apps/user/restore.tsx:108
-msgid "load-backup.load"
-msgstr "Anmelden"
-
-#: src/apps/provider/restore.tsx:32
-msgid "load-backup.missing-file"
-msgstr "load-backup.missing-file MISSING"
-
-#: src/apps/provider/restore.tsx:127
-#: src/apps/user/restore.tsx:91
-msgid "load-backup.secret.description"
-msgstr "Der Sicherheitscode, den Du bei der Registrierung erhalten hast."
-
-#: src/apps/provider/restore.tsx:123
-#: src/apps/user/restore.tsx:87
-msgid "load-backup.secret.label"
-msgstr "Sicherheitscode"
-
-#: src/apps/provider/restore.tsx:103
-#: src/apps/user/restore.tsx:68
-msgid "load-backup.title"
-msgstr "Anmelden"
-
-#: src/components/loader.tsx:30
-msgid "loader.failed"
-msgstr "Das Laden von Ressourcen ist leider fehlgeschlagen."
-
-#: src/components/loader.tsx:24
-msgid "loader.please-wait"
-msgstr "Bitte warten, lade Daten..."
-
-#: src/components/loader.tsx:17
-msgid "loader.updating"
-msgstr "Aktualisiere Daten..."
-
-#: src/apps/mediator/dashboard/settings.tsx:136
-#: src/apps/mediator/dashboard/settings.tsx:188
-#: src/apps/provider/dashboard/index.tsx:185
-#: src/apps/provider/dashboard/settings.tsx:191
-#: src/apps/provider/dashboard/settings.tsx:299
-#: src/apps/user/dashboard/settings.tsx:51
-#: src/apps/user/dashboard/settings.tsx:103
-msgid "log-out"
-msgstr "Abmelden"
-
-#: src/apps/mediator/dashboard/settings.tsx:146
-msgid "log-out-modal.logging-out"
-msgstr "log-out-modal.logging-out MISSING"
-
-#: src/apps/mediator/dashboard/settings.tsx:150
-msgid "log-out-modal.text"
-msgstr "log-out-modal.text MISSING"
-
-#: src/apps/mediator/dashboard/settings.tsx:139
-#: src/apps/provider/dashboard/settings.tsx:194
-#: src/apps/user/dashboard/settings.tsx:54
-msgid "log-out-modal.title"
-msgstr "Abmelden"
-
-#: src/apps/mediator/logged-out.tsx:34
-#: src/apps/provider/logged-out.tsx:34
-#: src/apps/user/logged-out.tsx:34
-msgid "logged-out.log-in-again"
-msgstr "Anmelden"
-
-#: src/apps/mediator/logged-out.tsx:26
-#: src/apps/provider/logged-out.tsx:25
-#: src/apps/user/logged-out.tsx:25
-msgid "logged-out.notice"
-msgstr "Du wurdest erfolgreich abgemeldet. Du kannst dich jederzeit wieder mit deinem Sicherheitscode anmelden um deine Termine zu prüfen."
-
-#: src/apps/mediator/logged-out.tsx:21
-#: src/apps/provider/logged-out.tsx:20
-#: src/apps/user/logged-out.tsx:20
-msgid "logged-out.title"
-msgstr "Erfolgreich abgemeldet."
-
-#: src/helpers/time.js:40
-msgid "minute-string"
+#: src/helpers/time.ts:27
+msgid "common.minutes"
 msgstr "{minutes} Minuten"
 
-#: src/components/modal.jsx:111
-msgid "modal.cancel"
-msgstr "Abbrechen"
+#: src/apps/common/LeaveModal.tsx:26
+msgid "comon.leave.text"
+msgstr "Es gibt ungespeicherte Änderungen auf der aktuellen Seite. Wollen Sie diese wirklich verlassen?"
 
-#: src/components/modal.jsx:96
-msgid "modal.save"
-msgstr "Speichern"
+#: src/apps/mediator/logged-out.tsx:37
+msgid "mediator.logged-out.log-in-again"
+msgstr "Einloggen"
 
-#: src/apps/provider/dashboard/schedule.tsx:905
-msgid "new-appointment.date"
-msgstr "Datum"
+#: src/apps/mediator/logged-out.tsx:28
+msgid "mediator.logged-out.notice"
+msgstr "Sie wurden erfolgreich abgemeldet. Sie können sich jederzeit mit Ihrer Schlüsseldatei wieder anmelden."
 
-#: src/apps/provider/dashboard/schedule.tsx:687
-msgid "new-appointment.in-the-past"
-msgstr "new-appointment.in-the-past"
+#: src/apps/mediator/logged-out.tsx:22
+msgid "mediator.logged-out.title"
+msgstr "mediator.logged-out.title"
 
-#: src/apps/provider/dashboard/schedule.tsx:680
-msgid "new-appointment.please-enter-date"
-msgstr "new-appointment.please-enter-date"
+#: src/apps/mediator/logout.tsx:33
+msgid "mediator.logout.button"
+msgstr "Abmelden"
 
-#: src/apps/provider/dashboard/schedule.tsx:682
-msgid "new-appointment.please-enter-time"
-msgstr "new-appointment.please-enter-time"
+#: src/apps/mediator/logout.tsx:25
+msgid "mediator.logout.intro"
+msgstr "Möchtest Du Dich wirklich abmelden? Bitte stelle vorher sicher, dass Du Deinen Sicherheitscode notiert hast. Nur mit diesem Code kannst Du Dich später wieder anmelden."
 
-#: src/apps/provider/dashboard/schedule.tsx:928
-msgid "new-appointment.slots"
-msgstr "Anzahl Impfdosen"
+#: src/apps/mediator/logout.tsx:21
+msgid "mediator.logout.title"
+msgstr "Abmelden"
 
-#: src/apps/provider/dashboard/schedule.tsx:916
-msgid "new-appointment.time"
-msgstr "Uhrzeit"
+#: src/apps/mediator/common/ProviderRow.tsx:78
+msgid "mediator.provider-row.button-show"
+msgstr "anzeigen"
 
-#: src/apps/provider/dashboard/schedule.tsx:892
-msgid "new-appointment.title"
-msgstr "Neuen Termin erstellen"
+#: src/apps/mediator/common/ProviderRow.tsx:69
+msgid "mediator.provider-row.invalid"
+msgstr "unbestätigt"
 
-#: src/apps/provider/dashboard/schedule.tsx:695
-msgid "new-appointment.too-far-in-the-future"
-msgstr "Bitte wählen Sie Termine die maximal 30 Tage in der Zukunft liegen"
+#: src/apps/mediator/common/ProviderRow.tsx:43
+msgid "mediator.provider-row.select-row"
+msgstr "Impfanbieter auswählen oder abwählen"
 
-#: src/apps/provider/dashboard/schedule.tsx:708
-msgid "new-appointment.too-few-slots"
-msgstr "new-appointment.too-few-slots"
+#: src/apps/mediator/common/ProviderRow.tsx:65
+msgid "mediator.provider-row.valid"
+msgstr "bestätigt"
 
-#: src/apps/provider/dashboard/schedule.tsx:704
-msgid "new-appointment.too-many-slots"
-msgstr "new-appointment.too-many-slots"
+#: src/apps/mediator/providers/show.tsx:127
+msgid "mediator.provider-show.button-confirm"
+msgstr "Anbieter bestätigen"
 
-#: src/apps/user/dashboard/appointments.tsx:297
-msgid "no-invitations.notice"
-msgstr "Im Moment sind scheinbar keine Termine in Deiner Umgebung verfügbar, oder leider bereits ausgebucht. Bitte schau ab jetzt regelmäßig hier vorbei. Sobald neue Termine in Deiner Nähe verfügbar sind, werden sie Dir hier angezeigt."
+#: src/apps/mediator/providers/show.tsx:137
+msgid "mediator.provider-show.button-unconfirm"
+msgstr "Anbieter sperren"
 
-#: src/apps/user/dashboard/appointments.tsx:285
-msgid "no-invitations.please-wait"
-msgstr "Deine Daten wurden im System gespeichert. Falls Termine in deiner Nähe verfügbar sind, werden diese in wenigen Minuten hier angezeigt."
+#: src/apps/mediator/providers/show.tsx:79
+msgid "mediator.provider-show.city"
+msgstr "Stadt"
 
-#: src/apps/user/dashboard/appointments.tsx:315
-msgid "no-invitations.update-notice"
-msgstr "Diese Seite wird automatisch aktualisiert..."
+#: src/apps/mediator/providers/show.tsx:111
+msgid "mediator.provider-show.description"
+msgstr "Beschreibung"
 
-#: src/apps/user/dashboard/appointments.tsx:449
-msgid "no-offers-anymore"
-msgstr "Alle Terminangebote sind bereits abgelaufen. Bitte hab' etwas Geduld, du wirst voraussichtlich neue Angebote erhalten."
+#: src/apps/mediator/providers/show.tsx:95
+msgid "mediator.provider-show.email"
+msgstr "E-Mail"
 
-#: src/apps/mediator/dashboard/stats.jsx:190
-msgid "noData"
-msgstr "noData"
-
-#: src/apps/user/dashboard/appointments.tsx:74
-msgid "offer-notice-text"
-msgstr "Bitte füllen Sie nach Möglichkeit <0>die Anamnese- und Einwilligungserklärung</0> sowie <1>das Aufklärungsmerkblatt</1> für den Impfstoff <2>{0}</2> aus und bringen Sie diese unterschrieben mit zur Impfung (falls Sie keine Möglichkeit haben die Dokumente zu drucken können Sie diese auch vor Ort ausfüllen)."
-
-#: src/apps/mediator/dashboard/summary-box.tsx:22
-msgid "open"
-msgstr "Offene Termine"
-
-#: src/components/not-found.jsx:15
-msgid "pageDoesNotExist"
-msgstr "pageDoesNotExist MISSING"
-
-#: src/apps/provider/setup/provider-data.tsx:174
-msgid "provider-data.access-code.description"
-msgstr "Falls Sie einen spezifischen Zugangscode erhalten haben geben Sie diesen bitte hier ein."
-
-#: src/apps/provider/setup/provider-data.tsx:181
-#: src/apps/provider/setup/verify.tsx:122
-msgid "provider-data.access-code.label"
-msgstr "Zugangscode (falls vorhanden)"
-
-#: src/apps/provider/setup/provider-data.tsx:193
-#: src/apps/provider/setup/verify.tsx:145
-msgid "provider-data.accessible"
-msgstr "Barrierefreier Zugang zur Praxis/zum Impfzentrum"
-
-#: src/apps/provider/setup/verify.tsx:157
-msgid "provider-data.change"
-msgstr "Anpassen"
-
-#: src/apps/mediator/dashboard/providers.tsx:203
-#: src/apps/provider/setup/provider-data.tsx:116
-#: src/apps/provider/setup/verify.tsx:72
-msgid "provider-data.city"
-msgstr "Ort"
-
-#: src/apps/mediator/dashboard/providers.tsx:235
-#: src/apps/provider/setup/provider-data.tsx:130
-#: src/apps/provider/setup/verify.tsx:85
-msgid "provider-data.description"
-msgstr "Informationen für Impfwillige (z.B. wenn Sie spezielle Impfstoffe nur bestimmten Gruppen empfehlen)"
-
-#: src/apps/mediator/dashboard/providers.tsx:219
-#: src/apps/provider/setup/provider-data.tsx:161
-#: src/apps/provider/setup/verify.tsx:112
-msgid "provider-data.email"
-msgstr "provider-data.email"
-
-#: src/apps/mediator/dashboard/providers.tsx:173
-msgid "provider-data.field"
+#: src/apps/mediator/providers/show.tsx:43
+msgid "mediator.provider-show.field"
 msgstr "Feld"
 
-#: src/apps/provider/setup/provider-data.tsx:143
-msgid "provider-data.for-mediator"
-msgstr "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit dem Support-Team."
-
-#: src/apps/provider/setup/provider-data.tsx:39
-msgid "provider-data.invalid-name"
-msgstr "Bitte gegen Sie einen gültigen Namen an"
-
-#: src/apps/mediator/dashboard/providers.tsx:187
-#: src/apps/provider/setup/provider-data.tsx:90
-#: src/apps/provider/setup/verify.tsx:53
-msgid "provider-data.name"
-msgstr "Vollständiger Name"
-
-#: src/apps/provider/setup/verify.tsx:92
-#: src/apps/provider/setup/verify.tsx:105
-#: src/apps/provider/setup/verify.tsx:115
-#: src/apps/provider/setup/verify.tsx:127
-msgid "provider-data.not-given"
-msgstr "(keine Angabe)"
-
-#: src/apps/provider/setup/verify.tsx:33
-msgid "provider-data.not-verified-yet"
-msgstr "Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie Verständnis, dass die Verifizierung bis zu 48h dauern kann."
-
-#: src/apps/mediator/dashboard/providers.tsx:227
-#: src/apps/provider/setup/provider-data.tsx:151
-#: src/apps/provider/setup/verify.tsx:99
-msgid "provider-data.phone"
-msgstr "Telefonnummer (nicht sichtbar für Impfinteressierte)"
-
-#: src/apps/provider/setup/provider-data.tsx:214
-msgid "provider-data.save-and-continue"
-msgstr "Weiter"
-
-#: src/apps/provider/setup/provider-data.tsx:210
-msgid "provider-data.saving"
-msgstr "Speichere..."
-
-#: src/apps/mediator/dashboard/providers.tsx:195
-#: src/apps/provider/setup/provider-data.tsx:99
-#: src/apps/provider/setup/verify.tsx:61
-msgid "provider-data.street"
-msgstr "Straße & Hausnummer"
-
-#: src/apps/provider/dashboard/settings.tsx:242
-msgid "provider-data.title"
-msgstr "Ihre Daten"
-
-#: src/apps/mediator/dashboard/providers.tsx:178
-msgid "provider-data.value"
-msgstr "Wert"
-
-#: src/apps/provider/dashboard/settings.tsx:246
-msgid "provider-data.verified-vs-unverifired-desc"
-msgstr "Ihre Daten unterlaufen einer Überprüfung unsererseits. Sobald Ihre Daten überprüft wurden, werden Sie Impfwilligen angezeigt. Führen Sie nach der Überprüfung Ihrer Daten noch Änderungen dieser durch, so müssen diese erneut Überprüft werden und werden entsprechend erst nach erfolgreicher Überprüfung Impfwilligen angezeigt. Daher differenzieren wir zwischen verifizierten und unverifizierten Daten."
-
-#: src/apps/provider/setup/provider-data.tsx:122
-#: src/apps/provider/setup/verify.tsx:79
-msgid "provider-data.website"
-msgstr "Webseite"
-
-#: src/apps/mediator/dashboard/providers.tsx:211
-#: src/apps/provider/setup/provider-data.tsx:108
-#: src/apps/provider/setup/verify.tsx:69
-msgid "provider-data.zip-code"
-msgstr "Postleitzahl"
-
-#: src/apps/user/dashboard/appointments.tsx:42
-msgid "provider-details.accessible"
-msgstr "(barrierefreier Zugang)"
-
-#: src/apps/mediator/dashboard/providers.tsx:299
-msgid "providers.address"
-msgstr "Adresse"
-
-#: src/apps/mediator/dashboard/providers.tsx:156
-msgid "providers.confirm"
-msgstr "Anbieter freischalten"
-
-#: src/apps/mediator/dashboard/providers.tsx:166
-msgid "providers.confirmText"
-msgstr "Wollen Sie den Anbieter wirklich freischalten?"
-
-#: src/apps/mediator/dashboard/providers.tsx:151
-msgid "providers.edit"
-msgstr "Anbieter bearbeiten"
-
-#: src/apps/mediator/dashboard/providers.tsx:296
-msgid "providers.name"
+#: src/apps/mediator/providers/show.tsx:65
+msgid "mediator.provider-show.name"
 msgstr "Name"
 
-#: src/apps/mediator/dashboard/providers.tsx:35
-#: src/apps/mediator/dashboard/providers.tsx:285
-msgid "providers.pending"
-msgstr "Unbestätigt"
+#: src/apps/mediator/providers/show.tsx:103
+msgid "mediator.provider-show.phone"
+msgstr "Telefonnummer"
 
-#: src/apps/mediator/dashboard/providers.tsx:36
-#: src/apps/mediator/dashboard/providers.tsx:103
-#: src/apps/mediator/dashboard/providers.tsx:108
-#: src/apps/mediator/dashboard/providers.tsx:289
-msgid "providers.reconfirm"
-msgstr "Alle neu bestätigen"
+#: src/apps/mediator/providers/show.tsx:71
+msgid "mediator.provider-show.street"
+msgstr "Straße"
 
-#: src/apps/mediator/dashboard/providers.tsx:120
-msgid "providers.reconfirmProgressText"
-msgstr "Bestätige Anbieter {0} von {1}..."
+#: src/apps/mediator/providers/show.tsx:48
+msgid "mediator.provider-show.value"
+msgstr "Wert"
 
-#: src/apps/mediator/dashboard/providers.tsx:125
-msgid "providers.reconfirmText"
+#: src/apps/mediator/providers/show.tsx:57
+msgid "mediator.provider-show.verified"
+msgstr "Verifiziert?"
+
+#: src/apps/mediator/providers/show.tsx:87
+msgid "mediator.provider-show.zip-code"
+msgstr "Postleitzahl"
+
+#: src/apps/mediator/common/ProvidersList.tsx:74
+msgid "mediator.providers-list.address"
+msgstr "Adresse"
+
+#: src/apps/mediator/common/ProvidersList.tsx:115
+msgid "mediator.providers-list.button-confirm"
+msgstr "Anbieter bestätigen"
+
+#: src/apps/mediator/common/ProvidersList.tsx:127
+msgid "mediator.providers-list.button-unconfirm"
+msgstr "Anbieter sperren"
+
+#: src/apps/mediator/common/ProvidersList.tsx:41
+msgid "mediator.providers-list.caption"
+msgstr "Tabelle der Impfanbieter"
+
+#: src/apps/mediator/common/ProvidersList.tsx:69
+msgid "mediator.providers-list.name"
+msgstr "Name"
+
+#: src/apps/mediator/common/ProvidersList.tsx:60
+msgid "mediator.providers-list.select-all"
+msgstr "Alle Impfanbieter auswählen oder abwählen"
+
+#: src/apps/mediator/common/ProvidersList.tsx:79
+msgid "mediator.providers-list.status"
+msgstr "Status"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:129
+msgid "mediator.providers.confirm-modal.button-confirm"
+msgstr "Anbieter bestätigen"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:85
+msgid "mediator.providers.confirm-modal.city"
+msgstr "Stadt"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:117
+msgid "mediator.providers.confirm-modal.description"
+msgstr "Beschreibung"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:101
+msgid "mediator.providers.confirm-modal.email"
+msgstr "E-Mail"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:55
+msgid "mediator.providers.confirm-modal.field"
+msgstr "Feld"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:46
+msgid "mediator.providers.confirm-modal.intro"
+msgstr "Wollen Sie den Anbieter wirklich freischalten?"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:69
+msgid "mediator.providers.confirm-modal.name"
+msgstr "Name"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:109
+msgid "mediator.providers.confirm-modal.phone"
+msgstr "Telefonnummer"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:77
+msgid "mediator.providers.confirm-modal.street"
+msgstr "Straße"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:38
+msgid "mediator.providers.confirm-modal.title"
+msgstr "Anbieter freischalten"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:60
+msgid "mediator.providers.confirm-modal.value"
+msgstr "Wert"
+
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:93
+msgid "mediator.providers.confirm-modal.zip-code"
+msgstr "Postleitzahl"
+
+#: src/apps/mediator/providers/ReconfirmProvidersModal.tsx:74
+msgid "mediator.providers.reconfirm-modal.button-submit"
+msgstr "{0} Anbieter neu bestätigen"
+
+#: src/apps/mediator/providers/ReconfirmProvidersModal.tsx:61
+msgid "mediator.providers.reconfirm-modal.in-progress"
+msgstr "Bestätige Anbieter..."
+
+#: src/apps/mediator/providers/ReconfirmProvidersModal.tsx:65
+msgid "mediator.providers.reconfirm-modal.info"
 msgstr "Wollen Sie alle bestätigten Anbieter neu bestätigen?"
 
-#: src/apps/mediator/dashboard/index.tsx:155
-msgid "providers.title"
-msgstr "Anbieter"
+#: src/apps/mediator/providers/ReconfirmProvidersModal.tsx:52
+msgid "mediator.providers.reconfirm-modal.title"
+msgstr "Alle neu bestätigen"
 
-#: src/apps/mediator/dashboard/providers.tsx:34
-#: src/apps/mediator/dashboard/providers.tsx:279
-msgid "providers.verified"
-msgstr "Bestätigt"
+#: src/apps/mediator/providers/index.tsx:22
+#: src/apps/mediator/providers/show.tsx:36
+msgid "mediator.providers.title"
+msgstr "Provider Show"
 
-#: src/apps/provider/dashboard/queue-select.tsx:94
-msgid "queues.description"
-msgstr "Hier können Sie festlegen, welche Einzugsgebiete für Sie relevant sind."
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:129
+msgid "mediator.providers.unconfirm-modal.button-confirm"
+msgstr "Anbieter sperren"
 
-#: src/apps/provider/dashboard/queue-select.tsx:92
-msgid "queues.label"
-msgstr "Einzugsgebiete"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:85
+msgid "mediator.providers.unconfirm-modal.city"
+msgstr "Stadt"
 
-#: src/actions/settings.js:74
-msgid "requestFailed"
-msgstr "requestFailed MISSING"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:117
+msgid "mediator.providers.unconfirm-modal.description"
+msgstr "Beschreibung"
 
-#: src/apps/provider/start.tsx:43
-#: src/apps/user/start.tsx:37
-msgid "restore"
-msgstr "restore"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:101
+msgid "mediator.providers.unconfirm-modal.email"
+msgstr "E-Mail"
 
-#: src/apps/provider/dashboard/schedule.tsx:1048
-msgid "schedule.appointment.add"
-msgstr "Termin erstellen"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:55
+msgid "mediator.providers.unconfirm-modal.field"
+msgstr "Feld"
 
-#: src/apps/provider/dashboard/schedule.tsx:870
-msgid "schedule.appointment.duration.title"
-msgstr "Dauer: {duration} Minuten"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:46
+msgid "mediator.providers.unconfirm-modal.intro"
+msgstr "Wollen Sie den Anbieter wirklich freischalten?"
 
-#: src/apps/provider/dashboard/schedule.tsx:586
-msgid "schedule.backward"
-msgstr "vorherige Woche"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:69
+msgid "mediator.providers.unconfirm-modal.name"
+msgstr "Name"
 
-#: src/apps/provider/dashboard/schedule.tsx:56
-#: src/apps/provider/dashboard/schedule.tsx:1073
-msgid "schedule.booking-list"
-msgstr "Buchungliste"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:109
+msgid "mediator.providers.unconfirm-modal.phone"
+msgstr "Telefonnummer"
 
-#: src/apps/provider/dashboard/schedule.tsx:52
-#: src/apps/provider/dashboard/schedule.tsx:1065
-msgid "schedule.calendar"
-msgstr "Kalenderansicht"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:77
+msgid "mediator.providers.unconfirm-modal.street"
+msgstr "Straße"
 
-#: src/apps/provider/dashboard/schedule.tsx:589
-msgid "schedule.forward"
-msgstr "nächste Woche"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:38
+msgid "mediator.providers.unconfirm-modal.title"
+msgstr "Anbieter freischalten"
 
-#: src/apps/provider/dashboard/index.tsx:174
-msgid "schedule.title"
-msgstr "Terminplan"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:60
+msgid "mediator.providers.unconfirm-modal.value"
+msgstr "Wert"
 
-#: src/apps/provider/dashboard/schedule.tsx:1083
-msgid "schedule.updating"
-msgstr "Ansicht wird automatisch aktualisiert. Letzte Aktualisierung: {lastUpdated}"
+#: src/apps/mediator/providers/UnconfirmProviderModal.tsx:93
+msgid "mediator.providers.unconfirm-modal.zip-code"
+msgstr "Postleitzahl"
 
-#: src/components/search-select.jsx:37
-msgid "search-select.no-candidates"
-msgstr "Keine Kandidaten gefunden"
+#: src/apps/mediator/WelcomePage.tsx:57
+msgid "mediator.welcome.title"
+msgstr "Als Mediator anmelden"
 
-#: src/apps/provider/dashboard/settings.tsx:39
-#: src/apps/provider/dashboard/settings.tsx:279
-msgid "settings.local"
-msgstr "Unverifizierte Daten"
-
-#: src/apps/mediator/dashboard/index.tsx:161
-#: src/apps/provider/dashboard/index.tsx:177
-msgid "settings.title"
-msgstr "Einstellungen"
-
-#: src/apps/provider/dashboard/settings.tsx:35
-#: src/apps/provider/dashboard/settings.tsx:271
-msgid "settings.verified"
-msgstr "Verifizierte Daten"
-
-#: src/apps/provider/start.tsx:38
-#: src/apps/user/start.tsx:32
-msgid "setup"
-msgstr "setup"
-
-#: src/apps/mediator/dashboard/index.tsx:158
-msgid "stats.title"
-msgstr "Statistiken"
-
-#: src/apps/user/setup/store-secrets.tsx:132
-msgid "store-secrets.bookmark"
-msgstr "Als Lesezeichen speichern"
-
-#: src/apps/user/setup/store-secrets.tsx:61
-msgid "store-secrets.bookmark-modal.text"
-msgstr "Nutze Dein Browser-Menü um ein Lesezeichen für diese Seite zu erstellen. Du kannst dieses Lesezeichen öffnen, um Deinen Sicherheitscode wiederherzustellen."
-
-#: src/apps/user/setup/store-secrets.tsx:55
-msgid "store-secrets.bookmark-modal.title"
-msgstr "Lesezeichen erstellen"
-
-#: src/apps/user/setup/store-secrets.tsx:159
-msgid "store-secrets.download"
-msgstr "Datei speichern"
-
-#: src/apps/user/setup/store-secrets.tsx:150
-msgid "store-secrets.local.text"
-msgstr "store-secrects.local.text MISSING"
-
-#: src/apps/provider/setup/store-secrets.tsx:246
-msgid "store-secrets.notice"
-msgstr "Um sich auf einem anderen PC (Tablet, Smartphone etc.) einzuloggen oder auf einem anderen Endgerät auf Ihre Termine zugreifen zu können, benötigen Sie Ihre Sicherungsdatei und Ihren Datenschlüssel. Bitte erstellen Sie jetzt Ihre Sicherungsdatei und notieren Sie sich im Anschluss den Datenschlüssel."
-
-#: src/apps/provider/setup/store-secrets.tsx:48
-#: src/apps/user/setup/store-secrets.tsx:89
-msgid "store-secrets.online.text"
-msgstr "Bitte notiere Dir Deinen vertraulichen Sicherheitscode. Alternativ kannst Du auch ein Bildschirmfoto machen. Bitte beachte, dass Dir der Code NICHT per E-Mail geschickt wird und er von uns auch NICHT wiederhergestellt werden kann.<0/><1/><2>Du benötigst den Code, wenn Du Dich auf einem anderen Endgerät (Tablet, Smartphone, Laptop etc.) einloggen und Deinen gebuchten Termin einsehen oder ändern willst.</2>"
-
-#: src/apps/user/setup/store-secrets.tsx:37
-msgid "store-secrets.restore.title"
-msgstr "store-secrets.restore.title MISSING"
-
-#: src/apps/provider/setup/store-secrets.tsx:66
-#: src/apps/user/setup/store-secrets.tsx:116
-msgid "store-secrets.secret"
-msgstr "Dein Sicherheitscode - Bitte notieren!"
-
-#: src/apps/provider/setup/store-secrets.tsx:223
-msgid "store-secrets.secrets-modal.title"
-msgstr "Bitte Datenschlüssel notieren!"
-
-#: src/apps/mediator/dashboard/summary-box.tsx:16
-msgid "summary"
-msgstr "Überblick"
-
-#: src/apps/mediator/dashboard/settings.tsx:180
-msgid "test-queues.button"
-msgstr "Testen"
-
-#: src/apps/mediator/dashboard/settings.tsx:168
-msgid "test-queues.text"
-msgstr "Hier können Sie Queues-Dateien testen, die Sie mit dem \"kiebitz\" Tool erstellt haben. Hierdurch können Sie sicherstellen, dass die Dateien korrekt sind, bevor Sie diese in ein Backend hochladen."
-
-#: src/apps/mediator/dashboard/settings.tsx:165
-msgid "test-queues.title"
-msgstr "Queue-Datei testen"
-
-#: src/apps/provider/deleted.tsx:21
-#: src/apps/user/deleted.tsx:21
-msgid "thanks-for-using-us"
-msgstr "Deine Daten wurden erfolgreich gelöscht. Vielen Dank, dass Du <0>{0}</0> genutzt hast!"
-
-#: src/apps/mediator/dashboard/index.tsx:66
-msgid "upload-key-pairs.input"
-msgstr "Datei auswählen"
-
-#: src/apps/mediator/dashboard/index.tsx:50
-msgid "upload-key-pairs.invalid-file"
-msgstr "Die von Ihnen gewählte Datei ist ungültig."
-
-#: src/apps/mediator/dashboard/index.tsx:57
-msgid "upload-key-pairs.notice"
-msgstr "Bitte laden Sie die Datei mit Ihren geheimen Vermittlerschlüsseln."
-
-#: src/apps/mediator/dashboard/index.tsx:82
-msgid "upload-key-pairs.title"
+#: src/apps/mediator/WelcomePage.tsx:64
+msgid "mediator.welcome.upload-key-pairs"
 msgstr "Geheime Schlüssel laden"
 
-#: src/apps/mediator/dashboard/settings.tsx:79
-msgid "upload-queues.input"
-msgstr "Datei wählen"
+#: src/apps/mediator/WelcomePage.tsx:89
+msgid "mediator.welcome.upload-key-pairs.input"
+msgstr "Datei auswählen"
 
-#: src/apps/mediator/dashboard/settings.tsx:53
-msgid "upload-queues.invalid-file"
-msgstr "Die erzeugten Queue-Schlüssel sind nicht korrekt und können mit Ihrem Vermittler-Schlüssel nicht entschlüsselt werden."
+#: src/apps/mediator/WelcomePage.tsx:71
+msgid "mediator.welcome.upload-key-pairs.invalid-file"
+msgstr "Die von Ihnen gewählte Datei ist ungültig."
 
-#: src/apps/mediator/dashboard/settings.tsx:70
-msgid "upload-queues.notice"
-msgstr "Bitte laden Sie die Queues-Datei, die mit dem \"kiebitz\" Kommando erstellt wurde. Die Datei wird dann auf Korrektheit geprüft."
+#: src/apps/mediator/WelcomePage.tsx:78
+msgid "mediator.welcome.upload-key-pairs.notice"
+msgstr "Bitte laden Sie die Datei mit Ihren geheimen Vermittlerschlüsseln."
 
-#: src/apps/mediator/dashboard/settings.tsx:96
-msgid "upload-queues.title"
-msgstr "Queues-Datei laden"
+#: src/apps/provider/logout.tsx:82
+msgid "provider.logout.button"
+msgstr "Abmelden"
 
-#: src/apps/mediator/dashboard/settings.tsx:62
-msgid "upload-queues.valid-file"
-msgstr "Die erzeugten Queue-Schlüssel sind korrekt und können mit Ihrem Vermittler-Schlüssel entschlüsselt werden."
+#: src/apps/provider/logout.tsx:68
+msgid "provider.logout.copy-secret"
+msgstr "Datenschlüssel kopieren"
 
-#: src/apps/user/dashboard/settings.tsx:93
-msgid "user-data.notice"
-msgstr "Du kannst Dich hier abmelden oder Deine Daten endgültig löschen"
+#: src/apps/provider/logout.tsx:74
+msgid "provider.logout.download-backup"
+msgstr "Sicherungsdatei herunterladen"
 
-#: src/apps/user/dashboard/settings.tsx:90
-msgid "user-data.title"
-msgstr "Deine Daten"
+#: src/apps/provider/logout.tsx:55
+msgid "provider.logout.intro"
+msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie Ihren Datenschlüssel notiert und Ihre Sicherungsdatei heruntergeladen haben . Nur damit können Sie sich erneut einloggen."
 
-#: src/apps/provider/setup/verify.tsx:245
-#: src/apps/user/setup/verify.tsx:36
-msgid "verify.text"
-msgstr "Bitte überprüfe Deine Daten."
+#: src/apps/provider/logout.tsx:51
+msgid "provider.logout.notice.logging-out"
+msgstr "Bitte warten, Sie werden abgemeldet..."
 
-#: src/apps/provider/start.tsx:33
-#: src/apps/user/start.tsx:26
-msgid "what-to-do"
-msgstr "what-to-do"
+#: src/apps/provider/logout.tsx:46
+msgid "provider.logout.title"
+msgstr "Abmelden"
 
-#: src/apps/provider/setup/wizard.tsx:59
-#: src/apps/user/setup/verify.tsx:65
-#: src/apps/user/setup/wizard.tsx:60
-msgid "wizard.continue"
+#: src/apps/provider/onboarding/DataStep.tsx:192
+msgid "provider.onboarding.access-code.description"
+msgstr "Falls Sie einen spezifischen Zugangscode erhalten haben geben Sie diesen bitte hier ein."
+
+#: src/apps/provider/onboarding/DataStep.tsx:197
+msgid "provider.onboarding.access-code.label"
+msgstr "Zugangscode (falls vorhanden)"
+
+#: src/apps/provider/onboarding/DataStep.tsx:217
+msgid "provider.onboarding.accessible.label"
+msgstr "Barrierefreier Zugang zur Praxis/zum Impfzentrum"
+
+#: src/apps/provider/onboarding/DataStep.tsx:126
+msgid "provider.onboarding.city.error"
+msgstr "Bitte gegen Sie einen gültigen Ort an"
+
+#: src/apps/provider/onboarding/DataStep.tsx:120
+msgid "provider.onboarding.city.label"
+msgstr "Ort"
+
+#: src/apps/provider/onboarding/DataStep.tsx:166
+msgid "provider.onboarding.data-description"
+msgstr "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit dem Support-Team."
+
+#: src/apps/provider/onboarding/DataStep.tsx:160
+msgid "provider.onboarding.data-title"
+msgstr "Kontaktdaten"
+
+#: src/apps/provider/onboarding/DataStep.tsx:148
+msgid "provider.onboarding.description.description"
+msgstr "Informationen für Impfwillige (z.B. wenn Sie spezielle Impfstoffe nur bestimmten Gruppen empfehlen)"
+
+#: src/apps/provider/onboarding/DataStep.tsx:144
+msgid "provider.onboarding.description.title"
+msgstr "Beschreibung"
+
+#: src/apps/provider/common/BackupDataLink.tsx:60
+msgid "provider.onboarding.download-backup-data"
+msgstr "Sicherungsdatei herunterladen"
+
+#: src/apps/provider/onboarding/DataStep.tsx:183
+msgid "provider.onboarding.email.label"
+msgstr "E-Mail Adresse"
+
+#: src/apps/provider/common/BackupDataLink.tsx:70
+msgid "provider.onboarding.generating-backup-data"
+msgstr "Bitte warten, erstelle Sicherungsdaten..."
+
+#: src/apps/provider/onboarding/DataStep.tsx:57
+msgid "provider.onboarding.intro"
+msgstr "Dies sind die allgemeinen Kontaktdaten."
+
+#: src/apps/provider/onboarding/DataStep.tsx:78
+msgid "provider.onboarding.name.error.min-length"
+msgstr "Bitte gegen Sie einen gültigen Namen an"
+
+#: src/apps/provider/onboarding/DataStep.tsx:71
+msgid "provider.onboarding.name.error.required"
+msgstr "Bitte gegen Sie einen gültigen Namen an"
+
+#: src/apps/provider/onboarding/DataStep.tsx:65
+msgid "provider.onboarding.name.label"
+msgstr "Vollständiger Name"
+
+#: src/apps/provider/onboarding/DataStep.tsx:175
+msgid "provider.onboarding.phone.label"
+msgstr "Telefonnummer"
+
+#: src/apps/provider/onboarding/DataStep.tsx:229
+msgid "provider.onboarding.save-and-continue"
 msgstr "Weiter"
 
-#: src/apps/provider/setup/store-secrets.tsx:178
-msgid "wizard.download-backup-data"
-msgstr "Sicherungsdatei herunterladen und Datenschlüssel notieren"
+#: src/apps/provider/onboarding/SecretStep.tsx:43
+msgid "provider.onboarding.secret.button"
+msgstr "Abschließen & zur Terminplanung"
 
-#: src/apps/provider/setup/verify.tsx:222
-#: src/apps/user/setup/finalize.tsx:170
-msgid "wizard.failed.invalid-code"
-msgstr "Dein Zugangscode ist ungültig oder wurde bereits benutzt. Du kannst Dich nicht mehrfach registrieren."
+#: src/apps/provider/onboarding/SecretStep.tsx:29
+msgid "provider.onboarding.secret.notice"
+msgstr "Um sich später wieder einzuloggen oder Ihre Termine zugreifen zu können, benötigen Sie Ihre SICHERHEITSDATEI und Ihren SICHERHEITSCODE. Bitte speichern Sie jetzt Ihre SICHERHEITSDATEI und notieren Sie sich im Anschluss den SICHERHEITSCODE."
 
-#: src/apps/provider/setup/verify.tsx:233
-#: src/apps/user/setup/finalize.tsx:182
-msgid "wizard.failed.notice"
-msgstr "Sorry, hier ist etwas schief gelaufen. Bitte versuche es später erneut."
+#: src/apps/provider/onboarding/DataStep.tsx:210
+msgid "provider.onboarding.settings-description"
+msgstr "Weitere Angaben"
 
-#: src/apps/provider/setup/store-secrets.tsx:188
-msgid "wizard.generating-backup-data"
-msgstr "Bitte warten, erstelle Backup-Daten..."
+#: src/apps/provider/onboarding/DataStep.tsx:94
+msgid "provider.onboarding.street.error"
+msgstr "Bitte gegen Sie eine gültige Straße an"
 
-#: src/apps/provider/setup/wizard.tsx:48
-#: src/apps/user/setup/wizard.tsx:52
-msgid "wizard.hi"
-msgstr "Willkommen. Dieser Assistent hilft Dir bei der Impfanmeldung."
+#: src/apps/provider/onboarding/DataStep.tsx:88
+msgid "provider.onboarding.street.label"
+msgstr "Straße & Hausnummer"
 
-#: src/apps/provider/setup/store-secrets.tsx:229
-#: src/apps/user/setup/store-secrets.tsx:184
-msgid "wizard.leave"
-msgstr "Zu den verfügbaren Terminen"
+#: src/apps/provider/onboarding/DataStep.tsx:51
+msgid "provider.onboarding.title"
+msgstr "Allgemeine Daten"
 
-#: src/apps/user/setup/finalize.tsx:157
-msgid "wizard.no-queue.notice"
-msgstr "Im gewählten Postleitzahlgebiet ist der Dienst noch nicht verfügar. Sorry!"
+#: src/apps/provider/onboarding/VerifyStep.tsx:44
+msgid "provider.onboarding.verify.button"
+msgstr "Weiter"
 
-#: src/apps/user/setup/wizard.tsx:30
-msgid "wizard.steps.enter-contact-data"
-msgstr "Registrierungsdaten eingeben"
+#: src/apps/provider/onboarding/VerifyStep.tsx:38
+msgid "provider.onboarding.verify.edit-data"
+msgstr "Anpassen"
 
-#: src/apps/provider/setup/wizard.tsx:29
-msgid "wizard.steps.enter-provider-data"
-msgstr "Kontaktdaten eingeben"
+#: src/apps/provider/onboarding/DataStep.tsx:136
+msgid "provider.onboarding.website.label"
+msgstr "Webseite"
 
-#: src/apps/user/setup/wizard.tsx:38
-msgid "wizard.steps.finalize"
-msgstr "Daten zu Impfung eingeben"
+#: src/apps/provider/onboarding/DataStep.tsx:110
+msgid "provider.onboarding.zip-code.error"
+msgstr "Bitte gegen Sie eine gültige Postleitzahl an"
 
-#: src/apps/provider/setup/wizard.tsx:25
-#: src/apps/user/setup/wizard.tsx:26
-msgid "wizard.steps.hi"
-msgstr "Los geht's!"
+#: src/apps/provider/onboarding/DataStep.tsx:104
+msgid "provider.onboarding.zip-code.label"
+msgstr "Postleitzahl"
 
-#: src/apps/provider/setup/wizard.tsx:37
-#: src/apps/user/setup/wizard.tsx:42
-msgid "wizard.steps.store-secrets"
-msgstr "Sicherheitscode notieren"
+#: src/apps/provider/common/ProviderDataSummary.tsx:129
+msgid "provider.provider-data.access-code.label"
+msgstr "Zugangscode (falls vorhanden)"
 
-#: src/apps/provider/setup/wizard.tsx:33
-#: src/apps/user/setup/wizard.tsx:34
-msgid "wizard.steps.verify"
-msgstr "Kontaktdaten prüfen"
+#: src/apps/provider/common/ProviderDataSummary.tsx:142
+msgid "provider.provider-data.accessible"
+msgstr "Barrierefreier Zugang zur Praxis/zum Impfzentrum"
 
-#: src/apps/provider/dashboard/settings.tsx:173
-#: src/apps/provider/dashboard/settings.tsx:200
-#: src/apps/provider/setup/store-secrets.tsx:84
-#: src/apps/provider/setup/verify.tsx:258
-#: src/apps/user/dashboard/settings.tsx:60
-#: src/apps/user/setup/finalize.tsx:309
-msgid "{0}"
+#: src/apps/provider/common/ProviderDataSummary.tsx:151
+msgid "provider.provider-data.accessible-no"
+msgstr "Nein"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:149
+msgid "provider.provider-data.accessible-yes"
+msgstr "Ja"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:77
+msgid "provider.provider-data.city"
+msgstr "Ort"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:92
+msgid "provider.provider-data.description"
+msgstr "Informationen für Impfwillige"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:118
+msgid "provider.provider-data.email"
+msgstr "provider.provider-data.email"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:55
+msgid "provider.provider-data.name"
+msgstr "Vollständiger Name"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:86
+#: src/apps/provider/common/ProviderDataSummary.tsx:98
+#: src/apps/provider/common/ProviderDataSummary.tsx:111
+#: src/apps/provider/common/ProviderDataSummary.tsx:122
+#: src/apps/provider/common/ProviderDataSummary.tsx:135
+msgid "provider.provider-data.not-given"
+msgstr "(keine Angabe)"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:30
+msgid "provider.provider-data.not-verified-yet"
+msgstr "Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie Verständnis, dass die Verifizierung bis zu 48h dauern kann."
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:42
+msgid "provider.provider-data.notice"
+msgstr "Bitte überprüfen Sie Ihre Daten, bevor Sie den Vorgang abschließen."
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:105
+msgid "provider.provider-data.phone"
+msgstr "Telefonnummer"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:62
+msgid "provider.provider-data.street"
+msgstr "Straße & Hausnummer"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:83
+msgid "provider.provider-data.website"
+msgstr "Webseite"
+
+#: src/apps/provider/common/ProviderDataSummary.tsx:69
+msgid "provider.provider-data.zip-code"
+msgstr "Postleitzahl"
+
+#: src/apps/provider/RestoreForm.tsx:134
+msgid "provider.restore-form.failed"
+msgstr "Das Laden Ihrer Daten ist leider fehlgeschlagen. Bitte prüfen Sie Ihren Datenschlüssel sowie die angegebene Datei."
+
+#: src/apps/provider/RestoreForm.tsx:178
+msgid "provider.restore-form.input"
+msgstr "Sicherungsdatei wählen"
+
+#: src/apps/provider/RestoreForm.tsx:174
+msgid "provider.restore-form.input.change"
 msgstr "{0}"
 
-#: src/apps/provider/dashboard/schedule.tsx:828
-msgid "{v}"
-msgstr "{v}"
+#: src/apps/provider/RestoreForm.tsx:184
+msgid "provider.restore-form.input.description"
+msgstr "Bitte laden Sie hier Ihre Sicherungsdatei (booster-impfen-backup-2021[Datum&Uhrzeit].enc) hoch."
+
+#: src/apps/provider/RestoreForm.tsx:95
+msgid "provider.restore-form.invalid-file"
+msgstr "provider.restore-form.invalid-file MISSING"
+
+#: src/apps/provider/RestoreForm.tsx:47
+msgid "provider.restore-form.invalid-secret"
+msgstr "provider.restore-form.invalid-secret MISSING"
+
+#: src/apps/provider/RestoreForm.tsx:195
+msgid "provider.restore-form.load"
+msgstr "Einloggen"
+
+#: src/apps/provider/RestoreForm.tsx:27
+msgid "provider.restore-form.missing-file"
+msgstr "provider.restore-form.missing-file MISSING"
+
+#: src/apps/provider/RestoreForm.tsx:147
+msgid "provider.restore-form.secret.description"
+msgstr "Der Datenschlüssel, den Sie bei der Registrierung erhalten haben."
+
+#: src/apps/provider/RestoreForm.tsx:143
+msgid "provider.restore-form.secret.label"
+msgstr "Datenschlüssel"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:49
+msgid "provider.schedule.create-appointment-modal.in-the-past"
+msgstr "provider.schedule.create-appointment-modal.in-the-past"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:38
+msgid "provider.schedule.create-appointment-modal.please-enter-date"
+msgstr "provider.schedule.create-appointment-modal.please-enter-date"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:42
+msgid "provider.schedule.create-appointment-modal.please-enter-time"
+msgstr "provider.schedule.create-appointment-modal.please-enter-time"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:59
+msgid "provider.schedule.create-appointment-modal.too-far-in-the-future"
+msgstr "Bitte wählen Sie Termine die maximal 30 Tage in der Zukunft liegen"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:74
+msgid "provider.schedule.create-appointment-modal.too-few-slots"
+msgstr "provider.schedule.create-appointment-modal.too-few-slots"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:68
+msgid "provider.schedule.create-appointment-modal.too-many-slots"
+msgstr "provider.schedule.create-appointment-modal.too-many-slots"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:309
+msgid "provider.schedule.create.appointment-modal.button"
+msgstr "Speichern"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:251
+msgid "provider.schedule.create.appointment-modal.date.label"
+msgstr "Datum"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:283
+msgid "provider.schedule.create.appointment-modal.duration-label"
+msgstr "Vstl. Dauer"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:291
+msgid "provider.schedule.create.appointment-modal.duration-value"
+msgstr "Dauer: {duration} Minuten"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:237
+msgid "provider.schedule.create.appointment-modal.edit-title"
+msgstr "Termin bearbeiten"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:241
+msgid "provider.schedule.create.appointment-modal.new-title"
+msgstr "Neuen Termin erstellen"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:271
+msgid "provider.schedule.create.appointment-modal.slots.label"
+msgstr "Anzahl Impfdosen"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:261
+msgid "provider.schedule.create.appointment-modal.time.label"
+msgstr "Uhrzeit"
+
+#: src/apps/common/SecretBox.tsx:41
+msgid "provider.secret.title"
+msgstr "Ihr Sicherheitscode"
+
+#: src/apps/provider/settings/index.tsx:9
+msgid "provider.settings.title"
+msgstr "Einstellungen"
+
+#: src/apps/provider/WelcomePage.tsx:19
+msgid "provider.welcome.loggedout-.notice"
+msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit Ihrem Datenschlüssel und Ihrer Sicherheitsdatei wiederherstellen."
+
+#: src/ui/CopyToClipboardButton.tsx:32
+msgid "ui.copy"
+msgstr "Kopieren"
+
+#: src/apps/user/common/AppointmentCard.tsx:29
+msgid "user.appointment-card.vaccine"
+msgstr "Impfstoff"
+
+#: src/apps/user/finder/appointmentStep.tsx:65
+msgid "user.finder.appointment.card.submit"
+msgstr "Termin auswählen"
+
+#: src/apps/user/finder/appointmentStep.tsx:96
+msgid "user.finder.appointment.provider.placeholder"
+msgstr "Beliebige Impfstelle"
+
+#: src/apps/user/finder/appointmentStep.tsx:131
+msgid "user.finder.appointment.submit"
+msgstr "Weitere Termine laden"
+
+#: src/apps/user/finder/appointmentStep.tsx:112
+msgid "user.finder.appointment.time.placeholder"
+msgstr "Beliebige Zeit"
+
+#: src/apps/user/finder/appointmentStep.tsx:88
+msgid "user.finder.appointment.title"
+msgstr "Termine"
+
+#: src/apps/user/finder/SuccessStep.tsx:68
+msgid "user.finder.cancel-appointment.button"
+msgstr "Um die Terminbuchung abzusagen, bitte hier klicken"
+
+#: src/apps/user/finder/DateStep.tsx:13
+msgid "user.finder.date.intro"
+msgstr "Wann möchten Sie sich impfen lassen, Sie können Datum und Uhrzeit jederzeit im Prozess anpassen, wenn gewünscht. Bitte geben Sie ihren Wunschtermin unten an."
+
+#: src/apps/user/finder/DateStep.tsx:22
+msgid "user.finder.date.label"
+msgstr "Datum"
+
+#: src/apps/user/finder/DateStep.tsx:46
+msgid "user.finder.date.submit"
+msgstr "Termin auswählen"
+
+#: src/apps/user/finder/DateStep.tsx:9
+msgid "user.finder.date.title"
+msgstr "Datum und Uhrzeit"
+
+#: src/apps/user/finder/LocationStep.tsx:65
+msgid "user.finder.location.accessible.label"
+msgstr "Nur barrierefreie Impfzentren anzeigen"
+
+#: src/apps/user/finder/LocationStep.tsx:48
+msgid "user.finder.location.back-link"
+msgstr "Zurück zu den Terminauswahl"
+
+#: src/apps/user/finder/LocationStep.tsx:58
+msgid "user.finder.location.intro"
+msgstr "Wählen Sie aus den möglichen Optionen, wo Sie geimpft werden möchten."
+
+#: src/apps/user/finder/LocationStep.tsx:54
+msgid "user.finder.location.title"
+msgstr "Impfort"
+
+#: src/apps/user/finder/SuccessStep.tsx:87
+msgid "user.finder.success.appointment-code"
+msgstr "Ihr Buchungscode"
+
+#: src/apps/user/finder/SuccessStep.tsx:77
+msgid "user.finder.success.appointment-title"
+msgstr "Ihr Termin"
+
+#: src/apps/user/finder/SuccessStep.tsx:57
+msgid "user.finder.success.intro"
+msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und bringen ihn unbedingt zur Impfung mit."
+
+#: src/apps/user/finder/SuccessStep.tsx:50
+msgid "user.finder.success.title"
+msgstr "Ihr Termin ist gebucht!"
+
+#: src/apps/user/finder/DateStep.tsx:32
+msgid "user.finder.time.label"
+msgstr "Zeit"
+
+#: src/apps/user/finder/VerifyStep.tsx:73
+msgid "user.finder.verify.appointment.description"
+msgstr "{0}"
+
+#: src/apps/user/finder/VerifyStep.tsx:63
+msgid "user.finder.verify.appointment.subtitle"
+msgstr "Ihr Termin"
+
+#: src/apps/user/finder/VerifyStep.tsx:43
+msgid "user.finder.verify.back-link"
+msgstr "zurück zum Terminauswahl"
+
+#: src/apps/user/finder/VerifyStep.tsx:53
+msgid "user.finder.verify.intro"
+msgstr "Hier ist Ihr gewählter Termin. Prüfen Sie nochmal, ob alles stimmt. Anschließend können Sie den Termin endgültig buchen."
+
+#: src/apps/user/finder/VerifyStep.tsx:87
+msgid "user.finder.verify.submit"
+msgstr "Termin jetzt buchen"
+
+#: src/apps/user/finder/VerifyStep.tsx:49
+msgid "user.finder.verify.title"
+msgstr "Übersicht"
+
+#: src/apps/user/WelcomePage.tsx:52
+msgid "user.welcome.button"
+msgstr "Weiter zum Termin"
+
+#: src/apps/user/WelcomePage.tsx:18
+msgid "user.welcome.intro"
+msgstr "Sie sind jetzt nur noch wenige Klicks von Ihrem Termin entfernt.<0/>Wir speichern generell keine persönlichen Daten, aber haben ein paar Fragen, damit Sie den richtigen Impfstoff erhalten."
+
+#: src/apps/user/WelcomePage.tsx:14
+msgid "user.welcome.title"
+msgstr "Willkommen!"

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { Trans } from '@lingui/macro';
+import React, { useState } from 'react';
 import {
     Button,
     Modal,
@@ -16,14 +16,14 @@ export const LeaveModal: React.FC = () => {
         <Modal>
             <ModalHeader>
                 <Title>
-                    <Trans id="leave.title">
+                    <Trans id="common.leave.title">
                         Möchten Sie diese Seite wirklich verlassen?
                     </Trans>
                 </Title>
             </ModalHeader>
 
             <ModalContent>
-                <Trans id="leave.text">
+                <Trans id="comon.leave.text">
                     Es gibt ungespeicherte Änderungen auf der aktuellen Seite.
                     Wollen Sie diese wirklich verlassen?
                 </Trans>
@@ -31,10 +31,12 @@ export const LeaveModal: React.FC = () => {
 
             <ModalFooter>
                 <Button>
-                    <Trans id="leave.leave">Seite verlassen</Trans>
+                    <Trans id="common.leave.submit-button">
+                        Seite verlassen
+                    </Trans>
                 </Button>
                 <Button>
-                    <Trans id="leave.cancel">Zurück</Trans>
+                    <Trans id="common.leave.cancel-button">Zurück</Trans>
                 </Button>
             </ModalFooter>
         </Modal>

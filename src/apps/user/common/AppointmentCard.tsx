@@ -12,21 +12,21 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
     appointment,
 }) => {
     return (
-        <div className="flex flex-col p-4 w-full font-semibold rounded-lg border-2 border-black">
-            <address className="mb-2 text-center">
+        <div className="appointment-card">
+            <address>
                 <Title variant="h3">{appointment.provider.name}</Title>
                 <br /> {appointment.provider.street}
                 <br /> {appointment.provider.zipCode}{' '}
                 {appointment.provider.city}
             </address>
 
-            <time className="block text-lg text-center">
+            <time>
                 {appointment.date.toLocaleDateString()},{' '}
                 {appointment.date.toLocaleTimeString()}
             </time>
 
-            <div className="text-center">
-                <Trans>Impfstoff</Trans>:{' '}
+            <div>
+                <Trans id="user.appointment-card.vaccine">Impfstoff</Trans>:{' '}
                 {vaccines.de[appointment.vaccine].name}
             </div>
         </div>

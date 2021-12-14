@@ -27,7 +27,7 @@ export const ProviderDataSummary: React.FC<ProviderDataProps> = ({
         <>
             {!verified && (
                 <Text>
-                    <Trans id="provider-provider.not-verified-yet">
+                    <Trans id="provider.provider-data.not-verified-yet">
                         Ihre Daten wurden noch nicht verifiziert. Bitte haben
                         Sie Verständnis, dass die Verifizierung bis zu 48h
                         dauern kann.
@@ -39,7 +39,7 @@ export const ProviderDataSummary: React.FC<ProviderDataProps> = ({
                 variant="warning"
                 className="py-3 my-6 text-xl font-semibold text-center"
             >
-                <Trans id="verify.text">
+                <Trans id="provider.provider-data.notice">
                     Bitte überprüfen Sie Ihre Daten, bevor Sie den Vorgang
                     abschließen.
                 </Trans>
@@ -52,21 +52,21 @@ export const ProviderDataSummary: React.FC<ProviderDataProps> = ({
             >
                 <dl>
                     <dt>
-                        <Trans id="provider-provider.name">
+                        <Trans id="provider.provider-data.name">
                             Vollständiger Name
                         </Trans>
                     </dt>
                     <dd>{provider.name}</dd>
 
                     <dt>
-                        <Trans id="provider-provider.street">
+                        <Trans id="provider.provider-data.street">
                             Straße & Hausnummer
                         </Trans>
                     </dt>
                     <dd>{provider.street}</dd>
 
                     <dt>
-                        <Trans id="provider-provider.zip-code">
+                        <Trans id="provider.provider-data.zip-code">
                             Postleitzahl
                         </Trans>
                     </dt>
@@ -74,81 +74,81 @@ export const ProviderDataSummary: React.FC<ProviderDataProps> = ({
                         {provider.zipCode}
                     </dd>
                     <dt>
-                    <Trans id="provider-provider.city">Ort</Trans>
+                    <Trans id="provider.provider-data.city">Ort</Trans>
                     </dt>
                     <dd>
                         {provider.city}
                     </dd>
                     <dt>
-                        <Trans id="provider-provider.website">Webseite</Trans>
+                        <Trans id="provider.provider-data.website">Webseite</Trans>
                     </dt>
                     <dd>{provider.website || (
-                            <Trans id="provider-provider.not-given">
+                            <Trans id="provider.provider-data.not-given">
                                 (keine Angabe)
                             </Trans>
                         )}}</dd>
 
                     <dt>
-                        <Trans id="provider-provider.description">
+                        <Trans id="provider.provider-data.description">
                             Informationen für Impfwillige
                         </Trans>
                     </dt>
                     <dd>
                         {provider.description || (
-                            <Trans id="provider-provider.not-given">
+                            <Trans id="provider.provider-data.not-given">
                                 (keine Angabe)
                             </Trans>
                         )}
                     </dd>
 
                     <dt>
-                        <Trans id="provider-provider.phone">
+                        <Trans id="provider.provider-data.phone">
                             Telefonnummer
                         </Trans>
                     </dt>
                     <dd>
                         {provider.phone || (
-                            <Trans id="provider-provider.not-given">
+                            <Trans id="provider.provider-data.not-given">
                                 (keine Angabe)
                             </Trans>
                         )}
                     </dd>
 
                     <dt>
-                        <Trans id="provider-provider.email" />
+                        <Trans id="provider.provider-data.email" />
                     </dt>
                     <dd>
                         {provider.email || (
-                            <Trans id="provider-provider.not-given">
+                            <Trans id="provider.provider-data.not-given">
                                 (keine Angabe)
                             </Trans>
                         )}
                     </dd>
 
                     <dt>
-                        <Trans id="provider-provider.access-code.label">
+                        <Trans id="provider.provider-data.access-code.label">
                             Zugangscode (falls vorhanden)
                         </Trans>
                     </dt>
                     <dd>
                         {provider.code || (
-                            <Trans id="provider-provider.not-given">
+                            <Trans id="provider.provider-data.not-given">
                                 (keine Angabe)
                             </Trans>
                         )}
                     </dd>
 
                     <dt>
-                        <Trans id="provider-provider.accessible">
+                        <Trans id="provider.provider-data.accessible">
                             Barrierefreier Zugang zur Praxis/zum Impfzentrum
                         </Trans>
                         ?
                     </dt>
                     <dd>
                         {provider.accessible ? (
-                            <Trans id="yes">Ja</Trans>
+                            <Trans id="provider.provider-data.accessible-yes">Ja</Trans>
                         ) : (
-                            <Trans id="no">Nein</Trans>
+                            <Trans id="provider.provider-data.accessible-no">Nein</Trans>
                         )}
                     </dd>
                 </dl>

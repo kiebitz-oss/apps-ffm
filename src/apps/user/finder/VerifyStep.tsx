@@ -57,7 +57,7 @@ export const VerifyStep: React.FC = () => {
                     </Trans>
                 </Text>
 
-                <div className="flex flex-col md:flex-row md:gap-12">
+                <div className="flex flex-col mb-10 md:flex-row md:gap-12">
                     <div className="md:w-1/2">
                         <Title variant="book" as="h3">
                             <Trans id="user.finder.verify.appointment.subtitle">
@@ -68,13 +68,13 @@ export const VerifyStep: React.FC = () => {
                         <AppointmentCard appointment={appointment} />
                     </div>
 
-                    <Text className="italic md:mt-6 md:w-1/2">
-                        <Trans id="user.finder.verify.appointment.description">
-                            Die einzigartigste und größte Latin Diskothek in
-                            Hessen, die ausschließlich dem lateinamerikanischen
-                            Lebensgefühl gewidmet ist.
-                        </Trans>
-                    </Text>
+                    {appointment.provider.description && (
+                        <Text className="italic md:mt-6 md:w-1/2">
+                            <Trans id="user.finder.verify.appointment.description">
+                                {appointment.provider.description}
+                            </Trans>
+                        </Text>
+                    )}
                 </div>
 
                 <Link

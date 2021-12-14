@@ -4,12 +4,12 @@
 
 import clsx from 'clsx';
 import React from 'react';
-import { Variant } from 'types/Variant';
+import { MessageVariant } from 'types';
 
 type MessageProps = {
     className?: string;
     waiting?: boolean;
-    variant?: Variant;
+    variant?: MessageVariant;
 };
 
 export const Message: React.FC<MessageProps> = ({

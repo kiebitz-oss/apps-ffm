@@ -14,51 +14,28 @@ export function getMonday(d: string | Date | number) {
 
 // https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
 export function formatDate(date: string | Date | number) {
-    const d = new Date(date);
-
-    let month = '' + (d.getMonth() + 1);
-    let day = '' + d.getDate();
-
-    const year = d.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
+    return new Date(date).toISOString().slice(0, 10);
 }
 
 // https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
 export function formatTime(date: string | Date | number) {
-    const d = new Date(date);
-
-    let hours = '' + d.getHours();
-    let minutes = '' + d.getMinutes();
-
-    if (hours.length < 2) {
-        hours = '0' + hours;
-    }
-
-    if (minutes.length < 2) {
-        minutes = '0' + minutes;
-    }
-
-    return [hours, minutes].join(':');
+    return new Date(date).toISOString().slice(11, 16);
 }
 
 export function formatDuration(minutes: number) {
     if (minutes < 60) {
-        return t({ id: 'minute-string', message: `${minutes} Minuten` });
+        return t({ id: 'common.minutes', message: `${minutes} Minuten` });
     }
 
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
 
     if (remainingMinutes === 0) {
-        return t({ id: 'hour-string', message: `${hours} Stunden` });
+        return t({ id: 'common.hours', message: `${hours} Stunden` });
     }
 
     return t({
-        id: 'hour-minute-string',
+        id: 'common.hours-minutes',
         message: `${hours} Stunden ${remainingMinutes} Minuten`,
     });
 }

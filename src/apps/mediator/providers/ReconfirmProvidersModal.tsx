@@ -1,7 +1,6 @@
 import { Trans } from '@lingui/macro';
-import { useMediatorApi } from 'hooks/useMediatorApi';
+import { useMediatorApi } from 'hooks';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
 import { Provider } from 'types';
 import {
     Button,
@@ -10,44 +9,57 @@ import {
     ModalFooter,
     ModalHeader,
     ModalProps,
+    Title,
 } from 'ui';
 
 interface ReconfirmProvidersModalProps extends ModalProps {
-    verifiedProviders: Provider[];
+    providers: Provider[];
 }
 
 export const ReconfirmProvidersModal: React.FC<
     ReconfirmProvidersModalProps
-> = ({ verifiedProviders }) => {
-    const [done, setDone] = useState<number>(0);
-    const navigate = useNavigate();
+> = ({ providers, onClose }) => {
+    const [status, setStatus] = useState<
+        'idle' | 'running' | 'success' | 'error'
+    >('idle');
     const api = useMediatorApi();
-    const closeModal = () => navigate('/mediator/providers');
 
     const doReconfirmProviders = async () => {
-        await Promise.all(
-            verifiedProviders.map((provider) =>
-                api.reconfirmProvider(provider).then(() => setDone(done + 1))
-            )
-        ).then(() => {
-            closeModal();
-        });
+        console.log('running');
+        setStatus('running');
+
+        return Promise.all(
+            providers.map((provider) => api.reconfirmProvider(provider))
+        )
+            .then(() => {
+                setStatus('success');
+            })
+            .then(() => {
+                if (onClose) {
+                    onClose();
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+                setStatus('error');
+            });
     };
 
     return (
-        <Modal onClose={closeModal}>
+        <Modal onClose={onClose}>
             <ModalHeader>
-                <Trans id="mediator.providers.reconfirm-modal.title">
-                    Alle neu bestätigen
-                </Trans>
+                <Title variant="h3" as="h2">
+                    <Trans id="mediator.providers.reconfirm-modal.title">
+                        Alle neu bestätigen
+                    </Trans>
+                </Title>
             </ModalHeader>
 
             <ModalContent>
                 <div className="kip-provider-data">
-                    {(done > 0 && (
+                    {(status === 'running' && (
                         <Trans id="mediator.providers.reconfirm-modal.in-progress">
-                            Bestätige Anbieter {done} von{' '}
-                            {verifiedProviders.length}...
+                            Bestätige Anbieter...
                         </Trans>
                     )) || (
                         <Trans id="mediator.providers.reconfirm-modal.info">
@@ -60,7 +72,7 @@ export const ReconfirmProvidersModal: React.FC<
             <ModalFooter>
                 <Button onClick={doReconfirmProviders}>
                     <Trans id="mediator.providers.reconfirm-modal.button-submit">
-                        Alle neu bestätigen
+                        {providers.length} Anbieter neu bestätigen
                     </Trans>
                 </Button>
             </ModalFooter>

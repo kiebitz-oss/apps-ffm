@@ -19,6 +19,7 @@ import {
     ModalContent,
     ModalFooter,
     ModalHeader,
+    ModalProps,
     SelectField,
     Title,
 } from 'ui';
@@ -26,7 +27,6 @@ import {
 interface FormData {
     date?: string;
     time?: string;
-    timestamp: Date;
     slots: number;
     duration: number;
 }
@@ -35,23 +35,29 @@ const resolver: Resolver<FormData> = async (values) => {
     const errors: any = {};
 
     if (values.date === undefined) {
-        errors.date = t({ id: 'new-appointment.please-enter-date' });
+        errors.date = t({
+            id: 'provider.schedule.create-appointment-modal.please-enter-date',
+        });
     } else if (values.time === undefined) {
-        errors.time = t({ id: 'new-appointment.please-enter-time' });
+        errors.time = t({
+            id: 'provider.schedule.create-appointment-modal.please-enter-time',
+        });
     } else {
-        values.timestamp = new Date(`${values.date} ${values.time}`);
+        values.startdate = new Date(`${values.date} ${values.time}`);
 
-        if (values.timestamp < new Date()) {
-            errors.date = t({ id: 'new-appointment.in-the-past' });
+        if (values.startdate < new Date()) {
+            errors.date = t({
+                id: 'provider.schedule.create-appointment-modal.in-the-past',
+            });
         }
 
         // we allow appointments max. 30 days in the future
         if (
-            values.timestamp >
+            values.startdate >
             new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30)
         ) {
             errors.date = t({
-                id: 'new-appointment.too-far-in-the-future',
+                id: 'provider.schedule.create-appointment-modal.too-far-in-the-future',
                 message:
                     'Bitte wählen Sie Termine die maximal 30 Tage in der Zukunft liegen',
             });
@@ -59,11 +65,15 @@ const resolver: Resolver<FormData> = async (values) => {
     }
 
     if (values.slots > 50) {
-        errors.slots = t({ id: 'new-appointment.too-many-slots' });
+        errors.slots = t({
+            id: 'provider.schedule.create-appointment-modal.too-many-slots',
+        });
     }
 
     if (values.slots < 1) {
-        errors.slots = t({ id: 'new-appointment.too-few-slots' });
+        errors.slots = t({
+            id: 'provider.schedule.create-appointment-modal.too-few-slots',
+        });
     }
 
     return {
@@ -72,7 +82,14 @@ const resolver: Resolver<FormData> = async (values) => {
     };
 };
 
-export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
+interface CreateAppointmentModal extends ModalProps {
+    appointments: Appointment[];
+}
+
+export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
+    appointments,
+    onClose,
+}) => {
     const navigate = useNavigate();
     const { hash } = useLocation();
 
@@ -107,30 +124,33 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
 
     useEffectOnce(() => {
         if (appointment !== undefined) {
-            const appointmentData = {
-                time: formatTime(appointment.timestamp),
-                date: formatDate(appointment.timestamp),
-                slots: appointment.slots,
+            const appointmentData: FormData = {
+                time: formatTime(appointment.date),
+                date: formatDate(appointment.date),
+                slots: appointment.slots.length,
                 duration: appointment.duration,
             };
 
-            for (const [_, v] of Object.entries(properties)) {
-                for (const [kk, _] of Object.entries(v.values)) {
-                    if (appointment[kk] !== undefined)
-                        appointmentData[kk] = true;
-                    else delete appointmentData[kk];
-                }
-            }
+            // for (const [_, v] of Object.entries(properties)) {
+            //     for (const [kk, _] of Object.entries(v.values)) {
+            //         if (appointment[kk] !== undefined)
+            //             appointmentData[kk] = true;
+            //         else delete appointmentData[kk];
+            //     }
+            // }
 
             reset(appointmentData);
         } else {
-            const newData = {
+            const date = hash !== undefined ? new Date(hash) : new Date();
+            const newData: FormData = {
                 duration: data.duration || 30,
                 slots: data.slots || 1,
+                time: formatTime(date),
+                date: formatDate(date),
             };
 
-            let firstProperty;
-            const found = false;
+            // let firstProperty;
+            // const found = false;
 
             // addProps: for (const [_, v] of Object.entries(properties)) {
             //     for (const [kk, _] of Object.entries(v.values)) {
@@ -148,15 +168,9 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
             //     }
             // }
 
-            if (!found) {
-                newData[firstProperty] = true;
-            }
-
-            if (hash?.timestamp !== undefined) {
-                const date = new Date(hash.timestamp);
-                newData.time = formatTime(date);
-                newData.date = formatDate(date);
-            }
+            // if (!found) {
+            //     newData[firstProperty] = true;
+            // }
 
             reset(newData);
         }
@@ -213,15 +227,18 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
     return (
         <Modal onClose={onClose}>
             <FormProvider {...methods}>
-                <Form name="new-appointment" onSubmit={handleSubmit(onSubmit)}>
+                <Form
+                    name="appointment-modal"
+                    onSubmit={handleSubmit(onSubmit)}
+                >
                     <ModalHeader>
                         <Title>
                             {appointment !== undefined ? (
-                                <Trans id="edit-appointment.title">
+                                <Trans id="provider.schedule.create.appointment-modal.edit-title">
                                     Termin bearbeiten
                                 </Trans>
                             ) : (
-                                <Trans id="new-appointment.title">
+                                <Trans id="provider.schedule.create.appointment-modal.new-title">
                                     Neuen Termin erstellen
                                 </Trans>
                             )}
@@ -232,7 +249,7 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
                         <div className="flex gap-6 w-full">
                             <InputField
                                 label={t({
-                                    id: 'new-appointment.date',
+                                    id: 'provider.schedule.create.appointment-modal.date.label',
                                     message: 'Datum',
                                 })}
                                 type="date"
@@ -242,7 +259,7 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
 
                             <InputField
                                 label={t({
-                                    id: 'new-appointment.time',
+                                    id: 'provider.schedule.create.appointment-modal.time.label',
                                     message: 'Uhrzeit',
                                 })}
                                 type="time"
@@ -252,7 +269,7 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
 
                         <InputField
                             label={t({
-                                id: 'new-appointment.slots',
+                                id: 'provider.schedule.create.appointment-modal.slots.label',
                                 message: 'Anzahl Impfdosen',
                             })}
                             type="number"
@@ -264,7 +281,7 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
 
                         <SelectField
                             label={t({
-                                id: 'new-appointment.duration',
+                                id: 'provider.schedule.create.appointment-modal.duration-label',
                                 message: 'Vstl. Dauer',
                             })}
                             options={[
@@ -272,7 +289,7 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
                                 210, 240,
                             ].map((duration) => ({
                                 label: t({
-                                    id: 'schedule.appointment.duration.title',
+                                    id: 'provider.schedule.create.appointment-modal.duration-value',
                                     message: `Dauer: ${duration} Minuten`,
                                 }),
                                 value: duration,
@@ -289,7 +306,9 @@ export const CreateAppointmentModal: React.FC = ({ appointments, onClose }) => {
                                 !formState.isValid || formState.isSubmitting
                             }
                         >
-                            Speichern
+                            <Trans id="provider.schedule.create.appointment-modal.button">
+                                Speichern
+                            </Trans>
                         </Button>
                     </ModalFooter>
                 </Form>

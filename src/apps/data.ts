@@ -1,4 +1,18 @@
-import type { Appointment, PublicProvider } from 'types';
+import { randomBytes } from 'helpers/crypto';
+import type { Appointment, PublicProvider, Slot } from 'types';
+
+export const createSlot = (open = true): Slot => {
+    return {
+        id: randomBytes(32), // where the user can submit his confirmation
+        open,
+        status: randomBytes(32), // where the user can get the appointment status
+        cancel: randomBytes(32), // where the user can cancel his confirmation
+    };
+};
+
+export const createSlots = (number = 10) => {
+    return Array.from(Array(number)).map(createSlot);
+};
 
 export const providers: PublicProvider[] = [
     {
@@ -18,6 +32,8 @@ export const providers: PublicProvider[] = [
         city: 'Frankfurt am Main',
         accessible: false,
         verified: false,
+        description:
+            'Die einzigartigste und größte Latin Diskothek in Hessen, die ausschließlich dem lateinamerikanischen Lebensgefühl gewidmet ist.',
     },
     {
         id: '3',
@@ -68,51 +84,57 @@ export const providers: PublicProvider[] = [
 
 export const appointments: Appointment[] = [
     {
-        id: '1',
-        duration: 15,
+        id: randomBytes(),
+        duration: 90,
         date: new Date(),
         provider: providers[0],
-        slots: [],
+        slots: createSlots(10),
+        bookings: [],
         vaccine: 'mrna',
     },
     {
-        id: '2',
-        duration: 15,
+        id: randomBytes(),
+        duration: 60,
         date: new Date(),
         provider: providers[1],
-        slots: [],
+        slots: createSlots(10),
+        bookings: [],
         vaccine: 'moderna',
     },
     {
-        id: '3',
-        duration: 15,
+        id: randomBytes(),
+        duration: 60,
         date: new Date(),
         provider: providers[2],
-        slots: [],
+        slots: createSlots(10),
+        bookings: [],
         vaccine: 'biontech',
     },
     {
-        id: '4',
-        duration: 15,
+        id: randomBytes(),
+        duration: 60,
         date: new Date(),
         provider: providers[3],
-        slots: [],
+        slots: createSlots(10),
+        bookings: [],
         vaccine: 'biontech',
     },
     {
-        id: '5',
-        duration: 15,
+        id: randomBytes(),
+        duration: 60,
         date: new Date(),
         provider: providers[1],
-        slots: [],
+        slots: createSlots(10),
+        bookings: [],
         vaccine: 'biontech',
     },
     {
-        id: '6',
-        duration: 15,
+        id: randomBytes(),
+        duration: 60,
         date: new Date(),
         provider: providers[1],
-        slots: [],
+        slots: createSlots(10),
+        bookings: [],
         vaccine: 'mrna',
     },
 ];

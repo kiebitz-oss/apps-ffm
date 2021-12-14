@@ -16,7 +16,7 @@ const WelcomePage: React.FC = () => {
             <div className="w-full content">
                 {notice === 'thankyou' && (
                     <Message variant="success">
-                        <Trans id="logged-out.notice">
+                        <Trans id="provider.welcome.loggedout-.notice">
                             Sie wurden erfolgreich abgemeldet. Sie können Ihre
                             Daten jederzeit mit Ihrem Datenschlüssel und Ihrer
                             Sicherheitsdatei wiederherstellen.

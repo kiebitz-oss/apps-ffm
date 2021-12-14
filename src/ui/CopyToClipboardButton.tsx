@@ -25,9 +25,9 @@ export const CopyToClipboardButton: React.FC<CopyToClipboardButton> = ({
             onClick={onClick}
         >
             {!!state.error ? (
-                <Trans id="ui.copy-failed">Fehlgeschlagen</Trans>
+                <Trans id="common.copy.failed">Fehlgeschlagen</Trans>
             ) : state.value ? (
-                <Trans id="ui.copy-succeeded">In der Zwischenablage</Trans>
+                <Trans id="common.copy.succeeded">In der Zwischenablage</Trans>
             ) : (
                 children || <Trans id="ui.copy">Kopieren</Trans>
             )}

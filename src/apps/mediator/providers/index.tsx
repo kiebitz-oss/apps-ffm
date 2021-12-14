@@ -1,19 +1,17 @@
 import { Trans } from '@lingui/macro';
-import { useMediatorApi } from 'hooks/useMediatorApi';
+import { useMediatorApi } from 'hooks';
 import React, { useEffect, useState } from 'react';
 import { Provider } from 'types';
 import { Title } from 'ui';
 import { ProviderTable } from '../common/ProvidersList';
 
 export const ProvidersPage: React.FC = () => {
-    const [loading, setLoading] = useState<boolean>(true);
     const [providers, setProviders] = useState<Provider[]>([]);
 
     const api = useMediatorApi();
 
     useEffect(() => {
         api.getProviders().then((providers) => {
-            setLoading(false);
             setProviders(providers);
         });
     }, [api]);
@@ -24,7 +22,11 @@ export const ProvidersPage: React.FC = () => {
                 <Trans id="mediator.providers.title">Impfanbieter</Trans>
             </Title>
 
-            <ProviderTable providers={providers} />
+            {providers.length > 0 ? (
+                <ProviderTable providers={providers} />
+            ) : (
+                <>Loading</>
+            )}
         </main>
     );
 };

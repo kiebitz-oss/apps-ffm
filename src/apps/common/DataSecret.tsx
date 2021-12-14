@@ -13,7 +13,7 @@ export const DataSecret: React.FC<DataSecretProps> = ({ secret, embedded }) => {
     return (
         <>
             <Text>
-                <Trans id="store-secrets.online.text">
+                <Trans id="common.data-secret.text">
                     Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie
                     benötigen ihn, um sich auf einem anderen PC (Tablet,
                     Smartphone etc.) einzuloggen oder auf einem anderen Endgerät

@@ -6,15 +6,19 @@ import { WeekCalendar } from 'apps/provider/common/WeekCalendar';
 import { useProviderApi } from 'hooks/useProviderApi';
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
+import { Appointment } from 'types';
 import { Button, Title } from 'ui';
 import { CreateAppointmentModal } from './CreateAppointmentModal';
 
 const SchedulePage: React.FC = () => {
     const { week } = useParams<{ week?: string }>();
+    const [appointments, setAppointments] = useState<Appointment[]>([]);
     const [showModal, setShowModal] = useState(false);
     const api = useProviderApi();
 
-    const appointments = api.getAppointments();
+    api.getAppointments().then((appointments) => {
+        setAppointments(appointments);
+    });
 
     const toggleModal = () => {
         setShowModal(!showModal);

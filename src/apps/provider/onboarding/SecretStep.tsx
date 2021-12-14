@@ -26,7 +26,7 @@ export const SecretStep: React.FC = () => {
                 <Title>Logindaten speichern</Title>
 
                 <Text>
-                    <Trans id="store-secrets.notice">
+                    <Trans id="provider.onboarding.secret.notice">
                         Um sich später wieder einzuloggen oder Ihre Termine
                         zugreifen zu können, benötigen Sie Ihre SICHERHEITSDATEI
                         und Ihren SICHERHEITSCODE. Bitte speichern Sie jetzt
@@ -40,7 +40,7 @@ export const SecretStep: React.FC = () => {
                 <DataSecret secret={'1234567890123456'} />
 
                 <Link href="/provider/schedule" type="button">
-                    <Trans id="wizard.leave">
+                    <Trans id="provider.onboarding.secret.button">
                         Abschließen & zur Terminplanung
                     </Trans>
                 </Link>

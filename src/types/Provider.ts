@@ -7,6 +7,7 @@ export interface PublicProvider {
     city: string;
     zipCode: string;
     accessible: boolean;
+    description?: string;
 }
 
 export interface Provider extends PublicProvider {

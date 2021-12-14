@@ -1,13 +1,16 @@
 import { Trans } from '@lingui/macro';
 import { BackLink } from 'apps/common/BackLink';
-import { useMediatorApi } from 'hooks/useMediatorApi';
+import { useMediatorApi } from 'hooks';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Provider } from 'types';
 import { Button, Title } from 'ui';
+import { ConfirmProviderModal } from './ConfirmProviderModal';
+import { UnconfirmProviderModal } from './UnconfirmProviderModal';
 
 export const ProviderShowPage: React.FC = () => {
     const [provider, setProvider] = useState<Provider>();
+    const [modal, setModal] = useState<'confirm' | 'unconfirm' | null>(null);
     const { id } = useParams();
     const api = useMediatorApi();
 
@@ -51,7 +54,7 @@ export const ProviderShowPage: React.FC = () => {
                 <tbody>
                     <tr>
                         <th>
-                            <Trans id="mediator.provider-show.name">
+                            <Trans id="mediator.provider-show.verified">
                                 Verifiziert?
                             </Trans>
                         </th>
@@ -116,19 +119,39 @@ export const ProviderShowPage: React.FC = () => {
 
             <div className="buttons-list">
                 {!provider.verified ? (
-                    <Button variant="primary" size="sm">
+                    <Button
+                        variant="primary"
+                        size="sm"
+                        onClick={() => setModal('confirm')}
+                    >
                         <Trans id="mediator.provider-show.button-confirm">
                             Anbieter bestätigen
                         </Trans>
                     </Button>
                 ) : (
-                    <Button variant="secondary" size="sm">
+                    <Button
+                        variant="secondary"
+                        size="sm"
+                        onClick={() => setModal('unconfirm')}
+                    >
                         <Trans id="mediator.provider-show.button-unconfirm">
                             Anbieter sperren
                         </Trans>
                     </Button>
                 )}
             </div>
+            {modal === 'confirm' && (
+                <ConfirmProviderModal
+                    provider={provider}
+                    onClose={() => setModal(null)}
+                />
+            )}
+            {modal === 'unconfirm' && (
+                <UnconfirmProviderModal
+                    provider={provider}
+                    onClose={() => setModal(null)}
+                />
+            )}
         </main>
     );
 };

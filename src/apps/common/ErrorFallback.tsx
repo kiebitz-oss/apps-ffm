@@ -2,8 +2,8 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import React from 'react';
 import { Trans } from '@lingui/macro';
+import React from 'react';
 import { Box, Link, Message } from 'ui';
 
 export const ErrorFallback: React.FC = () => {
@@ -12,7 +12,7 @@ export const ErrorFallback: React.FC = () => {
     return (
         <Box>
             <Message variant="danger">
-                <Trans id="errorBoundary.somethingWentWrong">
+                <Trans id="common.error.common-error">
                     Es tut uns schrecklich leid aber es ist ein unerwarteter
                     Fehler aufgetreten. Bitte{' '}
                     <Link href={`mailto:${supportEmail}`} external>

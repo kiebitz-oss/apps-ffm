@@ -2,16 +2,16 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import React, { ChangeEventHandler, useEffect, useRef, useState } from 'react';
-import { InputField, Message, Upload, Form, Text } from 'ui';
 import { t, Trans } from '@lingui/macro';
-import { useNavigate } from 'react-router-dom';
+import React, { ChangeEventHandler, useEffect, useRef, useState } from 'react';
 import {
     FormProvider,
     Resolver,
     SubmitHandler,
     useForm,
 } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { Form, InputField, Message, Text, Upload } from 'ui';
 import { FormSubmitButton } from 'ui/FormSubmitButton';
 
 interface FormData {
@@ -25,15 +25,15 @@ const resolver: Resolver<FormData> = async (values) => {
 
     if (!values.file) {
         errors.file = t({
-            id: 'load-backup.missing-file',
-            message: 'load-backup.missing-file MISSING',
+            id: 'provider.restore-form.missing-file',
+            message: 'provider.restore-form.missing-file MISSING',
         });
     }
 
     /* else if (values.file.data === undefined || values.file.iv === undefined) {
         errors.file = t({
-            id: 'load-backup.invalid-file',
-            message: 'load-backup.invalid-file MISSING',
+            id: 'provider.restore-form.invalid-file',
+            message: 'provider.restore-form.invalid-file MISSING',
         });
     } */
 
@@ -45,19 +45,19 @@ const resolver: Resolver<FormData> = async (values) => {
 
     if (!/[abcdefghijkmnpqrstuvwxyz23456789]{16,20}/i.exec(values.secret)) {
         errors.secret = t({
-            id: 'load-backup.invalid-secret',
-            message: 'load-backup.invalid-secret MISSING',
+            id: 'provider.restore-form.invalid-secret',
+            message: 'provider.restore-form.invalid-secret MISSING',
         });
     }
 
     return { values, errors };
 };
 
-const RestoreFormBase: React.FC<any> = ({
-    // restoreFromBackup,
-    // restoreFromBackupAction,
-    className,
-}) => {
+interface RestoreFormProps {
+    className: string;
+}
+
+export const RestoreForm: React.FC<RestoreFormProps> = ({ className }) => {
     const [file, setFile] = useState<string>();
     const fileInput = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
@@ -93,8 +93,9 @@ const RestoreFormBase: React.FC<any> = ({
                         'file',
                         new Error(
                             t({
-                                id: 'load-backup.invalid-file',
-                                message: 'load-backup.invalid-file MISSING',
+                                id: 'provider.restore-form.invalid-file',
+                                message:
+                                    'provider.restore-form.invalid-file MISSING',
                             })
                         )
                     );
@@ -130,7 +131,7 @@ const RestoreFormBase: React.FC<any> = ({
                     <div className="flex flex-col gap-8">
                         {failed && (
                             <Message variant="danger">
-                                <Trans id="load-backup.failed">
+                                <Trans id="provider.restore-form.failed">
                                     Das Laden Ihrer Daten ist leider
                                     fehlgeschlagen. Bitte prüfen Sie Ihren
                                     Datenschlüssel sowie die angegebene Datei.
@@ -140,11 +141,11 @@ const RestoreFormBase: React.FC<any> = ({
 
                         <InputField
                             label={t({
-                                id: 'load-backup.secret.label',
+                                id: 'provider.restore-form.secret.label',
                                 message: 'Datenschlüssel',
                             })}
                             description={t({
-                                id: 'load-backup.secret.description',
+                                id: 'provider.restore-form.secret.description',
                                 message:
                                     'Der Datenschlüssel, den Sie bei der Registrierung erhalten haben.',
                             })}
@@ -170,17 +171,17 @@ const RestoreFormBase: React.FC<any> = ({
                             <input type="hidden" {...register('file')} />
 
                             {(fileInput.current?.files?.[0] !== undefined && (
-                                <Trans id="load-backup.input.change">
+                                <Trans id="provider.restore-form.input.change">
                                     {fileInput.current?.files?.[0].name}
                                 </Trans>
                             )) || (
-                                <Trans id="load-backup.input">
+                                <Trans id="provider.restore-form.input">
                                     Sicherungsdatei wählen
                                 </Trans>
                             )}
 
                             <Text className="hint">
-                                <Trans id="load-backup.input.description">
+                                <Trans id="provider.restore-form.input.description">
                                     Bitte laden Sie hier Ihre Sicherungsdatei
                                     (booster-impfen-backup-2021[Datum&Uhrzeit].enc)
                                     hoch.
@@ -191,7 +192,9 @@ const RestoreFormBase: React.FC<any> = ({
 
                     <div>
                         <FormSubmitButton formState={formState}>
-                            <Trans id="load-backup.load">Einloggen</Trans>
+                            <Trans id="provider.restore-form.load">
+                                Einloggen
+                            </Trans>
                         </FormSubmitButton>
                     </div>
                 </div>
@@ -199,6 +202,3 @@ const RestoreFormBase: React.FC<any> = ({
         </FormProvider>
     );
 };
-
-// export const RestoreForm = withActions(RestoreFormBase, [restoreFromBackup]);
-export const RestoreForm = RestoreFormBase;
