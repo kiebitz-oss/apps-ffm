@@ -5,6 +5,7 @@
 import { Trans } from '@lingui/macro';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
 import { Button, Text, Title } from 'ui';
 import { Questionaire } from './common/questionaire/Questionaire';
 import { QuestionBox } from './common/questionaire/QuestionBox';
@@ -17,13 +18,14 @@ interface FormData {
 
 const StartPage: React.FC = () => {
     const { watch, control, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
-    const q1Value = watch('numberOfVaccination');
-    const q2Value = watch('under30');
-    const q3Value = watch('under12');
+    const q1Value = watch('q1');
+    const q2Value = watch('q2');
+    const q3Value = watch('q3');
 
     const onSubmit: SubmitHandler<FormData> = (data) => {
-        console.log(data);
+        navigate('/user/finder');
     };
 
     return (

@@ -1,10 +1,17 @@
 import { t, Trans } from '@lingui/macro';
+import { BackLink } from 'apps/common/BackLink';
 import React from 'react';
 import { Form, InputField, Link, Text, Title } from 'ui';
 
 export const DateStep: React.FC = () => {
     return (
         <main>
+            <BackLink href="/user/finder">
+                <Trans id="user.finder.date.back-link">
+                    zurück zum Terminauswahl
+                </Trans>
+            </BackLink>
+
             <Title variant="h1" as="h2">
                 <Trans id="user.finder.date.title">Datum und Uhrzeit</Trans>
             </Title>

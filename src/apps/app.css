@@ -27,7 +27,7 @@
             @apply min-w-full flex justify-between items-center py-8 px-4 md:px-0;
 
             & > nav {
-                @apply flex gap-2;
+                @apply flex gap-12 self-end;
             }
         }
 

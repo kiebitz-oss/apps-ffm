@@ -1,6 +1,10 @@
 import { appointments } from 'apps/data';
-import type { Appointment, Provider, ProviderKeyPair } from 'types';
-import { ProviderSecretData } from 'types/ProviderSecretData';
+import type {
+    Appointment,
+    Provider,
+    ProviderKeyPair,
+    ProviderSecretData,
+} from 'types';
 
 export class ProviderApi {
     protected secret: string | null = null;

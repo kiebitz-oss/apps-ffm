@@ -13,3 +13,23 @@
         @apply text-center;
     }
 }
+
+#faq {
+    & section {
+        @apply mb-8;
+        @apply lg:w-2/3;
+
+        & .questions {
+            @apply flex flex-col gap-8;
+
+            & details {
+                & h2 {
+                    @apply h3 inline cursor-pointer;
+                }
+            }
+
+            & summary {
+            }
+        }
+    }
+}
