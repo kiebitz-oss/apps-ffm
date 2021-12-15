@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import '@ibm/plex/css/ibm-plex.css';
+import '@fontsource/ibm-plex-sans';
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import { messages as deMessages } from 'locales/de/messages';
