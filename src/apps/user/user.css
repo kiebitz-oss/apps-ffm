@@ -16,11 +16,10 @@
 
 #faq {
     & section {
-        @apply mb-8;
         @apply lg:w-2/3;
 
         & .questions {
-            @apply flex flex-col gap-8;
+            @apply flex flex-col gap-8 ml-6;
 
             & details {
                 & h2 {
@@ -29,6 +28,7 @@
             }
 
             & summary {
+                @apply list-outside mb-2;
             }
         }
     }
