@@ -26,10 +26,7 @@ RUN nginx -t
 # "--include=dev" is needed for now as dependencies are not splitted between dev + prod
 RUN npm ci --include=dev
 # build files will be in /apps/build after this command
-RUN npm run-script make
-RUN rm build/settings.json
-RUN mv build/settings_${ENVIRONMENT}.json build/settings.json
-RUN sed -i -e "s/COMMIT_SHA/${CI_COMMIT_SHA}/g" build/settings.json
+RUN npm run-script build
 
 
 ## prod

@@ -13,18 +13,17 @@
     },
     "scripts": {
         "prettier": "prettier --write 'src/**/*.jsx' 'src/**/*.tsx' 'src/**/*.js'",
-        "lint-scss": "stylelint ./src/scss/*.scss --quiet",
-        "lint-scss-fix": "stylelint ./src/scss/*.scss --fix",
+        "lint:scss": "stylelint ./src/scss/*.scss --quiet",
+        "lint:scss:fix": "stylelint ./src/scss/*.scss --fix",
         "lint": "eslint . --ext js,jsx,ts,tsx --quiet && stylelint src/**/*.scss",
-        "lint-fix": "eslint . --ext js,jsx,ts,tsx --quiet --fix; stylelint src/**/*.scss --fix",
-        "test": "NODE_ENV=test webpack serve",
+        "lint:fix": "eslint . --ext js,jsx,ts,tsx --quiet --fix; stylelint src/**/*.scss --fix",
+        "test": "NODE_ENV=test jest",
         "build": "NODE_ENV=production webpack",
         "dev": "NODE_ENV=development webpack serve",
-        "make-dev": "NODE_ENV=development webpack serve",
-        "make": "NODE_ENV=production webpack",
         "i18n": "lingui",
         "i18n:extract": "lingui extract",
-        "i18n:compile": "lingui compile"
+        "i18n:compile": "lingui compile",
+        "docker:build": "docker build -t=kiebitz-frontend ."
     },
     "dependencies": {
         "@carbon/icons-react": "^10.44.0",

@@ -4,7 +4,7 @@ import { Link } from 'ui';
 
 export const Nav: React.FC = () => {
     return (
-        <nav className="self-end">
+        <nav>
             <ul className="flex gap-8">
                 <li>
                     <Link href="/provider/schedule" className="hover">

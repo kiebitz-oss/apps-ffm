@@ -1,4 +1,4 @@
-import { useI18n } from 'hooks';
+import { useI18n } from 'apps/common/useI18n';
 import React from 'react';
 import { Link } from 'ui';
 
