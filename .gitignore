@@ -9,3 +9,4 @@ __pycache__
 # Local folders for development
 build
 node_modules
+src/locales/**/*.js
