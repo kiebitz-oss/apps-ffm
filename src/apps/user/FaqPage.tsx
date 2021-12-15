@@ -14,12 +14,12 @@ export const FaqPage: React.FC = () => {
                 <div className="questions">
                     <Question
                         question={t({
-                            id: 'faq.question.title.1',
+                            id: 'user.faq.question.title.1',
                             message:
                                 'Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?',
                         })}
                     >
-                        <Trans id="faq.question.answer.1">
+                        <Trans id="user.faq.question.answer.1">
                             In der CovPass-App können auch Zertifikate für
                             Auffrischungsimpfungen/Booster-Impfungen eingescannt
                             werden. Nach der Auffrischungsimpfung haben Sie
@@ -30,12 +30,12 @@ export const FaqPage: React.FC = () => {
 
                     <Question
                         question={t({
-                            id: 'faq.question.title.2',
+                            id: 'user.faq.question.title.2',
                             message:
                                 'Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?',
                         })}
                     >
-                        <Trans id="faq.question.answer.2">
+                        <Trans id="user.faq.question.answer.2">
                             In der CovPass-App können auch Zertifikate für
                             Auffrischungsimpfungen/Booster-Impfungen eingescannt
                             werden. Nach der Auffrischungsimpfung haben Sie
@@ -46,12 +46,12 @@ export const FaqPage: React.FC = () => {
 
                     <Question
                         question={t({
-                            id: 'faq.question.title.3',
+                            id: 'user.faq.question.title.3',
                             message:
                                 'Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?',
                         })}
                     >
-                        <Trans id="faq.question.answer.3">
+                        <Trans id="user.faq.question.answer.3">
                             In der CovPass-App können auch Zertifikate für
                             Auffrischungsimpfungen/Booster-Impfungen eingescannt
                             werden. Nach der Auffrischungsimpfung haben Sie
@@ -62,12 +62,12 @@ export const FaqPage: React.FC = () => {
 
                     <Question
                         question={t({
-                            id: 'faq.question.title.4',
+                            id: 'user.faq.question.title.4',
                             message:
                                 'Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?',
                         })}
                     >
-                        <Trans id="faq.question.answer.4">
+                        <Trans id="user.faq.question.answer.4">
                             In der CovPass-App können auch Zertifikate für
                             Auffrischungsimpfungen/Booster-Impfungen eingescannt
                             werden. Nach der Auffrischungsimpfung haben Sie
@@ -78,12 +78,12 @@ export const FaqPage: React.FC = () => {
 
                     <Question
                         question={t({
-                            id: 'faq.question.title.5',
+                            id: 'user.faq.question.title.5',
                             message:
                                 'Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?',
                         })}
                     >
-                        <Trans id="faq.question.answer.5">
+                        <Trans id="user.faq.question.answer.5">
                             In der CovPass-App können auch Zertifikate für
                             Auffrischungsimpfungen/Booster-Impfungen eingescannt
                             werden. Nach der Auffrischungsimpfung haben Sie
@@ -94,12 +94,12 @@ export const FaqPage: React.FC = () => {
 
                     <Question
                         question={t({
-                            id: 'faq.question.title.6',
+                            id: 'user.faq.question.title.6',
                             message:
                                 'Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?',
                         })}
                     >
-                        <Trans id="faq.question.answer.6">
+                        <Trans id="user.faq.question.answer.6">
                             In der CovPass-App können auch Zertifikate für
                             Auffrischungsimpfungen/Booster-Impfungen eingescannt
                             werden. Nach der Auffrischungsimpfung haben Sie
