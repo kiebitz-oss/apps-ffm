@@ -24,6 +24,22 @@
     &.error {
         @apply border-red-500 border-2;
     }
+
+    & .question {
+        @apply flex justify-between mb-2;
+
+        & h3 {
+            @apply font-semibold;
+        }
+    }
+
+    & .answer {
+        @apply flex gap-8 items-center ml-2;
+
+        & label {
+            @apply flex gap-2 items-center font-semibold;
+        }
+    }
 }
 
 #faq {

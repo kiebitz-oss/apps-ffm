@@ -29,16 +29,13 @@ export const QuestionBox: React.FC<QuestionBoxProps> = ({
                                 ['error']: error,
                             })}
                         >
-                            <div className="flex justify-between mb-2">
-                                <h3 className="font-semibold">{children}</h3>
+                            <div className="question">
+                                <h3>{children}</h3>
                                 <div>?</div>
                             </div>
 
-                            <div className="flex gap-8 items-center ml-2">
-                                <label
-                                    htmlFor={`${name}-yes`}
-                                    className="flex gap-2 items-center font-semibold"
-                                >
+                            <div className="answer">
+                                <label htmlFor={`${name}-yes`}>
                                     <input
                                         className="radio"
                                         type="radio"
@@ -51,10 +48,7 @@ export const QuestionBox: React.FC<QuestionBoxProps> = ({
                                     ja
                                 </label>
 
-                                <label
-                                    htmlFor={`${name}-no`}
-                                    className="flex gap-2 items-center font-semibold"
-                                >
+                                <label htmlFor={`${name}-no`}>
                                     <input
                                         className="radio"
                                         type="radio"
