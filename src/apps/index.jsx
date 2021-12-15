@@ -2,12 +2,19 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
+/* eslint-env node */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'apps/App';
+import App from './App';
 
 const appElement = document.getElementById('app');
 
-export const render = () => {
-    ReactDOM.render(<App />, appElement);
-};
+ReactDOM.render(<App />, appElement);
+
+if (['development'].includes(process.env.NODE_ENV)) {
+    if (module.hot) {
+        module.hot.accept(() => {
+            render();
+        });
+    }
+}

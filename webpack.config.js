@@ -4,51 +4,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const PreactRefreshPlugin = require('@prefresh/webpack');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, 'build');
 const PUBLIC_DIR = path.resolve(BUILD_DIR, 'public');
+const PUBLIC_SRC_DIR = path.resolve(__dirname, 'public');
 const SRC_DIR = path.resolve(__dirname, 'src');
 const NODE_MODULES_DIR = path.resolve(__dirname, 'node_modules');
-const APP_ENV = process.env.APP_ENV || 'production';
-
-let indexPath = 'index.jsx';
-
-switch (APP_ENV) {
-    case 'dev':
-        indexPath = 'index_dev.jsx';
-        break;
-    case 'staging':
-        indexPath = 'index_staging.jsx';
-        break;
-    case 'test':
-        indexPath = 'index_test.jsx';
-        break;
-}
-
-const withSourceMap = function (url, options = {}) {
-    const loader = {
-        loader: url,
-        options,
-    };
-
-    // if (APP_ENV === 'production') loader.options.sourceMap = true;
-
-    return loader;
-};
 
 //we collect static files from various places
-const staticPaths = ['web/static/'];
-const copyPlugins = staticPaths.map(function (path) {
-    return new CopyWebpackPlugin({
-        patterns: [
-            {
-                from: path,
-                to: '../',
-                toType: 'dir',
-            },
-        ],
-    });
-});
 
 let config = {
     target: 'web',
@@ -76,7 +41,7 @@ let config = {
         },
     },
     entry: {
-        [`app`]: SRC_DIR + `/web/${indexPath}`,
+        [`app`]: SRC_DIR + `/apps/index.jsx`,
     },
     module: {
         rules: [
@@ -85,11 +50,7 @@ let config = {
             // BEGIN(CSS) DO NOT MOVE
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    withSourceMap('css-loader'),
-                    withSourceMap('postcss-loader'),
-                ],
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
             },
             // END(CSS) DO NOT MOVE
             {
@@ -111,7 +72,15 @@ let config = {
         publicPath: '/public/',
     },
     plugins: [
-        ...copyPlugins,
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: PUBLIC_SRC_DIR,
+                    to: PUBLIC_DIR,
+                    toType: 'dir',
+                },
+            ],
+        }),
         new webpack.ProvidePlugin({
             process: 'process/browser',
             Buffer: ['buffer', 'Buffer'],
@@ -125,19 +94,18 @@ let config = {
     ],
 };
 
-if (APP_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
     config = {
         ...config,
         mode: 'production',
         plugins: [
             ...config.plugins,
-            new webpack.DefinePlugin({
-                'process.env.NODE_ENV': JSON.stringify('production'),
-                COMMIT_SHA: JSON.stringify(
+            new webpack.EnvironmentPlugin({
+                NODE_ENV: 'production',
+                COMMIT_SHA:
                     process.env.CI_COMMIT_SHA ||
-                        process.env.COMMIT_SHA ||
-                        'unknown'
-                ),
+                    process.env.COMMIT_SHA ||
+                    'unknown',
             }),
         ],
         module: {
@@ -148,12 +116,16 @@ if (APP_ENV === 'production') {
                     test: /\.css$/,
                     use: [
                         MiniCssExtractPlugin.loader,
-                        withSourceMap('css-loader'),
-                        withSourceMap('postcss-loader'),
+                        'css-loader',
+                        'postcss-loader',
                     ],
                 },
                 ...config.module.rules.slice(1),
             ],
+        },
+        optimization: {
+            minimize: true,
+            minimizer: ['...', new TerserPlugin(), new CssMinimizerPlugin()],
         },
     };
 } else {
@@ -175,7 +147,7 @@ if (APP_ENV === 'production') {
             // match the output `publicPath`
             static: {
                 publicPath: '/',
-                directory: path.join(process.cwd(), 'src/web/static'),
+                directory: PUBLIC_SRC_DIR,
             },
 
             proxy: {
@@ -197,15 +169,13 @@ if (APP_ENV === 'production') {
         plugins: [
             ...config.plugins,
             new PreactRefreshPlugin(),
-            new webpack.DefinePlugin({
-                'process.env.NODE_ENV': '"development"',
-                COMMIT_SHA: JSON.stringify(
+            new webpack.EnvironmentPlugin({
+                NODE_ENV: 'development',
+                COMMIT_SHA:
                     process.env.CI_COMMIT_SHA ||
-                        process.env.COMMIT_SHA ||
-                        'unknown'
-                ),
+                    process.env.COMMIT_SHA ||
+                    'unknown',
             }),
-            //new BundleAnalyzerPlugin()
         ],
     };
 }
