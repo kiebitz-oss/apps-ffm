@@ -15,15 +15,19 @@
 }
 
 .questionaire {
-    @apply flex flex-col gap-4 mb-8 max-w-[500px];
+    @apply flex flex-col gap-4 mb-8 justify-between max-w-[500px] lg:max-w-max items-stretch;
+
+    & .button {
+        @apply w-full;
+    }
+}
+
+.questions {
+    @apply flex flex-col mx-[-16px] sm:mx-0 mb-8;
 }
 
 .question-box {
     @apply p-4 w-full max-w-[500px] rounded-lg shadow-lg;
-
-    &.error {
-        @apply border-red-500 border-2;
-    }
 
     & .question {
         @apply flex justify-between mb-2;
@@ -39,6 +43,10 @@
         & label {
             @apply flex gap-2 items-center font-semibold;
         }
+    }
+
+    &.error {
+        @apply border-red-500 border-2;
     }
 }
 

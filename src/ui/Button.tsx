@@ -8,7 +8,7 @@ import { Size } from 'types/Size';
 import { Variant } from 'types/Variant';
 
 export interface ButtonProps extends React.ComponentProps<'button'> {
-    variant?: Variant;
+    variant?: Variant | 'invalid';
     size?: Size;
     waiting?: boolean;
 }

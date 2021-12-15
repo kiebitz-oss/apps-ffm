@@ -3,11 +3,10 @@
 // README.md contains license information.
 
 import { t, Trans } from '@lingui/macro';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
-import { Button, Text, Title } from 'ui';
-import { Questionaire } from './common/questionaire/Questionaire';
+import { Button, Error, Text, Title } from 'ui';
 import { QuestionBox } from './common/questionaire/QuestionBox';
 
 interface FormData {
@@ -19,6 +18,8 @@ interface FormData {
 
 const StartPage: React.FC = () => {
     const { watch, control, handleSubmit } = useForm();
+    const [error, setError] = useState<boolean>(false);
+    const [valid, setValid] = useState<boolean>(false);
     const navigate = useNavigate();
 
     const q1Value = watch('q1');
@@ -26,8 +27,16 @@ const StartPage: React.FC = () => {
     const q3Value = watch('q3');
     const q4Value = watch('q4');
 
-    const onSubmit: SubmitHandler<FormData> = (data) => {
-        navigate('/user/finder');
+    useEffect(() => {
+        setValid(q3Value === false || q4Value === false || false);
+    }, [q3Value, q4Value]);
+
+    const onSubmit: SubmitHandler<FormData> = () => {
+        if (valid) {
+            navigate('/user/finder');
+        } else {
+            setError(true);
+        }
     };
 
     return (
@@ -50,11 +59,8 @@ const StartPage: React.FC = () => {
                 </Trans>
             </Text>
 
-            <form
-                className="flex flex-col w-full md:min-h-[400px]"
-                onSubmit={handleSubmit(onSubmit)}
-            >
-                <Questionaire>
+            <form className="questionaire" onSubmit={handleSubmit(onSubmit)}>
+                <div className="questions">
                     <QuestionBox control={control} name="q1">
                         <Trans id="user.welcome.question1_value">
                             Handelt es sich um eine Booster-Impfung?
@@ -104,15 +110,21 @@ const StartPage: React.FC = () => {
                                 </Trans>
                             </QuestionBox>
                         )}
-                </Questionaire>
+                </div>
 
-                <Button
-                    type="submit"
-                    variant="primary"
-                    // href="/user/finder"
-                    disabled={!(q3Value === false || q4Value === false)}
-                    className="mt-auto"
-                >
+                {error && (
+                    <Error>
+                        <Trans id="user.welcome.form_error">
+                            Bitte beantworten Sie alle Fragen, denn sonst können
+                            wir keine Termine für Sie heraussuchen. Alle Ihre
+                            persönlichen Daten werden nur auf Ihrem Endgerät
+                            gespeichert und nicht an einen Server übermittelt
+                            oder weitergegeben.
+                        </Trans>
+                    </Error>
+                )}
+
+                <Button type="submit" variant={valid ? 'primary' : 'invalid'}>
                     <Trans id="user.welcome.button">Weiter zum Termin</Trans>
                 </Button>
             </form>
