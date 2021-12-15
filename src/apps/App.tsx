@@ -5,7 +5,6 @@
 import '@ibm/plex/css/ibm-plex.css';
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
-import 'core-js/stable';
 import { messages as deMessages } from 'locales/de/messages';
 import { messages as enMessages } from 'locales/en/messages';
 import { de, en } from 'make-plural/plurals';
@@ -16,7 +15,6 @@ import {
     Route,
     Routes,
 } from 'react-router-dom';
-import 'regenerator-runtime/runtime';
 import './app.css';
 
 const MediatorApp = React.lazy(

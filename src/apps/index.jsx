@@ -3,8 +3,10 @@
 // README.md contains license information.
 
 /* eslint-env node */
+import 'core-js/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'regenerator-runtime/runtime';
 import App from './App';
 
 const appElement = document.getElementById('app');
