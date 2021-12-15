@@ -12,6 +12,7 @@ export const Nav: React.FC = () => {
 
             <div>
                 <a
+                    data-test={'nav.locale.de'}
                     href="#"
                     onClick={(e) => {
                         e.preventDefault();
@@ -25,6 +26,7 @@ export const Nav: React.FC = () => {
                 </a>{' '}
                 |{' '}
                 <a
+                    data-test={'nav.locale.en'}
                     href="#"
                     onClick={(e) => {
                         e.preventDefault();

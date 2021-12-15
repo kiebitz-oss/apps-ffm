@@ -20,7 +20,7 @@
         "test": "NODE_ENV=test jest",
         "build": "NODE_ENV=production npm run i18n:build && webpack --mode=production --progress",
         "dev": "webpack serve --mode=development",
-        "e2e:serve": "webpack serve --mode=production",
+        "e2e:serve": "lingui compile & webpack serve --mode=development",
         "e2e:test": "start-server-and-test e2e:serve http-get://localhost:3000 'cypress open'",
         "i18n": "lingui",
         "i18n:extract": "lingui extract",

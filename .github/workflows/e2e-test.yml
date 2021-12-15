@@ -29,7 +29,7 @@ jobs:
           browser: chrome
           headless: true
           # start webpack server
-          start: npm run test
+          start: npm run e2e:serve
           wait-on: http://localhost:3000/
           wait-on-timeout: 300
           config-file: cypress.json
