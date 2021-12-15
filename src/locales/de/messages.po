@@ -57,6 +57,54 @@ msgstr "{minutes} Minuten"
 msgid "comon.leave.text"
 msgstr "Es gibt ungespeicherte Änderungen auf der aktuellen Seite. Wollen Sie diese wirklich verlassen?"
 
+#: src/apps/user/FaqPage.tsx:22
+msgid "faq.question.answer.1"
+msgstr "faq.question.answer.1"
+
+#: src/apps/user/FaqPage.tsx:38
+msgid "faq.question.answer.2"
+msgstr "faq.question.answer.2"
+
+#: src/apps/user/FaqPage.tsx:54
+msgid "faq.question.answer.3"
+msgstr "faq.question.answer.3"
+
+#: src/apps/user/FaqPage.tsx:70
+msgid "faq.question.answer.4"
+msgstr "faq.question.answer.4"
+
+#: src/apps/user/FaqPage.tsx:86
+msgid "faq.question.answer.5"
+msgstr "faq.question.answer.5"
+
+#: src/apps/user/FaqPage.tsx:102
+msgid "faq.question.answer.6"
+msgstr "faq.question.answer.6"
+
+#: src/apps/user/FaqPage.tsx:16
+msgid "faq.question.title.1"
+msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+
+#: src/apps/user/FaqPage.tsx:32
+msgid "faq.question.title.2"
+msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+
+#: src/apps/user/FaqPage.tsx:48
+msgid "faq.question.title.3"
+msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+
+#: src/apps/user/FaqPage.tsx:64
+msgid "faq.question.title.4"
+msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+
+#: src/apps/user/FaqPage.tsx:80
+msgid "faq.question.title.5"
+msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+
+#: src/apps/user/FaqPage.tsx:96
+msgid "faq.question.title.6"
+msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+
 #: src/apps/mediator/logged-out.tsx:37
 msgid "mediator.logged-out.log-in-again"
 msgstr "Einloggen"
@@ -173,51 +221,51 @@ msgstr "Alle Impfanbieter auswählen oder abwählen"
 msgid "mediator.providers-list.status"
 msgstr "Status"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:128
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:129
 msgid "mediator.providers.confirm-modal.button-confirm"
 msgstr "Anbieter bestätigen"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:84
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:85
 msgid "mediator.providers.confirm-modal.city"
 msgstr "Stadt"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:116
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:117
 msgid "mediator.providers.confirm-modal.description"
 msgstr "Beschreibung"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:100
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:101
 msgid "mediator.providers.confirm-modal.email"
 msgstr "E-Mail"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:54
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:55
 msgid "mediator.providers.confirm-modal.field"
 msgstr "Feld"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:45
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:46
 msgid "mediator.providers.confirm-modal.intro"
 msgstr "Wollen Sie den Anbieter wirklich freischalten?"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:68
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:69
 msgid "mediator.providers.confirm-modal.name"
 msgstr "Name"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:108
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:109
 msgid "mediator.providers.confirm-modal.phone"
 msgstr "Telefonnummer"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:76
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:77
 msgid "mediator.providers.confirm-modal.street"
 msgstr "Straße"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:37
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:38
 msgid "mediator.providers.confirm-modal.title"
 msgstr "Anbieter freischalten"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:59
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:60
 msgid "mediator.providers.confirm-modal.value"
 msgstr "Wert"
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:92
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:93
 msgid "mediator.providers.confirm-modal.zip-code"
 msgstr "Postleitzahl"
 
@@ -613,7 +661,7 @@ msgstr "Uhrzeit"
 msgid "provider.secret.title"
 msgstr "Ihr Sicherheitscode"
 
-#: src/apps/provider/settings/index.tsx:9
+#: src/apps/provider/settings/index.tsx:43
 msgid "provider.settings.title"
 msgstr "Einstellungen"
 
@@ -628,6 +676,10 @@ msgstr "Kopieren"
 #: src/apps/user/common/AppointmentCard.tsx:29
 msgid "user.appointment-card.vaccine"
 msgstr "Impfstoff"
+
+#: src/apps/user/FaqPage.tsx:11
+msgid "user.faq.title"
+msgstr "user.faq.title"
 
 #: src/apps/user/finder/appointmentStep.tsx:61
 msgid "user.finder.appointment.card.date"
@@ -665,19 +717,23 @@ msgstr "Termine"
 #~ msgid "user.finder.cancel-appointment.button"
 #~ msgstr "Um die Terminbuchung abzusagen, bitte hier klicken"
 
-#: src/apps/user/finder/DateStep.tsx:13
+#: src/apps/user/finder/DateStep.tsx:10
+msgid "user.finder.date.back-link"
+msgstr "user.finder.date.back-link"
+
+#: src/apps/user/finder/DateStep.tsx:20
 msgid "user.finder.date.intro"
 msgstr "Wann möchten Sie sich impfen lassen, Sie können Datum und Uhrzeit jederzeit im Prozess anpassen, wenn gewünscht. Bitte geben Sie ihren Wunschtermin unten an."
 
-#: src/apps/user/finder/DateStep.tsx:22
+#: src/apps/user/finder/DateStep.tsx:29
 msgid "user.finder.date.label"
 msgstr "Datum"
 
-#: src/apps/user/finder/DateStep.tsx:46
+#: src/apps/user/finder/DateStep.tsx:53
 msgid "user.finder.date.submit"
 msgstr "Termin auswählen"
 
-#: src/apps/user/finder/DateStep.tsx:9
+#: src/apps/user/finder/DateStep.tsx:16
 msgid "user.finder.date.title"
 msgstr "Datum und Uhrzeit"
 
@@ -717,7 +773,7 @@ msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und brin
 msgid "user.finder.success.title"
 msgstr "Ihr Termin ist gebucht!"
 
-#: src/apps/user/finder/DateStep.tsx:32
+#: src/apps/user/finder/DateStep.tsx:39
 msgid "user.finder.time.label"
 msgstr "Zeit"
 
@@ -745,7 +801,7 @@ msgstr "Termin jetzt buchen"
 msgid "user.finder.verify.title"
 msgstr "Übersicht"
 
-#: src/apps/user/WelcomePage.tsx:53
+#: src/apps/user/WelcomePage.tsx:84
 msgid "user.welcome.button"
 msgstr "Weiter zum Termin"
 
@@ -753,14 +809,22 @@ msgstr "Weiter zum Termin"
 #~ msgid "user.welcome.intro"
 #~ msgstr "Sie sind jetzt nur noch wenige Klicks von Ihrem Termin entfernt.<0/>Wir speichern generell keine persönlichen Daten, aber haben ein paar Fragen, damit Sie den richtigen Impfstoff erhalten."
 
-#: src/apps/user/WelcomePage.tsx:19
+#: src/apps/user/WelcomePage.tsx:38
 msgid "user.welcome.intro-1"
 msgstr "Sie sind jetzt nur noch wenige Klicks von Ihrem Termin entfernt."
 
-#: src/apps/user/WelcomePage.tsx:26
+#: src/apps/user/WelcomePage.tsx:45
 msgid "user.welcome.intro-2"
 msgstr "Wir speichern generell keine persönlichen Daten, aber haben ein paar Fragen, damit Sie den richtigen Impfstoff erhalten."
 
-#: src/apps/user/WelcomePage.tsx:15
+#: src/apps/user/WelcomePage.tsx:57
+msgid "user.welcome.question1_value"
+msgstr "user.welcome.question1_value"
+
+#: src/apps/user/WelcomePage.tsx:64
+msgid "user.welcome.question2_value"
+msgstr "user.welcome.question2_value"
+
+#: src/apps/user/WelcomePage.tsx:34
 msgid "user.welcome.title"
 msgstr "Willkommen!"

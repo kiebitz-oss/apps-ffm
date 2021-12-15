@@ -57,6 +57,54 @@ msgstr ""
 msgid "comon.leave.text"
 msgstr ""
 
+#: src/apps/user/FaqPage.tsx:22
+msgid "faq.question.answer.1"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:38
+msgid "faq.question.answer.2"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:54
+msgid "faq.question.answer.3"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:70
+msgid "faq.question.answer.4"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:86
+msgid "faq.question.answer.5"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:102
+msgid "faq.question.answer.6"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:16
+msgid "faq.question.title.1"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:32
+msgid "faq.question.title.2"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:48
+msgid "faq.question.title.3"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:64
+msgid "faq.question.title.4"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:80
+msgid "faq.question.title.5"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:96
+msgid "faq.question.title.6"
+msgstr ""
+
 #: src/apps/mediator/logged-out.tsx:37
 msgid "mediator.logged-out.log-in-again"
 msgstr ""
@@ -173,51 +221,51 @@ msgstr ""
 msgid "mediator.providers-list.status"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:128
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:129
 msgid "mediator.providers.confirm-modal.button-confirm"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:84
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:85
 msgid "mediator.providers.confirm-modal.city"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:116
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:117
 msgid "mediator.providers.confirm-modal.description"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:100
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:101
 msgid "mediator.providers.confirm-modal.email"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:54
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:55
 msgid "mediator.providers.confirm-modal.field"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:45
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:46
 msgid "mediator.providers.confirm-modal.intro"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:68
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:69
 msgid "mediator.providers.confirm-modal.name"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:108
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:109
 msgid "mediator.providers.confirm-modal.phone"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:76
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:77
 msgid "mediator.providers.confirm-modal.street"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:37
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:38
 msgid "mediator.providers.confirm-modal.title"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:59
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:60
 msgid "mediator.providers.confirm-modal.value"
 msgstr ""
 
-#: src/apps/mediator/providers/ConfirmProviderModal.tsx:92
+#: src/apps/mediator/providers/ConfirmProviderModal.tsx:93
 msgid "mediator.providers.confirm-modal.zip-code"
 msgstr ""
 
@@ -613,7 +661,7 @@ msgstr ""
 msgid "provider.secret.title"
 msgstr ""
 
-#: src/apps/provider/settings/index.tsx:9
+#: src/apps/provider/settings/index.tsx:43
 msgid "provider.settings.title"
 msgstr ""
 
@@ -627,6 +675,10 @@ msgstr ""
 
 #: src/apps/user/common/AppointmentCard.tsx:29
 msgid "user.appointment-card.vaccine"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:11
+msgid "user.faq.title"
 msgstr ""
 
 #: src/apps/user/finder/appointmentStep.tsx:61
@@ -665,19 +717,23 @@ msgstr ""
 #~ msgid "user.finder.cancel-appointment.button"
 #~ msgstr ""
 
-#: src/apps/user/finder/DateStep.tsx:13
+#: src/apps/user/finder/DateStep.tsx:10
+msgid "user.finder.date.back-link"
+msgstr ""
+
+#: src/apps/user/finder/DateStep.tsx:20
 msgid "user.finder.date.intro"
 msgstr ""
 
-#: src/apps/user/finder/DateStep.tsx:22
+#: src/apps/user/finder/DateStep.tsx:29
 msgid "user.finder.date.label"
 msgstr ""
 
-#: src/apps/user/finder/DateStep.tsx:46
+#: src/apps/user/finder/DateStep.tsx:53
 msgid "user.finder.date.submit"
 msgstr ""
 
-#: src/apps/user/finder/DateStep.tsx:9
+#: src/apps/user/finder/DateStep.tsx:16
 msgid "user.finder.date.title"
 msgstr ""
 
@@ -717,7 +773,7 @@ msgstr ""
 msgid "user.finder.success.title"
 msgstr ""
 
-#: src/apps/user/finder/DateStep.tsx:32
+#: src/apps/user/finder/DateStep.tsx:39
 msgid "user.finder.time.label"
 msgstr ""
 
@@ -745,7 +801,7 @@ msgstr ""
 msgid "user.finder.verify.title"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:53
+#: src/apps/user/WelcomePage.tsx:84
 msgid "user.welcome.button"
 msgstr ""
 
@@ -753,14 +809,22 @@ msgstr ""
 #~ msgid "user.welcome.intro"
 #~ msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:19
+#: src/apps/user/WelcomePage.tsx:38
 msgid "user.welcome.intro-1"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:26
+#: src/apps/user/WelcomePage.tsx:45
 msgid "user.welcome.intro-2"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:15
+#: src/apps/user/WelcomePage.tsx:57
+msgid "user.welcome.question1_value"
+msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:64
+msgid "user.welcome.question2_value"
+msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:34
 msgid "user.welcome.title"
 msgstr ""
