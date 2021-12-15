@@ -33,7 +33,6 @@ jobs:
           wait-on: http://localhost:3000/
           wait-on-timeout: 300
           config-file: cypress.json
-          spec: "tests/cypress/integration/*"
         env:
             # set base URL of webpack server
           CYPRESS_baseUrl: http://localhost:3000/
