@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
+import { Error } from './Error';
 import { Label } from './Label';
 
 export interface FieldProps {
@@ -43,7 +44,7 @@ export const Field: React.FC<FieldProps> = ({
                 </Label>
             )}
             {children}
-            {error && <div className="error">{error}</div>}
+            {error && <Error>{error}</Error>}
             {!error && description && <div className="hint">{description}</div>}
         </Element>
     );

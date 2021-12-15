@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-12-15 12:12+0100\n"
+"POT-Creation-Date: 2021-12-15 15:44+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -787,26 +787,42 @@ msgstr ""
 msgid "user.finder.verify.title"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:84
+#: src/apps/user/WelcomePage.tsx:116
 msgid "user.welcome.button"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:38
+#: src/apps/user/WelcomePage.tsx:40
 msgid "user.welcome.intro-1"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:45
+#: src/apps/user/WelcomePage.tsx:47
 msgid "user.welcome.intro-2"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:57
+#: src/apps/user/WelcomePage.tsx:59
 msgid "user.welcome.question1_value"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:64
+#: src/apps/user/WelcomePage.tsx:69
+msgid "user.welcome.question2_error"
+msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:75
 msgid "user.welcome.question2_value"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:34
+#: src/apps/user/WelcomePage.tsx:84
+msgid "user.welcome.question3_value"
+msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:96
+msgid "user.welcome.question4_error"
+msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:102
+msgid "user.welcome.question4_value"
+msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:36
 msgid "user.welcome.title"
 msgstr ""

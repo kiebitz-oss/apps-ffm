@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Trans } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
@@ -14,6 +14,7 @@ interface FormData {
     q1Value: boolean;
     q2Value: boolean;
     q3Value: boolean;
+    q4Value: boolean;
 }
 
 const StartPage: React.FC = () => {
@@ -23,6 +24,7 @@ const StartPage: React.FC = () => {
     const q1Value = watch('q1');
     const q2Value = watch('q2');
     const q3Value = watch('q3');
+    const q4Value = watch('q4');
 
     const onSubmit: SubmitHandler<FormData> = (data) => {
         navigate('/user/finder');
@@ -60,25 +62,55 @@ const StartPage: React.FC = () => {
                     </QuestionBox>
 
                     {q1Value === true && (
-                        <QuestionBox control={control} name="q2">
+                        <QuestionBox
+                            control={control}
+                            name="q2"
+                            error={q2Value === false}
+                            errorMessage={t({
+                                id: 'user.welcome.question2_error',
+                                message:
+                                    'Es müssen 6 Monate seit Ihrem letzten Impftermin vergangen sein, bevor Sie sich boostern lassen können.',
+                            })}
+                        >
                             <Trans id="user.welcome.question2_value">
+                                Liegt Ihre letzte Impfung mehr als 6 Monate
+                                zurück?
+                            </Trans>
+                        </QuestionBox>
+                    )}
+
+                    {(q1Value === false || q2Value === true) && (
+                        <QuestionBox control={control} name="q3">
+                            <Trans id="user.welcome.question3_value">
                                 Sind sie schwanger oder jünger als 30?
                             </Trans>
                         </QuestionBox>
                     )}
 
-                    {q1Value === true && q2Value === true && (
-                        <QuestionBox control={control} name="q3">
-                            Sind Sie jünger als 12?
-                        </QuestionBox>
-                    )}
+                    {(q1Value === false || q2Value === true) &&
+                        q3Value === true && (
+                            <QuestionBox
+                                control={control}
+                                name="q4"
+                                error={q4Value === true}
+                                errorMessage={t({
+                                    id: 'user.welcome.question4_error',
+                                    message:
+                                        'Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld.',
+                                })}
+                            >
+                                <Trans id="user.welcome.question4_value">
+                                    Sind Sie jünger als 12?
+                                </Trans>
+                            </QuestionBox>
+                        )}
                 </Questionaire>
 
                 <Button
                     type="submit"
                     variant="primary"
                     // href="/user/finder"
-                    disabled={q3Value !== true}
+                    disabled={!(q3Value === false || q4Value === false)}
                     className="mt-auto"
                 >
                     <Trans id="user.welcome.button">Weiter zum Termin</Trans>
