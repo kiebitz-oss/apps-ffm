@@ -1,0 +1,57 @@
+name: Cypress e2e Test
+
+on:
+  push:
+    branches:
+      - main
+      - release
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup node from node version file
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2.11.7
+        timeout-minutes: 20
+        with:
+          browser: chrome
+          headless: true
+          # start webpack server
+          start: npm run e2e:serve
+          wait-on: http://localhost:3000/
+          wait-on-timeout: 300
+          config-file: cypress.json
+        env:
+            # set base URL of webpack server
+          CYPRESS_baseUrl: http://localhost:3000/
+          # you can pass additional variables to cypress (e.g. github vars)
+#          CYPRESS_auth_username: ${{ secrets.GITHUB_SECRET_VAR_USERNAME }}
+#          CYPRESS_auth_password: ${{ secrets.GITHUB_SECRET_VAR_PASSWORD }}
+
+      # NOTE: screenshots will be generated only if E2E test failed thus we store screenshots only on failures
+      - name: Store screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: |
+            **/tests/cypress/screenshots/**/*
+      # Test run video was always captured, so this action uses "always()" condition
+      - name: Store videos
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-videos
+          path: |
+            **/tests/cypress/videos/*
