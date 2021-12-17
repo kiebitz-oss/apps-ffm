@@ -105,20 +105,25 @@
 }
 
 #finder-verify {
-    & .h1,
-    & .text {
-        @apply px-4 md:px-0;
+    .h1,
+    .text {
+        @apply px-4 sm:px-0;
     }
 
     .text2 {
         @apply mb-10;
     }
+
     .your-appointment {
-        @apply flex flex-col mb-10 md:flex-row md:w-[720px] md:gap-12 w-full sm:w-fit;
+        @apply flex flex-col mb-10 sm:flex-row sm:max-w-[720px] sm:gap-12 w-full sm:w-fit;
+    }
+
+    .verify-card {
+        @apply sm:w-1/2;
     }
 
     .provider-description {
-        @apply italic mt-12 md:w-1/2;
+        @apply italic mt-12 sm:w-1/2;
     }
 
     .button {

@@ -56,7 +56,7 @@ export const VerifyStep: React.FC = () => {
             </Text>
 
             <div className="your-appointment">
-                <div className="md:w-1/2">
+                <div className="verify-card">
                     <Title variant="book" as="h3">
                         <Trans id="user.finder.verify.appointment.subtitle">
                             Ihr Termin

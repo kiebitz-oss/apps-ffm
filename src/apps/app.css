@@ -24,10 +24,10 @@
         @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto md:mx-5 lg:mx-10 xl:mx-24 2xl:mx-28;
 
         & > header {
-            @apply min-h-[86px] md:min-h-[100px] min-w-full flex justify-between items-center px-4 md:px-8;
+            @apply min-h-[86px] md:min-h-[100px] min-w-full flex justify-between items-center px-8 md:px-12;
 
             & > nav {
-                @apply gap-12 hidden md:flex md:pt-8;
+                @apply gap-12 hidden sm:flex md:pt-8;
 
                 & a {
                     @apply hover:text-primary;
@@ -35,11 +35,28 @@
             }
         }
 
-        & > footer {
-            @apply hidden md:flex md:p-16;
+        & > .open > footer,
+        & > .closed > footer {
+            @media (max-width: 639px) {
+                @apply absolute top-[80px] bg-white bottom-0 left-0 right-0 z-50 flex flex-col gap-4 justify-center my-8;
+            }
+
+            @media (min-width: 640px) {
+                @apply md:flex sm:p-8 md:p-16;
+            }
 
             & > section {
-                @apply flex flex-col gap-4;
+                @media (max-width: 639px) {
+                    @apply flex flex-col gap-4 min-w-[250px] mx-auto;
+
+                    & img {
+                        @apply max-w-[70vw];
+                    }
+                }
+
+                @media (min-width: 640px) {
+                    @apply flex flex-col gap-4;
+                }
 
                 & > h3 {
                     @apply font-bold;
@@ -48,6 +65,12 @@
                 & a {
                     @apply hover:text-primary;
                 }
+            }
+        }
+
+        & .closed footer {
+            @media (max-width: 639px) {
+                @apply hidden;
             }
         }
     }
@@ -79,6 +102,57 @@
 
     address {
         @apply not-italic;
+    }
+
+    #sidenav-button,
+    #sidenav-close {
+        @apply touch-manipulation select-none;
+
+        @screen sm {
+            @apply hidden;
+        }
+    }
+
+    #sidenav-button > svg {
+        max-width: 50px;
+
+        & > line {
+            stroke: black;
+            stroke-width: 7px;
+        }
+    }
+
+    .hamburger {
+        --size: 3rem;
+        display: flex;
+        place-content: center;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        margin-inline-start: -1rem;
+        block-size: var(--size);
+        inline-size: var(--size);
+        outline: none;
+        transition: border-color 0.25s ease, background-color 0.25s ease;
+
+        &:hover svg > line {
+            @apply stroke-primary;
+        }
+
+        &:active {
+            @apply bg-primary/20;
+        }
+
+        & > svg {
+            width: 100%;
+
+            & > line {
+                @apply stroke-primary;
+                stroke-width: 7px;
+                transition: stroke 0.25s ease;
+            }
+        }
     }
 }
 
@@ -427,23 +501,23 @@
         }
 
         & .container {
-            @apply flex justify-center items-center min-h-screen mx-auto max-w-[80vw];
+            @apply flex justify-center items-center min-h-screen mx-auto;
         }
 
         & .inner {
-            @apply relative mx-auto bg-white  rounded-md overflow-hidden md:min-w-[600px];
+            @apply relative mx-auto bg-white  rounded-md overflow-hidden max-w-[90vw] md:max-w-[80vw] w-full;
         }
 
         & .content {
-            @apply p-4;
+            @apply px-8;
         }
 
         & .header {
-            @apply p-4 bg-gray-50;
+            @apply p-8;
         }
 
         & .footer {
-            @apply p-4 bg-gray-50;
+            @apply p-8;
         }
 
         & .sm {
