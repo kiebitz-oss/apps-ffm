@@ -5,11 +5,25 @@ import type {
     ProviderKeyPair,
     ProviderSecretData,
 } from 'types';
+import { Provider as KiebitzProvider } from 'vanellus';
+import { backend } from './backend';
+
+/*
+relevant:
+
+generateKeyPairs()
+*/
 
 export class ProviderApi {
     protected secret: string | null = null;
     protected keyPair: ProviderKeyPair | null = null;
     protected appointments: Appointment[] = [];
+
+    protected provider: KiebitzProvider;
+
+    constructor() {
+        this.provider = new KiebitzProvider('main', backend);
+    }
 
     public async authenticate(
         secret: string,
@@ -29,6 +43,27 @@ export class ProviderApi {
         this.keyPair = null;
 
         return true;
+    }
+
+    public async register() {
+        providerDataAction();
+        submitProviderDataAction.reset();
+        keyPairsAction();
+        keysAction();
+        setInitialized(true);
+        /*
+            submitProviderDataAction(
+            providerData.data,
+            keyPairs.data,
+            keys.data
+        ).then((pd) => {
+            setSubmitting(false);
+            if (pd.status === 'succeeded')
+                router.navigateToUrl(
+                    '/provider/setup/store-secrets'
+                );
+        });
+        */
     }
 
     public async refetchAppointments(): Promise<Appointment[]> {

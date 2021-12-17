@@ -1,5 +1,5 @@
 {
-    "name": "kiebitz",
+    "name": "@kiebitz/apps-ffm",
     "description": "Kiebitz Web Applications",
     "version": "1.0.0",
     "private": true,
@@ -8,15 +8,19 @@
         "Andreas Dewes",
         "Benjamin Bender <bb@codepoet.de>"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kiebitz-oss/apps-ffm"
+    },
     "engines": {
         "node": ">=14"
     },
     "scripts": {
         "prettier": "prettier --write 'src/**/*.jsx' 'src/**/*.tsx' 'src/**/*.js'",
-        "lint:scss": "stylelint ./src/scss/*.scss --quiet",
-        "lint:scss:fix": "stylelint ./src/scss/*.scss --fix",
-        "lint": "eslint . --ext js,jsx,ts,tsx --quiet && stylelint src/**/*.scss",
-        "lint:fix": "eslint . --ext js,jsx,ts,tsx --quiet --fix; stylelint src/**/*.scss --fix",
+        "lint:css": "stylelint ./src/**/*.css --quiet",
+        "lint:css:fix": "stylelint ./src/**/*.css --fix",
+        "lint": "eslint . --ext js,jsx,ts,tsx --quiet && stylelint src/**/*.css",
+        "lint:fix": "eslint . --ext js,jsx,ts,tsx --quiet --fix; stylelint src/**/*.css --fix",
         "test": "NODE_ENV=test jest",
         "build": "NODE_ENV=production npm run i18n:build && webpack --mode=production --progress",
         "dev": "webpack serve --mode=development",
@@ -43,7 +47,8 @@
         "react-hook-form": "^7.20.5",
         "react-router": "^6.0.2",
         "react-router-dom": "^6.0.2",
-        "react-use": "^17.3.1"
+        "react-use": "^17.3.1",
+        "vanellus": "file:../vanellus"
     },
     "devDependencies": {
         "@babel/cli": "^7.16.0",
@@ -63,7 +68,6 @@
         "@storybook/builder-webpack5": "^6.4.9",
         "@storybook/manager-webpack5": "^6.4.9",
         "@storybook/react": "^6.4.9",
-        "@storybook/testing-library": "^0.0.7",
         "@tailwindcss/forms": "^0.4.0",
         "@types/react": "^17.0.37",
         "@typescript-eslint/eslint-plugin": "^5.5.0",
@@ -101,11 +105,9 @@
         "stylelint-a11y": "^1.2.3",
         "stylelint-config-recommended": "^6.0.0",
         "stylelint-no-unsupported-browser-features": "^5.0.2",
-        "stylelint-scss": "^4.0.0",
         "tailwindcss": "^3.0.0",
         "terser-webpack-plugin": "^5.2.5",
         "typescript": "^4.5.2",
-        "webpack": "^5.64.4",
         "webpack-cli": "^4.9.1",
         "webpack-dev-server": "^4.6.0"
     },
@@ -213,6 +215,25 @@
                 true,
                 {
                     "severity": "warning"
+                }
+            ],
+            "at-rule-no-unknown": [
+                true,
+                {
+                    "ignoreAtRules": [
+                        "tailwind",
+                        "layer",
+                        "variants",
+                        "responsive",
+                        "screen"
+                    ]
+                }
+            ],
+            "block-no-empty": null,
+            "selector-pseudo-class-no-unknown": [
+                true,
+                {
+                    "ignorePseudoClasses": "global"
                 }
             ]
         }

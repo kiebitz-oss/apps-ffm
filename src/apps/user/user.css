@@ -1,65 +1,140 @@
-.appointment-card {
-    @apply flex flex-col p-4 w-full font-semibold rounded-lg border-2 border-black default-focus;
-
-    & > address {
-        @apply mb-2 text-center;
-    }
-
-    & > time {
-        @apply block mb-10 text-lg text-center;
-    }
-
-    & > div {
-        @apply text-center;
-    }
+.box {
 }
 
-.questionaire {
-    @apply flex flex-col gap-4 mb-8 justify-between max-w-[500px] lg:max-w-max items-stretch;
+.card {
+}
 
-    & .button {
-        @apply w-full;
+#welcome {
+    @apply md:pt-20 md:pb-8 md:pl-16;
+
+    & .text1 {
+        @apply mb-4 max-w-[48ch];
     }
-}
 
-.questions {
-    @apply flex flex-col mx-[-16px] sm:mx-0 mb-8;
-}
+    & .text2 {
+        @apply mb-8 max-w-[48ch];
+    }
 
-.question-box {
-    @apply p-4 w-full max-w-[500px] rounded-lg shadow-lg;
+    & .questionaire {
+        @apply flex flex-col flex-grow lg:max-w-full mb-6 md:mb-8;
+    }
+
+    & .questions {
+        @apply flex flex-col flex-1 gap-5;
+    }
+
+    .question-box-container {
+        @apply flex flex-col gap-4 xl:gap-2 xl:flex-row md:px-0 lg:w-full;
+    }
+
+    & .question-box {
+        @apply px-4 py-3 flex flex-col gap-5 shadow-box rounded-2xl font-semibold sm:w-[500px] bg-white;
+
+        &.question-box-error {
+            @apply border-error border-2;
+        }
+    }
 
     & .question {
-        @apply flex justify-between mb-2;
-
-        & h3 {
-            @apply font-semibold;
-        }
+        @apply flex justify-between pr-4;
     }
 
     & .answer {
-        @apply flex gap-8 items-center ml-2;
+        @apply flex gap-8 items-center mb-2;
 
         & label {
-            @apply flex gap-2 items-center font-semibold;
+            @apply flex gap-2 items-center;
         }
     }
 
-    &.error {
-        @apply border-red-500 border-2;
+    & .field-error {
+        @apply mx-4 sm:w-[500px] xl:mt-2;
+    }
+
+    & .button {
+        @apply mx-4 mt-8 md:mx-0 sm:self-start sm:mx-0;
+    }
+
+    & .form-error {
+        @apply mt-8 mx-8 md:mx-0;
     }
 }
 
+#finder-appointment {
+    @apply md:pt-20 md:pb-8 md:px-16;
+
+    & .controls {
+        @apply px-4 mb-10 flex flex-col gap-5 md:flex-row md:justify-between w-full md:px-0;
+    }
+
+    & .appointment-grid {
+        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full;
+
+        & .card {
+            @apply p-4 w-full no-underline text-center rounded-2xl  shadow-appointment hover:shadow-appointment2 sm:mx-0;
+        }
+    }
+}
+
+#finder-location {
+    @apply md:pr-[33%] md:pt-24 md:pb-8 md:pl-16;
+
+    .h1 {
+    }
+
+    .controls {
+        @apply mx-4 mb-8  lg:mx-8 md:max-w-3xl;
+    }
+
+    .location-list {
+        @apply flex flex-col gap-4 w-full md:px-0 md:max-w-3xl;
+    }
+
+    .provider-card {
+        @apply hover:border-highlight hover:shadow-provider;
+    }
+}
+
+#finder-verify {
+    @apply md:pr-[33%] md:pt-24 md:pb-8 md:pl-16;
+
+    .your-appointment {
+        @apply flex flex-col mb-10 md:flex-row md:w-[720px] md:gap-12 w-full sm:w-fit;
+    }
+
+    .provider-description {
+        @apply italic mt-6 md:w-1/2;
+    }
+}
+
+#finder-success {
+    @apply lg:pr-[33%] md:pt-24 md:pb-8 md:px-20;
+}
+
 #faq {
-    & section {
-        @apply lg:w-2/3;
+    @apply md:pr-[25%] md:pt-24 md:pb-16 md:pl-16;
+
+    & h2 {
+        @apply mb-12;
+    }
+
+    & .faq-sections {
+        @apply flex flex-col gap-14 md:gap-20;
+    }
+
+    & .faq-section {
+        @apply flex flex-col;
+
+        & h3 {
+            @apply mb-5 font-semibold text-lg uppercase tracking-wider;
+        }
 
         & .questions {
-            @apply flex flex-col gap-8 ml-6;
+            @apply flex flex-col md:gap-10 px-8 md:px-0 md:ml-6;
 
             & details {
-                & h2 {
-                    @apply h3 inline cursor-pointer;
+                & h4 {
+                    @apply text-lg md:text-2xl font-semibold inline cursor-pointer;
                 }
             }
 
@@ -68,4 +143,44 @@
             }
         }
     }
+}
+
+#privacy {
+    @apply md:pr-[25%] md:pt-24 md:pb-16 md:pl-16;
+}
+
+#imprint {
+    @apply md:pr-[25%] md:pt-24 md:pb-16 md:pl-16;
+}
+
+.provider-card {
+    @apply flex justify-between p-4 rounded-2xl border-2 border-black;
+}
+
+.appointment-card {
+    @apply flex flex-col gap-4 p-4 w-full font-semibold  default-focus;
+
+    &.border {
+        @apply rounded-2xl border-2 border-black;
+    }
+
+    & > address {
+        @apply mb-2 text-center;
+
+        & > h3 {
+            @apply mb-2;
+        }
+    }
+
+    & > time {
+        @apply block text-lg text-center;
+    }
+
+    & > .vaccine {
+        @apply text-center;
+    }
+}
+
+.faq-section {
+    @apply inline-block;
 }

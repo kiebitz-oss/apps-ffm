@@ -5,7 +5,7 @@ import { Form, InputField, Link, Text, Title } from 'ui';
 
 export const DateStep: React.FC = () => {
     return (
-        <main>
+        <main id="finder-date">
             <BackLink href="/user/finder">
                 <Trans id="user.finder.date.back-link">
                     zurück zum Terminauswahl

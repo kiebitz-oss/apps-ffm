@@ -23,7 +23,7 @@ type Payload = {
         date: Date;
     };
     [Types.SET_PROVIDER]: {
-        provider: PublicProvider;
+        provider: PublicProvider | null;
     };
     [Types.SET_APPOINTMENT]: {
         appointment: Appointment;

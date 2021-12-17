@@ -18,7 +18,7 @@ export const LocationStep: React.FC = () => {
     const [filterAccessible, setFilterAccessible] = useState<boolean>(false);
     const [providers, setProviders] = useState<PublicProvider[]>([]);
     const api = useUserApi();
-    const { dispatch } = useFinderState();
+    const { dispatch, state } = useFinderState();
 
     useEffect(() => {
         api.getProvidersByZip(30363, 10).then((providers) => {
@@ -43,34 +43,36 @@ export const LocationStep: React.FC = () => {
     };
 
     return (
-        <main>
-            <BackLink href="/user/finder">
+        <main id="finder-location">
+            <BackLink href="/user">
                 <Trans id="user.finder.location.back-link">
-                    Zurück zu den Terminauswahl
+                    Zurück zu den allgemeinen Informationen
                 </Trans>
             </BackLink>
 
-            <Title variant="h1" as="h2">
-                <Trans id="user.finder.location.title">Impfort</Trans>
+            <Title variant="h1" as="h2" className="mb-3">
+                <Trans id="user.finder.location.title">Impfstellen</Trans>
             </Title>
 
-            <Text>
+            <Text variant="text2" className="mb-8">
                 <Trans id="user.finder.location.intro">
                     Wählen Sie aus den möglichen Optionen, wo Sie geimpft werden
                     möchten.
                 </Trans>
             </Text>
 
-            <CheckboxField
-                label={t({
-                    id: 'user.finder.location.accessible.label',
-                    message: 'Nur barrierefreie Impfzentren anzeigen',
-                })}
-                name="accessible"
-                onChange={onFilterAccessibleChange}
-            />
+            <div className="controls">
+                <CheckboxField
+                    label={t({
+                        id: 'user.finder.location.accessible.label',
+                        message: 'Nur barrierefreie Impfstellen',
+                    })}
+                    name="accessible"
+                    onChange={onFilterAccessibleChange}
+                />
+            </div>
 
-            <ul className="flex flex-col gap-2 mt-12 w-full">
+            <ul className="location-list">
                 {providers
                     .filter((provider) => {
                         if (!filterAccessible) {
@@ -82,7 +84,7 @@ export const LocationStep: React.FC = () => {
                     .map((provider) => (
                         <li key={provider.id}>
                             <Link
-                                href="/user/finder"
+                                href="/user/finder/appointment"
                                 className="w-full no-underline "
                                 onClick={onClick}
                                 data-id={provider.id}

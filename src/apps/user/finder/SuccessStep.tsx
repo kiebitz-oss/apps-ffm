@@ -32,7 +32,7 @@ export const SuccessStep: React.FC = () => {
 
     const onCancel: MouseEventHandler<HTMLButtonElement> = () => {
         api.cancelAppointment(appointment.id, appointment.provider.id).then(
-            (result) => {
+            () => {
                 navigate('/user/finder');
             }
         );
@@ -44,16 +44,42 @@ export const SuccessStep: React.FC = () => {
     }
 
     return (
-        <main>
-            <div className="xl:w-2/3">
-                <Title variant="h1" as="h2">
-                    <Trans id="user.finder.success.title">
-                        Ihr Termin ist gebucht!
-                    </Trans>
-                </Title>
+        <main id="finder-success">
+            <article className="flex flex-col gap-14">
+                <section className="flex flex-col gap-8">
+                    <Title variant="h1" as="h2" className="mx-4 mb-4 md:mx-0">
+                        <Trans id="user.finder.success.title">
+                            Ihr Termin ist gebucht!
+                        </Trans>
+                    </Title>
 
-                <div>
-                    <Text>
+                    <div className="flex flex-col gap-8 md:flex-row">
+                        <div className="flex flex-col flex-1">
+                            <Title variant="book" as="h3">
+                                <Trans id="user.finder.success.appointment-title">
+                                    Ihr Termin
+                                </Trans>
+                            </Title>
+
+                            <AppointmentCard appointment={appointment} border />
+                        </div>
+
+                        <div className="flex flex-col flex-1">
+                            <Title variant="book" as="h3">
+                                <Trans id="user.finder.success.appointment-code">
+                                    Ihr Buchungscode
+                                </Trans>
+                            </Title>
+
+                            <div className="flex justify-center items-center p-4 text-2xl font-bold text-white bg-black rounded-lg md:flex-grow">
+                                {secret === null
+                                    ? 'Buchung läuft...'
+                                    : secret.toUpperCase().slice(0, 4)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <Text variant="text2" className="mx-4 md:mx-0">
                         <Trans id="user.finder.success.intro">
                             <strong>Wichtig:</strong> Bitte notieren Sie sich
                             den untenstehenden Code und bringen ihn unbedingt
@@ -61,112 +87,107 @@ export const SuccessStep: React.FC = () => {
                         </Trans>
                     </Text>
 
-                    <button
-                        onClick={onCancel}
-                        className="inline-flex gap-2 items-center py-4 px-8 mb-12 font-semibold text-red-700 no-underline bg-red-100 rounded-lg"
-                    >
-                        <Trans id="user.finder.success.cancel-button">
-                            Um die Terminbuchung abzusagen, bitte hier klicken
-                        </Trans>
-                    </button>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2 md:gap-12 lg:gap-16">
-                    <div>
-                        <Title variant="book" as="h3">
-                            <Trans id="user.finder.success.appointment-title">
-                                Ihr Termin
-                            </Trans>
-                        </Title>
-
-                        <AppointmentCard appointment={appointment} />
-                    </div>
-
-                    <div>
-                        <Title variant="book" as="h3">
-                            <Trans id="user.finder.success.appointment-code">
-                                Ihr Buchungscode
-                            </Trans>
-                        </Title>
-
-                        <div className="flex justify-center items-center p-4 text-2xl font-bold text-white bg-black rounded-lg">
-                            {secret ? secret : 'Buchung läuft...'}
-                        </div>
-                    </div>
-
-                    <div>
-                        <Text>
-                            Das müssen Sie zur Impfung gegen COVID-19
-                            mitbringen:
+                    <div className="flex flex-col gap-4 mx-4 md:mx-0">
+                        <Text variant="text2">
+                            Sollte Sie Ihren Termin nicht wahrnehmen können,
+                            stornieren Sie ihn bitte mit nachstehendem Button.
                         </Text>
 
-                        <ul className="flex flex-col gap-8 mb-8">
-                            <li>
-                                <strong>amtliches Ausweisdokument</strong>
-                                <br />
-                                <i>(Personalausweis, Reisepass)</i>
-                            </li>
-                            <li>
-                                <strong>Impfpass</strong>
-                                <br />
-                                <i>
-                                    (wenn nicht vorhanden, erhalten Sie eine
-                                    Ersatzbescheinigung.)
-                                </i>
-                            </li>
-                            <li>
-                                <strong>FFP2-Maske</strong>
-                                <br />
-                                <i>(zur Einhaltung der Hygienemaßnahmen)</i>
-                            </li>
-                        </ul>
+                        <button
+                            onClick={onCancel}
+                            className="text-primary bg-primary/10 button md"
+                        >
+                            <Trans id="user.finder.success.cancel-button">
+                                Termin absagen
+                            </Trans>
+                        </button>
                     </div>
+                </section>
 
-                    <div>
-                        <Text variant="intro2">
-                            Vor dem Impftermin und Ihrem medizinischen
-                            Aufklärungsgespräch können Sie sich das
-                            Aufklärungsmerkblatt zum Impfstoff und die
-                            Einwilligungserklärung zur Impfung im nachfolgend
-                            als PDF-Datei herunterladen und ausdrucken. Dort
-                            erhalten Sie ebenfalls wichtige Informationen zu
-                            Ihrer Impfung und dem Impfstoff gegen das
-                            Coronavirus. Mit folgenden Schritten können Sie sich
-                            auf Ihren Impftermin vorbereiten:
-                        </Text>
+                <section className="mx-4 md:mx-0">
+                    <Title as="h3" variant="h2">
+                        Das müssen Sie zur Impfung gegen COVID-19 mitbringen:
+                    </Title>
 
-                        <div>
+                    <ul className="flex flex-col gap-4">
+                        <li>
+                            <strong>Ein amtliches Ausweisdokument</strong>
+                            <br />
+                            <i>(Personalausweis, Reisepass)</i>
+                        </li>
+                        <li>
+                            <strong>Impfpass</strong>
+                            <br />
+                            <i>
+                                (wenn nicht vorhanden, erhalten Sie eine
+                                Ersatzbescheinigung.)
+                            </i>
+                        </li>
+                        <li>
+                            <strong>FFP2-Maske</strong>
+                            <br />
+                            <i>(zur Einhaltung der Hygienemaßnahmen)</i>
+                        </li>
+                    </ul>
+                </section>
+
+                <section className="mx-4 md:mx-0">
+                    <Title as="h3" variant="h2">
+                        Impfvorbereitungen
+                    </Title>
+
+                    <ul className="flex flex-col gap-4 items-stretch pb-6">
+                        <li>
                             <Link
                                 href={vaccines.de[appointment.vaccine].infosUrl}
                                 external
-                                className="inline-flex gap-2 items-center py-2 px-4 mb-2 font-semibold text-blue-700 no-underline bg-blue-100 rounded-lg"
+                                className="inline-flex gap-2 justify-center items-center py-2 px-4 w-full font-semibold text-primary no-underline bg-blue-100 rounded-2xl"
                             >
                                 <GeneratePdf16 />
                                 Aufklärungsmerkblatt
                             </Link>
-                            <br />
-                            <Text>
-                                zum Impfstoff lesen und gegebenenfalls Fragen
-                                notieren
-                            </Text>
-                        </div>
+                        </li>
 
-                        <div>
+                        <li>
                             <Link
                                 href={
                                     vaccines.de[appointment.vaccine]
                                         .anamnesisUrl
                                 }
                                 external
-                                className="inline-flex gap-2 items-center py-2 px-4 mb-2 font-semibold text-blue-700 no-underline bg-blue-100 rounded-lg"
+                                className="inline-flex gap-2 justify-center items-center py-2 px-4 mb-2 w-full font-semibold text-primary no-underline bg-blue-100 rounded-2xl"
                             >
                                 <GeneratePdf16 />
-                                Einwilligungserklärung lesen
+                                Einwilligungserklärung
                             </Link>
-                            <br />
+                        </li>
+                    </ul>
+
+                    <Text variant="text2">
+                        Vor dem Impftermin und Ihrem medizinischen
+                        Aufklärungsgespräch können Sie sich das
+                        Aufklärungsmerkblatt zum Impfstoff und die
+                        Einwilligungserklärung zur Impfung als PDF-Datei
+                        herunterladen und ausdrucken. Dort erhalten Sie
+                        ebenfalls wichtige Informationen zu Ihrer Impfung und
+                        dem Impfstoff gegen das Coronavirus.
+                    </Text>
+                </section>
+
+                <section className="mx-4 md:mx-0">
+                    <Title as="h3" variant="h2">
+                        Mit den folgenden Schritten können Sie sich zusätzlich
+                        auf Ihren Impftermin vorbereiten:
+                    </Title>
+
+                    <ul className="flex flex-col gap-4">
+                        <li>
                             <Text>
                                 An- und Rückfahrt planen und organisieren
                             </Text>
+                        </li>
+
+                        <li>
                             <Text>
                                 Zeit für <strong>Nachbeobachtung</strong>{' '}
                                 einplanen.
@@ -177,6 +198,9 @@ export const SuccessStep: React.FC = () => {
                                     länger)
                                 </i>
                             </Text>
+                        </li>
+
+                        <li>
                             <Text>
                                 Gedanken zur eigenen{' '}
                                 <strong>Krankheitsgeschichte</strong>{' '}
@@ -187,10 +211,10 @@ export const SuccessStep: React.FC = () => {
                                 der Impfung mitteilen und mögliche Risiken der
                                 Impfung abwägen zu können.
                             </Text>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
         </main>
     );
 };

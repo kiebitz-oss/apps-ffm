@@ -38,8 +38,8 @@ module.exports = (env, argv) => {
                 'react/jsx-runtime': 'preact/jsx-runtime',
             },
             fallback: {
-                buffer: require.resolve('buffer'),
-                process: 'process/browser',
+                buffer: require.resolve('buffer/'),
+                process: require.resolve('process/browser'),
             },
         },
         module: {
@@ -111,10 +111,10 @@ module.exports = (env, argv) => {
                     // 'theme-color': '#4285f4'
                 },
             }),
-            new webpack.ProvidePlugin({
-                process: 'process/browser',
-                Buffer: ['buffer', 'Buffer'],
-            }),
+            // new webpack.ProvidePlugin({
+            //     process: 'process/browser',
+            //     Buffer: ['buffer', 'Buffer'],
+            // }),
         ],
         optimization: {
             minimize: argv.mode === 'production',

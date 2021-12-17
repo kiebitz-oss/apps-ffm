@@ -1,16 +1,25 @@
 import { Edit24 } from '@carbon/icons-react';
 import { t, Trans } from '@lingui/macro';
+import { BackLink } from 'apps/common/BackLink';
 import { appointments } from 'apps/data';
-import React, { ChangeEventHandler, MouseEventHandler } from 'react';
+import React, {
+    ChangeEventHandler,
+    MouseEventHandler,
+    useEffect,
+    useState,
+} from 'react';
 import type { Appointment } from 'types';
 import { Button, InputField, Link, Title } from 'ui';
+import { AppointmentCard } from '../common/AppointmentCard';
 import { Types, useFinderState } from './FinderStateProvider';
 
 interface AppointmentCardProps {
     appointment: Appointment;
 }
 
-const AppointmentCard: React.FC<AppointmentCardProps> = ({ appointment }) => {
+const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
+    appointment,
+}) => {
     const { dispatch } = useFinderState();
 
     const onAppointmentSelect: MouseEventHandler<HTMLAnchorElement> = (
@@ -37,54 +46,40 @@ const AppointmentCard: React.FC<AppointmentCardProps> = ({ appointment }) => {
     return (
         <Link
             href="/user/finder/verify"
-            className="group flex-grow p-4 -mx-4 text-center no-underline rounded-md border shadow-lg hover:shadow-2xl focus:shadow-2xl sm:mx-0"
+            className="group card"
             onClick={onAppointmentSelect}
             data-id={appointment.id}
         >
-            <address className="mb-2 text-center">
-                <Title variant="h3">{appointment.provider.name}</Title>
-                <span className="font-medium">
-                    {appointment.provider.street},
-                    <br />
-                    {appointment.provider.zipCode} {appointment.provider.city}
-                </span>
-            </address>
-
-            <time className="block mb-6 text-center">
-                <span className="text-4xl font-semibold">
-                    <Trans id="user.finder.appointment.card.time">
-                        {appointment.date.toLocaleTimeString()} Uhr
+            <AppointmentCard appointment={appointment}>
+                <Button
+                    className="group-hover:bg-primary group-focus:bg-primary shadow-lg select-none"
+                    tabIndex={-1}
+                >
+                    <Trans id="user.finder.appointment.card.submit">
+                        Termin auswählen
                     </Trans>
-                </span>
-                <br />
-                <span className="text-xl font-semibold">
-                    <Trans id="user.finder.appointment.card.date">
-                        am {appointment.date.toLocaleDateString()}
-                    </Trans>
-                </span>
-            </time>
-
-            <p className="mb-6">
-                <Trans id="user.finder.appointment.card.vaccine">
-                    Impfstoff
-                </Trans>
-                : {appointment.vaccine}
-            </p>
-
-            <Button
-                className="group-hover:bg-blue-700 group-focus:bg-blue-700 shadow-lg select-none"
-                tabIndex={-1}
-            >
-                <Trans id="user.finder.appointment.card.submit">
-                    Termin auswählen
-                </Trans>
-            </Button>
+                </Button>
+            </AppointmentCard>
         </Link>
     );
 };
 
 export const AppointmentStep: React.FC = () => {
+    const [filteredAppointments, setFilteredAppointments] =
+        useState(appointments);
     const { dispatch, state } = useFinderState();
+
+    useEffect(() => {
+        const filteredAppointments = appointments.filter((appointment) => {
+            if (state.provider) {
+                return state.provider.id === appointment.provider.id;
+            }
+
+            return true;
+        });
+
+        setFilteredAppointments(filteredAppointments);
+    }, [state.provider]);
 
     const onDateChange: ChangeEventHandler<HTMLInputElement> = (event) => {
         const date = event.currentTarget.valueAsDate;
@@ -95,13 +90,28 @@ export const AppointmentStep: React.FC = () => {
         });
     };
 
+    const onResetProvider: ChangeEventHandler<HTMLInputElement> = (event) => {
+        if (event.currentTarget.value === '') {
+            dispatch({
+                type: Types.SET_PROVIDER,
+                payload: { provider: null },
+            });
+        }
+    };
+
     return (
-        <main>
-            <Title variant="h1" as="h2">
+        <main id="finder-appointment">
+            <BackLink href="/user/finder">
+                <Trans id="user.finder.appointment.back-link">
+                    Zurück zur Auswahl der Impfstelle
+                </Trans>
+            </BackLink>
+
+            <Title variant="h1" as="h2" className="mb-3">
                 <Trans id="user.finder.appointment.title">Termine</Trans>
             </Title>
 
-            <div className="flex flex-col gap-6 items-stretch mb-8 w-full md:flex-row md:justify-between">
+            <div className="controls">
                 <div className="flex flex-row gap-2 items-center">
                     <InputField
                         name="provider"
@@ -111,14 +121,17 @@ export const AppointmentStep: React.FC = () => {
                             message: 'Beliebige Impfstelle',
                         })}
                         value={state.provider?.name}
+                        onChange={onResetProvider}
+                        className="flex-1"
                     />
                     <Link
                         href="/user/finder/location"
-                        className="inline-flex justify-center items-center w-10 h-10 text-white no-underline bg-primary-500 rounded-lg shadow"
+                        className="inline-flex justify-center items-center w-10 h-10 text-white no-underline bg-primary rounded-lg shadow"
                     >
                         <Edit24 />
                     </Link>
                 </div>
+
                 <InputField
                     name="date"
                     type="datetime-local"
@@ -131,20 +144,20 @@ export const AppointmentStep: React.FC = () => {
                 />
             </div>
 
-            <div className="flex flex-wrap gap-4">
-                {appointments.map((appointment) => (
-                    <AppointmentCard
+            <div className="appointment-grid">
+                {filteredAppointments.map((appointment) => (
+                    <AppointmentCardSelector
                         appointment={appointment}
                         key={appointment.id}
                     />
                 ))}
             </div>
 
-            <button className="py-2 px-6 my-8 mx-auto text-lg font-semibold bg-gray-300 rounded-lg shadow-lg">
+            {/* <button className="py-2 px-6 my-8 mx-auto text-lg font-semibold bg-gray-300 rounded-lg shadow-lg">
                 <Trans id="user.finder.appointment.submit">
                     Weitere Termine laden
                 </Trans>
-            </button>
+            </button> */}
         </main>
     );
 };

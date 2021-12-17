@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-12-15 15:44+0100\n"
+"POT-Creation-Date: 2021-12-17 14:36+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -615,91 +615,87 @@ msgstr ""
 msgid "ui.copy"
 msgstr ""
 
-#: src/apps/user/common/AppointmentCard.tsx:29
-msgid "user.appointment-card.vaccine"
-msgstr ""
-
-#: src/apps/user/FaqPage.tsx:22
+#: src/apps/user/FaqPage.tsx:29
 msgid "user.faq.question.answer.1"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:38
+#: src/apps/user/FaqPage.tsx:46
 msgid "user.faq.question.answer.2"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:54
+#: src/apps/user/FaqPage.tsx:63
 msgid "user.faq.question.answer.3"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:70
+#: src/apps/user/FaqPage.tsx:79
 msgid "user.faq.question.answer.4"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:86
+#: src/apps/user/FaqPage.tsx:96
 msgid "user.faq.question.answer.5"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:102
+#: src/apps/user/FaqPage.tsx:113
 msgid "user.faq.question.answer.6"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:16
+#: src/apps/user/FaqPage.tsx:23
 msgid "user.faq.question.title.1"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:32
+#: src/apps/user/FaqPage.tsx:40
 msgid "user.faq.question.title.2"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:48
+#: src/apps/user/FaqPage.tsx:57
 msgid "user.faq.question.title.3"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:64
+#: src/apps/user/FaqPage.tsx:74
 msgid "user.faq.question.title.4"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:80
+#: src/apps/user/FaqPage.tsx:90
 msgid "user.faq.question.title.5"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:96
+#: src/apps/user/FaqPage.tsx:107
 msgid "user.faq.question.title.6"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:16
+msgid "user.faq.section1.title"
 msgstr ""
 
 #: src/apps/user/FaqPage.tsx:11
 msgid "user.faq.title"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:61
+#: src/apps/user/finder/AppointmentStep.tsx:105
+msgid "user.finder.appointment.back-link"
+msgstr ""
+
+#: src/apps/user/common/AppointmentCard.tsx:59
 msgid "user.finder.appointment.card.date"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:78
+#: src/apps/user/finder/AppointmentStep.tsx:58
 msgid "user.finder.appointment.card.submit"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:55
+#: src/apps/user/common/AppointmentCard.tsx:49
 msgid "user.finder.appointment.card.time"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:68
-msgid "user.finder.appointment.card.vaccine"
-msgstr ""
-
-#: src/apps/user/finder/appointmentStep.tsx:109
+#: src/apps/user/finder/AppointmentStep.tsx:119
 msgid "user.finder.appointment.provider.placeholder"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:144
-msgid "user.finder.appointment.submit"
-msgstr ""
-
-#: src/apps/user/finder/appointmentStep.tsx:125
+#: src/apps/user/finder/AppointmentStep.tsx:138
 msgid "user.finder.appointment.time.placeholder"
 msgstr ""
 
-#: src/apps/user/finder/appointmentStep.tsx:101
+#: src/apps/user/finder/AppointmentStep.tsx:111
 msgid "user.finder.appointment.title"
 msgstr ""
 
@@ -723,7 +719,7 @@ msgstr ""
 msgid "user.finder.date.title"
 msgstr ""
 
-#: src/apps/user/finder/LocationStep.tsx:65
+#: src/apps/user/finder/LocationStep.tsx:66
 msgid "user.finder.location.accessible.label"
 msgstr ""
 
@@ -739,23 +735,23 @@ msgstr ""
 msgid "user.finder.location.title"
 msgstr ""
 
-#: src/apps/user/finder/SuccessStep.tsx:87
+#: src/apps/user/finder/SuccessStep.tsx:69
 msgid "user.finder.success.appointment-code"
 msgstr ""
 
-#: src/apps/user/finder/SuccessStep.tsx:77
+#: src/apps/user/finder/SuccessStep.tsx:59
 msgid "user.finder.success.appointment-title"
 msgstr ""
 
-#: src/apps/user/finder/SuccessStep.tsx:68
+#: src/apps/user/finder/SuccessStep.tsx:100
 msgid "user.finder.success.cancel-button"
 msgstr ""
 
-#: src/apps/user/finder/SuccessStep.tsx:57
+#: src/apps/user/finder/SuccessStep.tsx:83
 msgid "user.finder.success.intro"
 msgstr ""
 
-#: src/apps/user/finder/SuccessStep.tsx:50
+#: src/apps/user/finder/SuccessStep.tsx:51
 msgid "user.finder.success.title"
 msgstr ""
 
@@ -763,66 +759,70 @@ msgstr ""
 msgid "user.finder.time.label"
 msgstr ""
 
-#: src/apps/user/finder/VerifyStep.tsx:73
+#: src/apps/user/finder/VerifyStep.tsx:71
 msgid "user.finder.verify.appointment.description"
 msgstr ""
 
-#: src/apps/user/finder/VerifyStep.tsx:63
+#: src/apps/user/finder/VerifyStep.tsx:61
 msgid "user.finder.verify.appointment.subtitle"
 msgstr ""
 
-#: src/apps/user/finder/VerifyStep.tsx:43
+#: src/apps/user/finder/VerifyStep.tsx:41
 msgid "user.finder.verify.back-link"
 msgstr ""
 
-#: src/apps/user/finder/VerifyStep.tsx:53
+#: src/apps/user/finder/VerifyStep.tsx:51
 msgid "user.finder.verify.intro"
 msgstr ""
 
-#: src/apps/user/finder/VerifyStep.tsx:87
+#: src/apps/user/finder/VerifyStep.tsx:85
 msgid "user.finder.verify.submit"
 msgstr ""
 
-#: src/apps/user/finder/VerifyStep.tsx:49
+#: src/apps/user/finder/VerifyStep.tsx:47
 msgid "user.finder.verify.title"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:116
+#: src/apps/user/WelcomePage.tsx:172
 msgid "user.welcome.button"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:40
+#: src/apps/user/WelcomePage.tsx:161
+msgid "user.welcome.form_error"
+msgstr ""
+
+#: src/apps/user/WelcomePage.tsx:89
 msgid "user.welcome.intro-1"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:47
+#: src/apps/user/WelcomePage.tsx:96
 msgid "user.welcome.intro-2"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:59
+#: src/apps/user/WelcomePage.tsx:109
 msgid "user.welcome.question1_value"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:69
+#: src/apps/user/WelcomePage.tsx:119
 msgid "user.welcome.question2_error"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:75
+#: src/apps/user/WelcomePage.tsx:125
 msgid "user.welcome.question2_value"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:84
+#: src/apps/user/WelcomePage.tsx:134
 msgid "user.welcome.question3_value"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:96
+#: src/apps/user/WelcomePage.tsx:146
 msgid "user.welcome.question4_error"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:102
+#: src/apps/user/WelcomePage.tsx:152
 msgid "user.welcome.question4_value"
 msgstr ""
 
-#: src/apps/user/WelcomePage.tsx:36
+#: src/apps/user/WelcomePage.tsx:85
 msgid "user.welcome.title"
 msgstr ""

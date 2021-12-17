@@ -1,15 +1,13 @@
 import { theme } from 'config/theme';
 import React from 'react';
 import { Link } from 'ui';
+import Footer from './Footer';
 
 interface LayoutProps {
-    nav?: React.ReactNode;
+    nav?: React.ReactElement;
 }
 
 export const Layout: React.FC<LayoutProps> = ({ nav, children }) => {
-    const Footer = theme.footer;
-    const Nav = nav;
-
     return (
         <>
             <header>
@@ -19,7 +17,7 @@ export const Layout: React.FC<LayoutProps> = ({ nav, children }) => {
                     </Link>
                 </h1>
 
-                <Nav />
+                {nav()}
             </header>
 
             {children}

@@ -1,7 +1,33 @@
 import { appointments, providers } from 'apps/data';
+import { b642buf } from 'helpers/conversion';
+import { buf2base32, randomBytes } from 'helpers/crypto';
 import { Appointment, PublicProvider } from 'types';
+import { User as KiebitzUser } from 'vanellus';
+import { backend } from './backend';
 
 export class UserApi {
+    protected user: KiebitzUser;
+
+    constructor() {
+        this.user = new KiebitzUser('main', backend);
+        //     // console.log(this.kiebitz);
+
+        //     // this.kiebitz.queueData = {
+        //     //     zipCode: '60306',
+        //     // };
+
+        //     // const today = formatDate(new Date());
+
+        //     // this.kiebitz
+        //     //     .getAppointments({
+        //     //         from: today,
+        //     //         to: today,
+        //     //     })
+        //     //     .then((result) => {
+        //     //         console.log(result);
+        //     //     });
+    }
+
     public async getProvidersByZip(
         zipCode: number,
         radius = 5
@@ -39,7 +65,7 @@ export class UserApi {
         appointmentId: string,
         providerID: string
     ): Promise<string> {
-        return '1234';
+        return buf2base32(b642buf(randomBytes(10)));
     }
 
     public async cancelAppointment(

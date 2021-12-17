@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, Title, Text } from 'ui';
+import { Section, Text, Title } from 'ui';
 
 interface PageHeader {
     title: string;
@@ -10,7 +10,7 @@ interface PageHeader {
 export const PageHeader: React.FC<PageHeader> = ({ title, subTitle, text }) => {
     return (
         <Section className="py-16 px-4 mx-auto max-w-7xl text-center sm:py-24 sm:px-6 lg:px-8">
-            <Title className="text-base font-semibold tracking-wide text-primary-600 uppercase">
+            <Title className="text-base font-semibold tracking-wide text-primary uppercase">
                 {subTitle}
 
                 <p className="mt-1 text-4xl font-extrabold text-gray-900 normal-case sm:text-5xl sm:tracking-tight lg:text-6xl">

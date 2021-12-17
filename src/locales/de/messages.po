@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-12-15 15:44+0100\n"
+"POT-Creation-Date: 2021-12-17 14:36+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -615,91 +615,87 @@ msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit 
 msgid "ui.copy"
 msgstr "Kopieren"
 
-#: src/apps/user/common/AppointmentCard.tsx:29
-msgid "user.appointment-card.vaccine"
-msgstr "Impfstoff"
-
-#: src/apps/user/FaqPage.tsx:22
+#: src/apps/user/FaqPage.tsx:29
 msgid "user.faq.question.answer.1"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:38
+#: src/apps/user/FaqPage.tsx:46
 msgid "user.faq.question.answer.2"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:54
+#: src/apps/user/FaqPage.tsx:63
 msgid "user.faq.question.answer.3"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:70
+#: src/apps/user/FaqPage.tsx:79
 msgid "user.faq.question.answer.4"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:86
+#: src/apps/user/FaqPage.tsx:96
 msgid "user.faq.question.answer.5"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:102
+#: src/apps/user/FaqPage.tsx:113
 msgid "user.faq.question.answer.6"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:16
+#: src/apps/user/FaqPage.tsx:23
 msgid "user.faq.question.title.1"
-msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+msgstr "Für wen wird die Impfung gegen COVID-19 empfohlen?"
 
-#: src/apps/user/FaqPage.tsx:32
+#: src/apps/user/FaqPage.tsx:40
 msgid "user.faq.question.title.2"
-msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+msgstr "Wie erreiche ich das Impfzentrum Frankfurt und wie kann ich mich vor Ort zurechtfinden?"
 
-#: src/apps/user/FaqPage.tsx:48
+#: src/apps/user/FaqPage.tsx:57
 msgid "user.faq.question.title.3"
-msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+msgstr "Wie erreiche ich das Impfzentrum Frankfurt und wie kann ich mich vor Ort zurechtfinden?"
 
-#: src/apps/user/FaqPage.tsx:64
+#: src/apps/user/FaqPage.tsx:74
 msgid "user.faq.question.title.4"
-msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+msgstr "Was muss ich zur Impfung mitbringen?"
 
-#: src/apps/user/FaqPage.tsx:80
+#: src/apps/user/FaqPage.tsx:90
 msgid "user.faq.question.title.5"
-msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+msgstr "Wie viel Zeit sollte ich für die Impfung einplanen?"
 
-#: src/apps/user/FaqPage.tsx:96
+#: src/apps/user/FaqPage.tsx:107
 msgid "user.faq.question.title.6"
-msgstr "Warum ist das Zertifikat für meine Auffrischungsimpfung/Booster-Impfung ungültig bzw. nicht sofort gültig?"
+msgstr "Was mache ich, wenn ich meinen Impfausweis verloren habe?"
+
+#: src/apps/user/FaqPage.tsx:16
+msgid "user.faq.section1.title"
+msgstr "Fragen zum Impfzentrum und Ablauf der Impfung"
 
 #: src/apps/user/FaqPage.tsx:11
 msgid "user.faq.title"
 msgstr "Fragen & Antworten"
 
-#: src/apps/user/finder/appointmentStep.tsx:61
+#: src/apps/user/finder/AppointmentStep.tsx:105
+msgid "user.finder.appointment.back-link"
+msgstr "Zurück zur Auswahl der Impfstelle"
+
+#: src/apps/user/common/AppointmentCard.tsx:59
 msgid "user.finder.appointment.card.date"
 msgstr "am {0}"
 
-#: src/apps/user/finder/appointmentStep.tsx:78
+#: src/apps/user/finder/AppointmentStep.tsx:58
 msgid "user.finder.appointment.card.submit"
 msgstr "Termin auswählen"
 
-#: src/apps/user/finder/appointmentStep.tsx:55
+#: src/apps/user/common/AppointmentCard.tsx:49
 msgid "user.finder.appointment.card.time"
 msgstr "{0} Uhr"
 
-#: src/apps/user/finder/appointmentStep.tsx:68
-msgid "user.finder.appointment.card.vaccine"
-msgstr "Impfstoff"
-
-#: src/apps/user/finder/appointmentStep.tsx:109
+#: src/apps/user/finder/AppointmentStep.tsx:119
 msgid "user.finder.appointment.provider.placeholder"
 msgstr "Beliebige Impfstelle"
 
-#: src/apps/user/finder/appointmentStep.tsx:144
-msgid "user.finder.appointment.submit"
-msgstr "Weitere Termine laden"
-
-#: src/apps/user/finder/appointmentStep.tsx:125
+#: src/apps/user/finder/AppointmentStep.tsx:138
 msgid "user.finder.appointment.time.placeholder"
 msgstr "Beliebige Zeit"
 
-#: src/apps/user/finder/appointmentStep.tsx:101
+#: src/apps/user/finder/AppointmentStep.tsx:111
 msgid "user.finder.appointment.title"
 msgstr "Termine"
 
@@ -723,13 +719,13 @@ msgstr "Termin auswählen"
 msgid "user.finder.date.title"
 msgstr "Datum und Uhrzeit"
 
-#: src/apps/user/finder/LocationStep.tsx:65
+#: src/apps/user/finder/LocationStep.tsx:66
 msgid "user.finder.location.accessible.label"
-msgstr "Nur barrierefreie Impfzentren anzeigen"
+msgstr "Nur barrierefreie Impfstellen"
 
 #: src/apps/user/finder/LocationStep.tsx:48
 msgid "user.finder.location.back-link"
-msgstr "Zurück zu den Terminauswahl"
+msgstr "Zurück zu den allgemeinen Informationen"
 
 #: src/apps/user/finder/LocationStep.tsx:58
 msgid "user.finder.location.intro"
@@ -737,25 +733,25 @@ msgstr "Wählen Sie aus den möglichen Optionen, wo Sie geimpft werden möchten.
 
 #: src/apps/user/finder/LocationStep.tsx:54
 msgid "user.finder.location.title"
-msgstr "Impfort"
+msgstr "Impfstellen"
 
-#: src/apps/user/finder/SuccessStep.tsx:87
+#: src/apps/user/finder/SuccessStep.tsx:69
 msgid "user.finder.success.appointment-code"
 msgstr "Ihr Buchungscode"
 
-#: src/apps/user/finder/SuccessStep.tsx:77
+#: src/apps/user/finder/SuccessStep.tsx:59
 msgid "user.finder.success.appointment-title"
 msgstr "Ihr Termin"
 
-#: src/apps/user/finder/SuccessStep.tsx:68
+#: src/apps/user/finder/SuccessStep.tsx:100
 msgid "user.finder.success.cancel-button"
-msgstr "Um die Terminbuchung abzusagen, bitte hier klicken"
+msgstr "Termin absagen"
 
-#: src/apps/user/finder/SuccessStep.tsx:57
+#: src/apps/user/finder/SuccessStep.tsx:83
 msgid "user.finder.success.intro"
 msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und bringen ihn unbedingt zur Impfung mit."
 
-#: src/apps/user/finder/SuccessStep.tsx:50
+#: src/apps/user/finder/SuccessStep.tsx:51
 msgid "user.finder.success.title"
 msgstr "Ihr Termin ist gebucht!"
 
@@ -763,66 +759,70 @@ msgstr "Ihr Termin ist gebucht!"
 msgid "user.finder.time.label"
 msgstr "Zeit"
 
-#: src/apps/user/finder/VerifyStep.tsx:73
+#: src/apps/user/finder/VerifyStep.tsx:71
 msgid "user.finder.verify.appointment.description"
 msgstr "{0}"
 
-#: src/apps/user/finder/VerifyStep.tsx:63
+#: src/apps/user/finder/VerifyStep.tsx:61
 msgid "user.finder.verify.appointment.subtitle"
 msgstr "Ihr Termin"
 
-#: src/apps/user/finder/VerifyStep.tsx:43
+#: src/apps/user/finder/VerifyStep.tsx:41
 msgid "user.finder.verify.back-link"
 msgstr "zurück zum Terminauswahl"
 
-#: src/apps/user/finder/VerifyStep.tsx:53
+#: src/apps/user/finder/VerifyStep.tsx:51
 msgid "user.finder.verify.intro"
-msgstr "Hier ist Ihr gewählter Termin. Prüfen Sie nochmal, ob alles stimmt. Anschließend können Sie den Termin endgültig buchen."
+msgstr "Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob alles stimmt. Anschließend können Sie den Termin endgültig buchen."
 
-#: src/apps/user/finder/VerifyStep.tsx:87
+#: src/apps/user/finder/VerifyStep.tsx:85
 msgid "user.finder.verify.submit"
 msgstr "Termin jetzt buchen"
 
-#: src/apps/user/finder/VerifyStep.tsx:49
+#: src/apps/user/finder/VerifyStep.tsx:47
 msgid "user.finder.verify.title"
 msgstr "Übersicht"
 
-#: src/apps/user/WelcomePage.tsx:116
+#: src/apps/user/WelcomePage.tsx:172
 msgid "user.welcome.button"
 msgstr "Weiter zum Termin"
 
-#: src/apps/user/WelcomePage.tsx:40
+#: src/apps/user/WelcomePage.tsx:161
+msgid "user.welcome.form_error"
+msgstr "Bitte beantworten Sie alle Fragen, denn sonst können wir keine Termine für Sie heraussuchen. Alle Ihre persönlichen Daten werden nur auf Ihrem Endgerät gespeichert und nicht an einen Server übermittelt oder weitergegeben."
+
+#: src/apps/user/WelcomePage.tsx:89
 msgid "user.welcome.intro-1"
 msgstr "Sie sind jetzt nur noch wenige Klicks von Ihrem Termin entfernt."
 
-#: src/apps/user/WelcomePage.tsx:47
+#: src/apps/user/WelcomePage.tsx:96
 msgid "user.welcome.intro-2"
 msgstr "Wir speichern generell keine persönlichen Daten, aber haben ein paar Fragen, damit Sie den richtigen Impfstoff erhalten."
 
-#: src/apps/user/WelcomePage.tsx:59
+#: src/apps/user/WelcomePage.tsx:109
 msgid "user.welcome.question1_value"
 msgstr "Handelt es sich um eine Booster-Impfung?"
 
-#: src/apps/user/WelcomePage.tsx:69
+#: src/apps/user/WelcomePage.tsx:119
 msgid "user.welcome.question2_error"
 msgstr "Es müssen 6 Monate seit Ihrem letzten Impftermin vergangen sein, bevor Sie sich boostern lassen können."
 
-#: src/apps/user/WelcomePage.tsx:75
+#: src/apps/user/WelcomePage.tsx:125
 msgid "user.welcome.question2_value"
 msgstr "Liegt Ihre letzte Impfung mehr als 6 Monate zurück?"
 
-#: src/apps/user/WelcomePage.tsx:84
+#: src/apps/user/WelcomePage.tsx:134
 msgid "user.welcome.question3_value"
 msgstr "Sind sie schwanger oder jünger als 30?"
 
-#: src/apps/user/WelcomePage.tsx:96
+#: src/apps/user/WelcomePage.tsx:146
 msgid "user.welcome.question4_error"
 msgstr "Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld."
 
-#: src/apps/user/WelcomePage.tsx:102
+#: src/apps/user/WelcomePage.tsx:152
 msgid "user.welcome.question4_value"
 msgstr "Sind Sie jünger als 12?"
 
-#: src/apps/user/WelcomePage.tsx:36
+#: src/apps/user/WelcomePage.tsx:85
 msgid "user.welcome.title"
 msgstr "Willkommen!"

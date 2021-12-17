@@ -13,7 +13,7 @@
 
     html,
     body {
-        @apply overflow-x-hidden overscroll-x-none antialiased relative min-h-screen m-0 font-sans bg-gray-100;
+        @apply overflow-x-hidden overscroll-x-none relative min-h-screen m-0 font-sans bg-gray-100;
     }
 
     :disabled {
@@ -21,13 +21,17 @@
     }
 
     #app {
-        @apply h-screen flex-col flex max-w-[1440px] mx-auto sm:mx-8 md:mx-12 lg:mx-24;
+        @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto sm:mx-8 md:mx-12 lg:mx-24;
 
         & > header {
-            @apply min-w-full flex justify-between items-center py-8 px-4 md:px-0;
+            @apply min-h-[86px] md:min-h-[100px] min-w-full flex justify-between items-center px-4 md:px-8;
 
             & > nav {
-                @apply flex gap-12 self-end;
+                @apply gap-12 hidden md:flex md:pt-8;
+
+                & a {
+                    @apply hover:text-primary;
+                }
             }
         }
 
@@ -40,19 +44,24 @@
                 & > h3 {
                     @apply font-bold;
                 }
+
+                & a {
+                    @apply hover:text-primary;
+                }
             }
         }
     }
 
     main {
-        @apply relative px-8 sm:px-12 py-12 lg:px-20 lg:py-24 flex flex-col items-start flex-1  bg-white text-black rounded-lg;
+        /* px-8 sm:px-12 py-12 lg:px-20 lg:py-24 */
+        @apply relative flex flex-col items-start flex-1 bg-white text-black rounded-lg py-10 px-4;
 
         &.center {
             @apply justify-center;
         }
 
         & .back-link {
-            @apply absolute top-10 left-10  hidden gap-8 no-underline md:inline-flex hover:text-primary-500 book;
+            @apply absolute top-10 left-10  hidden gap-8 no-underline md:inline-flex hover:text-primary book;
         }
     }
 
@@ -80,7 +89,11 @@
 
 @layer components {
     .h1 {
-        @apply font-bold text-[42px] leading-none mb-5;
+        @apply font-bold text-4xl;
+    }
+
+    .h2 {
+        @apply font-bold text-lg mb-5;
     }
 
     .h3 {
@@ -92,17 +105,13 @@
     }
 
     .text {
-        @apply text-[18px] mb-8 leading-normal;
-
-        &.intro1 {
-            @apply text-[16px] mb-8;
+        &.text1 {
+            @apply text-[16px];
         }
 
-        &.intro2 {
-            @apply text-[16px] mb-8;
+        &.text2 {
+            @apply text-[16px];
         }
-
-        hyphens: auto;
     }
 
     .field {
@@ -118,17 +127,14 @@
     }
 
     .field-error {
-        @apply text-red-500 ml-12 font-bold relative;
+        @apply text-error pl-8 font-bold relative;
 
         &::before {
             content: url("data:image/svg+xml;utf8,<svg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M10 1.49512C5 1.49512 1 5.48281 1 10.4674C1 15.452 5 19.4397 10 19.4397C15 19.4397 19 15.452 19 10.4674C19 5.48281 15 1.49512 10 1.49512ZM6.5 14.9536L14.5 6.97819L13.5 5.98127L5.5 13.9567L6.5 14.9536Z' fill='%23DA1E28'/><path opacity='0.01' fill-rule='evenodd' clip-rule='evenodd' d='M6.5 14.9538L14.5 6.97837L13.5 5.98145L5.5 13.9568L6.5 14.9538Z' fill='%23DA1E28'/></svg>");
 
-            display: block;
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            left: -28px;
-            top: 5px;
+            @apply block absolute w-6 h-6;
+            left: 0px;
+            top: 12px;
         }
     }
 
@@ -167,9 +173,91 @@
     /* 
     based on https://github.com/argyleink/gui-challenges/tree/main/switch
     TODO: port to tailwind
-    */
+    */@media screen and (prefers-reduced-motion: reduce) {
+.switch {
+        @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary bg-gray-200  border-2;
+
+        --thumb-size: 2rem;
+        --thumb: hsl(0 0% 100%);
+        --thumb-highlight: hsl(0 0% 0% / 25%);
+
+        --track-size: calc(var(--thumb-size) * 2);
+        --track-padding: 2px;
+        --track-inactive: hsl(80 0% 80%);
+        --track-active: theme('colors.green.300');
+
+        --thumb-color: var(--thumb);
+        --thumb-color-highlight: var(--thumb-highlight);
+        --track-color-inactive: var(--track-inactive);
+        --track-color-active: var(--track-active);
+
+        --isLTR: 1;
+        --thumb-position: 0%;
+        --thumb-transition-duration: 0.25s;
+
+        padding: var(--track-padding);
+        background: var(--track-color-inactive);
+        inline-size: var(--track-size);
+        block-size: var(--thumb-size);
+        border-radius: var(--track-size);
+
+        touch-action: pan-y;
+
+        outline-offset: 5px;
+
+        grid: [track] 1fr / [track] 1fr;
+
+        transition: none;
+
+        &::before {
+            --highlight-size: 0;
+
+            content: '';
+            grid-area: track;
+            inline-size: var(--thumb-size);
+            block-size: var(--thumb-size);
+            background: var(--thumb-color);
+            box-shadow: 0 0 0 var(--highlight-size) var(--thumb-color-highlight);
+            border-radius: 50%;
+            transform: translateX(var(--thumb-position));@media screen and (prefers-reduced-motion: reduce) {
+& {
+                transition: none;
+}
+}
+
+            & {
+                transition: transform var(--thumb-transition-duration) ease,
+                    box-shadow 0.25s ease;
+            }
+        }
+
+        &:not(:disabled):hover::before, &:not(:disabled):focus::before {
+            --highlight-size: 0.5rem;
+        }
+
+        &:checked {
+            --thumb-position: calc((var(--track-size) - 100%) * var(--isLTR));
+        }
+
+        &:indeterminate {
+            --thumb-position: calc(
+                calc(calc(var(--track-size) / 2) - calc(var(--thumb-size) / 2)) *
+                    var(--isLTR)
+            );
+        }
+
+        &:disabled {
+            --thumb-color: transparent;
+
+            &::before {
+                cursor: not-allowed;
+                box-shadow: inset 0 0 0 2px hsl(0 0% 100% / 50%);
+            }
+        }
+}
+}
     .switch {
-        @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary-200 bg-gray-200  border-2;
+        @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary bg-gray-200  border-2;
 
         --thumb-size: 2rem;
         --thumb: hsl(0 0% 100%);
@@ -213,7 +301,11 @@
             background: var(--thumb-color);
             box-shadow: 0 0 0 var(--highlight-size) var(--thumb-color-highlight);
             border-radius: 50%;
-            transform: translateX(var(--thumb-position));
+            transform: translateX(var(--thumb-position));@media screen and (prefers-reduced-motion: reduce) {
+& {
+                transition: none;
+}
+}
 
             & {
                 transition: transform var(--thumb-transition-duration) ease,
@@ -221,7 +313,7 @@
             }
         }
 
-        &:not(:disabled):hover::before {
+        &:not(:disabled):hover::before, &:not(:disabled):focus::before {
             --highlight-size: 0.5rem;
         }
 
@@ -258,7 +350,7 @@
         }
 
         &.danger {
-            @apply bg-red-100 text-red-600;
+            @apply bg-red-100 text-error;
         }
 
         &.info {
@@ -270,7 +362,7 @@
         @apply underline;
 
         &.hover {
-            @apply inline-flex items-center gap-1 hover:text-primary-500;
+            @apply inline-flex items-center gap-1 hover:text-primary;
         }
     }
 
@@ -279,14 +371,18 @@
     }
 
     .button {
-        @apply inline-flex items-center justify-center self-start gap-1 default-input;
+        @apply default-focus rounded-2xl min-w-max max-w-full sm:min-w-min text-center;
 
         &.primary {
-            @apply text-white bg-primary-600 hover:bg-primary-700 border-transparent;
+            @apply text-white bg-primary border-transparent;
         }
 
         &.secondary {
-            @apply border-black border-2 text-black hover:bg-primary-700 hover:text-white;
+            @apply border-black border-2 text-black hover:bg-primary hover:text-white;
+        }
+
+        &.invalid {
+            @apply border-black border-2 text-black;
         }
 
         &.sm {
@@ -294,7 +390,7 @@
         }
 
         &.md {
-            @apply px-8 py-3 md:py-2  md:px-6 font-semibold text-[18px] md:text-[23px];
+            @apply px-8 py-3 md:py-2 md:px-6 font-semibold text-[18px];
         }
     }
 
@@ -354,7 +450,7 @@
         }
 
         & .current a {
-            @apply font-bold text-primary-700 border-primary-700;
+            @apply font-bold text-primary border-primary;
         }
 
         & .tab {
@@ -409,14 +505,14 @@
     }
 
     .selected {
-        @apply !bg-primary-100;
+        @apply !bg-primary;
     }
 
     .tag {
         @apply p-2 rounded;
 
         &.warning {
-            @apply bg-orange-100 text-orange-700;
+            @apply bg-notice text-black;
         }
 
         &.success {
@@ -424,7 +520,7 @@
         }
 
         &.error {
-            @apply bg-red-100 text-red-700;
+            @apply bg-red-100 text-error;
         }
     }
 

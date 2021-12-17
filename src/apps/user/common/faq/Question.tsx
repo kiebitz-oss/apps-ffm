@@ -12,7 +12,7 @@ export const Question: React.FC<QuestionProps> = ({
     return (
         <details {...props}>
             <summary>
-                <h2>{question}</h2>
+                <h4>{question}</h4>
             </summary>
 
             <p>{children}</p>

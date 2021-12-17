@@ -1,4 +1,5 @@
 import { Booking } from './Booking';
+import { PublicProvider } from './Provider';
 import { Slot } from './Slot';
 import { Vaccine } from './Vaccine';
 
@@ -7,7 +8,7 @@ export interface Appointment {
     duration: number;
     date: Date;
     vaccine: Vaccine;
-    // provider: PublicProvider;
+    provider: PublicProvider;
     bookings: Booking[];
     slots: Slot[];
     modified: undefined | true;

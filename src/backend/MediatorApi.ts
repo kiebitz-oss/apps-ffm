@@ -1,8 +1,16 @@
 import { providers } from 'apps/data';
 import type { MediatorKeyPairs, Provider } from 'types';
+import { Mediator as KiebitzMediator } from 'vanellus';
+import { backend } from './backend';
 
 export class MediatorApi {
     protected keyPairs: MediatorKeyPairs | null = null;
+
+    protected mediator: KiebitzMediator;
+
+    constructor() {
+        this.mediator = new KiebitzMediator('main', backend);
+    }
 
     public async authenticate(keyPairs: MediatorKeyPairs): Promise<boolean> {
         this.keyPairs = keyPairs;

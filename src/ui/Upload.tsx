@@ -22,7 +22,7 @@ export const Upload = forwardRef<HTMLInputElement, UploadProps>(
                     type="file"
                     ref={ref}
                     onChange={onChange}
-                    className="block file:py-2 file:px-4 file:mr-4 w-full file:text-sm text-sm file:font-semibold file:text-primary-700 file:bg-primary-50 hover:file:bg-primary-100 file:rounded-full file:border-0 cursor-pointer file:cursor-pointer"
+                    className="block file:py-2 file:px-4 file:mr-4 w-full file:text-sm text-sm file:font-semibold file:text-primary file:bg-primary hover:file:bg-primary file:rounded-full file:border-0 cursor-pointer file:cursor-pointer"
                     {...props}
                 />
             </label>

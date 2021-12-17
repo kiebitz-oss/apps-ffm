@@ -11,13 +11,12 @@ export const VerifyStep: React.FC = () => {
     const api = useUserApi();
     const { state } = useFinderState();
     const navigate = useNavigate();
-    const appointment = state.appointment!;
 
     useEffect(() => {
-        if (!appointment || !appointment.provider) {
+        if (!state.appointment) {
             navigate('/user/finder');
         }
-    }, [appointment, navigate]);
+    }, [state.appointment, navigate]);
 
     const onBooking = () => {
         if (state.appointment && state.provider) {
@@ -32,63 +31,61 @@ export const VerifyStep: React.FC = () => {
     };
 
     // safeguard
-    if (!appointment || !appointment.provider) {
+    if (!state.appointment) {
         return null;
     }
 
     return (
-        <main>
-            <div className="xl:w-2/3">
-                <BackLink href="/user/finder">
-                    <Trans id="user.finder.verify.back-link">
-                        zurück zum Terminauswahl
-                    </Trans>
-                </BackLink>
+        <main id="finder-verify">
+            <BackLink href="/user/finder">
+                <Trans id="user.finder.verify.back-link">
+                    zurück zum Terminauswahl
+                </Trans>
+            </BackLink>
 
-                <Title variant="h1" as="h2">
-                    <Trans id="user.finder.verify.title">Übersicht</Trans>
-                </Title>
+            <Title variant="h1" as="h2" className="mb-5">
+                <Trans id="user.finder.verify.title">Übersicht</Trans>
+            </Title>
 
-                <Text>
-                    <Trans id="user.finder.verify.intro">
-                        Hier ist Ihr gewählter Termin. Prüfen Sie nochmal, ob
-                        alles stimmt. Anschließend können Sie den Termin
-                        endgültig buchen.
-                    </Trans>
-                </Text>
+            <Text variant="text2" className="mb-10">
+                <Trans id="user.finder.verify.intro">
+                    Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob
+                    alles stimmt. Anschließend können Sie den Termin endgültig
+                    buchen.
+                </Trans>
+            </Text>
 
-                <div className="flex flex-col mb-10 md:flex-row md:gap-12">
-                    <div className="md:w-1/2">
-                        <Title variant="book" as="h3">
-                            <Trans id="user.finder.verify.appointment.subtitle">
-                                Ihr Termin
-                            </Trans>
-                        </Title>
+            <div className="your-appointment">
+                <div className="md:w-1/2">
+                    <Title variant="book" as="h3">
+                        <Trans id="user.finder.verify.appointment.subtitle">
+                            Ihr Termin
+                        </Trans>
+                    </Title>
 
-                        <AppointmentCard appointment={appointment} />
-                    </div>
-
-                    {appointment.provider.description && (
-                        <Text className="italic md:mt-6 md:w-1/2">
-                            <Trans id="user.finder.verify.appointment.description">
-                                {appointment.provider.description}
-                            </Trans>
-                        </Text>
-                    )}
+                    <AppointmentCard appointment={state.appointment} border />
                 </div>
 
-                <Link
-                    type="button"
-                    variant="primary"
-                    href="/user/finder/success"
-                    className="mt-auto sm:mt-0"
-                    onClick={onBooking}
-                >
-                    <Trans id="user.finder.verify.submit">
-                        Termin jetzt buchen
-                    </Trans>
-                </Link>
+                {state.appointment?.provider?.description && (
+                    <Text className="provider-description">
+                        <Trans id="user.finder.verify.appointment.description">
+                            {state.appointment.provider.description}
+                        </Trans>
+                    </Text>
+                )}
             </div>
+
+            <Link
+                type="button"
+                variant="primary"
+                href="/user/finder/success"
+                className="mt-auto sm:mt-0"
+                onClick={onBooking}
+            >
+                <Trans id="user.finder.verify.submit">
+                    Termin jetzt buchen
+                </Trans>
+            </Link>
         </main>
     );
 };

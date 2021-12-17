@@ -4,10 +4,10 @@
 
 import { t, Trans } from '@lingui/macro';
 import React, { useEffect, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { Resolver, SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { Button, Error, Text, Title } from 'ui';
-import { QuestionBox } from './common/questionaire/QuestionBox';
+import { QuestionBox } from './common/QuestionBox';
 
 interface FormData {
     q1Value: boolean;
@@ -16,20 +16,24 @@ interface FormData {
     q4Value: boolean;
 }
 
+const resolver: Resolver = (values) => {
+    const errors = {};
+
+    return {
+        values,
+        errors,
+    };
+};
+
 const StartPage: React.FC = () => {
-    const { watch, control, handleSubmit } = useForm();
     const [error, setError] = useState<boolean>(false);
     const [valid, setValid] = useState<boolean>(false);
     const navigate = useNavigate();
 
-    const q1Value = watch('q1');
-    const q2Value = watch('q2');
-    const q3Value = watch('q3');
-    const q4Value = watch('q4');
-
-    useEffect(() => {
-        setValid(q3Value === false || q4Value === false || false);
-    }, [q3Value, q4Value]);
+    const { watch, control, handleSubmit, resetField } = useForm({
+        reValidateMode: 'onChange',
+        resolver,
+    });
 
     const onSubmit: SubmitHandler<FormData> = () => {
         if (valid) {
@@ -39,27 +43,67 @@ const StartPage: React.FC = () => {
         }
     };
 
+    const q1Value = watch('q1');
+    const q2Value = watch('q2');
+    const q3Value = watch('q3');
+    const q4Value = watch('q4');
+
+    useEffect(() => {
+        const subscription = watch((values, { name, type }) => {
+            // reset global error
+            setError(false);
+
+            // reset later fields
+            if (type === 'change') {
+                switch (name) {
+                    case 'q1': {
+                        resetField('q2');
+                        resetField('q3');
+                        resetField('q4');
+                    }
+
+                    case 'q2': {
+                        resetField('q3');
+                        resetField('q4');
+                    }
+
+                    case 'q3': {
+                        resetField('q4');
+                    }
+                }
+            }
+
+            setValid(values['q3'] === false || values['q4'] === false || false);
+        });
+
+        return () => subscription.unsubscribe();
+    }, [watch, resetField, setValid]);
+
     return (
-        <main>
-            <Title variant="h1" as="h2" className="mb-6" data-test={'view.title'}>
+        <main id="welcome">
+            <Title variant="h1" as="h2" className="mb-3" data-test="view.title">
                 <Trans id="user.welcome.title">Willkommen!</Trans>
             </Title>
 
-            <Text className="mb-4 max-w-[48ch]">
+            <Text className="text1">
                 <Trans id="user.welcome.intro-1">
                     Sie sind jetzt nur noch wenige Klicks von Ihrem Termin
                     entfernt.
                 </Trans>
             </Text>
 
-            <Text className="mb-8 max-w-[48ch]">
+            <Text className="text2">
                 <Trans id="user.welcome.intro-2">
                     Wir speichern generell keine persönlichen Daten, aber haben
                     ein paar Fragen, damit Sie den richtigen Impfstoff erhalten.
                 </Trans>
             </Text>
 
-            <form className="questionaire" onSubmit={handleSubmit(onSubmit)}>
+            <form
+                className="questionaire"
+                // onChange={onChange}
+                onSubmit={handleSubmit(onSubmit)}
+            >
                 <div className="questions">
                     <QuestionBox control={control} name="q1">
                         <Trans id="user.welcome.question1_value">
@@ -112,8 +156,8 @@ const StartPage: React.FC = () => {
                         )}
                 </div>
 
-                {error && (
-                    <Error>
+                {error && !valid && (
+                    <Error className="form-error">
                         <Trans id="user.welcome.form_error">
                             Bitte beantworten Sie alle Fragen, denn sonst können
                             wir keine Termine für Sie heraussuchen. Alle Ihre
