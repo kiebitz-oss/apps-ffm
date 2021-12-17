@@ -1,6 +1,8 @@
 import { Trans } from '@lingui/macro';
 import React from 'react';
 import { Link, Title } from 'ui';
+import gaFfmUrl from '../../config/theme/ffm/ga-ffm-logo.svg';
+import stadtFfmUrl from '../../config/theme/ffm/stadt-ffm-logo.svg';
 
 const Footer: React.FC = () => {
     return (
@@ -84,7 +86,18 @@ const Footer: React.FC = () => {
                 </ul>
             </section>
 
-            <section className="flex-[1] lg:flex-[4]">Logos</section>
+            <section className="flex flex-col flex-[1] justify-center items-center lg:flex-[4]">
+                <Link href="#" external>
+                    <img width="300" src={stadtFfmUrl} alt="Stadt Frankfurt" />
+                </Link>
+                <Link href="#" external>
+                    <img
+                        width="300"
+                        src={gaFfmUrl}
+                        alt="Gesundheitsamt Frankfurt"
+                    />
+                </Link>
+            </section>
         </footer>
     );
 };
