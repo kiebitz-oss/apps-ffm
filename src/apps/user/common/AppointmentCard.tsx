@@ -67,7 +67,9 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
                 </div>
             </time>
 
-            <p className="vaccine">{vaccines.de[appointment.vaccine].name}</p>
+            <p className="vaccine">
+                {vaccines[i18n.locale || 'de'][appointment.vaccine].name}
+            </p>
 
             {/* button */}
             {children}

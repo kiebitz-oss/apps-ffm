@@ -1,5 +1,6 @@
 import { GeneratePdf16 } from '@carbon/icons-react';
 import { Trans } from '@lingui/macro';
+import { useI18n } from 'apps/common/useI18n';
 import { vaccines } from 'config/vaccines';
 import React, { MouseEventHandler, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -10,6 +11,7 @@ import { useFinderState } from './FinderStateProvider';
 
 export const SuccessStep: React.FC = () => {
     const api = useUserApi();
+    const i18n = useI18n();
     const { state } = useFinderState();
     const [secret, setSecret] = useState<string | null>(null);
     const navigate = useNavigate();
@@ -137,40 +139,27 @@ export const SuccessStep: React.FC = () => {
                     </Title>
 
                     <ul className="flex flex-col gap-4 items-stretch pb-6">
-                        <li>
-                            <Link
-                                href={vaccines.de[appointment.vaccine].infosUrl}
-                                external
-                                className="inline-flex gap-2 justify-center items-center py-2 px-4 w-full font-semibold text-primary no-underline bg-blue-100 rounded-2xl"
-                            >
-                                <GeneratePdf16 />
-                                Aufklärungsmerkblatt
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                href={
-                                    vaccines.de[appointment.vaccine]
-                                        .anamnesisUrl
-                                }
-                                external
-                                className="inline-flex gap-2 justify-center items-center py-2 px-4 mb-2 w-full font-semibold text-primary no-underline bg-blue-100 rounded-2xl"
-                            >
-                                <GeneratePdf16 />
-                                Einwilligungserklärung
-                            </Link>
-                        </li>
+                        {vaccines[i18n.locale || 'de'][
+                            appointment.vaccine
+                        ].pdfs.map((pdf) => (
+                            <li key={pdf.label}>
+                                <Link
+                                    href={pdf.url}
+                                    external
+                                    className="inline-flex gap-2 justify-center items-center py-2 px-4 w-full font-semibold text-primary no-underline bg-blue-100 rounded-2xl"
+                                >
+                                    <GeneratePdf16 />
+                                    {pdf.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
 
                     <Text variant="text2">
-                        Vor dem Impftermin und Ihrem medizinischen
-                        Aufklärungsgespräch können Sie sich das
-                        Aufklärungsmerkblatt zum Impfstoff und die
-                        Einwilligungserklärung zur Impfung als PDF-Datei
-                        herunterladen und ausdrucken. Dort erhalten Sie
-                        ebenfalls wichtige Informationen zu Ihrer Impfung und
-                        dem Impfstoff gegen das Coronavirus.
+                        {
+                            vaccines[i18n.locale || 'de'][appointment.vaccine]
+                                .pdfDescription
+                        }
                     </Text>
                 </section>
 
