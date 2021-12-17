@@ -257,6 +257,7 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
                     label: 'Fragebogen bzw. Anamnesebogen',
                     url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Einwilligung-de.pdf?__blob=publicationFile',
                 },
+            ],
         },
     },
     en: {
