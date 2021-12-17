@@ -7,7 +7,7 @@ type VaccinationPdf = {
     url: string;
 };
 
-type VaccineData = {
+export type VaccineData = {
     id: string;
     name: string;
     pdfs: VaccinationPdf[];

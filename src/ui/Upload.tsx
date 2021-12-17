@@ -18,11 +18,12 @@ export const Upload = forwardRef<HTMLInputElement, UploadProps>(
         return (
             <label className="block">
                 {label && <span className="sr-only">{label}</span>}
+
                 <input
                     type="file"
                     ref={ref}
                     onChange={onChange}
-                    className="block file:py-2 file:px-4 file:mr-4 w-full file:text-sm text-sm file:font-semibold file:text-primary file:bg-primary hover:file:bg-primary file:rounded-full file:border-0 cursor-pointer file:cursor-pointer"
+                    className="upload"
                     {...props}
                 />
             </label>

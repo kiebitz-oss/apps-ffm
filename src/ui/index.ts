@@ -10,6 +10,7 @@ export * from './DropdownMenuItem';
 export * from './Error';
 export * from './Field';
 export * from './Form';
+export * from './FormSubmitButton';
 export * from './Icon';
 export * from './Input';
 export * from './InputField';

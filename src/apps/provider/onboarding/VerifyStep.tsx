@@ -23,7 +23,7 @@ export const VerifyStep: React.FC = () => {
     };
 
     return (
-        <main>
+        <main className="content">
             <div className="lg:w-2/3">
                 <Title>Bitte überprüfen Sie ihre Daten</Title>
 

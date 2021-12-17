@@ -51,10 +51,7 @@ const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
             data-id={appointment.id}
         >
             <AppointmentCard appointment={appointment}>
-                <Button
-                    className="group-hover:bg-primary group-focus:bg-primary shadow-lg select-none"
-                    tabIndex={-1}
-                >
+                <Button tabIndex={-1}>
                     <Trans id="user.finder.appointment.card.submit">
                         Termin auswählen
                     </Trans>
@@ -107,7 +104,7 @@ export const AppointmentStep: React.FC = () => {
                 </Trans>
             </BackLink>
 
-            <Title variant="h1" as="h2" className="mb-3">
+            <Title variant="h1" as="h2">
                 <Trans id="user.finder.appointment.title">Termine</Trans>
             </Title>
 
@@ -144,25 +141,25 @@ export const AppointmentStep: React.FC = () => {
                 />
             </div>
 
-            <div className="appointment-grid">
-                {filteredAppointments.length === 0 && (
-                    <Error>
-                        <Trans id="user.finder.appointment.no-result">
-                            Es sind keine freien Termine verfügbar.
-                            <br />
-                            <br />
-                            Bitte versuchen Sie einen späteren Zeitpunkt oder
-                            ein anderen Impfstelle.
-                        </Trans>
-                    </Error>
-                )}
-                {filteredAppointments.map((appointment) => (
-                    <AppointmentCardSelector
-                        appointment={appointment}
-                        key={appointment.id}
-                    />
-                ))}
-            </div>
+            {filteredAppointments.length === 0 ? (
+                <Error className="mx-auto">
+                    <Trans id="user.finder.appointment.no-result">
+                        Es sind keine freien Termine verfügbar.
+                        <br />
+                        Bitte versuchen Sie einen späteren Zeitpunkt oder ein
+                        anderen Impfstelle.
+                    </Trans>
+                </Error>
+            ) : (
+                <div className="appointment-grid">
+                    {filteredAppointments.map((appointment) => (
+                        <AppointmentCardSelector
+                            appointment={appointment}
+                            key={appointment.id}
+                        />
+                    ))}
+                </div>
+            )}
 
             {/* <button className="py-2 px-6 my-8 mx-auto text-lg font-semibold bg-gray-300 rounded-lg shadow-lg">
                 <Trans id="user.finder.appointment.submit">

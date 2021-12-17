@@ -5,14 +5,16 @@
 }
 
 #welcome {
-    @apply md:pt-20 md:pb-8 md:pl-16;
+    & .h1 {
+        @apply px-4 md:px-0;
+    }
 
-    & .text1 {
-        @apply mb-4 max-w-[48ch];
+    & .text {
+        @apply max-w-[48ch] px-4 md:px-0;
     }
 
     & .text2 {
-        @apply mb-8 max-w-[48ch];
+        @apply mb-8;
     }
 
     & .questionaire {
@@ -60,26 +62,10 @@
     }
 }
 
-#finder-appointment {
-    @apply md:pt-20 md:pb-8 md:px-16;
-
-    & .controls {
-        @apply px-4 mb-10 flex flex-col gap-5 md:flex-row md:justify-between w-full md:px-0;
-    }
-
-    & .appointment-grid {
-        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full;
-
-        & .card {
-            @apply p-4 w-full no-underline text-center rounded-2xl  shadow-appointment hover:shadow-appointment2 sm:mx-0;
-        }
-    }
-}
-
 #finder-location {
-    @apply md:pr-[33%] md:pt-24 md:pb-8 md:pl-16;
-
-    .h1 {
+    & .h1,
+    & .text {
+        @apply px-4 md:px-0;
     }
 
     .controls {
@@ -95,20 +81,49 @@
     }
 }
 
-#finder-verify {
-    @apply md:pr-[33%] md:pt-24 md:pb-8 md:pl-16;
+#finder-appointment {
+    & .h1,
+    & .text {
+        @apply px-4 md:px-0;
+    }
 
+    & .controls {
+        @apply px-4 mb-10 flex flex-col gap-5 md:flex-row md:justify-between w-full md:px-0;
+    }
+
+    & .appointment-grid {
+        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full;
+
+        & .card {
+            @apply p-4 w-full no-underline text-center rounded-2xl  shadow-appointment hover:shadow-appointment2 sm:mx-0;
+
+            & .button {
+                @apply group-hover:bg-primary group-focus:bg-primary shadow-lg select-none;
+            }
+        }
+    }
+}
+
+#finder-verify {
+    & .h1,
+    & .text {
+        @apply px-4 md:px-0;
+    }
+
+    .text2 {
+        @apply mb-10;
+    }
     .your-appointment {
         @apply flex flex-col mb-10 md:flex-row md:w-[720px] md:gap-12 w-full sm:w-fit;
     }
 
     .provider-description {
-        @apply italic mt-6 md:w-1/2;
+        @apply italic mt-12 md:w-1/2;
     }
-}
 
-#finder-success {
-    @apply lg:pr-[33%] md:pt-24 md:pb-8 md:px-20;
+    .button {
+        @apply ml-4;
+    }
 }
 
 #faq {

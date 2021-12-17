@@ -50,7 +50,7 @@ export const LocationStep: React.FC = () => {
                 </Trans>
             </BackLink>
 
-            <Title variant="h1" as="h2" className="mb-3">
+            <Title variant="h1" as="h2">
                 <Trans id="user.finder.location.title">Impfstellen</Trans>
             </Title>
 

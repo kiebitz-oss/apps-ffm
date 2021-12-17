@@ -34,7 +34,7 @@ export const DataStep: React.FC = () => {
     };
 
     return (
-        <main>
+        <main className="content">
             <div className="lg:w-2/3">
                 <Title>Daten der Impfstelle erfassen</Title>
 

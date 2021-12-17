@@ -46,7 +46,7 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
             </Message>
 
             <div
-                className={clsx('provider-data-summary', {
+                className={clsx('mb-4 provider-data-summary', {
                     ['verified']: verified,
                 })}
             >

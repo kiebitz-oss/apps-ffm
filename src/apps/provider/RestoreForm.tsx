@@ -10,14 +10,10 @@ import {
     SubmitHandler,
     useForm,
 } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import { Form, InputField, Message, Text, Upload } from 'ui';
-import { FormSubmitButton } from 'ui/FormSubmitButton';
-
+import { Form, FormSubmitButton, InputField, Message, Text, Upload } from 'ui';
 interface FormData {
     file: string;
     secret: string;
-    localOnly: boolean;
 }
 
 const resolver: Resolver<FormData> = async (values) => {
@@ -60,7 +56,6 @@ interface RestoreFormProps {
 export const RestoreForm: React.FC<RestoreFormProps> = ({ className }) => {
     const [file, setFile] = useState<string>();
     const fileInput = useRef<HTMLInputElement>(null);
-    const navigate = useNavigate();
     const [failed, setFailed] = useState<boolean>(false);
 
     const methods = useForm<FormData>({
@@ -166,19 +161,13 @@ export const RestoreForm: React.FC<RestoreFormProps> = ({ className }) => {
                                 ref={fileInput}
                                 onChange={onFileChange}
                                 accept=".enc"
+                                label={t({
+                                    id: 'provider.restore-form.input',
+                                    message: 'Sicherungsdatei wählen',
+                                })}
                             />
 
                             <input type="hidden" {...register('file')} />
-
-                            {(fileInput.current?.files?.[0] !== undefined && (
-                                <Trans id="provider.restore-form.input.change">
-                                    {fileInput.current?.files?.[0].name}
-                                </Trans>
-                            )) || (
-                                <Trans id="provider.restore-form.input">
-                                    Sicherungsdatei wählen
-                                </Trans>
-                            )}
 
                             <Text className="hint">
                                 <Trans id="provider.restore-form.input.description">

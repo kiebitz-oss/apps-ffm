@@ -25,7 +25,7 @@ const SchedulePage: React.FC = () => {
     };
 
     return (
-        <main>
+        <main className="content">
             <div className="flex flex-row justify-between w-full">
                 <Title>Impftermine</Title>
                 <Button size="sm" onClick={toggleModal}>

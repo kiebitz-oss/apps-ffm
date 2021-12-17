@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-12-17 15:41+0100\n"
+"POT-Creation-Date: 2021-12-17 20:33+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,11 +59,11 @@ msgstr "Informationen"
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
-#: src/helpers/time.ts:34
+#: src/helpers/time.ts:46
 msgid "common.hours"
 msgstr "{hours} Stunden"
 
-#: src/helpers/time.ts:37
+#: src/helpers/time.ts:49
 msgid "common.hours-minutes"
 msgstr "{hours} Stunden {remainingMinutes} Minuten"
 
@@ -79,7 +79,7 @@ msgstr "Seite verlassen"
 msgid "common.leave.title"
 msgstr "Möchten Sie diese Seite wirklich verlassen?"
 
-#: src/helpers/time.ts:27
+#: src/helpers/time.ts:39
 msgid "common.minutes"
 msgstr "{minutes} Minuten"
 
@@ -539,75 +539,55 @@ msgstr "Webseite"
 msgid "provider.provider-data.zip-code"
 msgstr "Postleitzahl"
 
-#: src/apps/provider/RestoreForm.tsx:134
+#: src/apps/provider/RestoreForm.tsx:129
 msgid "provider.restore-form.failed"
 msgstr "Das Laden Ihrer Daten ist leider fehlgeschlagen. Bitte prüfen Sie Ihren Datenschlüssel sowie die angegebene Datei."
 
-#: src/apps/provider/RestoreForm.tsx:178
+#: src/apps/provider/RestoreForm.tsx:164
 msgid "provider.restore-form.input"
 msgstr "Sicherungsdatei wählen"
 
-#: src/apps/provider/RestoreForm.tsx:174
-msgid "provider.restore-form.input.change"
-msgstr "{0}"
-
-#: src/apps/provider/RestoreForm.tsx:184
+#: src/apps/provider/RestoreForm.tsx:173
 msgid "provider.restore-form.input.description"
 msgstr "Bitte laden Sie hier Ihre Sicherungsdatei (booster-impfen-backup-2021[Datum&Uhrzeit].enc) hoch."
 
-#: src/apps/provider/RestoreForm.tsx:95
+#: src/apps/provider/RestoreForm.tsx:90
 msgid "provider.restore-form.invalid-file"
 msgstr "provider.restore-form.invalid-file MISSING"
 
-#: src/apps/provider/RestoreForm.tsx:47
+#: src/apps/provider/RestoreForm.tsx:43
 msgid "provider.restore-form.invalid-secret"
 msgstr "provider.restore-form.invalid-secret MISSING"
 
-#: src/apps/provider/RestoreForm.tsx:195
+#: src/apps/provider/RestoreForm.tsx:184
 msgid "provider.restore-form.load"
 msgstr "Einloggen"
 
-#: src/apps/provider/RestoreForm.tsx:27
+#: src/apps/provider/RestoreForm.tsx:23
 msgid "provider.restore-form.missing-file"
 msgstr "provider.restore-form.missing-file MISSING"
 
-#: src/apps/provider/RestoreForm.tsx:147
+#: src/apps/provider/RestoreForm.tsx:142
 msgid "provider.restore-form.secret.description"
 msgstr "Der Datenschlüssel, den Sie bei der Registrierung erhalten haben."
 
-#: src/apps/provider/RestoreForm.tsx:143
+#: src/apps/provider/RestoreForm.tsx:138
 msgid "provider.restore-form.secret.label"
 msgstr "Datenschlüssel"
 
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:49
-msgid "provider.schedule.create-appointment-modal.in-the-past"
-msgstr "provider.schedule.create-appointment-modal.in-the-past"
-
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:38
-msgid "provider.schedule.create-appointment-modal.please-enter-date"
-msgstr "provider.schedule.create-appointment-modal.please-enter-date"
-
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:42
-msgid "provider.schedule.create-appointment-modal.please-enter-time"
-msgstr "provider.schedule.create-appointment-modal.please-enter-time"
-
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:59
-msgid "provider.schedule.create-appointment-modal.too-far-in-the-future"
-msgstr "Bitte wählen Sie Termine die maximal 30 Tage in der Zukunft liegen"
-
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:74
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:75
 msgid "provider.schedule.create-appointment-modal.too-few-slots"
 msgstr "provider.schedule.create-appointment-modal.too-few-slots"
 
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:68
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:69
 msgid "provider.schedule.create-appointment-modal.too-many-slots"
 msgstr "provider.schedule.create-appointment-modal.too-many-slots"
 
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:309
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:329
 msgid "provider.schedule.create.appointment-modal.button"
 msgstr "Speichern"
 
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:251
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:245
 msgid "provider.schedule.create.appointment-modal.date.label"
 msgstr "Datum"
 
@@ -619,21 +599,25 @@ msgstr "Vstl. Dauer"
 msgid "provider.schedule.create.appointment-modal.duration-value"
 msgstr "Dauer: {duration} Minuten"
 
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:237
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:231
 msgid "provider.schedule.create.appointment-modal.edit-title"
 msgstr "Termin bearbeiten"
 
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:241
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:235
 msgid "provider.schedule.create.appointment-modal.new-title"
 msgstr "Neuen Termin erstellen"
 
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:271
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:270
 msgid "provider.schedule.create.appointment-modal.slots.label"
 msgstr "Anzahl Impfdosen"
 
-#: src/apps/provider/schedule/CreateAppointmentModal.tsx:261
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:257
 msgid "provider.schedule.create.appointment-modal.time.label"
 msgstr "Uhrzeit"
+
+#: src/apps/provider/schedule/CreateAppointmentModal.tsx:303
+msgid "provider.schedule.create.appointment-modal.vaccine-label"
+msgstr "Impfstoff"
 
 #: src/apps/common/SecretBox.tsx:41
 msgid "provider.secret.title"
@@ -643,9 +627,13 @@ msgstr "Ihr Sicherheitscode"
 msgid "provider.settings.title"
 msgstr "Einstellungen"
 
-#: src/apps/provider/WelcomePage.tsx:19
+#: src/apps/provider/WelcomePage.tsx:22
 msgid "provider.welcome.loggedout-.notice"
 msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit Ihrem Datenschlüssel und Ihrer Sicherheitsdatei wiederherstellen."
+
+#: src/apps/provider/WelcomePage.tsx:17
+msgid "provider.welcome.title"
+msgstr "Impstellen"
 
 #: src/ui/CopyToClipboardButton.tsx:32
 msgid "ui.copy"
@@ -825,7 +813,7 @@ msgstr "zurück zum Terminauswahl"
 
 #: src/apps/user/finder/VerifyStep.tsx:51
 msgid "user.finder.verify.intro"
-msgstr "Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob alles stimmt. Anschließend können Sie den Termin endgültig buchen."
+msgstr "Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob alles stimmt.<0/> Anschließend können Sie den Termin endgültig buchen."
 
 #: src/apps/user/finder/VerifyStep.tsx:85
 msgid "user.finder.verify.submit"

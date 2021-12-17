@@ -21,7 +21,7 @@
     }
 
     #app {
-        @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto sm:mx-8 md:mx-12 lg:mx-24;
+        @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto md:mx-5 lg:mx-10 xl:mx-24 2xl:mx-28;
 
         & > header {
             @apply min-h-[86px] md:min-h-[100px] min-w-full flex justify-between items-center px-4 md:px-8;
@@ -53,15 +53,14 @@
     }
 
     main {
-        /* px-8 sm:px-12 py-12 lg:px-20 lg:py-24 */
-        @apply relative flex flex-col items-start flex-1 bg-white text-black rounded-lg py-10 px-4;
+        @apply relative flex flex-col flex-1 bg-white text-black rounded-lg py-10 px-4 md:px-[76px] md:pt-[88px] md:pb-[32px];
 
         &.center {
             @apply justify-center;
         }
 
         & .back-link {
-            @apply absolute top-10 left-10  hidden gap-8 no-underline md:inline-flex hover:text-primary book;
+            @apply absolute top-10 left-4  hidden gap-8 no-underline md:inline-flex hover:text-primary book;
         }
     }
 
@@ -81,15 +80,11 @@
     address {
         @apply not-italic;
     }
-
-    .content {
-        @apply md:py-12 md:px-16;
-    }
 }
 
 @layer components {
     .h1 {
-        @apply font-bold text-4xl;
+        @apply font-bold text-4xl mb-5;
     }
 
     .h2 {
@@ -106,11 +101,11 @@
 
     .text {
         &.text1 {
-            @apply text-[16px];
+            @apply text-[16px] mb-4;
         }
 
         &.text2 {
-            @apply text-[16px];
+            @apply text-[16px] mb-4;
         }
     }
 
@@ -170,92 +165,104 @@
         @apply form-textarea default-input;
     }
 
+    .upload {
+        @apply button primary  cursor-pointer file:font-semibold file:text-white file:bg-primary  file:rounded-2xl file:border-0 file:cursor-pointer file:py-2 file:px-4 file:mr-4 file:text-sm;
+    }
+
     /* 
     based on https://github.com/argyleink/gui-challenges/tree/main/switch
     TODO: port to tailwind
-    */@media screen and (prefers-reduced-motion: reduce) {
-.switch {
-        @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary bg-gray-200  border-2;
+    */
+    @media screen and (prefers-reduced-motion: reduce) {
+        .switch {
+            @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary bg-gray-200  border-2;
 
-        --thumb-size: 2rem;
-        --thumb: hsl(0 0% 100%);
-        --thumb-highlight: hsl(0 0% 0% / 25%);
+            --thumb-size: 2rem;
+            --thumb: hsl(0 0% 100%);
+            --thumb-highlight: hsl(0 0% 0% / 25%);
 
-        --track-size: calc(var(--thumb-size) * 2);
-        --track-padding: 2px;
-        --track-inactive: hsl(80 0% 80%);
-        --track-active: theme('colors.green.300');
+            --track-size: calc(var(--thumb-size) * 2);
+            --track-padding: 2px;
+            --track-inactive: hsl(80 0% 80%);
+            --track-active: theme('colors.green.300');
 
-        --thumb-color: var(--thumb);
-        --thumb-color-highlight: var(--thumb-highlight);
-        --track-color-inactive: var(--track-inactive);
-        --track-color-active: var(--track-active);
+            --thumb-color: var(--thumb);
+            --thumb-color-highlight: var(--thumb-highlight);
+            --track-color-inactive: var(--track-inactive);
+            --track-color-active: var(--track-active);
 
-        --isLTR: 1;
-        --thumb-position: 0%;
-        --thumb-transition-duration: 0.25s;
+            --isLTR: 1;
+            --thumb-position: 0%;
+            --thumb-transition-duration: 0.25s;
 
-        padding: var(--track-padding);
-        background: var(--track-color-inactive);
-        inline-size: var(--track-size);
-        block-size: var(--thumb-size);
-        border-radius: var(--track-size);
-
-        touch-action: pan-y;
-
-        outline-offset: 5px;
-
-        grid: [track] 1fr / [track] 1fr;
-
-        transition: none;
-
-        &::before {
-            --highlight-size: 0;
-
-            content: '';
-            grid-area: track;
-            inline-size: var(--thumb-size);
+            padding: var(--track-padding);
+            background: var(--track-color-inactive);
+            inline-size: var(--track-size);
             block-size: var(--thumb-size);
-            background: var(--thumb-color);
-            box-shadow: 0 0 0 var(--highlight-size) var(--thumb-color-highlight);
-            border-radius: 50%;
-            transform: translateX(var(--thumb-position));@media screen and (prefers-reduced-motion: reduce) {
-& {
-                transition: none;
-}
-}
+            border-radius: var(--track-size);
 
-            & {
-                transition: transform var(--thumb-transition-duration) ease,
-                    box-shadow 0.25s ease;
-            }
-        }
+            touch-action: pan-y;
 
-        &:not(:disabled):hover::before, &:not(:disabled):focus::before {
-            --highlight-size: 0.5rem;
-        }
+            outline-offset: 5px;
 
-        &:checked {
-            --thumb-position: calc((var(--track-size) - 100%) * var(--isLTR));
-        }
+            grid: [track] 1fr / [track] 1fr;
 
-        &:indeterminate {
-            --thumb-position: calc(
-                calc(calc(var(--track-size) / 2) - calc(var(--thumb-size) / 2)) *
-                    var(--isLTR)
-            );
-        }
-
-        &:disabled {
-            --thumb-color: transparent;
+            transition: none;
 
             &::before {
-                cursor: not-allowed;
-                box-shadow: inset 0 0 0 2px hsl(0 0% 100% / 50%);
+                --highlight-size: 0;
+
+                content: '';
+                grid-area: track;
+                inline-size: var(--thumb-size);
+                block-size: var(--thumb-size);
+                background: var(--thumb-color);
+                box-shadow: 0 0 0 var(--highlight-size)
+                    var(--thumb-color-highlight);
+                border-radius: 50%;
+                transform: translateX(var(--thumb-position));
+                @media screen and (prefers-reduced-motion: reduce) {
+                    & {
+                        transition: none;
+                    }
+                }
+
+                & {
+                    transition: transform var(--thumb-transition-duration) ease,
+                        box-shadow 0.25s ease;
+                }
+            }
+
+            &:not(:disabled):hover::before,
+            &:not(:disabled):focus::before {
+                --highlight-size: 0.5rem;
+            }
+
+            &:checked {
+                --thumb-position: calc(
+                    (var(--track-size) - 100%) * var(--isLTR)
+                );
+            }
+
+            &:indeterminate {
+                --thumb-position: calc(
+                    calc(
+                            calc(var(--track-size) / 2) -
+                                calc(var(--thumb-size) / 2)
+                        ) * var(--isLTR)
+                );
+            }
+
+            &:disabled {
+                --thumb-color: transparent;
+
+                &::before {
+                    cursor: not-allowed;
+                    box-shadow: inset 0 0 0 2px hsl(0 0% 100% / 50%);
+                }
             }
         }
-}
-}
+    }
     .switch {
         @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary bg-gray-200  border-2;
 
@@ -301,11 +308,12 @@
             background: var(--thumb-color);
             box-shadow: 0 0 0 var(--highlight-size) var(--thumb-color-highlight);
             border-radius: 50%;
-            transform: translateX(var(--thumb-position));@media screen and (prefers-reduced-motion: reduce) {
-& {
-                transition: none;
-}
-}
+            transform: translateX(var(--thumb-position));
+            @media screen and (prefers-reduced-motion: reduce) {
+                & {
+                    transition: none;
+                }
+            }
 
             & {
                 transition: transform var(--thumb-transition-duration) ease,
@@ -313,7 +321,8 @@
             }
         }
 
-        &:not(:disabled):hover::before, &:not(:disabled):focus::before {
+        &:not(:disabled):hover::before,
+        &:not(:disabled):focus::before {
             --highlight-size: 0.5rem;
         }
 
@@ -371,7 +380,7 @@
     }
 
     .button {
-        @apply default-focus rounded-2xl min-w-max max-w-full sm:min-w-min text-center;
+        @apply default-focus rounded-2xl min-w-max max-w-full sm:min-w-min sm:self-start text-center;
 
         &.primary {
             @apply text-white bg-primary border-transparent;

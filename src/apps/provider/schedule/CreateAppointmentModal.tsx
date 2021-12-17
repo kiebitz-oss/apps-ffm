@@ -1,4 +1,5 @@
 import { t, Trans } from '@lingui/macro';
+import { vaccines } from 'config/vaccines';
 import { getHexId } from 'helpers/conversion';
 import { formatDate, formatTime } from 'helpers/time';
 import React from 'react';
@@ -10,7 +11,7 @@ import {
 } from 'react-hook-form';
 import { useLocation, useNavigate, useParams } from 'react-router';
 import { useEffectOnce } from 'react-use';
-import type { Appointment } from 'types';
+import { Appointment } from 'types';
 import {
     Button,
     Form,
@@ -34,35 +35,35 @@ interface FormData {
 const resolver: Resolver<FormData> = async (values) => {
     const errors: any = {};
 
-    if (values.date === undefined) {
-        errors.date = t({
-            id: 'provider.schedule.create-appointment-modal.please-enter-date',
-        });
-    } else if (values.time === undefined) {
-        errors.time = t({
-            id: 'provider.schedule.create-appointment-modal.please-enter-time',
-        });
-    } else {
-        values.startdate = new Date(`${values.date} ${values.time}`);
+    // if (values.date === undefined) {
+    //     errors.date = t({
+    //         id: 'provider.schedule.create-appointment-modal.please-enter-date',
+    //     });
+    // } else if (values.time === undefined) {
+    //     errors.time = t({
+    //         id: 'provider.schedule.create-appointment-modal.please-enter-time',
+    //     });
+    // } else {
+    //     values.startdate = new Date(`${values.date} ${values.time}`);
 
-        if (values.startdate < new Date()) {
-            errors.date = t({
-                id: 'provider.schedule.create-appointment-modal.in-the-past',
-            });
-        }
+    //     if (values.startdate < new Date()) {
+    //         errors.date = t({
+    //             id: 'provider.schedule.create-appointment-modal.in-the-past',
+    //         });
+    //     }
 
-        // we allow appointments max. 30 days in the future
-        if (
-            values.startdate >
-            new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30)
-        ) {
-            errors.date = t({
-                id: 'provider.schedule.create-appointment-modal.too-far-in-the-future',
-                message:
-                    'Bitte wählen Sie Termine die maximal 30 Tage in der Zukunft liegen',
-            });
-        }
-    }
+    //     // we allow appointments max. 30 days in the future
+    //     if (
+    //         values.startdate >
+    //         new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30)
+    //     ) {
+    //         errors.date = t({
+    //             id: 'provider.schedule.create-appointment-modal.too-far-in-the-future',
+    //             message:
+    //                 'Bitte wählen Sie Termine die maximal 30 Tage in der Zukunft liegen',
+    //         });
+    //     }
+    // }
 
     if (values.slots > 50) {
         errors.slots = t({
@@ -75,6 +76,8 @@ const resolver: Resolver<FormData> = async (values) => {
             id: 'provider.schedule.create-appointment-modal.too-few-slots',
         });
     }
+
+    console.log({ values, errors });
 
     return {
         values,
@@ -96,7 +99,7 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
     const { action, id } = useParams();
 
     const methods = useForm<FormData>({
-        mode: 'onChange',
+        mode: 'onBlur',
         resolver,
     });
 
@@ -123,25 +126,18 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
     }
 
     useEffectOnce(() => {
-        if (appointment !== undefined) {
+        if (appointment) {
             const appointmentData: FormData = {
-                time: formatTime(appointment.date),
-                date: formatDate(appointment.date),
+                time: formatTime(appointment.date || new Date()),
+                date: formatDate(appointment.date || new Date()),
                 slots: appointment.slots.length,
                 duration: appointment.duration,
             };
 
-            // for (const [_, v] of Object.entries(properties)) {
-            //     for (const [kk, _] of Object.entries(v.values)) {
-            //         if (appointment[kk] !== undefined)
-            //             appointmentData[kk] = true;
-            //         else delete appointmentData[kk];
-            //     }
-            // }
-
             reset(appointmentData);
         } else {
-            const date = hash !== undefined ? new Date(hash) : new Date();
+            // const date = !hash ? new Date(hash) : new Date();
+            const date = new Date();
             const newData: FormData = {
                 duration: data.duration || 30,
                 slots: data.slots || 1,
@@ -177,8 +173,6 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
     });
 
     const onSubmit: SubmitHandler<FormData> = (data) => {
-        let action;
-
         // we remove unnecessary fields like 'time' and 'date'
         delete data.time;
         delete data.date;
@@ -253,8 +247,10 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
                                     message: 'Datum',
                                 })}
                                 type="date"
-                                className="flex-1"
-                                {...register('date')}
+                                className="flex-grow"
+                                {...register('date', {
+                                    required: true,
+                                })}
                             />
 
                             <InputField
@@ -263,7 +259,10 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
                                     message: 'Uhrzeit',
                                 })}
                                 type="time"
-                                {...register('time')}
+                                className="min-w-[33%]"
+                                {...register('time', {
+                                    required: true,
+                                })}
                             />
                         </div>
 
@@ -275,8 +274,9 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
                             type="number"
                             step={1}
                             min={1}
-                            max={50}
-                            {...register('slots')}
+                            {...register('slots', {
+                                required: true,
+                            })}
                         />
 
                         <SelectField
@@ -294,7 +294,27 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
                                 }),
                                 value: duration,
                             }))}
-                            {...register('duration')}
+                            {...register('duration', {
+                                required: true,
+                            })}
+                        />
+
+                        <SelectField
+                            label={t({
+                                id: 'provider.schedule.create.appointment-modal.vaccine-label',
+                                message: 'Impfstoff',
+                            })}
+                            options={Object.keys(vaccines.de).map(
+                                (vaccineKey) => {
+                                    return {
+                                        label: vaccines.de[vaccineKey].name,
+                                        value: vaccineKey,
+                                    };
+                                }
+                            )}
+                            {...register('duration', {
+                                required: true,
+                            })}
                         />
 
                         {/* {apptProperties} */}

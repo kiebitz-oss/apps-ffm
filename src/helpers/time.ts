@@ -14,12 +14,24 @@ export function getMonday(d: string | Date | number) {
 
 // https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
 export function formatDate(date: string | Date | number) {
-    return new Date(date).toISOString().slice(0, 10);
+    try {
+        return new Date(date).toISOString().slice(0, 10);
+    } catch (error) {
+        console.error(error);
+
+        return undefined;
+    }
 }
 
 // https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
 export function formatTime(date: string | Date | number) {
-    return new Date(date).toISOString().slice(11, 16);
+    try {
+        return new Date(date).toISOString().slice(11, 16);
+    } catch (error) {
+        console.error(error);
+
+        return undefined;
+    }
 }
 
 export function formatDuration(minutes: number) {

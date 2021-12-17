@@ -81,7 +81,7 @@ const StartPage: React.FC = () => {
 
     return (
         <main id="welcome">
-            <Title variant="h1" as="h2" className="mb-3" data-test="view.title">
+            <Title variant="h1" as="h2" data-test="view.title">
                 <Trans id="user.welcome.title">Willkommen!</Trans>
             </Title>
 

@@ -43,15 +43,15 @@ export const VerifyStep: React.FC = () => {
                 </Trans>
             </BackLink>
 
-            <Title variant="h1" as="h2" className="mb-5">
+            <Title variant="h1" as="h2">
                 <Trans id="user.finder.verify.title">Übersicht</Trans>
             </Title>
 
-            <Text variant="text2" className="mb-10">
+            <Text variant="text2">
                 <Trans id="user.finder.verify.intro">
                     Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob
-                    alles stimmt. Anschließend können Sie den Termin endgültig
-                    buchen.
+                    alles stimmt.
+                    <br /> Anschließend können Sie den Termin endgültig buchen.
                 </Trans>
             </Text>
 

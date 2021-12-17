@@ -23,7 +23,7 @@ export const SecretStep: React.FC = () => {
     return (
         <main>
             <div className="md:w-2/3">
-                <Title>Logindaten speichern</Title>
+                <Title as="h1">Logindaten speichern</Title>
 
                 <Text>
                     <Trans id="provider.onboarding.secret.notice">
@@ -39,7 +39,7 @@ export const SecretStep: React.FC = () => {
 
                 <DataSecret secret={'1234567890123456'} />
 
-                <Link href="/provider/schedule" type="button">
+                <Link href="/provider/schedule" type="button" variant="primary">
                     <Trans id="provider.onboarding.secret.button">
                         Abschließen & zur Terminplanung
                     </Trans>

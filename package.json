@@ -32,7 +32,10 @@
         "i18n:build": "lingui extract && lingui compile",
         "docker:build": "docker build -t=kiebitz-frontend .",
         "sb": "start-storybook -p 9000",
-        "sb:build": "build-storybook"
+        "sb:build": "build-storybook",
+        "docker:build": "docker build . -t kiebitz-apps",
+        "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
+
     },
     "dependencies": {
         "@carbon/icons-react": "^10.44.0",

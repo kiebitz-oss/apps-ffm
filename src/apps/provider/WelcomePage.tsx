@@ -12,42 +12,40 @@ const WelcomePage: React.FC = () => {
     const notice = useSearchParam('notice');
 
     return (
-        <main>
-            <div className="w-full content">
-                {notice === 'thankyou' && (
-                    <Message variant="success">
-                        <Trans id="provider.welcome.loggedout-.notice">
-                            Sie wurden erfolgreich abgemeldet. Sie können Ihre
-                            Daten jederzeit mit Ihrem Datenschlüssel und Ihrer
-                            Sicherheitsdatei wiederherstellen.
-                        </Trans>
-                    </Message>
-                )}
+        <main className="content">
+            <Title variant="h1">
+                <Trans id="provider.welcome.title">Impstellen</Trans>
+            </Title>
 
-                <Section className="mt-10 w-full sm:mt-0">
-                    <Title className="text-2xl font-bold leading-relaxed text-gray-900">
-                        Als neue Impfstelle registrieren
-                    </Title>
+            {notice === 'thankyou' && (
+                <Message variant="success">
+                    <Trans id="provider.welcome.loggedout-.notice">
+                        Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten
+                        jederzeit mit Ihrem Datenschlüssel und Ihrer
+                        Sicherheitsdatei wiederherstellen.
+                    </Trans>
+                </Message>
+            )}
 
-                    <Link
-                        type="button"
-                        variant="primary"
-                        href="/provider/onboarding"
-                    >
-                        Registrierung starten
-                    </Link>
-                </Section>
+            <Section className="mt-10 w-full sm:mt-0">
+                <Title variant="h2">Als neue Impfstelle registrieren</Title>
 
-                <Divider className="my-12" />
+                <Link
+                    type="button"
+                    variant="primary"
+                    href="/provider/onboarding"
+                >
+                    Registrierung starten
+                </Link>
+            </Section>
 
-                <Section className="mt-10 w-full sm:mt-0">
-                    <Title className="text-2xl font-bold leading-relaxed text-gray-900">
-                        Mit bestehendem Account einloggen
-                    </Title>
+            <Divider className="my-12" />
 
-                    <RestoreForm className="mt-5 w-full md:col-span-2 md:mt-0" />
-                </Section>
-            </div>
+            <Section className="mt-10 w-full sm:mt-0">
+                <Title variant="h2">Mit bestehendem Account einloggen</Title>
+
+                <RestoreForm className="mt-5 w-full md:col-span-2 md:mt-0" />
+            </Section>
         </main>
     );
 };
