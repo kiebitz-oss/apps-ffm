@@ -6,6 +6,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: de\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: src/ui/CopyToClipboardButton.tsx:28
 msgid "common.copy.failed"
@@ -22,6 +28,42 @@ msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn
 #: src/apps/common/ErrorFallback.tsx:15
 msgid "common.error.common-error"
 msgstr "Es tut uns schrecklich leid aber es ist ein unerwarteter Fehler aufgetreten. Bitte <0>kontaktieren Sie uns zur Behebung</0>."
+
+#: src/apps/common/Footer.tsx:18
+msgid "common.footer.link.booking"
+msgstr "common.footer.link.booking"
+
+#: src/apps/common/Footer.tsx:46
+msgid "common.footer.link.english"
+msgstr "common.footer.link.english"
+
+#: src/apps/common/Footer.tsx:25
+msgid "common.footer.link.faq"
+msgstr "common.footer.link.faq"
+
+#: src/apps/common/Footer.tsx:39
+msgid "common.footer.link.german"
+msgstr "common.footer.link.german"
+
+#: src/apps/common/Footer.tsx:58
+msgid "common.footer.link.imprint"
+msgstr "common.footer.link.imprint"
+
+#: src/apps/common/Footer.tsx:79
+msgid "common.footer.link.kiebitz"
+msgstr "common.footer.link.kiebitz"
+
+#: src/apps/common/Footer.tsx:65
+msgid "common.footer.link.privacy"
+msgstr "common.footer.link.privacy"
+
+#: src/apps/common/Footer.tsx:10
+msgid "common.footer.title.informations"
+msgstr "common.footer.title.informations"
+
+#: src/apps/common/Footer.tsx:33
+msgid "common.footer.title.languages"
+msgstr "common.footer.title.languages"
 
 #: src/helpers/time.ts:34
 msgid "common.hours"
@@ -615,59 +657,71 @@ msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit 
 msgid "ui.copy"
 msgstr "Kopieren"
 
-#: src/apps/user/FaqPage.tsx:29
+#: src/apps/user/FaqPage.tsx:21
 msgid "user.faq.question.answer.1"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:46
+#: src/apps/user/FaqPage.tsx:37
 msgid "user.faq.question.answer.2"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:63
+#: src/apps/user/FaqPage.tsx:53
 msgid "user.faq.question.answer.3"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:79
+#: src/apps/user/FaqPage.tsx:68
 msgid "user.faq.question.answer.4"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:96
+#: src/apps/user/FaqPage.tsx:84
 msgid "user.faq.question.answer.5"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:113
+#: src/apps/user/FaqPage.tsx:100
 msgid "user.faq.question.answer.6"
 msgstr "In der CovPass-App können auch Zertifikate für Auffrischungsimpfungen/Booster-Impfungen eingescannt werden. Nach der Auffrischungsimpfung haben Sie direkt einen Impfschutz. In manchen Fällen wird dies in der App jedoch nicht angezeigt."
 
-#: src/apps/user/FaqPage.tsx:23
+#: src/apps/user/FaqPage.tsx:15
 msgid "user.faq.question.title.1"
 msgstr "Für wen wird die Impfung gegen COVID-19 empfohlen?"
 
-#: src/apps/user/FaqPage.tsx:40
+#: src/apps/user/FaqPage.tsx:31
 msgid "user.faq.question.title.2"
 msgstr "Wie erreiche ich das Impfzentrum Frankfurt und wie kann ich mich vor Ort zurechtfinden?"
 
-#: src/apps/user/FaqPage.tsx:57
+#: src/apps/user/FaqPage.tsx:47
 msgid "user.faq.question.title.3"
 msgstr "Wie erreiche ich das Impfzentrum Frankfurt und wie kann ich mich vor Ort zurechtfinden?"
 
-#: src/apps/user/FaqPage.tsx:74
+#: src/apps/user/FaqPage.tsx:63
 msgid "user.faq.question.title.4"
 msgstr "Was muss ich zur Impfung mitbringen?"
 
-#: src/apps/user/FaqPage.tsx:90
+#: src/apps/user/FaqPage.tsx:78
 msgid "user.faq.question.title.5"
 msgstr "Wie viel Zeit sollte ich für die Impfung einplanen?"
 
-#: src/apps/user/FaqPage.tsx:107
+#: src/apps/user/FaqPage.tsx:94
 msgid "user.faq.question.title.6"
 msgstr "Was mache ich, wenn ich meinen Impfausweis verloren habe?"
 
-#: src/apps/user/FaqPage.tsx:16
+#: src/apps/user/FaqPage.tsx:122
 msgid "user.faq.section1.title"
 msgstr "Fragen zum Impfzentrum und Ablauf der Impfung"
 
-#: src/apps/user/FaqPage.tsx:11
+#: src/apps/user/FaqPage.tsx:128
+msgid "user.faq.section2.title"
+msgstr "user.faq.section2.title"
+
+#: src/apps/user/FaqPage.tsx:135
+msgid "user.faq.section3.title"
+msgstr "user.faq.section3.title"
+
+#: src/apps/user/FaqPage.tsx:141
+msgid "user.faq.section4.title"
+msgstr "user.faq.section4.title"
+
+#: src/apps/user/FaqPage.tsx:118
 msgid "user.faq.title"
 msgstr "Fragen & Antworten"
 

@@ -6,6 +6,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: src/ui/CopyToClipboardButton.tsx:28
 msgid "common.copy.failed"
@@ -21,6 +27,42 @@ msgstr ""
 
 #: src/apps/common/ErrorFallback.tsx:15
 msgid "common.error.common-error"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:18
+msgid "common.footer.link.booking"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:46
+msgid "common.footer.link.english"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:25
+msgid "common.footer.link.faq"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:39
+msgid "common.footer.link.german"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:58
+msgid "common.footer.link.imprint"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:79
+msgid "common.footer.link.kiebitz"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:65
+msgid "common.footer.link.privacy"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:10
+msgid "common.footer.title.informations"
+msgstr ""
+
+#: src/apps/common/Footer.tsx:33
+msgid "common.footer.title.languages"
 msgstr ""
 
 #: src/helpers/time.ts:34
@@ -615,59 +657,71 @@ msgstr ""
 msgid "ui.copy"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:29
+#: src/apps/user/FaqPage.tsx:21
 msgid "user.faq.question.answer.1"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:46
+#: src/apps/user/FaqPage.tsx:37
 msgid "user.faq.question.answer.2"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:63
+#: src/apps/user/FaqPage.tsx:53
 msgid "user.faq.question.answer.3"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:79
+#: src/apps/user/FaqPage.tsx:68
 msgid "user.faq.question.answer.4"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:96
+#: src/apps/user/FaqPage.tsx:84
 msgid "user.faq.question.answer.5"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:113
+#: src/apps/user/FaqPage.tsx:100
 msgid "user.faq.question.answer.6"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:23
+#: src/apps/user/FaqPage.tsx:15
 msgid "user.faq.question.title.1"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:40
+#: src/apps/user/FaqPage.tsx:31
 msgid "user.faq.question.title.2"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:57
+#: src/apps/user/FaqPage.tsx:47
 msgid "user.faq.question.title.3"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:74
+#: src/apps/user/FaqPage.tsx:63
 msgid "user.faq.question.title.4"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:90
+#: src/apps/user/FaqPage.tsx:78
 msgid "user.faq.question.title.5"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:107
+#: src/apps/user/FaqPage.tsx:94
 msgid "user.faq.question.title.6"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:16
+#: src/apps/user/FaqPage.tsx:122
 msgid "user.faq.section1.title"
 msgstr ""
 
-#: src/apps/user/FaqPage.tsx:11
+#: src/apps/user/FaqPage.tsx:128
+msgid "user.faq.section2.title"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:135
+msgid "user.faq.section3.title"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:141
+msgid "user.faq.section4.title"
+msgstr ""
+
+#: src/apps/user/FaqPage.tsx:118
 msgid "user.faq.title"
 msgstr ""
 

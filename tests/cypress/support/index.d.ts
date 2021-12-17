@@ -10,6 +10,6 @@ declare namespace Cypress {
             selector: string,
             options?: Partial<Loggable & Timeoutable & Withinable & Shadow>
         ): Chainable<JQuery>;
-        setLocale(locale: 'de' | 'en'): Chainable<Subject>
+        setLocale(locale: 'de' | 'en'): Chainable<Subject>;
     }
 }
