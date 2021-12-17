@@ -11,8 +11,8 @@ type VaccineData = {
 export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
     de: {
         mrna: {
-            id: 'MRNA',
-            name: 'MRNA',
+            id: 'mRNA',
+            name: 'mRNA-Impfstoff (Moderna oder BioNTech)',
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:
@@ -20,8 +20,7 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
         },
         moderna: {
             id: 'MD',
-            name: 'Moderna',
-
+            name: 'Moderna (Spikevax®)',
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:
@@ -29,7 +28,15 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
         },
         biontech: {
             id: 'BT',
-            name: 'Biontech Pfizer (Comirnaty)',
+            name: 'BioNTech/Pfizer (Comirnaty®)',
+            anamnesisUrl:
+                'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Einwilligung-de.pdf?__blob=publicationFile',
+            infosUrl:
+                'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
+        },
+        biontechchildren: {
+            id: 'BTch',
+            name: 'BioNTech/Pfizer (Comirnaty®) für 5- bis 11-jährige',
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:
@@ -37,15 +44,15 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
         },
         astrazeneca: {
             id: 'AZ',
-            name: 'Astra Zeneca (Vaxzevria)',
+            name: 'AstraZeneca (Vaxzevria®)',
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
         },
-        'johnson-johnson': {
+        jnj: {
             id: 'JJ',
-            name: 'Johnson & Johnson',
+            name: 'Johnson & Johnson (Janssen®)',
             anamnesisUrl:
                 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Einwilligung-de.pdf?__blob=publicationFile',
             infosUrl:
