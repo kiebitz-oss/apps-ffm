@@ -44,8 +44,6 @@ export const Title: React.FC<TitleProps> = ({
         }
     }
 
-    console.log(variant);
-
     return (
         <Element className={clsx(variant, className)} {...props}>
             {children}

@@ -9,7 +9,7 @@ import React, {
     useState,
 } from 'react';
 import type { Appointment } from 'types';
-import { Button, InputField, Link, Title } from 'ui';
+import { Button, Error, InputField, Link, Title } from 'ui';
 import { AppointmentCard } from '../common/AppointmentCard';
 import { Types, useFinderState } from './FinderStateProvider';
 
@@ -145,6 +145,17 @@ export const AppointmentStep: React.FC = () => {
             </div>
 
             <div className="appointment-grid">
+                {filteredAppointments.length === 0 && (
+                    <Error>
+                        <Trans id="user.finder.appointment.no-result">
+                            Es sind keine freien Termine verfügbar.
+                            <br />
+                            <br />
+                            Bitte versuchen Sie einen späteren Zeitpunkt oder
+                            ein anderen Impfstelle.
+                        </Trans>
+                    </Error>
+                )}
                 {filteredAppointments.map((appointment) => (
                     <AppointmentCardSelector
                         appointment={appointment}
