@@ -10,7 +10,7 @@ interface ProviderTableProps {
     providers: Provider[];
 }
 
-export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
+export const ProviderList: React.FC<ProviderTableProps> = ({ providers }) => {
     const [modal, setModal] = useState<'confirm' | 'unconfirm' | null>(null);
     const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
 
@@ -107,6 +107,7 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                 <Button
                                     variant="primary"
                                     size="sm"
+                                    className="inline-flex gap-1 items-center"
                                     disabled={selectedProviders.length === 0}
                                     onClick={() => setModal('confirm')}
                                 >
@@ -119,6 +120,7 @@ export const ProviderTable: React.FC<ProviderTableProps> = ({ providers }) => {
                                 <Button
                                     variant="secondary"
                                     size="sm"
+                                    className="inline-flex gap-1 items-center"
                                     disabled={selectedProviders.length === 0}
                                     onClick={() => setModal('unconfirm')}
                                 >

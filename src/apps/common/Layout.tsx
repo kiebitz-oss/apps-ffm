@@ -4,10 +4,10 @@ import { Link } from 'ui';
 import Footer from './Footer';
 
 interface LayoutProps {
-    nav?: React.ReactElement;
+    nav?: React.FC<any> | undefined;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ nav, children }) => {
+export const Layout: React.FC<LayoutProps> = ({ nav: Nav, children }) => {
     const [navOpen, setNavOpen] = useState(false);
 
     return (
@@ -39,7 +39,7 @@ export const Layout: React.FC<LayoutProps> = ({ nav, children }) => {
                     </svg>
                 </a>
 
-                {nav()}
+                {Nav && <Nav />}
             </header>
 
             {children}

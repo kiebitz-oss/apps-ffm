@@ -2,6 +2,6 @@
     @apply table striped selectable;
 
     & tbody tr {
-        @apply hover:bg-primary cursor-pointer;
+        @apply hover:bg-primary/10 cursor-pointer;
     }
 }

@@ -33,10 +33,12 @@ export const ProviderShowPage: React.FC = () => {
             <BackLink href="/mediator/providers">Zurück zur Übersicht</BackLink>
 
             <Title>
-                <Trans id="mediator.providers.title">Provider Show</Trans>
+                <Trans id="mediator.provider-show.title">
+                    Impfanbieter "{provider.name}"
+                </Trans>
             </Title>
 
-            <table className="table striped">
+            <table className="table mb-8 striped">
                 <thead>
                     <tr>
                         <th>
@@ -55,10 +57,20 @@ export const ProviderShowPage: React.FC = () => {
                     <tr>
                         <th>
                             <Trans id="mediator.provider-show.verified">
-                                Verifiziert?
+                                Bestätigt?
                             </Trans>
                         </th>
-                        <td>{provider.verified ? 'ja' : 'nein'}</td>
+                        <td>
+                            {provider.verified ? (
+                                <span className="font-semibold text-green-700">
+                                    ja
+                                </span>
+                            ) : (
+                                <span className="font-semibold text-red-700">
+                                    nein
+                                </span>
+                            )}
+                        </td>
                     </tr>
                     <tr>
                         <th>
@@ -80,7 +92,7 @@ export const ProviderShowPage: React.FC = () => {
                                 Stadt
                             </Trans>
                         </th>
-                        <td>{provider.city}</td>
+                        <td>{provider.city || ' -- '}</td>
                     </tr>
                     <tr>
                         <th>
@@ -96,7 +108,7 @@ export const ProviderShowPage: React.FC = () => {
                                 E-Mail
                             </Trans>
                         </th>
-                        <td>{provider.email}</td>
+                        <td>{provider.email || ' -- '}</td>
                     </tr>
                     <tr>
                         <th>
@@ -104,7 +116,7 @@ export const ProviderShowPage: React.FC = () => {
                                 Telefonnummer
                             </Trans>
                         </th>
-                        <td>{provider.phone}</td>
+                        <td>{provider.phone || ' -- '}</td>
                     </tr>
                     <tr>
                         <th>
@@ -112,7 +124,7 @@ export const ProviderShowPage: React.FC = () => {
                                 Beschreibung
                             </Trans>
                         </th>
-                        <td>{provider.description}</td>
+                        <td>{provider.description || ' -- '}</td>
                     </tr>
                 </tbody>
             </table>

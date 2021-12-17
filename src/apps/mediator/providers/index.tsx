@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import type { Provider } from 'types';
 import { Title } from 'ui';
 import { useMediatorApi } from '../common/MediatorApiContext';
-import { ProviderTable } from '../common/ProvidersList';
+import { ProviderList } from '../common/ProvidersList';
 
 export const ProvidersPage: React.FC = () => {
     const [providers, setProviders] = useState<Provider[]>([]);
@@ -23,7 +23,7 @@ export const ProvidersPage: React.FC = () => {
             </Title>
 
             {providers.length > 0 ? (
-                <ProviderTable providers={providers} />
+                <ProviderList providers={providers} />
             ) : (
                 <>Loading</>
             )}

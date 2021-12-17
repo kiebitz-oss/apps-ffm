@@ -5,7 +5,7 @@
 import { Trans } from '@lingui/macro';
 import React, { ChangeEventHandler, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Message, Section, Title } from 'ui';
+import { Message, Section, Text, Title } from 'ui';
 import { useMediatorApi } from './common/MediatorApiContext';
 
 const WelcomePage: React.FC = () => {
@@ -60,7 +60,7 @@ const WelcomePage: React.FC = () => {
                 </Title>
 
                 <div>
-                    <Title>
+                    <Title variant="h3">
                         <Trans id="mediator.welcome.upload-key-pairs">
                             Geheime Schlüssel laden
                         </Trans>
@@ -75,10 +75,12 @@ const WelcomePage: React.FC = () => {
                     )}
 
                     {!invalidFile && (
-                        <Trans id="mediator.welcome.upload-key-pairs.notice">
-                            Bitte laden Sie die Datei mit Ihren geheimen
-                            Vermittlerschlüsseln.
-                        </Trans>
+                        <Text>
+                            <Trans id="mediator.welcome.upload-key-pairs.notice">
+                                Bitte laden Sie die Datei mit Ihren geheimen
+                                Vermittlerschlüsseln.
+                            </Trans>
+                        </Text>
                     )}
 
                     <form>
