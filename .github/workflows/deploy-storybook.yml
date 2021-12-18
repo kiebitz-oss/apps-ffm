@@ -4,7 +4,7 @@ on:
     push:
         branches:
             - main
-
+        paths: ['src/ui/**', 'src/apps/**']
 jobs:
     deploy-storybook:
         runs-on: ubuntu-latest
@@ -12,10 +12,13 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v2
+              with:
+                  persist-credentials: false
 
             - name: Install and Build
               uses: actions/setup-node@v2
             - run: npm ci
+            - run: npm run i18n:build
             - run: npm run sb:build
             - run: touch storybook-static/.nojekyll
 
@@ -24,4 +27,5 @@ jobs:
               with:
                   branch: gh-pages
                   folder: storybook-static
+                  target_folder: storybook
                   clean: true
