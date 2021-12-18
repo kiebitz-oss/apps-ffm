@@ -1,9 +1,14 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { Text, TextProps } from './Text';
+import { Text } from './Text';
 
 export default {
     component: Text,
-} as Meta<TextProps>;
+    args: {
+        children: 'Text',
+    },
+} as ComponentMeta<typeof Text>;
 
-export const Default = () => <Text>Text</Text>;
+export const Default: ComponentStory<typeof Text> = (args) => (
+    <Text {...args} />
+);

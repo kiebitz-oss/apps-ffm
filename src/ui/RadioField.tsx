@@ -1,16 +1,16 @@
 import clsx from 'clsx';
 import React, { forwardRef } from 'react';
-import { Checkbox, CheckboxProps } from './Checkbox';
 import { Field, FieldProps } from './Field';
 import { Label } from './Label';
+import { Radio, RadioProps } from './Radio';
 
-export interface CheckboxFieldProps extends CheckboxProps, FieldProps {
+export interface RadioFieldProps extends RadioProps, FieldProps {
     name: string;
     label?: string;
     description?: string;
 }
 
-export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
+export const RadioField = forwardRef<HTMLInputElement, RadioFieldProps>(
     ({ name, label, description, className, required, ...props }, ref) => {
         const id = !props.id ? name : props.id;
 
@@ -23,7 +23,7 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
                 className={clsx(className)}
                 inline
             >
-                <Checkbox
+                <Radio
                     id={id}
                     required={required}
                     name={name}
@@ -39,4 +39,4 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
     }
 );
 
-CheckboxField.displayName = 'CheckboxField';
+RadioField.displayName = 'RadioField';

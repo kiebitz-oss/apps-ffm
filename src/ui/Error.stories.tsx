@@ -1,9 +1,14 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { Error, ErrorProps } from './Error';
+import { Error } from './Error';
 
 export default {
     component: Error,
-} as Meta<ErrorProps>;
+    args: {
+        children: 'Errormessage',
+    },
+} as ComponentMeta<typeof Error>;
 
-export const Default = () => <Error>Errormessage</Error>;
+export const Default: ComponentStory<typeof Error> = (args) => (
+    <Error {...args} />
+);

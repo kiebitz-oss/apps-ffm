@@ -1,16 +1,16 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { CheckboxField } from './CheckboxField';
+import { RadioField } from './RadioField';
 
 export default {
-    component: CheckboxField,
+    component: RadioField,
     args: {
         name: 'checkbox',
     },
-} as ComponentMeta<typeof CheckboxField>;
+} as ComponentMeta<typeof RadioField>;
 
-export const Default: ComponentStory<typeof CheckboxField> = (args) => (
-    <CheckboxField {...args} />
+export const Default: ComponentStory<typeof RadioField> = (args) => (
+    <RadioField {...args} />
 );
 
 export const Label = Default.bind({});

@@ -154,7 +154,7 @@
     }
 
     .book {
-        @apply font-medium text-[12px] uppercase mb-2 ml-4 tracking-[4px];
+        @apply font-medium text-[12px] uppercase tracking-[4px]; /* mb-2 ml-4 */
     }
 
     .text {
@@ -169,10 +169,10 @@
     }
 
     .field {
-        @apply flex;
+        @apply flex  gap-1;
 
         &.field-inline {
-            @apply flex-row;
+            @apply flex-row gap-1;
         }
 
         &:not(.field-inline) {
@@ -197,7 +197,7 @@
     }
 
     .label {
-        @apply book mb-2 select-none;
+        @apply book select-none self-center;
     }
 
     .input {
@@ -205,7 +205,11 @@
     }
 
     .hint {
-        @apply text-gray-800 text-sm mt-1 ml-4;
+        @apply text-black text-sm;
+    }
+
+    :not(.field-inline) > .hint {
+        @apply ml-2;
     }
 
     .select {
@@ -213,11 +217,11 @@
     }
 
     .checkbox {
-        @apply form-checkbox default-focus outline-none flex items-center mt-1 mr-2;
+        @apply form-checkbox default-focus self-center text-primary outline-none flex items-center; /* mt-1 mr-2; */
     }
 
     .radio {
-        @apply form-radio text-black border;
+        @apply form-radio text-black self-center border;
     }
 
     .textarea {

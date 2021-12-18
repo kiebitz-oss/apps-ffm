@@ -1,9 +1,14 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { SecretBox, SecretBoxProps } from './SecretBox';
+import { SecretBox } from './SecretBox';
 
 export default {
     component: SecretBox,
-} as Meta<SecretBoxProps>;
+    args: {
+        secret: '0123456789abcdef',
+    },
+} as ComponentMeta<typeof SecretBox>;
 
-export const Default = () => <SecretBox secret="0123456789abcdef" />;
+export const Default: ComponentStory<typeof SecretBox> = (args) => (
+    <SecretBox {...args} />
+);

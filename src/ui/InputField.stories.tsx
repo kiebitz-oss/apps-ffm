@@ -1,16 +1,24 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { InputField, InputFieldProps } from './InputField';
+import { InputField } from './InputField';
 
 export default {
     component: InputField,
-} as Meta<InputFieldProps>;
+    args: {
+        name: 'input-field',
+    },
+} as ComponentMeta<typeof InputField>;
 
-export const Default = () => <InputField name="input" />;
-export const Label = () => <InputField name="input" label="Label" />;
-export const Description = () => (
-    <InputField name="input" label="Label" description="Description" />
+export const Default: ComponentStory<typeof InputField> = (args) => (
+    <InputField {...args} />
 );
-export const Required = () => (
-    <InputField name="input" label="Label" description="Description" required />
-);
+
+export const Label = Default;
+Label.args = {
+    label: 'Label',
+};
+
+export const Description = Default;
+Description.args = {
+    description: 'Description',
+};

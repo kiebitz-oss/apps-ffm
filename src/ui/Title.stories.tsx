@@ -1,16 +1,49 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { Title, TitleProps } from './Title';
+import { Title } from './Title';
 
 export default {
     component: Title,
-} as Meta<TitleProps>;
+    args: {
+        children: 'Title',
+    },
+} as ComponentMeta<typeof Title>;
 
-export const Default = () => <Title>Text</Title>;
-export const H1 = () => <Title variant="h1">Text</Title>;
-export const H2 = () => <Title variant="h2">Text</Title>;
-export const H3 = () => <Title variant="h3">Text</Title>;
-export const H4 = () => <Title variant="h4">Text</Title>;
-export const H5 = () => <Title variant="h5">Text</Title>;
-export const H6 = () => <Title variant="h6">Text</Title>;
-export const Book = () => <Title variant="book">Text</Title>;
+export const Default: ComponentStory<typeof Title> = (args) => (
+    <Title {...args} />
+);
+
+export const H1 = Default;
+H1.args = {
+    variant: 'h1',
+};
+
+export const H2 = Default;
+H2.args = {
+    variant: 'h2',
+};
+
+export const H3 = Default;
+H3.args = {
+    variant: 'h3',
+};
+
+export const H4 = Default;
+H4.args = {
+    variant: 'h4',
+};
+
+export const H5 = Default;
+H5.args = {
+    variant: 'h5',
+};
+
+export const H6 = Default;
+H6.args = {
+    variant: 'h6',
+};
+
+export const Book = Default;
+Book.args = {
+    variant: 'book',
+};

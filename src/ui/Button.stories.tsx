@@ -1,13 +1,12 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { Button, ButtonProps } from './Button';
+import { Button } from './Button';
 
 export default {
     component: Button,
     argTypes: { onClick: { action: 'click ' } },
-} as Meta<ButtonProps>;
+} as ComponentMeta<typeof Button>;
 
-export const Default = () => <Button>Click me</Button>;
-export const Primary = () => <Button variant="primary">Primary</Button>;
-export const Secondary = () => <Button variant="secondary">Secondary</Button>;
-export const Invalid = () => <Button variant="invalid">Invalid</Button>;
+export const Default: ComponentStory<typeof Button> = (args) => (
+    <Button {...args}>Click me</Button>
+);

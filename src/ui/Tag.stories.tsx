@@ -1,12 +1,12 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { Tag, TagProps } from './Tag';
+import { Tag } from './Tag';
 
 export default {
     component: Tag,
-} as Meta<TagProps>;
+    args: {
+        children: 'Tag',
+    },
+} as ComponentMeta<typeof Tag>;
 
-export const Default = () => <Tag>Tag</Tag>;
-export const Success = () => <Tag variant="success">Tag</Tag>;
-export const Warning = () => <Tag variant="warning">Tag</Tag>;
-export const Error = () => <Tag variant="error">Tag</Tag>;
+export const Default: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;

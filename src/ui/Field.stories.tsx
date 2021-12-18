@@ -1,9 +1,15 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { Field, FieldProps } from './Field';
+import { Field } from './Field';
 
 export default {
     component: Field,
-} as Meta<FieldProps>;
+    args: {
+        name: 'field',
+        children: 'Field',
+    },
+} as ComponentMeta<typeof Field>;
 
-export const Default = () => <Field name="field">Fieldcontent</Field>;
+export const Default: ComponentStory<typeof Field> = (args) => (
+    <Field {...args} />
+);

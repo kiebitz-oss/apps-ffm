@@ -1,18 +1,18 @@
 import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 
-export interface CheckboxProps
+export interface RadioProps
     extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {}
 
-export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+export const Radio = forwardRef<HTMLInputElement, RadioProps>(
     ({ className, ...props }, ref) => {
         const id = !props.id ? props.name : props.id;
 
         return (
             <input
                 id={id}
-                className={clsx('checkbox', className)}
-                type="checkbox"
+                className={clsx('radio', className)}
+                type="radio"
                 {...props}
                 ref={ref}
             />
@@ -20,4 +20,4 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     }
 );
 
-Checkbox.displayName = 'Checkbox';
+Radio.displayName = 'Radio';
