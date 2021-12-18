@@ -4,42 +4,26 @@
 
 import { Trans } from '@lingui/macro';
 import React from 'react';
-import {
-    Box,
-    BoxContent,
-    BoxFooter,
-    BoxHeader,
-    Link,
-    Message,
-    Title,
-} from 'ui';
+import { Link, Message, Title } from 'ui';
 
 const LoggedOutPage: React.FC = () => {
     return (
-        <Box className="kip-logged-out">
-            <BoxHeader>
-                <Title>
-                    <Trans id="mediator.logged-out.title"></Trans>
-                </Title>
-            </BoxHeader>
+        <main className="content">
+            <Title>
+                <Trans id="mediator.logged-out.title"></Trans>
+            </Title>
 
-            <BoxContent>
-                <Message variant="success">
-                    <Trans id="mediator.logged-out.notice">
-                        Sie wurden erfolgreich abgemeldet. Sie können sich
-                        jederzeit mit Ihrer Schlüsseldatei wieder anmelden.
-                    </Trans>
-                </Message>
-            </BoxContent>
+            <Message variant="success">
+                <Trans id="mediator.logged-out.notice">
+                    Sie wurden erfolgreich abgemeldet. Sie können sich jederzeit
+                    mit Ihrer Schlüsseldatei wieder anmelden.
+                </Trans>
+            </Message>
 
-            <BoxFooter>
-                <Link href="/mediator" type="button" variant="primary">
-                    <Trans id="mediator.logged-out.log-in-again">
-                        Einloggen
-                    </Trans>
-                </Link>
-            </BoxFooter>
-        </Box>
+            <Link href="/mediator" type="button" variant="primary">
+                <Trans id="mediator.logged-out.log-in-again">Einloggen</Trans>
+            </Link>
+        </main>
     );
 };
 

@@ -26,12 +26,12 @@ const renderSecret = (secret: string) => {
     return <>{fragments}</>;
 };
 
-interface DataSecretProps {
+export interface SecretBoxProps {
     secret: string;
     copy?: boolean;
 }
 
-export const SecretsBox: React.FC<DataSecretProps> = ({
+export const SecretBox: React.FC<SecretBoxProps> = ({
     secret,
     copy = false,
 }) => {
@@ -41,7 +41,7 @@ export const SecretsBox: React.FC<DataSecretProps> = ({
                 <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
             </Title>
 
-            <code className="flex justify-center items-center p-4 text-2xl font-bold text-white bg-black rounded-lg">
+            <code className="flex justify-center items-center p-4 text-2xl font-bold text-white uppercase bg-black rounded-2xl">
                 {renderSecret(secret)}
                 {copy && (
                     <CopyToClipboardButton toCopy={secret} className="text-sm">

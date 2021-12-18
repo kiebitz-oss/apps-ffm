@@ -88,8 +88,8 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
                 'Vor dem Impftermin und Ihrem medizinischen Aufklärungsgespräch können Sie sich das Aufklärungsmerkblatt zum Impfstoff und die Einwilligungserklärung zur Impfung als PDF-Datei herunterladen und ausdrucken. Dort erhalten Sie ebenfalls wichtige Informationen zu Ihrer Impfung und dem Impfstoff gegen das Coronavirus.',
             pdfs: [
                 {
-                  label: 'Aufklärungsmerkblatt',
-                  url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
+                    label: 'Aufklärungsmerkblatt',
+                    url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
                 },
                 {
                     label: 'Anamnese-/Einwilligungsbogen',
@@ -104,8 +104,8 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
                 'Vor dem Impftermin und Ihrem medizinischen Aufklärungsgespräch können Sie sich das Aufklärungsmerkblatt zum Impfstoff und die Einwilligungserklärung zur Impfung als PDF-Datei herunterladen und ausdrucken. Dort erhalten Sie ebenfalls wichtige Informationen zu Ihrer Impfung und dem Impfstoff gegen das Coronavirus.',
             pdfs: [
                 {
-                label: 'Aufklärungsmerkblatt',
-                url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
+                    label: 'Aufklärungsmerkblatt',
+                    url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-de.pdf?__blob=publicationFile',
                 },
                 {
                     label: 'Anamnese-/Einwilligungsbogen',
@@ -119,7 +119,7 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
             id: 'mRNA',
             name: 'mRNA-Impfstoff (Moderna oder BioNTech)',
             pdfDescription:
-              'Vor dem Impfen müssen Sie 2 Dinge tun: 1. Sie müssen sich informieren und 2. Sie müssen einen Fragebogen ausfüllen. Die Schritte sind im Info-Blatt erklärt. Laden Sie sich alle Dokumente herunter. Dann beginnen Sie mit dem Infoblatt, dass "Einleitung-leichte-Sprache" heißt.',
+                'Vor dem Impfen müssen Sie 2 Dinge tun: 1. Sie müssen sich informieren und 2. Sie müssen einen Fragebogen ausfüllen. Die Schritte sind im Info-Blatt erklärt. Laden Sie sich alle Dokumente herunter. Dann beginnen Sie mit dem Infoblatt, dass "Einleitung-leichte-Sprache" heißt.',
             pdfs: [
                 {
                     label: 'Info-Blatt',
@@ -316,8 +316,8 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
                 'Before your vaccination appointment and your medical consultation, you can download and print out the vaccine information sheet, the medical history form and the vaccination consent form as a PDF file. There you will also receive important information about your vaccination and the coronavirus vaccine.',
             pdfs: [
                 {
-                  label: 'Information sheet, medical history form, and consent form',
-                  url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-Englisch.pdf?__blob=publicationFile',
+                    label: 'Information sheet, medical history form, and consent form',
+                    url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-Englisch.pdf?__blob=publicationFile',
                 },
             ],
         },
@@ -328,8 +328,8 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
                 'Before your vaccination appointment and your medical consultation, you can download and print out the vaccine information sheet, the medical history form and the vaccination consent form as a PDF file. There you will also receive important information about your vaccination and the coronavirus vaccine.',
             pdfs: [
                 {
-                  label: 'Information sheet, medical history form, and consent form',
-                  url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-Englisch.pdf?__blob=publicationFile',
+                    label: 'Information sheet, medical history form, and consent form',
+                    url: 'https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Vektorimpfstoff/Aufklaerungsbogen-Englisch.pdf?__blob=publicationFile',
                 },
             ],
         },

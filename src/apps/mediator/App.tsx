@@ -8,7 +8,6 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import { MediatorApiProvider } from './common/MediatorApiContext';
 import LogoutPage from './logout';
-import './mediator.css';
 import { ProvidersPage } from './providers';
 import { ProviderShowPage } from './providers/show';
 import WelcomePage from './WelcomePage';

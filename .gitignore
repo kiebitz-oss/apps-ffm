@@ -8,5 +8,6 @@ __pycache__
 
 # Local folders for development
 build
+storybook-static
 node_modules
 src/locales/**/*.js

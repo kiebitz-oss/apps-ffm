@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-type ErrorProps = React.ComponentProps<'div'>;
+export type ErrorProps = React.ComponentProps<'div'>;
 
 export const Error: React.FC<ErrorProps> = ({
     children,

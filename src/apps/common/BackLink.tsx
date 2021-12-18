@@ -9,7 +9,13 @@ export const BackLink: React.FC<LinkProps> = ({
     ...props
 }) => {
     return (
-        <Link className={clsx('back-link', className)} {...props}>
+        <Link
+            className={clsx(
+                'hidden md:inline-flex md:absolute md:top-10 md:left-4 md:gap-8 md:book',
+                className
+            )}
+            {...props}
+        >
             <ArrowLeft16 /> {children}
         </Link>
     );

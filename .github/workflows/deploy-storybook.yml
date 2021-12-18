@@ -1,0 +1,28 @@
+name: Deploy Storybook
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy-storybook:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Install and Build
+              uses: actions/setup-node@v2
+              run: |
+                  npm ci
+                  npm run build
+                  touch storybook-static/.nojekyll
+
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@4.1.7
+              with:
+                  branch: gh-pages
+                  folder: storybook-static
+                  clean: true

@@ -6,7 +6,7 @@ import { Trans } from '@lingui/macro';
 import React from 'react';
 import { useSearchParam } from 'react-use';
 import { Divider, Link, Message, Section, Title } from 'ui';
-import { RestoreForm } from './RestoreForm';
+import { RestoreForm } from './common/RestoreForm';
 
 const WelcomePage: React.FC = () => {
     const notice = useSearchParam('notice');

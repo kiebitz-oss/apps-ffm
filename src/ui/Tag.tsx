@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface TagProps extends React.ComponentProps<'p'> {
+export interface TagProps extends React.ComponentProps<'p'> {
     variant?: 'success' | 'warning' | 'error';
     size?: 'sm';
 }

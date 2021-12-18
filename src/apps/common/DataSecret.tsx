@@ -1,15 +1,11 @@
 import { Trans } from '@lingui/macro';
 import React from 'react';
 import { Text } from 'ui';
-import { SecretsBox } from './SecretBox';
+import { SecretBox, SecretBoxProps } from './SecretBox';
 
-interface DataSecretProps {
-    secret: string;
-    embedded?: boolean;
-    hideNotice?: boolean;
-}
+interface DataSecretProps extends SecretBoxProps {}
 
-export const DataSecret: React.FC<DataSecretProps> = ({ secret, embedded }) => {
+export const DataSecret: React.FC<DataSecretProps> = ({ secret }) => {
     return (
         <>
             <Text>
@@ -21,7 +17,7 @@ export const DataSecret: React.FC<DataSecretProps> = ({ secret, embedded }) => {
                 </Trans>
             </Text>
 
-            <SecretsBox secret={secret} copy />
+            <SecretBox secret={secret} copy />
         </>
     );
 };

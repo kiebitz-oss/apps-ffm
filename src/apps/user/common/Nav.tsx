@@ -2,12 +2,14 @@ import { useI18n } from 'apps/common/useI18n';
 import React from 'react';
 import { Link } from 'ui';
 
-export const Nav: React.FC = () => {
+export interface NavProps {}
+
+export const Nav: React.FC<NavProps> = () => {
     const i18n = useI18n();
     const locale = i18n.locale.toLowerCase();
 
     return (
-        <nav>
+        <nav className="hidden gap-12 sm:flex md:pt-8">
             <Link href="/user/faq">Fragen & Antworten</Link>
 
             <div>
@@ -19,7 +21,7 @@ export const Nav: React.FC = () => {
                         i18n.activate('de');
                     }}
                     className={
-                        locale.startsWith('de') ? 'font-bold' : undefined
+                        locale.startsWith('de') ? 'link font-bold' : 'link'
                     }
                 >
                     DE
@@ -33,7 +35,7 @@ export const Nav: React.FC = () => {
                         i18n.activate('en');
                     }}
                     className={
-                        locale.startsWith('en') ? 'font-bold' : undefined
+                        locale.startsWith('en') ? 'link font-bold' : 'link'
                     }
                 >
                     EN

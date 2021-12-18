@@ -47,7 +47,7 @@ export const VerifyStep: React.FC = () => {
                 <Trans id="user.finder.verify.title">Übersicht</Trans>
             </Title>
 
-            <Text variant="text2">
+            <Text variant="text2" className="mb-10">
                 <Trans id="user.finder.verify.intro">
                     Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob
                     alles stimmt.
@@ -55,8 +55,8 @@ export const VerifyStep: React.FC = () => {
                 </Trans>
             </Text>
 
-            <div className="your-appointment">
-                <div className="verify-card">
+            <div className="flex flex-col mb-10 w-full sm:flex-row sm:gap-12 sm:max-w-[720px] sm:w-fit">
+                <div className="sm:w-1/2">
                     <Title variant="book" as="h3">
                         <Trans id="user.finder.verify.appointment.subtitle">
                             Ihr Termin
@@ -67,7 +67,7 @@ export const VerifyStep: React.FC = () => {
                 </div>
 
                 {state.appointment?.provider?.description && (
-                    <Text className="provider-description">
+                    <Text className="mt-12 italic sm:w-1/2">
                         <Trans id="user.finder.verify.appointment.description">
                             {state.appointment.provider.description}
                         </Trans>
@@ -79,7 +79,7 @@ export const VerifyStep: React.FC = () => {
                 type="button"
                 variant="primary"
                 href="/user/finder/success"
-                className="mt-auto sm:mt-0"
+                className="mt-auto ml-4 sm:mt-0"
                 onClick={onBooking}
             >
                 <Trans id="user.finder.verify.submit">

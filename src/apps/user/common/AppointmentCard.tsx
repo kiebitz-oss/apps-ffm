@@ -6,7 +6,7 @@ import React from 'react';
 import type { Appointment } from 'types';
 import { Title } from 'ui';
 
-interface AppointmentCardProps {
+export interface AppointmentCardProps {
     appointment: Appointment;
     className?: string;
     border?: true | undefined;
@@ -24,28 +24,25 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
     return (
         <div
             className={clsx(
-                'appointment-card',
+                'flex flex-col gap-4 items-center p-4 font-semibold default-focus',
                 {
-                    ['border']: border,
+                    ['rounded-2xl border-2 border-black']: border,
                 },
                 className
             )}
             {...props}
         >
-            <address>
+            <address className="flex flex-col items-center font-medium">
                 <Title variant="h3" as="h3">
                     {appointment.provider.name}
                 </Title>
-
-                <span className="font-medium">
-                    {appointment.provider.street},
-                    <br />
-                    {appointment.provider.zipCode} {appointment.provider.city}
-                </span>
+                {appointment.provider.street},
+                <br />
+                {appointment.provider.zipCode} {appointment.provider.city}
             </address>
 
-            <time>
-                <div className="text-4xl font-semibold">
+            <time className="flex flex-col font-semibold text-center">
+                <div className="text-4xl">
                     <Trans id="user.finder.appointment.card.time">
                         {appointment.date.toLocaleTimeString(i18n.locale, {
                             hour: '2-digit',
@@ -55,7 +52,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
                     </Trans>
                 </div>
 
-                <div className="text-xl font-semibold">
+                <div className="text-xl">
                     <Trans id="user.finder.appointment.card.date">
                         am{' '}
                         {appointment.date.toLocaleDateString(i18n.locale, {
@@ -67,9 +64,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
                 </div>
             </time>
 
-            <p className="vaccine">
-                {vaccines[i18n.locale || 'de'][appointment.vaccine].name}
-            </p>
+            <p>{vaccines[i18n.locale || 'de'][appointment.vaccine].name}</p>
 
             {/* button */}
             {children}
