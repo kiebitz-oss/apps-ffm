@@ -88,13 +88,19 @@ const Footer: React.FC = () => {
 
             <section className="flex flex-col flex-[1] justify-center items-center lg:flex-[4]">
                 <Link href="#" external>
-                    <img width="300" src={stadtFfmUrl} alt="Stadt Frankfurt" />
+                    <img
+                        width="300"
+                        src={stadtFfmUrl}
+                        alt="Stadt Frankfurt"
+                        className="max-w-[70vw]"
+                    />
                 </Link>
                 <Link href="#" external>
                     <img
                         width="300"
                         src={gaFfmUrl}
                         alt="Gesundheitsamt Frankfurt"
+                        className="max-w-[70vw]"
                     />
                 </Link>
             </section>

@@ -21,7 +21,7 @@ export const Nav: React.FC<NavProps> = () => {
                         i18n.activate('de');
                     }}
                     className={
-                        locale.startsWith('de') ? 'font-bold' : undefined
+                        locale.startsWith('de') ? 'link font-bold' : 'link'
                     }
                 >
                     DE
@@ -35,7 +35,7 @@ export const Nav: React.FC<NavProps> = () => {
                         i18n.activate('en');
                     }}
                     className={
-                        locale.startsWith('en') ? 'font-bold' : undefined
+                        locale.startsWith('en') ? 'link font-bold' : 'link'
                     }
                 >
                     EN

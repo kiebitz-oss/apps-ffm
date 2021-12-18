@@ -6,8 +6,8 @@ import { FaqSection } from './common/faq/FaqSection';
 export const FaqPage: React.FC = () => {
     return (
         <main id="faq">
-            <article className="flex flex-col gap-14 md:gap-20">
-                <Title as="h2" variant="h1" className="mb-12">
+            <article className="flex flex-col gap-14 md:gap-14">
+                <Title as="h2" variant="h1">
                     <Trans id="user.faq.title">Fragen & Antworten</Trans>
                 </Title>
 

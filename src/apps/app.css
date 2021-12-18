@@ -36,18 +36,10 @@
             & > section {
                 @media (max-width: 639px) {
                     @apply flex flex-col gap-4 min-w-[250px] mx-auto;
-
-                    & img {
-                        @apply max-w-[70vw];
-                    }
                 }
 
                 @media (min-width: 640px) {
                     @apply flex flex-col gap-4;
-                }
-
-                & > h3 {
-                    @apply font-bold;
                 }
 
                 & a {
@@ -151,6 +143,10 @@
 
     .h3 {
         @apply font-semibold text-[19px];
+    }
+
+    .h4 {
+        @apply font-semibold;
     }
 
     .book {
@@ -326,6 +322,7 @@
             }
         }
     }
+
     .switch {
         @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary bg-gray-200  border-2;
 
@@ -431,11 +428,7 @@
     }
 
     .link {
-        @apply underline;
-
-        &.hover {
-            @apply inline-flex items-center gap-1 hover:text-primary;
-        }
+        @apply inline-flex items-center gap-1 hover:text-primary;
     }
 
     .buttons-list {
@@ -463,22 +456,6 @@
 
         &.md {
             @apply px-8 py-3 md:py-2 md:px-6 font-semibold text-[18px];
-        }
-    }
-
-    .box {
-        @apply bg-white  max-w-[90vw] w-full shadow-md rounded-md overflow-auto;
-
-        & .header {
-            @apply p-4 bg-gray-50 flex justify-between items-center;
-        }
-
-        & .content {
-            @apply px-4 py-8;
-        }
-
-        & .footer {
-            @apply p-4 bg-gray-50;
         }
     }
 
@@ -511,21 +488,6 @@
 
         & .sm {
             @apply max-w-[640px];
-        }
-    }
-
-    .tabs {
-        @apply items-center border-b border-gray-300 flex flex-grow flex-shrink-0 justify-start;
-
-        & a {
-            @apply no-underline items-center border-b border-gray-300 flex justify-center -mb-[1px] px-6 py-2 align-top hover:font-semibold;
-        }
-
-        & .current a {
-            @apply font-bold text-primary border-primary;
-        }
-
-        & .tab {
         }
     }
 
@@ -611,6 +573,40 @@
             @apply bg-green-100;
         }
     }
+
+    /*
+
+    .tabs {
+        @apply items-center border-b border-gray-300 flex flex-grow flex-shrink-0 justify-start;
+
+        & a {
+            @apply no-underline items-center border-b border-gray-300 flex justify-center -mb-[1px] px-6 py-2 align-top hover:font-semibold;
+        }
+
+        & .current a {
+            @apply font-bold text-primary border-primary;
+        }
+
+        & .tab {
+        }
+    }
+
+    .box {
+        @apply bg-white  max-w-[90vw] w-full shadow-md rounded-md overflow-auto;
+
+        & .header {
+            @apply p-4 bg-gray-50 flex justify-between items-center;
+        }
+
+        & .content {
+            @apply px-4 py-8;
+        }
+
+        & .footer {
+            @apply p-4 bg-gray-50;
+        }
+    }
+    */
 }
 
 @layer utilities {

@@ -11,7 +11,7 @@ export const BackLink: React.FC<LinkProps> = ({
     return (
         <Link
             className={clsx(
-                'hidden top-10 left-4 gap-8 hover:text-primary no-underline md:inline-flex backabsolute book',
+                'hidden md:inline-flex md:absolute md:top-10 md:left-4 md:gap-8 md:book',
                 className
             )}
             {...props}
