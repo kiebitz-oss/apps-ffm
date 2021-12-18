@@ -16,7 +16,7 @@ jobs:
             - name: Install and Build
               uses: actions/setup-node@v2
             - run: npm ci
-            - run: npm run build
+            - run: npm run sb:build
             - run: touch storybook-static/.nojekyll
 
             - name: Deploy
