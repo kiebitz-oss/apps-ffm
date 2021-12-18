@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 export interface ListColumnProps {
-    size?: 'md';
+  size?: "md";
 }
 
 export const ListColumn: React.FC<ListColumnProps> = ({
-    children,
-    ...props
+  children,
+  ...props
 }) => {
-    return <div {...props}>{children}</div>;
+  return <div {...props}>{children}</div>;
 };

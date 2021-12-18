@@ -1,21 +1,21 @@
-import clsx from 'clsx';
-import React from 'react';
+import clsx from "clsx";
+import React from "react";
 
-export type TabsProps = React.ComponentProps<'ul'>;
+export type TabsProps = React.ComponentProps<"ul">;
 
 export const Tabs: React.FC<TabsProps> = ({
-    children,
-    className,
-    ...props
+  children,
+  className,
+  ...props
 }) => {
-    return (
-        <ul
-            className={clsx('tabs', className)}
-            aria-orientation="horizontal"
-            role="tablist"
-            {...props}
-        >
-            {children}
-        </ul>
-    );
+  return (
+    <ul
+      className={clsx("tabs", className)}
+      aria-orientation="horizontal"
+      role="tablist"
+      {...props}
+    >
+      {children}
+    </ul>
+  );
 };

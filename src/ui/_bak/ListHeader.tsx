@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 export interface ListHeaderProps {}
 
 export const ListHeader: React.FC<ListHeaderProps> = ({
-    children,
-    ...props
+  children,
+  ...props
 }) => {
-    return <div {...props}>{children}</div>;
+  return <div {...props}>{children}</div>;
 };

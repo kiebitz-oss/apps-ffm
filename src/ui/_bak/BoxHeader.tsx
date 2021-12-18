@@ -1,16 +1,16 @@
-import React from 'react';
-import clsx from 'clsx';
+import React from "react";
+import clsx from "clsx";
 
-export type BoxHeaderProps = React.ComponentProps<'header'>;
+export type BoxHeaderProps = React.ComponentProps<"header">;
 
 export const BoxHeader: React.FC<BoxHeaderProps> = ({
-    children,
-    className,
-    ...props
+  children,
+  className,
+  ...props
 }) => {
-    return (
-        <header className={clsx('header', className)} {...props}>
-            {children}
-        </header>
-    );
+  return (
+    <header className={clsx("header", className)} {...props}>
+      {children}
+    </header>
+  );
 };

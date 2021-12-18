@@ -2,18 +2,18 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import clsx from 'clsx';
-import React from 'react';
-import { MessageVariant } from 'types';
+import clsx from "clsx";
+import React from "react";
+import { MessageVariant } from "types";
 
 type MessageProps = {
-    className?: string;
-    waiting?: boolean;
-    variant?: MessageVariant;
+  className?: string;
+  waiting?: boolean;
+  variant?: MessageVariant;
 };
 
 export const Message: React.FC<MessageProps> = ({
-    children,
-    className,
-    variant,
-}) => <div className={clsx('message', variant, className)}>{children}</div>;
+  children,
+  className,
+  variant,
+}) => <div className={clsx("message", variant, className)}>{children}</div>;

@@ -1,7 +1,7 @@
 export type Vaccine =
-    | 'mrna'
-    | 'biontech'
-    | 'biontechchildren'
-    | 'moderna'
-    | 'astrazeneca'
-    | 'jnj';
+  | "mrna"
+  | "biontech"
+  | "biontechchildren"
+  | "moderna"
+  | "astrazeneca"
+  | "jnj";

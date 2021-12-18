@@ -1,23 +1,23 @@
-import clsx from 'clsx';
-import React, { forwardRef } from 'react';
+import clsx from "clsx";
+import { forwardRef } from "react";
 
 export interface RadioProps
-    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {}
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {}
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(
-    ({ className, ...props }, ref) => {
-        const id = !props.id ? props.name : props.id;
+  ({ className, ...props }, ref) => {
+    const id = !props.id ? props.name : props.id;
 
-        return (
-            <input
-                id={id}
-                className={clsx('radio', className)}
-                type="radio"
-                {...props}
-                ref={ref}
-            />
-        );
-    }
+    return (
+      <input
+        id={id}
+        className={clsx("radio", className)}
+        type="radio"
+        {...props}
+        ref={ref}
+      />
+    );
+  }
 );
 
-Radio.displayName = 'Radio';
+Radio.displayName = "Radio";

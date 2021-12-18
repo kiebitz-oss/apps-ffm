@@ -21,7 +21,7 @@ COPY . /apps/
 
 WORKDIR /apps
 
-RUN cp config/app.conf /etc/nginx/conf.d/default.conf
+RUN cp .docker/nginx.conf /etc/nginx/conf.d/default.conf
 RUN nginx -t
 # "--include=dev" is needed for now as dependencies are not splitted between dev + prod
 RUN npm ci --include=dev

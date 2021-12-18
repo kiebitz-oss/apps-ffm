@@ -2,74 +2,73 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import React from 'react';
-import clsx from 'clsx';
-import {
-    Link as RouterLink,
-    LinkProps as RouterLinkProps,
-} from 'react-router-dom';
-import { Size } from 'types/Size';
-import { Variant } from 'types/Variant';
+import clsx from "clsx";
+import RouterLink from "next/link";
+import { Size } from "types/Size";
+import { Variant } from "types/Variant";
 
-export interface LinkProps extends Omit<RouterLinkProps, 'to'> {
-    external?: boolean;
-    variant?: Variant;
-    size?: Size;
-    type?: 'link' | 'button';
-    href: string;
+export interface LinkProps extends React.ComponentProps<"a"> {
+  external?: boolean;
+  variant?: Variant;
+  size?: Size;
+  type?: "link" | "button";
+  href: string;
+  locale?: string;
 }
 
 export const Link: React.FC<LinkProps> = ({
-    children,
-    href,
-    variant,
-    size = 'md',
-    className,
-    type,
-    external,
-    rel,
-    target,
-    ...props
+  children,
+  href,
+  variant,
+  size = "md",
+  className,
+  type,
+  external,
+  rel,
+  target,
+  locale,
+  ...props
 }) => {
-    if (!href || external) {
-        return (
-            // eslint-disable-next-line react/jsx-no-target-blank
-            <a
-                className={clsx(
-                    {
-                        ['button']: type === 'button',
-                        ['link']: !type,
-                    },
-                    variant,
-                    size,
-                    className
-                )}
-                rel={external && !rel ? 'noreferrer' : rel}
-                target={external && !target ? '_blank' : target}
-                href={href}
-            >
-                {children}
-            </a>
-        );
-    }
-
+  if (!href || external) {
     return (
-        <RouterLink
-            className={clsx(
-                {
-                    ['button']: type === 'button',
-                    ['link']: !type,
-                },
-                variant,
-                size,
-                className
-            )}
-            rel={rel}
-            target={target}
-            to={href}
-            {...props}
-        >
-            {children}
-        </RouterLink>
+      // eslint-disable-next-line react/jsx-no-target-blank
+      <a
+        className={clsx(
+          {
+            ["button"]: type === "button",
+            ["link"]: !type,
+          },
+          variant,
+          size,
+          className
+        )}
+        rel={external && !rel ? "noreferrer" : rel}
+        target={external && !target ? "_blank" : target}
+        href={href}
+      >
+        {children}
+      </a>
     );
+  }
+
+  return (
+    <RouterLink href={href} locale={locale}>
+      <a
+        className={clsx(
+          {
+            ["button"]: type === "button",
+            ["link"]: !type,
+          },
+          variant,
+          size,
+          className
+        )}
+        rel={rel}
+        target={target}
+        {...props}
+      >
+        {children}
+      </a>
+    </RouterLink>
+  );
 };

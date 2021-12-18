@@ -1,6 +1,6 @@
-import { ProviderKeyPair } from './ProviderKeyPair';
+import { ProviderKeyPair } from "./ProviderKeyPair";
 
 export interface ProviderSecretData {
-    secret: string;
-    keyPair: ProviderKeyPair;
+  secret: string;
+  keyPair: ProviderKeyPair;
 }

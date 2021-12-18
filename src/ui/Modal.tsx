@@ -4,38 +4,38 @@
 
 // @see https://headlessui.dev/react/dialog
 
-import { Dialog } from '@headlessui/react';
-import React, { useState } from 'react';
+import { Dialog } from "@headlessui/react";
+import { useState } from "react";
 
 export interface ModalProps {
-    onClose?: Function;
-    open?: boolean;
+  onClose?: Function;
+  open?: boolean;
 }
 
 export const Modal: React.FC<ModalProps> = ({
-    children,
-    onClose,
-    open = true,
+  children,
+  onClose,
+  open = true,
 }) => {
-    const [isOpen, setIsOpen] = useState(open);
+  const [isOpen, setIsOpen] = useState(open);
 
-    const close = () => {
-        if (onClose) {
-            onClose();
-        }
+  const close = () => {
+    if (onClose) {
+      onClose();
+    }
 
-        setIsOpen(false);
-    };
+    setIsOpen(false);
+  };
 
-    return (
-        <Dialog open={isOpen} onClose={close} className="modal">
-            <div className="container">
-                <Dialog.Overlay className="overlay" />
+  return (
+    <Dialog open={isOpen} onClose={close} className="modal">
+      <div className="container">
+        <Dialog.Overlay className="overlay" />
 
-                <div className="inner">
-                    {children}
+        <div className="inner">
+          {children}
 
-                    {/* {(onSave || onCancel || footer) && (
+          {/* {(onSave || onCancel || footer) && (
                         <footer className="bulma-modal-card-foot">
                             {footer}
                             {onSave && (
@@ -68,8 +68,8 @@ export const Modal: React.FC<ModalProps> = ({
                             )}
                         </footer>
                     )} */}
-                </div>
-            </div>
-        </Dialog>
-    );
+        </div>
+      </div>
+    </Dialog>
+  );
 };

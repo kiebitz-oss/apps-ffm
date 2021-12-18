@@ -1,7 +1,7 @@
-import { Slot } from './Slot';
+import { Slot } from "./Slot";
 
 export interface Booking {
-    id: string;
-    slot: Slot;
-    code?: string;
+  id: string;
+  slot: Slot;
+  code?: string;
 }

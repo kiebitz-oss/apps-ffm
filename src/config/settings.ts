@@ -1,4 +1,4 @@
 export const settings = {
-    title: 'Kiebitz',
-    supportEmail: 'info@kiebitz.eu',
+  title: "Kiebitz",
+  supportEmail: "info@kiebitz.eu",
 };

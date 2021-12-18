@@ -1,23 +1,23 @@
-import React from 'react';
-import { Dialog } from '@headlessui/react';
-import clsx from 'clsx';
+import React from "react";
+import { Dialog } from "@headlessui/react";
+import clsx from "clsx";
 
 interface ModalContentProps {
-    className?: string;
+  className?: string;
 }
 
 export const ModalContent: React.FC<ModalContentProps> = ({
-    children,
-    className,
-    ...props
+  children,
+  className,
+  ...props
 }) => {
-    return (
-        <Dialog.Description
-            as="div"
-            className={clsx('content', className)}
-            {...props}
-        >
-            {children}
-        </Dialog.Description>
-    );
+  return (
+    <Dialog.Description
+      as="div"
+      className={clsx("content", className)}
+      {...props}
+    >
+      {children}
+    </Dialog.Description>
+  );
 };
