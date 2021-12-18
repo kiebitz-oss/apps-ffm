@@ -14,7 +14,14 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({
     className,
 }) => {
     return (
-        <div className={clsx('provider-card', className)} key={provider.id}>
+        <div
+            className={clsx(
+                'flex justify-between p-4 rounded-2xl border-2 border-black',
+                'hover:border-highlight hover:shadow-provider',
+                className
+            )}
+            key={provider.id}
+        >
             <div>
                 <Title variant="h3">{provider.name}</Title>
 

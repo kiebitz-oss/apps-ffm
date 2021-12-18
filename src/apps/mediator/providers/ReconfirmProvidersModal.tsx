@@ -56,17 +56,15 @@ export const ReconfirmProvidersModal: React.FC<
             </ModalHeader>
 
             <ModalContent>
-                <div className="kip-provider-data">
-                    {(status === 'running' && (
-                        <Trans id="mediator.providers.reconfirm-modal.in-progress">
-                            Bestätige Anbieter...
-                        </Trans>
-                    )) || (
-                        <Trans id="mediator.providers.reconfirm-modal.info">
-                            Wollen Sie alle bestätigten Anbieter neu bestätigen?
-                        </Trans>
-                    )}
-                </div>
+                {(status === 'running' && (
+                    <Trans id="mediator.providers.reconfirm-modal.in-progress">
+                        Bestätige Anbieter...
+                    </Trans>
+                )) || (
+                    <Trans id="mediator.providers.reconfirm-modal.info">
+                        Wollen Sie alle bestätigten Anbieter neu bestätigen?
+                    </Trans>
+                )}
             </ModalContent>
 
             <ModalFooter>

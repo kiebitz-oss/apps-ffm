@@ -23,18 +23,6 @@
     #app {
         @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto md:mx-5 lg:mx-10 xl:mx-24 2xl:mx-28;
 
-        & > header {
-            @apply min-h-[86px] md:min-h-[100px] min-w-full flex justify-between items-center px-8 md:px-12;
-
-            & > nav {
-                @apply gap-12 hidden sm:flex md:pt-8;
-
-                & a {
-                    @apply hover:text-primary;
-                }
-            }
-        }
-
         & > .open > footer,
         & > .closed > footer {
             @media (max-width: 639px) {
@@ -80,10 +68,6 @@
 
         &.center {
             @apply justify-center;
-        }
-
-        & .back-link {
-            @apply absolute top-10 left-4  hidden gap-8 no-underline md:inline-flex hover:text-primary book;
         }
     }
 
@@ -455,7 +439,7 @@
     }
 
     .button {
-        @apply default-focus rounded-2xl min-w-max max-w-full sm:min-w-min sm:self-start text-center;
+        @apply default-focus rounded-2xl min-w-max max-w-full sm:min-w-min  text-center;
 
         &.primary {
             @apply border-transparent border-2 text-white bg-primary hover:bg-white hover:text-black hover:border-black;
@@ -605,21 +589,6 @@
 
         &.error {
             @apply bg-red-100 text-red-700;
-        }
-    }
-
-    .secret {
-        @apply uppercase tracking-wider;
-    }
-
-    .secrets-box {
-        @apply flex flex-col p-6 my-4 rounded-md text-center items-center bg-red-100 gap-4;
-
-        & h4 {
-        }
-
-        & code {
-            @apply font-semibold text-4xl text-center uppercase tracking-wider;
         }
     }
 

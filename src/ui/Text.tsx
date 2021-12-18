@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface TextProps extends React.ComponentProps<'p'> {
+export interface TextProps extends React.ComponentProps<'p'> {
     variant?: string;
 }
 

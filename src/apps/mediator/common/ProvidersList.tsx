@@ -36,14 +36,14 @@ export const ProviderList: React.FC<ProviderTableProps> = ({ providers }) => {
 
     return (
         <>
-            <table className="providers-table">
+            <table className="table w-full striped selectable">
                 <caption className="sr-only">
                     <Trans id="mediator.providers-list.caption">
                         Tabelle der Impfanbieter
                     </Trans>
                 </caption>
                 <thead>
-                    <tr>
+                    <tr className="hover:bg-primary/10 cursor-pointer">
                         <th
                             scope="col"
                             className="inline-flex items-center w-6"
@@ -100,6 +100,7 @@ export const ProviderList: React.FC<ProviderTableProps> = ({ providers }) => {
                         );
                     })}
                 </tbody>
+
                 <tfoot>
                     <tr>
                         <th colSpan={5}>
@@ -107,12 +108,12 @@ export const ProviderList: React.FC<ProviderTableProps> = ({ providers }) => {
                                 <Button
                                     variant="primary"
                                     size="sm"
-                                    className="inline-flex gap-1 items-center"
+                                    className="flex gap-1 items-center"
                                     disabled={selectedProviders.length === 0}
                                     onClick={() => setModal('confirm')}
                                 >
                                     <CheckmarkOutline16 />
-                                    {selectedProviders.length} 
+                                    <span>{selectedProviders.length}</span>
                                     <Trans id="mediator.providers-list.button-confirm">
                                         Anbieter bestätigen
                                     </Trans>
@@ -120,12 +121,12 @@ export const ProviderList: React.FC<ProviderTableProps> = ({ providers }) => {
                                 <Button
                                     variant="secondary"
                                     size="sm"
-                                    className="inline-flex gap-1 items-center"
+                                    className="flex gap-1 items-center"
                                     disabled={selectedProviders.length === 0}
                                     onClick={() => setModal('unconfirm')}
                                 >
                                     <ErrorOutline16 />
-                                    {selectedProviders.length} 
+                                    <span>{selectedProviders.length}</span>
                                     <Trans id="mediator.providers-list.button-unconfirm">
                                         Anbieter sperren
                                     </Trans>

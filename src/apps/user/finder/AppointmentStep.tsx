@@ -46,12 +46,15 @@ const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
     return (
         <Link
             href="/user/finder/verify"
-            className="group card"
+            className="group p-4 w-full text-center no-underline rounded-2xl shadow-appointment hover:shadow-appointment2 sm:mx-0"
             onClick={onAppointmentSelect}
             data-id={appointment.id}
         >
             <AppointmentCard appointment={appointment}>
-                <Button tabIndex={-1}>
+                <Button
+                    tabIndex={-1}
+                    className="group-hover:bg-primary group-focus:bg-primary shadow-lg select-none"
+                >
                     <Trans id="user.finder.appointment.card.submit">
                         Termin auswählen
                     </Trans>
@@ -108,7 +111,7 @@ export const AppointmentStep: React.FC = () => {
                 <Trans id="user.finder.appointment.title">Termine</Trans>
             </Title>
 
-            <div className="controls">
+            <div className="flex flex-col gap-5 px-4 mb-10 w-full md:flex-row md:justify-between md:px-0">
                 <div className="flex flex-row gap-2 items-center">
                     <InputField
                         name="provider"
@@ -151,7 +154,7 @@ export const AppointmentStep: React.FC = () => {
                     </Trans>
                 </Error>
             ) : (
-                <div className="appointment-grid">
+                <div className="grid grid-cols-1 gap-4 w-full sm:grid-cols-2 lg:grid-cols-3">
                     {filteredAppointments.map((appointment) => (
                         <AppointmentCardSelector
                             appointment={appointment}

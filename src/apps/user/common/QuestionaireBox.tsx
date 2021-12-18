@@ -10,7 +10,7 @@ type QuestionBoxProps = {
     errorMessage?: string;
 };
 
-export const QuestionBox: React.FC<QuestionBoxProps> = ({
+export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
     children,
     control,
     name,
@@ -24,20 +24,26 @@ export const QuestionBox: React.FC<QuestionBoxProps> = ({
             render={({ field: { onChange, value } }) => {
                 return (
                     <fieldset>
-                        <div className="question-box-container">
+                        <div className="flex flex-col gap-4 md:px-0 lg:w-full xl:flex-row xl:gap-2">
                             <div
-                                className={clsx('question-box', {
-                                    ['question-box-error']: error,
-                                })}
+                                className={clsx(
+                                    'flex flex-col gap-5 py-3 px-4 font-semibold bg-white rounded-2xl shadow-box sm:w-[500px]',
+                                    {
+                                        ['border-error border-2']: error,
+                                    }
+                                )}
                             >
-                                <div className="question">
+                                <div className="flex justify-between pr-4">
                                     <legend>
                                         <h3>{children}</h3>
                                     </legend>
                                 </div>
 
-                                <div className="answer">
-                                    <label htmlFor={`${name}-yes`}>
+                                <div className="flex gap-8 items-center mb-2">
+                                    <label
+                                        htmlFor={`${name}-yes`}
+                                        className="flex gap-2 items-center"
+                                    >
                                         <input
                                             className="radio"
                                             type="radio"
@@ -50,7 +56,10 @@ export const QuestionBox: React.FC<QuestionBoxProps> = ({
                                         ja
                                     </label>
 
-                                    <label htmlFor={`${name}-no`}>
+                                    <label
+                                        htmlFor={`${name}-no`}
+                                        className="flex gap-2 items-center"
+                                    >
                                         <input
                                             className="radio"
                                             type="radio"
@@ -65,7 +74,11 @@ export const QuestionBox: React.FC<QuestionBoxProps> = ({
                                 </div>
                             </div>
 
-                            {error && <Error>{errorMessage}</Error>}
+                            {error && (
+                                <Error className="mx-4 sm:w-[500px] xl:mt-2">
+                                    {errorMessage}
+                                </Error>
+                            )}
                         </div>
                     </fieldset>
                 );

@@ -1,7 +1,0 @@
-.providers-table {
-    @apply table striped selectable;
-
-    & tbody tr {
-        @apply hover:bg-primary/10 cursor-pointer;
-    }
-}

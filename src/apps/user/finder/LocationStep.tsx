@@ -61,7 +61,7 @@ export const LocationStep: React.FC = () => {
                 </Trans>
             </Text>
 
-            <div className="controls">
+            <div className="mx-4 mb-8 md:max-w-3xl lg:mx-8">
                 <CheckboxField
                     label={t({
                         id: 'user.finder.location.accessible.label',
@@ -72,7 +72,7 @@ export const LocationStep: React.FC = () => {
                 />
             </div>
 
-            <ul className="location-list">
+            <ul className="flex flex-col gap-4 w-full md:px-0 md:max-w-3xl">
                 {providers
                     .filter((provider) => {
                         if (!filterAccessible) {

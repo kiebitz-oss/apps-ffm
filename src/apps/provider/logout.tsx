@@ -1,6 +1,6 @@
 import { t, Trans } from '@lingui/macro';
 // import { useNavigate } from 'react-router';
-import { SecretsBox } from 'apps/common/SecretBox';
+import { SecretBox } from 'apps/common/SecretBox';
 import { BackupDataLink } from 'apps/provider/common/BackupDataLink';
 import React, { MouseEventHandler, useState } from 'react';
 import { Button, CopyToClipboardButton, Text, Title } from 'ui';
@@ -61,7 +61,7 @@ const LogOutPage: React.FC = () => {
                 )}
             </Text>
 
-            <SecretsBox secret={secret} />
+            <SecretBox secret={secret} />
 
             <div className="flex flex-row justify-between">
                 <CopyToClipboardButton toCopy={secret}>
