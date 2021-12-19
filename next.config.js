@@ -16,7 +16,7 @@ const config = {
     outputStandalone: true,
   },
 
-  pageExtensions: ["tsx", "mdx"],
+  pageExtensions: ["page.tsx", "page.mdx"],
 
   webpack: (config) => {
     config.resolve.fallback = {

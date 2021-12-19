@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react";
+import { UserApiProvider } from "pages/UserApiContext";
+import { DateStep } from "./DateStep";
 import { FinderStateProvider } from "./FinderStateProvider";
-import { UserApiProvider } from "./UserApiContext";
-import { VerifyStep } from "./VerifyStep";
 
 export default {
-  component: VerifyStep,
+  component: DateStep,
 } as Meta;
 
 export const Default = () => (
   <UserApiProvider>
     <FinderStateProvider>
-      <VerifyStep />
+      <DateStep />
     </FinderStateProvider>
   </UserApiProvider>
 );

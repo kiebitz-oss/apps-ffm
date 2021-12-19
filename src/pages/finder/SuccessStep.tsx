@@ -1,13 +1,13 @@
 import { GeneratePdf16 } from "@carbon/icons-react";
 import { Trans } from "@lingui/macro";
 import { useI18n } from "components/common/useI18n";
+import { AppointmentCard } from "components/user/AppointmentCard";
 import { vaccines } from "config/vaccines";
 import { useRouter } from "next/router";
+import { useUserApi } from "pages/UserApiContext";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { Link, Text, Title } from "ui";
-import { AppointmentCard } from "./AppointmentCard";
 import { useFinderState } from "./FinderStateProvider";
-import { useUserApi } from "./UserApiContext";
 
 export const SuccessStep: React.FC = () => {
   const api = useUserApi();

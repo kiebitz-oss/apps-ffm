@@ -3,9 +3,9 @@ import { BackLink } from "components/common/BackLink";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Link, Text, Title } from "ui";
-import { AppointmentCard } from "./AppointmentCard";
+import { AppointmentCard } from "../../components/user/AppointmentCard";
+import { useUserApi } from "../UserApiContext";
 import { useFinderState } from "./FinderStateProvider";
-import { useUserApi } from "./UserApiContext";
 
 export const VerifyStep: React.FC = () => {
   const api = useUserApi();

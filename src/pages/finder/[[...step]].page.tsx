@@ -1,10 +1,10 @@
-import { AppointmentStep } from "components/user/AppointmentStep";
-import { DateStep } from "components/user/DateStep";
-import { FinderStateProvider } from "components/user/FinderStateProvider";
-import { LocationStep } from "components/user/LocationStep";
-import { SuccessStep } from "components/user/SuccessStep";
-import { VerifyStep } from "components/user/VerifyStep";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { VerifyStep } from "pages/finder/VerifyStep";
+import { AppointmentStep } from "./AppointmentStep";
+import { DateStep } from "./DateStep";
+import { FinderStateProvider } from "./FinderStateProvider";
+import { LocationStep } from "./LocationStep";
+import { SuccessStep } from "./SuccessStep";
 
 enum Steps {
   location = "location",

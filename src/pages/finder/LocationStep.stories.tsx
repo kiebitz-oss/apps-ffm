@@ -1,7 +1,7 @@
 import type { Meta } from "@storybook/react";
+import { UserApiProvider } from "pages/UserApiContext";
 import { FinderStateProvider } from "./FinderStateProvider";
 import { LocationStep } from "./LocationStep";
-import { UserApiProvider } from "./UserApiContext";
 
 export default {
   component: LocationStep,

@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react";
-import { AppointmentStep } from "./AppointmentStep";
+import { UserApiProvider } from "pages/UserApiContext";
 import { FinderStateProvider } from "./FinderStateProvider";
-import { UserApiProvider } from "./UserApiContext";
+import { SuccessStep } from "./SuccessStep";
 
 export default {
-  component: AppointmentStep,
+  component: SuccessStep,
 } as Meta;
 
 export const Default = () => (
   <UserApiProvider>
     <FinderStateProvider>
-      <AppointmentStep />
+      <SuccessStep />
     </FinderStateProvider>
   </UserApiProvider>
 );

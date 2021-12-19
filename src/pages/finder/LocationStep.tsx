@@ -10,8 +10,8 @@ import {
 import type { PublicProvider } from "types";
 import { Link, Text, Title } from "ui";
 import { CheckboxField } from "ui/CheckboxField";
+import { useUserApi } from "../UserApiContext";
 import { Types, useFinderState } from "./FinderStateProvider";
-import { useUserApi } from "./UserApiContext";
 
 export const LocationStep: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);

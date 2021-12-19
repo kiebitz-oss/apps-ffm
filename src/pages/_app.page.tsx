@@ -7,9 +7,9 @@ import { loadLocale } from "components/common/useI18n";
 import { MediatorApiProvider } from "components/mediator/MediatorApiContext";
 import { ProviderApiProvider } from "components/provider/ProviderApiContext";
 import { Nav } from "components/user/Nav";
-import { UserApiProvider } from "components/user/UserApiContext";
 import { de, en } from "make-plural/plurals";
 import type { AppProps } from "next/app";
+import { UserApiProvider } from "pages/UserApiContext";
 import { useEffect } from "react";
 
 i18n.loadLocaleData({

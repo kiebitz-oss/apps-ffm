@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import FaqPage from "pages/faq";
+import FaqPage from "./index.page";
 
 export default {
   component: FaqPage,

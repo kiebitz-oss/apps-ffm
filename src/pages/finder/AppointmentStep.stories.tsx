@@ -1,16 +1,16 @@
 import type { Meta } from "@storybook/react";
-import { DateStep } from "./DateStep";
+import { UserApiProvider } from "pages/UserApiContext";
+import { AppointmentStep } from "./AppointmentStep";
 import { FinderStateProvider } from "./FinderStateProvider";
-import { UserApiProvider } from "./UserApiContext";
 
 export default {
-  component: DateStep,
+  component: AppointmentStep,
 } as Meta;
 
 export const Default = () => (
   <UserApiProvider>
     <FinderStateProvider>
-      <DateStep />
+      <AppointmentStep />
     </FinderStateProvider>
   </UserApiProvider>
 );
