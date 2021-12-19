@@ -61,22 +61,24 @@ const LogOutPage: NextPage = () => {
         )}
       </Text>
 
-      <SecretBox secret={secret} />
+      {secret && <SecretBox secret={secret} />}
 
-      <div className="flex flex-row justify-between">
-        <CopyToClipboardButton toCopy={secret}>
-          <Trans id="provider.logout.copy-secret">
-            Datenschlüssel kopieren
-          </Trans>
-        </CopyToClipboardButton>
+      {secret && (
+        <div className="flex flex-row justify-between">
+          <CopyToClipboardButton toCopy={secret}>
+            <Trans id="provider.logout.copy-secret">
+              Datenschlüssel kopieren
+            </Trans>
+          </CopyToClipboardButton>
 
-        <BackupDataLink
-          downloadText={t({
-            id: "provider.logout.download-backup",
-            message: "Sicherungsdatei herunterladen",
-          })}
-        />
-      </div>
+          <BackupDataLink
+            downloadText={t({
+              id: "provider.logout.download-backup",
+              message: "Sicherungsdatei herunterladen",
+            })}
+          />
+        </div>
+      )}
 
       <Button onClick={logOut} disabled={loggingOut}>
         <Trans id="provider.logout.button">Abmelden</Trans>

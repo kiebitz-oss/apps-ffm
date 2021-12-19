@@ -7,7 +7,6 @@ import { Trans } from "@lingui/macro";
 import { Link } from "components/Link";
 import { useRouter } from "next/router";
 import { useProviderApi } from "pages/ProviderApiContext";
-import { ChangeEventHandler } from "react";
 import { ProviderDataSummary } from "../ProviderDataSummary";
 import { useOnboardingState } from "./OnboardingStateProvider";
 
@@ -21,7 +20,7 @@ export const VerifyStep: React.FC = () => {
   const { state } = useOnboardingState();
   const router = useRouter();
 
-  const submit: ChangeEventHandler<HTMLButtonElement> = () => {
+  const submit: React.MouseEventHandler<HTMLButtonElement> = () => {
     api.register(state.data).then(() => {
       router.push("/onboarding/secret");
     });
