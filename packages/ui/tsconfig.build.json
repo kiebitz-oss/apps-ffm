@@ -10,5 +10,5 @@
     "jsxFactory": "",
     "jsxFragmentFactory": ""
   },
-  "exclude": ["**/*.stories.tsx", "**/*.stories.mdx", ".storybook/**"]
+  "exclude": ["**/*.stories.tsx", "**/*.stories.mdx"]
 }

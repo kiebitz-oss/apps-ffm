@@ -3,14 +3,14 @@ import type { Appointment } from "@kiebitz-oss/api";
 import { appointments } from "@kiebitz-oss/api";
 import { Button, Error, InputField, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
-import { BackLink } from "components/common/BackLink";
-import { Link } from "components/Link";
 import {
   ChangeEventHandler,
   MouseEventHandler,
   useEffect,
   useState,
 } from "react";
+import { BackLink } from "../../components/BackLink";
+import { Link } from "../../components/Link";
 import { AppointmentCard } from "../AppointmentCard";
 import { Types, useFinderState } from "./FinderStateProvider";
 
@@ -45,14 +45,14 @@ const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
   return (
     <Link
       href="/finder/verify"
-      className="group p-4 w-full text-center no-underline rounded-2xl sm:mx-0 shadow-appointment hover:shadow-appointment2"
+      className="group p-4 w-full text-center no-underline rounded-2xl shadow-appointment hover:shadow-appointment2 sm:mx-0"
       onClick={onAppointmentSelect}
       data-id={appointment.id}
     >
       <AppointmentCard appointment={appointment}>
         <Button
           tabIndex={-1}
-          className="shadow-lg select-none group-hover:bg-primary group-focus:bg-primary"
+          className="group-hover:bg-primary group-focus:bg-primary shadow-lg select-none"
         >
           <Trans id="user.finder.appointment.card.submit">
             Termin auswählen
@@ -125,7 +125,7 @@ export const AppointmentStep: React.FC = () => {
           />
           <Link
             href="/finder/location"
-            className="inline-flex justify-center items-center w-10 h-10 text-white no-underline rounded-lg shadow bg-primary"
+            className="inline-flex justify-center items-center w-10 h-10 text-white no-underline bg-primary rounded-lg shadow"
           >
             <Edit24 />
           </Link>

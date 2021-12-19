@@ -4,16 +4,6 @@ import {
   formatTime,
   getHexId,
 } from "@kiebitz-oss/api";
-import { t, Trans } from "@lingui/macro";
-import { vaccines } from "config/vaccines";
-import { useRouter } from "next/router";
-import {
-  FormProvider,
-  Resolver,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
-import { useEffectOnce } from "react-use";
 import {
   Button,
   Form,
@@ -25,7 +15,17 @@ import {
   ModalProps,
   SelectField,
   Title,
-} from "ui";
+} from "@kiebitz-oss/ui";
+import { t, Trans } from "@lingui/macro";
+import { useRouter } from "next/router";
+import {
+  FormProvider,
+  Resolver,
+  SubmitHandler,
+  useForm,
+} from "react-hook-form";
+import { useEffectOnce } from "react-use";
+import { vaccines } from "../../config/vaccines";
 
 interface FormData {
   date?: string;
@@ -120,7 +120,7 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
     actionUrl += `/view/${id}`;
   }
 
-  const cancel = () => router.push(`/provider/schedule${actionUrl}`);
+  const cancel = () => router.push(`/schedule${actionUrl}`);
 
   let appointment: Appointment | undefined;
 
@@ -194,7 +194,7 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
     //     // we reload the appointments
     //     openAppointmentsAction();
     //     // and we go back to the schedule view
-    //     navigate(`/provider/schedule${actionUrl}`);
+    //     navigate(`/schedule${actionUrl}`);
     // });
   };
 

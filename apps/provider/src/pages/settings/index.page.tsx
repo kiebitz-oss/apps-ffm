@@ -2,7 +2,7 @@ import { AppointmentSet } from "@kiebitz-oss/api";
 import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import type { NextPage } from "next";
-import { useProviderApi } from "pages/ProviderApiContext";
+import { useProviderApi } from "../ProviderApiContext";
 
 const SettingsPage: NextPage = () => {
   const api = useProviderApi();

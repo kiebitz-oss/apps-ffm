@@ -1,5 +1,6 @@
 import { CopyToClipboardButton, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
+import { Fragment } from "react";
 
 const renderSecret = (secret: string) => {
   const chunks = secret?.match(/.{1,4}/g) || [];

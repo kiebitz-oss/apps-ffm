@@ -4,7 +4,7 @@
 
 import { Text, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import Link from "next/link";
+import { Link } from "components/Link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { BackupDataLink } from "./BackupDataLink";
@@ -17,7 +17,7 @@ export const SecretStep: React.FC = () => {
 
   useEffect(() => {
     if (!state.data) {
-      router.push("/provider/onboarding");
+      router.push("/onboarding");
     }
   }, [state, router]);
 
@@ -39,7 +39,7 @@ export const SecretStep: React.FC = () => {
 
         <DataSecret secret={"1234567890123456"} />
 
-        <Link href="/provider/schedule" type="button" variant="primary">
+        <Link href="/schedule" type="button" variant="primary">
           <Trans id="provider.onboarding.secret.button">
             Abschließen & zur Terminplanung
           </Trans>

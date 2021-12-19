@@ -3,12 +3,12 @@
 // README.md contains license information.
 
 import type { Appointment } from "@kiebitz-oss/api";
-import { CreateAppointmentModal } from "components/provider/CreateAppointmentModal";
-import { useProviderApi } from "components/provider/ProviderApiContext";
-import { WeekCalendar } from "components/provider/WeekCalendar";
+import { Button, Title } from "@kiebitz-oss/ui";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { Button, Title } from "ui";
+import { useProviderApi } from "../ProviderApiContext";
+import { CreateAppointmentModal } from "./CreateAppointmentModal";
+import { WeekCalendar } from "./WeekCalendar";
 
 const SchedulePage: React.FC = () => {
   const router = useRouter();

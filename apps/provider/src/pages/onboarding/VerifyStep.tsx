@@ -2,11 +2,12 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
+import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
+import { Link } from "components/Link";
 import { useRouter } from "next/router";
-import { Button, Link, Title } from "ui";
+import { ProviderDataSummary } from "../ProviderDataSummary";
 import { useOnboarding } from "./OnboardingProvider";
-import { ProviderDataSummary } from "./ProviderDataSummary";
 
 /*
 Here the user has a chance to review all data that was entered before confirming
@@ -18,7 +19,7 @@ export const VerifyStep: React.FC = () => {
   const router = useRouter();
 
   const submit = () => {
-    router.push("/provider/onboarding/secret");
+    router.push("/onboarding/secret");
   };
 
   return (
@@ -26,14 +27,10 @@ export const VerifyStep: React.FC = () => {
       <div className="lg:w-2/3">
         <Title>Bitte überprüfen Sie ihre Daten</Title>
 
-        <ProviderDataSummary provider={state.data!} />
+        {state.data && <ProviderDataSummary provider={state.data} />}
 
         <div className="flex justify-between">
-          <Link
-            href="/provider/onboarding/provider"
-            type="button"
-            variant="secondary"
-          >
+          <Link href="/onboarding/provider" type="button" variant="secondary">
             <Trans id="provider.onboarding.verify.edit-data">Anpassen</Trans>
           </Link>
 

@@ -4,9 +4,9 @@
 
 import { Divider, Message, Section, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { Link } from "components/Link";
 import type { NextPage } from "next";
 import { useSearchParam } from "react-use";
+import { Link } from "../components/Link";
 import { RestoreForm } from "./RestoreForm";
 
 const ProviderStartPage: NextPage = () => {
@@ -31,7 +31,7 @@ const ProviderStartPage: NextPage = () => {
       <Section className="mt-10 w-full sm:mt-0">
         <Title variant="h2">Als neue Impfstelle registrieren</Title>
 
-        <Link type="button" variant="primary" href="/provider/onboarding">
+        <Link type="button" variant="primary" href="/onboarding">
           Registrierung starten
         </Link>
       </Section>

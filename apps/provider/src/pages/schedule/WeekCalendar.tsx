@@ -2,7 +2,6 @@ import type { Appointment } from "@kiebitz-oss/api";
 import { AppointmentItem, AppointmentSet, getHexId } from "@kiebitz-oss/api";
 import { Tag } from "@kiebitz-oss/ui";
 import clsx from "clsx";
-import { Link } from "components/Link";
 import dayjs from "dayjs";
 import "dayjs/locale/de";
 import isLeapYear from "dayjs/plugin/isLeapYear";
@@ -11,6 +10,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import { Fragment } from "react";
+import { Link } from "../../components/Link";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -74,7 +74,7 @@ const HourRow: React.FC<HourRowProps> = ({ appointmentItems, date, hour }) => {
 
   return (
     <Link
-      href={`/provider/schedule/${action}/new?timestamp=${hourStartDate.toISOString()}`}
+      href={`/schedule/${action}/new?timestamp=${hourStartDate.toISOString()}`}
       className={clsx("hour-row", {
         "has-appointments": hasAppointments,
       })}
@@ -197,7 +197,7 @@ const AppointmentCell: React.FC<AppointmentCellProps> = ({
         top: `calc(${top}% + 2.5%)`,
         left: `calc(${left}% + 2.5%)`,
       }}
-      href={`/provider/schedule/${action}/show/${hexId}`}
+      href={`/schedule/${action}/show/${hexId}`}
       className={clsx("appointment-item")}
     >
       <Tag className="open" size="sm">
@@ -273,14 +273,14 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
     <Fragment>
       <div className="flex flex-row justify-between w-full">
         <Link
-          href={`/provider/schedule/week/${lastWeek < 0 ? 52 : lastWeek}`}
+          href={`/schedule/week/${lastWeek < 0 ? 52 : lastWeek}`}
           className="hover"
         >
           zurück
         </Link>
 
         <Link
-          href={`/provider/schedule/week/${nextWeek > 52 ? 1 : nextWeek}`}
+          href={`/schedule/week/${nextWeek > 52 ? 1 : nextWeek}`}
           className="hover"
         >
           vor

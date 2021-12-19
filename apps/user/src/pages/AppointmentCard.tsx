@@ -2,8 +2,8 @@ import type { Appointment } from "@kiebitz-oss/api";
 import { Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
-import { useI18n } from "components/common/useI18n";
-import { vaccines } from "config/vaccines";
+import { useI18n } from "../components/useI18n";
+import { vaccines } from "../config/vaccines";
 
 export interface AppointmentCardProps {
   appointment: Appointment;

@@ -4,8 +4,8 @@
 
 import { Message, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { Link } from "components/Link";
 import type { NextPage } from "next";
+import { Link } from "../components/Link";
 
 const LoggedOutPage: NextPage = () => {
   return (

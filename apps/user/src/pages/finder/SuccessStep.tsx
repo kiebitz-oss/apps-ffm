@@ -1,13 +1,13 @@
 import { GeneratePdf16 } from "@carbon/icons-react";
 import { Text, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { useI18n } from "components/common/useI18n";
-import { Link } from "components/Link";
-import { vaccines } from "config/vaccines";
 import { useRouter } from "next/router";
-import { useUserApi } from "pages/UserApiContext";
 import { MouseEventHandler, useEffect, useState } from "react";
+import { Link } from "../../components/Link";
+import { useI18n } from "../../components/useI18n";
+import { vaccines } from "../../config/vaccines";
 import { AppointmentCard } from "../AppointmentCard";
+import { useUserApi } from "../UserApiContext";
 import { useFinderState } from "./FinderStateProvider";
 
 export const SuccessStep: React.FC = () => {
@@ -143,7 +143,7 @@ export const SuccessStep: React.FC = () => {
                   <Link
                     href={pdf.url}
                     external
-                    className="inline-flex gap-2 justify-center items-center py-2 px-4 w-full font-semibold no-underline bg-blue-100 rounded-2xl text-primary"
+                    className="inline-flex gap-2 justify-center items-center py-2 px-4 w-full font-semibold text-primary no-underline bg-blue-100 rounded-2xl"
                   >
                     <GeneratePdf16 />
                     {pdf.label}

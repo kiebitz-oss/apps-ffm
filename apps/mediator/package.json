@@ -23,6 +23,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
+    "clean": "rimraf --no-glob ./out ./.next ./dist",
     "lint": "next lint",
     "lint:fix": "next lint --fix ; stylelint src/**/*.css --fix",
     "lint:css": "stylelint ./src/**/*.css",
@@ -34,10 +35,8 @@
     "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",
     "i18n:compile": "lingui compile",
     "i18n:build": " cross-env NODE_ENV=development lingui extract --clean && lingui compile",
-    "sb": "start-storybook -p 9000",
-    "sb:build": "build-storybook",
-    "docker:build": "docker build . -t kiebitz-apps",
-    "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
+    "docker:build": "docker build . -t kiebitz-mediator",
+    "docker:run": "docker run -p 3000:3000 -it kiebitz-mediator"
   },
   "dependencies": {
     "@carbon/icons-react": "^10.44.0",
@@ -71,6 +70,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-tailwindcss": "beta",
     "jest": "^27.4.5",
+    "rimraf": "^3.0.2",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.0.2",
@@ -131,8 +131,7 @@
           "nesting-rules": false,
           "custom-properties": false
         }
-      },
-      "cssnano": {}
+      }
     }
   },
   "eslintConfig": {
@@ -151,8 +150,7 @@
       "node_modules",
       "dist",
       "out",
-      "build",
-      "storybook_static"
+      "build"
     ],
     "rules": {
       "tailwindcss/no-custom-classname": "off",

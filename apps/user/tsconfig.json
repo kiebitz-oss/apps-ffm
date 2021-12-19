@@ -1,8 +1,19 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "assets.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "tests", "build", "out", "storybook_static"]
+  "include": [
+    "next-env.d.ts",
+    "assets.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests",
+    "build",
+    "out"
+  ]
 }

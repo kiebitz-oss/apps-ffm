@@ -1,7 +1,7 @@
 import { Form, InputField, Text, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
-import { BackLink } from "components/common/BackLink";
-import { Link } from "components/Link";
+import { BackLink } from "../../components/BackLink";
+import { Link } from "../../components/Link";
 
 export const DateStep: React.FC = () => {
   return (

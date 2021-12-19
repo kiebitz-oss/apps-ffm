@@ -113,7 +113,7 @@ export const RestoreForm: React.FC<RestoreFormProps> = ({ className }) => {
   const onSubmit: SubmitHandler<FormData> = (data) => {
     // restoreFromBackup(data.secret, data.file)
     //     .then(() => {
-    //         navigate('/provider/schedule');
+    //         navigate('/schedule');
     //     })
     //     .catch((error) => {
     //         console.error(error);

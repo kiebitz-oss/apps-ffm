@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import { UserApiProvider } from "pages/UserApiContext";
+import { UserApiProvider } from "../UserApiContext";
 import { DateStep } from "./DateStep";
 import { FinderStateProvider } from "./FinderStateProvider";
 

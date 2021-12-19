@@ -35,7 +35,7 @@ export const DataStep: React.FC = () => {
       dispatch({ type: Types.SET_DATA, payload: { data } });
 
       // we redirect to the 'verify' step
-      router.push(`/provider/onboarding/verify`);
+      router.push(`/onboarding/verify`);
     });
   };
 

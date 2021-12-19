@@ -19,7 +19,7 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
 
   useEffect(() => {
     if (!provider) {
-      router.push("/provider/onboarding");
+      router.push("/onboarding");
     }
   }, [provider, router]);
 

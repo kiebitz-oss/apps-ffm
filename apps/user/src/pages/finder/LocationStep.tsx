@@ -1,15 +1,15 @@
 import type { PublicProvider } from "@kiebitz-oss/api";
 import { CheckboxField, Text, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
-import { BackLink } from "components/common/BackLink";
-import { ProviderCard } from "components/common/ProviderCard";
-import { Link } from "components/Link";
 import {
   ChangeEventHandler,
   MouseEventHandler,
   useEffect,
   useState,
 } from "react";
+import { BackLink } from "../../components/BackLink";
+import { Link } from "../../components/Link";
+import { ProviderCard } from "../../components/ProviderCard";
 import { useUserApi } from "../UserApiContext";
 import { Types, useFinderState } from "./FinderStateProvider";
 

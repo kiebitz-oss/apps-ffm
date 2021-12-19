@@ -1,10 +1,10 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { VerifyStep } from "pages/finder/VerifyStep";
 import { AppointmentStep } from "./AppointmentStep";
 import { DateStep } from "./DateStep";
 import { FinderStateProvider } from "./FinderStateProvider";
 import { LocationStep } from "./LocationStep";
 import { SuccessStep } from "./SuccessStep";
+import { VerifyStep } from "./VerifyStep";
 
 enum Steps {
   location = "location",

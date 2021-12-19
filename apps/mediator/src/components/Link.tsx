@@ -3,8 +3,8 @@
 // README.md contains license information.
 
 import clsx from "clsx";
-import { loadLocale, useI18n } from "components/common/useI18n";
 import RouterLink from "next/link";
+import { loadLocale, useI18n } from "./useI18n";
 
 export interface LinkProps extends React.ComponentProps<"a"> {
   external?: boolean;
@@ -12,6 +12,7 @@ export interface LinkProps extends React.ComponentProps<"a"> {
   href: string;
   locale?: string;
   variant?: string;
+  size?: string;
 }
 
 export const Link: React.FC<LinkProps> = ({
@@ -23,6 +24,8 @@ export const Link: React.FC<LinkProps> = ({
   rel,
   target,
   locale,
+  variant,
+  size = "md",
   ...props
 }) => {
   const i18n = useI18n();
@@ -36,6 +39,8 @@ export const Link: React.FC<LinkProps> = ({
             ["button"]: type === "button",
             ["link"]: !type,
           },
+          variant,
+          size,
           className
         )}
         rel={external && !rel ? "noreferrer" : rel}
@@ -55,6 +60,8 @@ export const Link: React.FC<LinkProps> = ({
             ["button"]: type === "button",
             ["link"]: !type,
           },
+          variant,
+          size,
           className
         )}
         rel={rel}

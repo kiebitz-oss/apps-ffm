@@ -23,6 +23,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
+    "clean": "rimraf --no-glob ./out ./.next ./dist",
     "lint": "next lint",
     "lint:fix": "next lint --fix ; stylelint src/**/*.css --fix",
     "lint:css": "stylelint ./src/**/*.css",
@@ -34,10 +35,8 @@
     "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",
     "i18n:compile": "lingui compile",
     "i18n:build": "cross-env NODE_ENV=development lingui extract --clean && lingui compile",
-    "sb": "start-storybook -p 9000",
-    "sb:build": "build-storybook",
-    "docker:build": "docker build . -t kiebitz-apps",
-    "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
+    "docker:build": "docker build . -t kiebitz-user",
+    "docker:run": "docker run -p 3000:3000 -it kiebitz-user"
   },
   "dependencies": {
     "@carbon/icons-react": "^10.44.0",
@@ -64,6 +63,7 @@
     "@types/react": "^17.0.37",
     "babel-plugin-macros": "^3.1.0",
     "cross-env": "^7.0.3",
+    "rimraf": "^3.0.2",
     "eslint": "^8.5.0",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
@@ -150,8 +150,7 @@
       "node_modules",
       "dist",
       "out",
-      "build",
-      "storybook_static"
+      "build"
     ],
     "rules": {
       "tailwindcss/no-custom-classname": "off",

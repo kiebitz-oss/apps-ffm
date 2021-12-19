@@ -2,12 +2,13 @@
   "name": "@kiebitz-oss/ui",
   "description": "Kiebitz Web Applications",
   "version": "1.0.0",
-  "author": "Benjamin Bender",
+  "author": "Benjamin Bender <bb@codepoet.de>",
   "private": true,
   "license": "AGPL-3.0-or-later",
+  "type": "module",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.js",
+  "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -21,7 +22,10 @@
     "npm": "please-use-yarn"
   },
   "scripts": {
-    "build": "rimraf --no-glob ./dist && cross-env NODE_ENV=production microbundle --tsconfig ./tsconfig.build.json --jsx React.createElement --jsxFragment React.Fragment -f cjs,es --no-compress"
+    "mb": "microbundle --tsconfig ./tsconfig.build.json --jsx 'React.createElement' --jsxImportSource react --globals react/jsx-runtime=jsx -f cjs,es",
+    "build": "rimraf --no-glob ./dist && cross-env NODE_ENV=production yarn run mb",
+    "clean": "rimraf --no-glob ./dist",
+    "dev": "yarn run mb watch --no-compress"
   },
   "dependencies": {
     "clsx": "^1.1.1",
@@ -32,21 +36,14 @@
   "devDependencies": {
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
-    "@tailwindcss/forms": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.0",
     "cross-env": "^7.0.3",
     "jest": "^27.4.5",
     "microbundle": "^0.14.2",
-    "postcss": "^8.4.5",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-loader": "^6.2.1",
-    "postcss-preset-env": "^7.0.2",
     "rimraf": "^3.0.2",
     "stylelint": "^14.1.0",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-no-unsupported-browser-features": "^5.0.2",
-    "tailwindcss": "^3.0.7",
     "typescript": "^4.5.4"
   },
   "peerDependencies": {
@@ -100,23 +97,6 @@
           "ignorePseudoClasses": "global"
         }
       ]
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "tailwindcss/nesting": {},
-      "tailwindcss": {},
-      "postcss-flexbugs-fixes": {},
-      "postcss-preset-env": {
-        "autoprefixer": {
-          "flexbox": "no-2009"
-        },
-        "stage": 3,
-        "features": {
-          "nesting-rules": false,
-          "custom-properties": false
-        }
-      }
     }
   }
 }

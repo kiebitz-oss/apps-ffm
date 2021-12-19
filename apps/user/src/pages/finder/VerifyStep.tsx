@@ -1,9 +1,9 @@
 import { Text, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { BackLink } from "components/common/BackLink";
-import { Link } from "components/Link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { BackLink } from "../../components/BackLink";
+import { Link } from "../../components/Link";
 import { AppointmentCard } from "../AppointmentCard";
 import { useUserApi } from "../UserApiContext";
 import { useFinderState } from "./FinderStateProvider";

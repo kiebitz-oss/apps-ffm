@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
-import FinderPage from "pages/finder/[[...step]].page";
 import { UserApiProvider } from "../UserApiContext";
+import FinderPage from "./[[...step]].page";
 
 export default {
   component: FinderPage,
