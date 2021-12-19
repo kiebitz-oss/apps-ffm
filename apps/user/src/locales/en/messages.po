@@ -13,44 +13,40 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/common/Footer.tsx:24
+#: components/Footer.tsx:24
 msgid "common.footer.link.booking"
 msgstr ""
 
-#: components/common/Footer.tsx:60
+#: components/Footer.tsx:60
 msgid "common.footer.link.english"
 msgstr ""
 
-#: components/common/Footer.tsx:29
+#: components/Footer.tsx:29
 msgid "common.footer.link.faq"
 msgstr ""
 
-#: components/common/Footer.tsx:48
+#: components/Footer.tsx:48
 msgid "common.footer.link.german"
 msgstr ""
 
-#: components/common/Footer.tsx:70
+#: components/Footer.tsx:70
 msgid "common.footer.link.imprint"
 msgstr ""
 
-#: components/common/Footer.tsx:87
+#: components/Footer.tsx:87
 msgid "common.footer.link.kiebitz"
 msgstr ""
 
-#: components/common/Footer.tsx:75
+#: components/Footer.tsx:75
 msgid "common.footer.link.privacy"
 msgstr ""
 
-#: components/common/Footer.tsx:18
+#: components/Footer.tsx:18
 msgid "common.footer.title.informations"
 msgstr ""
 
-#: components/common/Footer.tsx:35
+#: components/Footer.tsx:35
 msgid "common.footer.title.languages"
-msgstr ""
-
-#: components/common/SecretBox.tsx:35
-msgid "provider.secret.title"
 msgstr ""
 
 #: pages/finder/AppointmentStep.tsx:104

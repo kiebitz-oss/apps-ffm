@@ -13,65 +13,41 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/common/DataSecret.tsx:11
-msgid "common.data-secret.text"
-msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn, um sich auf einem anderen PC (Tablet, Smartphone etc.) einzuloggen oder auf einem anderen Endgerät auf Ihre Termine zugreifen zu können."
-
-#: components/common/ErrorFallback.tsx:15
-msgid "common.error.common-error"
-msgstr "Es tut uns schrecklich leid aber es ist ein unerwarteter Fehler aufgetreten. Bitte <0>kontaktieren Sie uns zur Behebung</0>."
-
-#: components/common/Footer.tsx:24
+#: components/Footer.tsx:24
 msgid "common.footer.link.booking"
 msgstr "Impfterminen buchen"
 
-#: components/common/Footer.tsx:60
+#: components/Footer.tsx:60
 msgid "common.footer.link.english"
 msgstr "English"
 
-#: components/common/Footer.tsx:29
+#: components/Footer.tsx:29
 msgid "common.footer.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/common/Footer.tsx:48
+#: components/Footer.tsx:48
 msgid "common.footer.link.german"
 msgstr "Deutsch"
 
-#: components/common/Footer.tsx:70
+#: components/Footer.tsx:70
 msgid "common.footer.link.imprint"
 msgstr "Impressum"
 
-#: components/common/Footer.tsx:87
+#: components/Footer.tsx:87
 msgid "common.footer.link.kiebitz"
 msgstr "Realisiert mit Kiebitz"
 
-#: components/common/Footer.tsx:75
+#: components/Footer.tsx:75
 msgid "common.footer.link.privacy"
 msgstr "Datenschutz"
 
-#: components/common/Footer.tsx:18
+#: components/Footer.tsx:18
 msgid "common.footer.title.informations"
 msgstr "Informationen"
 
-#: components/common/Footer.tsx:35
+#: components/Footer.tsx:35
 msgid "common.footer.title.languages"
 msgstr "Sprache"
-
-#: components/common/LeaveModal.tsx:37
-msgid "common.leave.cancel-button"
-msgstr "Zurück"
-
-#: components/common/LeaveModal.tsx:34
-msgid "common.leave.submit-button"
-msgstr "Seite verlassen"
-
-#: components/common/LeaveModal.tsx:19
-msgid "common.leave.title"
-msgstr "Möchten Sie diese Seite wirklich verlassen?"
-
-#: components/common/LeaveModal.tsx:26
-msgid "comon.leave.text"
-msgstr "Es gibt ungespeicherte Änderungen auf der aktuellen Seite. Wollen Sie diese wirklich verlassen?"
 
 #: pages/logged-out.page.tsx:25
 msgid "mediator.logged-out.log-in-again"
@@ -328,7 +304,3 @@ msgstr "Die von Ihnen gewählte Datei ist ungültig."
 #: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
 msgstr "Bitte laden Sie die Datei mit Ihren geheimen Vermittlerschlüsseln."
-
-#: components/common/SecretBox.tsx:36
-msgid "provider.secret.title"
-msgstr "Ihr Sicherheitscode"

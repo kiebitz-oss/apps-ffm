@@ -13,322 +13,337 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/common/DataSecret.tsx:11
+#: pages/onboarding/DataSecret.tsx:11
 msgid "common.data-secret.text"
 msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn, um sich auf einem anderen PC (Tablet, Smartphone etc.) einzuloggen oder auf einem anderen Endgerät auf Ihre Termine zugreifen zu können."
 
-#: components/common/ErrorFallback.tsx:15
-msgid "common.error.common-error"
-msgstr "Es tut uns schrecklich leid aber es ist ein unerwarteter Fehler aufgetreten. Bitte <0>kontaktieren Sie uns zur Behebung</0>."
-
-#: components/common/Footer.tsx:24
+#: components/Footer.tsx:24
 msgid "common.footer.link.booking"
 msgstr "Impfterminen buchen"
 
-#: components/common/Footer.tsx:60
+#: components/Footer.tsx:60
 msgid "common.footer.link.english"
 msgstr "English"
 
-#: components/common/Footer.tsx:29
+#: components/Footer.tsx:29
 msgid "common.footer.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/common/Footer.tsx:48
+#: components/Footer.tsx:48
 msgid "common.footer.link.german"
 msgstr "Deutsch"
 
-#: components/common/Footer.tsx:70
+#: components/Footer.tsx:70
 msgid "common.footer.link.imprint"
 msgstr "Impressum"
 
-#: components/common/Footer.tsx:87
+#: components/Footer.tsx:87
 msgid "common.footer.link.kiebitz"
 msgstr "Realisiert mit Kiebitz"
 
-#: components/common/Footer.tsx:75
+#: components/Footer.tsx:75
 msgid "common.footer.link.privacy"
 msgstr "Datenschutz"
 
-#: components/common/Footer.tsx:18
+#: components/Footer.tsx:18
 msgid "common.footer.title.informations"
 msgstr "Informationen"
 
-#: components/common/Footer.tsx:35
+#: components/Footer.tsx:35
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
-#: components/common/LeaveModal.tsx:37
-msgid "common.leave.cancel-button"
-msgstr "Zurück"
+#: pages/logout.page.tsx:80
+msgid "provider.logout.button"
+msgstr "Abmelden"
 
-#: components/common/LeaveModal.tsx:34
-msgid "common.leave.submit-button"
-msgstr "Seite verlassen"
+#: pages/logout.page.tsx:66
+msgid "provider.logout.copy-secret"
+msgstr "Datenschlüssel kopieren"
 
-#: components/common/LeaveModal.tsx:19
-msgid "common.leave.title"
-msgstr "Möchten Sie diese Seite wirklich verlassen?"
+#: pages/logout.page.tsx:72
+msgid "provider.logout.download-backup"
+msgstr "Sicherungsdatei herunterladen"
 
-#: components/common/LeaveModal.tsx:26
-msgid "comon.leave.text"
-msgstr "Es gibt ungespeicherte Änderungen auf der aktuellen Seite. Wollen Sie diese wirklich verlassen?"
+#: pages/logout.page.tsx:54
+msgid "provider.logout.intro"
+msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie Ihren Datenschlüssel notiert und Ihre Sicherungsdatei heruntergeladen haben . Nur damit können Sie sich erneut einloggen."
 
-#: pages/logged-out.page.tsx:25
-msgid "mediator.logged-out.log-in-again"
+#: pages/logout.page.tsx:50
+msgid "provider.logout.notice.logging-out"
+msgstr "Bitte warten, Sie werden abgemeldet..."
+
+#: pages/logout.page.tsx:45
+msgid "provider.logout.title"
+msgstr "Abmelden"
+
+#: pages/onboarding/DataStep.tsx:191
+msgid "provider.onboarding.access-code.description"
+msgstr "Falls Sie einen spezifischen Zugangscode erhalten haben geben Sie diesen bitte hier ein."
+
+#: pages/onboarding/DataStep.tsx:196
+msgid "provider.onboarding.access-code.label"
+msgstr "Zugangscode (falls vorhanden)"
+
+#: pages/onboarding/DataStep.tsx:215
+msgid "provider.onboarding.accessible.label"
+msgstr "Barrierefreier Zugang zur Praxis/zum Impfzentrum"
+
+#: pages/onboarding/DataStep.tsx:127
+msgid "provider.onboarding.city.error"
+msgstr "Bitte gegen Sie einen gültigen Ort an"
+
+#: pages/onboarding/DataStep.tsx:121
+msgid "provider.onboarding.city.label"
+msgstr "Ort"
+
+#: pages/onboarding/DataStep.tsx:166
+msgid "provider.onboarding.data-description"
+msgstr "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit dem Support-Team."
+
+#: pages/onboarding/DataStep.tsx:160
+msgid "provider.onboarding.data-title"
+msgstr "Kontaktdaten"
+
+#: pages/onboarding/DataStep.tsx:148
+msgid "provider.onboarding.description.description"
+msgstr "Informationen für Impfwillige (z.B. wenn Sie spezielle Impfstoffe nur bestimmten Gruppen empfehlen)"
+
+#: pages/onboarding/DataStep.tsx:144
+msgid "provider.onboarding.description.title"
+msgstr "Beschreibung"
+
+#: pages/onboarding/BackupDataLink.tsx:60
+msgid "provider.onboarding.download-backup-data"
+msgstr "Sicherungsdatei herunterladen"
+
+#: pages/onboarding/DataStep.tsx:182
+msgid "provider.onboarding.email.label"
+msgstr "E-Mail Adresse"
+
+#: pages/onboarding/BackupDataLink.tsx:70
+msgid "provider.onboarding.generating-backup-data"
+msgstr "Bitte warten, erstelle Sicherungsdaten..."
+
+#: pages/onboarding/DataStep.tsx:63
+msgid "provider.onboarding.intro"
+msgstr "Dies sind die allgemeinen Kontaktdaten."
+
+#: pages/onboarding/DataStep.tsx:82
+msgid "provider.onboarding.name.error.min-length"
+msgstr "Bitte gegen Sie einen gültigen Namen an"
+
+#: pages/onboarding/DataStep.tsx:76
+msgid "provider.onboarding.name.error.required"
+msgstr "Bitte gegen Sie einen gültigen Namen an"
+
+#: pages/onboarding/DataStep.tsx:70
+msgid "provider.onboarding.name.label"
+msgstr "Vollständiger Name"
+
+#: pages/onboarding/DataStep.tsx:174
+msgid "provider.onboarding.phone.label"
+msgstr "Telefonnummer"
+
+#: pages/onboarding/DataStep.tsx:226
+msgid "provider.onboarding.save-and-continue"
+msgstr "Weiter"
+
+#: pages/onboarding/SecretStep.tsx:43
+msgid "provider.onboarding.secret.button"
+msgstr "Abschließen & zur Terminplanung"
+
+#: pages/onboarding/SecretStep.tsx:30
+msgid "provider.onboarding.secret.notice"
+msgstr "Um sich später wieder einzuloggen oder Ihre Termine zugreifen zu können, benötigen Sie Ihre SICHERHEITSDATEI und Ihren SICHERHEITSCODE. Bitte speichern Sie jetzt Ihre SICHERHEITSDATEI und notieren Sie sich im Anschluss den SICHERHEITSCODE."
+
+#: pages/onboarding/DataStep.tsx:208
+msgid "provider.onboarding.settings-description"
+msgstr "Weitere Angaben"
+
+#: pages/onboarding/DataStep.tsx:97
+msgid "provider.onboarding.street.error"
+msgstr "Bitte gegen Sie eine gültige Straße an"
+
+#: pages/onboarding/DataStep.tsx:91
+msgid "provider.onboarding.street.label"
+msgstr "Straße & Hausnummer"
+
+#: pages/onboarding/DataStep.tsx:57
+msgid "provider.onboarding.title"
+msgstr "Allgemeine Daten"
+
+#: pages/onboarding/VerifyStep.tsx:38
+msgid "provider.onboarding.verify.button"
+msgstr "Weiter"
+
+#: pages/onboarding/VerifyStep.tsx:34
+msgid "provider.onboarding.verify.edit-data"
+msgstr "Anpassen"
+
+#: pages/onboarding/DataStep.tsx:136
+msgid "provider.onboarding.website.label"
+msgstr "Webseite"
+
+#: pages/onboarding/DataStep.tsx:112
+msgid "provider.onboarding.zip-code.error"
+msgstr "Bitte gegen Sie eine gültige Postleitzahl an"
+
+#: pages/onboarding/DataStep.tsx:106
+msgid "provider.onboarding.zip-code.label"
+msgstr "Postleitzahl"
+
+#: pages/ProviderDataSummary.tsx:132
+msgid "provider.provider-data.accessible"
+msgstr "Barrierefreier Zugang zur Praxis/zum Impfzentrum"
+
+#: pages/ProviderDataSummary.tsx:141
+msgid "provider.provider-data.accessible-no"
+msgstr "Nein"
+
+#: pages/ProviderDataSummary.tsx:139
+msgid "provider.provider-data.accessible-yes"
+msgstr "Ja"
+
+#: pages/ProviderDataSummary.tsx:69
+msgid "provider.provider-data.city"
+msgstr "Ort"
+
+#: pages/ProviderDataSummary.tsx:84
+msgid "provider.provider-data.description"
+msgstr "Informationen für Impfwillige"
+
+#: pages/ProviderDataSummary.tsx:108
+msgid "provider.provider-data.email"
+msgstr "provider.provider-data.email"
+
+#: pages/ProviderDataSummary.tsx:53
+msgid "provider.provider-data.name"
+msgstr "Vollständiger Name"
+
+#: pages/ProviderDataSummary.tsx:77
+#: pages/ProviderDataSummary.tsx:90
+#: pages/ProviderDataSummary.tsx:101
+#: pages/ProviderDataSummary.tsx:112
+msgid "provider.provider-data.not-given"
+msgstr "(keine Angabe)"
+
+#: pages/ProviderDataSummary.tsx:30
+msgid "provider.provider-data.not-verified-yet"
+msgstr "Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie Verständnis, dass die Verifizierung bis zu 48h dauern kann."
+
+#: pages/ProviderDataSummary.tsx:41
+msgid "provider.provider-data.notice"
+msgstr "Bitte überprüfen Sie Ihre Daten, bevor Sie den Vorgang abschließen."
+
+#: pages/ProviderDataSummary.tsx:97
+msgid "provider.provider-data.phone"
+msgstr "Telefonnummer"
+
+#: pages/ProviderDataSummary.tsx:58
+msgid "provider.provider-data.street"
+msgstr "Straße & Hausnummer"
+
+#: pages/ProviderDataSummary.tsx:73
+msgid "provider.provider-data.website"
+msgstr "Webseite"
+
+#: pages/ProviderDataSummary.tsx:65
+msgid "provider.provider-data.zip-code"
+msgstr "Postleitzahl"
+
+#: pages/RestoreForm.tsx:135
+msgid "provider.restore-form.failed"
+msgstr "Das Laden Ihrer Daten ist leider fehlgeschlagen. Bitte prüfen Sie Ihren Datenschlüssel sowie die angegebene Datei."
+
+#: pages/RestoreForm.tsx:169
+msgid "provider.restore-form.input"
+msgstr "Sicherungsdatei wählen"
+
+#: pages/RestoreForm.tsx:178
+msgid "provider.restore-form.input.description"
+msgstr "Bitte laden Sie hier Ihre Sicherungsdatei (booster-impfen-backup-2021[Datum&Uhrzeit].enc) hoch."
+
+#: pages/RestoreForm.tsx:97
+msgid "provider.restore-form.invalid-file"
+msgstr "provider.restore-form.invalid-file MISSING"
+
+#: pages/RestoreForm.tsx:50
+msgid "provider.restore-form.invalid-secret"
+msgstr "provider.restore-form.invalid-secret MISSING"
+
+#: pages/RestoreForm.tsx:188
+msgid "provider.restore-form.load"
 msgstr "Einloggen"
 
-#: pages/logged-out.page.tsx:18
-msgid "mediator.logged-out.notice"
-msgstr "Sie wurden erfolgreich abgemeldet. Sie können sich jederzeit mit Ihrer Schlüsseldatei wieder anmelden."
+#: pages/RestoreForm.tsx:30
+msgid "provider.restore-form.missing-file"
+msgstr "provider.restore-form.missing-file MISSING"
 
-#: pages/logged-out.page.tsx:14
-msgid "mediator.logged-out.title"
-msgstr "mediator.logged-out.title"
+#: pages/RestoreForm.tsx:147
+msgid "provider.restore-form.secret.description"
+msgstr "Der Datenschlüssel, den Sie bei der Registrierung erhalten haben."
 
-#: pages/logout.page.tsx:33
-msgid "mediator.logout.button"
-msgstr "Abmelden"
+#: pages/RestoreForm.tsx:143
+msgid "provider.restore-form.secret.label"
+msgstr "Datenschlüssel"
 
-#: pages/logout.page.tsx:25
-msgid "mediator.logout.intro"
-msgstr "Möchtest Du Dich wirklich abmelden? Bitte stelle vorher sicher, dass Du Deinen Sicherheitscode notiert hast. Nur mit diesem Code kannst Du Dich später wieder anmelden."
+#: pages/schedule/CreateAppointmentModal.tsx:77
+msgid "provider.schedule.create-appointment-modal.too-few-slots"
+msgstr "provider.schedule.create-appointment-modal.too-few-slots"
 
-#: pages/logout.page.tsx:21
-msgid "mediator.logout.title"
-msgstr "Abmelden"
+#: pages/schedule/CreateAppointmentModal.tsx:71
+msgid "provider.schedule.create-appointment-modal.too-many-slots"
+msgstr "provider.schedule.create-appointment-modal.too-many-slots"
 
-#: pages/providers/ProviderRow.tsx:72
-msgid "mediator.provider-row.button-show"
-msgstr "anzeigen"
+#: pages/schedule/CreateAppointmentModal.tsx:323
+msgid "provider.schedule.create.appointment-modal.button"
+msgstr "Speichern"
 
-#: pages/providers/ProviderRow.tsx:65
-msgid "mediator.provider-row.invalid"
-msgstr "unbestätigt"
+#: pages/schedule/CreateAppointmentModal.tsx:245
+msgid "provider.schedule.create.appointment-modal.date.label"
+msgstr "Datum"
 
-#: pages/providers/ProviderRow.tsx:43
-msgid "mediator.provider-row.select-row"
-msgstr "Impfanbieter auswählen oder abwählen"
+#: pages/schedule/CreateAppointmentModal.tsx:283
+msgid "provider.schedule.create.appointment-modal.duration-label"
+msgstr "Vstl. Dauer"
 
-#: pages/providers/ProviderRow.tsx:63
-msgid "mediator.provider-row.valid"
-msgstr "bestätigt"
+#: pages/schedule/CreateAppointmentModal.tsx:290
+msgid "provider.schedule.create.appointment-modal.duration-value"
+msgstr "Dauer: {duration} Minuten"
 
-#: pages/providers/[id].page.tsx:122
-msgid "mediator.provider-show.button-confirm"
-msgstr "Anbieter bestätigen"
+#: pages/schedule/CreateAppointmentModal.tsx:231
+msgid "provider.schedule.create.appointment-modal.edit-title"
+msgstr "Termin bearbeiten"
 
-#: pages/providers/[id].page.tsx:132
-msgid "mediator.provider-show.button-unconfirm"
-msgstr "Anbieter sperren"
+#: pages/schedule/CreateAppointmentModal.tsx:235
+msgid "provider.schedule.create.appointment-modal.new-title"
+msgstr "Neuen Termin erstellen"
 
-#: pages/providers/[id].page.tsx:82
-msgid "mediator.provider-show.city"
-msgstr "Stadt"
+#: pages/schedule/CreateAppointmentModal.tsx:270
+msgid "provider.schedule.create.appointment-modal.slots.label"
+msgstr "Anzahl Impfdosen"
 
-#: pages/providers/[id].page.tsx:106
-msgid "mediator.provider-show.description"
-msgstr "Beschreibung"
+#: pages/schedule/CreateAppointmentModal.tsx:257
+msgid "provider.schedule.create.appointment-modal.time.label"
+msgstr "Uhrzeit"
 
-#: pages/providers/[id].page.tsx:94
-msgid "mediator.provider-show.email"
-msgstr "E-Mail"
+#: pages/schedule/CreateAppointmentModal.tsx:302
+msgid "provider.schedule.create.appointment-modal.vaccine-label"
+msgstr "Impfstoff"
 
-#: pages/providers/[id].page.tsx:48
-msgid "mediator.provider-show.field"
-msgstr "Feld"
-
-#: pages/providers/[id].page.tsx:70
-msgid "mediator.provider-show.name"
-msgstr "Name"
-
-#: pages/providers/[id].page.tsx:100
-msgid "mediator.provider-show.phone"
-msgstr "Telefonnummer"
-
-#: pages/providers/[id].page.tsx:76
-msgid "mediator.provider-show.street"
-msgstr "Straße"
-
-#: pages/providers/[id].page.tsx:39
-msgid "mediator.provider-show.title"
-msgstr "Impfanbieter \"{0}\""
-
-#: pages/providers/[id].page.tsx:51
-msgid "mediator.provider-show.value"
-msgstr "Wert"
-
-#: pages/providers/[id].page.tsx:58
-msgid "mediator.provider-show.verified"
-msgstr "Verifiziert?"
-
-#: pages/providers/[id].page.tsx:88
-msgid "mediator.provider-show.zip-code"
-msgstr "Postleitzahl"
-
-#: pages/providers/ProvidersList.tsx:65
-msgid "mediator.providers-list.address"
-msgstr "Adresse"
-
-#: pages/providers/ProvidersList.tsx:102
-msgid "mediator.providers-list.button-confirm"
-msgstr "Anbieter bestätigen"
-
-#: pages/providers/ProvidersList.tsx:115
-msgid "mediator.providers-list.button-unconfirm"
-msgstr "Anbieter sperren"
-
-#: pages/providers/ProvidersList.tsx:41
-msgid "mediator.providers-list.caption"
-msgstr "Tabelle der Impfanbieter"
-
-#: pages/providers/ProvidersList.tsx:62
-msgid "mediator.providers-list.name"
-msgstr "Name"
-
-#: pages/providers/ProvidersList.tsx:54
-msgid "mediator.providers-list.select-all"
-msgstr "Alle Impfanbieter auswählen oder abwählen"
-
-#: pages/providers/ProvidersList.tsx:68
-msgid "mediator.providers-list.status"
-msgstr "Status"
-
-#: pages/ConfirmProviderModal.tsx:120
-msgid "mediator.providers.confirm-modal.button-confirm"
-msgstr "Anbieter bestätigen"
-
-#: pages/ConfirmProviderModal.tsx:78
-msgid "mediator.providers.confirm-modal.city"
-msgstr "Stadt"
-
-#: pages/ConfirmProviderModal.tsx:108
-msgid "mediator.providers.confirm-modal.description"
-msgstr "Beschreibung"
-
-#: pages/ConfirmProviderModal.tsx:92
-msgid "mediator.providers.confirm-modal.email"
-msgstr "E-Mail"
-
-#: pages/ConfirmProviderModal.tsx:54
-msgid "mediator.providers.confirm-modal.field"
-msgstr "Feld"
-
-#: pages/ConfirmProviderModal.tsx:45
-msgid "mediator.providers.confirm-modal.intro"
-msgstr "Wollen Sie den Anbieter wirklich freischalten?"
-
-#: pages/ConfirmProviderModal.tsx:64
-msgid "mediator.providers.confirm-modal.name"
-msgstr "Name"
-
-#: pages/ConfirmProviderModal.tsx:100
-msgid "mediator.providers.confirm-modal.phone"
-msgstr "Telefonnummer"
-
-#: pages/ConfirmProviderModal.tsx:70
-msgid "mediator.providers.confirm-modal.street"
-msgstr "Straße"
-
-#: pages/ConfirmProviderModal.tsx:37
-msgid "mediator.providers.confirm-modal.title"
-msgstr "Anbieter freischalten"
-
-#: pages/ConfirmProviderModal.tsx:57
-msgid "mediator.providers.confirm-modal.value"
-msgstr "Wert"
-
-#: pages/ConfirmProviderModal.tsx:84
-msgid "mediator.providers.confirm-modal.zip-code"
-msgstr "Postleitzahl"
-
-#: pages/ReconfirmProvidersModal.tsx:72
-msgid "mediator.providers.reconfirm-modal.button-submit"
-msgstr "{0} Anbieter neu bestätigen"
-
-#: pages/ReconfirmProvidersModal.tsx:60
-msgid "mediator.providers.reconfirm-modal.in-progress"
-msgstr "Bestätige Anbieter..."
-
-#: pages/ReconfirmProvidersModal.tsx:64
-msgid "mediator.providers.reconfirm-modal.info"
-msgstr "Wollen Sie alle bestätigten Anbieter neu bestätigen?"
-
-#: pages/ReconfirmProvidersModal.tsx:52
-msgid "mediator.providers.reconfirm-modal.title"
-msgstr "Alle neu bestätigen"
-
-#: pages/providers/index.page.tsx:23
-msgid "mediator.providers.title"
-msgstr "Provider Show"
-
-#: pages/UnconfirmProviderModal.tsx:126
-msgid "mediator.providers.unconfirm-modal.button-confirm"
-msgstr "Anbieter sperren"
-
-#: pages/UnconfirmProviderModal.tsx:82
-msgid "mediator.providers.unconfirm-modal.city"
-msgstr "Stadt"
-
-#: pages/UnconfirmProviderModal.tsx:114
-msgid "mediator.providers.unconfirm-modal.description"
-msgstr "Beschreibung"
-
-#: pages/UnconfirmProviderModal.tsx:98
-msgid "mediator.providers.unconfirm-modal.email"
-msgstr "E-Mail"
-
-#: pages/UnconfirmProviderModal.tsx:54
-msgid "mediator.providers.unconfirm-modal.field"
-msgstr "Feld"
-
-#: pages/UnconfirmProviderModal.tsx:45
-msgid "mediator.providers.unconfirm-modal.intro"
-msgstr "Wollen Sie den Anbieter wirklich freischalten?"
-
-#: pages/UnconfirmProviderModal.tsx:68
-msgid "mediator.providers.unconfirm-modal.name"
-msgstr "Name"
-
-#: pages/UnconfirmProviderModal.tsx:106
-msgid "mediator.providers.unconfirm-modal.phone"
-msgstr "Telefonnummer"
-
-#: pages/UnconfirmProviderModal.tsx:74
-msgid "mediator.providers.unconfirm-modal.street"
-msgstr "Straße"
-
-#: pages/UnconfirmProviderModal.tsx:37
-msgid "mediator.providers.unconfirm-modal.title"
-msgstr "Anbieter freischalten"
-
-#: pages/UnconfirmProviderModal.tsx:59
-msgid "mediator.providers.unconfirm-modal.value"
-msgstr "Wert"
-
-#: pages/UnconfirmProviderModal.tsx:90
-msgid "mediator.providers.unconfirm-modal.zip-code"
-msgstr "Postleitzahl"
-
-#: pages/index.page.tsx:58
-msgid "mediator.welcome.title"
-msgstr "Als Mediator anmelden"
-
-#: pages/index.page.tsx:63
-msgid "mediator.welcome.upload-key-pairs"
-msgstr "Geheime Schlüssel laden"
-
-#: pages/index.page.tsx:90
-msgid "mediator.welcome.upload-key-pairs.input"
-msgstr "Datei auswählen"
-
-#: pages/index.page.tsx:70
-msgid "mediator.welcome.upload-key-pairs.invalid-file"
-msgstr "Die von Ihnen gewählte Datei ist ungültig."
-
-#: pages/index.page.tsx:78
-msgid "mediator.welcome.upload-key-pairs.notice"
-msgstr "Bitte laden Sie die Datei mit Ihren geheimen Vermittlerschlüsseln."
-
-#: components/common/SecretBox.tsx:36
+#: pages/onboarding/SecretBox.tsx:35
 msgid "provider.secret.title"
 msgstr "Ihr Sicherheitscode"
+
+#: pages/settings/index.page.tsx:41
+msgid "provider.settings.title"
+msgstr "Einstellungen"
+
+#: pages/index.page.tsx:23
+msgid "provider.welcome.loggedout-.notice"
+msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit Ihrem Datenschlüssel und Ihrer Sicherheitsdatei wiederherstellen."
+
+#: pages/index.page.tsx:18
+msgid "provider.welcome.title"
+msgstr "Impstellen"

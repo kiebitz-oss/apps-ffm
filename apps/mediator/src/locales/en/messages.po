@@ -13,64 +13,40 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/common/DataSecret.tsx:11
-msgid "common.data-secret.text"
-msgstr ""
-
-#: components/common/ErrorFallback.tsx:15
-msgid "common.error.common-error"
-msgstr ""
-
-#: components/common/Footer.tsx:24
+#: components/Footer.tsx:24
 msgid "common.footer.link.booking"
 msgstr ""
 
-#: components/common/Footer.tsx:60
+#: components/Footer.tsx:60
 msgid "common.footer.link.english"
 msgstr ""
 
-#: components/common/Footer.tsx:29
+#: components/Footer.tsx:29
 msgid "common.footer.link.faq"
 msgstr ""
 
-#: components/common/Footer.tsx:48
+#: components/Footer.tsx:48
 msgid "common.footer.link.german"
 msgstr ""
 
-#: components/common/Footer.tsx:70
+#: components/Footer.tsx:70
 msgid "common.footer.link.imprint"
 msgstr ""
 
-#: components/common/Footer.tsx:87
+#: components/Footer.tsx:87
 msgid "common.footer.link.kiebitz"
 msgstr ""
 
-#: components/common/Footer.tsx:75
+#: components/Footer.tsx:75
 msgid "common.footer.link.privacy"
 msgstr ""
 
-#: components/common/Footer.tsx:18
+#: components/Footer.tsx:18
 msgid "common.footer.title.informations"
 msgstr ""
 
-#: components/common/Footer.tsx:35
+#: components/Footer.tsx:35
 msgid "common.footer.title.languages"
-msgstr ""
-
-#: components/common/LeaveModal.tsx:37
-msgid "common.leave.cancel-button"
-msgstr ""
-
-#: components/common/LeaveModal.tsx:34
-msgid "common.leave.submit-button"
-msgstr ""
-
-#: components/common/LeaveModal.tsx:19
-msgid "common.leave.title"
-msgstr ""
-
-#: components/common/LeaveModal.tsx:26
-msgid "comon.leave.text"
 msgstr ""
 
 #: pages/logged-out.page.tsx:25
@@ -327,8 +303,4 @@ msgstr ""
 
 #: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
-msgstr ""
-
-#: components/common/SecretBox.tsx:36
-msgid "provider.secret.title"
 msgstr ""

@@ -27,6 +27,8 @@ locales/**/messages.js
 *.log
 __pycache__
 
+locales/**/*.js
+
 
 # debug
 npm-debug.log*
