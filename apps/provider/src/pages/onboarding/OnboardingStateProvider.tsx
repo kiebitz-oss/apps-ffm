@@ -12,7 +12,7 @@ type ActionMap<M extends { [index: string]: unknown }> = {
       };
 };
 
-export interface OnboardingData extends Provider {
+export interface OnboardingStateData extends Provider {
   website?: string;
   description?: string;
   phone?: string;
@@ -26,12 +26,12 @@ export enum Types {
 
 type Payload = {
   [Types.SET_DATA]: {
-    data: OnboardingData;
+    data: OnboardingStateData;
   };
 };
 
 type State = {
-  data: OnboardingData | null;
+  data: OnboardingStateData | null;
 };
 
 const initialState: State = {
@@ -49,32 +49,32 @@ const reducer = (state: State, action: Actions /* | ShoppingCartActions */) => {
   }
 };
 
-interface OnboardingContext {
+interface OnboardingStateContext {
   state: State;
   dispatch(action: Actions): void;
 }
 
-const OnboardingContext = createContext<OnboardingContext | undefined>(
-  undefined
-);
+const OnboardingStateContext = createContext<
+  OnboardingStateContext | undefined
+>(undefined);
 
-export const OnboardingProvider: React.FC = ({ children }) => {
+export const OnboardingStateProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <OnboardingContext.Provider
+    <OnboardingStateContext.Provider
       value={{
         state,
         dispatch,
       }}
     >
       {children}
-    </OnboardingContext.Provider>
+    </OnboardingStateContext.Provider>
   );
 };
 
-export const useOnboarding = () => {
-  const context = useContext(OnboardingContext);
+export const useOnboardingState = () => {
+  const context = useContext(OnboardingStateContext);
 
   if (context === undefined) {
     throw new Error("You cant use useOnboarding without OnboardingProvider!");

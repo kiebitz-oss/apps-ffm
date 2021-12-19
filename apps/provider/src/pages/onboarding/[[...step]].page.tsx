@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { DataStep } from "./DataStep";
-import { OnboardingProvider } from "./OnboardingProvider";
+import { OnboardingStateProvider } from "./OnboardingStateProvider";
 import { SecretStep } from "./SecretStep";
 import { VerifyStep } from "./VerifyStep";
 
@@ -31,9 +31,9 @@ const StepRenderer: React.FC<{ step: string }> = ({ step }) => {
 
 const OnboardingPage: NextPage<{ step?: Steps }> = ({ step = defaultStep }) => {
   return (
-    <OnboardingProvider>
+    <OnboardingStateProvider>
       <StepRenderer step={step} />
-    </OnboardingProvider>
+    </OnboardingStateProvider>
   );
 };
 

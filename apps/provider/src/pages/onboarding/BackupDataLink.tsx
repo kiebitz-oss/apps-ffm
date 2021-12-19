@@ -1,9 +1,8 @@
-import { str2ab } from "@kiebitz-oss/api";
 import { Message } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { settings } from "../../config/settings";
 import { useProviderApi } from "../ProviderApiContext";
 
@@ -22,15 +21,15 @@ export const BackupDataLink: React.FC<BackupDataLinkProps> = ({
 
   const [blob, setBlob] = useState<Blob | null>(null);
 
-  useEffect(() => {
-    api.backupData().then(({ keyPair }) => {
-      setBlob(
-        new Blob([str2ab(JSON.stringify(keyPair))], {
-          type: "application/octet-stream",
-        })
-      );
-    });
-  }, [api]);
+  // useEffect(() => {
+  //   api.backupData().then(({ keyPair }) => {
+  //     setBlob(
+  //       new Blob([str2ab(JSON.stringify(keyPair))], {
+  //         type: "application/octet-stream",
+  //       })
+  //     );
+  //   });
+  // }, [api]);
 
   let providerName = "Impfzentrum 3000";
 

@@ -15,14 +15,18 @@ import { t, Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useProviderApi } from "../ProviderApiContext";
-import { OnboardingData, Types, useOnboarding } from "./OnboardingProvider";
+import {
+  OnboardingStateData,
+  Types,
+  useOnboardingState,
+} from "./OnboardingStateProvider";
 
 export const DataStep: React.FC = () => {
   const router = useRouter();
   const api = useProviderApi();
-  const { state, dispatch } = useOnboarding();
+  const { state, dispatch } = useOnboardingState();
 
-  const methods = useForm<OnboardingData>({
+  const methods = useForm<OnboardingStateData>({
     mode: "onBlur",
     reValidateMode: "onBlur",
     defaultValues: state.data || {},
@@ -30,7 +34,7 @@ export const DataStep: React.FC = () => {
 
   const { register, handleSubmit, formState } = methods;
 
-  const onSubmit: SubmitHandler<OnboardingData> = (data) => {
+  const onSubmit: SubmitHandler<OnboardingStateData> = (data) => {
     api.storeProvider(data).then(() => {
       dispatch({ type: Types.SET_DATA, payload: { data } });
 

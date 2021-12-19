@@ -53,7 +53,7 @@ export const Link: React.FC<LinkProps> = ({
   }
 
   return (
-    <RouterLink href={href}>
+    <RouterLink href={href} passHref>
       <a
         className={clsx(
           {

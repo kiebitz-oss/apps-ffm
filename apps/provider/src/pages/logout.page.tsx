@@ -4,10 +4,12 @@ import type { NextPage } from "next";
 import { MouseEventHandler, useState } from "react";
 import { BackupDataLink } from "./onboarding/BackupDataLink";
 import { SecretBox } from "./onboarding/SecretBox";
+import { useProviderApi } from "./ProviderApiContext";
 
 const LogOutPage: NextPage = () => {
   const [loggingOut, setLoggingOut] = useState(false);
-  const secret = "1234567890123456";
+  const api = useProviderApi();
+  const secret = api.getSecret();
   // const navigate = useNavigate();
   // const backend = useBackend();
 

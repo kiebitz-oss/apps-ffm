@@ -63,7 +63,11 @@ export class UserApi {
     appointmentId: string,
     providerID: string
   ): Promise<string> {
-    return buf2base32(b642buf(randomBytes(10)));
+    const secret = buf2base32(b642buf(randomBytes(10)));
+
+    localStorage.set("user::secret", JSON.stringify(secret));
+
+    return secret;
   }
 
   public async cancelAppointment(

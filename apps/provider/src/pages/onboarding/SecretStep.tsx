@@ -9,10 +9,10 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { BackupDataLink } from "./BackupDataLink";
 import { DataSecret } from "./DataSecret";
-import { useOnboarding } from "./OnboardingProvider";
+import { useOnboardingState } from "./OnboardingStateProvider";
 
 export const SecretStep: React.FC = () => {
-  const { state } = useOnboarding();
+  const { state } = useOnboardingState();
   const router = useRouter();
 
   useEffect(() => {
