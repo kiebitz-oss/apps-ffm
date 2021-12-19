@@ -3,7 +3,7 @@
 // README.md contains license information.
 
 import { Trans } from "@lingui/macro";
-import { useMediatorApi } from "components/mediator/common/MediatorApiContext";
+import { useMediatorApi } from "components/mediator/MediatorApiContext";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { ChangeEventHandler, useEffect, useState } from "react";

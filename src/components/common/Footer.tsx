@@ -1,9 +1,15 @@
 import { Trans } from "@lingui/macro";
+import { useRouter } from "next/router";
 import { Link, Title } from "ui";
 import gaFfmUrl from "../../config/theme/ffm/ga-ffm-logo.svg";
 import stadtFfmUrl from "../../config/theme/ffm/stadt-ffm-logo.svg";
+import { useI18n } from "./useI18n";
 
 const Footer: React.FC = () => {
+  const router = useRouter();
+  const i18n = useI18n();
+  const locale = i18n.locale?.toLowerCase() || "de";
+
   return (
     <footer className="flex items-stretch w-full">
       <section className="flex-[1] lg:flex-[2]">
@@ -13,12 +19,12 @@ const Footer: React.FC = () => {
 
         <ul>
           <li>
-            <Link href="/user">
+            <Link href="/">
               <Trans id="common.footer.link.booking">Impfterminen buchen</Trans>
             </Link>
           </li>
           <li>
-            <Link href="/user/faq">
+            <Link href="/faq">
               <Trans id="common.footer.link.faq">Fragen & Antworten</Trans>
             </Link>
           </li>
@@ -30,12 +36,26 @@ const Footer: React.FC = () => {
 
         <ul>
           <li>
-            <Link href="#">
+            <Link
+              data-test={"nav.locale.de"}
+              locale="de"
+              href={router.asPath}
+              className={
+                locale.startsWith("de") ? "link font-semibold" : "link"
+              }
+            >
               <Trans id="common.footer.link.german">Deutsch</Trans>
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link
+              data-test={"nav.locale.en"}
+              locale="en"
+              href={router.asPath}
+              className={
+                locale.startsWith("en") ? "link font-semibold" : "link"
+              }
+            >
               <Trans id="common.footer.link.english">English</Trans>
             </Link>
           </li>
@@ -75,7 +95,7 @@ const Footer: React.FC = () => {
         <Link href="#" external>
           <img
             width="300"
-            src={stadtFfmUrl}
+            src={stadtFfmUrl.src}
             alt="Stadt Frankfurt"
             className="max-w-[70vw]"
           />
@@ -83,7 +103,7 @@ const Footer: React.FC = () => {
         <Link href="#" external>
           <img
             width="300"
-            src={gaFfmUrl}
+            src={gaFfmUrl.src}
             alt="Gesundheitsamt Frankfurt"
             className="max-w-[70vw]"
           />

@@ -1,5 +1,5 @@
 import { Trans } from "@lingui/macro";
-import { useProviderApi } from "components/provider/common/ProviderApiContext";
+import { useProviderApi } from "components/provider/ProviderApiContext";
 import { AppointmentSet } from "lib/helpers/AppointmentSet";
 import type { NextPage } from "next";
 import { Button, Title } from "ui";

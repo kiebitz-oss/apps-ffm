@@ -1,21 +1,22 @@
+// @ts-check
 const webpack = require("webpack");
 const withMDX = require("@next/mdx")({
   extension: /\.mdx$/,
 });
 
-const defaultLocale = "de";
-const locales = ["de", "en"];
-
+/**
+ * @type {import('next').NextConfig}
+ **/
 const config = {
   reactStrictMode: true,
   swcMinify: false,
-
-  pageExtensions: ["ts", "tsx", "md", "mdx"],
-
-  i18n: {
-    locales,
-    defaultLocale,
+  cleanDistDir: true,
+  trailingSlash: true,
+  experimental: {
+    outputStandalone: true,
   },
+
+  pageExtensions: ["tsx", "mdx"],
 
   webpack: (config) => {
     config.resolve.fallback = {
@@ -26,11 +27,6 @@ const config = {
     config.plugins.push(
       new webpack.IgnorePlugin({ resourceRegExp: /\/.stories.tsx\// })
     );
-
-    config.module.rules.push({
-      test: /\.po/,
-      use: ["@lingui/loader"],
-    });
 
     return config;
   },

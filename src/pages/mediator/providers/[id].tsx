@@ -1,8 +1,8 @@
 import { Trans } from "@lingui/macro";
 import { BackLink } from "components/common/BackLink";
-import { useMediatorApi } from "components/mediator/common/MediatorApiContext";
-import { ConfirmProviderModal } from "components/mediator/providers/ConfirmProviderModal";
-import { UnconfirmProviderModal } from "components/mediator/providers/UnconfirmProviderModal";
+import { ConfirmProviderModal } from "components/mediator/ConfirmProviderModal";
+import { useMediatorApi } from "components/mediator/MediatorApiContext";
+import { UnconfirmProviderModal } from "components/mediator/UnconfirmProviderModal";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";

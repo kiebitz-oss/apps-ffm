@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/macro";
-import { useMediatorApi } from "components/mediator/common/MediatorApiContext";
-import { ProviderList } from "components/mediator/common/ProvidersList";
+import { useMediatorApi } from "components/mediator/MediatorApiContext";
+import { ProviderList } from "components/mediator/ProvidersList";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import type { Provider } from "types";

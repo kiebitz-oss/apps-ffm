@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
-import WelcomePage from "../../pages/mediator";
-import { MediatorApiProvider } from "./common/MediatorApiContext";
+import WelcomePage from "pages/mediator";
+import { MediatorApiProvider } from "./MediatorApiContext";
 
 export default {
   component: WelcomePage,

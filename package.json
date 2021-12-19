@@ -14,7 +14,8 @@
   },
   "bugs": "https://github.com/kiebitz-oss/apps-ffm/issues",
   "engines": {
-    "node": ">=14"
+    "npm": ">=8.0.0",
+    "node": ">=14.18.1"
   },
   "scripts": {
     "dev": "next dev",
@@ -24,13 +25,13 @@
     "lint:fix": "next lint --fix ; stylelint src/**/*.css --fix",
     "lint:css": "stylelint ./src/**/*.css",
     "lint:css:fix": "stylelint ./src/**/*.css --fix",
-    "test": "NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest",
     "e2e:serve": "lingui compile & webpack serve --mode=development",
     "e2e:test": "start-server-and-test e2e:serve http-get://localhost:3000 'cypress open'",
     "i18n": "lingui",
-    "i18n:extract": "lingui extract",
+    "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",
     "i18n:compile": "lingui compile",
-    "i18n:build": "lingui extract && lingui compile",
+    "i18n:build": " cross-env NODE_ENV=development lingui extract --clean && lingui compile",
     "sb": "start-storybook -p 9000",
     "sb:build": "build-storybook",
     "docker:build": "docker build . -t kiebitz-apps",
@@ -52,7 +53,6 @@
   },
   "devDependencies": {
     "@lingui/cli": "^3.13.0",
-    "@lingui/loader": "^3.13.0",
     "@lingui/macro": "^3.13.0",
     "@next/mdx": "^12.0.7",
     "@storybook/addon-a11y": "^6.4.9",
@@ -72,6 +72,7 @@
     "@types/react": "^17.0.37",
     "babel-plugin-macros": "^3.1.0",
     "buffer": "^6.0.3",
+    "cross-env": "^7.0.3",
     "cssnano": "^5.0.13",
     "cypress": "^9.1.1",
     "cypress-fail-fast": "^3.3.0",
@@ -109,11 +110,25 @@
     "format": "po",
     "catalogs": [
       {
-        "path": "src/locales/{locale}/messages",
+        "path": "<rootDir>/locales/{locale}/messages",
         "include": [
-          "src"
+          "<rootDir>"
+        ],
+        "exclude": [
+          "**/node_modules/**"
         ]
       }
+    ],
+    "rootDir": "src",
+    "compileNamespace": "cjs",
+    "extractBabelOptions": {},
+    "compilerBabelOptions": {},
+    "fallbackLocales": {},
+    "orderBy": "messageId",
+    "pseudoLocale": "",
+    "runtimeConfigModule": [
+      "@lingui/core",
+      "i18n"
     ]
   },
   "postcss": {
@@ -136,13 +151,9 @@
   },
   "eslintConfig": {
     "extends": [
-      "next",
-      "next/core-web-vitals",
       "plugin:tailwindcss/recommended",
-      "prettier"
-    ],
-    "plugins": [
-      "prettier"
+      "next/core-web-vitals",
+      "plugin:prettier/recommended"
     ],
     "root": true,
     "settings": {
@@ -160,7 +171,7 @@
     "rules": {
       "tailwindcss/no-custom-classname": "off",
       "react/no-unescaped-entities": "off",
-      "prettier/prettier": "error"
+      "@next/next/no-img-element": "off"
     }
   },
   "stylelint": {

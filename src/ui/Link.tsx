@@ -3,6 +3,7 @@
 // README.md contains license information.
 
 import clsx from "clsx";
+import { loadLocale, useI18n } from "components/common/useI18n";
 import RouterLink from "next/link";
 import { Size } from "types/Size";
 import { Variant } from "types/Variant";
@@ -29,6 +30,8 @@ export const Link: React.FC<LinkProps> = ({
   locale,
   ...props
 }) => {
+  const i18n = useI18n();
+
   if (!href || external) {
     return (
       // eslint-disable-next-line react/jsx-no-target-blank
@@ -52,7 +55,7 @@ export const Link: React.FC<LinkProps> = ({
   }
 
   return (
-    <RouterLink href={href} locale={locale}>
+    <RouterLink href={href}>
       <a
         className={clsx(
           {
@@ -65,6 +68,7 @@ export const Link: React.FC<LinkProps> = ({
         )}
         rel={rel}
         target={target}
+        onClick={() => loadLocale(i18n, locale)}
         {...props}
       >
         {children}

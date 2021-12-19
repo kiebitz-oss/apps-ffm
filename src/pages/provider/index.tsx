@@ -3,7 +3,7 @@
 // README.md contains license information.
 
 import { Trans } from "@lingui/macro";
-import { RestoreForm } from "components/provider/common/RestoreForm";
+import { RestoreForm } from "components/provider/RestoreForm";
 import type { NextPage } from "next";
 import { useSearchParam } from "react-use";
 import { Divider, Link, Message, Section, Title } from "ui";

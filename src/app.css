@@ -473,7 +473,8 @@
   }
 
   .link {
-    @apply inline-flex items-center gap-1 hover:text-primary;
+    /* inline-flex items-center gap-1 */
+    @apply hover:text-primary;
   }
 
   .buttons-list {
@@ -481,7 +482,7 @@
   }
 
   .button {
-    @apply default-focus rounded-2xl min-w-max max-w-full sm:min-w-min  text-center;
+    @apply default-focus rounded-2xl min-w-max max-w-full sm:w-max text-center;
 
     &.primary {
       @apply border-transparent border-2 text-white bg-primary hover:bg-white hover:text-black hover:border-black;

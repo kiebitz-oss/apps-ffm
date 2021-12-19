@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import { SecretBox } from "components/common/SecretBox";
-import { BackupDataLink } from "components/provider/common/BackupDataLink";
+import { BackupDataLink } from "components/provider/BackupDataLink";
 import type { NextPage } from "next";
 import { MouseEventHandler, useState } from "react";
 import { Button, CopyToClipboardButton, Text, Title } from "ui";

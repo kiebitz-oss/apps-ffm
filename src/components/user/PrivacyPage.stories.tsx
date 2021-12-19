@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import PrivacyPage from "pages/user/privacy";
+import PrivacyPage from "pages/privacy.mdx";
 
 export default {
   component: PrivacyPage,

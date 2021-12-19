@@ -1,3 +1,6 @@
+import { theme } from "config/theme";
+import Link from "next/link";
+
 export interface HeaderProps extends React.ComponentProps<"header"> {
   onMobileNavClick: React.MouseEventHandler<HTMLAnchorElement>;
   nav?: React.FC<unknown> | undefined;
@@ -10,11 +13,13 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="flex justify-between items-center px-8 min-w-full min-h-[86px] md:px-12 md:min-h-[100px]">
       <h1>
-        {/* <Link href="/">
-                    <img src={theme.logo} alt={theme.logoAlt} />
-                </Link> */}
+        <Link href="/">
+          <a>
+            <img src={theme.logo} alt={theme.logoAlt} />
+          </a>
+        </Link>
       </h1>
-
+      {/* 
       <a
         href="#sidenav-open"
         id="sidenav-button"
@@ -33,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
           <line x1="0" x2="100%" y1="50%" y2="50%" />
           <line x1="0" x2="100%" y1="90%" y2="90%" />
         </svg>
-      </a>
+      </a> */}
 
       {Nav && <Nav />}
     </header>

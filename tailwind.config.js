@@ -1,4 +1,3 @@
-/* eslint-env node */
 module.exports = {
   mode: "jit",
   content: ["./src/**/*.tsx", "./src/**/*.mdx"],

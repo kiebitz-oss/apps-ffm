@@ -1,6 +1,6 @@
 import { ComponentStory, Meta } from "@storybook/react";
 import React from "react";
-import { Nav } from "../user/common/Nav";
+import { Nav } from "../user/Nav";
 import { Header, HeaderProps } from "./Header";
 
 export default {

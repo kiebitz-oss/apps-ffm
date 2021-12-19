@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import ImprintPage from "pages/user/imprint";
+import ImprintPage from "pages/imprint.mdx";
 
 export default {
   component: ImprintPage,

@@ -14,7 +14,7 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({
   className,
 }) => {
   return (
-    <div
+    <section
       className={clsx(
         "flex justify-between p-4 rounded-2xl border-2 border-black",
         "hover:border-highlight hover:shadow-provider",
@@ -31,6 +31,6 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({
       </div>
 
       {provider.accessible && <Accessibility24 />}
-    </div>
+    </section>
   );
 };

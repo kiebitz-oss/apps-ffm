@@ -1,7 +1,7 @@
-import { DataStep } from "components/provider/onboarding/DataStep";
-import { OnboardingProvider } from "components/provider/onboarding/OnboardingProvider";
-import { SecretStep } from "components/provider/onboarding/SecretStep";
-import { VerifyStep } from "components/user/finder/VerifyStep";
+import { DataStep } from "components/provider/DataStep";
+import { OnboardingProvider } from "components/provider/OnboardingProvider";
+import { SecretStep } from "components/provider/SecretStep";
+import { VerifyStep } from "components/user/VerifyStep";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { Wizard } from "ui";
