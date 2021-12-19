@@ -1,0 +1,197 @@
+{
+  "name": "@kiebitz-oss/app-user",
+  "description": "Kiebitz Web Applications",
+  "version": "1.0.0",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "contributors": [
+    "Benjamin Bender <bb@codepoet.de>",
+    "Andreas Dewes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiebitz-oss/apps-ffm"
+  },
+  "bugs": "https://github.com/kiebitz-oss/apps-ffm/issues",
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=14.18.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix ; stylelint src/**/*.css --fix",
+    "lint:css": "stylelint ./src/**/*.css",
+    "lint:css:fix": "stylelint ./src/**/*.css --fix",
+    "test": "cross-env NODE_ENV=test jest",
+    "e2e:serve": "lingui compile & webpack serve --mode=development",
+    "e2e:test": "start-server-and-test e2e:serve http-get://localhost:3000 'cypress open'",
+    "i18n": "lingui",
+    "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",
+    "i18n:compile": "lingui compile",
+    "i18n:build": "cross-env NODE_ENV=development lingui extract --clean && lingui compile",
+    "sb": "start-storybook -p 9000",
+    "sb:build": "build-storybook",
+    "docker:build": "docker build . -t kiebitz-apps",
+    "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
+  },
+  "dependencies": {
+    "@carbon/icons-react": "^10.44.0",
+    "@fontsource/ibm-plex-sans": "^4.5.1",
+    "@headlessui/react": "^1.4.2",
+    "@lingui/react": "^3.13.0",
+    "clsx": "^1.1.1",
+    "dayjs": "^1.10.7",
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.22.2",
+    "react-use": "^17.3.1",
+    "@kiebitz-oss/api": "*",
+    "@kiebitz-oss/ui": "*"
+  },
+  "devDependencies": {
+    "@lingui/cli": "^3.13.0",
+    "@lingui/macro": "^3.13.0",
+    "@next/mdx": "^12.0.7",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^17.0.37",
+    "babel-plugin-macros": "^3.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.5.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-tailwindcss": "beta",
+    "jest": "^27.4.5",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.0.2",
+    "prettier": "^2.5.0",
+    "stylelint": "^14.1.0",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-no-unsupported-browser-features": "^5.0.2",
+    "tailwindcss": "^3.0.7",
+    "typescript": "^4.5.2"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "lingui": {
+    "locales": [
+      "de",
+      "en"
+    ],
+    "sourceLocale": "de",
+    "format": "po",
+    "catalogs": [
+      {
+        "path": "<rootDir>/locales/{locale}/messages",
+        "include": [
+          "<rootDir>"
+        ],
+        "exclude": [
+          "**/node_modules/**"
+        ]
+      }
+    ],
+    "rootDir": "src",
+    "compileNamespace": "cjs",
+    "extractBabelOptions": {},
+    "compilerBabelOptions": {},
+    "fallbackLocales": {},
+    "orderBy": "messageId",
+    "pseudoLocale": "",
+    "runtimeConfigModule": [
+      "@lingui/core",
+      "i18n"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss/nesting": {},
+      "tailwindcss": {},
+      "postcss-flexbugs-fixes": {},
+      "postcss-preset-env": {
+        "autoprefixer": {
+          "flexbox": "no-2009"
+        },
+        "stage": 3,
+        "features": {
+          "nesting-rules": false,
+          "custom-properties": false
+        }
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:tailwindcss/recommended",
+      "next/core-web-vitals",
+      "plugin:prettier/recommended"
+    ],
+    "root": true,
+    "settings": {
+      "tailwindcss": {
+        "groupByResponsive": true
+      }
+    },
+    "ignorePatterns": [
+      "node_modules",
+      "dist",
+      "out",
+      "build",
+      "storybook_static"
+    ],
+    "rules": {
+      "tailwindcss/no-custom-classname": "off",
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-img-element": "off"
+    }
+  },
+  "stylelint": {
+    "plugins": [
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-a11y/recommended"
+    ],
+    "rules": {
+      "plugin/no-unsupported-browser-features": [
+        true,
+        {
+          "severity": "warning"
+        }
+      ],
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "tailwind",
+            "layer",
+            "variants",
+            "responsive",
+            "screen"
+          ]
+        }
+      ],
+      "block-no-empty": null,
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": "global"
+        }
+      ]
+    }
+  }
+}

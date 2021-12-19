@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./src"
+  },
+  "include": ["next-env.d.ts", "assets.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "tests", "build", "out", "storybook_static"]
+}

@@ -2,7 +2,12 @@ import type { StorybookConfig } from "@storybook/react/types";
 import path from "path";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(ts|tsx)"],
+  stories: [
+    "../apps/user/src/**/*.stories.@(mdx|ts|tsx)",
+    "../apps/mediator/src/**/*.stories.@(mdx|ts|tsx)",
+    "../apps/provider/src/**/*.stories.@(mdx|ts|tsx)",
+    "../packages/common/src/**/*.stories.@(mdx|ts|tsx)",
+  ],
   logLevel: "info",
   staticDirs: ["../public"],
   framework: "@storybook/react",
