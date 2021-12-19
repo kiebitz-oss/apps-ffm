@@ -1,6 +1,6 @@
 // https://docs.google.com/spreadsheets/d/1sV1AjJ3i2gJCu31b76CoHA85w-2SL2_XhcT_IkjpFrk/edit?pli=1#gid=557196378
 
-import { Vaccine } from "types";
+import { Vaccine } from "@kiebitz-oss/api";
 
 type VaccinationPdf = {
   label: string;

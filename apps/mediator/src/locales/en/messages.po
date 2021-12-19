@@ -13,64 +13,48 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: ui/CopyToClipboardButton.tsx:28
-msgid "common.copy.failed"
-msgstr ""
-
-#: ui/CopyToClipboardButton.tsx:30
-msgid "common.copy.succeeded"
-msgstr ""
-
-#: components/common/DataSecret.tsx:12
+#: components/common/DataSecret.tsx:11
 msgid "common.data-secret.text"
 msgstr ""
 
-#: components/common/ErrorFallback.tsx:14
+#: components/common/ErrorFallback.tsx:15
 msgid "common.error.common-error"
 msgstr ""
 
-#: components/common/Footer.tsx:17
+#: components/common/Footer.tsx:24
 msgid "common.footer.link.booking"
 msgstr ""
 
-#: components/common/Footer.tsx:39
+#: components/common/Footer.tsx:60
 msgid "common.footer.link.english"
 msgstr ""
 
-#: components/common/Footer.tsx:22
+#: components/common/Footer.tsx:29
 msgid "common.footer.link.faq"
 msgstr ""
 
-#: components/common/Footer.tsx:34
+#: components/common/Footer.tsx:48
 msgid "common.footer.link.german"
 msgstr ""
 
-#: components/common/Footer.tsx:49
+#: components/common/Footer.tsx:70
 msgid "common.footer.link.imprint"
 msgstr ""
 
-#: components/common/Footer.tsx:66
+#: components/common/Footer.tsx:87
 msgid "common.footer.link.kiebitz"
 msgstr ""
 
-#: components/common/Footer.tsx:54
+#: components/common/Footer.tsx:75
 msgid "common.footer.link.privacy"
 msgstr ""
 
-#: components/common/Footer.tsx:11
+#: components/common/Footer.tsx:18
 msgid "common.footer.title.informations"
 msgstr ""
 
-#: components/common/Footer.tsx:28
+#: components/common/Footer.tsx:35
 msgid "common.footer.title.languages"
-msgstr ""
-
-#: lib/helpers/time.ts:46
-msgid "common.hours"
-msgstr ""
-
-#: lib/helpers/time.ts:49
-msgid "common.hours-minutes"
 msgstr ""
 
 #: components/common/LeaveModal.tsx:37
@@ -85,793 +69,266 @@ msgstr ""
 msgid "common.leave.title"
 msgstr ""
 
-#: lib/helpers/time.ts:39
-msgid "common.minutes"
-msgstr ""
-
 #: components/common/LeaveModal.tsx:26
 msgid "comon.leave.text"
 msgstr ""
 
-#: pages/mediator/logged-out.tsx:24
+#: pages/logged-out.page.tsx:25
 msgid "mediator.logged-out.log-in-again"
 msgstr ""
 
-#: pages/mediator/logged-out.tsx:17
+#: pages/logged-out.page.tsx:18
 msgid "mediator.logged-out.notice"
 msgstr ""
 
-#: pages/mediator/logged-out.tsx:13
+#: pages/logged-out.page.tsx:14
 msgid "mediator.logged-out.title"
 msgstr ""
 
-#: pages/mediator/logout.tsx:33
+#: pages/logout.page.tsx:33
 msgid "mediator.logout.button"
 msgstr ""
 
-#: pages/mediator/logout.tsx:25
+#: pages/logout.page.tsx:25
 msgid "mediator.logout.intro"
 msgstr ""
 
-#: pages/mediator/logout.tsx:21
+#: pages/logout.page.tsx:21
 msgid "mediator.logout.title"
 msgstr ""
 
-#: components/mediator/ProviderRow.tsx:72
+#: pages/providers/ProviderRow.tsx:72
 msgid "mediator.provider-row.button-show"
 msgstr ""
 
-#: components/mediator/ProviderRow.tsx:65
+#: pages/providers/ProviderRow.tsx:65
 msgid "mediator.provider-row.invalid"
 msgstr ""
 
-#: components/mediator/ProviderRow.tsx:43
+#: pages/providers/ProviderRow.tsx:43
 msgid "mediator.provider-row.select-row"
 msgstr ""
 
-#: components/mediator/ProviderRow.tsx:63
+#: pages/providers/ProviderRow.tsx:63
 msgid "mediator.provider-row.valid"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:122
+#: pages/providers/[id].page.tsx:122
 msgid "mediator.provider-show.button-confirm"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:132
+#: pages/providers/[id].page.tsx:132
 msgid "mediator.provider-show.button-unconfirm"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:82
+#: pages/providers/[id].page.tsx:82
 msgid "mediator.provider-show.city"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:106
+#: pages/providers/[id].page.tsx:106
 msgid "mediator.provider-show.description"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:94
+#: pages/providers/[id].page.tsx:94
 msgid "mediator.provider-show.email"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:48
+#: pages/providers/[id].page.tsx:48
 msgid "mediator.provider-show.field"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:70
+#: pages/providers/[id].page.tsx:70
 msgid "mediator.provider-show.name"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:100
+#: pages/providers/[id].page.tsx:100
 msgid "mediator.provider-show.phone"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:76
+#: pages/providers/[id].page.tsx:76
 msgid "mediator.provider-show.street"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:39
+#: pages/providers/[id].page.tsx:39
 msgid "mediator.provider-show.title"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:51
+#: pages/providers/[id].page.tsx:51
 msgid "mediator.provider-show.value"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:58
+#: pages/providers/[id].page.tsx:58
 msgid "mediator.provider-show.verified"
 msgstr ""
 
-#: pages/mediator/providers/[id].tsx:88
+#: pages/providers/[id].page.tsx:88
 msgid "mediator.provider-show.zip-code"
 msgstr ""
 
-#: components/mediator/ProvidersList.tsx:65
+#: pages/providers/ProvidersList.tsx:65
 msgid "mediator.providers-list.address"
 msgstr ""
 
-#: components/mediator/ProvidersList.tsx:102
+#: pages/providers/ProvidersList.tsx:102
 msgid "mediator.providers-list.button-confirm"
 msgstr ""
 
-#: components/mediator/ProvidersList.tsx:115
+#: pages/providers/ProvidersList.tsx:115
 msgid "mediator.providers-list.button-unconfirm"
 msgstr ""
 
-#: components/mediator/ProvidersList.tsx:41
+#: pages/providers/ProvidersList.tsx:41
 msgid "mediator.providers-list.caption"
 msgstr ""
 
-#: components/mediator/ProvidersList.tsx:62
+#: pages/providers/ProvidersList.tsx:62
 msgid "mediator.providers-list.name"
 msgstr ""
 
-#: components/mediator/ProvidersList.tsx:54
+#: pages/providers/ProvidersList.tsx:54
 msgid "mediator.providers-list.select-all"
 msgstr ""
 
-#: components/mediator/ProvidersList.tsx:68
+#: pages/providers/ProvidersList.tsx:68
 msgid "mediator.providers-list.status"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:120
+#: pages/ConfirmProviderModal.tsx:120
 msgid "mediator.providers.confirm-modal.button-confirm"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:78
+#: pages/ConfirmProviderModal.tsx:78
 msgid "mediator.providers.confirm-modal.city"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:108
+#: pages/ConfirmProviderModal.tsx:108
 msgid "mediator.providers.confirm-modal.description"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:92
+#: pages/ConfirmProviderModal.tsx:92
 msgid "mediator.providers.confirm-modal.email"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:54
+#: pages/ConfirmProviderModal.tsx:54
 msgid "mediator.providers.confirm-modal.field"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:45
+#: pages/ConfirmProviderModal.tsx:45
 msgid "mediator.providers.confirm-modal.intro"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:64
+#: pages/ConfirmProviderModal.tsx:64
 msgid "mediator.providers.confirm-modal.name"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:100
+#: pages/ConfirmProviderModal.tsx:100
 msgid "mediator.providers.confirm-modal.phone"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:70
+#: pages/ConfirmProviderModal.tsx:70
 msgid "mediator.providers.confirm-modal.street"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:37
+#: pages/ConfirmProviderModal.tsx:37
 msgid "mediator.providers.confirm-modal.title"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:57
+#: pages/ConfirmProviderModal.tsx:57
 msgid "mediator.providers.confirm-modal.value"
 msgstr ""
 
-#: components/mediator/ConfirmProviderModal.tsx:84
+#: pages/ConfirmProviderModal.tsx:84
 msgid "mediator.providers.confirm-modal.zip-code"
 msgstr ""
 
-#: components/mediator/ReconfirmProvidersModal.tsx:72
+#: pages/ReconfirmProvidersModal.tsx:72
 msgid "mediator.providers.reconfirm-modal.button-submit"
 msgstr ""
 
-#: components/mediator/ReconfirmProvidersModal.tsx:60
+#: pages/ReconfirmProvidersModal.tsx:60
 msgid "mediator.providers.reconfirm-modal.in-progress"
 msgstr ""
 
-#: components/mediator/ReconfirmProvidersModal.tsx:64
+#: pages/ReconfirmProvidersModal.tsx:64
 msgid "mediator.providers.reconfirm-modal.info"
 msgstr ""
 
-#: components/mediator/ReconfirmProvidersModal.tsx:52
+#: pages/ReconfirmProvidersModal.tsx:52
 msgid "mediator.providers.reconfirm-modal.title"
 msgstr ""
 
-#: pages/mediator/providers/index.tsx:23
+#: pages/providers/index.page.tsx:23
 msgid "mediator.providers.title"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:126
+#: pages/UnconfirmProviderModal.tsx:126
 msgid "mediator.providers.unconfirm-modal.button-confirm"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:82
+#: pages/UnconfirmProviderModal.tsx:82
 msgid "mediator.providers.unconfirm-modal.city"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:114
+#: pages/UnconfirmProviderModal.tsx:114
 msgid "mediator.providers.unconfirm-modal.description"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:98
+#: pages/UnconfirmProviderModal.tsx:98
 msgid "mediator.providers.unconfirm-modal.email"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:54
+#: pages/UnconfirmProviderModal.tsx:54
 msgid "mediator.providers.unconfirm-modal.field"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:45
+#: pages/UnconfirmProviderModal.tsx:45
 msgid "mediator.providers.unconfirm-modal.intro"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:68
+#: pages/UnconfirmProviderModal.tsx:68
 msgid "mediator.providers.unconfirm-modal.name"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:106
+#: pages/UnconfirmProviderModal.tsx:106
 msgid "mediator.providers.unconfirm-modal.phone"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:74
+#: pages/UnconfirmProviderModal.tsx:74
 msgid "mediator.providers.unconfirm-modal.street"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:37
+#: pages/UnconfirmProviderModal.tsx:37
 msgid "mediator.providers.unconfirm-modal.title"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:59
+#: pages/UnconfirmProviderModal.tsx:59
 msgid "mediator.providers.unconfirm-modal.value"
 msgstr ""
 
-#: components/mediator/UnconfirmProviderModal.tsx:90
+#: pages/UnconfirmProviderModal.tsx:90
 msgid "mediator.providers.unconfirm-modal.zip-code"
 msgstr ""
 
-#: pages/mediator/index.tsx:58
+#: pages/index.page.tsx:58
 msgid "mediator.welcome.title"
 msgstr ""
 
-#: pages/mediator/index.tsx:63
+#: pages/index.page.tsx:63
 msgid "mediator.welcome.upload-key-pairs"
 msgstr ""
 
-#: pages/mediator/index.tsx:90
+#: pages/index.page.tsx:90
 msgid "mediator.welcome.upload-key-pairs.input"
 msgstr ""
 
-#: pages/mediator/index.tsx:70
+#: pages/index.page.tsx:70
 msgid "mediator.welcome.upload-key-pairs.invalid-file"
 msgstr ""
 
-#: pages/mediator/index.tsx:78
+#: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
 msgstr ""
 
-#: pages/provider/logout.tsx:80
-msgid "provider.logout.button"
-msgstr ""
-
-#: pages/provider/logout.tsx:66
-msgid "provider.logout.copy-secret"
-msgstr ""
-
-#: pages/provider/logout.tsx:72
-msgid "provider.logout.download-backup"
-msgstr ""
-
-#: pages/provider/logout.tsx:54
-msgid "provider.logout.intro"
-msgstr ""
-
-#: pages/provider/logout.tsx:50
-msgid "provider.logout.notice.logging-out"
-msgstr ""
-
-#: pages/provider/logout.tsx:45
-msgid "provider.logout.title"
-msgstr ""
-
-#: components/provider/DataStep.tsx:184
-msgid "provider.onboarding.access-code.description"
-msgstr ""
-
-#: components/provider/DataStep.tsx:189
-msgid "provider.onboarding.access-code.label"
-msgstr ""
-
-#: components/provider/DataStep.tsx:208
-msgid "provider.onboarding.accessible.label"
-msgstr ""
-
-#: components/provider/DataStep.tsx:120
-msgid "provider.onboarding.city.error"
-msgstr ""
-
-#: components/provider/DataStep.tsx:114
-msgid "provider.onboarding.city.label"
-msgstr ""
-
-#: components/provider/DataStep.tsx:159
-msgid "provider.onboarding.data-description"
-msgstr ""
-
-#: components/provider/DataStep.tsx:153
-msgid "provider.onboarding.data-title"
-msgstr ""
-
-#: components/provider/DataStep.tsx:141
-msgid "provider.onboarding.description.description"
-msgstr ""
-
-#: components/provider/DataStep.tsx:137
-msgid "provider.onboarding.description.title"
-msgstr ""
-
-#: components/provider/BackupDataLink.tsx:60
-msgid "provider.onboarding.download-backup-data"
-msgstr ""
-
-#: components/provider/DataStep.tsx:175
-msgid "provider.onboarding.email.label"
-msgstr ""
-
-#: components/provider/BackupDataLink.tsx:70
-msgid "provider.onboarding.generating-backup-data"
-msgstr ""
-
-#: components/provider/DataStep.tsx:56
-msgid "provider.onboarding.intro"
-msgstr ""
-
-#: components/provider/DataStep.tsx:75
-msgid "provider.onboarding.name.error.min-length"
-msgstr ""
-
-#: components/provider/DataStep.tsx:69
-msgid "provider.onboarding.name.error.required"
-msgstr ""
-
-#: components/provider/DataStep.tsx:63
-msgid "provider.onboarding.name.label"
-msgstr ""
-
-#: components/provider/DataStep.tsx:167
-msgid "provider.onboarding.phone.label"
-msgstr ""
-
-#: components/provider/DataStep.tsx:219
-msgid "provider.onboarding.save-and-continue"
-msgstr ""
-
-#: components/provider/SecretStep.tsx:42
-msgid "provider.onboarding.secret.button"
-msgstr ""
-
-#: components/provider/SecretStep.tsx:29
-msgid "provider.onboarding.secret.notice"
-msgstr ""
-
-#: components/provider/DataStep.tsx:201
-msgid "provider.onboarding.settings-description"
-msgstr ""
-
-#: components/provider/DataStep.tsx:90
-msgid "provider.onboarding.street.error"
-msgstr ""
-
-#: components/provider/DataStep.tsx:84
-msgid "provider.onboarding.street.label"
-msgstr ""
-
-#: components/provider/DataStep.tsx:50
-msgid "provider.onboarding.title"
-msgstr ""
-
-#: components/provider/VerifyStep.tsx:41
-msgid "provider.onboarding.verify.button"
-msgstr ""
-
-#: components/provider/VerifyStep.tsx:37
-msgid "provider.onboarding.verify.edit-data"
-msgstr ""
-
-#: components/provider/DataStep.tsx:129
-msgid "provider.onboarding.website.label"
-msgstr ""
-
-#: components/provider/DataStep.tsx:105
-msgid "provider.onboarding.zip-code.error"
-msgstr ""
-
-#: components/provider/DataStep.tsx:99
-msgid "provider.onboarding.zip-code.label"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:132
-msgid "provider.provider-data.accessible"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:141
-msgid "provider.provider-data.accessible-no"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:139
-msgid "provider.provider-data.accessible-yes"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:69
-msgid "provider.provider-data.city"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:84
-msgid "provider.provider-data.description"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:108
-msgid "provider.provider-data.email"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:53
-msgid "provider.provider-data.name"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:77
-#: components/provider/ProviderDataSummary.tsx:90
-#: components/provider/ProviderDataSummary.tsx:101
-#: components/provider/ProviderDataSummary.tsx:112
-msgid "provider.provider-data.not-given"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:30
-msgid "provider.provider-data.not-verified-yet"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:41
-msgid "provider.provider-data.notice"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:97
-msgid "provider.provider-data.phone"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:58
-msgid "provider.provider-data.street"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:73
-msgid "provider.provider-data.website"
-msgstr ""
-
-#: components/provider/ProviderDataSummary.tsx:65
-msgid "provider.provider-data.zip-code"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:128
-msgid "provider.restore-form.failed"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:162
-msgid "provider.restore-form.input"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:171
-msgid "provider.restore-form.input.description"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:90
-msgid "provider.restore-form.invalid-file"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:43
-msgid "provider.restore-form.invalid-secret"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:181
-msgid "provider.restore-form.load"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:23
-msgid "provider.restore-form.missing-file"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:140
-msgid "provider.restore-form.secret.description"
-msgstr ""
-
-#: components/provider/RestoreForm.tsx:136
-msgid "provider.restore-form.secret.label"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:74
-msgid "provider.schedule.create-appointment-modal.too-few-slots"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:68
-msgid "provider.schedule.create-appointment-modal.too-many-slots"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:320
-msgid "provider.schedule.create.appointment-modal.button"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:242
-msgid "provider.schedule.create.appointment-modal.date.label"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:280
-msgid "provider.schedule.create.appointment-modal.duration-label"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:287
-msgid "provider.schedule.create.appointment-modal.duration-value"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:228
-msgid "provider.schedule.create.appointment-modal.edit-title"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:232
-msgid "provider.schedule.create.appointment-modal.new-title"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:267
-msgid "provider.schedule.create.appointment-modal.slots.label"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:254
-msgid "provider.schedule.create.appointment-modal.time.label"
-msgstr ""
-
-#: components/provider/CreateAppointmentModal.tsx:299
-msgid "provider.schedule.create.appointment-modal.vaccine-label"
-msgstr ""
-
-#: components/common/SecretBox.tsx:37
+#: components/common/SecretBox.tsx:36
 msgid "provider.secret.title"
-msgstr ""
-
-#: pages/provider/settings/index.tsx:41
-msgid "provider.settings.title"
-msgstr ""
-
-#: pages/provider/index.tsx:22
-msgid "provider.welcome.loggedout-.notice"
-msgstr ""
-
-#: pages/provider/index.tsx:17
-msgid "provider.welcome.title"
-msgstr ""
-
-#: ui/CopyToClipboardButton.tsx:32
-msgid "ui.copy"
-msgstr ""
-
-#: components/user/FaqSection.tsx:25
-msgid "user.faq.question.answer.1"
-msgstr ""
-
-#: components/user/FaqSection.tsx:40
-msgid "user.faq.question.answer.2"
-msgstr ""
-
-#: components/user/FaqSection.tsx:55
-msgid "user.faq.question.answer.3"
-msgstr ""
-
-#: components/user/FaqSection.tsx:69
-msgid "user.faq.question.answer.4"
-msgstr ""
-
-#: components/user/FaqSection.tsx:83
-msgid "user.faq.question.answer.5"
-msgstr ""
-
-#: components/user/FaqSection.tsx:98
-msgid "user.faq.question.answer.6"
-msgstr ""
-
-#: components/user/FaqSection.tsx:20
-msgid "user.faq.question.title.1"
-msgstr ""
-
-#: components/user/FaqSection.tsx:34
-msgid "user.faq.question.title.2"
-msgstr ""
-
-#: components/user/FaqSection.tsx:49
-msgid "user.faq.question.title.3"
-msgstr ""
-
-#: components/user/FaqSection.tsx:64
-msgid "user.faq.question.title.4"
-msgstr ""
-
-#: components/user/FaqSection.tsx:78
-msgid "user.faq.question.title.5"
-msgstr ""
-
-#: components/user/FaqSection.tsx:92
-msgid "user.faq.question.title.6"
-msgstr ""
-
-#: pages/faq.tsx:14
-msgid "user.faq.section1.title"
-msgstr ""
-
-#: pages/faq.tsx:20
-msgid "user.faq.section2.title"
-msgstr ""
-
-#: pages/faq.tsx:26
-msgid "user.faq.section3.title"
-msgstr ""
-
-#: pages/faq.tsx:32
-msgid "user.faq.section4.title"
-msgstr ""
-
-#: pages/faq.tsx:10
-msgid "user.faq.title"
-msgstr ""
-
-#: components/user/AppointmentStep.tsx:103
-msgid "user.finder.appointment.back-link"
-msgstr ""
-
-#: components/user/AppointmentCard.tsx:55
-msgid "user.finder.appointment.card.date"
-msgstr ""
-
-#: components/user/AppointmentStep.tsx:56
-msgid "user.finder.appointment.card.submit"
-msgstr ""
-
-#: components/user/AppointmentCard.tsx:45
-msgid "user.finder.appointment.card.time"
-msgstr ""
-
-#: components/user/AppointmentStep.tsx:147
-msgid "user.finder.appointment.no-result"
-msgstr ""
-
-#: components/user/AppointmentStep.tsx:117
-msgid "user.finder.appointment.provider.placeholder"
-msgstr ""
-
-#: components/user/AppointmentStep.tsx:136
-msgid "user.finder.appointment.time.placeholder"
-msgstr ""
-
-#: components/user/AppointmentStep.tsx:109
-msgid "user.finder.appointment.title"
-msgstr ""
-
-#: components/user/DateStep.tsx:9
-msgid "user.finder.date.back-link"
-msgstr ""
-
-#: components/user/DateStep.tsx:17
-msgid "user.finder.date.intro"
-msgstr ""
-
-#: components/user/DateStep.tsx:26
-msgid "user.finder.date.label"
-msgstr ""
-
-#: components/user/DateStep.tsx:46
-msgid "user.finder.date.submit"
-msgstr ""
-
-#: components/user/DateStep.tsx:13
-msgid "user.finder.date.title"
-msgstr ""
-
-#: components/user/LocationStep.tsx:65
-msgid "user.finder.location.accessible.label"
-msgstr ""
-
-#: components/user/LocationStep.tsx:48
-msgid "user.finder.location.back-link"
-msgstr ""
-
-#: components/user/LocationStep.tsx:58
-msgid "user.finder.location.intro"
-msgstr ""
-
-#: components/user/LocationStep.tsx:54
-msgid "user.finder.location.title"
-msgstr ""
-
-#: components/user/SuccessStep.tsx:70
-msgid "user.finder.success.appointment-code"
-msgstr ""
-
-#: components/user/SuccessStep.tsx:60
-msgid "user.finder.success.appointment-title"
-msgstr ""
-
-#: components/user/SuccessStep.tsx:100
-msgid "user.finder.success.cancel-button"
-msgstr ""
-
-#: components/user/SuccessStep.tsx:84
-msgid "user.finder.success.intro"
-msgstr ""
-
-#: components/user/SuccessStep.tsx:52
-msgid "user.finder.success.title"
-msgstr ""
-
-#: components/user/DateStep.tsx:36
-msgid "user.finder.time.label"
-msgstr ""
-
-#: components/user/VerifyStep.tsx:71
-msgid "user.finder.verify.appointment.description"
-msgstr ""
-
-#: components/user/VerifyStep.tsx:61
-msgid "user.finder.verify.appointment.subtitle"
-msgstr ""
-
-#: components/user/VerifyStep.tsx:41
-msgid "user.finder.verify.back-link"
-msgstr ""
-
-#: components/user/VerifyStep.tsx:51
-msgid "user.finder.verify.intro"
-msgstr ""
-
-#: components/user/VerifyStep.tsx:85
-msgid "user.finder.verify.submit"
-msgstr ""
-
-#: components/user/VerifyStep.tsx:47
-msgid "user.finder.verify.title"
-msgstr ""
-
-#: components/user/Questionair.tsx:149
-msgid "user.welcome.button"
-msgstr ""
-
-#: components/user/Questionair.tsx:135
-msgid "user.welcome.form_error"
-msgstr ""
-
-#: pages/index.tsx:18
-msgid "user.welcome.intro-1"
-msgstr ""
-
-#: pages/index.tsx:24
-msgid "user.welcome.intro-2"
-msgstr ""
-
-#: components/user/Questionair.tsx:85
-msgid "user.welcome.question1_value"
-msgstr ""
-
-#: components/user/Questionair.tsx:95
-msgid "user.welcome.question2_error"
-msgstr ""
-
-#: components/user/Questionair.tsx:101
-msgid "user.welcome.question2_value"
-msgstr ""
-
-#: components/user/Questionair.tsx:109
-msgid "user.welcome.question3_value"
-msgstr ""
-
-#: components/user/Questionair.tsx:120
-msgid "user.welcome.question4_error"
-msgstr ""
-
-#: components/user/Questionair.tsx:126
-msgid "user.welcome.question4_value"
-msgstr ""
-
-#: pages/index.tsx:14
-msgid "user.welcome.title"
 msgstr ""

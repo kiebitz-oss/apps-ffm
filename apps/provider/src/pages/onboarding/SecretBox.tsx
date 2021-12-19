@@ -6,9 +6,7 @@ const renderSecret = (secret: string) => {
   const fragments: React.ReactNode[] = [];
 
   for (let i = 0; i < chunks.length; i++) {
-    fragments.push(
-      <React.Fragment key={`${i}-main`}>{chunks[i]}</React.Fragment>
-    );
+    fragments.push(<Fragment key={`${i}-main`}>{chunks[i]}</Fragment>);
 
     if (i < chunks.length - 1)
       fragments.push(

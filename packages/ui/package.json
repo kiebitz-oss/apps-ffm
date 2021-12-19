@@ -16,8 +16,9 @@
   },
   "bugs": "https://github.com/kiebitz-oss/apps-ffm/issues",
   "engines": {
-    "npm": ">=8.0.0",
-    "node": ">=14.18.1"
+    "node": "^14.18.1 || >=16.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
   },
   "scripts": {
     "build": "rimraf --no-glob ./dist && cross-env NODE_ENV=production microbundle --tsconfig ./tsconfig.build.json --jsx React.createElement --jsxFragment React.Fragment -f cjs,es --no-compress"

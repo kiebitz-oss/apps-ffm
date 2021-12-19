@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
-import { providers, randomBytes } from "./fixtures/data";
-import type { Appointment, Slot, Vaccine } from "./types";
+import type { Appointment, Slot, Vaccine } from "types";
+import { providers } from "../fixtures/data";
+import { randomBytes } from "./crypto";
 
 export const createSlot = (open = true): Slot => {
   return {

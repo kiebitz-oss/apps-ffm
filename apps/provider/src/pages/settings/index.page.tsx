@@ -1,6 +1,6 @@
+import { AppointmentSet } from "@kiebitz-oss/api";
 import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { AppointmentSet } from "lib/helpers/AppointmentSet";
 import type { NextPage } from "next";
 import { useProviderApi } from "pages/ProviderApiContext";
 

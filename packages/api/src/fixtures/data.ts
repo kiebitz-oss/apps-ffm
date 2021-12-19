@@ -1,13 +1,5 @@
-import { createSlots } from "../AppointmentSet";
 import type { Appointment, Provider } from "../types";
-
-let i = 0;
-
-export const randomBytes = (length: number = 32) => {
-  const x = ++i;
-
-  return x.toString();
-};
+import { createSlots, randomBytes } from "../utils";
 
 export const providers: Provider[] = [
   {

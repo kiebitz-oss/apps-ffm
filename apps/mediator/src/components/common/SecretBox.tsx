@@ -1,14 +1,13 @@
 import { CopyToClipboardButton, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
+import { Fragment } from "react";
 
 const renderSecret = (secret: string) => {
   const chunks = secret?.match(/.{1,4}/g) || [];
   const fragments: React.ReactNode[] = [];
 
   for (let i = 0; i < chunks.length; i++) {
-    fragments.push(
-      <React.Fragment key={`${i}-main`}>{chunks[i]}</React.Fragment>
-    );
+    fragments.push(<Fragment key={`${i}-main`}>{chunks[i]}</Fragment>);
 
     if (i < chunks.length - 1)
       fragments.push(

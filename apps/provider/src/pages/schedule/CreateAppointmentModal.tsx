@@ -1,8 +1,11 @@
-import { Appointment } from "@kiebitz-oss/api";
+import {
+  Appointment,
+  formatDate,
+  formatTime,
+  getHexId,
+} from "@kiebitz-oss/api";
 import { t, Trans } from "@lingui/macro";
 import { vaccines } from "config/vaccines";
-import { getHexId } from "lib/helpers/conversion";
-import { formatDate, formatTime } from "lib/helpers/time";
 import { useRouter } from "next/router";
 import {
   FormProvider,
@@ -207,14 +210,14 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
   //     });
 
   //     return (
-  //         <React.Fragment key={k}>
+  //         <Fragment key={k}>
   //             <SelectField
   //                 options={options}
   //                 label={t({ message: v.title['de'], id: `${k}.title` })}
   //                 // onChange={(option) => changeTo(option)}
   //                 {...register(k)}
   //             />
-  //         </React.Fragment>
+  //         </Fragment>
   //     );
   // });
 

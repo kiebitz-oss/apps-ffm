@@ -14,8 +14,9 @@
   },
   "bugs": "https://github.com/kiebitz-oss/apps-ffm/issues",
   "engines": {
-    "npm": ">=8.0.0",
-    "node": ">=14.18.1"
+    "node": "^14.18.1 || >=16.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
   },
   "workspaces": [
     "packages/api",

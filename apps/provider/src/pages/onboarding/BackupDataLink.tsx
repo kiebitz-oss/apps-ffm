@@ -1,9 +1,9 @@
+import { str2ab } from "@kiebitz-oss/api";
 import { Message } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { settings } from "config/settings";
 import dayjs from "dayjs";
-import { str2ab } from "lib/helpers/conversion";
 import { useEffect, useState } from "react";
 import { useProviderApi } from "../ProviderApiContext";
 

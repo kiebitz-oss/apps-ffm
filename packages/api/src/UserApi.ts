@@ -1,9 +1,9 @@
 import { User as KiebitzUser } from "vanellus";
 import { backend } from "./backend";
 import { appointments, providers } from "./fixtures/data";
-import { b642buf } from "./helpers/conversion";
-import { buf2base32, randomBytes } from "./helpers/crypto";
 import { Appointment, PublicProvider } from "./types";
+import { b642buf } from "./utils/conversion";
+import { buf2base32, randomBytes } from "./utils/crypto";
 
 export class UserApi {
   protected user: KiebitzUser;

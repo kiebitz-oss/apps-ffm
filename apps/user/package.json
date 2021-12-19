@@ -1,6 +1,6 @@
 {
   "name": "@kiebitz-oss/app-user",
-  "description": "Kiebitz Web Applications",
+  "description": "Kiebitz User Web Applications",
   "version": "1.0.0",
   "private": true,
   "license": "AGPL-3.0-or-later",
@@ -10,12 +10,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiebitz-oss/apps-ffm"
+    "url": "https://github.com/kiebitz-oss/apps-ffm",
+    "directory": "apps/user"
   },
   "bugs": "https://github.com/kiebitz-oss/apps-ffm/issues",
   "engines": {
-    "npm": ">=8.0.0",
-    "node": ">=14.18.1"
+    "node": "^14.18.1 || >=16.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
   },
   "scripts": {
     "dev": "next dev",

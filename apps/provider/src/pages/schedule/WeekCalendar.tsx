@@ -1,4 +1,5 @@
 import type { Appointment } from "@kiebitz-oss/api";
+import { AppointmentItem, AppointmentSet, getHexId } from "@kiebitz-oss/api";
 import { Tag } from "@kiebitz-oss/ui";
 import clsx from "clsx";
 import { Link } from "components/Link";
@@ -9,8 +10,7 @@ import localeData from "dayjs/plugin/localeData";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import weekOfYear from "dayjs/plugin/weekOfYear";
-import { AppointmentItem, AppointmentSet } from "lib/helpers/AppointmentSet";
-import { getHexId } from "lib/helpers/conversion";
+import { Fragment } from "react";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -270,7 +270,7 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
   );
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div className="flex flex-row justify-between w-full">
         <Link
           href={`/provider/schedule/week/${lastWeek < 0 ? 52 : lastWeek}`}
@@ -304,6 +304,6 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
           );
         })}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
