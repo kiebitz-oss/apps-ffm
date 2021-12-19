@@ -18,26 +18,15 @@
     "node": ">=14.18.1"
   },
   "workspaces": [
-    "apps/user",
-    "apps/mediator",
+    "packages/api",
     "packages/ui",
-    "packages/api"
+    "apps/user",
+    "apps/mediator"
   ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix ; stylelint src/**/*.css --fix",
-    "lint:css": "stylelint ./src/**/*.css",
-    "lint:css:fix": "stylelint ./src/**/*.css --fix",
     "test": "cross-env NODE_ENV=test jest",
     "e2e:serve": "lingui compile & webpack serve --mode=development",
     "e2e:test": "start-server-and-test e2e:serve http-get://localhost:3000 'cypress open'",
-    "i18n": "lingui",
-    "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",
-    "i18n:compile": "lingui compile",
-    "i18n:build": " cross-env NODE_ENV=development lingui extract --clean && lingui compile",
     "sb": "start-storybook -p 9000",
     "sb:build": "build-storybook",
     "docker:build": "docker build . -t kiebitz-apps",

@@ -2,12 +2,12 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
+import type { Appointment } from "@kiebitz-oss/api";
 import { CreateAppointmentModal } from "components/provider/CreateAppointmentModal";
 import { useProviderApi } from "components/provider/ProviderApiContext";
 import { WeekCalendar } from "components/provider/WeekCalendar";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import type { Appointment } from "types";
 import { Button, Title } from "ui";
 
 const SchedulePage: React.FC = () => {

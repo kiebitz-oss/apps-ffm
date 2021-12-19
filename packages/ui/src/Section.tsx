@@ -1,4 +1,3 @@
-import React from "react";
 import clsx from "clsx";
 
 type SectionProps = React.HTMLAttributes<HTMLElement>;

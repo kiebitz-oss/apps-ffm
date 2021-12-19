@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import React from "react";
 
 type ModalFooterProps = React.ComponentProps<"div">;
 

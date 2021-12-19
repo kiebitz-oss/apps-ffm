@@ -1,4 +1,3 @@
-import React from "react";
 import type { FormState } from "react-hook-form";
 import { Button, ButtonProps } from "./Button";
 

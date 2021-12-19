@@ -1,4 +1,5 @@
 import { Edit24 } from "@carbon/icons-react";
+import type { Appointment } from "@kiebitz-oss/api";
 import { appointments } from "@kiebitz-oss/api";
 import { Button, Error, InputField, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
@@ -10,7 +11,6 @@ import {
   useEffect,
   useState,
 } from "react";
-import type { Appointment } from "types";
 import { AppointmentCard } from "../AppointmentCard";
 import { Types, useFinderState } from "./FinderStateProvider";
 

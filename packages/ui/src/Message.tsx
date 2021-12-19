@@ -3,8 +3,8 @@
 // README.md contains license information.
 
 import clsx from "clsx";
-import React from "react";
 import { MessageVariant } from "./types";
+
 
 type MessageProps = {
   className?: string;

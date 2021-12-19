@@ -1,4 +1,4 @@
-import { UserApi } from "lib/UserApi";
+import { UserApi } from "@kiebitz-oss/api";
 import { createContext, useContext } from "react";
 
 interface UserApiContext {

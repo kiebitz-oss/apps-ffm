@@ -1,9 +1,9 @@
+import type { Provider } from "@kiebitz-oss/api";
 import { Tag } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { Link } from "components/Link";
 import { ChangeEventHandler, useRef } from "react";
-import type { Provider } from "types";
 
 interface ProviderRowProps {
   provider: Provider;

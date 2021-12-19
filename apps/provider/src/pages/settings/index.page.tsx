@@ -1,8 +1,8 @@
+import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { useProviderApi } from "components/provider/ProviderApiContext";
 import { AppointmentSet } from "lib/helpers/AppointmentSet";
 import type { NextPage } from "next";
-import { Button, Title } from "ui";
+import { useProviderApi } from "pages/ProviderApiContext";
 
 const SettingsPage: NextPage = () => {
   const api = useProviderApi();

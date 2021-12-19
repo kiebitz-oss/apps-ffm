@@ -1,3 +1,4 @@
+import type { Provider } from "@kiebitz-oss/api";
 import {
   Button,
   Modal,
@@ -9,7 +10,6 @@ import {
 } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useState } from "react";
-import type { Provider } from "types";
 import { useMediatorApi } from "./MediatorApiContext";
 
 interface ReconfirmProvidersModalProps extends ModalProps {

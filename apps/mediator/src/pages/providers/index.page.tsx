@@ -1,8 +1,8 @@
+import type { Provider } from "@kiebitz-oss/api";
 import { Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import type { Provider } from "types";
 import { useMediatorApi } from "../MediatorApiContext";
 import { ProviderList } from "./ProvidersList";
 

@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import React from "react";
 import { useFormContext } from "react-hook-form";
 import { Error } from "./Error";
 import { Label } from "./Label";

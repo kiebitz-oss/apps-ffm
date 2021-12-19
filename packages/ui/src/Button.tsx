@@ -3,7 +3,6 @@
 // README.md contains license information.
 
 import clsx from "clsx";
-import React from "react";
 import { Size } from "types/Size";
 import { Variant } from "types/Variant";
 

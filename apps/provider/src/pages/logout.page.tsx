@@ -1,9 +1,9 @@
+import { Button, CopyToClipboardButton, Text, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
-import { SecretBox } from "components/common/SecretBox";
-import { BackupDataLink } from "components/provider/BackupDataLink";
 import type { NextPage } from "next";
 import { MouseEventHandler, useState } from "react";
-import { Button, CopyToClipboardButton, Text, Title } from "ui";
+import { BackupDataLink } from "./onboarding/BackupDataLink";
+import { SecretBox } from "./onboarding/SecretBox";
 
 const LogOutPage: NextPage = () => {
   const [loggingOut, setLoggingOut] = useState(false);

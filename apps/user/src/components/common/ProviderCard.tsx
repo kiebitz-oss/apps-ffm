@@ -1,8 +1,7 @@
 import { Accessibility24 } from "@carbon/icons-react";
+import type { PublicProvider } from "@kiebitz-oss/api";
 import { Title } from "@kiebitz-oss/ui";
 import clsx from "clsx";
-import React from "react";
-import type { PublicProvider } from "types";
 
 export interface ProviderCardProps {
   provider: PublicProvider;

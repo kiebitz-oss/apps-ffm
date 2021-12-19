@@ -1,3 +1,4 @@
+import type { Provider } from "@kiebitz-oss/api";
 import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { BackLink } from "components/common/BackLink";
@@ -7,7 +8,6 @@ import { ConfirmProviderModal } from "pages/ConfirmProviderModal";
 import { useMediatorApi } from "pages/MediatorApiContext";
 import { UnconfirmProviderModal } from "pages/UnconfirmProviderModal";
 import { useEffect, useState } from "react";
-import type { Provider } from "types";
 
 const ProviderShowPage: NextPage = () => {
   const [provider, setProvider] = useState<Provider>();

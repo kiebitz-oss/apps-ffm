@@ -1,8 +1,8 @@
 import { CheckmarkOutline16, ErrorOutline16 } from "@carbon/icons-react";
+import type { Provider } from "@kiebitz-oss/api";
 import { Button } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import { ChangeEventHandler, useState } from "react";
-import type { Provider } from "types";
 import { ReconfirmProvidersModal } from "../ReconfirmProvidersModal";
 import { ProviderRow } from "./ProviderRow";
 

@@ -1,7 +1,6 @@
 import { ArrowLeft16 } from "@carbon/icons-react";
 import clsx from "clsx";
 import { Link, LinkProps } from "components/Link";
-import React from "react";
 
 export const BackLink: React.FC<LinkProps> = ({
   children,

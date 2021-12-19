@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import React from "react";
 
 export interface TagProps extends React.ComponentProps<"p"> {
   variant?: "success" | "warning" | "error";
