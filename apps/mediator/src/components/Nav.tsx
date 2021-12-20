@@ -1,5 +1,5 @@
 import { Logout16 } from "@carbon/icons-react";
-import { Link } from "./Link";
+import { Link } from "@kiebitz-oss/ui";
 
 export const Nav: React.FC = () => {
   return (

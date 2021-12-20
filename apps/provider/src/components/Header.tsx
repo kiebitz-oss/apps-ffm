@@ -1,6 +1,6 @@
 import { theme } from "@kiebitz-oss/config";
+import { Link } from "@kiebitz-oss/ui";
 import logoUrl from "../../public/assets/ffm-logo.svg";
-import { Link } from "./Link";
 import { Nav } from "./Nav";
 
 export interface HeaderProps extends React.ComponentProps<"header"> {

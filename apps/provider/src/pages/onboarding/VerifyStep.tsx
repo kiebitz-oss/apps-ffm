@@ -2,9 +2,8 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Button, Title } from "@kiebitz-oss/ui";
+import { Button, Link, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { Link } from "components/Link";
 import { useRouter } from "next/router";
 import { useProviderApi } from "../ProviderApiContext";
 import { ProviderDataSummary } from "../ProviderDataSummary";

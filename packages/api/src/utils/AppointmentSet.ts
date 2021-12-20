@@ -1,6 +1,11 @@
+// Kiebitz - Privacy-Friendly Appointments
+// Copyright (C) 2021-2021 The Kiebitz Authors
+// README.md contains license information.
+
+import type { Vaccine } from "@kiebitz-oss/config";
 import dayjs from "dayjs";
-import { providers } from "index";
-import type { Appointment, Slot, Vaccine } from "types";
+import { providers } from "../fixtures/providers";
+import type { Appointment, Slot } from "../types";
 import { randomBytes } from "./crypto";
 
 export const createSlot = (open = true): Slot => {

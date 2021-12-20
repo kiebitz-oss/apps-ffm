@@ -1,9 +1,14 @@
-import { Button, CopyToClipboardButton, Text, Title } from "@kiebitz-oss/ui";
+import {
+  Button,
+  CopyToClipboardButton,
+  SecretBox,
+  Text,
+  Title,
+} from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import type { NextPage } from "next";
 import { MouseEventHandler, useState } from "react";
 import { BackupDataLink } from "./onboarding/BackupDataLink";
-import { SecretBox } from "./onboarding/SecretBox";
 import { useProviderApi } from "./ProviderApiContext";
 
 const LogOutPage: NextPage = () => {
@@ -61,7 +66,12 @@ const LogOutPage: NextPage = () => {
         )}
       </Text>
 
-      {secret && <SecretBox secret={secret} />}
+      <div>
+        <Title variant="book" as="h3">
+          <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
+        </Title>
+        {secret && <SecretBox secret={secret} />}
+      </div>
 
       {secret && (
         <div className="flex flex-row justify-between">

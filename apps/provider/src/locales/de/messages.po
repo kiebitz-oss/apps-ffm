@@ -13,67 +13,67 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: pages/onboarding/DataSecret.tsx:11
+#: pages/onboarding/DataSecret.tsx:12
 msgid "common.data-secret.text"
 msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn, um sich auf einem anderen PC (Tablet, Smartphone etc.) einzuloggen oder auf einem anderen Endgerät auf Ihre Termine zugreifen zu können."
 
-#: components/Footer.tsx:24
+#: components/Footer.tsx:23
 msgid "common.footer.link.booking"
 msgstr "Impfterminen buchen"
 
-#: components/Footer.tsx:60
+#: components/Footer.tsx:59
 msgid "common.footer.link.english"
 msgstr "English"
 
-#: components/Footer.tsx:29
+#: components/Footer.tsx:28
 msgid "common.footer.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/Footer.tsx:48
+#: components/Footer.tsx:47
 msgid "common.footer.link.german"
 msgstr "Deutsch"
 
-#: components/Footer.tsx:70
+#: components/Footer.tsx:69
 msgid "common.footer.link.imprint"
 msgstr "Impressum"
 
-#: components/Footer.tsx:87
+#: components/Footer.tsx:86
 msgid "common.footer.link.kiebitz"
 msgstr "Realisiert mit Kiebitz"
 
-#: components/Footer.tsx:75
+#: components/Footer.tsx:74
 msgid "common.footer.link.privacy"
 msgstr "Datenschutz"
 
-#: components/Footer.tsx:18
+#: components/Footer.tsx:17
 msgid "common.footer.title.informations"
 msgstr "Informationen"
 
-#: components/Footer.tsx:35
+#: components/Footer.tsx:34
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
-#: pages/logout.page.tsx:84
+#: pages/logout.page.tsx:94
 msgid "provider.logout.button"
 msgstr "Abmelden"
 
-#: pages/logout.page.tsx:69
+#: pages/logout.page.tsx:79
 msgid "provider.logout.copy-secret"
 msgstr "Datenschlüssel kopieren"
 
-#: pages/logout.page.tsx:75
+#: pages/logout.page.tsx:85
 msgid "provider.logout.download-backup"
 msgstr "Sicherungsdatei herunterladen"
 
-#: pages/logout.page.tsx:56
+#: pages/logout.page.tsx:61
 msgid "provider.logout.intro"
 msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie Ihren Datenschlüssel notiert und Ihre Sicherungsdatei heruntergeladen haben . Nur damit können Sie sich erneut einloggen."
 
-#: pages/logout.page.tsx:52
+#: pages/logout.page.tsx:57
 msgid "provider.logout.notice.logging-out"
 msgstr "Bitte warten, Sie werden abgemeldet..."
 
-#: pages/logout.page.tsx:47
+#: pages/logout.page.tsx:52
 msgid "provider.logout.title"
 msgstr "Abmelden"
 
@@ -149,11 +149,11 @@ msgstr "Telefonnummer"
 msgid "provider.onboarding.save-and-continue"
 msgstr "Weiter"
 
-#: pages/onboarding/SecretStep.tsx:43
+#: pages/onboarding/SecretStep.tsx:42
 msgid "provider.onboarding.secret.button"
 msgstr "Abschließen & zur Terminplanung"
 
-#: pages/onboarding/SecretStep.tsx:30
+#: pages/onboarding/SecretStep.tsx:29
 msgid "provider.onboarding.secret.notice"
 msgstr "Um sich später wieder einzuloggen oder Ihre Termine zugreifen zu können, benötigen Sie Ihre SICHERHEITSDATEI und Ihren SICHERHEITSCODE. Bitte speichern Sie jetzt Ihre SICHERHEITSDATEI und notieren Sie sich im Anschluss den SICHERHEITSCODE."
 
@@ -173,11 +173,11 @@ msgstr "Straße & Hausnummer"
 msgid "provider.onboarding.title"
 msgstr "Allgemeine Daten"
 
-#: pages/onboarding/VerifyStep.tsx:42
+#: pages/onboarding/VerifyStep.tsx:41
 msgid "provider.onboarding.verify.button"
 msgstr "Weiter"
 
-#: pages/onboarding/VerifyStep.tsx:38
+#: pages/onboarding/VerifyStep.tsx:37
 msgid "provider.onboarding.verify.edit-data"
 msgstr "Anpassen"
 
@@ -332,7 +332,8 @@ msgstr "Uhrzeit"
 msgid "provider.schedule.create.appointment-modal.vaccine-label"
 msgstr "Impfstoff"
 
-#: pages/onboarding/SecretBox.tsx:35
+#: pages/logout.page.tsx:71
+#: pages/onboarding/DataSecret.tsx:21
 msgid "provider.secret.title"
 msgstr "Ihr Sicherheitscode"
 
@@ -340,10 +341,10 @@ msgstr "Ihr Sicherheitscode"
 msgid "provider.settings.title"
 msgstr "Einstellungen"
 
-#: pages/index.page.tsx:23
+#: pages/index.page.tsx:22
 msgid "provider.welcome.loggedout-.notice"
 msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit Ihrem Datenschlüssel und Ihrer Sicherheitsdatei wiederherstellen."
 
-#: pages/index.page.tsx:18
+#: pages/index.page.tsx:17
 msgid "provider.welcome.title"
 msgstr "Impstellen"

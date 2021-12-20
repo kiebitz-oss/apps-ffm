@@ -26,7 +26,7 @@
     "clean": "rimraf --no-glob ./.next ./dist",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests",
     "i18n": "lingui",
     "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",
     "i18n:compile": "lingui compile",
@@ -111,23 +111,6 @@
       "@lingui/core",
       "i18n"
     ]
-  },
-  "postcss": {
-    "plugins": {
-      "tailwindcss/nesting": {},
-      "tailwindcss": {},
-      "postcss-flexbugs-fixes": {},
-      "postcss-preset-env": {
-        "autoprefixer": {
-          "flexbox": "no-2009"
-        },
-        "stage": 3,
-        "features": {
-          "nesting-rules": false,
-          "custom-properties": false
-        }
-      }
-    }
   },
   "eslintConfig": {
     "extends": [

@@ -1,6 +1,9 @@
-import { CopyToClipboardButton, Title } from "@kiebitz-oss/ui";
-import { Trans } from "@lingui/macro";
+// Kiebitz - Privacy-Friendly Appointments
+// Copyright (C) 2021-2021 The Kiebitz Authors
+// README.md contains license information.
+
 import { Fragment } from "react";
+import { CopyToClipboardButton } from "../CopyToClipboardButton";
 
 const renderSecret = (secret: string) => {
   const chunks = secret?.match(/.{1,4}/g) || [];
@@ -30,19 +33,13 @@ export const SecretBox: React.FC<SecretBoxProps> = ({
   copy = false,
 }) => {
   return (
-    <div>
-      <Title variant="book" as="h3">
-        <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
-      </Title>
-
-      <code className="flex justify-center items-center p-4 text-2xl font-bold text-white uppercase bg-black rounded">
-        {renderSecret(secret)}
-        {copy && (
-          <CopyToClipboardButton toCopy={secret} className="text-sm">
-            &
-          </CopyToClipboardButton>
-        )}
-      </code>
-    </div>
+    <code className="flex justify-center items-center p-4 text-2xl font-bold text-white uppercase bg-black rounded">
+      {renderSecret(secret)}
+      {copy && (
+        <CopyToClipboardButton toCopy={secret} className="text-sm">
+          &
+        </CopyToClipboardButton>
+      )}
+    </code>
   );
 };

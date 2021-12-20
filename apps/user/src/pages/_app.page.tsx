@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import "../../../../app.css";
 import { Layout } from "../components/Layout";
 import { loadLocale } from "../components/useI18n";
+import { messages } from "../locales/de/messages";
 import { UserApiProvider } from "./UserApiContext";
 
 i18n.loadLocaleData({
@@ -14,13 +15,14 @@ i18n.loadLocaleData({
   en: { plurals: en },
 });
 
-loadLocale(i18n, "de");
+i18n.load("de", messages);
+i18n.activate("de");
 
 const App = ({ Component, pageProps }: AppProps) => {
   const locale = i18n.locale;
 
   useEffect(() => {
-    if (locale) {
+    if (locale !== i18n.locale) {
       loadLocale(i18n, locale);
     }
   }, [locale]);

@@ -10,7 +10,7 @@ import { Questionaire } from "./Questionair";
 const UserStartPage: NextPage = () => {
   return (
     <main id="welcome">
-      <Title variant="h1" as="h2" data-test="view.title">
+      <Title variant="h1" as="h2" data-testid="view.title">
         <Trans id="user.welcome.title">Willkommen!</Trans>
       </Title>
 

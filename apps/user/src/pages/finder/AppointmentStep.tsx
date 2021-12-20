@@ -1,6 +1,6 @@
 import { Edit24 } from "@carbon/icons-react";
 import type { Appointment } from "@kiebitz-oss/api";
-import { Button, Error, InputField, Title } from "@kiebitz-oss/ui";
+import { BackLink, Button, Error, InputField, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import {
   ChangeEventHandler,
@@ -8,7 +8,6 @@ import {
   useEffect,
   useState,
 } from "react";
-import { BackLink } from "../../components/BackLink";
 import { Link } from "../../components/Link";
 import { AppointmentCard } from "../AppointmentCard";
 import { useUserApi } from "../UserApiContext";

@@ -1,0 +1,57 @@
+import { i18n } from "@lingui/core";
+import { I18nProvider } from "@lingui/react";
+import { act, getByText, render } from "@testing-library/react";
+import { de, en } from "make-plural/plurals";
+import { messages as deMessages } from "../locales/de/messages";
+import { messages as enMessages } from "../locales/en/messages";
+import IndexPage from "./index.page";
+
+i18n.load("de", deMessages);
+i18n.load("en", enMessages);
+
+i18n.loadLocaleData({
+  de: { plurals: de },
+  en: { plurals: en },
+});
+
+const TestingProvider: React.FC = ({ children }) => (
+  <I18nProvider i18n={i18n}>{children}</I18nProvider>
+);
+
+describe("IndexPage", () => {
+  it("should be translated correctly in German", () => {
+    act(() => {
+      i18n.activate("de");
+    });
+
+    const { getByTestId, container } = render(
+      <TestingProvider>
+        <IndexPage />
+      </TestingProvider>,
+      {
+        wrapper: TestingProvider,
+      }
+    );
+
+    expect(getByTestId("view.title")).toBeInTheDocument();
+    expect(getByText(container, "Willkommen!")).toBeDefined();
+  });
+
+  it("should be translated correctly in Czech", () => {
+    act(() => {
+      i18n.activate("en");
+    });
+
+    const { getByTestId, container } = render(
+      <TestingProvider>
+        <IndexPage />
+      </TestingProvider>,
+      {
+        wrapper: TestingProvider,
+      }
+    );
+
+    expect(getByTestId("view.title")).toBeInTheDocument();
+    expect(getByText(container, "user.welcome.title")).toBeDefined();
+  });
+});

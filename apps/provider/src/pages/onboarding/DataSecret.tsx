@@ -1,8 +1,9 @@
-import { Text } from "@kiebitz-oss/ui";
+import { SecretBox, SecretBoxProps, Text, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { SecretBox, SecretBoxProps } from "./SecretBox";
 
-interface DataSecretProps extends SecretBoxProps {}
+interface DataSecretProps extends SecretBoxProps {
+  secret: string;
+}
 
 export const DataSecret: React.FC<DataSecretProps> = ({ secret }) => {
   return (
@@ -15,7 +16,12 @@ export const DataSecret: React.FC<DataSecretProps> = ({ secret }) => {
         </Trans>
       </Text>
 
-      <SecretBox secret={secret} copy />
+      <div>
+        <Title variant="book" as="h3">
+          <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
+        </Title>
+        <SecretBox secret={secret} copy />
+      </div>
     </>
   );
 };

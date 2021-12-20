@@ -13,51 +13,59 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/Header.tsx:59
-msgid "Fragen & Antworten"
-msgstr "Fragen & Antworten"
-
-#: components/Header.tsx:55
-msgid "Impftermin buchen"
-msgstr "Impftermin buchen"
-
-#: components/Footer.tsx:24
+#: components/Footer.tsx:23
 msgid "common.footer.link.booking"
 msgstr "Impfterminen buchen"
 
-#: components/Footer.tsx:60
+#: components/Footer.tsx:59
 msgid "common.footer.link.english"
 msgstr "English"
 
-#: components/Footer.tsx:29
+#: components/Footer.tsx:28
 msgid "common.footer.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/Footer.tsx:48
+#: components/Footer.tsx:47
 msgid "common.footer.link.german"
 msgstr "Deutsch"
 
-#: components/Footer.tsx:70
+#: components/Footer.tsx:69
 msgid "common.footer.link.imprint"
 msgstr "Impressum"
 
-#: components/Footer.tsx:87
+#: components/Footer.tsx:86
 msgid "common.footer.link.kiebitz"
 msgstr "Realisiert mit Kiebitz"
 
-#: components/Footer.tsx:75
+#: components/Footer.tsx:74
 msgid "common.footer.link.privacy"
 msgstr "Datenschutz"
 
-#: components/Footer.tsx:18
+#: components/Footer.tsx:17
 msgid "common.footer.title.informations"
 msgstr "Informationen"
 
-#: components/Footer.tsx:35
+#: components/Footer.tsx:34
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
-#: pages/finder/AppointmentStep.tsx:88
+#: components/Header.tsx:55
+msgid "header.nav.link.book_vaccination"
+msgstr "Impftermin buchen"
+
+#: components/Header.tsx:59
+msgid "header.nav.link.faq"
+msgstr "Fragen & Antworten"
+
+#: components/Header.tsx:78
+msgid "header.nav.link.lang_english_short"
+msgstr "EN"
+
+#: components/Header.tsx:69
+msgid "header.nav.link.lang_german_short"
+msgstr "DE"
+
+#: pages/finder/AppointmentStep.tsx:87
 msgid "user.finder.appointment.back-link"
 msgstr "Zurück zur Auswahl der Impfstelle"
 
@@ -65,7 +73,7 @@ msgstr "Zurück zur Auswahl der Impfstelle"
 msgid "user.finder.appointment.card.date"
 msgstr "am {0}"
 
-#: pages/finder/AppointmentStep.tsx:47
+#: pages/finder/AppointmentStep.tsx:46
 msgid "user.finder.appointment.card.submit"
 msgstr "Termin auswählen"
 
@@ -73,55 +81,55 @@ msgstr "Termin auswählen"
 msgid "user.finder.appointment.card.time"
 msgstr "{0} Uhr"
 
-#: pages/finder/AppointmentStep.tsx:134
+#: pages/finder/AppointmentStep.tsx:133
 msgid "user.finder.appointment.no-result"
 msgstr "Es sind keine freien Termine verfügbar.<0/><1/>Bitte versuchen Sie einen späteren Zeitpunkt oder ein anderen Impfstelle."
 
-#: pages/finder/AppointmentStep.tsx:102
+#: pages/finder/AppointmentStep.tsx:101
 msgid "user.finder.appointment.provider.placeholder"
 msgstr "Beliebige Impfstelle"
 
-#: pages/finder/AppointmentStep.tsx:121
+#: pages/finder/AppointmentStep.tsx:120
 msgid "user.finder.appointment.time.placeholder"
 msgstr "Beliebige Zeit"
 
-#: pages/finder/AppointmentStep.tsx:94
+#: pages/finder/AppointmentStep.tsx:93
 msgid "user.finder.appointment.title"
 msgstr "Termine"
 
-#: pages/finder/DateStep.tsx:10
+#: pages/finder/DateStep.tsx:8
 msgid "user.finder.date.back-link"
 msgstr "zurück zum Terminauswahl"
 
-#: pages/finder/DateStep.tsx:18
+#: pages/finder/DateStep.tsx:16
 msgid "user.finder.date.intro"
 msgstr "Wann möchten Sie sich impfen lassen, Sie können Datum und Uhrzeit jederzeit im Prozess anpassen, wenn gewünscht. Bitte geben Sie ihren Wunschtermin unten an."
 
-#: pages/finder/DateStep.tsx:27
+#: pages/finder/DateStep.tsx:25
 msgid "user.finder.date.label"
 msgstr "Datum"
 
-#: pages/finder/DateStep.tsx:47
+#: pages/finder/DateStep.tsx:45
 msgid "user.finder.date.submit"
 msgstr "Termin auswählen"
 
-#: pages/finder/DateStep.tsx:14
+#: pages/finder/DateStep.tsx:12
 msgid "user.finder.date.title"
 msgstr "Datum und Uhrzeit"
 
-#: pages/finder/LocationStep.tsx:56
+#: pages/finder/LocationStep.tsx:54
 msgid "user.finder.location.accessible.label"
 msgstr "Nur barrierefreie Impfstellen"
 
-#: pages/finder/LocationStep.tsx:39
+#: pages/finder/LocationStep.tsx:37
 msgid "user.finder.location.back-link"
 msgstr "Zurück zu den allgemeinen Informationen"
 
-#: pages/finder/LocationStep.tsx:49
+#: pages/finder/LocationStep.tsx:47
 msgid "user.finder.location.intro"
 msgstr "Wählen Sie aus den möglichen Optionen, wo Sie geimpft werden möchten."
 
-#: pages/finder/LocationStep.tsx:45
+#: pages/finder/LocationStep.tsx:43
 msgid "user.finder.location.title"
 msgstr "Impfstellen"
 
@@ -145,31 +153,31 @@ msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und brin
 msgid "user.finder.success.title"
 msgstr "Ihr Termin ist gebucht!"
 
-#: pages/finder/DateStep.tsx:37
+#: pages/finder/DateStep.tsx:35
 msgid "user.finder.time.label"
 msgstr "Zeit"
 
-#: pages/finder/VerifyStep.tsx:57
+#: pages/finder/VerifyStep.tsx:55
 msgid "user.finder.verify.appointment.description"
 msgstr "{0}"
 
-#: pages/finder/VerifyStep.tsx:43
+#: pages/finder/VerifyStep.tsx:41
 msgid "user.finder.verify.appointment.subtitle"
 msgstr "Ihr Termin"
 
-#: pages/finder/VerifyStep.tsx:23
+#: pages/finder/VerifyStep.tsx:21
 msgid "user.finder.verify.back-link"
 msgstr "zurück zum Terminauswahl"
 
-#: pages/finder/VerifyStep.tsx:33
+#: pages/finder/VerifyStep.tsx:31
 msgid "user.finder.verify.intro"
 msgstr "Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob alles stimmt.<0/> Anschließend können Sie den Termin endgültig buchen."
 
-#: pages/finder/VerifyStep.tsx:70
+#: pages/finder/VerifyStep.tsx:68
 msgid "user.finder.verify.submit"
 msgstr "Termin jetzt buchen"
 
-#: pages/finder/VerifyStep.tsx:29
+#: pages/finder/VerifyStep.tsx:27
 msgid "user.finder.verify.title"
 msgstr "Übersicht"
 

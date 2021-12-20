@@ -29,7 +29,7 @@
     "build": "rimraf --no-glob ./dist && cross-env NODE_ENV=production yarn run bundle --compress",
     "dev": "yarn run bundle watch --no-compress",
     "clean": "rimraf --no-glob ./dist",
-    "test": "cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests"
   },
   "dependencies": {},
   "devDependencies": {

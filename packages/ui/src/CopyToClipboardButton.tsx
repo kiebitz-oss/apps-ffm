@@ -1,4 +1,7 @@
-// import { Trans } from "@lingui/macro";
+// Kiebitz - Privacy-Friendly Appointments
+// Copyright (C) 2021-2021 The Kiebitz Authors
+// README.md contains license information.
+
 import { MouseEventHandler } from "react";
 import { useCopyToClipboard } from "react-use";
 import { ButtonProps } from "./Button";

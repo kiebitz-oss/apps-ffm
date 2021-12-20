@@ -24,11 +24,11 @@
     "build": "cross-env NODE_ENV=development lingui extract --clean && lingui compile && next build && next export --outdir dist",
     "start": "next start",
     "clean": "rimraf --no-glob ./.next ./dist",
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "i18n": "lingui",
-    "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",
+    "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean",
     "i18n:compile": "lingui compile",
     "i18n:build": "cross-env NODE_ENV=development lingui extract --clean && lingui compile",
     "docker:build": "docker build . -t kiebitz-user",
@@ -42,6 +42,7 @@
     "@kiebitz-oss/config": "*",
     "@kiebitz-oss/ui": "*",
     "@lingui/react": "^3.13.0",
+    "@types/jest": "^27.0.3",
     "clsx": "^1.1.1",
     "next": "^12.0.7",
     "react": "^17.0.2",
@@ -53,11 +54,15 @@
     "@lingui/cli": "^3.13.0",
     "@lingui/macro": "^3.13.0",
     "@next/mdx": "^12.0.7",
+    "@svgr/webpack": "^6.1.2",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
     "@types/react": "^17.0.37",
+    "babel-jest": "^27.4.5",
     "babel-plugin-macros": "^3.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.5.0",
@@ -109,21 +114,27 @@
       "i18n"
     ]
   },
-  "postcss": {
-    "plugins": {
-      "tailwindcss/nesting": {},
-      "tailwindcss": {},
-      "postcss-flexbugs-fixes": {},
-      "postcss-preset-env": {
-        "autoprefixer": {
-          "flexbox": "no-2009"
-        },
-        "stage": 3,
-        "features": {
-          "nesting-rules": false,
-          "custom-properties": false
+  "jest": {
+    "testEnvironment": "jsdom",
+    "rootDir": "src",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom",
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/.next/",
+      "<rootDir>/dist/"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": [
+        "babel-jest",
+        {
+          "presets": [
+            "next/babel"
+          ]
         }
-      }
+      ]
     }
   },
   "eslintConfig": {

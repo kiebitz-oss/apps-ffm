@@ -43,7 +43,7 @@ export const ProviderList: React.FC<ProviderTableProps> = ({ providers }) => {
           </Trans>
         </caption>
         <thead>
-          <tr className="cursor-pointer hover:bg-primary/10">
+          <tr className="hover:bg-primary/10 cursor-pointer">
             <th scope="col" className="inline-flex items-center w-6">
               <input
                 type="checkbox"

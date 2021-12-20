@@ -3,7 +3,7 @@
 // README.md contains license information.
 
 import clsx from "clsx";
-import RouterLink from "next/link";
+import RouterLink from "next/link.js";
 // import { loadLocale, useI18n } from "./useI18n";
 
 export interface LinkProps extends React.ComponentProps<"a"> {

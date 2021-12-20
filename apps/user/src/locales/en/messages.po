@@ -13,51 +13,59 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/Header.tsx:59
-msgid "Fragen & Antworten"
-msgstr ""
-
-#: components/Header.tsx:55
-msgid "Impftermin buchen"
-msgstr ""
-
-#: components/Footer.tsx:24
+#: components/Footer.tsx:23
 msgid "common.footer.link.booking"
 msgstr ""
 
-#: components/Footer.tsx:60
+#: components/Footer.tsx:59
 msgid "common.footer.link.english"
 msgstr ""
 
-#: components/Footer.tsx:29
+#: components/Footer.tsx:28
 msgid "common.footer.link.faq"
 msgstr ""
 
-#: components/Footer.tsx:48
+#: components/Footer.tsx:47
 msgid "common.footer.link.german"
 msgstr ""
 
-#: components/Footer.tsx:70
+#: components/Footer.tsx:69
 msgid "common.footer.link.imprint"
 msgstr ""
 
-#: components/Footer.tsx:87
+#: components/Footer.tsx:86
 msgid "common.footer.link.kiebitz"
 msgstr ""
 
-#: components/Footer.tsx:75
+#: components/Footer.tsx:74
 msgid "common.footer.link.privacy"
 msgstr ""
 
-#: components/Footer.tsx:18
+#: components/Footer.tsx:17
 msgid "common.footer.title.informations"
 msgstr ""
 
-#: components/Footer.tsx:35
+#: components/Footer.tsx:34
 msgid "common.footer.title.languages"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:88
+#: components/Header.tsx:55
+msgid "header.nav.link.book_vaccination"
+msgstr ""
+
+#: components/Header.tsx:59
+msgid "header.nav.link.faq"
+msgstr ""
+
+#: components/Header.tsx:78
+msgid "header.nav.link.lang_english_short"
+msgstr ""
+
+#: components/Header.tsx:69
+msgid "header.nav.link.lang_german_short"
+msgstr ""
+
+#: pages/finder/AppointmentStep.tsx:87
 msgid "user.finder.appointment.back-link"
 msgstr ""
 
@@ -65,7 +73,7 @@ msgstr ""
 msgid "user.finder.appointment.card.date"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:47
+#: pages/finder/AppointmentStep.tsx:46
 msgid "user.finder.appointment.card.submit"
 msgstr ""
 
@@ -73,55 +81,55 @@ msgstr ""
 msgid "user.finder.appointment.card.time"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:134
+#: pages/finder/AppointmentStep.tsx:133
 msgid "user.finder.appointment.no-result"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:102
+#: pages/finder/AppointmentStep.tsx:101
 msgid "user.finder.appointment.provider.placeholder"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:121
+#: pages/finder/AppointmentStep.tsx:120
 msgid "user.finder.appointment.time.placeholder"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:94
+#: pages/finder/AppointmentStep.tsx:93
 msgid "user.finder.appointment.title"
 msgstr ""
 
-#: pages/finder/DateStep.tsx:10
+#: pages/finder/DateStep.tsx:8
 msgid "user.finder.date.back-link"
 msgstr ""
 
-#: pages/finder/DateStep.tsx:18
+#: pages/finder/DateStep.tsx:16
 msgid "user.finder.date.intro"
 msgstr ""
 
-#: pages/finder/DateStep.tsx:27
+#: pages/finder/DateStep.tsx:25
 msgid "user.finder.date.label"
 msgstr ""
 
-#: pages/finder/DateStep.tsx:47
+#: pages/finder/DateStep.tsx:45
 msgid "user.finder.date.submit"
 msgstr ""
 
-#: pages/finder/DateStep.tsx:14
+#: pages/finder/DateStep.tsx:12
 msgid "user.finder.date.title"
 msgstr ""
 
-#: pages/finder/LocationStep.tsx:56
+#: pages/finder/LocationStep.tsx:54
 msgid "user.finder.location.accessible.label"
 msgstr ""
 
-#: pages/finder/LocationStep.tsx:39
+#: pages/finder/LocationStep.tsx:37
 msgid "user.finder.location.back-link"
 msgstr ""
 
-#: pages/finder/LocationStep.tsx:49
+#: pages/finder/LocationStep.tsx:47
 msgid "user.finder.location.intro"
 msgstr ""
 
-#: pages/finder/LocationStep.tsx:45
+#: pages/finder/LocationStep.tsx:43
 msgid "user.finder.location.title"
 msgstr ""
 
@@ -145,31 +153,31 @@ msgstr ""
 msgid "user.finder.success.title"
 msgstr ""
 
-#: pages/finder/DateStep.tsx:37
+#: pages/finder/DateStep.tsx:35
 msgid "user.finder.time.label"
 msgstr ""
 
-#: pages/finder/VerifyStep.tsx:57
+#: pages/finder/VerifyStep.tsx:55
 msgid "user.finder.verify.appointment.description"
 msgstr ""
 
-#: pages/finder/VerifyStep.tsx:43
+#: pages/finder/VerifyStep.tsx:41
 msgid "user.finder.verify.appointment.subtitle"
 msgstr ""
 
-#: pages/finder/VerifyStep.tsx:23
+#: pages/finder/VerifyStep.tsx:21
 msgid "user.finder.verify.back-link"
 msgstr ""
 
-#: pages/finder/VerifyStep.tsx:33
+#: pages/finder/VerifyStep.tsx:31
 msgid "user.finder.verify.intro"
 msgstr ""
 
-#: pages/finder/VerifyStep.tsx:70
+#: pages/finder/VerifyStep.tsx:68
 msgid "user.finder.verify.submit"
 msgstr ""
 
-#: pages/finder/VerifyStep.tsx:29
+#: pages/finder/VerifyStep.tsx:27
 msgid "user.finder.verify.title"
 msgstr ""
 

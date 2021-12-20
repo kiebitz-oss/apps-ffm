@@ -1,10 +1,10 @@
 import { theme } from "@kiebitz-oss/config";
+import { Link } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import logoUrl from "../../public/assets/ffm-logo.svg";
 import { useUserApi } from "../pages/UserApiContext";
-import { Link } from "./Link";
 import { useI18n } from "./useI18n";
 
 export interface HeaderProps extends React.ComponentProps<"header"> {
