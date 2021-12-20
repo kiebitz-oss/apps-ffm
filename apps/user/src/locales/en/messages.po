@@ -1,0 +1,218 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2021-12-17 20:33+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: components/Header.tsx:58
+msgid "Fragen & Antworten"
+msgstr ""
+
+#: components/Header.tsx:54
+msgid "Impftermin buchen"
+msgstr ""
+
+#: components/Footer.tsx:24
+msgid "common.footer.link.booking"
+msgstr ""
+
+#: components/Footer.tsx:60
+msgid "common.footer.link.english"
+msgstr ""
+
+#: components/Footer.tsx:29
+msgid "common.footer.link.faq"
+msgstr ""
+
+#: components/Footer.tsx:48
+msgid "common.footer.link.german"
+msgstr ""
+
+#: components/Footer.tsx:70
+msgid "common.footer.link.imprint"
+msgstr ""
+
+#: components/Footer.tsx:87
+msgid "common.footer.link.kiebitz"
+msgstr ""
+
+#: components/Footer.tsx:75
+msgid "common.footer.link.privacy"
+msgstr ""
+
+#: components/Footer.tsx:18
+msgid "common.footer.title.informations"
+msgstr ""
+
+#: components/Footer.tsx:35
+msgid "common.footer.title.languages"
+msgstr ""
+
+#: pages/finder/AppointmentStep.tsx:88
+msgid "user.finder.appointment.back-link"
+msgstr ""
+
+#: pages/AppointmentCard.tsx:55
+msgid "user.finder.appointment.card.date"
+msgstr ""
+
+#: pages/finder/AppointmentStep.tsx:47
+msgid "user.finder.appointment.card.submit"
+msgstr ""
+
+#: pages/AppointmentCard.tsx:45
+msgid "user.finder.appointment.card.time"
+msgstr ""
+
+#: pages/finder/AppointmentStep.tsx:134
+msgid "user.finder.appointment.no-result"
+msgstr ""
+
+#: pages/finder/AppointmentStep.tsx:102
+msgid "user.finder.appointment.provider.placeholder"
+msgstr ""
+
+#: pages/finder/AppointmentStep.tsx:121
+msgid "user.finder.appointment.time.placeholder"
+msgstr ""
+
+#: pages/finder/AppointmentStep.tsx:94
+msgid "user.finder.appointment.title"
+msgstr ""
+
+#: pages/finder/DateStep.tsx:10
+msgid "user.finder.date.back-link"
+msgstr ""
+
+#: pages/finder/DateStep.tsx:18
+msgid "user.finder.date.intro"
+msgstr ""
+
+#: pages/finder/DateStep.tsx:27
+msgid "user.finder.date.label"
+msgstr ""
+
+#: pages/finder/DateStep.tsx:47
+msgid "user.finder.date.submit"
+msgstr ""
+
+#: pages/finder/DateStep.tsx:14
+msgid "user.finder.date.title"
+msgstr ""
+
+#: pages/finder/LocationStep.tsx:56
+msgid "user.finder.location.accessible.label"
+msgstr ""
+
+#: pages/finder/LocationStep.tsx:39
+msgid "user.finder.location.back-link"
+msgstr ""
+
+#: pages/finder/LocationStep.tsx:49
+msgid "user.finder.location.intro"
+msgstr ""
+
+#: pages/finder/LocationStep.tsx:45
+msgid "user.finder.location.title"
+msgstr ""
+
+#: pages/finder/SuccessStep.tsx:73
+msgid "user.finder.success.appointment-code"
+msgstr ""
+
+#: pages/finder/SuccessStep.tsx:63
+msgid "user.finder.success.appointment-title"
+msgstr ""
+
+#: pages/finder/SuccessStep.tsx:103
+msgid "user.finder.success.cancel-button"
+msgstr ""
+
+#: pages/finder/SuccessStep.tsx:87
+msgid "user.finder.success.intro"
+msgstr ""
+
+#: pages/finder/SuccessStep.tsx:55
+msgid "user.finder.success.title"
+msgstr ""
+
+#: pages/finder/DateStep.tsx:37
+msgid "user.finder.time.label"
+msgstr ""
+
+#: pages/finder/VerifyStep.tsx:57
+msgid "user.finder.verify.appointment.description"
+msgstr ""
+
+#: pages/finder/VerifyStep.tsx:43
+msgid "user.finder.verify.appointment.subtitle"
+msgstr ""
+
+#: pages/finder/VerifyStep.tsx:23
+msgid "user.finder.verify.back-link"
+msgstr ""
+
+#: pages/finder/VerifyStep.tsx:33
+msgid "user.finder.verify.intro"
+msgstr ""
+
+#: pages/finder/VerifyStep.tsx:70
+msgid "user.finder.verify.submit"
+msgstr ""
+
+#: pages/finder/VerifyStep.tsx:29
+msgid "user.finder.verify.title"
+msgstr ""
+
+#: pages/Questionair.tsx:149
+msgid "user.welcome.button"
+msgstr ""
+
+#: pages/Questionair.tsx:135
+msgid "user.welcome.form_error"
+msgstr ""
+
+#: pages/index.page.tsx:18
+msgid "user.welcome.intro-1"
+msgstr ""
+
+#: pages/index.page.tsx:24
+msgid "user.welcome.intro-2"
+msgstr ""
+
+#: pages/Questionair.tsx:85
+msgid "user.welcome.question1_value"
+msgstr ""
+
+#: pages/Questionair.tsx:95
+msgid "user.welcome.question2_error"
+msgstr ""
+
+#: pages/Questionair.tsx:101
+msgid "user.welcome.question2_value"
+msgstr ""
+
+#: pages/Questionair.tsx:109
+msgid "user.welcome.question3_value"
+msgstr ""
+
+#: pages/Questionair.tsx:120
+msgid "user.welcome.question4_error"
+msgstr ""
+
+#: pages/Questionair.tsx:126
+msgid "user.welcome.question4_value"
+msgstr ""
+
+#: pages/index.page.tsx:14
+msgid "user.welcome.title"
+msgstr ""

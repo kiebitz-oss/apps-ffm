@@ -13,13 +13,8 @@
       "request": "launch",
       "name": "Launch Next.js in dev-mode",
       "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run-script",
-        "dev"
-      ],
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "runtimeArgs": ["run-script", "dev"],
+      "skipFiles": ["<node_internals>/**"],
       "port": 9229
     },
     {
@@ -27,13 +22,8 @@
       "request": "launch",
       "name": "Launch Next.js in debug-mode",
       "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run-script",
-        "debug"
-      ],
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "runtimeArgs": ["run-script", "debug"],
+      "skipFiles": ["<node_internals>/**"],
       "port": 9229
     },
     {
@@ -42,10 +32,7 @@
       "request": "launch",
       "name": "Launch test files with TestCafe",
       "program": "${workspaceRoot}/node_modules/testcafe/bin/testcafe.js",
-      "args": [
-        "firefox",
-        "${relativeFile}"
-      ],
+      "args": ["firefox", "${relativeFile}"],
       "console": "integratedTerminal",
       "cwd": "${workspaceRoot}"
     }
@@ -53,10 +40,7 @@
   "compounds": [
     {
       "name": "Debug Next.js + Chrome",
-      "configurations": [
-        "Launch Next.js in debug-mode",
-        "Launch Chrome"
-      ]
+      "configurations": ["Launch Next.js in debug-mode", "Launch Chrome"]
     }
   ]
 }

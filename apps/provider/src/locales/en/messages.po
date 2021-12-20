@@ -1,0 +1,349 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2021-12-17 20:33+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: pages/onboarding/DataSecret.tsx:11
+msgid "common.data-secret.text"
+msgstr ""
+
+#: components/Footer.tsx:24
+msgid "common.footer.link.booking"
+msgstr ""
+
+#: components/Footer.tsx:60
+msgid "common.footer.link.english"
+msgstr ""
+
+#: components/Footer.tsx:29
+msgid "common.footer.link.faq"
+msgstr ""
+
+#: components/Footer.tsx:48
+msgid "common.footer.link.german"
+msgstr ""
+
+#: components/Footer.tsx:70
+msgid "common.footer.link.imprint"
+msgstr ""
+
+#: components/Footer.tsx:87
+msgid "common.footer.link.kiebitz"
+msgstr ""
+
+#: components/Footer.tsx:75
+msgid "common.footer.link.privacy"
+msgstr ""
+
+#: components/Footer.tsx:18
+msgid "common.footer.title.informations"
+msgstr ""
+
+#: components/Footer.tsx:35
+msgid "common.footer.title.languages"
+msgstr ""
+
+#: pages/logout.page.tsx:84
+msgid "provider.logout.button"
+msgstr ""
+
+#: pages/logout.page.tsx:69
+msgid "provider.logout.copy-secret"
+msgstr ""
+
+#: pages/logout.page.tsx:75
+msgid "provider.logout.download-backup"
+msgstr ""
+
+#: pages/logout.page.tsx:56
+msgid "provider.logout.intro"
+msgstr ""
+
+#: pages/logout.page.tsx:52
+msgid "provider.logout.notice.logging-out"
+msgstr ""
+
+#: pages/logout.page.tsx:47
+msgid "provider.logout.title"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:195
+msgid "provider.onboarding.access-code.description"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:200
+msgid "provider.onboarding.access-code.label"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:219
+msgid "provider.onboarding.accessible.label"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:131
+msgid "provider.onboarding.city.error"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:125
+msgid "provider.onboarding.city.label"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:170
+msgid "provider.onboarding.data-description"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:164
+msgid "provider.onboarding.data-title"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:152
+msgid "provider.onboarding.description.description"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:148
+msgid "provider.onboarding.description.title"
+msgstr ""
+
+#: pages/onboarding/BackupDataLink.tsx:59
+msgid "provider.onboarding.download-backup-data"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:186
+msgid "provider.onboarding.email.label"
+msgstr ""
+
+#: pages/onboarding/BackupDataLink.tsx:69
+msgid "provider.onboarding.generating-backup-data"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:67
+msgid "provider.onboarding.intro"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:86
+msgid "provider.onboarding.name.error.min-length"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:80
+msgid "provider.onboarding.name.error.required"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:74
+msgid "provider.onboarding.name.label"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:178
+msgid "provider.onboarding.phone.label"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:230
+msgid "provider.onboarding.save-and-continue"
+msgstr ""
+
+#: pages/onboarding/SecretStep.tsx:43
+msgid "provider.onboarding.secret.button"
+msgstr ""
+
+#: pages/onboarding/SecretStep.tsx:30
+msgid "provider.onboarding.secret.notice"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:212
+msgid "provider.onboarding.settings-description"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:101
+msgid "provider.onboarding.street.error"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:95
+msgid "provider.onboarding.street.label"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:61
+msgid "provider.onboarding.title"
+msgstr ""
+
+#: pages/onboarding/VerifyStep.tsx:42
+msgid "provider.onboarding.verify.button"
+msgstr ""
+
+#: pages/onboarding/VerifyStep.tsx:38
+msgid "provider.onboarding.verify.edit-data"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:140
+msgid "provider.onboarding.website.label"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:116
+msgid "provider.onboarding.zip-code.error"
+msgstr ""
+
+#: pages/onboarding/DataStep.tsx:110
+msgid "provider.onboarding.zip-code.label"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:132
+msgid "provider.provider-data.accessible"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:141
+msgid "provider.provider-data.accessible-no"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:139
+msgid "provider.provider-data.accessible-yes"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:69
+msgid "provider.provider-data.city"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:84
+msgid "provider.provider-data.description"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:108
+msgid "provider.provider-data.email"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:53
+msgid "provider.provider-data.name"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:77
+#: pages/ProviderDataSummary.tsx:90
+#: pages/ProviderDataSummary.tsx:101
+#: pages/ProviderDataSummary.tsx:112
+msgid "provider.provider-data.not-given"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:30
+msgid "provider.provider-data.not-verified-yet"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:41
+msgid "provider.provider-data.notice"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:97
+msgid "provider.provider-data.phone"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:58
+msgid "provider.provider-data.street"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:73
+msgid "provider.provider-data.website"
+msgstr ""
+
+#: pages/ProviderDataSummary.tsx:65
+msgid "provider.provider-data.zip-code"
+msgstr ""
+
+#: pages/RestoreForm.tsx:135
+msgid "provider.restore-form.failed"
+msgstr ""
+
+#: pages/RestoreForm.tsx:169
+msgid "provider.restore-form.input"
+msgstr ""
+
+#: pages/RestoreForm.tsx:178
+msgid "provider.restore-form.input.description"
+msgstr ""
+
+#: pages/RestoreForm.tsx:97
+msgid "provider.restore-form.invalid-file"
+msgstr ""
+
+#: pages/RestoreForm.tsx:50
+msgid "provider.restore-form.invalid-secret"
+msgstr ""
+
+#: pages/RestoreForm.tsx:188
+msgid "provider.restore-form.load"
+msgstr ""
+
+#: pages/RestoreForm.tsx:30
+msgid "provider.restore-form.missing-file"
+msgstr ""
+
+#: pages/RestoreForm.tsx:147
+msgid "provider.restore-form.secret.description"
+msgstr ""
+
+#: pages/RestoreForm.tsx:143
+msgid "provider.restore-form.secret.label"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:77
+msgid "provider.schedule.create-appointment-modal.too-few-slots"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:71
+msgid "provider.schedule.create-appointment-modal.too-many-slots"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:323
+msgid "provider.schedule.create.appointment-modal.button"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:245
+msgid "provider.schedule.create.appointment-modal.date.label"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:283
+msgid "provider.schedule.create.appointment-modal.duration-label"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:290
+msgid "provider.schedule.create.appointment-modal.duration-value"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:231
+msgid "provider.schedule.create.appointment-modal.edit-title"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:235
+msgid "provider.schedule.create.appointment-modal.new-title"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:270
+msgid "provider.schedule.create.appointment-modal.slots.label"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:257
+msgid "provider.schedule.create.appointment-modal.time.label"
+msgstr ""
+
+#: pages/schedule/CreateAppointmentModal.tsx:302
+msgid "provider.schedule.create.appointment-modal.vaccine-label"
+msgstr ""
+
+#: pages/onboarding/SecretBox.tsx:35
+msgid "provider.secret.title"
+msgstr ""
+
+#: pages/settings/index.page.tsx:41
+msgid "provider.settings.title"
+msgstr ""
+
+#: pages/index.page.tsx:23
+msgid "provider.welcome.loggedout-.notice"
+msgstr ""
+
+#: pages/index.page.tsx:18
+msgid "provider.welcome.title"
+msgstr ""

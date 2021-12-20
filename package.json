@@ -1,241 +1,118 @@
 {
-    "name": "@kiebitz/apps-ffm",
-    "description": "Kiebitz Web Applications",
-    "version": "1.0.0",
-    "private": true,
-    "license": "AGPL-3.0-or-later",
-    "contributors": [
-        "Andreas Dewes",
-        "Benjamin Bender <bb@codepoet.de>"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/kiebitz-oss/apps-ffm"
-    },
-    "engines": {
-        "node": ">=14"
-    },
-    "scripts": {
-        "prettier": "prettier --write 'src/**/*.jsx' 'src/**/*.tsx' 'src/**/*.js'",
-        "lint:css": "stylelint ./src/**/*.css --quiet",
-        "lint:css:fix": "stylelint ./src/**/*.css --fix",
-        "lint": "eslint . --ext js,jsx,ts,tsx --quiet && stylelint src/**/*.css",
-        "lint:fix": "eslint . --ext js,jsx,ts,tsx --quiet --fix; stylelint src/**/*.css --fix",
-        "test": "NODE_ENV=test jest",
-        "build": "NODE_ENV=production npm run i18n:build && webpack --mode=production --progress",
-        "dev": "webpack serve --mode=development",
-        "e2e:serve": "lingui compile & webpack serve --mode=development",
-        "e2e:test": "start-server-and-test e2e:serve http-get://localhost:3000 'cypress open'",
-        "i18n": "lingui",
-        "i18n:extract": "lingui extract",
-        "i18n:compile": "lingui compile",
-        "i18n:build": "lingui extract && lingui compile",
-        "sb": "start-storybook -p 9000",
-        "sb:build": "build-storybook",
-        "docker:build": "docker build . -t kiebitz-apps",
-        "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
-    },
-    "dependencies": {
-        "@carbon/icons-react": "^10.44.0",
-        "@fontsource/ibm-plex-sans": "^4.5.1",
-        "@headlessui/react": "^1.4.2",
-        "@lingui/macro": "^3.13.0",
-        "@lingui/react": "^3.13.0",
-        "clsx": "^1.1.1",
-        "dayjs": "^1.10.7",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-error-boundary": "^3.1.4",
-        "react-hook-form": "^7.22.2",
-        "react-router": "^6.2.1",
-        "react-router-dom": "^6.2.1",
-        "react-use": "^17.3.1",
-        "vanellus": "https://github.com/kiebitz-oss/vanellus/releases/download/v0.0.1/vanellus-0.0.1.tgz"
-    },
-    "devDependencies": {
-        "@babel/cli": "^7.16.0",
-        "@babel/core": "^7.16.0",
-        "@babel/eslint-parser": "^7.16.3",
-        "@babel/preset-env": "^7.16.4",
-        "@babel/preset-react": "7.16.5",
-        "@babel/preset-typescript": "^7.16.0",
-        "@lingui/cli": "^3.13.0",
-        "@storybook/addon-a11y": "^6.4.9",
-        "@storybook/addon-docs": "^6.4.9",
-        "@storybook/addon-essentials": "^6.4.9",
-        "@storybook/addon-links": "^6.4.9",
-        "@storybook/addon-postcss": "^2.0.0",
-        "@storybook/addon-viewport": "^6.4.9",
-        "@storybook/builder-webpack5": "^6.4.9",
-        "@storybook/manager-webpack5": "^6.4.9",
-        "@storybook/react": "^6.4.9",
-        "@storybook/testing-react": "^1.2.2",
-        "@tailwindcss/forms": "^0.4.0",
-        "@testing-library/react": "^12.1.2",
-        "@testing-library/user-event": "^13.5.0",
-        "@types/mini-css-extract-plugin": "^2.4.0",
-        "@types/react": "^17.0.37",
-        "@typescript-eslint/eslint-plugin": "^5.5.0",
-        "@typescript-eslint/parser": "^5.5.0",
-        "babel-loader": "^8.2.3",
-        "babel-plugin-macros": "^3.1.0",
-        "buffer": "^6.0.3",
-        "copy-webpack-plugin": "^10.2.0",
-        "core-js": "^3.20.0",
-        "csp-html-webpack-plugin": "^5.1.0",
-        "css-loader": "^6.5.1",
-        "css-minimizer-webpack-plugin": "^3.3.0",
-        "cssnano": "^5.0.13",
-        "cypress": "^9.1.1",
-        "cypress-fail-fast": "^3.3.0",
-        "eslint": "^8.5.0",
-        "eslint-config-prettier": "^8.3.0",
-        "eslint-plugin-cypress": "^2.12.1",
-        "eslint-plugin-jsx-a11y": "^6.5.1",
-        "eslint-plugin-prettier": "^4.0.0",
-        "eslint-plugin-react": "^7.27.1",
-        "eslint-plugin-react-hooks": "^4.3.0",
-        "eslint-plugin-tailwindcss": "beta",
-        "html-webpack-plugin": "^5.5.0",
-        "jest": "^27.4.5",
-        "mini-css-extract-plugin": "^2.4.3",
-        "postcss-loader": "^6.2.1",
-        "postcss-preset-env": "^7.0.2",
-        "prettier": "^2.5.0",
-        "process": "^0.11.10",
-        "regenerator-runtime": "^0.13.9",
-        "start-server-and-test": "^1.14.0",
-        "style-loader": "^3.3.1",
-        "stylelint": "^14.1.0",
-        "stylelint-a11y": "^1.2.3",
-        "stylelint-config-recommended": "^6.0.0",
-        "stylelint-no-unsupported-browser-features": "^5.0.2",
-        "tailwindcss": "^3.0.7",
-        "terser-webpack-plugin": "^5.3.0",
-        "typescript": "^4.5.2",
-        "webpack-cli": "^4.9.1",
-        "webpack-dev-server": "^4.6.0"
-    },
-    "browserslist": [
-        "defaults",
-        "not ie 11",
-        "not op_mini all"
-    ],
-    "lingui": {
-        "locales": [
-            "de",
-            "en"
-        ],
-        "sourceLocale": "de",
-        "format": "po",
-        "catalogs": [
-            {
-                "path": "src/locales/{locale}/messages",
-                "include": [
-                    "src"
-                ]
-            }
-        ]
-    },
-    "babel": {
-        "presets": [
-            "@babel/preset-env",
-            "@babel/preset-react",
-            "@babel/preset-typescript"
-        ],
-        "plugins": [
-            "macros"
-        ]
-    },
-    "postcss": {
-        "plugins": {
-            "tailwindcss/nesting": {},
-            "tailwindcss": {},
-            "postcss-preset-env": {
-                "features": {
-                    "nesting-rules": false
-                }
-            },
-            "cssnano": {}
-        }
-    },
-    "eslintConfig": {
-        "extends": [
-            "plugin:@typescript-eslint/recommended",
-            "plugin:react/recommended",
-            "plugin:react-hooks/recommended",
-            "plugin:jsx-a11y/recommended",
-            "plugin:prettier/recommended",
-            "plugin:tailwindcss/recommended"
-        ],
-        "plugins": [
-            "@typescript-eslint"
-        ],
-        "root": true,
-        "parser": "@typescript-eslint/parser",
-        "parserOptions": {
-            "ecmaFeatures": {
-                "jsx": true
-            }
+  "name": "kiebitz-ffm",
+  "description": "Kiebitz Web Applications",
+  "version": "1.0.0",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "contributors": [
+    "Benjamin Bender <bb@codepoet.de>",
+    "Andreas Dewes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiebitz-oss/apps-ffm"
+  },
+  "bugs": "https://github.com/kiebitz-oss/apps-ffm/issues",
+  "engines": {
+    "node": "^14.18.1 || >=16.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
+  },
+  "workspaces": [
+    "packages/api",
+    "packages/ui",
+    "packages/storybook",
+    "apps/user",
+    "apps/mediator",
+    "apps/provider"
+  ],
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "clean": "yarn workspaces run clean",
+    "test": "yarn workspaces run test",
+    "reset": "rm -rf node_modules/ yarn.lock packages/storybook/node_modules/ packages/ui/node_modules/ packages/api/node_modules/ apps/mediator/node_modules/ apps/provider/node_modules/ apps/user/node_modules/",
+    "lint:css": "stylelint ./**/*.css",
+    "lint:css:fix": "stylelint ./**/*.css --fix",
+    "e2e:serve": "lingui compile & webpack serve --mode=development",
+    "e2e:test": "start-server-and-test e2e:serve http-get://localhost:3000 'cypress open'",
+    "docker:build": "docker build . -t kiebitz-apps",
+    "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
+  },
+  "devDependencies": {
+    "@types/tailwindcss": "^2.2.4",
+    "cross-env": "^7.0.3",
+    "cypress": "^9.1.1",
+    "cypress-fail-fast": "^3.3.0",
+    "eslint": "^8.5.0",
+    "postcss": "^8.4.5",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.0.2",
+    "prettier": "^2.5.0",
+    "start-server-and-test": "^1.14.0",
+    "stylelint": "^14.1.0",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-no-unsupported-browser-features": "^5.0.2",
+    "tailwindcss": "^3.0.7",
+    "typescript": "^4.5.2"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "postcss": {
+    "plugins": {
+      "tailwindcss/nesting": {},
+      "tailwindcss": {},
+      "postcss-flexbugs-fixes": {},
+      "postcss-preset-env": {
+        "autoprefixer": {
+          "flexbox": "no-2009"
         },
-        "env": {
-            "browser": true,
-            "es6": true
-        },
-        "settings": {
-            "react": {
-                "version": "detect"
-            },
-            "tailwindcss": {
-                "groupByResponsive": true
-            }
-        },
-        "ignorePatterns": [
-            "node_modules",
-            "build"
-        ],
-        "rules": {
-            "no-redeclare": "off",
-            "tailwindcss/no-custom-classname": "off",
-            "react/prop-types": "off",
-            "react/no-unescaped-entities": "off",
-            "@typescript-eslint/no-empty-interface": "off"
+        "stage": 3,
+        "features": {
+          "nesting-rules": false,
+          "custom-properties": false
         }
-    },
-    "stylelint": {
-        "plugins": [
-            "stylelint-no-unsupported-browser-features"
-        ],
-        "extends": [
-            "stylelint-config-recommended",
-            "stylelint-a11y/recommended"
-        ],
-        "rules": {
-            "plugin/no-unsupported-browser-features": [
-                true,
-                {
-                    "severity": "warning"
-                }
-            ],
-            "at-rule-no-unknown": [
-                true,
-                {
-                    "ignoreAtRules": [
-                        "tailwind",
-                        "layer",
-                        "variants",
-                        "responsive",
-                        "screen"
-                    ]
-                }
-            ],
-            "block-no-empty": null,
-            "selector-pseudo-class-no-unknown": [
-                true,
-                {
-                    "ignorePseudoClasses": "global"
-                }
-            ]
-        }
+      }
     }
+  },
+  "stylelint": {
+    "plugins": [
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-a11y/recommended"
+    ],
+    "rules": {
+      "plugin/no-unsupported-browser-features": [
+        true,
+        {
+          "severity": "warning"
+        }
+      ],
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "tailwind",
+            "layer",
+            "variants",
+            "responsive",
+            "screen"
+          ]
+        }
+      ],
+      "block-no-empty": null,
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": "global"
+        }
+      ]
+    }
+  }
 }

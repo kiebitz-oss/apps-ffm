@@ -1,0 +1,659 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .default-focus {
+    @apply focus:outline-none focus:ring-0 focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-[3px] focus-visible:outline-pink-500;
+  }
+
+  :root {
+    @apply default-focus;
+  }
+
+  html,
+  body {
+    @apply overflow-x-hidden overscroll-x-none relative min-h-screen m-0 font-sans bg-gray-100;
+  }
+
+  :disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  #__next {
+    @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto md:mx-5 lg:mx-10 xl:mx-24 2xl:mx-28;
+
+    & > .open > footer,
+    & > .closed > footer {
+      @media (max-width: 639px) {
+        @apply absolute top-[80px] bg-white bottom-0 left-0 right-0 z-50 flex flex-col gap-4 justify-center my-8;
+      }
+
+      @media (min-width: 640px) {
+        @apply md:flex sm:p-8 md:p-16;
+      }
+
+      & > section {
+        @media (max-width: 639px) {
+          @apply flex flex-col gap-4 min-w-[250px] mx-auto;
+        }
+
+        @media (min-width: 640px) {
+          @apply flex flex-col gap-4;
+        }
+
+        & a {
+          @apply hover:text-primary;
+        }
+      }
+    }
+
+    & .closed footer {
+      @media (max-width: 639px) {
+        @apply hidden;
+      }
+    }
+  }
+
+  main {
+    @apply relative flex flex-col flex-1 bg-white text-black rounded py-10 px-4 md:px-[76px] md:pt-[88px] md:pb-[32px];
+
+    &.center {
+      @apply justify-center;
+    }
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  dd {
+    @apply mb-2;
+  }
+
+  a,
+  button {
+    @apply default-focus;
+  }
+
+  address {
+    @apply not-italic;
+  }
+
+  #sidenav-button,
+  #sidenav-close {
+    @apply touch-manipulation select-none;
+
+    @screen sm {
+      @apply hidden;
+    }
+  }
+
+  #sidenav-button > svg {
+    max-width: 50px;
+
+    & > line {
+      stroke: black;
+      stroke-width: 7px;
+    }
+  }
+  @media screen and (prefers-reduced-motion: reduce) {
+    .hamburger {
+      --size: 3rem;
+      display: flex;
+      place-content: center;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      margin-inline-start: -1rem;
+      block-size: var(--size);
+      inline-size: var(--size);
+      outline: none;
+      transition: none;
+
+      &:hover svg > line,
+      &:focus svg > line {
+        @apply stroke-primary;
+      }
+
+      &:active {
+        @apply bg-primary/20;
+      }
+
+      & > svg {
+        width: 100%;
+        @media screen and (prefers-reduced-motion: reduce) {
+          & > line {
+            @apply stroke-primary;
+            stroke-width: 7px;
+            transition: none;
+          }
+        }
+
+        & > line {
+          @apply stroke-primary;
+          stroke-width: 7px;
+          transition: stroke 0.25s ease;
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    --size: 3rem;
+    display: flex;
+    place-content: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    margin-inline-start: -1rem;
+    block-size: var(--size);
+    inline-size: var(--size);
+    outline: none;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+
+    &:hover svg > line,
+    &:focus svg > line {
+      @apply stroke-primary;
+    }
+
+    &:active {
+      @apply bg-primary/20;
+    }
+
+    & > svg {
+      width: 100%;
+      @media screen and (prefers-reduced-motion: reduce) {
+        & > line {
+          @apply stroke-primary;
+          stroke-width: 7px;
+          transition: none;
+        }
+      }
+
+      & > line {
+        @apply stroke-primary;
+        stroke-width: 7px;
+        transition: stroke 0.25s ease;
+      }
+    }
+  }
+}
+
+@layer components {
+  .h1 {
+    @apply font-bold text-4xl mb-5;
+  }
+
+  .h2 {
+    @apply font-bold text-lg mb-5;
+  }
+
+  .h3 {
+    @apply font-semibold text-[19px];
+  }
+
+  .h4 {
+    @apply font-semibold;
+  }
+
+  .book {
+    @apply font-medium text-[12px] uppercase tracking-[4px];
+  }
+
+  .text {
+    @apply max-w-[60ch];
+
+    &.text1 {
+      @apply text-[18px];
+    }
+
+    &.text2 {
+      @apply text-[16px];
+    }
+  }
+
+  .field {
+    @apply flex gap-1;
+
+    &.field-inline {
+      @apply flex-row gap-2 items-center;
+    }
+
+    &:not(.field-inline) {
+      @apply flex-col;
+
+      & .hint {
+        @apply pl-4;
+      }
+    }
+  }
+
+  .field-error {
+    @apply text-error pl-8 font-bold relative;
+
+    &::before {
+      content: url("data:image/svg+xml;utf8,<svg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M10 1.49512C5 1.49512 1 5.48281 1 10.4674C1 15.452 5 19.4397 10 19.4397C15 19.4397 19 15.452 19 10.4674C19 5.48281 15 1.49512 10 1.49512ZM6.5 14.9536L14.5 6.97819L13.5 5.98127L5.5 13.9567L6.5 14.9536Z' fill='%23DA1E28'/><path opacity='0.01' fill-rule='evenodd' clip-rule='evenodd' d='M6.5 14.9538L14.5 6.97837L13.5 5.98145L5.5 13.9568L6.5 14.9538Z' fill='%23DA1E28'/></svg>");
+
+      @apply block absolute w-6 h-6;
+      left: 0px;
+      top: 12px;
+    }
+  }
+
+  .default-input {
+    @apply rounded border-2 border-black default-focus;
+  }
+
+  .label {
+    @apply font-medium text-[14px] select-none leading-none;
+  }
+
+  .input {
+    @apply form-input default-input;
+  }
+
+  .hint {
+    @apply text-black text-sm;
+  }
+
+  .select {
+    @apply form-select default-input;
+  }
+
+  .checkbox {
+    @apply form-checkbox default-focus self-center text-primary outline-none flex items-center; /* mt-1 mr-2; */
+  }
+
+  .radio {
+    @apply form-radio text-black self-center border;
+  }
+
+  .textarea {
+    @apply form-textarea default-input;
+  }
+
+  .upload {
+    @apply button primary  cursor-pointer file:font-semibold file:text-white file:bg-primary  file:rounded file:border-0 file:cursor-pointer file:py-2 file:px-4 file:mr-4 file:text-sm;
+  }
+
+  /* 
+    based on https://github.com/argyleink/gui-challenges/tree/main/switch
+    TODO: port to tailwind
+    */
+  @media screen and (prefers-reduced-motion: reduce) {
+    .switch {
+      @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary bg-gray-200  border-2;
+
+      --thumb-size: 2rem;
+      --thumb: hsl(0 0% 100%);
+      --thumb-highlight: hsl(0 0% 0% / 25%);
+
+      --track-size: calc(var(--thumb-size) * 2);
+      --track-padding: 2px;
+      --track-inactive: hsl(80 0% 80%);
+      --track-active: theme("colors.green.300");
+
+      --thumb-color: var(--thumb);
+      --thumb-color-highlight: var(--thumb-highlight);
+      --track-color-inactive: var(--track-inactive);
+      --track-color-active: var(--track-active);
+
+      --isLTR: 1;
+      --thumb-position: 0%;
+      --thumb-transition-duration: 0.25s;
+
+      padding: var(--track-padding);
+      background: var(--track-color-inactive);
+      inline-size: var(--track-size);
+      block-size: var(--thumb-size);
+      border-radius: var(--track-size);
+
+      touch-action: pan-y;
+
+      outline-offset: 5px;
+
+      grid: [track] 1fr / [track] 1fr;
+
+      transition: none;
+
+      &::before {
+        --highlight-size: 0;
+
+        content: "";
+        grid-area: track;
+        inline-size: var(--thumb-size);
+        block-size: var(--thumb-size);
+        background: var(--thumb-color);
+        box-shadow: 0 0 0 var(--highlight-size) var(--thumb-color-highlight);
+        border-radius: 50%;
+        transform: translateX(var(--thumb-position));
+        @media screen and (prefers-reduced-motion: reduce) {
+          & {
+            transition: none;
+          }
+        }
+
+        & {
+          transition: transform var(--thumb-transition-duration) ease,
+            box-shadow 0.25s ease;
+        }
+      }
+
+      &:not(:disabled):hover::before,
+      &:not(:disabled):focus::before {
+        --highlight-size: 0.5rem;
+      }
+
+      &:checked {
+        --thumb-position: calc((var(--track-size) - 100%) * var(--isLTR));
+      }
+
+      &:indeterminate {
+        --thumb-position: calc(
+          calc(calc(var(--track-size) / 2) - calc(var(--thumb-size) / 2)) *
+            var(--isLTR)
+        );
+      }
+
+      &:disabled {
+        --thumb-color: transparent;
+
+        &::before {
+          cursor: not-allowed;
+          box-shadow: inset 0 0 0 2px hsl(0 0% 100% / 50%);
+        }
+      }
+    }
+  }
+
+  .switch {
+    @apply appearance-none cursor-pointer box-content flex-shrink-0 grid items-center checked:bg-primary bg-gray-200  border-2;
+
+    --thumb-size: 2rem;
+    --thumb: hsl(0 0% 100%);
+    --thumb-highlight: hsl(0 0% 0% / 25%);
+
+    --track-size: calc(var(--thumb-size) * 2);
+    --track-padding: 2px;
+    --track-inactive: hsl(80 0% 80%);
+    --track-active: theme("colors.green.300");
+
+    --thumb-color: var(--thumb);
+    --thumb-color-highlight: var(--thumb-highlight);
+    --track-color-inactive: var(--track-inactive);
+    --track-color-active: var(--track-active);
+
+    --isLTR: 1;
+    --thumb-position: 0%;
+    --thumb-transition-duration: 0.25s;
+
+    padding: var(--track-padding);
+    background: var(--track-color-inactive);
+    inline-size: var(--track-size);
+    block-size: var(--thumb-size);
+    border-radius: var(--track-size);
+
+    touch-action: pan-y;
+
+    outline-offset: 5px;
+
+    grid: [track] 1fr / [track] 1fr;
+
+    transition: background-color 0.25s ease;
+
+    &::before {
+      --highlight-size: 0;
+
+      content: "";
+      grid-area: track;
+      inline-size: var(--thumb-size);
+      block-size: var(--thumb-size);
+      background: var(--thumb-color);
+      box-shadow: 0 0 0 var(--highlight-size) var(--thumb-color-highlight);
+      border-radius: 50%;
+      transform: translateX(var(--thumb-position));
+      @media screen and (prefers-reduced-motion: reduce) {
+        & {
+          transition: none;
+        }
+      }
+
+      & {
+        transition: transform var(--thumb-transition-duration) ease,
+          box-shadow 0.25s ease;
+      }
+    }
+
+    &:not(:disabled):hover::before,
+    &:not(:disabled):focus::before {
+      --highlight-size: 0.5rem;
+    }
+
+    &:checked {
+      --thumb-position: calc((var(--track-size) - 100%) * var(--isLTR));
+    }
+
+    &:indeterminate {
+      --thumb-position: calc(
+        calc(calc(var(--track-size) / 2) - calc(var(--thumb-size) / 2)) *
+          var(--isLTR)
+      );
+    }
+
+    &:disabled {
+      --thumb-color: transparent;
+
+      &::before {
+        cursor: not-allowed;
+        box-shadow: inset 0 0 0 2px hsl(0 0% 100% / 50%);
+      }
+    }
+  }
+
+  .message {
+    @apply w-full px-4 py-3 rounded;
+
+    &.success {
+      @apply bg-green-100 text-green-600;
+    }
+
+    &.warning {
+      @apply bg-orange-100 text-orange-600;
+    }
+
+    &.danger {
+      @apply bg-red-100 text-error;
+    }
+
+    &.info {
+      @apply bg-blue-100 text-blue-600;
+    }
+  }
+
+  .link {
+    @apply hover:text-primary inline-flex items-center gap-1;
+  }
+
+  .buttons-list {
+    @apply flex flex-row gap-2;
+  }
+
+  .button {
+    @apply default-focus rounded min-w-max max-w-full sm:w-max text-center;
+
+    &.primary {
+      @apply border-transparent border-2 text-white bg-primary hover:bg-white hover:text-black hover:border-black;
+    }
+
+    &.secondary {
+      @apply border-black border-2 text-black hover:bg-primary hover:border-primary hover:text-white;
+    }
+
+    &.invalid {
+      @apply border-black border-2 text-black;
+    }
+
+    &.sm {
+      @apply px-4 py-2;
+    }
+
+    &.md {
+      @apply px-8 py-3 md:py-2 md:px-6 font-semibold text-[18px];
+    }
+  }
+
+  .modal {
+    @apply overflow-y-auto fixed inset-0 z-10;
+
+    & .overlay {
+      @apply fixed inset-0 bg-black opacity-80;
+    }
+
+    & .container {
+      @apply flex justify-center items-center min-h-screen mx-auto;
+    }
+
+    & .inner {
+      @apply relative mx-auto bg-white  rounded overflow-hidden max-w-[90vw] md:max-w-[80vw] w-full;
+    }
+
+    & .content {
+      @apply px-8;
+    }
+
+    & .header {
+      @apply p-8;
+    }
+
+    & .footer {
+      @apply p-8;
+    }
+
+    & .sm {
+      @apply max-w-[640px];
+    }
+  }
+
+  .table {
+    @apply min-w-full divide-y divide-gray-50 table-fixed;
+
+    & thead {
+      @apply bg-gray-50;
+    }
+
+    & thead th {
+      @apply py-3 px-6 text-xs  font-medium tracking-wider text-left  uppercase text-gray-500;
+    }
+
+    & tbody {
+      & tr {
+      }
+
+      & th,
+      & td {
+        @apply py-4 px-6 text-sm text-gray-900 whitespace-nowrap;
+      }
+
+      & th {
+        @apply text-left font-medium;
+      }
+
+      & td {
+      }
+    }
+  }
+
+  .striped {
+    & tbody {
+      & tr:nth-child(odd) {
+        @apply bg-white;
+      }
+
+      & tr:nth-child(even) {
+        @apply bg-gray-50;
+      }
+    }
+  }
+
+  .selectable {
+    & tbody tr {
+      @apply cursor-pointer;
+    }
+  }
+
+  .selected {
+    @apply !bg-primary/30;
+  }
+
+  .tag {
+    @apply py-1 px-3 rounded text-black;
+
+    &.warning {
+      @apply bg-notice text-yellow-700;
+    }
+
+    &.success {
+      @apply bg-green-100 text-green-700;
+    }
+
+    &.error {
+      @apply bg-red-100 text-red-700;
+    }
+  }
+
+  .provider-data-summary {
+    @apply p-4 rounded;
+
+    & dt {
+      @apply font-bold;
+    }
+
+    &:not(.verified) {
+      @apply bg-gray-50;
+    }
+
+    &.verified {
+      @apply bg-green-100;
+    }
+  }
+
+  /*
+
+    .tabs {
+        @apply items-center border-b border-gray-300 flex flex-grow flex-shrink-0 justify-start;
+
+        & a {
+            @apply no-underline items-center border-b border-gray-300 flex justify-center -mb-[1px] px-6 py-2 align-top hover:font-semibold;
+        }
+
+        & .current a {
+            @apply font-bold text-primary border-primary;
+        }
+
+        & .tab {
+        }
+    }
+
+    .box {
+        @apply bg-white  max-w-[90vw] w-full shadow-md rounded overflow-auto;
+
+        & .header {
+            @apply p-4 bg-gray-50 flex justify-between items-center;
+        }
+
+        & .content {
+            @apply px-4 py-8;
+        }
+
+        & .footer {
+            @apply p-4 bg-gray-50;
+        }
+    }
+    */
+}
+
+@layer utilities {
+}

@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2021-12-17 20:33+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: components/Footer.tsx:24
+msgid "common.footer.link.booking"
+msgstr ""
+
+#: components/Footer.tsx:60
+msgid "common.footer.link.english"
+msgstr ""
+
+#: components/Footer.tsx:29
+msgid "common.footer.link.faq"
+msgstr ""
+
+#: components/Footer.tsx:48
+msgid "common.footer.link.german"
+msgstr ""
+
+#: components/Footer.tsx:70
+msgid "common.footer.link.imprint"
+msgstr ""
+
+#: components/Footer.tsx:87
+msgid "common.footer.link.kiebitz"
+msgstr ""
+
+#: components/Footer.tsx:75
+msgid "common.footer.link.privacy"
+msgstr ""
+
+#: components/Footer.tsx:18
+msgid "common.footer.title.informations"
+msgstr ""
+
+#: components/Footer.tsx:35
+msgid "common.footer.title.languages"
+msgstr ""
+
+#: pages/logged-out.page.tsx:25
+msgid "mediator.logged-out.log-in-again"
+msgstr ""
+
+#: pages/logged-out.page.tsx:18
+msgid "mediator.logged-out.notice"
+msgstr ""
+
+#: pages/logged-out.page.tsx:14
+msgid "mediator.logged-out.title"
+msgstr ""
+
+#: pages/logout.page.tsx:33
+msgid "mediator.logout.button"
+msgstr ""
+
+#: pages/logout.page.tsx:25
+msgid "mediator.logout.intro"
+msgstr ""
+
+#: pages/logout.page.tsx:21
+msgid "mediator.logout.title"
+msgstr ""
+
+#: pages/providers/ProviderRow.tsx:72
+msgid "mediator.provider-row.button-show"
+msgstr ""
+
+#: pages/providers/ProviderRow.tsx:65
+msgid "mediator.provider-row.invalid"
+msgstr ""
+
+#: pages/providers/ProviderRow.tsx:43
+msgid "mediator.provider-row.select-row"
+msgstr ""
+
+#: pages/providers/ProviderRow.tsx:63
+msgid "mediator.provider-row.valid"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:122
+msgid "mediator.provider-show.button-confirm"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:132
+msgid "mediator.provider-show.button-unconfirm"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:82
+msgid "mediator.provider-show.city"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:106
+msgid "mediator.provider-show.description"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:94
+msgid "mediator.provider-show.email"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:48
+msgid "mediator.provider-show.field"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:70
+msgid "mediator.provider-show.name"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:100
+msgid "mediator.provider-show.phone"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:76
+msgid "mediator.provider-show.street"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:39
+msgid "mediator.provider-show.title"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:51
+msgid "mediator.provider-show.value"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:58
+msgid "mediator.provider-show.verified"
+msgstr ""
+
+#: pages/providers/[id].page.tsx:88
+msgid "mediator.provider-show.zip-code"
+msgstr ""
+
+#: pages/providers/ProvidersList.tsx:65
+msgid "mediator.providers-list.address"
+msgstr ""
+
+#: pages/providers/ProvidersList.tsx:102
+msgid "mediator.providers-list.button-confirm"
+msgstr ""
+
+#: pages/providers/ProvidersList.tsx:115
+msgid "mediator.providers-list.button-unconfirm"
+msgstr ""
+
+#: pages/providers/ProvidersList.tsx:41
+msgid "mediator.providers-list.caption"
+msgstr ""
+
+#: pages/providers/ProvidersList.tsx:62
+msgid "mediator.providers-list.name"
+msgstr ""
+
+#: pages/providers/ProvidersList.tsx:54
+msgid "mediator.providers-list.select-all"
+msgstr ""
+
+#: pages/providers/ProvidersList.tsx:68
+msgid "mediator.providers-list.status"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:120
+msgid "mediator.providers.confirm-modal.button-confirm"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:78
+msgid "mediator.providers.confirm-modal.city"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:108
+msgid "mediator.providers.confirm-modal.description"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:92
+msgid "mediator.providers.confirm-modal.email"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:54
+msgid "mediator.providers.confirm-modal.field"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:45
+msgid "mediator.providers.confirm-modal.intro"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:64
+msgid "mediator.providers.confirm-modal.name"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:100
+msgid "mediator.providers.confirm-modal.phone"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:70
+msgid "mediator.providers.confirm-modal.street"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:37
+msgid "mediator.providers.confirm-modal.title"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:57
+msgid "mediator.providers.confirm-modal.value"
+msgstr ""
+
+#: pages/ConfirmProviderModal.tsx:84
+msgid "mediator.providers.confirm-modal.zip-code"
+msgstr ""
+
+#: pages/ReconfirmProvidersModal.tsx:72
+msgid "mediator.providers.reconfirm-modal.button-submit"
+msgstr ""
+
+#: pages/ReconfirmProvidersModal.tsx:60
+msgid "mediator.providers.reconfirm-modal.in-progress"
+msgstr ""
+
+#: pages/ReconfirmProvidersModal.tsx:64
+msgid "mediator.providers.reconfirm-modal.info"
+msgstr ""
+
+#: pages/ReconfirmProvidersModal.tsx:52
+msgid "mediator.providers.reconfirm-modal.title"
+msgstr ""
+
+#: pages/providers/index.page.tsx:23
+msgid "mediator.providers.title"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:126
+msgid "mediator.providers.unconfirm-modal.button-confirm"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:82
+msgid "mediator.providers.unconfirm-modal.city"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:114
+msgid "mediator.providers.unconfirm-modal.description"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:98
+msgid "mediator.providers.unconfirm-modal.email"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:54
+msgid "mediator.providers.unconfirm-modal.field"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:45
+msgid "mediator.providers.unconfirm-modal.intro"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:68
+msgid "mediator.providers.unconfirm-modal.name"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:106
+msgid "mediator.providers.unconfirm-modal.phone"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:74
+msgid "mediator.providers.unconfirm-modal.street"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:37
+msgid "mediator.providers.unconfirm-modal.title"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:59
+msgid "mediator.providers.unconfirm-modal.value"
+msgstr ""
+
+#: pages/UnconfirmProviderModal.tsx:90
+msgid "mediator.providers.unconfirm-modal.zip-code"
+msgstr ""
+
+#: pages/index.page.tsx:58
+msgid "mediator.welcome.title"
+msgstr ""
+
+#: pages/index.page.tsx:63
+msgid "mediator.welcome.upload-key-pairs"
+msgstr ""
+
+#: pages/index.page.tsx:90
+msgid "mediator.welcome.upload-key-pairs.input"
+msgstr ""
+
+#: pages/index.page.tsx:70
+msgid "mediator.welcome.upload-key-pairs.invalid-file"
+msgstr ""
+
+#: pages/index.page.tsx:78
+msgid "mediator.welcome.upload-key-pairs.notice"
+msgstr ""
