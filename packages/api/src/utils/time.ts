@@ -1,7 +1,6 @@
 // Kiebitz - Privacy-Friendly Appointments
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
-import { t } from "@lingui/macro";
 
 export function getMonday(d: string | Date | number) {
   d = new Date(d);
@@ -36,18 +35,15 @@ export function formatTime(date: string | Date | number) {
 
 export function formatDuration(minutes: number) {
   if (minutes < 60) {
-    return t({ id: "common.minutes", message: `${minutes} Minuten` });
+    return `${minutes} Minuten`;
   }
 
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = minutes % 60;
 
   if (remainingMinutes === 0) {
-    return t({ id: "common.hours", message: `${hours} Stunden` });
+    return `${hours} Stunden`;
   }
 
-  return t({
-    id: "common.hours-minutes",
-    message: `${hours} Stunden ${remainingMinutes} Minuten`,
-  });
+  return `${hours} Stunden ${remainingMinutes} Minuten`;
 }

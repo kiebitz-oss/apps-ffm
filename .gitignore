@@ -16,9 +16,7 @@ coverage
 out
 
 # production
-build
 dist
-storybook-static
 locales/**/messages.js
 
 # Cache

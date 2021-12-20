@@ -7,28 +7,32 @@ const path = require("path");
 const config = {
   stories: [
     {
-      directory: "../apps/user/src",
+      directory: "../src/stories",
+      files: "**/*.stories.*",
+    },
+    {
+      directory: "../../../apps/user/src",
       titlePrefix: "User",
       files: "**/*.stories.*",
     },
     {
-      directory: "../apps/mediator/src",
+      directory: "../../../apps/mediator/src",
       titlePrefix: "Mediator",
       files: "**/*.stories.*",
     },
     {
-      directory: "../apps/Provider/src",
+      directory: "../../../apps/provider/src",
       titlePrefix: "Provider",
       files: "**/*.stories.*",
     },
     {
-      directory: "../packages/ui/src",
+      directory: "../../ui/src",
       titlePrefix: "UI",
       files: "**/*.stories.*",
     },
   ],
   logLevel: "info",
-  staticDirs: ["../public"],
+  staticDirs: ["../../../public"],
   framework: "@storybook/react",
   addons: [
     "@storybook/addon-links",
@@ -46,15 +50,6 @@ const config = {
   ],
   core: {
     builder: "webpack5",
-  },
-  webpackFinal: async (config) => {
-    config.resolve.modules = [
-      path.resolve("node_modules"),
-      path.resolve(process.cwd(), "src"),
-      ...(config?.resolve?.modules || []),
-    ];
-
-    return config;
   },
 };
 

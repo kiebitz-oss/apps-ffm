@@ -21,6 +21,7 @@
   "workspaces": [
     "packages/api",
     "packages/ui",
+    "packages/storybook",
     "apps/user",
     "apps/mediator",
     "apps/provider"
@@ -28,60 +29,33 @@
   "scripts": {
     "build": "yarn workspaces run build",
     "clean": "yarn workspaces run clean",
-    "reset": "rimraf node_modules/ yarn.lock  packages/ui/node_modules/ packages/api/node_modules/ apps/mediator/node_modules/ apps/provider/node_modules/ apps/user/node_modules/",
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "yarn workspaces run test",
+    "reset": "rm -rf node_modules/ yarn.lock packages/storybook/node_modules/ packages/ui/node_modules/ packages/api/node_modules/ apps/mediator/node_modules/ apps/provider/node_modules/ apps/user/node_modules/",
+    "lint:css": "stylelint ./**/*.css",
+    "lint:css:fix": "stylelint ./**/*.css --fix",
     "e2e:serve": "lingui compile & webpack serve --mode=development",
     "e2e:test": "start-server-and-test e2e:serve http-get://localhost:3000 'cypress open'",
-    "sb": "start-storybook -p 9000",
-    "sb:build": "build-storybook",
     "docker:build": "docker build . -t kiebitz-apps",
     "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
   },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "devDependencies": {
-    "@babel/core": "^7.16.5",
-    "@babel/preset-env": "^7.16",
-    "@babel/preset-react": "^7.16",
-    "@babel/preset-typescript": "^7.16",
-    "@fontsource/ibm-plex-sans": "^4.5.1",
-    "@storybook/addon-a11y": "^6.4.9",
-    "@storybook/addon-actions": "^6.4.9",
-    "@storybook/addon-docs": "^6.4.9",
-    "@storybook/addon-essentials": "^6.4.9",
-    "@storybook/addon-links": "^6.4.9",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/addon-viewport": "^6.4.9",
-    "@storybook/builder-webpack5": "^6.4.9",
-    "@storybook/manager-webpack5": "^6.4.9",
-    "@storybook/react": "^6.4.9",
-    "@storybook/testing-react": "^1.2.2",
-    "@types/babel__preset-env": "^7",
-    "@types/react": "^17",
-    "@types/react-dom": "^17",
     "@types/tailwindcss": "^2.2.4",
-    "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "cypress": "^9.1.1",
     "cypress-fail-fast": "^3.3.0",
     "eslint": "^8.5.0",
-    "jest": "^27.4.5",
     "postcss": "^8.4.5",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.0.2",
     "prettier": "^2.5.0",
     "start-server-and-test": "^1.14.0",
-    "storybook-addon-next-router": "^3.1.0",
     "stylelint": "^14.1.0",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-no-unsupported-browser-features": "^5.0.2",
     "tailwindcss": "^3.0.7",
-    "typescript": "^4.5.2",
-    "webpack": "^5"
+    "typescript": "^4.5.2"
   },
   "browserslist": [
     "defaults",
@@ -103,6 +77,42 @@
           "custom-properties": false
         }
       }
+    }
+  },
+  "stylelint": {
+    "plugins": [
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-a11y/recommended"
+    ],
+    "rules": {
+      "plugin/no-unsupported-browser-features": [
+        true,
+        {
+          "severity": "warning"
+        }
+      ],
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "tailwind",
+            "layer",
+            "variants",
+            "responsive",
+            "screen"
+          ]
+        }
+      ],
+      "block-no-empty": null,
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": "global"
+        }
+      ]
     }
   }
 }

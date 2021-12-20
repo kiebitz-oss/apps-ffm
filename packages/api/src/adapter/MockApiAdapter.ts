@@ -1,6 +1,6 @@
+import { Buffer } from "buffer";
 import { appointments } from "fixtures";
-import { b642buf, randomBytes } from "vanellus";
-import { buf2base32 } from "vanellus/dist/helpers/conversion";
+import { randomBytes } from "vanellus";
 import { providers } from "../fixtures/providers";
 import type { Appointment, PublicProvider } from "../types";
 import { ApiAdapter } from "./ApiAdapter";
@@ -99,7 +99,7 @@ export class MockAdapter implements ApiAdapter {
     let secret = this.storage.getItem(USER_SECRET_KEY);
 
     if (!secret && forceCreation) {
-      secret = buf2base32(b642buf(randomBytes(10)));
+      secret = Buffer.from(randomBytes(10)).toString("base64");
 
       this.storage.setItem(USER_SECRET_KEY, secret);
     }

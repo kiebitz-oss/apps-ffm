@@ -21,16 +21,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export --outdir dist",
+    "build": "cross-env NODE_ENV=development lingui extract --clean && lingui compile && next build && next export --outdir dist",
     "start": "next start",
     "clean": "rimraf --no-glob ./.next ./dist",
     "test": "cross-env NODE_ENV=test jest",
-    "test:e2e:serve": "lingui compile & webpack serve --mode=development",
-    "test:e2e": "start-server-and-test e2e:serve http-get://localhost:3000 'cypress open'",
     "lint": "next lint",
-    "lint:fix": "next lint --fix ; stylelint src/**/*.css --fix",
-    "lint:css": "stylelint ./src/**/*.css",
-    "lint:css:fix": "stylelint ./src/**/*.css --fix",
+    "lint:fix": "next lint --fix",
     "i18n": "lingui",
     "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",
     "i18n:compile": "lingui compile",
@@ -66,7 +62,6 @@
     "eslint": "^8.5.0",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-tailwindcss": "beta",
     "jest": "^27.4.5",
@@ -75,12 +70,8 @@
     "postcss-preset-env": "^7.0.2",
     "prettier": "^2.5.0",
     "rimraf": "^3.0.2",
-    "stylelint": "^14.1.0",
-    "stylelint-a11y": "^1.2.3",
-    "stylelint-config-recommended": "^6.0.0",
-    "stylelint-no-unsupported-browser-features": "^5.0.2",
     "tailwindcss": "^3.0.7",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.4"
   },
   "browserslist": [
     "defaults",
@@ -154,42 +145,6 @@
       "tailwindcss/no-custom-classname": "off",
       "react/no-unescaped-entities": "off",
       "@next/next/no-img-element": "off"
-    }
-  },
-  "stylelint": {
-    "plugins": [
-      "stylelint-no-unsupported-browser-features"
-    ],
-    "extends": [
-      "stylelint-config-recommended",
-      "stylelint-a11y/recommended"
-    ],
-    "rules": {
-      "plugin/no-unsupported-browser-features": [
-        true,
-        {
-          "severity": "warning"
-        }
-      ],
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "tailwind",
-            "layer",
-            "variants",
-            "responsive",
-            "screen"
-          ]
-        }
-      ],
-      "block-no-empty": null,
-      "selector-pseudo-class-no-unknown": [
-        true,
-        {
-          "ignorePseudoClasses": "global"
-        }
-      ]
     }
   }
 }

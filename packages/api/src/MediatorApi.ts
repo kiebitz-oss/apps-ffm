@@ -1,5 +1,5 @@
 import { Mediator as KiebitzMediator } from "vanellus";
-import { backend } from "./backend";
+import { getBackendInstance } from "./backend";
 import { providers } from "./fixtures/providers";
 import type { MediatorKeyPairs, Provider } from "./types";
 
@@ -9,7 +9,7 @@ export class MediatorApi {
   protected mediator: KiebitzMediator;
 
   constructor() {
-    this.mediator = new KiebitzMediator("main", backend);
+    this.mediator = new KiebitzMediator("main", getBackendInstance());
   }
 
   public async authenticate(keyPairs: MediatorKeyPairs): Promise<boolean> {

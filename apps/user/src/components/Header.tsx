@@ -1,8 +1,8 @@
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
-import { useUserApi } from "pages/UserApiContext";
 import { useEffect } from "react";
 import { theme } from "../config/theme";
+import { useUserApi } from "../pages/UserApiContext";
 import { Link } from "./Link";
 import { useI18n } from "./useI18n";
 

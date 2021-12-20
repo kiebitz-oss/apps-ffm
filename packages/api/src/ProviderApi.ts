@@ -5,7 +5,7 @@ import type {
   ProviderSecretData,
 } from "types";
 import { b642buf, Provider as KiebitzProvider, randomBytes } from "vanellus";
-import { backend } from "./backend";
+import { getBackendInstance } from "./backend";
 import { appointments } from "./fixtures/appointments";
 import { buf2base32 } from "./utils/crypto";
 
@@ -17,7 +17,7 @@ export class ProviderApi {
   protected provider: KiebitzProvider;
 
   constructor() {
-    this.provider = new KiebitzProvider("main", backend);
+    this.provider = new KiebitzProvider("main", getBackendInstance());
   }
 
   public async authenticate(

@@ -53,99 +53,99 @@ msgstr ""
 msgid "common.footer.title.languages"
 msgstr ""
 
-#: pages/logout.page.tsx:80
+#: pages/logout.page.tsx:84
 msgid "provider.logout.button"
 msgstr ""
 
-#: pages/logout.page.tsx:66
+#: pages/logout.page.tsx:69
 msgid "provider.logout.copy-secret"
 msgstr ""
 
-#: pages/logout.page.tsx:72
+#: pages/logout.page.tsx:75
 msgid "provider.logout.download-backup"
 msgstr ""
 
-#: pages/logout.page.tsx:54
+#: pages/logout.page.tsx:56
 msgid "provider.logout.intro"
 msgstr ""
 
-#: pages/logout.page.tsx:50
+#: pages/logout.page.tsx:52
 msgid "provider.logout.notice.logging-out"
 msgstr ""
 
-#: pages/logout.page.tsx:45
+#: pages/logout.page.tsx:47
 msgid "provider.logout.title"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:191
+#: pages/onboarding/DataStep.tsx:195
 msgid "provider.onboarding.access-code.description"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:196
+#: pages/onboarding/DataStep.tsx:200
 msgid "provider.onboarding.access-code.label"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:215
+#: pages/onboarding/DataStep.tsx:219
 msgid "provider.onboarding.accessible.label"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:127
+#: pages/onboarding/DataStep.tsx:131
 msgid "provider.onboarding.city.error"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:121
+#: pages/onboarding/DataStep.tsx:125
 msgid "provider.onboarding.city.label"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:166
+#: pages/onboarding/DataStep.tsx:170
 msgid "provider.onboarding.data-description"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:160
+#: pages/onboarding/DataStep.tsx:164
 msgid "provider.onboarding.data-title"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:148
+#: pages/onboarding/DataStep.tsx:152
 msgid "provider.onboarding.description.description"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:144
+#: pages/onboarding/DataStep.tsx:148
 msgid "provider.onboarding.description.title"
 msgstr ""
 
-#: pages/onboarding/BackupDataLink.tsx:60
+#: pages/onboarding/BackupDataLink.tsx:59
 msgid "provider.onboarding.download-backup-data"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:182
+#: pages/onboarding/DataStep.tsx:186
 msgid "provider.onboarding.email.label"
 msgstr ""
 
-#: pages/onboarding/BackupDataLink.tsx:70
+#: pages/onboarding/BackupDataLink.tsx:69
 msgid "provider.onboarding.generating-backup-data"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:63
+#: pages/onboarding/DataStep.tsx:67
 msgid "provider.onboarding.intro"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:82
+#: pages/onboarding/DataStep.tsx:86
 msgid "provider.onboarding.name.error.min-length"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:76
+#: pages/onboarding/DataStep.tsx:80
 msgid "provider.onboarding.name.error.required"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:70
+#: pages/onboarding/DataStep.tsx:74
 msgid "provider.onboarding.name.label"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:174
+#: pages/onboarding/DataStep.tsx:178
 msgid "provider.onboarding.phone.label"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:226
+#: pages/onboarding/DataStep.tsx:230
 msgid "provider.onboarding.save-and-continue"
 msgstr ""
 
@@ -157,39 +157,39 @@ msgstr ""
 msgid "provider.onboarding.secret.notice"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:208
+#: pages/onboarding/DataStep.tsx:212
 msgid "provider.onboarding.settings-description"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:97
+#: pages/onboarding/DataStep.tsx:101
 msgid "provider.onboarding.street.error"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:91
+#: pages/onboarding/DataStep.tsx:95
 msgid "provider.onboarding.street.label"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:57
+#: pages/onboarding/DataStep.tsx:61
 msgid "provider.onboarding.title"
 msgstr ""
 
-#: pages/onboarding/VerifyStep.tsx:38
+#: pages/onboarding/VerifyStep.tsx:42
 msgid "provider.onboarding.verify.button"
 msgstr ""
 
-#: pages/onboarding/VerifyStep.tsx:34
+#: pages/onboarding/VerifyStep.tsx:38
 msgid "provider.onboarding.verify.edit-data"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:136
+#: pages/onboarding/DataStep.tsx:140
 msgid "provider.onboarding.website.label"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:112
+#: pages/onboarding/DataStep.tsx:116
 msgid "provider.onboarding.zip-code.error"
 msgstr ""
 
-#: pages/onboarding/DataStep.tsx:106
+#: pages/onboarding/DataStep.tsx:110
 msgid "provider.onboarding.zip-code.label"
 msgstr ""
 

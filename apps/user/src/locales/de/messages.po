@@ -13,6 +13,14 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: components/Header.tsx:58
+msgid "Fragen & Antworten"
+msgstr "Fragen & Antworten"
+
+#: components/Header.tsx:54
+msgid "Impftermin buchen"
+msgstr "Impftermin buchen"
+
 #: components/Footer.tsx:24
 msgid "common.footer.link.booking"
 msgstr "Impfterminen buchen"
@@ -49,7 +57,7 @@ msgstr "Informationen"
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
-#: pages/finder/AppointmentStep.tsx:104
+#: pages/finder/AppointmentStep.tsx:88
 msgid "user.finder.appointment.back-link"
 msgstr "Zurück zur Auswahl der Impfstelle"
 
@@ -57,7 +65,7 @@ msgstr "Zurück zur Auswahl der Impfstelle"
 msgid "user.finder.appointment.card.date"
 msgstr "am {0}"
 
-#: pages/finder/AppointmentStep.tsx:57
+#: pages/finder/AppointmentStep.tsx:47
 msgid "user.finder.appointment.card.submit"
 msgstr "Termin auswählen"
 
@@ -65,19 +73,19 @@ msgstr "Termin auswählen"
 msgid "user.finder.appointment.card.time"
 msgstr "{0} Uhr"
 
-#: pages/finder/AppointmentStep.tsx:148
+#: pages/finder/AppointmentStep.tsx:134
 msgid "user.finder.appointment.no-result"
 msgstr "Es sind keine freien Termine verfügbar.<0/><1/>Bitte versuchen Sie einen späteren Zeitpunkt oder ein anderen Impfstelle."
 
-#: pages/finder/AppointmentStep.tsx:118
+#: pages/finder/AppointmentStep.tsx:102
 msgid "user.finder.appointment.provider.placeholder"
 msgstr "Beliebige Impfstelle"
 
-#: pages/finder/AppointmentStep.tsx:137
+#: pages/finder/AppointmentStep.tsx:121
 msgid "user.finder.appointment.time.placeholder"
 msgstr "Beliebige Zeit"
 
-#: pages/finder/AppointmentStep.tsx:110
+#: pages/finder/AppointmentStep.tsx:94
 msgid "user.finder.appointment.title"
 msgstr "Termine"
 
@@ -101,39 +109,39 @@ msgstr "Termin auswählen"
 msgid "user.finder.date.title"
 msgstr "Datum und Uhrzeit"
 
-#: pages/finder/LocationStep.tsx:65
+#: pages/finder/LocationStep.tsx:56
 msgid "user.finder.location.accessible.label"
 msgstr "Nur barrierefreie Impfstellen"
 
-#: pages/finder/LocationStep.tsx:48
+#: pages/finder/LocationStep.tsx:39
 msgid "user.finder.location.back-link"
 msgstr "Zurück zu den allgemeinen Informationen"
 
-#: pages/finder/LocationStep.tsx:58
+#: pages/finder/LocationStep.tsx:49
 msgid "user.finder.location.intro"
 msgstr "Wählen Sie aus den möglichen Optionen, wo Sie geimpft werden möchten."
 
-#: pages/finder/LocationStep.tsx:54
+#: pages/finder/LocationStep.tsx:45
 msgid "user.finder.location.title"
 msgstr "Impfstellen"
 
-#: pages/finder/SuccessStep.tsx:71
+#: pages/finder/SuccessStep.tsx:73
 msgid "user.finder.success.appointment-code"
 msgstr "Ihr Buchungscode"
 
-#: pages/finder/SuccessStep.tsx:61
+#: pages/finder/SuccessStep.tsx:63
 msgid "user.finder.success.appointment-title"
 msgstr "Ihr Termin"
 
-#: pages/finder/SuccessStep.tsx:101
+#: pages/finder/SuccessStep.tsx:103
 msgid "user.finder.success.cancel-button"
 msgstr "Termin absagen"
 
-#: pages/finder/SuccessStep.tsx:85
+#: pages/finder/SuccessStep.tsx:87
 msgid "user.finder.success.intro"
 msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und bringen ihn unbedingt zur Impfung mit."
 
-#: pages/finder/SuccessStep.tsx:53
+#: pages/finder/SuccessStep.tsx:55
 msgid "user.finder.success.title"
 msgstr "Ihr Termin ist gebucht!"
 
@@ -141,27 +149,27 @@ msgstr "Ihr Termin ist gebucht!"
 msgid "user.finder.time.label"
 msgstr "Zeit"
 
-#: pages/finder/VerifyStep.tsx:72
+#: pages/finder/VerifyStep.tsx:57
 msgid "user.finder.verify.appointment.description"
 msgstr "{0}"
 
-#: pages/finder/VerifyStep.tsx:62
+#: pages/finder/VerifyStep.tsx:43
 msgid "user.finder.verify.appointment.subtitle"
 msgstr "Ihr Termin"
 
-#: pages/finder/VerifyStep.tsx:42
+#: pages/finder/VerifyStep.tsx:23
 msgid "user.finder.verify.back-link"
 msgstr "zurück zum Terminauswahl"
 
-#: pages/finder/VerifyStep.tsx:52
+#: pages/finder/VerifyStep.tsx:33
 msgid "user.finder.verify.intro"
 msgstr "Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob alles stimmt.<0/> Anschließend können Sie den Termin endgültig buchen."
 
-#: pages/finder/VerifyStep.tsx:86
+#: pages/finder/VerifyStep.tsx:70
 msgid "user.finder.verify.submit"
 msgstr "Termin jetzt buchen"
 
-#: pages/finder/VerifyStep.tsx:48
+#: pages/finder/VerifyStep.tsx:29
 msgid "user.finder.verify.title"
 msgstr "Übersicht"
 

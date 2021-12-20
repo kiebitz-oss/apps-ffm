@@ -2,7 +2,6 @@ import { Edit24 } from "@carbon/icons-react";
 import type { Appointment } from "@kiebitz-oss/api";
 import { Button, Error, InputField, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
-import { useUserApi } from "pages/UserApiContext";
 import {
   ChangeEventHandler,
   MouseEventHandler,
@@ -12,6 +11,7 @@ import {
 import { BackLink } from "../../components/BackLink";
 import { Link } from "../../components/Link";
 import { AppointmentCard } from "../AppointmentCard";
+import { useUserApi } from "../UserApiContext";
 import { Types, useFinderState } from "./FinderStateProvider";
 
 interface AppointmentCardProps {

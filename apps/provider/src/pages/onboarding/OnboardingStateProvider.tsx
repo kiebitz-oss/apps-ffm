@@ -14,7 +14,6 @@ type ActionMap<M extends { [index: string]: unknown }> = {
 
 export interface OnboardingStateData extends Provider {
   website?: string;
-  description?: string;
   phone?: string;
   email?: string;
   accessCode?: string;

@@ -53,99 +53,99 @@ msgstr "Informationen"
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
-#: pages/logout.page.tsx:80
+#: pages/logout.page.tsx:84
 msgid "provider.logout.button"
 msgstr "Abmelden"
 
-#: pages/logout.page.tsx:66
+#: pages/logout.page.tsx:69
 msgid "provider.logout.copy-secret"
 msgstr "Datenschlüssel kopieren"
 
-#: pages/logout.page.tsx:72
+#: pages/logout.page.tsx:75
 msgid "provider.logout.download-backup"
 msgstr "Sicherungsdatei herunterladen"
 
-#: pages/logout.page.tsx:54
+#: pages/logout.page.tsx:56
 msgid "provider.logout.intro"
 msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie Ihren Datenschlüssel notiert und Ihre Sicherungsdatei heruntergeladen haben . Nur damit können Sie sich erneut einloggen."
 
-#: pages/logout.page.tsx:50
+#: pages/logout.page.tsx:52
 msgid "provider.logout.notice.logging-out"
 msgstr "Bitte warten, Sie werden abgemeldet..."
 
-#: pages/logout.page.tsx:45
+#: pages/logout.page.tsx:47
 msgid "provider.logout.title"
 msgstr "Abmelden"
 
-#: pages/onboarding/DataStep.tsx:191
+#: pages/onboarding/DataStep.tsx:195
 msgid "provider.onboarding.access-code.description"
 msgstr "Falls Sie einen spezifischen Zugangscode erhalten haben geben Sie diesen bitte hier ein."
 
-#: pages/onboarding/DataStep.tsx:196
+#: pages/onboarding/DataStep.tsx:200
 msgid "provider.onboarding.access-code.label"
 msgstr "Zugangscode (falls vorhanden)"
 
-#: pages/onboarding/DataStep.tsx:215
+#: pages/onboarding/DataStep.tsx:219
 msgid "provider.onboarding.accessible.label"
 msgstr "Barrierefreier Zugang zur Praxis/zum Impfzentrum"
 
-#: pages/onboarding/DataStep.tsx:127
+#: pages/onboarding/DataStep.tsx:131
 msgid "provider.onboarding.city.error"
 msgstr "Bitte gegen Sie einen gültigen Ort an"
 
-#: pages/onboarding/DataStep.tsx:121
+#: pages/onboarding/DataStep.tsx:125
 msgid "provider.onboarding.city.label"
 msgstr "Ort"
 
-#: pages/onboarding/DataStep.tsx:166
+#: pages/onboarding/DataStep.tsx:170
 msgid "provider.onboarding.data-description"
 msgstr "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit dem Support-Team."
 
-#: pages/onboarding/DataStep.tsx:160
+#: pages/onboarding/DataStep.tsx:164
 msgid "provider.onboarding.data-title"
 msgstr "Kontaktdaten"
 
-#: pages/onboarding/DataStep.tsx:148
+#: pages/onboarding/DataStep.tsx:152
 msgid "provider.onboarding.description.description"
 msgstr "Informationen für Impfwillige (z.B. wenn Sie spezielle Impfstoffe nur bestimmten Gruppen empfehlen)"
 
-#: pages/onboarding/DataStep.tsx:144
+#: pages/onboarding/DataStep.tsx:148
 msgid "provider.onboarding.description.title"
 msgstr "Beschreibung"
 
-#: pages/onboarding/BackupDataLink.tsx:60
+#: pages/onboarding/BackupDataLink.tsx:59
 msgid "provider.onboarding.download-backup-data"
 msgstr "Sicherungsdatei herunterladen"
 
-#: pages/onboarding/DataStep.tsx:182
+#: pages/onboarding/DataStep.tsx:186
 msgid "provider.onboarding.email.label"
 msgstr "E-Mail Adresse"
 
-#: pages/onboarding/BackupDataLink.tsx:70
+#: pages/onboarding/BackupDataLink.tsx:69
 msgid "provider.onboarding.generating-backup-data"
 msgstr "Bitte warten, erstelle Sicherungsdaten..."
 
-#: pages/onboarding/DataStep.tsx:63
+#: pages/onboarding/DataStep.tsx:67
 msgid "provider.onboarding.intro"
 msgstr "Dies sind die allgemeinen Kontaktdaten."
 
-#: pages/onboarding/DataStep.tsx:82
+#: pages/onboarding/DataStep.tsx:86
 msgid "provider.onboarding.name.error.min-length"
 msgstr "Bitte gegen Sie einen gültigen Namen an"
 
-#: pages/onboarding/DataStep.tsx:76
+#: pages/onboarding/DataStep.tsx:80
 msgid "provider.onboarding.name.error.required"
 msgstr "Bitte gegen Sie einen gültigen Namen an"
 
-#: pages/onboarding/DataStep.tsx:70
+#: pages/onboarding/DataStep.tsx:74
 msgid "provider.onboarding.name.label"
 msgstr "Vollständiger Name"
 
-#: pages/onboarding/DataStep.tsx:174
+#: pages/onboarding/DataStep.tsx:178
 msgid "provider.onboarding.phone.label"
 msgstr "Telefonnummer"
 
-#: pages/onboarding/DataStep.tsx:226
+#: pages/onboarding/DataStep.tsx:230
 msgid "provider.onboarding.save-and-continue"
 msgstr "Weiter"
 
@@ -157,39 +157,39 @@ msgstr "Abschließen & zur Terminplanung"
 msgid "provider.onboarding.secret.notice"
 msgstr "Um sich später wieder einzuloggen oder Ihre Termine zugreifen zu können, benötigen Sie Ihre SICHERHEITSDATEI und Ihren SICHERHEITSCODE. Bitte speichern Sie jetzt Ihre SICHERHEITSDATEI und notieren Sie sich im Anschluss den SICHERHEITSCODE."
 
-#: pages/onboarding/DataStep.tsx:208
+#: pages/onboarding/DataStep.tsx:212
 msgid "provider.onboarding.settings-description"
 msgstr "Weitere Angaben"
 
-#: pages/onboarding/DataStep.tsx:97
+#: pages/onboarding/DataStep.tsx:101
 msgid "provider.onboarding.street.error"
 msgstr "Bitte gegen Sie eine gültige Straße an"
 
-#: pages/onboarding/DataStep.tsx:91
+#: pages/onboarding/DataStep.tsx:95
 msgid "provider.onboarding.street.label"
 msgstr "Straße & Hausnummer"
 
-#: pages/onboarding/DataStep.tsx:57
+#: pages/onboarding/DataStep.tsx:61
 msgid "provider.onboarding.title"
 msgstr "Allgemeine Daten"
 
-#: pages/onboarding/VerifyStep.tsx:38
+#: pages/onboarding/VerifyStep.tsx:42
 msgid "provider.onboarding.verify.button"
 msgstr "Weiter"
 
-#: pages/onboarding/VerifyStep.tsx:34
+#: pages/onboarding/VerifyStep.tsx:38
 msgid "provider.onboarding.verify.edit-data"
 msgstr "Anpassen"
 
-#: pages/onboarding/DataStep.tsx:136
+#: pages/onboarding/DataStep.tsx:140
 msgid "provider.onboarding.website.label"
 msgstr "Webseite"
 
-#: pages/onboarding/DataStep.tsx:112
+#: pages/onboarding/DataStep.tsx:116
 msgid "provider.onboarding.zip-code.error"
 msgstr "Bitte gegen Sie eine gültige Postleitzahl an"
 
-#: pages/onboarding/DataStep.tsx:106
+#: pages/onboarding/DataStep.tsx:110
 msgid "provider.onboarding.zip-code.label"
 msgstr "Postleitzahl"
 

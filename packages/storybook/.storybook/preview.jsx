@@ -3,7 +3,7 @@ import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { RouterContext } from "next/dist/shared/lib/router-context";
-import "../app.css";
+import "../../../app.css";
 
 i18n.activate("de");
 
