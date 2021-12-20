@@ -1,6 +1,6 @@
 import { Mediator as KiebitzMediator } from "vanellus";
 import { backend } from "./backend";
-import { providers } from "./fixtures/data";
+import { providers } from "./fixtures/providers";
 import type { MediatorKeyPairs, Provider } from "./types";
 
 export class MediatorApi {

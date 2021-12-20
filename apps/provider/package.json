@@ -21,9 +21,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export --outdir dist",
     "start": "next start",
-    "clean": "rimraf --no-glob ./out ./.next ./dist",
+    "clean": "rimraf --no-glob ./.next ./dist",
     "lint": "next lint",
     "lint:fix": "next lint --fix ; stylelint src/**/*.css --fix",
     "lint:css": "stylelint ./src/**/*.css",
@@ -154,9 +154,7 @@
     },
     "ignorePatterns": [
       "node_modules",
-      "dist",
-      "out",
-      "build"
+      "dist"
     ],
     "rules": {
       "tailwindcss/no-custom-classname": "off",

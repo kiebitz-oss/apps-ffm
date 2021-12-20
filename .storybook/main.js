@@ -6,10 +6,26 @@ const path = require("path");
  **/
 const config = {
   stories: [
-    "../apps/user/src/**/*.stories.@(mdx|ts|tsx)",
-    "../apps/mediator/src/**/*.stories.@(mdx|ts|tsx)",
-    "../apps/provider/src/**/*.stories.@(mdx|ts|tsx)",
-    "../packages/ui/src/**/*.stories.@(mdx|ts|tsx)",
+    {
+      directory: "../apps/user/src",
+      titlePrefix: "User",
+      files: "**/*.stories.*",
+    },
+    {
+      directory: "../apps/mediator/src",
+      titlePrefix: "Mediator",
+      files: "**/*.stories.*",
+    },
+    {
+      directory: "../apps/Provider/src",
+      titlePrefix: "Provider",
+      files: "**/*.stories.*",
+    },
+    {
+      directory: "../packages/ui/src",
+      titlePrefix: "UI",
+      files: "**/*.stories.*",
+    },
   ],
   logLevel: "info",
   staticDirs: ["../public"],
@@ -26,19 +42,10 @@ const config = {
       },
     },
     "@storybook/addon-a11y",
+    "storybook-addon-next-router",
   ],
   core: {
     builder: "webpack5",
-  },
-  features: {
-    postcss: false,
-    modernInlineRender: true,
-    storyStoreV7: !global.navigator?.userAgent?.match?.("jsdom"),
-    buildStoriesJson: true,
-    // babelModeV7: true,
-  },
-  reactOptions: {
-    fastRefresh: true,
   },
   webpackFinal: async (config) => {
     config.resolve.modules = [

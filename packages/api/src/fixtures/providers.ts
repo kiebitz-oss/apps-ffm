@@ -1,5 +1,4 @@
-import type { Appointment, Provider } from "../types";
-import { createSlots, randomBytes } from "../utils";
+import type { Provider } from "../types";
 
 export const providers: Provider[] = [
   {
@@ -11,6 +10,7 @@ export const providers: Provider[] = [
     accessible: true,
     verified: true,
     appointments: [],
+    description: "",
   },
   {
     id: "2",
@@ -33,6 +33,7 @@ export const providers: Provider[] = [
     accessible: true,
     verified: false,
     appointments: [],
+    description: "",
   },
   {
     id: "4",
@@ -43,6 +44,7 @@ export const providers: Provider[] = [
     accessible: false,
     verified: false,
     appointments: [],
+    description: "",
   },
   {
     id: "5",
@@ -53,6 +55,7 @@ export const providers: Provider[] = [
     accessible: false,
     verified: false,
     appointments: [],
+    description: "",
   },
   {
     id: "6",
@@ -63,6 +66,7 @@ export const providers: Provider[] = [
     accessible: true,
     verified: false,
     appointments: [],
+    description: "",
   },
   {
     id: "7",
@@ -73,73 +77,6 @@ export const providers: Provider[] = [
     accessible: false,
     verified: true,
     appointments: [],
+    description: "",
   },
 ];
-
-export const appointments: Appointment[] = [
-  {
-    id: randomBytes(),
-    duration: 90,
-    date: new Date(),
-    provider: providers[0],
-    slots: createSlots(10),
-    bookings: [],
-    vaccine: "mrna",
-  },
-  {
-    id: randomBytes(),
-    duration: 60,
-    date: new Date(),
-    provider: providers[1],
-    slots: createSlots(10),
-    bookings: [],
-    vaccine: "moderna",
-  },
-  {
-    id: randomBytes(),
-    duration: 60,
-    date: new Date(),
-    provider: providers[2],
-    slots: createSlots(10),
-    bookings: [],
-    vaccine: "biontech",
-  },
-  {
-    id: randomBytes(),
-    duration: 60,
-    date: new Date(),
-    provider: providers[3],
-    slots: createSlots(10),
-    bookings: [],
-    vaccine: "biontech",
-  },
-  {
-    id: randomBytes(),
-    duration: 60,
-    date: new Date(),
-    provider: providers[1],
-    slots: createSlots(10),
-    bookings: [],
-    vaccine: "biontech",
-  },
-  {
-    id: randomBytes(),
-    duration: 60,
-    date: new Date(),
-    provider: providers[1],
-    slots: createSlots(10),
-    bookings: [],
-    vaccine: "mrna",
-  },
-];
-
-// export const providers: any[] = [
-//     {
-//         id: '1',
-//         name: 'Impfzentrum 3000',
-//         street: 'Münchener Straße 42',
-//         zipCode: 30313,
-//         city: 'Frankfurt',
-//         verified: true,
-//     },
-// ];

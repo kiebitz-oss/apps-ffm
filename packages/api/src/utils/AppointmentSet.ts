@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
+import { providers } from "index";
 import type { Appointment, Slot, Vaccine } from "types";
-import { providers } from "../fixtures/data";
 import { randomBytes } from "./crypto";
 
 export const createSlot = (open = true): Slot => {
@@ -67,7 +67,7 @@ export class AppointmentSet implements Iterable<AppointmentItem> {
         vaccine: vaccine,
         modified: true,
         provider: providers[0],
-      });
+      } as unknown as Appointment);
 
       startDayjs = startDayjs.add(interval, "minute");
     } while (startDayjs < endDayjs);

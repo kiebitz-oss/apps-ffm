@@ -4,7 +4,7 @@
 
 import clsx from "clsx";
 import RouterLink from "next/link";
-import { loadLocale, useI18n } from "./useI18n";
+// import { loadLocale, useI18n } from "./useI18n";
 
 export interface LinkProps extends React.ComponentProps<"a"> {
   external?: boolean;
@@ -28,7 +28,7 @@ export const Link: React.FC<LinkProps> = ({
   size = "md",
   ...props
 }) => {
-  const i18n = useI18n();
+  // const i18n = useI18n();
 
   if (!href || external) {
     return (
@@ -53,7 +53,7 @@ export const Link: React.FC<LinkProps> = ({
   }
 
   return (
-    <RouterLink href={href}>
+    <RouterLink href={href} passHref>
       <a
         className={clsx(
           {
@@ -66,8 +66,7 @@ export const Link: React.FC<LinkProps> = ({
         )}
         rel={rel}
         target={target}
-        onClick={() => loadLocale(i18n, locale)}
-        lang={locale}
+        // onClick={() => loadLocale(i18n, locale)}
         {...props}
       >
         {children}

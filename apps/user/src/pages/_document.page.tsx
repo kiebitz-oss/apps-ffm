@@ -1,29 +1,17 @@
-import crypto from "crypto";
 import NextDocument, { Head, Html, Main, NextScript } from "next/document";
 
-const cspHashOf = (text: string) => {
-  const hash = crypto.createHash("sha256");
-  hash.update(text);
-
-  return `'sha256-${hash.digest("base64")}'`;
-};
-
-export default class MyDocument extends NextDocument {
+/*
+ * Note on CSP: we are blocking everything and allow only the bits we need from "self"
+ */
+class Document extends NextDocument {
   render() {
-    let csp = `default-src 'self'; script-src 'self' ${cspHashOf(
-      NextScript.getInlineScriptSource(this.props)
-    )}`;
-
-    if (process.env.NODE_ENV !== "production") {
-      csp = `style-src 'self' 'unsafe-inline'; font-src 'self' data:; default-src 'self'; script-src 'unsafe-eval' 'self' ${cspHashOf(
-        NextScript.getInlineScriptSource(this.props)
-      )}`;
-    }
-
     return (
-      <Html>
+      <Html dir="ltr">
         <Head>
-          <meta httpEquiv="Content-Security-Policy" content={csp} />
+          <meta
+            httpEquiv="Content-Security-Policy"
+            content="default-src 'none'; style-src 'self'; manifest-src 'self'; script-src 'self'; font-src 'self'; img-src 'self' data:; prefetch-src 'self';"
+          />
         </Head>
         <body>
           <Main />
@@ -33,3 +21,5 @@ export default class MyDocument extends NextDocument {
     );
   }
 }
+
+export default Document;

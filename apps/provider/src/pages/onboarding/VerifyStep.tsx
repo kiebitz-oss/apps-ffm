@@ -6,7 +6,7 @@ import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { Link } from "components/Link";
 import { useRouter } from "next/router";
-import { useProviderApi } from "pages/ProviderApiContext";
+import { useProviderApi } from "../ProviderApiContext";
 import { ProviderDataSummary } from "../ProviderDataSummary";
 import { useOnboardingState } from "./OnboardingStateProvider";
 

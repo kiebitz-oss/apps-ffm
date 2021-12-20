@@ -1,14 +1,17 @@
-import { Appointment } from "./Appointment";
+import type { PublicProviderData as VanellusPublicProviderData } from "vanellus";
+import type { Appointment } from "./Appointment";
 
-export interface PublicProvider {
+export interface PublicProvider extends VanellusPublicProviderData {
+  // name: string;
+  // street: string;
+  // city: string;
+  // zipCode: string;
+  // description: string;
+
   id: string;
-  name: string;
-  street: string;
-  city: string;
-  zipCode: string;
   accessible: boolean;
-  description?: string;
   verified: boolean;
+  // description?: string;
 }
 
 export interface Provider extends PublicProvider {
@@ -17,5 +20,4 @@ export interface Provider extends PublicProvider {
   email?: string;
   phone?: string;
   website?: string;
-  description?: string;
 }

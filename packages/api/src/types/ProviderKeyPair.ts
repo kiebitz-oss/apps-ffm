@@ -1,1 +1,3 @@
-export type ProviderKeyPair = any;
+import type { ActorKey } from "vanellus";
+
+export type ProviderKeyPair = ActorKey;

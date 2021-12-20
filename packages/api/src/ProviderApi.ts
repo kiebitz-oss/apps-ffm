@@ -5,9 +5,9 @@ import type {
   ProviderSecretData,
 } from "types";
 import { b642buf, Provider as KiebitzProvider, randomBytes } from "vanellus";
-import { buf2base32 } from "vanellus/dist/helpers/conversion";
 import { backend } from "./backend";
-import { appointments } from "./fixtures/data";
+import { appointments } from "./fixtures/appointments";
+import { buf2base32 } from "./utils/crypto";
 
 export class ProviderApi {
   // protected secret: string | null = null;
@@ -97,7 +97,7 @@ export class ProviderApi {
   public async publishAppointments(): Promise<boolean> {
     try {
       this.appointments.forEach((appointment) => {
-        appointment.modified = undefined;
+        appointment.modified = false;
       });
 
       return true;

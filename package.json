@@ -37,6 +37,10 @@
     "docker:build": "docker build . -t kiebitz-apps",
     "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
   },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16",
@@ -70,6 +74,7 @@
     "postcss-preset-env": "^7.0.2",
     "prettier": "^2.5.0",
     "start-server-and-test": "^1.14.0",
+    "storybook-addon-next-router": "^3.1.0",
     "stylelint": "^14.1.0",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-recommended": "^6.0.0",
@@ -83,10 +88,6 @@
     "not ie 11",
     "not op_mini all"
   ],
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "postcss": {
     "plugins": {
       "tailwindcss/nesting": {},

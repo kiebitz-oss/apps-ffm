@@ -1,16 +1,24 @@
-import { Booking } from "./Booking";
-import { PublicProvider } from "./Provider";
-import { Slot } from "./Slot";
-import { Vaccine } from "./Vaccine";
+import type { Appointment as VanellusAppointment } from "vanellus";
+import type { Booking } from "./Booking";
+import type { PublicProvider } from "./Provider";
+import type { Slot } from "./Slot";
+import type { Vaccine } from "./Vaccine";
 
-export interface Appointment {
-  id: string;
-  duration: number;
+export interface Appointment extends VanellusAppointment {
+  bookings: Booking[]; // any[] in vanellus
+  // updatedAt: string;
+  // modified: boolean;
+  // timestamp: string;
+  // duration: number;
+  // properties: { [Key: string]: any };
+  // id: string;
+  // publicKey: string;
+  // slotData: Slot[];
+
   date: Date;
   vaccine: Vaccine;
-  provider: PublicProvider;
-  bookings: Booking[];
   slots: Slot[];
-  modified?: boolean;
-  // properties: Record<string, unknown>;
+
+  provider: PublicProvider;
+  // bookings: Booking[];
 }

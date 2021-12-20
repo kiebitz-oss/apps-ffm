@@ -21,9 +21,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export --outdir",
     "start": "next start",
-    "clean": "rimraf --no-glob ./out ./.next ./dist",
+    "clean": "rimraf --no-glob ./.next ./dist",
     "lint": "next lint",
     "lint:fix": "next lint --fix ; stylelint src/**/*.css --fix",
     "lint:css": "stylelint ./src/**/*.css",
@@ -42,15 +42,15 @@
     "@carbon/icons-react": "^10.44.0",
     "@fontsource/ibm-plex-sans": "^4.5.1",
     "@headlessui/react": "^1.4.2",
+    "@kiebitz-oss/api": "*",
+    "@kiebitz-oss/ui": "*",
     "@lingui/react": "^3.13.0",
     "clsx": "^1.1.1",
     "next": "^12.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.2",
-    "react-use": "^17.3.1",
-    "@kiebitz-oss/api": "*",
-    "@kiebitz-oss/ui": "*"
+    "react-use": "^17.3.1"
   },
   "devDependencies": {
     "@lingui/cli": "^3.13.0",
@@ -63,7 +63,6 @@
     "@types/react": "^17.0.37",
     "babel-plugin-macros": "^3.1.0",
     "cross-env": "^7.0.3",
-    "rimraf": "^3.0.2",
     "eslint": "^8.5.0",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
@@ -75,6 +74,7 @@
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.0.2",
     "prettier": "^2.5.0",
+    "rimraf": "^3.0.2",
     "stylelint": "^14.1.0",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-recommended": "^6.0.0",
@@ -148,9 +148,7 @@
     },
     "ignorePatterns": [
       "node_modules",
-      "dist",
-      "out",
-      "build"
+      "dist"
     ],
     "rules": {
       "tailwindcss/no-custom-classname": "off",

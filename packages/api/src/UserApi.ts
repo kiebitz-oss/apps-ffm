@@ -1,6 +1,6 @@
 import { User as KiebitzUser } from "vanellus";
 import { backend } from "./backend";
-import { appointments, providers } from "./fixtures/data";
+import { appointments, providers } from "./fixtures";
 import { Appointment, PublicProvider } from "./types";
 import { b642buf } from "./utils/conversion";
 import { buf2base32, randomBytes } from "./utils/crypto";

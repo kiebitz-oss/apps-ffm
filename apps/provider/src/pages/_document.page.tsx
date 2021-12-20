@@ -8,7 +8,7 @@ const cspHashOf = (text: string) => {
   return `'sha256-${hash.digest("base64")}'`;
 };
 
-export default class MyDocument extends NextDocument {
+class Document extends NextDocument {
   render() {
     let csp = `default-src 'self'; script-src 'self' ${cspHashOf(
       NextScript.getInlineScriptSource(this.props)
@@ -33,3 +33,5 @@ export default class MyDocument extends NextDocument {
     );
   }
 }
+
+export default Document;
