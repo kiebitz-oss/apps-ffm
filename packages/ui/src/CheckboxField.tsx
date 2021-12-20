@@ -31,9 +31,7 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
           ref={ref}
         />
 
-        <Label htmlFor={id} className="select-none">
-          {label}
-        </Label>
+        <Label htmlFor={id}>{label}</Label>
       </Field>
     );
   }

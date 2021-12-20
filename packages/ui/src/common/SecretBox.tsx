@@ -35,7 +35,7 @@ export const SecretBox: React.FC<SecretBoxProps> = ({
         <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
       </Title>
 
-      <code className="flex justify-center items-center p-4 text-2xl font-bold text-white uppercase bg-black rounded-2xl">
+      <code className="flex justify-center items-center p-4 text-2xl font-bold text-white uppercase bg-black rounded">
         {renderSecret(secret)}
         {copy && (
           <CopyToClipboardButton toCopy={secret} className="text-sm">

@@ -26,7 +26,7 @@ export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
             <div className="flex flex-col gap-4 md:px-0 lg:w-full xl:flex-row xl:gap-2">
               <div
                 className={clsx(
-                  "flex flex-col gap-5 py-3 px-4 font-semibold bg-white rounded-2xl sm:w-[500px] shadow-box",
+                  "flex flex-col gap-5 py-3 px-4 font-semibold bg-white rounded shadow-box sm:w-[500px]",
                   {
                     ["border-error border-2"]: error,
                   }
@@ -41,7 +41,7 @@ export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
                 <div className="flex gap-8 items-center mb-2">
                   <label
                     htmlFor={`${name}-yes`}
-                    className="flex gap-2 items-center"
+                    className="flex gap-2 items-center cursor-pointer"
                   >
                     <input
                       className="radio"
@@ -57,7 +57,7 @@ export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
 
                   <label
                     htmlFor={`${name}-no`}
-                    className="flex gap-2 items-center"
+                    className="flex gap-2 items-center cursor-pointer"
                   >
                     <input
                       className="radio"

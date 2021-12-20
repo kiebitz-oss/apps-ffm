@@ -4,14 +4,16 @@ import NextDocument, { Head, Html, Main, NextScript } from "next/document";
  * Note on CSP: we are blocking everything and allow only the bits we need from "self"
  */
 class Document extends NextDocument {
+  protected csp =
+    process.env.NODE_ENV !== "production"
+      ? "style-src 'self' 'unsafe-inline'; font-src 'self' data:; default-src 'self'; script-src 'unsafe-eval' 'self'"
+      : "default-src 'none'; style-src 'self'; manifest-src 'self'; script-src 'self'; font-src 'self'; img-src 'self' data:; prefetch-src 'self'";
+
   render() {
     return (
       <Html dir="ltr">
         <Head>
-          <meta
-            httpEquiv="Content-Security-Policy"
-            content="default-src 'none'; style-src 'self'; manifest-src 'self'; script-src 'self'; font-src 'self'; img-src 'self' data:; prefetch-src 'self';"
-          />
+          {/* <meta httpEquiv="Content-Security-Policy" content={this.csp} /> */}
         </Head>
         <body>
           <Main />

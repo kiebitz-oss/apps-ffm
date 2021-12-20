@@ -25,7 +25,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
       className={clsx(
         "flex flex-col gap-4 items-center p-4 font-semibold default-focus",
         {
-          ["rounded-2xl border-2 border-black"]: border,
+          ["rounded border-2 border-black"]: border,
         },
         className
       )}

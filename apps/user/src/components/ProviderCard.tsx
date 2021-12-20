@@ -15,7 +15,7 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({
   return (
     <section
       className={clsx(
-        "flex justify-between p-4 rounded-2xl border-2 border-black",
+        "flex gap-4 justify-between p-4 min-w-full rounded border-2 border-black",
         "hover:border-highlight hover:shadow-provider",
         className
       )}

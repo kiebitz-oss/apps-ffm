@@ -1,12 +1,7 @@
 import type { PublicProvider } from "@kiebitz-oss/api";
 import { CheckboxField, Text, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
-import {
-  ChangeEventHandler,
-  MouseEventHandler,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEventHandler, useEffect, useState } from "react";
 import { BackLink } from "../../components/BackLink";
 import { Link } from "../../components/Link";
 import { ProviderCard } from "../../components/ProviderCard";
@@ -14,25 +9,21 @@ import { useUserApi } from "../UserApiContext";
 import { Types, useFinderState } from "./FinderStateProvider";
 
 export const LocationStep: React.FC = () => {
-  const [loading, setLoading] = useState<boolean>(true);
   const [filterAccessible, setFilterAccessible] = useState<boolean>(false);
-  const [providers, setProviders] = useState<PublicProvider[]>([]);
+  const [providers, setProviders] = useState<PublicProvider[] | null>(null);
   const api = useUserApi();
   const { dispatch, state } = useFinderState();
 
   useEffect(() => {
-    api.getProvidersByZip(30363, 10).then((providers) => {
-      setLoading(false);
+    api.getProvidersByZip(30363).then((providers) => {
       setProviders(providers);
     });
   }, [api]);
 
-  const onClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
-    const id = event.currentTarget.dataset["id"];
-
+  const setProvider = (provider: PublicProvider) => {
     dispatch({
       type: Types.SET_PROVIDER,
-      payload: { provider: providers[Number(id) - 1] },
+      payload: { provider },
     });
   };
 
@@ -54,13 +45,13 @@ export const LocationStep: React.FC = () => {
         <Trans id="user.finder.location.title">Impfstellen</Trans>
       </Title>
 
-      <Text variant="text2" className="mb-8">
+      <Text variant="text1" className="mb-8">
         <Trans id="user.finder.location.intro">
           Wählen Sie aus den möglichen Optionen, wo Sie geimpft werden möchten.
         </Trans>
       </Text>
 
-      <div className="mx-4 mb-8 md:max-w-3xl lg:mx-8">
+      <div className="mx-4 mb-8 lg:mx-8">
         <CheckboxField
           label={t({
             id: "user.finder.location.accessible.label",
@@ -71,26 +62,27 @@ export const LocationStep: React.FC = () => {
         />
       </div>
 
-      <ul className="flex flex-col gap-4 w-full md:px-0 md:max-w-3xl">
-        {providers
-          .filter((provider) => {
-            if (!filterAccessible) {
-              return true;
-            }
-
-            return provider.accessible;
-          })
-          .map((provider) => (
-            <li key={provider.id}>
-              <Link
-                href="/finder/appointment"
-                onClick={onClick}
-                data-id={provider.id}
-              >
-                <ProviderCard provider={provider} />
-              </Link>
-            </li>
-          ))}
+      <ul className="grid grid-flow-row gap-4 md:px-0 md:max-w-2xl">
+        {providers === null ? (
+          <div>loading...</div>
+        ) : (
+          providers
+            .filter((provider) =>
+              filterAccessible ? provider.accessible : true
+            )
+            .map((provider) => (
+              <li key={provider.id}>
+                <Link
+                  href="/finder/appointment"
+                  onClick={() => setProvider(provider)}
+                  data-id={provider.id}
+                  className="block"
+                >
+                  <ProviderCard provider={provider} />
+                </Link>
+              </li>
+            ))
+        )}
       </ul>
     </main>
   );

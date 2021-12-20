@@ -23,7 +23,7 @@ export const SuccessStep: React.FC = () => {
       router.push("/finder");
     } else {
       api
-        .bookAppointment(appointment.id, appointment.provider.id)
+        .bookAppointment(appointment.id)
         .then((secret) => {
           setSecret(secret);
         })
@@ -34,7 +34,9 @@ export const SuccessStep: React.FC = () => {
     }
   }, [api, appointment, router]);
 
-  const onCancel: MouseEventHandler<HTMLButtonElement> = () => {
+  const onCancel: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.preventDefault();
+
     api.cancelAppointment(appointment.id, appointment.provider.id).then(() => {
       router.push("/finder");
     });
@@ -73,7 +75,7 @@ export const SuccessStep: React.FC = () => {
                 </Trans>
               </Title>
 
-              <div className="flex justify-center items-center p-4 text-2xl font-bold text-white bg-black rounded-lg md:text-6xl md:flex-grow">
+              <div className="flex justify-center items-center p-4 text-2xl font-bold text-white bg-black rounded md:text-6xl md:flex-grow">
                 {secret === null
                   ? "Buchung läuft..."
                   : secret.toUpperCase().slice(0, 4)}
@@ -136,14 +138,14 @@ export const SuccessStep: React.FC = () => {
             Impfvorbereitungen
           </Title>
 
-          <ul className="flex flex-col gap-4 items-stretch pb-6">
+          <ul className="grid grid-flow-row gap-4 pb-6">
             {vaccines[i18n.locale || "de"][appointment.vaccine].pdfs.map(
               (pdf) => (
                 <li key={pdf.label}>
                   <Link
                     href={pdf.url}
                     external
-                    className="inline-flex gap-2 justify-center items-center py-2 px-4 w-full font-semibold text-primary no-underline bg-blue-100 rounded-2xl"
+                    className="text-primary bg-primary/10 button md"
                   >
                     <GeneratePdf16 />
                     {pdf.label}

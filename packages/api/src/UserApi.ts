@@ -1,38 +1,25 @@
-import { User as KiebitzUser } from "vanellus";
-import { backend } from "./backend";
-import { appointments, providers } from "./fixtures";
-import { Appointment, PublicProvider } from "./types";
-import { b642buf } from "./utils/conversion";
-import { buf2base32, randomBytes } from "./utils/crypto";
+import { ApiAdapter } from "./adapter/ApiAdapter";
+import { MockAdapter } from "./adapter/MockApiAdapter";
+import { ApiStorage } from "./ApiStorage";
+import { Appointment } from "./types";
 
 export class UserApi {
-  protected user: KiebitzUser;
+  protected adapter: ApiAdapter;
 
   constructor() {
-    this.user = new KiebitzUser("main", backend);
-    //     // console.log(this.kiebitz);
-
-    //     // this.kiebitz.queueData = {
-    //     //     zipCode: '60306',
-    //     // };
-
-    //     // const today = formatDate(new Date());
-
-    //     // this.kiebitz
-    //     //     .getAppointments({
-    //     //         from: today,
-    //     //         to: today,
-    //     //     })
-    //     //     .then((result) => {
-    //     //         console.log(result);
-    //     //     });
+    this.adapter = new MockAdapter(new ApiStorage("user"));
   }
 
-  public async getProvidersByZip(
-    zipCode: number,
-    radius = 5
-  ): Promise<PublicProvider[]> {
-    return providers;
+  public async isAuthenticated(): Promise<boolean> {
+    return this.adapter.isAuthenticated();
+  }
+
+  public async logout(): Promise<boolean> {
+    return this.adapter.logout();
+  }
+
+  public async getProvidersByZip(zipCode: number, radius = 5) {
+    return this.adapter.getVerifiedProvidersByZip(zipCode, radius);
   }
 
   public async getAppointmentsByProvider(
@@ -40,7 +27,7 @@ export class UserApi {
     from?: Date,
     to?: Date
   ): Promise<Appointment[]> {
-    return appointments;
+    return this.adapter.getAppointmentsByProvider(providerId, from, to);
   }
 
   public async getAppointmentsByZipCode(
@@ -49,31 +36,17 @@ export class UserApi {
     from?: Date,
     to?: Date
   ): Promise<Appointment[]> {
-    return appointments;
+    return this.adapter.getAppointmentsByZipCode(zipCode, radius, from, to);
   }
 
-  public async getAppointment(
-    id: string,
-    providerId: string
-  ): Promise<Appointment | null> {
-    return appointments[Number(id) - 1] ? appointments[Number(id) - 1] : null;
-  }
-
-  public async bookAppointment(
-    appointmentId: string,
-    providerID: string
-  ): Promise<string> {
-    const secret = buf2base32(b642buf(randomBytes(10)));
-
-    localStorage.set("user::secret", JSON.stringify(secret));
-
-    return secret;
+  public async bookAppointment(appointmentId: string): Promise<string> {
+    return this.adapter.bookAppointment(appointmentId);
   }
 
   public async cancelAppointment(
     appointmentId: string,
     providerID: string
   ): Promise<boolean> {
-    return true;
+    return this.adapter.cancelAppointment(appointmentId);
   }
 }

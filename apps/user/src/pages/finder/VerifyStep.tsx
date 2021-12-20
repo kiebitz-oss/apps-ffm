@@ -5,11 +5,9 @@ import { useEffect } from "react";
 import { BackLink } from "../../components/BackLink";
 import { Link } from "../../components/Link";
 import { AppointmentCard } from "../AppointmentCard";
-import { useUserApi } from "../UserApiContext";
 import { useFinderState } from "./FinderStateProvider";
 
 export const VerifyStep: React.FC = () => {
-  const api = useUserApi();
   const { state } = useFinderState();
   const router = useRouter();
 
@@ -19,26 +17,9 @@ export const VerifyStep: React.FC = () => {
     }
   }, [state.appointment, router]);
 
-  const onBooking = () => {
-    if (state.appointment && state.provider) {
-      api
-        .bookAppointment(state.appointment.id, state.provider.id)
-        .then((result) => {
-          console.log({ state, result });
-        });
-    } else {
-      // @TODO handle missing selections
-    }
-  };
-
-  // safeguard
-  if (!state.appointment) {
-    return null;
-  }
-
   return (
     <main id="finder-verify">
-      <BackLink href="/finder">
+      <BackLink href="/finder/appointment">
         <Trans id="user.finder.verify.back-link">
           zurück zum Terminauswahl
         </Trans>
@@ -64,7 +45,11 @@ export const VerifyStep: React.FC = () => {
             </Trans>
           </Title>
 
-          <AppointmentCard appointment={state.appointment} border />
+          {state.appointment ? (
+            <AppointmentCard appointment={state.appointment} border />
+          ) : (
+            <div>ERROR</div>
+          )}
         </div>
 
         {state.appointment?.provider?.description && (
@@ -81,7 +66,6 @@ export const VerifyStep: React.FC = () => {
         variant="primary"
         href="/finder/success"
         className="mt-auto ml-4 sm:mt-0"
-        onClick={onBooking}
       >
         <Trans id="user.finder.verify.submit">Termin jetzt buchen</Trans>
       </Link>

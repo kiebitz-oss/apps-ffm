@@ -1,8 +1,8 @@
 import { Edit24 } from "@carbon/icons-react";
 import type { Appointment } from "@kiebitz-oss/api";
-import { appointments } from "@kiebitz-oss/api";
 import { Button, Error, InputField, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
+import { useUserApi } from "pages/UserApiContext";
 import {
   ChangeEventHandler,
   MouseEventHandler,
@@ -24,35 +24,25 @@ const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
   const { dispatch } = useFinderState();
 
   const onAppointmentSelect: MouseEventHandler<HTMLAnchorElement> = (event) => {
-    const appointmentId = event.currentTarget.dataset.id;
-
-    if (appointmentId) {
-      const appointment = appointments.find(
-        (appointment) => appointment.id === appointmentId
-      );
-
-      if (appointment) {
-        dispatch({
-          type: Types.SET_APPOINTMENT,
-          payload: {
-            appointment,
-          },
-        });
-      }
-    }
+    dispatch({
+      type: Types.SET_APPOINTMENT,
+      payload: {
+        appointment,
+      },
+    });
   };
 
   return (
     <Link
       href="/finder/verify"
-      className="group p-4 w-full text-center no-underline rounded-2xl shadow-appointment hover:shadow-appointment2 sm:mx-0"
+      className="group p-4 w-full text-center no-underline rounded shadow-appointment hover:shadow-appointment2 sm:mx-0"
       onClick={onAppointmentSelect}
       data-id={appointment.id}
     >
       <AppointmentCard appointment={appointment}>
         <Button
           tabIndex={-1}
-          className="group-hover:bg-primary group-focus:bg-primary shadow-lg select-none"
+          className="group-hover:bg-primary group-focus:bg-primary select-none shadow-lg"
         >
           <Trans id="user.finder.appointment.card.submit">
             Termin auswählen
@@ -64,21 +54,15 @@ const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
 };
 
 export const AppointmentStep: React.FC = () => {
-  const [filteredAppointments, setFilteredAppointments] =
-    useState(appointments);
+  const [appointments, setAppointments] = useState<Appointment[] | null>(null);
   const { dispatch, state } = useFinderState();
+  const api = useUserApi();
 
   useEffect(() => {
-    const filteredAppointments = appointments.filter((appointment) => {
-      if (state.provider) {
-        return state.provider.id === appointment.provider.id;
-      }
-
-      return true;
-    });
-
-    setFilteredAppointments(filteredAppointments);
-  }, [state.provider]);
+    state?.provider?.id
+      ? api.getAppointmentsByProvider(state.provider.id).then(setAppointments)
+      : api.getAppointmentsByZipCode(30363).then(setAppointments);
+  }, [api, state.provider]);
 
   const onDateChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     const date = event.currentTarget.valueAsDate;
@@ -125,7 +109,7 @@ export const AppointmentStep: React.FC = () => {
           />
           <Link
             href="/finder/location"
-            className="inline-flex justify-center items-center w-10 h-10 text-white no-underline bg-primary rounded-lg shadow"
+            className="inline-flex justify-center items-center w-10 h-10 text-white no-underline bg-primary rounded shadow"
           >
             <Edit24 />
           </Link>
@@ -143,7 +127,9 @@ export const AppointmentStep: React.FC = () => {
         />
       </div>
 
-      {filteredAppointments.length === 0 ? (
+      {!Array.isArray(appointments) && <div>Loading</div>}
+
+      {Array.isArray(appointments) && appointments.length === 0 && (
         <Error className="mx-auto">
           <Trans id="user.finder.appointment.no-result">
             Es sind keine freien Termine verfügbar.
@@ -152,9 +138,11 @@ export const AppointmentStep: React.FC = () => {
             Impfstelle.
           </Trans>
         </Error>
-      ) : (
+      )}
+
+      {Array.isArray(appointments) && appointments.length > 0 && (
         <div className="grid grid-cols-1 gap-4 w-full sm:grid-cols-2 lg:grid-cols-3">
-          {filteredAppointments.map((appointment) => (
+          {appointments.map((appointment) => (
             <AppointmentCardSelector
               appointment={appointment}
               key={appointment.id}
@@ -163,7 +151,7 @@ export const AppointmentStep: React.FC = () => {
         </div>
       )}
 
-      {/* <button className="py-2 px-6 my-8 mx-auto text-lg font-semibold bg-gray-300 rounded-lg shadow-lg">
+      {/* <button className="py-2 px-6 my-8 mx-auto text-lg font-semibold bg-gray-300 rounded shadow-lg">
                 <Trans id="user.finder.appointment.submit">
                     Weitere Termine laden
                 </Trans>
