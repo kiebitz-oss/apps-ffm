@@ -52,11 +52,11 @@ export const Header: React.FC<HeaderProps> = ({ onMobileNavClick }) => {
 
       <nav className="hidden gap-12 sm:flex md:pt-8">
         <Link href="/">
-          <Trans>Impftermin buchen</Trans>
+          <Trans id="header.nav.link.book_vaccination">Impftermin buchen</Trans>
         </Link>
 
         <Link href="/faq">
-          <Trans>Fragen & Antworten</Trans>
+          <Trans id="header.nav.link.faq">Fragen & Antworten</Trans>
         </Link>
 
         <div>
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ onMobileNavClick }) => {
             href={router.asPath}
             className={locale.startsWith("de") ? "link font-bold" : "link"}
           >
-            DE
+            <Trans id="header.nav.link.lang_german_short">DE</Trans>
           </Link>{" "}
           |{" "}
           <Link
@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({ onMobileNavClick }) => {
             href={router.asPath}
             className={locale.startsWith("en") ? "link font-bold" : "link"}
           >
-            EN
+            <Trans id="header.nav.link.lang_english_short">EN</Trans>
           </Link>
         </div>
       </nav>
