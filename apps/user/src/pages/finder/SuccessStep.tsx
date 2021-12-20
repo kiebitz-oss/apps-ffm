@@ -1,11 +1,11 @@
 import { GeneratePdf16 } from "@carbon/icons-react";
+import { vaccines } from "@kiebitz-oss/config";
 import { Text, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { Link } from "../../components/Link";
 import { useI18n } from "../../components/useI18n";
-import { vaccines } from "../../config/vaccines";
 import { AppointmentCard } from "../AppointmentCard";
 import { useUserApi } from "../UserApiContext";
 import { useFinderState } from "./FinderStateProvider";

@@ -39,6 +39,7 @@
     "@fontsource/ibm-plex-sans": "^4.5.1",
     "@headlessui/react": "^1.4.2",
     "@kiebitz-oss/api": "*",
+    "@kiebitz-oss/config": "*",
     "@kiebitz-oss/ui": "*",
     "@lingui/react": "^3.13.0",
     "clsx": "^1.1.1",

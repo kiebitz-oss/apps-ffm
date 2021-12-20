@@ -1,9 +1,8 @@
-import { Theme } from "../Theme";
-import logo from "./ffm-logo.svg";
+import { Theme } from "./Theme";
 
 export const theme: Theme = {
   title: "Frankfurt",
   supportEmail: "impfen@frankfurt.de",
-  logo: logo.src,
+  logo: "",
   logoAlt: "Impfen in Frankfurt",
 };

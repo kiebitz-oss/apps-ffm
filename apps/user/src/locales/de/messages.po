@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/Header.tsx:58
+#: components/Header.tsx:59
 msgid "Fragen & Antworten"
 msgstr "Fragen & Antworten"
 
-#: components/Header.tsx:54
+#: components/Header.tsx:55
 msgid "Impftermin buchen"
 msgstr "Impftermin buchen"
 
