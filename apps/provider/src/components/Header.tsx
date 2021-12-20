@@ -1,4 +1,5 @@
-import { theme } from "../config/theme";
+import { theme } from "@kiebitz-oss/config";
+import logoUrl from "../../public/assets/ffm-logo.svg";
 import { Link } from "./Link";
 import { Nav } from "./Nav";
 
@@ -12,7 +13,7 @@ export const Header: React.FC<HeaderProps> = ({ onMobileNavClick }) => {
       <h1>
         <Link href="/">
           <a>
-            <img src={theme.logo} alt={theme.logoAlt} />
+            <img src={logoUrl.src} alt={theme.logoAlt} />
           </a>
         </Link>
       </h1>

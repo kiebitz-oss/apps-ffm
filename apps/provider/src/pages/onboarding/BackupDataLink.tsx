@@ -1,9 +1,9 @@
+import { theme } from "@kiebitz-oss/config";
 import { Message } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import dayjs from "dayjs";
 import { useState } from "react";
-import { settings } from "../../config/settings";
 import { useProviderApi } from "../ProviderApiContext";
 
 interface BackupDataLinkProps {
@@ -45,7 +45,7 @@ export const BackupDataLink: React.FC<BackupDataLinkProps> = ({
   const dateString = dayjs().format("YYYY-MM-DD-HH-mm");
 
   const filename =
-    `${settings.title}-backup-${dateString}-${providerName}.enc`.toLowerCase();
+    `${theme.title}-backup-${dateString}-${providerName}.enc`.toLowerCase();
 
   if (blob) {
     return (

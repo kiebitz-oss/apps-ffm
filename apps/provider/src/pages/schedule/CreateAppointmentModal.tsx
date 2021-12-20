@@ -4,6 +4,7 @@ import {
   formatTime,
   getHexId,
 } from "@kiebitz-oss/api";
+import { vaccines } from "@kiebitz-oss/config";
 import {
   Button,
   Form,
@@ -25,7 +26,6 @@ import {
   useForm,
 } from "react-hook-form";
 import { useEffectOnce } from "react-use";
-import { vaccines } from "../../config/vaccines";
 
 interface FormData {
   date?: string;

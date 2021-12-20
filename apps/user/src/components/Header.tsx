@@ -1,7 +1,8 @@
+import { theme } from "@kiebitz-oss/config";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { theme } from "../config/theme";
+import logoUrl from "../../public/assets/ffm-logo.svg";
 import { useUserApi } from "../pages/UserApiContext";
 import { Link } from "./Link";
 import { useI18n } from "./useI18n";
@@ -25,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ onMobileNavClick }) => {
   return (
     <header className="grid grid-flow-col justify-between items-center px-8 min-h-[86px] md:px-12 md:min-h-[100px]">
       <Link href="/">
-        <img src={theme.logo} alt={theme.logoAlt} />
+        <img src={logoUrl.src} alt={theme.logoAlt} />
       </Link>
 
       {/* 
