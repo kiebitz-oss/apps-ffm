@@ -1,9 +1,7 @@
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
 import { useI18n } from "../../components/useI18n";
-
-const FaqEnPage = dynamic(() => import("./faq.en.mdx"));
-const FaqDePage = dynamic(() => import("./faq.de.mdx"));
+import FaqDePage from "./faq.de.mdx";
+import FaqEnPage from "./faq.en.mdx";
 
 const FaqPage: NextPage = () => {
   const i18n = useI18n();
