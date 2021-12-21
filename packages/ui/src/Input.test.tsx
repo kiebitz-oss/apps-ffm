@@ -8,14 +8,18 @@ import * as stories from "./Input.stories";
 
 const { Default } = composeStories(stories);
 
-describe("UI/Input", () => {
+describe("uI/Input", () => {
   it("should render", () => {
+    expect.hasAssertions();
+
     render(<Default />);
     const Element = screen.getByRole(/textbox/i);
     expect(Element).not.toBeNull();
   });
 
-  test("should render play function", async () => {
+  it("should render play function", async () => {
+    expect.hasAssertions();
+
     const InputFieldFilled = composeStory(
       stories.InputFieldFilled,
       stories.default
@@ -27,6 +31,6 @@ describe("UI/Input", () => {
 
     const input = screen.getByRole("textbox") as HTMLInputElement;
 
-    expect(input.value).toEqual("Hello world!");
+    expect(input.value).toBe("Hello world!");
   });
 });

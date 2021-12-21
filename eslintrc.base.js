@@ -47,7 +47,7 @@ module.exports = {
     {
       // For performance run jest/recommended on test files, not regular code
       files: ["**/?(*.)+(test).{js,jsx,ts,tsx}"],
-      extends: ["plugin:jest/recommended"],
+      extends: ["plugin:jest/all"],
       rules: {
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-object-literal-type-assertion": "off",
