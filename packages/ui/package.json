@@ -72,5 +72,20 @@
     "defaults",
     "not ie 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "rootDir": "src",
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom",
+      "@testing-library/jest-dom/extend-expect",
+      "jest-axe/extend-expect"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/"
+    ]
+  }
 }

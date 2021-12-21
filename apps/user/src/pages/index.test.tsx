@@ -1,6 +1,7 @@
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import { act, getByText, render } from "@testing-library/react";
+import { axe } from "jest-axe";
 import { de, en } from "make-plural/plurals";
 import { messages as deMessages } from "../locales/de/messages";
 import { messages as enMessages } from "../locales/en/messages";
@@ -19,7 +20,7 @@ const TestingProvider: React.FC = ({ children }) => (
 );
 
 describe("IndexPage", () => {
-  it("should be translated correctly in German", () => {
+  it("should be translated correctly in German", async () => {
     act(() => {
       i18n.activate("de");
     });
@@ -37,7 +38,7 @@ describe("IndexPage", () => {
     expect(getByText(container, "Willkommen!")).toBeDefined();
   });
 
-  it("should be translated correctly in Czech", () => {
+  it("should be translated correctly in English", async () => {
     act(() => {
       i18n.activate("en");
     });
@@ -53,5 +54,19 @@ describe("IndexPage", () => {
 
     expect(getByTestId("view.title")).toBeInTheDocument();
     expect(getByText(container, "user.welcome.title")).toBeDefined();
+  });
+
+  it("should not have a11y violations", async () => {
+    // pass anything that outputs html to axe
+    const { container } = render(
+      <TestingProvider>
+        <IndexPage />
+      </TestingProvider>,
+      {
+        wrapper: TestingProvider,
+      }
+    );
+
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

@@ -61,6 +61,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.0.3",
+    "@types/jest-axe": "^3.5.3",
     "@types/react": "^17.0.37",
     "babel-jest": "^27.4.5",
     "babel-plugin-macros": "^3.1.0",
@@ -71,6 +72,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-tailwindcss": "beta",
     "jest": "^27.4.5",
+    "jest-axe": "^5.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.0.2",
@@ -119,7 +121,8 @@
     "rootDir": "src",
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom",
-      "@testing-library/jest-dom/extend-expect"
+      "@testing-library/jest-dom/extend-expect",
+      "jest-axe/extend-expect"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",

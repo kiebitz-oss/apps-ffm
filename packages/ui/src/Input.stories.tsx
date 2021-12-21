@@ -2,7 +2,9 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory, StoryObj } from "@storybook/react";
+import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Input } from "./Input";
 
 export default {
@@ -12,3 +14,12 @@ export default {
 export const Default: ComponentStory<typeof Input> = (args) => (
   <Input {...args} />
 );
+
+export const InputFieldFilled: StoryObj = {
+  render: () => {
+    return <Input />;
+  },
+  play: async (context) => {
+    await userEvent.type(screen.getByRole("textbox"), "Hello world!");
+  },
+};
