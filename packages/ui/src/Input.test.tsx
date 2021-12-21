@@ -4,7 +4,6 @@
 
 import { composeStories, composeStory } from "@storybook/testing-react";
 import { render, screen } from "@testing-library/react";
-import { axe } from "jest-axe";
 import * as stories from "./Input.stories";
 
 const { Default } = composeStories(stories);
@@ -29,11 +28,5 @@ describe("UI/Input", () => {
     const input = screen.getByRole("textbox") as HTMLInputElement;
 
     expect(input.value).toEqual("Hello world!");
-  });
-
-  it("should not have a11y violations", async () => {
-    const { container } = render(<Default />);
-
-    expect(await axe(container)).toHaveNoViolations();
   });
 });

@@ -19,7 +19,7 @@ export const InputFieldFilled: StoryObj = {
   render: () => {
     return <Input />;
   },
-  play: async (context) => {
+  play: async () => {
     await userEvent.type(screen.getByRole("textbox"), "Hello world!");
   },
 };

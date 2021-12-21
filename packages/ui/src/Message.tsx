@@ -5,7 +5,6 @@
 import clsx from "clsx";
 import { MessageVariant } from "./types";
 
-
 type MessageProps = {
   className?: string;
   waiting?: boolean;

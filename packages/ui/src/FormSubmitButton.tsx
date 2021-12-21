@@ -7,7 +7,7 @@ import { Button, ButtonProps } from "./Button";
 
 interface FormSubmitButton extends ButtonProps {
   waiting?: boolean;
-  formState: FormState<any>;
+  formState: FormState<unknown>;
 }
 
 export const FormSubmitButton: React.FC<FormSubmitButton> = ({

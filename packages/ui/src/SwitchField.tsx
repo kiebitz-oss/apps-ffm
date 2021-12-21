@@ -10,11 +10,10 @@ import { Switch, SwitchProps } from "./Switch";
 export interface SwitchFieldProps extends SwitchProps, FieldProps {
   name: string;
   label?: string;
-  description?: string;
 }
 
 export const SwitchField = forwardRef<HTMLInputElement, SwitchFieldProps>(
-  ({ label, name, description, className, ...props }, ref) => {
+  ({ label, name, className, ...props }, ref) => {
     const id = !props.id ? name : props.id;
 
     return (

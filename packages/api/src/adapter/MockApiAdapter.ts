@@ -33,7 +33,7 @@ export class MockAdapter implements ApiAdapter {
 
   public async getVerifiedProvidersByZip(
     zip: number,
-    radius: number = 5
+    radius = 5
   ): Promise<PublicProvider[]> {
     console.info(
       `Called MockAdapter::getVerifiedProvidersByZip(${zip}, ${radius})`
@@ -43,9 +43,9 @@ export class MockAdapter implements ApiAdapter {
   }
 
   public async getAppointmentsByProvider(
-    providerId: string,
-    from?: Date,
-    to?: Date
+    providerId: string
+    // from?: Date,
+    // to?: Date
   ): Promise<Appointment[]> {
     console.info(
       `Called MockAdapter::getAppointmentsByProvider(${providerId})`
@@ -58,9 +58,9 @@ export class MockAdapter implements ApiAdapter {
 
   public async getAppointmentsByZipCode(
     zipCode: number,
-    radius = 5,
-    from?: Date,
-    to?: Date
+    radius = 5
+    // from?: Date,
+    // to?: Date
   ): Promise<Appointment[]> {
     console.info(
       `Called MockAdapter::getAppointmentsByZipCode(${zipCode}, ${radius})`
@@ -99,7 +99,7 @@ export class MockAdapter implements ApiAdapter {
     return secret;
   }
 
-  protected getSecret(forceCreation: boolean = false) {
+  protected getSecret(forceCreation = false) {
     let secret = this.storage.getItem(USER_SECRET_KEY);
 
     if (!secret && forceCreation) {

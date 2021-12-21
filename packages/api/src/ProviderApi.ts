@@ -113,14 +113,18 @@ export class ProviderApi {
   }
 
   public async updateAppointment(appointment: Appointment): Promise<boolean> {
+    console.log(`Update appointment ${appointment.id}`);
     return false;
   }
 
   public async cancelAppointment(appointmentId: string): Promise<boolean> {
+    console.log(`Cancel appointment ${appointmentId}`);
     return false;
   }
 
   public async storeProvider(provider: Provider): Promise<boolean> {
+    console.log(`Store provider ${provider.id}`);
+
     return false;
   }
 
