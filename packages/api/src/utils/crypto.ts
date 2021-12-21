@@ -5,6 +5,7 @@
 // Make getRandomValues isomorphic. Use either the WebCryptoApi or node's crypto-api
 // based on https://github.com/kevlened/isomorphic-webcrypto/blob/1d3ae3c0247bf9b90fc297b4bf5b10ea75f6c82b/build.js#L25
 const getRandomValues =
+  typeof window === "object" &&
   typeof window?.crypto?.getRandomValues === "function"
     ? window.crypto.getRandomValues
     : <T extends ArrayBufferView>(array: T): T => {
