@@ -62,8 +62,8 @@
   "resolutions": {
     "browserslist": "^4.16.5",
     "immer": "^9.0.6",
-    "glob-parent": "^5.1.2",
-    "trim": "^0.0.3"
+    "glob-parent": "^6",
+    "trim": "^1"
   },
   "browserslist": [
     "defaults",
