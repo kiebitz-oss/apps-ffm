@@ -2,21 +2,36 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-let i = 0;
+// Make getRandomValues isomorphic. Use either the WebCryptoApi or node's crypto-api
+// based on https://github.com/kevlened/isomorphic-webcrypto/blob/1d3ae3c0247bf9b90fc297b4bf5b10ea75f6c82b/build.js#L25
+const getRandomValues =
+  typeof window === "object" &&
+  typeof window?.crypto === "object" &&
+  typeof window?.crypto?.getRandomValues === "function"
+    ? window.crypto.getRandomValues
+    : <T extends ArrayBufferView>(array: T): T => {
+        const buf = array.buffer;
+        const uint8buf = new Uint8Array(buf);
 
-export const randomBytes = () => {
-  const x = ++i;
+        // use node-crypto-api if on the server.
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const crypto = require("crypto");
 
-  return x.toString();
+        const rnd = crypto.randomBytes(uint8buf.length);
+
+        rnd.forEach(
+          (octet: number, index: number) => (uint8buf[index] = octet)
+        );
+
+        return array;
+      };
+export const randomBytes = (length = 32) => {
+  const uint8Array = new Uint8Array(length);
+
+  getRandomValues(uint8Array);
+
+  return Buffer.from(uint8Array).toString("base64");
 };
-
-// export const randomBytes = (length = 32) => {
-//     const uint8Array = new Uint8Array(length);
-
-//     crypto.getRandomValues(uint8Array);
-
-//     return Buffer.from(uint8Array).toString("base64");
-// };
 
 // we use all digits and alphabetic characters except o, l, 1 & 0 (as they can be easily confused)
 const b32 = "abcdefghijkmnpqrstuvwxyz23456789";
