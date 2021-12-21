@@ -27,6 +27,7 @@
     "test": "cross-env NODE_ENV=test jest --passWithNoTests",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
+    "lint:staged": "lint-staged --allow-empty",
     "i18n": "lingui",
     "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean",
     "i18n:compile": "lingui compile",
@@ -73,6 +74,7 @@
     "eslint-plugin-tailwindcss": "beta",
     "jest": "^27.4.5",
     "jest-axe": "^5.0.1",
+    "lint-staged": "^12.1.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.0.2",
@@ -86,6 +88,9 @@
     "not ie 11",
     "not op_mini all"
   ],
+  "lint-staged": {
+    "*": "yarn lint --fix"
+  },
   "lingui": {
     "locales": [
       "de",

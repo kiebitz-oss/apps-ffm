@@ -3,8 +3,8 @@
 // README.md contains license information.
 
 import { ComponentMeta, ComponentStory, StoryObj } from "@storybook/react";
-import { screen } from "@storybook/testing-library";
-import { userEvent } from "@storybook/testing-library";
+import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Input } from "./Input";
 
 export default {

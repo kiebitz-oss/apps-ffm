@@ -30,7 +30,8 @@
     "dev": "yarn run bundle watch --no-compress",
     "clean": "rimraf --no-glob ./dist",
     "test": "cross-env NODE_ENV=test jest --passWithNoTests",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:staged": "lint-staged --allow-empty"
   },
   "dependencies": {},
   "devDependencies": {
@@ -44,6 +45,7 @@
     "eslint-plugin-regexp": "^1.5.1",
     "eslint-plugin-testing-library": "^5.0.1",
     "jest": "^27.4.5",
+    "lint-staged": "^12.1.3",
     "microbundle": "^0.14.2",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
@@ -54,6 +56,9 @@
     "not ie 11",
     "not op_mini all"
   ],
+  "lint-staged": {
+    "*": "yarn lint --fix"
+  },
   "eslintConfig": {
     "root": true,
     "extends": [

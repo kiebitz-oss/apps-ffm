@@ -27,7 +27,8 @@
     "dev": "yarn run bundle watch --no-compress",
     "clean": "rimraf --no-glob ./dist",
     "test": "cross-env NODE_ENV=test jest --passWithNoTests",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:staged": "lint-staged --allow-empty"
   },
   "dependencies": {
     "clsx": "^1.1.1",
@@ -53,6 +54,7 @@
     "eslint-plugin-storybook": "^0.5.5",
     "eslint-plugin-testing-library": "^5.0.1",
     "jest": "^27.4.5",
+    "lint-staged": "^12.1.3",
     "microbundle": "^0.14.2",
     "next": "^12.0.7",
     "prettier": "^2.5.1",
@@ -87,6 +89,9 @@
     "not ie 11",
     "not op_mini all"
   ],
+  "lint-staged": {
+    "*": "yarn lint --fix"
+  },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "jsdom",
@@ -138,8 +143,12 @@
           "**/*.stories.{ts,tsx,mdx}"
         ],
         "extends": [
-          "plugin:storybook/recommended"
-        ]
+          "plugin:storybook/recommended",
+          "plugin:storybook/csf-strict"
+        ],
+        "rules": {
+          "storybook/use-storybook-testing-library": "off"
+        }
       }
     ]
   }
