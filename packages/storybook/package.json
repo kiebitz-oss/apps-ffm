@@ -20,7 +20,8 @@
     "dev": "start-storybook -p 9000",
     "build": "build-storybook --output-dir dist",
     "clean": "rimraf --no-glob ./dist",
-    "test": "cross-env NODE_ENV=test jest --passWithNoTests"
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
@@ -43,7 +44,19 @@
     "@types/jest-axe": "^3.5.3",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
     "cross-env": "^7.0.3",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-regexp": "^1.5.1",
+    "eslint-plugin-storybook": "^0.5.5",
+    "eslint-plugin-testing-library": "^5.0.1",
     "jest-axe": "^5.0.1",
     "postcss": "^8.4.5",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -69,5 +82,46 @@
     ],
     "sourceLocale": "de",
     "format": "po"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "../../eslintrc.base.js",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+      "testing-library",
+      "storybook"
+    ],
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "rules": {
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "jsx-a11y/anchor-is-valid": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.test.{ts,tsx}"
+        ],
+        "extends": [
+          "plugin:testing-library/react"
+        ]
+      },
+      {
+        "files": [
+          "**/*.stories.{ts,tsx,mdx}"
+        ],
+        "extends": [
+          "plugin:storybook/recommended"
+        ]
+      }
+    ]
   }
 }

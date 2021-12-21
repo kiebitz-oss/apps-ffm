@@ -5,8 +5,10 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 
-export interface CheckboxProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {}
+export type CheckboxProps = Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "type"
+>;
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ className, ...props }, ref) => {

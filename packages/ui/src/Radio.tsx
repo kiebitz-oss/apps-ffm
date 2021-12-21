@@ -5,8 +5,10 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 
-export interface RadioProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {}
+export type RadioProps = Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "type"
+>;
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(
   ({ className, ...props }, ref) => {

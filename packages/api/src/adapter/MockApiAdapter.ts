@@ -33,7 +33,7 @@ export class MockAdapter implements ApiAdapter {
 
   public async getVerifiedProvidersByZip(
     zip: number,
-    radius: number = 5
+    radius = 5
   ): Promise<PublicProvider[]> {
     console.info(
       `Called MockAdapter::getVerifiedProvidersByZip(${zip}, ${radius})`
@@ -99,7 +99,7 @@ export class MockAdapter implements ApiAdapter {
     return secret;
   }
 
-  protected getSecret(forceCreation: boolean = false) {
+  protected getSecret(forceCreation = false) {
     let secret = this.storage.getItem(USER_SECRET_KEY);
 
     if (!secret && forceCreation) {

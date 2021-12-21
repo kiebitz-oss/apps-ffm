@@ -4,7 +4,7 @@
 
 let i = 0;
 
-export const randomBytes = (length: number = 32) => {
+export const randomBytes = (length = 32) => {
   const x = ++i;
 
   return x.toString();
@@ -71,9 +71,7 @@ export function base322buf(base32: string) {
   let pos = 0;
   let b = 0;
 
-  base32 = base32
-    .toLowerCase()
-    .replace(/[^abcdefghijkmnpqrstuvwxyz23456789]/g, "");
+  base32 = base32.toLowerCase().replace(/[^a-kmnp-z2-9]/g, "");
 
   for (const c of base32) {
     const i = b32.indexOf(c);

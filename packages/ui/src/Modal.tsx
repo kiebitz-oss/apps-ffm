@@ -8,7 +8,7 @@ import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 
 export interface ModalProps {
-  onClose?: Function;
+  onClose?: () => void;
   open?: boolean;
 }
 
