@@ -5,8 +5,8 @@
 export interface Theme {
   title: string;
   supportEmail: string;
-  logo: any;
   logoAlt: string;
+  // logo: any;
   // footer: React.ReactNode;
   // primaryColor: string;
   // secondaryColor: string;

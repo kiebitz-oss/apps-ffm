@@ -23,7 +23,6 @@ export const Link: React.FC<LinkProps> = ({
   external,
   rel,
   target,
-  locale,
   variant,
   size = "md",
   ...props

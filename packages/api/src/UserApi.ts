@@ -48,8 +48,8 @@ export class UserApi {
   }
 
   public async cancelAppointment(
-    appointmentId: string,
-    providerID: string
+    appointmentId: string
+    // providerID: string
   ): Promise<boolean> {
     return this.adapter.cancelAppointment(appointmentId);
   }

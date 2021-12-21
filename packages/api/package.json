@@ -60,7 +60,7 @@
     "not op_mini all"
   ],
   "lint-staged": {
-    "*": "yarn lint --fix"
+    "src/*": "yarn lint --fix"
   },
   "eslintConfig": {
     "root": true,

@@ -36,7 +36,6 @@
     "test": "yarn workspaces run test",
     "test:e2e": "start-server-and-test test:e2e:serve http-get://localhost:3000 'cypress open'",
     "test:e2e:serve": "lingui compile & webpack serve --mode=development",
-    "commit": "commit",
     "changeset": "changeset",
     "release": "yarn build && changeset publish",
     "reset": "rm -rf node_modules/ yarn.lock packages/storybook/node_modules/ packages/ui/node_modules/ packages/api/node_modules/ apps/mediator/node_modules/ apps/provider/node_modules/ apps/user/node_modules/",
@@ -75,7 +74,8 @@
     "browserslist": "^4.16.5",
     "immer": "^9.0.6",
     "glob-parent": "^6",
-    "trim": "^1"
+    "trim": "^1",
+    "webpack": "^5"
   },
   "browserslist": [
     "defaults",

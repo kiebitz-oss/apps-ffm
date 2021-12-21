@@ -39,18 +39,24 @@ export class MediatorApi {
   }
 
   public async confirmProvider(provider: Provider): Promise<boolean> {
+    console.log(`Confirm provider ${provider.id}`);
+
     return true;
   }
 
   public async unconfirmProvider(provider: Provider): Promise<boolean> {
+    console.log(`Unconfirm provider ${provider.id}`);
+
     return true;
   }
 
   public async reconfirmProvider(provider: Provider): Promise<boolean> {
+    console.log(`Reconfirm provider ${provider.id}`);
+
     return true;
   }
 
   public async backupData(): Promise<MediatorKeyPairs> {
-    return "foobar" as unknown as any;
+    return "foobar" as unknown as MediatorKeyPairs;
   }
 }

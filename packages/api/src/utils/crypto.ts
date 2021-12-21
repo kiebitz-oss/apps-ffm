@@ -4,7 +4,7 @@
 
 let i = 0;
 
-export const randomBytes = (length = 32) => {
+export const randomBytes = () => {
   const x = ++i;
 
   return x.toString();

@@ -43,9 +43,9 @@ export class MockAdapter implements ApiAdapter {
   }
 
   public async getAppointmentsByProvider(
-    providerId: string,
-    from?: Date,
-    to?: Date
+    providerId: string
+    // from?: Date,
+    // to?: Date
   ): Promise<Appointment[]> {
     console.info(
       `Called MockAdapter::getAppointmentsByProvider(${providerId})`
@@ -58,9 +58,9 @@ export class MockAdapter implements ApiAdapter {
 
   public async getAppointmentsByZipCode(
     zipCode: number,
-    radius = 5,
-    from?: Date,
-    to?: Date
+    radius = 5
+    // from?: Date,
+    // to?: Date
   ): Promise<Appointment[]> {
     console.info(
       `Called MockAdapter::getAppointmentsByZipCode(${zipCode}, ${radius})`
