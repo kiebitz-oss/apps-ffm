@@ -71,110 +71,18 @@
   address {
     @apply not-italic;
   }
-
-  #sidenav-button,
-  #sidenav-close {
-    @apply touch-manipulation select-none;
-
-    @screen sm {
-      @apply hidden;
-    }
-  }
-
-  #sidenav-button > svg {
-    max-width: 50px;
-
-    & > line {
-      stroke: black;
-      stroke-width: 7px;
-    }
-  }
-  @media screen and (prefers-reduced-motion: reduce) {
-    .hamburger {
-      --size: 3rem;
-      display: flex;
-      place-content: center;
-      padding: 0.5rem;
-      box-sizing: border-box;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      margin-inline-start: -1rem;
-      block-size: var(--size);
-      inline-size: var(--size);
-      outline: none;
-      transition: none;
-
-      &:hover svg > line,
-      &:focus svg > line {
-        @apply stroke-primary;
-      }
-
-      &:active {
-        @apply bg-primary/20;
-      }
-
-      & > svg {
-        width: 100%;
-        @media screen and (prefers-reduced-motion: reduce) {
-          & > line {
-            @apply stroke-primary;
-            stroke-width: 7px;
-            transition: none;
-          }
-        }
-
-        & > line {
-          @apply stroke-primary;
-          stroke-width: 7px;
-          transition: stroke 0.25s ease;
-        }
-      }
-    }
-  }
-
-  .hamburger {
-    --size: 3rem;
-    display: flex;
-    place-content: center;
-    padding: 0.5rem;
-    box-sizing: border-box;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    margin-inline-start: -1rem;
-    block-size: var(--size);
-    inline-size: var(--size);
-    outline: none;
-    transition: border-color 0.25s ease, background-color 0.25s ease;
-
-    &:hover svg > line,
-    &:focus svg > line {
-      @apply stroke-primary;
-    }
-
-    &:active {
-      @apply bg-primary/20;
-    }
-
-    & > svg {
-      width: 100%;
-      @media screen and (prefers-reduced-motion: reduce) {
-        & > line {
-          @apply stroke-primary;
-          stroke-width: 7px;
-          transition: none;
-        }
-      }
-
-      & > line {
-        @apply stroke-primary;
-        stroke-width: 7px;
-        transition: stroke 0.25s ease;
-      }
-    }
-  }
 }
 
 @layer components {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply break-words;
+  }
+
   .h1 {
     @apply font-bold text-4xl mb-5;
   }
@@ -192,7 +100,7 @@
   }
 
   .book {
-    @apply font-medium text-[12px] uppercase tracking-[4px];
+    @apply font-medium text-[12px] uppercase tracking-[4px] ml-4 mb-1;
   }
 
   .text {
@@ -256,11 +164,11 @@
   }
 
   .checkbox {
-    @apply form-checkbox default-focus self-center text-primary outline-none flex items-center; /* mt-1 mr-2; */
+    @apply form-checkbox;
   }
 
   .radio {
-    @apply form-radio text-black self-center border;
+    @apply w-6 h-6 cursor-pointer;
   }
 
   .textarea {
@@ -300,7 +208,7 @@
   }
 
   .button {
-    @apply default-focus rounded min-w-max max-w-full sm:w-max text-center;
+    @apply default-focus rounded min-w-max max-w-full sm:w-max text-center break-words;
 
     &.primary {
       @apply border-transparent border-2 text-white bg-primary hover:bg-white hover:text-black hover:border-black;

@@ -90,7 +90,7 @@ export const AppointmentStep: React.FC = () => {
         </Trans>
       </BackLink>
 
-      <Title variant="h1" as="h2">
+      <Title variant="h1" as="h2" className="ml-4 sm:ml-0">
         <Trans id="user.finder.appointment.title">Termine</Trans>
       </Title>
 
