@@ -95,7 +95,7 @@ export const Questionaire: React.FC = () => {
             errorMessage={t({
               id: "user.welcome.question2_error",
               message:
-                "Es müssen 6 Monate seit Ihrem letzten Impftermin vergangen sein, bevor Sie sich boostern lassen können.",
+                "Es müssen 3 Monate seit Ihrem letzten Impftermin vergangen sein, bevor Sie sich boostern lassen können.",
             })}
           >
             <Trans id="user.welcome.question2_value">

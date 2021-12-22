@@ -17,39 +17,39 @@ msgstr ""
 msgid "common.data-secret.text"
 msgstr ""
 
-#: components/Footer.tsx:24
+#: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
 msgstr ""
 
-#: components/Footer.tsx:60
+#: components/NavContent.tsx:69
 msgid "common.footer.link.english"
 msgstr ""
 
-#: components/Footer.tsx:29
+#: components/NavContent.tsx:36
 msgid "common.footer.link.faq"
 msgstr ""
 
-#: components/Footer.tsx:48
+#: components/NavContent.tsx:57
 msgid "common.footer.link.german"
 msgstr ""
 
-#: components/Footer.tsx:70
+#: components/NavContent.tsx:80
 msgid "common.footer.link.imprint"
 msgstr ""
 
-#: components/Footer.tsx:87
+#: components/NavContent.tsx:97
 msgid "common.footer.link.kiebitz"
 msgstr ""
 
-#: components/Footer.tsx:75
+#: components/NavContent.tsx:85
 msgid "common.footer.link.privacy"
 msgstr ""
 
-#: components/Footer.tsx:18
+#: components/NavContent.tsx:23
 msgid "common.footer.title.informations"
 msgstr ""
 
-#: components/Footer.tsx:35
+#: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
 msgstr ""
 

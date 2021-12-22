@@ -17,39 +17,39 @@ msgstr ""
 msgid "common.data-secret.text"
 msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn, um sich auf einem anderen PC (Tablet, Smartphone etc.) einzuloggen oder auf einem anderen Endgerät auf Ihre Termine zugreifen zu können."
 
-#: components/Footer.tsx:24
+#: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
 msgstr "Impfterminen buchen"
 
-#: components/Footer.tsx:60
+#: components/NavContent.tsx:69
 msgid "common.footer.link.english"
 msgstr "English"
 
-#: components/Footer.tsx:29
+#: components/NavContent.tsx:36
 msgid "common.footer.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/Footer.tsx:48
+#: components/NavContent.tsx:57
 msgid "common.footer.link.german"
 msgstr "Deutsch"
 
-#: components/Footer.tsx:70
+#: components/NavContent.tsx:80
 msgid "common.footer.link.imprint"
 msgstr "Impressum"
 
-#: components/Footer.tsx:87
+#: components/NavContent.tsx:97
 msgid "common.footer.link.kiebitz"
 msgstr "Realisiert mit Kiebitz"
 
-#: components/Footer.tsx:75
+#: components/NavContent.tsx:85
 msgid "common.footer.link.privacy"
 msgstr "Datenschutz"
 
-#: components/Footer.tsx:18
+#: components/NavContent.tsx:23
 msgid "common.footer.title.informations"
 msgstr "Informationen"
 
-#: components/Footer.tsx:35
+#: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
