@@ -1,4 +1,4 @@
-name: Docker User Image CI
+name: Mediator Docker Image CI
 
 on:
   workflow_dispatch:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build . --file Dockerfile-user --tag kiebitz-user:$(date +%s)
+        run: docker build . --file Dockerfile-mediator --tag kiebitz-mediator:$(date +%s)
