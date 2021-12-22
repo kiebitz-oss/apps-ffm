@@ -17,7 +17,7 @@ const NavContent: React.FC<NavContent> = ({ className, ...props }) => {
 
   return (
     <>
-      <div className="flex flex-col gap-10 sm:flex-[1] sm:gap-8">
+      <div className="flex flex-col gap-10 sm:flex-[1] sm:gap-8 ">
         <section>
           <Title as="h3" variant="h4">
             <Trans id="common.footer.title.informations">Informationen</Trans>
