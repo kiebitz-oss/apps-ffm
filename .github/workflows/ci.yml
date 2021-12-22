@@ -1,31 +1,15 @@
-name: CI-user-app
+name: CI
 
 on:
   push:
     branches:
-      - dev
       - main
-    paths:
-      - "apps/user/**"
-      - "packages/**"
-      - "package.json"
-      - "yarn.lock"
-      - ".github/workflows/**"
 
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
-    # Optional:
-    #   Only consider those files/paths to trigger the github action
-    #   to prevent unnecessary builds.
-    paths:
-      - "apps/user/**"
-      - "packages/**"
-      - "package.json"
-      - "yarn.lock"
-      - ".github/workflows/**"
 
 jobs:
   test:
@@ -56,16 +40,6 @@ jobs:
           restore-keys: |
             yarn-cache-folder-
 
-      # see https://github.com/vercel/next.js/pull/27362
-      - name: Restore nextjs build user-app from cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ github.workspace }}/apps/user/.next/cache
-          key: ${{ runner.os }}-user-app-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('apps/user/src/**.[jt]sx?', 'apps/user/src/**.json') }}
-          restore-keys: |
-            ${{ runner.os }}-user-app-${{ hashFiles('**/yarn.lock') }}-
-
       - name: Install dependencies
         run: |
           yarn install --immutable
@@ -73,22 +47,18 @@ jobs:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
 
       - name: Typecheck
-        working-directory: apps/user
         run: |
           yarn typecheck
 
       - name: Linter
-        working-directory: apps/user
         run: |
           yarn lint --cache
 
       - name: Unit tests
-        working-directory: apps/user
         run: |
           yarn test
 
       - name: Build app
-        working-directory: apps/user
         run: |
           yarn build
         env:
@@ -100,8 +70,3 @@ jobs:
           NEXT_DISABLE_SOURCEMAPS: 1
           # Don't send telemetry for ci
           NEXT_TELEMETRY_DISABLED: 1
-
-      - name: Check bundle size
-        working-directory: apps/user
-        run: |
-          yarn bundle:check-size
