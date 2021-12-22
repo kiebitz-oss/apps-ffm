@@ -32,6 +32,8 @@
     "dev:provider": "yarn workspace @kiebitz-oss/app-provider run dev",
     "dev:mediator": "yarn workspace @kiebitz-oss/app-mediator run dev",
     "build": "yarn workspaces run build",
+    "build:packages": "yarn workspace @kiebitz-oss/config build && yarn workspace @kiebitz-oss/api build && yarn workspace @kiebitz-oss/ui build",
+    "build:apps": "yarn workspace @kiebitz-oss/app-user run build && yarn workspace @kiebitz-oss/app-provider run build && yarn workspace @kiebitz-oss/app-mediator run build",
     "clean": "yarn workspaces run clean",
     "lint": "yarn workspaces run lint",
     "lint:staged": "yarn workspaces run lint:staged",
