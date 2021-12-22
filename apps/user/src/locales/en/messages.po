@@ -49,19 +49,19 @@ msgstr ""
 msgid "common.footer.title.languages"
 msgstr ""
 
-#: components/Header.tsx:66
+#: components/Header.tsx:64
 msgid "header.nav.link.book_vaccination"
 msgstr ""
 
-#: components/Header.tsx:70
+#: components/Header.tsx:68
 msgid "header.nav.link.faq"
 msgstr ""
 
-#: components/Header.tsx:89
+#: components/Header.tsx:87
 msgid "header.nav.link.lang_english_short"
 msgstr ""
 
-#: components/Header.tsx:80
+#: components/Header.tsx:78
 msgid "header.nav.link.lang_german_short"
 msgstr ""
 

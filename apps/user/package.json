@@ -33,9 +33,7 @@
     "i18n": "lingui",
     "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean",
     "i18n:compile": "lingui compile",
-    "i18n:build": "cross-env NODE_ENV=development lingui extract --clean && lingui compile",
-    "docker:build": "docker build . -t kiebitz-user",
-    "docker:run": "docker run -p 3000:3000 -it kiebitz-user"
+    "i18n:build": "cross-env NODE_ENV=development lingui extract --clean && lingui compile"
   },
   "dependencies": {
     "@carbon/icons-react": "^10.44.0",
