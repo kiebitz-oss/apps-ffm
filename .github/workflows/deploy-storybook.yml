@@ -37,7 +37,7 @@ jobs:
         run: |
           yarn install --immutable
 
-      - run: npm run build:sb
+      - run: yarn build:sb
       - run: touch packages/storybook/dist/.nojekyll
 
       - name: Deploy
