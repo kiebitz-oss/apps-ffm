@@ -1,4 +1,4 @@
-name: Deploy User App
+name: Deploy Mediator App
 
 on:
   workflow_dispatch:
