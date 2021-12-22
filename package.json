@@ -32,6 +32,7 @@
     "dev:user": "yarn workspace @kiebitz-oss/app-user run dev",
     "dev:provider": "yarn workspace @kiebitz-oss/app-provider run dev",
     "dev:mediator": "yarn workspace @kiebitz-oss/app-mediator run dev",
+    "dev:sb": "yarn workspace @kiebitz-oss/storybook run dev",
     "build": "yarn workspaces run build",
     "build:packages": "yarn workspace @kiebitz-oss/config build && yarn workspace @kiebitz-oss/api build && yarn workspace @kiebitz-oss/ui build",
     "build:apps": "yarn build:apps:user && yarn build:apps:mediator && yarn build:apps:provider",

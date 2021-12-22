@@ -3,55 +3,50 @@
 
 # Kiebitz - Privacy Friendly Appointment Scheduling</md-list>
 
-<img src="/materials/images/kiebitz-1.png" alt="Kiebitz - Logo" title="Kiebitz - Logo" width="40%" />
+<img src="/public/kiebitz-logo.png" alt="Kiebitz - Logo" title="Kiebitz - Logo" width="40%" />
 
 Welcome to the Kiebitz project! Please visit our [website](https://kiebitz.eu) to learn more about us.
 
 # Getting Started
 
-Kiebietz consists of three apps for providers, mediators and users, which can be reached under `/provider`, `/mediator` and `/user`, respectively. The app can be built with different environments:
+Kiebietz consists of three apps for providers, mediators and users, which can be found under `/apps/provider`, `/apps/mediator` and `/apps/user`, respectively.
 
-* The `dev` environment works against a locally deployed backend and is great for testing the apps against a real backend.
-* The `production` environment build the app bundles for production deployment, i.e. minified and optimized code that works against the production backend.
+After running `yarn install`, you can simply run `yarn dev:user`, `yarn dev:mediator` or `yarn dev:provider` to reach the respective app under `https://localhost:3000/`,
 
-To run the app in dev mode, simply run
-
-```bash
-npm run-script make-dev
-``` 
-
-after running `npm install`. To build the `dev` and `production` versions simply run
+To build the `production` versions simply run
 
 ```bash
-# build the development version
-npm run-script make-dev
-# build the production version
-npm run-script make
+yarn build
+```
+
+# Apps
+
+The code is organized as a yarn-monorepo and consists of the 3 apps under `/apps/*` and supporting packages, which live inside `/packages/*`.
+The three indiependant apps are built on top of [NextJS](https://nextjs.org/) and are exported as static html into the `/apps/*/dist`-folder. They can simply be served via a static html-server.
+
+# UI
+
+The UI lives inside `/packages/ui`, is built with [TailwindCSS](https://tailwindcss.com/) and a storybook can be found inside `/packages/storybook`.
+
+# Testing
+
+We are using `jest` for testing of the code. To test the code, simply run
+
+```bash
+# just test
+yarn test
 ```
 
 # Linting & Formatting
 
-We use `eslint` and `prettier` for linting and formatting of code. To lint code, run
+We use `eslint` for linting and formatting of code. To lint code, run
 
 ```bash
 # just lint
-npm run-script lint
+yarn lint
+
 # lint and autofix where possible
-npm run-script lint-fix
-# lint SCSS
-npm run-script lint-scss
-# lint and fix SCSS where possible
-npm run-script lint-scss-fix
-# format code
-npm run-script prettier
-```
-
-# Analyzing Bundle Size
-
-You can run the bundle size analyzer (which helps you to identify packages and assets taking up a lot of space in the bunde) via
-
-```bash
-npm run-script analyze
+yarn lint --fix
 ```
 
 # Licenses
