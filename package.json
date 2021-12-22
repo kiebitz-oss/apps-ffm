@@ -28,7 +28,7 @@
     "apps/provider"
   ],
   "scripts": {
-    "postinstall": "yarn build:packages && yarn build:i18n",
+    "postinstall": "yarn build:packages",
     "dev:user": "yarn workspace @kiebitz-oss/app-user run dev",
     "dev:provider": "yarn workspace @kiebitz-oss/app-provider run dev",
     "dev:mediator": "yarn workspace @kiebitz-oss/app-mediator run dev",
@@ -46,7 +46,7 @@
     "test:e2e:serve": "lingui compile & webpack serve --mode=development",
     "changeset": "changeset",
     "release": "yarn build && changeset publish",
-    "reset": "rm -rf node_modules/ yarn.lock packages/storybook/node_modules/ packages/ui/node_modules/ packages/api/node_modules/ apps/mediator/node_modules/ apps/provider/node_modules/ apps/user/node_modules/",
+    "reset": "rm -rf node_modules/ packages/storybook/node_modules/ packages/ui/node_modules/ packages/api/node_modules/ apps/mediator/node_modules/ apps/provider/node_modules/ apps/user/node_modules/",
     "docker:build": "docker build . -t kiebitz-apps",
     "docker:run": "docker run -p 3000:3000 -it kiebitz-apps"
   },

@@ -20,6 +20,7 @@
     "npm": "please-use-yarn"
   },
   "scripts": {
+    "postinstall": "yarn i18n:build",
     "dev": "next dev",
     "build": "next build && next export --outdir dist",
     "start": "next start",
