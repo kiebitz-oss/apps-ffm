@@ -3,12 +3,12 @@
 // README.md contains license information.
 
 import type { Appointment } from "../types";
-import { createSlots, randomBytes } from "../utils";
+import { createSlots } from "../utils";
 import { providers } from "./providers";
 
 export const appointments: Appointment[] = [
   {
-    id: randomBytes(),
+    id: "1",
     duration: 90,
     date: new Date(),
     provider: providers[0],
@@ -23,7 +23,7 @@ export const appointments: Appointment[] = [
     updatedAt: "",
   },
   {
-    id: randomBytes(),
+    id: "2",
     duration: 60,
     date: new Date(),
     provider: providers[1],
@@ -38,7 +38,7 @@ export const appointments: Appointment[] = [
     updatedAt: "",
   },
   {
-    id: randomBytes(),
+    id: "3",
     duration: 60,
     date: new Date(),
     provider: providers[2],
@@ -53,7 +53,7 @@ export const appointments: Appointment[] = [
     updatedAt: "",
   },
   {
-    id: randomBytes(),
+    id: "4",
     duration: 60,
     date: new Date(),
     provider: providers[3],
@@ -68,7 +68,7 @@ export const appointments: Appointment[] = [
     updatedAt: "",
   },
   {
-    id: randomBytes(),
+    id: "5",
     duration: 60,
     date: new Date(),
     provider: providers[1],
@@ -83,7 +83,7 @@ export const appointments: Appointment[] = [
     updatedAt: "",
   },
   {
-    id: randomBytes(),
+    id: "6",
     duration: 60,
     date: new Date(),
     provider: providers[1],

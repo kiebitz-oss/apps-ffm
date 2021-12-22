@@ -17,39 +17,39 @@ msgstr ""
 msgid "common.data-secret.text"
 msgstr ""
 
-#: components/Footer.tsx:23
+#: components/Footer.tsx:24
 msgid "common.footer.link.booking"
 msgstr ""
 
-#: components/Footer.tsx:59
+#: components/Footer.tsx:60
 msgid "common.footer.link.english"
 msgstr ""
 
-#: components/Footer.tsx:28
+#: components/Footer.tsx:29
 msgid "common.footer.link.faq"
 msgstr ""
 
-#: components/Footer.tsx:47
+#: components/Footer.tsx:48
 msgid "common.footer.link.german"
 msgstr ""
 
-#: components/Footer.tsx:69
+#: components/Footer.tsx:70
 msgid "common.footer.link.imprint"
 msgstr ""
 
-#: components/Footer.tsx:86
+#: components/Footer.tsx:87
 msgid "common.footer.link.kiebitz"
 msgstr ""
 
-#: components/Footer.tsx:74
+#: components/Footer.tsx:75
 msgid "common.footer.link.privacy"
 msgstr ""
 
-#: components/Footer.tsx:17
+#: components/Footer.tsx:18
 msgid "common.footer.title.informations"
 msgstr ""
 
-#: components/Footer.tsx:34
+#: components/Footer.tsx:35
 msgid "common.footer.title.languages"
 msgstr ""
 
@@ -149,11 +149,11 @@ msgstr ""
 msgid "provider.onboarding.save-and-continue"
 msgstr ""
 
-#: pages/onboarding/SecretStep.tsx:42
+#: pages/onboarding/SecretStep.tsx:43
 msgid "provider.onboarding.secret.button"
 msgstr ""
 
-#: pages/onboarding/SecretStep.tsx:29
+#: pages/onboarding/SecretStep.tsx:30
 msgid "provider.onboarding.secret.notice"
 msgstr ""
 
@@ -173,11 +173,11 @@ msgstr ""
 msgid "provider.onboarding.title"
 msgstr ""
 
-#: pages/onboarding/VerifyStep.tsx:41
+#: pages/onboarding/VerifyStep.tsx:42
 msgid "provider.onboarding.verify.button"
 msgstr ""
 
-#: pages/onboarding/VerifyStep.tsx:37
+#: pages/onboarding/VerifyStep.tsx:38
 msgid "provider.onboarding.verify.edit-data"
 msgstr ""
 
@@ -341,10 +341,10 @@ msgstr ""
 msgid "provider.settings.title"
 msgstr ""
 
-#: pages/index.page.tsx:22
+#: pages/index.page.tsx:23
 msgid "provider.welcome.loggedout-.notice"
 msgstr ""
 
-#: pages/index.page.tsx:17
+#: pages/index.page.tsx:18
 msgid "provider.welcome.title"
 msgstr ""

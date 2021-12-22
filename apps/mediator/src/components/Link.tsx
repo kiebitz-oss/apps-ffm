@@ -3,8 +3,8 @@
 // README.md contains license information.
 
 import clsx from "clsx";
-import RouterLink from "next/link.js";
-// import { loadLocale, useI18n } from "./useI18n";
+import RouterLink from "next/link";
+import { loadLocale, useI18n } from "./useI18n";
 
 export interface LinkProps extends React.ComponentProps<"a"> {
   external?: boolean;
@@ -23,11 +23,12 @@ export const Link: React.FC<LinkProps> = ({
   external,
   rel,
   target,
+  locale,
   variant,
   size = "md",
   ...props
 }) => {
-  // const i18n = useI18n();
+  const i18n = useI18n();
 
   if (!href || external) {
     return (
@@ -52,7 +53,7 @@ export const Link: React.FC<LinkProps> = ({
   }
 
   return (
-    <RouterLink href={href} passHref>
+    <RouterLink href={href}>
       <a
         className={clsx(
           {
@@ -65,7 +66,8 @@ export const Link: React.FC<LinkProps> = ({
         )}
         rel={rel}
         target={target}
-        // onClick={() => loadLocale(i18n, locale)}
+        onClick={() => loadLocale(i18n, locale)}
+        lang={locale}
         {...props}
       >
         {children}

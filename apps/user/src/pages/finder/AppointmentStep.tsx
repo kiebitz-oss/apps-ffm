@@ -1,6 +1,6 @@
 import { Edit24 } from "@carbon/icons-react";
 import type { Appointment } from "@kiebitz-oss/api";
-import { BackLink, Button, Error, InputField, Title } from "@kiebitz-oss/ui";
+import { Button, Error, InputField, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import {
   ChangeEventHandler,
@@ -8,6 +8,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { BackLink } from "../../components/BackLink";
 import { Link } from "../../components/Link";
 import { AppointmentCard } from "../AppointmentCard";
 import { useUserApi } from "../UserApiContext";
@@ -34,7 +35,7 @@ const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
   return (
     <Link
       href="/finder/verify"
-      className="group p-4 w-full text-center no-underline rounded shadow-appointment hover:shadow-appointment2 sm:mx-0"
+      className="group justify-center p-4 w-full text-center hover:text-black no-underline rounded shadow-appointment hover:shadow-appointment2 sm:mx-0"
       onClick={onAppointmentSelect}
       data-id={appointment.id}
     >
@@ -108,7 +109,7 @@ export const AppointmentStep: React.FC = () => {
           />
           <Link
             href="/finder/location"
-            className="inline-flex justify-center items-center w-10 h-10 text-white no-underline bg-primary rounded shadow"
+            className="inline-flex justify-center items-center w-10 h-10 text-white hover:text-white no-underline bg-primary rounded shadow"
           >
             <Edit24 />
           </Link>
@@ -149,12 +150,6 @@ export const AppointmentStep: React.FC = () => {
           ))}
         </div>
       )}
-
-      {/* <button className="py-2 px-6 my-8 mx-auto text-lg font-semibold bg-gray-300 rounded shadow-lg">
-                <Trans id="user.finder.appointment.submit">
-                    Weitere Termine laden
-                </Trans>
-            </button> */}
     </main>
   );
 };

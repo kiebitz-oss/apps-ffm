@@ -1,9 +1,10 @@
 import type { Provider } from "@kiebitz-oss/api";
-import { BackLink, Button, Title } from "@kiebitz-oss/ui";
+import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { BackLink } from "../../components/BackLink";
 import { ConfirmProviderModal } from "../ConfirmProviderModal";
 import { useMediatorApi } from "../MediatorApiContext";
 import { UnconfirmProviderModal } from "../UnconfirmProviderModal";

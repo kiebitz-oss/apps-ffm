@@ -17,39 +17,39 @@ msgstr ""
 msgid "common.data-secret.text"
 msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn, um sich auf einem anderen PC (Tablet, Smartphone etc.) einzuloggen oder auf einem anderen Endgerät auf Ihre Termine zugreifen zu können."
 
-#: components/Footer.tsx:23
+#: components/Footer.tsx:24
 msgid "common.footer.link.booking"
 msgstr "Impfterminen buchen"
 
-#: components/Footer.tsx:59
+#: components/Footer.tsx:60
 msgid "common.footer.link.english"
 msgstr "English"
 
-#: components/Footer.tsx:28
+#: components/Footer.tsx:29
 msgid "common.footer.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/Footer.tsx:47
+#: components/Footer.tsx:48
 msgid "common.footer.link.german"
 msgstr "Deutsch"
 
-#: components/Footer.tsx:69
+#: components/Footer.tsx:70
 msgid "common.footer.link.imprint"
 msgstr "Impressum"
 
-#: components/Footer.tsx:86
+#: components/Footer.tsx:87
 msgid "common.footer.link.kiebitz"
 msgstr "Realisiert mit Kiebitz"
 
-#: components/Footer.tsx:74
+#: components/Footer.tsx:75
 msgid "common.footer.link.privacy"
 msgstr "Datenschutz"
 
-#: components/Footer.tsx:17
+#: components/Footer.tsx:18
 msgid "common.footer.title.informations"
 msgstr "Informationen"
 
-#: components/Footer.tsx:34
+#: components/Footer.tsx:35
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
@@ -149,11 +149,11 @@ msgstr "Telefonnummer"
 msgid "provider.onboarding.save-and-continue"
 msgstr "Weiter"
 
-#: pages/onboarding/SecretStep.tsx:42
+#: pages/onboarding/SecretStep.tsx:43
 msgid "provider.onboarding.secret.button"
 msgstr "Abschließen & zur Terminplanung"
 
-#: pages/onboarding/SecretStep.tsx:29
+#: pages/onboarding/SecretStep.tsx:30
 msgid "provider.onboarding.secret.notice"
 msgstr "Um sich später wieder einzuloggen oder Ihre Termine zugreifen zu können, benötigen Sie Ihre SICHERHEITSDATEI und Ihren SICHERHEITSCODE. Bitte speichern Sie jetzt Ihre SICHERHEITSDATEI und notieren Sie sich im Anschluss den SICHERHEITSCODE."
 
@@ -173,11 +173,11 @@ msgstr "Straße & Hausnummer"
 msgid "provider.onboarding.title"
 msgstr "Allgemeine Daten"
 
-#: pages/onboarding/VerifyStep.tsx:41
+#: pages/onboarding/VerifyStep.tsx:42
 msgid "provider.onboarding.verify.button"
 msgstr "Weiter"
 
-#: pages/onboarding/VerifyStep.tsx:37
+#: pages/onboarding/VerifyStep.tsx:38
 msgid "provider.onboarding.verify.edit-data"
 msgstr "Anpassen"
 
@@ -341,10 +341,10 @@ msgstr "Ihr Sicherheitscode"
 msgid "provider.settings.title"
 msgstr "Einstellungen"
 
-#: pages/index.page.tsx:22
+#: pages/index.page.tsx:23
 msgid "provider.welcome.loggedout-.notice"
 msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit Ihrem Datenschlüssel und Ihrer Sicherheitsdatei wiederherstellen."
 
-#: pages/index.page.tsx:17
+#: pages/index.page.tsx:18
 msgid "provider.welcome.title"
 msgstr "Impstellen"

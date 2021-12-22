@@ -1,8 +1,9 @@
-import { Link, Title } from "@kiebitz-oss/ui";
+import { Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import gaFfmUrl from "../../public/assets/ga-ffm-logo.svg";
 import stadtFfmUrl from "../../public/assets/stadt-ffm-logo.svg";
+import { Link } from "./Link";
 import { useI18n } from "./useI18n";
 
 const Footer: React.FC = () => {

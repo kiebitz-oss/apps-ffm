@@ -1,5 +1,5 @@
-import { Link } from "@kiebitz-oss/ui";
 import { useRouter } from "next/router";
+import { Link } from "./Link";
 import { useI18n } from "./useI18n";
 
 export interface NavProps {}
