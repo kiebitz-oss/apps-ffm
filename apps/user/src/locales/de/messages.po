@@ -49,19 +49,19 @@ msgstr "Informationen"
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
-#: components/Header.tsx:64
+#: components/Header.tsx:66
 msgid "header.nav.link.book_vaccination"
 msgstr "Impftermin buchen"
 
-#: components/Header.tsx:68
+#: components/Header.tsx:70
 msgid "header.nav.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/Header.tsx:87
+#: components/Header.tsx:89
 msgid "header.nav.link.lang_english_short"
 msgstr "EN"
 
-#: components/Header.tsx:78
+#: components/Header.tsx:80
 msgid "header.nav.link.lang_german_short"
 msgstr "DE"
 

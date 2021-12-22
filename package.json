@@ -36,6 +36,7 @@
     "lint": "yarn workspaces run lint",
     "lint:staged": "yarn workspaces run lint:staged",
     "lint:css": "npx stylelint '**/*.css'",
+    "typecheck": "yarn workspaces run typecheck",
     "test": "yarn workspaces run test",
     "test:e2e": "start-server-and-test test:e2e:serve http-get://localhost:3000 'cypress open'",
     "test:e2e:serve": "lingui compile & webpack serve --mode=development",

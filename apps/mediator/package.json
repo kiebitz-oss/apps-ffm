@@ -27,6 +27,7 @@
     "lint": "next lint",
     "lint:staged": "lint-staged --allow-empty",
     "lint:fix": "next lint --fix",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "test": "cross-env NODE_ENV=test jest --passWithNoTests",
     "i18n": "lingui",
     "i18n:extract": "cross-env NODE_ENV=development lingui extract --clean ",

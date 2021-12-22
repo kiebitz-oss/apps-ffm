@@ -31,7 +31,8 @@
     "clean": "rimraf --no-glob ./dist",
     "test": "cross-env NODE_ENV=test jest --passWithNoTests",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-    "lint:staged": "lint-staged --allow-empty"
+    "lint:staged": "lint-staged --allow-empty",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {},
   "devDependencies": {
