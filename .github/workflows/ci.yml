@@ -38,11 +38,15 @@ jobs:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: yarn-cache-folder-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-cache-folder-
+            yarn-cache-folder-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install dependencies
         run: |
           yarn install --immutable
+
+      - name: Build i18n
+        run: |
+          yarn build:i18n
 
       - name: Linter
         run: |
