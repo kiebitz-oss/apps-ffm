@@ -1,7 +1,9 @@
-import { BackLink, Link, Text, Title } from "@kiebitz-oss/ui";
+import { Text, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { BackLink } from "../../components/BackLink";
+import { Link } from "../../components/Link";
 import { AppointmentCard } from "../AppointmentCard";
 import { useFinderState } from "./FinderStateProvider";
 

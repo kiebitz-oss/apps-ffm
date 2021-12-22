@@ -3,7 +3,7 @@
 // README.md contains license information.
 
 import { Fragment } from "react";
-import { CopyToClipboardButton } from "../CopyToClipboardButton";
+import { CopyToClipboardButton } from "./CopyToClipboardButton";
 
 const renderSecret = (secret: string) => {
   const chunks = secret?.match(/.{1,4}/g) || [];

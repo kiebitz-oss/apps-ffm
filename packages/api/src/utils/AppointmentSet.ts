@@ -6,7 +6,10 @@ import type { Vaccine } from "@kiebitz-oss/config";
 import dayjs from "dayjs";
 import { providers } from "../fixtures/providers";
 import type { Appointment, Slot } from "../types";
-import { randomBytes } from "./crypto";
+// import { randomBytes } from "./crypto";
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const randomBytes = (length = 0): string => Math.random().toString();
 
 export const createSlot = (open = true): Slot => {
   return {

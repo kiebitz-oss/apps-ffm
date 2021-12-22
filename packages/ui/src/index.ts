@@ -5,7 +5,6 @@
 export * from "./Button";
 export * from "./Checkbox";
 export * from "./CheckboxField";
-export * from "./common";
 export * from "./CopyToClipboardButton";
 export * from "./Divider";
 export * from "./Error";
@@ -20,6 +19,9 @@ export * from "./Modal";
 export * from "./ModalContent";
 export * from "./ModalFooter";
 export * from "./ModalHeader";
+export * from "./Radio";
+export * from "./RadioField";
+export * from "./SecretBox";
 export * from "./Section";
 export * from "./Select";
 export * from "./SelectField";
