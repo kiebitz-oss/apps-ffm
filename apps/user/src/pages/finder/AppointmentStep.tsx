@@ -42,7 +42,7 @@ const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
       <AppointmentCard appointment={appointment}>
         <Button
           tabIndex={-1}
-          className="group-hover:bg-primary group-focus:bg-primary select-none shadow-lg"
+          className="group-hover:text-white group-hover:bg-primary group-focus:bg-primary group-hover:border-transparent select-none shadow-lg"
         >
           <Trans id="user.finder.appointment.card.submit">
             Termin auswählen

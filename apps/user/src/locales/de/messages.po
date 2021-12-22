@@ -13,55 +13,55 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/Footer.tsx:24
+#: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
 msgstr "Impfterminen buchen"
 
-#: components/Footer.tsx:60
+#: components/NavContent.tsx:69
 msgid "common.footer.link.english"
 msgstr "English"
 
-#: components/Footer.tsx:29
+#: components/NavContent.tsx:36
 msgid "common.footer.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/Footer.tsx:48
+#: components/NavContent.tsx:57
 msgid "common.footer.link.german"
 msgstr "Deutsch"
 
-#: components/Footer.tsx:70
+#: components/NavContent.tsx:80
 msgid "common.footer.link.imprint"
 msgstr "Impressum"
 
-#: components/Footer.tsx:87
+#: components/NavContent.tsx:97
 msgid "common.footer.link.kiebitz"
 msgstr "Realisiert mit Kiebitz"
 
-#: components/Footer.tsx:75
+#: components/NavContent.tsx:85
 msgid "common.footer.link.privacy"
 msgstr "Datenschutz"
 
-#: components/Footer.tsx:18
+#: components/NavContent.tsx:23
 msgid "common.footer.title.informations"
 msgstr "Informationen"
 
-#: components/Footer.tsx:35
+#: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
 msgstr "Sprache"
 
-#: components/Header.tsx:55
+#: components/Header.tsx:64
 msgid "header.nav.link.book_vaccination"
 msgstr "Impftermin buchen"
 
-#: components/Header.tsx:59
+#: components/Header.tsx:68
 msgid "header.nav.link.faq"
 msgstr "Fragen & Antworten"
 
-#: components/Header.tsx:78
+#: components/Header.tsx:87
 msgid "header.nav.link.lang_english_short"
 msgstr "EN"
 
-#: components/Header.tsx:69
+#: components/Header.tsx:78
 msgid "header.nav.link.lang_german_short"
 msgstr "DE"
 
@@ -189,11 +189,11 @@ msgstr "Weiter zum Termin"
 msgid "user.welcome.form_error"
 msgstr "Bitte beantworten Sie alle Fragen, denn sonst können wir keine Termine für Sie heraussuchen. Alle Ihre persönlichen Daten werden nur auf Ihrem Endgerät gespeichert und nicht an einen Server übermittelt oder weitergegeben."
 
-#: pages/index.page.tsx:18
+#: pages/index.page.tsx:23
 msgid "user.welcome.intro-1"
 msgstr "Sie sind jetzt nur noch wenige Klicks von Ihrem Termin entfernt."
 
-#: pages/index.page.tsx:24
+#: pages/index.page.tsx:29
 msgid "user.welcome.intro-2"
 msgstr "Wir speichern generell keine persönlichen Daten, aber haben ein paar Fragen, damit Sie den richtigen Impfstoff erhalten."
 
@@ -221,6 +221,6 @@ msgstr "Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über d
 msgid "user.welcome.question4_value"
 msgstr "Sind Sie jünger als 12?"
 
-#: pages/index.page.tsx:14
+#: pages/index.page.tsx:19
 msgid "user.welcome.title"
 msgstr "Willkommen!"
