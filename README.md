@@ -1,6 +1,3 @@
-[English version](README.md) // [Deutsche Version](README-de.md)
-
-
 # Kiebitz - Privacy Friendly Appointment Scheduling</md-list>
 
 <img src="/public/kiebitz-logo.png" alt="Kiebitz - Logo" title="Kiebitz - Logo" width="40%" />
