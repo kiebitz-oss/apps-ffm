@@ -203,11 +203,11 @@ msgstr "Handelt es sich um eine Booster-Impfung?"
 
 #: pages/Questionair.tsx:95
 msgid "user.welcome.question2_error"
-msgstr "Es müssen 6 Monate seit Ihrem letzten Impftermin vergangen sein, bevor Sie sich boostern lassen können."
+msgstr "Es müssen 3 Monate seit Ihrem letzten Impftermin vergangen sein, bevor Sie sich boostern lassen können."
 
 #: pages/Questionair.tsx:101
 msgid "user.welcome.question2_value"
-msgstr "Liegt Ihre letzte Impfung mehr als 6 Monate zurück?"
+msgstr "Liegt Ihre letzte Impfung mehr als 3 Monate zurück?"
 
 #: pages/Questionair.tsx:109
 msgid "user.welcome.question3_value"
