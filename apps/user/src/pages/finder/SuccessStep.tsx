@@ -118,6 +118,7 @@ export const SuccessStep: React.FC = () => {
               <br />
               <i>(Personalausweis, Reisepass)</i>
             </li>
+
             <li>
               <strong>Impfpass</strong>
               <br />
@@ -125,6 +126,7 @@ export const SuccessStep: React.FC = () => {
                 (wenn nicht vorhanden, erhalten Sie eine Ersatzbescheinigung.)
               </i>
             </li>
+
             <li>
               <strong>FFP2-Maske</strong>
               <br />
@@ -148,7 +150,7 @@ export const SuccessStep: React.FC = () => {
                     className="text-primary bg-primary/10 button md"
                   >
                     <GeneratePdf16 />
-                    {pdf.label}
+                    <span className="break-all">{pdf.label}</span>
                   </Link>
                 </li>
               )

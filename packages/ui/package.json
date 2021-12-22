@@ -119,10 +119,6 @@
       "plugin:react-hooks/recommended",
       "plugin:jsx-a11y/recommended"
     ],
-    "plugins": [
-      "testing-library",
-      "storybook"
-    ],
     "env": {
       "browser": true,
       "es6": true,
@@ -132,29 +128,7 @@
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
       "jsx-a11y/anchor-is-valid": "off"
-    },
-    "overrides": [
-      {
-        "files": [
-          "**/*.test.{ts,tsx}"
-        ],
-        "extends": [
-          "plugin:testing-library/react"
-        ]
-      },
-      {
-        "files": [
-          "**/*.stories.{ts,tsx,mdx}"
-        ],
-        "extends": [
-          "plugin:storybook/recommended",
-          "plugin:storybook/csf-strict"
-        ],
-        "rules": {
-          "storybook/use-storybook-testing-library": "off"
-        }
-      }
-    ]
+    }
   },
   "dependencies": {
     "clsx": "^1.1.1",

@@ -41,11 +41,11 @@ export const LocationStep: React.FC = () => {
         </Trans>
       </BackLink>
 
-      <Title variant="h1" as="h2">
+      <Title variant="h1" as="h2" className="ml-4 sm:ml-0">
         <Trans id="user.finder.location.title">Impfstellen</Trans>
       </Title>
 
-      <Text variant="text1" className="mb-8">
+      <Text variant="text1" className="mb-8 ml-4 sm:ml-0">
         <Trans id="user.finder.location.intro">
           Wählen Sie aus den möglichen Optionen, wo Sie geimpft werden möchten.
         </Trans>

@@ -25,11 +25,11 @@ export const VerifyStep: React.FC = () => {
         </Trans>
       </BackLink>
 
-      <Title variant="h1" as="h2">
+      <Title variant="h1" as="h2" className="ml-4 sm:ml-0">
         <Trans id="user.finder.verify.title">Übersicht</Trans>
       </Title>
 
-      <Text variant="text2" className="mb-10">
+      <Text variant="text2" className="mb-10 ml-4 sm:ml-0">
         <Trans id="user.finder.verify.intro">
           Hier ist Ihr gewählter Termin. Prüfen Sie bitte genau, ob alles
           stimmt.
@@ -65,7 +65,7 @@ export const VerifyStep: React.FC = () => {
         type="button"
         variant="primary"
         href="/finder/success"
-        className="mt-auto ml-4 sm:mt-0"
+        className="ml-4 sm:mt-0"
       >
         <Trans id="user.finder.verify.submit">Termin jetzt buchen</Trans>
       </Link>

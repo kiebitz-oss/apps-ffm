@@ -10,17 +10,22 @@ import { Questionaire } from "./Questionair";
 const UserStartPage: NextPage = () => {
   return (
     <main id="welcome">
-      <Title variant="h1" as="h2" data-testid="view.title">
+      <Title
+        variant="h1"
+        as="h2"
+        data-testid="view.title"
+        className="ml-4 sm:ml-0"
+      >
         <Trans id="user.welcome.title">Willkommen!</Trans>
       </Title>
 
-      <Text>
+      <Text className="mb-4 ml-4 sm:ml-0">
         <Trans id="user.welcome.intro-1">
           Sie sind jetzt nur noch wenige Klicks von Ihrem Termin entfernt.
         </Trans>
       </Text>
 
-      <Text className="mb-8">
+      <Text className="mb-8 ml-4 sm:ml-0">
         <Trans id="user.welcome.intro-2">
           Wir speichern generell keine persönlichen Daten, aber haben ein paar
           Fragen, damit Sie den richtigen Impfstoff erhalten.

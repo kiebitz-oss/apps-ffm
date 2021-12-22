@@ -28,6 +28,9 @@
     "apps/provider"
   ],
   "scripts": {
+    "dev:user": "yarn workspace @kiebitz-oss/app-user run dev",
+    "dev:provider": "yarn workspace @kiebitz-oss/app-provider run dev",
+    "dev:mediator": "yarn workspace @kiebitz-oss/app-mediator run dev",
     "build": "yarn workspaces run build",
     "clean": "yarn workspaces run clean",
     "lint": "yarn workspaces run lint",

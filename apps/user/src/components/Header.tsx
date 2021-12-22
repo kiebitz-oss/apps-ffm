@@ -1,10 +1,13 @@
 import { theme } from "@kiebitz-oss/config";
 import { Trans } from "@lingui/macro";
+import clsx from "clsx";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import logoUrl from "../../public/assets/ffm-logo.svg";
 import { useUserApi } from "../pages/UserApiContext";
+import { Hamburger } from "./Hamburger";
 import { Link } from "./Link";
+import NavContent from "./NavContent";
 import { useI18n } from "./useI18n";
 
 export interface HeaderProps extends React.ComponentProps<"header"> {
@@ -17,40 +20,46 @@ export const Header: React.FC<HeaderProps> = ({ onMobileNavClick }) => {
   const api = useUserApi();
   const locale = i18n.locale?.toLowerCase() || "de";
 
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+
   useEffect(() => {
     api.isAuthenticated().then((result) => {
       console.log("Authenticated?", result);
     });
   }, [api]);
 
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setShowMenu(false);
+    };
+
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
-    <header className="grid grid-flow-col justify-between items-center px-8 min-h-[86px] md:px-12 md:min-h-[100px]">
+    <header className="grid grid-flow-col justify-between items-center px-8 min-h-[5rem] md:px-12 md:min-h-[6rem]">
       <Link href="/">
         <img src={logoUrl.src} alt={theme.logoAlt} />
       </Link>
 
-      {/* 
-      <a
-        href="#sidenav-open"
-        id="sidenav-button"
-        className="hamburger"
-        title="Open Menu"
-        aria-label="Open Menu"
-        onClick={onMobileNavClick}
-      >
-        <svg
-          viewBox="0 0 50 40"
-          role="presentation"
-          focusable="false"
-          aria-label="trigram for heaven symbol"
-        >
-          <line x1="0" x2="100%" y1="10%" y2="10%" />
-          <line x1="0" x2="100%" y1="50%" y2="50%" />
-          <line x1="0" x2="100%" y1="90%" y2="90%" />
-        </svg>
-      </a> */}
+      <Hamburger className="sm:hidden" onClick={() => setShowMenu(!showMenu)} />
 
-      <nav className="hidden gap-12 sm:flex md:pt-8">
+      <aside
+        className={clsx(
+          "flex fixed top-[80px] right-0 bottom-0 left-0 z-50 flex-col gap-10 p-8 w-full min-h-[100vh-80px] bg-white sm:hidden",
+          {
+            ["hidden"]: !showMenu,
+          }
+        )}
+      >
+        <NavContent />
+      </aside>
+
+      <nav className="hidden gap-12 justify-center sm:flex">
         <Link href="/">
           <Trans id="header.nav.link.book_vaccination">Impftermin buchen</Trans>
         </Link>
