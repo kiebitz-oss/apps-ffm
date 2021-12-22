@@ -46,7 +46,9 @@ export const Header: React.FC<HeaderProps> = ({ onMobileNavClick }) => {
         <img src={logoUrl.src} alt={theme.logoAlt} />
       </Link>
 
-      <Hamburger className="sm:hidden" onClick={() => setShowMenu(!showMenu)} />
+      <button className="sm:hidden" onClick={() => setShowMenu(!showMenu)}>
+        <Hamburger />
+      </button>
 
       <aside
         className={clsx(

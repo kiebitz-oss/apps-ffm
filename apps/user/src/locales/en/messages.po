@@ -13,55 +13,55 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/Footer.tsx:24
+#: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
 msgstr ""
 
-#: components/Footer.tsx:60
+#: components/NavContent.tsx:69
 msgid "common.footer.link.english"
 msgstr ""
 
-#: components/Footer.tsx:29
+#: components/NavContent.tsx:36
 msgid "common.footer.link.faq"
 msgstr ""
 
-#: components/Footer.tsx:48
+#: components/NavContent.tsx:57
 msgid "common.footer.link.german"
 msgstr ""
 
-#: components/Footer.tsx:70
+#: components/NavContent.tsx:80
 msgid "common.footer.link.imprint"
 msgstr ""
 
-#: components/Footer.tsx:87
+#: components/NavContent.tsx:97
 msgid "common.footer.link.kiebitz"
 msgstr ""
 
-#: components/Footer.tsx:75
+#: components/NavContent.tsx:85
 msgid "common.footer.link.privacy"
 msgstr ""
 
-#: components/Footer.tsx:18
+#: components/NavContent.tsx:23
 msgid "common.footer.title.informations"
 msgstr ""
 
-#: components/Footer.tsx:35
+#: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
 msgstr ""
 
-#: components/Header.tsx:55
+#: components/Header.tsx:64
 msgid "header.nav.link.book_vaccination"
 msgstr ""
 
-#: components/Header.tsx:59
+#: components/Header.tsx:68
 msgid "header.nav.link.faq"
 msgstr ""
 
-#: components/Header.tsx:78
+#: components/Header.tsx:87
 msgid "header.nav.link.lang_english_short"
 msgstr ""
 
-#: components/Header.tsx:69
+#: components/Header.tsx:78
 msgid "header.nav.link.lang_german_short"
 msgstr ""
 
@@ -189,11 +189,11 @@ msgstr ""
 msgid "user.welcome.form_error"
 msgstr ""
 
-#: pages/index.page.tsx:18
+#: pages/index.page.tsx:23
 msgid "user.welcome.intro-1"
 msgstr ""
 
-#: pages/index.page.tsx:24
+#: pages/index.page.tsx:29
 msgid "user.welcome.intro-2"
 msgstr ""
 
@@ -221,6 +221,6 @@ msgstr ""
 msgid "user.welcome.question4_value"
 msgstr ""
 
-#: pages/index.page.tsx:14
+#: pages/index.page.tsx:19
 msgid "user.welcome.title"
 msgstr ""
