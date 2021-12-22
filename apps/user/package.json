@@ -21,7 +21,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env NODE_ENV=development lingui extract --clean && lingui compile && next build && next export --outdir dist",
+    "build": "next build && next export --outdir dist",
     "start": "next start",
     "clean": "rimraf --no-glob ./.next ./dist",
     "test": "cross-env NODE_ENV=test jest --passWithNoTests",
