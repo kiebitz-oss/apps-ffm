@@ -99,7 +99,7 @@ export const Questionaire: React.FC = () => {
             })}
           >
             <Trans id="user.welcome.question2_value">
-              Liegt Ihre letzte Impfung mehr als 6 Monate zurück?
+              Liegt Ihre letzte Impfung mehr als 3 Monate zurück?
             </Trans>
           </QuestionaireBox>
         )}
