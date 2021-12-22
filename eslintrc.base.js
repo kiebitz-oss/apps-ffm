@@ -28,7 +28,7 @@ module.exports = {
   // By loading jest globally as a plugin
   // we can load recommended on specific code base (regular / tests) through
   // overrides.
-  plugins: ["jest"],
+  plugins: ["jest", "testing-library", "storybook"],
   globals: {
     context: "readonly",
     cy: "readonly",
@@ -46,12 +46,20 @@ module.exports = {
   overrides: [
     {
       // For performance run jest/recommended on test files, not regular code
-      files: ["**/?(*.)+(test).{js,jsx,ts,tsx}"],
-      extends: ["plugin:jest/all"],
+      files: ["**/*.test.{ts,tsx}"],
+      extends: ["plugin:jest/all", "plugin:testing-library/react"],
       rules: {
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-object-literal-type-assertion": "off",
         "@typescript-eslint/no-empty-function": "off",
+        "jest/prefer-called-with": "off",
+      },
+    },
+    {
+      files: ["**/*.stories.{ts,tsx,mdx}"],
+      extends: ["plugin:storybook/recommended", "plugin:storybook/csf-strict"],
+      rules: {
+        "storybook/use-storybook-testing-library": "off",
       },
     },
     {

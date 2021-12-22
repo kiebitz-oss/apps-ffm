@@ -9,23 +9,26 @@ import * as stories from "./Button.stories";
 
 const { Default } = composeStories(stories);
 
-describe("uI/Button", () => {
+describe("ui/Button", () => {
   it("should render", () => {
     expect.hasAssertions();
 
     render(<Default>Hello world</Default>);
-    const buttonElement = screen.getByText(/Hello world/i);
-    expect(buttonElement).not.toBeNull();
+    const element = screen.getByText(/Hello world/i);
+    expect(element).not.toBeNull();
   });
 
   it("should handle onclick events", async () => {
     expect.hasAssertions();
 
     const onClickSpy = jest.fn();
+
     render(<Default onClick={onClickSpy} />);
-    const buttonElement = screen.getByRole("button");
-    buttonElement.click();
-    expect(onClickSpy).toHaveBeenCalledWith();
+
+    const element = screen.getByRole("button");
+    element.click();
+
+    expect(onClickSpy).toHaveBeenCalled();
   });
 
   it("should not have a11y violations", async () => {
