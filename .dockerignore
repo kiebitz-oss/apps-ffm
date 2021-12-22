@@ -1,8 +1,10 @@
 node_modules
-build
+**/node_modules/**
+**/dist/**
+**/.next/**
 
-Dockerfile
+Dockerfile*
 .dockerignore
 npm-debug.log
+yarn-error.log
 README.md
-.next

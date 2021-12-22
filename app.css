@@ -21,7 +21,7 @@
   }
 
   #__next {
-    @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto md:mx-5 lg:mx-10 xl:mx-24 2xl:mx-28;
+    @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto sm:mx-5 lg:mx-10 xl:mx-24 2xl:mx-28;
 
     & > .open > footer,
     & > .closed > footer {
