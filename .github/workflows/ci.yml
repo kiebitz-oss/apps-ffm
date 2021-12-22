@@ -44,14 +44,6 @@ jobs:
         run: |
           yarn install --immutable
 
-      - name: Build i18n
-        run: |
-          yarn build:i18n
-
-      - name: Build packages
-        run: |
-          yarn build:packages
-
       - name: Linter
         run: |
           yarn lint

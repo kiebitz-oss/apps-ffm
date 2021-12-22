@@ -28,6 +28,7 @@
     "apps/provider"
   ],
   "scripts": {
+    "postinstall": "yarn build:packages && yarn build:i18n",
     "dev:user": "yarn workspace @kiebitz-oss/app-user run dev",
     "dev:provider": "yarn workspace @kiebitz-oss/app-provider run dev",
     "dev:mediator": "yarn workspace @kiebitz-oss/app-mediator run dev",
