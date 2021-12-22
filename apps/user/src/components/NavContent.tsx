@@ -102,7 +102,7 @@ const NavContent: React.FC<NavContent> = ({ className, ...props }) => {
         </ul>
       </section>
 
-      <section className="flex flex-col gap-4 items-center mt-auto mb-8 sm:flex-[4] sm:justify-center sm:mt-0 sm:mb-0">
+      <section className="flex flex-col gap-4 items-center mt-auto mb-8 sm:flex-[1] sm:justify-center sm:mt-0 sm:mb-0 xl:flex-[2]">
         <Link href="#" external>
           <img
             width="300"

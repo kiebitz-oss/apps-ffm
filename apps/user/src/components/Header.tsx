@@ -10,11 +10,9 @@ import { Link } from "./Link";
 import NavContent from "./NavContent";
 import { useI18n } from "./useI18n";
 
-export interface HeaderProps extends React.ComponentProps<"header"> {
-  onMobileNavClick: React.MouseEventHandler<HTMLAnchorElement>;
-}
+export interface HeaderProps extends React.ComponentProps<"header"> {}
 
-export const Header: React.FC<HeaderProps> = ({ onMobileNavClick }) => {
+export const Header: React.FC<HeaderProps> = () => {
   const router = useRouter();
   const i18n = useI18n();
   const api = useUserApi();
