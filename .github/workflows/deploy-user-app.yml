@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy-storybook:
+  deploy-user-app:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,12 +38,11 @@ jobs:
           yarn install --immutable
 
       - run: yarn build:apps:user
-      - run: touch dist/.nojekyll
+      - run: touch apps/user/dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages
           folder: apps/user/dist
-          target_folder: storybook
           clean: true

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy-storybook:
+  deploy-mediator-app:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,12 +38,11 @@ jobs:
           yarn install --immutable
 
       - run: yarn build:apps:mediator
-      - run: touch dist/.nojekyll
+      - run: touch apps/mediator/dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages
           folder: apps/mediator/dist
-          target_folder: storybook
           clean: true

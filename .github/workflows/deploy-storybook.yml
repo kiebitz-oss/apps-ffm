@@ -18,12 +18,11 @@ jobs:
       - run: npm ci
       - run: npm run i18n:build
       - run: npm run sb:build
-      - run: touch dist/.nojekyll
+      - run: touch packages/storybook/dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages
-          folder: dist
-          target_folder: storybook
+          folder: packages/storybook/dist
           clean: true
