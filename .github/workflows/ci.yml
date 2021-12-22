@@ -48,6 +48,10 @@ jobs:
         run: |
           yarn build:i18n
 
+      - name: Build packages
+        run: |
+          yarn build:packages
+
       - name: Linter
         run: |
           yarn lint --cache
@@ -56,9 +60,8 @@ jobs:
         run: |
           yarn test
 
-      - name: Build
+      - name: Build apps
         run: |
-          yarn build:packages
           yarn build:apps
         env:
           # Speed up build: they are linted in a previous step
