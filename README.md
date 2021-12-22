@@ -65,14 +65,11 @@ We are happy about your contribution to the project! In order to ensure complian
 
 ## Third-Party Assets
 
-We use the following third-party libraries and assets directly in this codebase (in addition to the ones specified in `package.json` and `requirements.txt`):
+We use the following third-party libraries and assets directly in this codebase (in addition to the ones specified in `package.json`):
 
-* [Bulma](https://github.com/jgthms/bulma)
-* [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
-* [Open Sans](https://github.com/googlefonts/opensans)
-* [Oxanium](https://github.com/sevmeyer/oxanium)
-* [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
-
+* [TailwindCSS](https://github.com/jgthms/bulma)
+* [Carbon Icons](https://www.carbondesignsystem.com/)
+* [IBM Plex](https://github.com/IBM/plex)
 ## Security
 
 Did you find a security issue you'd like to report? Please contact us at [security@kiebitz.eu](mailto:security@kiebitz.eu). We appreciate if you follow [responsible disclosure practices](https://en.wikipedia.org/wiki/Responsible_disclosure).
