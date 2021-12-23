@@ -41,6 +41,7 @@ jobs:
         run: |
           yarn install --immutable
 
+      - run: yarn build:i18n
       - run: yarn build:sb
       - run: touch packages/storybook/dist/.nojekyll
 
