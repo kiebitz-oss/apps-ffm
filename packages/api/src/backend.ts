@@ -5,21 +5,17 @@
 import { Backend, InMemoryStorage, Settings, StorageStore } from "vanellus";
 
 export const getBackendInstance = (): Backend => {
-  if (!process.env.NEXT_PUBLIC_STORAGE_ENDPOINT) {
-    throw new Error("process.env.NEXT_PUBLIC_STORAGE_ENDPOINT not set.");
-  }
-
-  if (!process.env.NEXT_PUBLIC_APPOINTMENT_ENDPOINT) {
-    throw new Error("process.env.NEXT_PUBLIC_APPOINTMENT_ENDPOINT not set.");
-  }
-
   const settings: Settings = {
     appointment: {
       properties: {},
     },
     apiUrls: {
-      storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT,
-      appointments: process.env.NEXT_PUBLIC_APPOINTMENT_ENDPOINT,
+      storage:
+        process.env.NEXT_PUBLIC_STORAGE_ENDPOINT ||
+        "https://storage.kiebitz.eu/jsonrpc",
+      appointments:
+        process.env.NEXT_PUBLIC_APPOINTMENT_ENDPOINT ||
+        "https://appointments.kiebitz.eu/jsonrpc",
     },
   };
   const store = new StorageStore(new InMemoryStorage());

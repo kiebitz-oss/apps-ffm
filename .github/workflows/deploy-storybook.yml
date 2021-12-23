@@ -3,6 +3,10 @@ name: Deploy Storybook
 on:
   workflow_dispatch:
 
+env:
+  NEXT_PUBLIC_STORAGE_ENDPOINT: https://storage.kiebitz.eu/jsonrpc
+  NEXT_PUBLIC_APPOINTMENT_ENDPOINT: https://appointments.kiebitz.eu/jsonrpc
+
 jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
