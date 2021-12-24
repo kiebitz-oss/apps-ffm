@@ -24,7 +24,6 @@ locales/**/messages.js
 .eslintcache
 .cache/*
 .ultra.cache.json
-.ultra.cache.json
 __pycache__
 .turbo
 
