@@ -2,6 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
+import { Provider } from "@kiebitz-oss/api";
 import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
@@ -21,7 +22,7 @@ export const VerifyStep: React.FC = () => {
   const router = useRouter();
 
   const submit: React.MouseEventHandler<HTMLButtonElement> = () => {
-    api.register(state.data).then(() => {
+    api.register(state.data as Provider).then(() => {
       router.push("/onboarding/secret");
     });
   };

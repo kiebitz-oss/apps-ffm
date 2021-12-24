@@ -33,25 +33,25 @@
     "dev:provider": "yarn workspace @kiebitz-oss/app-provider run dev",
     "dev:mediator": "yarn workspace @kiebitz-oss/app-mediator run dev",
     "dev:sb": "yarn workspace @kiebitz-oss/storybook run dev",
-    "build": "yarn workspaces run build",
-    "build:packages": "yarn workspace @kiebitz-oss/config build && yarn workspace @kiebitz-oss/api build && yarn workspace @kiebitz-oss/ui build",
-    "build:apps": "yarn build:apps:user && yarn build:apps:mediator && yarn build:apps:provider",
+    "build": "ultra -r --pretty --silent build",
+    "build:packages": "ultra -r --pretty --silent --filter 'packages/*' build",
+    "build:apps": "ultra -r --pretty --silent --filter 'apps/*' build",
     "build:apps:user": "yarn workspace @kiebitz-oss/app-user run build",
     "build:apps:mediator": "yarn workspace @kiebitz-oss/app-mediator run build",
     "build:apps:provider": "yarn workspace @kiebitz-oss/app-provider run build",
-    "build:sb": "yarn workspace @kiebitz-oss/storybook run build",
+    "build:sb": "yarn workspace @kiebitz-oss/storybook run build:sb",
     "build:i18n": "yarn workspace @kiebitz-oss/app-user run i18n:build && yarn workspace @kiebitz-oss/app-provider run i18n:build && yarn workspace @kiebitz-oss/app-mediator run i18n:build",
-    "clean": "yarn workspaces run clean",
-    "lint": "yarn workspaces run lint",
+    "clean": "ultra -r --pretty --silent clean",
+    "lint": "ultra -r --pretty --silent lint",
     "lint:staged": "yarn workspaces run lint:staged",
     "lint:css": "npx stylelint '**/*.css'",
-    "typecheck": "yarn workspaces run typecheck",
-    "test": "yarn workspaces run test",
+    "typecheck": "ultra -r --pretty --silent  typecheck",
+    "test": "ultra -r --pretty --silent  test",
     "test:e2e": "start-server-and-test test:e2e:serve http-get://localhost:3000 'cypress open'",
     "test:e2e:serve": "lingui compile & webpack serve --mode=development",
     "changeset": "changeset",
     "release": "yarn build && changeset publish",
-    "reset": "rm -rf node_modules/ packages/storybook/node_modules/ packages/ui/node_modules/ packages/api/node_modules/ apps/mediator/node_modules/ apps/provider/node_modules/ apps/user/node_modules/",
+    "reset": "rm -rf node_modules/ packages/storybook/node_modules/ packages/ui/node_modules/ packages/config/node_modules/ packages/api/node_modules/ apps/mediator/node_modules/ apps/provider/node_modules/ apps/user/node_modules/",
     "docker:build:user": "docker build . -f Dockerfile-user -t kiebitz-user",
     "docker:build:mediator": "docker build . -f Dockerfile-mediator -t kiebitz-mediator",
     "docker:build:provider": "docker build . -f Dockerfile-provider -t kiebitz-provider",
@@ -85,7 +85,8 @@
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-no-unsupported-browser-features": "^5.0.2",
     "tailwindcss": "^3.0.7",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "ultra-runner": "^3.10.5"
   },
   "resolutions": {
     "browserslist": "^4.16.5",
@@ -93,6 +94,11 @@
     "glob-parent": "^6",
     "trim": "^1",
     "webpack": "^5"
+  },
+  "ultra": {
+    "concurrent": [
+      "lint"
+    ]
   },
   "browserslist": [
     "defaults",

@@ -1,16 +1,15 @@
 {
   "extends": "../../tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "@kiebitz-oss/storybook",
   "compilerOptions": {
-    "baseUrl": "./src",
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "jsx": "react-jsx",
-    "noEmit": false,
-    "composite": false,
+    "lib": ["es2020", "DOM", "DOM.Iterable"],
     "incremental": true,
-    "paths": {}
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "jsx": "react-jsx"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["dist"]
+  "include": ["assets.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["dist", "node_modules"]
 }

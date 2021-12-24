@@ -5,6 +5,10 @@
   "author": "Benjamin Bender <bb@codepoet.de>",
   "private": true,
   "license": "AGPL-3.0-or-later",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kiebitz-oss/apps-ffm",
@@ -18,12 +22,13 @@
   },
   "scripts": {
     "dev": "start-storybook -p 9000",
-    "build": "build-storybook --output-dir dist",
-    "clean": "rimraf --no-glob ./dist",
-    "test": "cross-env NODE_ENV=test jest --passWithNoTests",
+    "build": "true",
+    "build:sb": "build-storybook --output-dir dist",
+    "clean": "rimraf --no-glob ./dist .tsbuildinfo .ultra.cache.json",
+    "test": "jest --passWithNoTests",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "lint:staged": "lint-staged --allow-empty",
-    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",

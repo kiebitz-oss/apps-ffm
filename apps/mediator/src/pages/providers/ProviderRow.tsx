@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { ChangeEventHandler, useRef } from "react";
 import { Link } from "../../components/Link";
 
-interface ProviderRowProps {
+export interface ProviderRowProps {
   provider: Provider;
   selected: boolean;
   onSelect: (providerId: string, selected: boolean) => void;

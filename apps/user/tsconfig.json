@@ -1,19 +1,16 @@
 {
   "extends": "../../tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "@kiebitz-oss/user",
   "compilerOptions": {
-    "baseUrl": "./src",
+    "lib": ["es2020", "DOM", "DOM.Iterable"],
+    "target": "es5",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
     "jsx": "preserve"
   },
-  "include": [
-    "next-env.d.ts",
-    "assets.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "tests",
-    "build",
-    "out"
-  ]
+  "include": ["next-env.d.ts", "assets.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".next", "dist"]
 }

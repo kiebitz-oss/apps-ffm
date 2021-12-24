@@ -6,11 +6,11 @@ import { ChangeEventHandler, useState } from "react";
 import { ReconfirmProvidersModal } from "../ReconfirmProvidersModal";
 import { ProviderRow } from "./ProviderRow";
 
-interface ProviderTableProps {
+export interface ProviderListProps {
   providers: Provider[];
 }
 
-export const ProviderList: React.FC<ProviderTableProps> = ({ providers }) => {
+export const ProviderList: React.FC<ProviderListProps> = ({ providers }) => {
   const [modal, setModal] = useState<"confirm" | "unconfirm" | null>(null);
   const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
 

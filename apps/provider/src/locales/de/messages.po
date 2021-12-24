@@ -173,11 +173,11 @@ msgstr "Straße & Hausnummer"
 msgid "provider.onboarding.title"
 msgstr "Allgemeine Daten"
 
-#: pages/onboarding/VerifyStep.tsx:42
+#: pages/onboarding/VerifyStep.tsx:43
 msgid "provider.onboarding.verify.button"
 msgstr "Weiter"
 
-#: pages/onboarding/VerifyStep.tsx:38
+#: pages/onboarding/VerifyStep.tsx:39
 msgid "provider.onboarding.verify.edit-data"
 msgstr "Anpassen"
 
