@@ -17,6 +17,10 @@ Cypress.Commands.add("getByLike", (selector, options) => {
 });
 
 Cypress.Commands.add("setLocale", (locale) => {
-  cy.getBy(`nav.locale.${locale}`).as("locale").should("exist").click();
+  cy.get("nav").within( () => {
+    cy.get(`[data-test="nav.locale.${locale}"]`).as("locale").should("exist").click();
+  });
+  //cy.getBy(`header.nav.locale.${locale}`).as("locale").should("exist").click();
+
   return cy.get("@locale").should("have.class", "font-bold");
 });

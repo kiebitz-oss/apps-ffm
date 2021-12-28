@@ -4,9 +4,9 @@ describe("User Finder", () => {
     cy.visit("/");
   });
   it("should display the headline on the user finder page", () => {
-    cy.visit("/user/finder");
+    cy.visit("/");
     cy.setLocale("de");
-    cy.get("main h2").should("exist").should("contain", "Impfstellen");
+    cy.get("main h2").should("exist").should("contain", "Willkommen!");
     // etc.
   });
 });
