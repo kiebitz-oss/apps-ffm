@@ -15,7 +15,7 @@ msgstr ""
 
 #: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
-msgstr "Impfterminen buchen"
+msgstr "Impftermin buchen"
 
 #: components/NavContent.tsx:69
 msgid "common.footer.link.english"
@@ -51,15 +51,15 @@ msgstr "Sprache"
 
 #: pages/logged-out.page.tsx:25
 msgid "mediator.logged-out.log-in-again"
-msgstr "Einloggen"
+msgstr "Anmelden"
 
 #: pages/logged-out.page.tsx:18
 msgid "mediator.logged-out.notice"
-msgstr "Sie wurden erfolgreich abgemeldet. Sie können sich jederzeit mit Ihrer Schlüsseldatei wieder anmelden."
+msgstr "Sie wurden erfolgreich abgemeldet. Sie können sich jederzeit mit Ihrem Datenschlüssel und Ihrer Sicherungsdatei wieder anmelden."
 
 #: pages/logged-out.page.tsx:14
 msgid "mediator.logged-out.title"
-msgstr "mediator.logged-out.title"
+msgstr "Erfolgreich abgemeldet"
 
 #: pages/logout.page.tsx:33
 msgid "mediator.logout.button"
@@ -67,7 +67,7 @@ msgstr "Abmelden"
 
 #: pages/logout.page.tsx:25
 msgid "mediator.logout.intro"
-msgstr "Möchtest Du Dich wirklich abmelden? Bitte stelle vorher sicher, dass Du Deinen Sicherheitscode notiert hast. Nur mit diesem Code kannst Du Dich später wieder anmelden."
+msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie vorher sicher, dass Sie Ihren Datenschlüssel notiert und die Sicherungsdatei gespeichert haben. Nur mit Schlüssel und Datei zusammen können Sie sich später wieder anmelden."
 
 #: pages/logout.page.tsx:21
 msgid "mediator.logout.title"
@@ -75,7 +75,7 @@ msgstr "Abmelden"
 
 #: pages/providers/ProviderRow.tsx:72
 msgid "mediator.provider-row.button-show"
-msgstr "anzeigen"
+msgstr "Anzeigen"
 
 #: pages/providers/ProviderRow.tsx:65
 msgid "mediator.provider-row.invalid"
@@ -83,7 +83,7 @@ msgstr "unbestätigt"
 
 #: pages/providers/ProviderRow.tsx:43
 msgid "mediator.provider-row.select-row"
-msgstr "Impfanbieter auswählen oder abwählen"
+msgstr "Impfstellen auswählen oder abwählen"
 
 #: pages/providers/ProviderRow.tsx:63
 msgid "mediator.provider-row.valid"
@@ -91,15 +91,15 @@ msgstr "bestätigt"
 
 #: pages/providers/[id].page.tsx:122
 msgid "mediator.provider-show.button-confirm"
-msgstr "Anbieter bestätigen"
+msgstr "Impfstelle freischalten"
 
 #: pages/providers/[id].page.tsx:132
 msgid "mediator.provider-show.button-unconfirm"
-msgstr "Anbieter sperren"
+msgstr "Impfstelle sperren"
 
 #: pages/providers/[id].page.tsx:82
 msgid "mediator.provider-show.city"
-msgstr "Stadt"
+msgstr "Ort"
 
 #: pages/providers/[id].page.tsx:106
 msgid "mediator.provider-show.description"
@@ -127,7 +127,7 @@ msgstr "Straße"
 
 #: pages/providers/[id].page.tsx:39
 msgid "mediator.provider-show.title"
-msgstr "Impfanbieter \"{0}\""
+msgstr "Impfstellen \"{0}\""
 
 #: pages/providers/[id].page.tsx:51
 msgid "mediator.provider-show.value"
@@ -147,15 +147,15 @@ msgstr "Adresse"
 
 #: pages/providers/ProvidersList.tsx:102
 msgid "mediator.providers-list.button-confirm"
-msgstr "Anbieter bestätigen"
+msgstr "Impfstelle bestätigen"
 
 #: pages/providers/ProvidersList.tsx:115
 msgid "mediator.providers-list.button-unconfirm"
-msgstr "Anbieter sperren"
+msgstr "Impfstelle sperren"
 
 #: pages/providers/ProvidersList.tsx:41
 msgid "mediator.providers-list.caption"
-msgstr "Tabelle der Impfanbieter"
+msgstr "Liste der Impfstellen"
 
 #: pages/providers/ProvidersList.tsx:62
 msgid "mediator.providers-list.name"
@@ -163,7 +163,7 @@ msgstr "Name"
 
 #: pages/providers/ProvidersList.tsx:54
 msgid "mediator.providers-list.select-all"
-msgstr "Alle Impfanbieter auswählen oder abwählen"
+msgstr "Alle Impfstellen auswählen oder abwählen"
 
 #: pages/providers/ProvidersList.tsx:68
 msgid "mediator.providers-list.status"
@@ -171,11 +171,11 @@ msgstr "Status"
 
 #: pages/ConfirmProviderModal.tsx:120
 msgid "mediator.providers.confirm-modal.button-confirm"
-msgstr "Anbieter bestätigen"
+msgstr "Impfstelle bestätigen"
 
 #: pages/ConfirmProviderModal.tsx:78
 msgid "mediator.providers.confirm-modal.city"
-msgstr "Stadt"
+msgstr "Ort"
 
 #: pages/ConfirmProviderModal.tsx:108
 msgid "mediator.providers.confirm-modal.description"
@@ -191,7 +191,7 @@ msgstr "Feld"
 
 #: pages/ConfirmProviderModal.tsx:45
 msgid "mediator.providers.confirm-modal.intro"
-msgstr "Wollen Sie den Anbieter wirklich freischalten?"
+msgstr "Wollen Sie die Impfstelle wirklich freischalten?"
 
 #: pages/ConfirmProviderModal.tsx:64
 msgid "mediator.providers.confirm-modal.name"
@@ -207,7 +207,7 @@ msgstr "Straße"
 
 #: pages/ConfirmProviderModal.tsx:37
 msgid "mediator.providers.confirm-modal.title"
-msgstr "Anbieter freischalten"
+msgstr "Impfstelle freischalten"
 
 #: pages/ConfirmProviderModal.tsx:57
 msgid "mediator.providers.confirm-modal.value"
@@ -219,31 +219,31 @@ msgstr "Postleitzahl"
 
 #: pages/ReconfirmProvidersModal.tsx:72
 msgid "mediator.providers.reconfirm-modal.button-submit"
-msgstr "{0} Anbieter neu bestätigen"
+msgstr "{0} Impfstelle(n) erneut freischalten"
 
 #: pages/ReconfirmProvidersModal.tsx:60
 msgid "mediator.providers.reconfirm-modal.in-progress"
-msgstr "Bestätige Anbieter..."
+msgstr "Freischaltung läuft …"
 
 #: pages/ReconfirmProvidersModal.tsx:64
 msgid "mediator.providers.reconfirm-modal.info"
-msgstr "Wollen Sie alle bestätigten Anbieter neu bestätigen?"
+msgstr "Wollen Sie alle Impfstellen erneut freischalten?"
 
 #: pages/ReconfirmProvidersModal.tsx:52
 msgid "mediator.providers.reconfirm-modal.title"
-msgstr "Alle neu bestätigen"
+msgstr "Alle erneut freischalten"
 
 #: pages/providers/index.page.tsx:23
 msgid "mediator.providers.title"
-msgstr "Provider Show"
+msgstr "Impfstellen anzeigen"
 
 #: pages/UnconfirmProviderModal.tsx:126
 msgid "mediator.providers.unconfirm-modal.button-confirm"
-msgstr "Anbieter sperren"
+msgstr "Impfstelle sperren"
 
 #: pages/UnconfirmProviderModal.tsx:82
 msgid "mediator.providers.unconfirm-modal.city"
-msgstr "Stadt"
+msgstr "Ort"
 
 #: pages/UnconfirmProviderModal.tsx:114
 msgid "mediator.providers.unconfirm-modal.description"
@@ -259,7 +259,7 @@ msgstr "Feld"
 
 #: pages/UnconfirmProviderModal.tsx:45
 msgid "mediator.providers.unconfirm-modal.intro"
-msgstr "Wollen Sie den Anbieter wirklich freischalten?"
+msgstr "Wollen Sie die Impfstelle wirklich sperren?"
 
 #: pages/UnconfirmProviderModal.tsx:68
 msgid "mediator.providers.unconfirm-modal.name"
@@ -275,7 +275,7 @@ msgstr "Straße"
 
 #: pages/UnconfirmProviderModal.tsx:37
 msgid "mediator.providers.unconfirm-modal.title"
-msgstr "Anbieter freischalten"
+msgstr "Impfstelle sperren"
 
 #: pages/UnconfirmProviderModal.tsx:59
 msgid "mediator.providers.unconfirm-modal.value"
@@ -291,16 +291,18 @@ msgstr "Als Mediator anmelden"
 
 #: pages/index.page.tsx:63
 msgid "mediator.welcome.upload-key-pairs"
-msgstr "Geheime Schlüssel laden"
+msgstr "Sicherungsdatei laden"
 
 #: pages/index.page.tsx:90
 msgid "mediator.welcome.upload-key-pairs.input"
-msgstr "Datei auswählen"
+msgstr "Sicherungsdatei auswählen"
 
 #: pages/index.page.tsx:70
 msgid "mediator.welcome.upload-key-pairs.invalid-file"
-msgstr "Die von Ihnen gewählte Datei ist ungültig."
+msgstr "Die von Ihnen gewählte Sicherungsdatei ist ungültig."
 
 #: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
-msgstr "Bitte laden Sie die Datei mit Ihren geheimen Vermittlerschlüsseln."
+msgstr "Bitte laden Sie die Sicherungsdatei mit Ihren geheimen Vermittlerinformationen."
+
+
