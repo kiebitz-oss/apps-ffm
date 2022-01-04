@@ -6,6 +6,7 @@ WORKDIR /build
 
 COPY . .
 
+RUN apk add --no-cache git
 RUN yarn install
 RUN yarn build:apps:user
 RUN yarn build:apps:provider
