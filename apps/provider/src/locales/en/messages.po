@@ -9,342 +9,344 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: TO\n"
 "Language-Team: \n"
 "Plural-Forms: \n"
 
 #: pages/onboarding/DataSecret.tsx:12
 msgid "common.data-secret.text"
-msgstr ""
+msgstr "Please carefully write down your data key! You need it to log in on another device (PC, tablet, smartphone, etc.) or to access your appointments on another terminal."
 
 #: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
-msgstr ""
+msgstr "Book appointment"
 
 #: components/NavContent.tsx:69
 msgid "common.footer.link.english"
-msgstr ""
+msgstr "English"
 
 #: components/NavContent.tsx:36
 msgid "common.footer.link.faq"
-msgstr ""
+msgstr "Questions & Answers"
 
 #: components/NavContent.tsx:57
 msgid "common.footer.link.german"
-msgstr ""
+msgstr "Deutsch"
 
 #: components/NavContent.tsx:80
 msgid "common.footer.link.imprint"
-msgstr ""
+msgstr "Imprint"
 
 #: components/NavContent.tsx:97
 msgid "common.footer.link.kiebitz"
-msgstr ""
+msgstr "Realized with Kiebitz"
 
 #: components/NavContent.tsx:85
 msgid "common.footer.link.privacy"
-msgstr ""
+msgstr "Data privacy"
 
 #: components/NavContent.tsx:23
 msgid "common.footer.title.informations"
-msgstr ""
+msgstr "Information"
 
 #: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
-msgstr ""
+msgstr "Language"
 
 #: pages/logout.page.tsx:94
 msgid "provider.logout.button"
-msgstr ""
+msgstr "Log out"
 
 #: pages/logout.page.tsx:79
 msgid "provider.logout.copy-secret"
-msgstr ""
+msgstr "Copy data key"
 
 #: pages/logout.page.tsx:85
 msgid "provider.logout.download-backup"
-msgstr ""
+msgstr "Download appointment-file"
 
 #: pages/logout.page.tsx:61
 msgid "provider.logout.intro"
-msgstr ""
+msgstr "Do you really want to log out? Please make sure that you have written down your data key and downloaded your appointment-file. You can only log in again with both of them together."
 
 #: pages/logout.page.tsx:57
 msgid "provider.logout.notice.logging-out"
-msgstr ""
+msgstr "Please wait, log out in progress…"
 
 #: pages/logout.page.tsx:52
 msgid "provider.logout.title"
-msgstr ""
+msgstr "Log out"
 
 #: pages/onboarding/DataStep.tsx:195
 msgid "provider.onboarding.access-code.description"
-msgstr ""
+msgstr "If you have received a specific access code, please enter it here."
 
 #: pages/onboarding/DataStep.tsx:200
 msgid "provider.onboarding.access-code.label"
-msgstr ""
+msgstr "Access code (if available)"
 
 #: pages/onboarding/DataStep.tsx:219
 msgid "provider.onboarding.accessible.label"
-msgstr ""
+msgstr "Barrier-free access to the practice/vaccination site"
 
 #: pages/onboarding/DataStep.tsx:131
 msgid "provider.onboarding.city.error"
-msgstr ""
+msgstr "Please enter an official place name"
 
 #: pages/onboarding/DataStep.tsx:125
 msgid "provider.onboarding.city.label"
-msgstr ""
+msgstr "Place"
 
 #: pages/onboarding/DataStep.tsx:170
 msgid "provider.onboarding.data-description"
-msgstr ""
+msgstr "The following contact details are used exclusively for communication with the support team."
 
 #: pages/onboarding/DataStep.tsx:164
 msgid "provider.onboarding.data-title"
-msgstr ""
+msgstr "Contact details"
 
 #: pages/onboarding/DataStep.tsx:152
 msgid "provider.onboarding.description.description"
-msgstr ""
+msgstr "Information for (potential) vaccinees (e.g. if you recommend specific vaccines only to certain groups)."
 
 #: pages/onboarding/DataStep.tsx:148
 msgid "provider.onboarding.description.title"
-msgstr ""
+msgstr "Description"
 
 #: pages/onboarding/BackupDataLink.tsx:59
 msgid "provider.onboarding.download-backup-data"
-msgstr ""
+msgstr "Download appointment-file"
 
 #: pages/onboarding/DataStep.tsx:186
 msgid "provider.onboarding.email.label"
-msgstr ""
+msgstr "E-mail address"
 
 #: pages/onboarding/BackupDataLink.tsx:69
 msgid "provider.onboarding.generating-backup-data"
-msgstr ""
+msgstr "Please wait, creating file…"
 
 #: pages/onboarding/DataStep.tsx:67
 msgid "provider.onboarding.intro"
-msgstr ""
+msgstr "These are the general contact details"
 
 #: pages/onboarding/DataStep.tsx:86
 msgid "provider.onboarding.name.error.min-length"
-msgstr ""
+msgstr "Please enter a valid name, the name provided seems rather short."
 
 #: pages/onboarding/DataStep.tsx:80
 msgid "provider.onboarding.name.error.required"
-msgstr ""
+msgstr "Please enter a valid name, the name provided seems rather short."
 
 #: pages/onboarding/DataStep.tsx:74
 msgid "provider.onboarding.name.label"
-msgstr ""
+msgstr "Full name"
 
 #: pages/onboarding/DataStep.tsx:178
 msgid "provider.onboarding.phone.label"
-msgstr ""
+msgstr "Phone"
 
 #: pages/onboarding/DataStep.tsx:230
 msgid "provider.onboarding.save-and-continue"
-msgstr ""
+msgstr "Next"
 
 #: pages/onboarding/SecretStep.tsx:43
 msgid "provider.onboarding.secret.button"
-msgstr ""
+msgstr "Finalise & go to scheduling"
 
 #: pages/onboarding/SecretStep.tsx:30
 msgid "provider.onboarding.secret.notice"
-msgstr ""
+msgstr "To log in again and access your appointments you will need both your data key and the downloaded appointment file. Please make sure that you have written down your data key and downloaded your appointment-file. You can only log in again with both of them together."
 
 #: pages/onboarding/DataStep.tsx:212
 msgid "provider.onboarding.settings-description"
-msgstr ""
+msgstr "Further details "
 
 #: pages/onboarding/DataStep.tsx:101
 msgid "provider.onboarding.street.error"
-msgstr ""
+msgstr "Please enter a valid street"
 
 #: pages/onboarding/DataStep.tsx:95
 msgid "provider.onboarding.street.label"
-msgstr ""
+msgstr "Street and Number"
 
 #: pages/onboarding/DataStep.tsx:61
 msgid "provider.onboarding.title"
-msgstr ""
+msgstr "General details"
 
 #: pages/onboarding/VerifyStep.tsx:43
 msgid "provider.onboarding.verify.button"
-msgstr ""
+msgstr "Next"
 
 #: pages/onboarding/VerifyStep.tsx:39
 msgid "provider.onboarding.verify.edit-data"
-msgstr ""
+msgstr "Edit"
 
 #: pages/onboarding/DataStep.tsx:140
 msgid "provider.onboarding.website.label"
-msgstr ""
+msgstr "Website"
 
 #: pages/onboarding/DataStep.tsx:116
 msgid "provider.onboarding.zip-code.error"
-msgstr ""
+msgstr "Please enter a valid postal code"
 
 #: pages/onboarding/DataStep.tsx:110
 msgid "provider.onboarding.zip-code.label"
-msgstr ""
+msgstr "Postal code"
 
 #: pages/ProviderDataSummary.tsx:132
 msgid "provider.provider-data.accessible"
-msgstr ""
+msgstr "Barrier-free access to the practice/vaccination site"
 
 #: pages/ProviderDataSummary.tsx:141
 msgid "provider.provider-data.accessible-no"
-msgstr ""
+msgstr "No"
 
 #: pages/ProviderDataSummary.tsx:139
 msgid "provider.provider-data.accessible-yes"
-msgstr ""
+msgstr "Yes"
 
 #: pages/ProviderDataSummary.tsx:69
 msgid "provider.provider-data.city"
-msgstr ""
+msgstr "Place"
 
 #: pages/ProviderDataSummary.tsx:84
 msgid "provider.provider-data.description"
-msgstr ""
+msgstr "Information for (potential) vaccinees"
 
 #: pages/ProviderDataSummary.tsx:108
 msgid "provider.provider-data.email"
-msgstr ""
+msgstr "E-mail address"
 
 #: pages/ProviderDataSummary.tsx:53
 msgid "provider.provider-data.name"
-msgstr ""
+msgstr "Full name"
 
 #: pages/ProviderDataSummary.tsx:77
 #: pages/ProviderDataSummary.tsx:90
 #: pages/ProviderDataSummary.tsx:101
 #: pages/ProviderDataSummary.tsx:112
 msgid "provider.provider-data.not-given"
-msgstr ""
+msgstr "(No answer)"
 
 #: pages/ProviderDataSummary.tsx:30
 msgid "provider.provider-data.not-verified-yet"
-msgstr ""
+msgstr "Your data has not yet been verified. Please understand that verification can take up to 48h."
 
 #: pages/ProviderDataSummary.tsx:41
 msgid "provider.provider-data.notice"
-msgstr ""
+msgstr "Please check your data before you finalise the process."
 
 #: pages/ProviderDataSummary.tsx:97
 msgid "provider.provider-data.phone"
-msgstr ""
+msgstr "Phone"
 
 #: pages/ProviderDataSummary.tsx:58
 msgid "provider.provider-data.street"
-msgstr ""
+msgstr "Street and Number"
 
 #: pages/ProviderDataSummary.tsx:73
 msgid "provider.provider-data.website"
-msgstr ""
+msgstr "Website"
 
 #: pages/ProviderDataSummary.tsx:65
 msgid "provider.provider-data.zip-code"
-msgstr ""
+msgstr "Postal code"
 
 #: pages/RestoreForm.tsx:135
 msgid "provider.restore-form.failed"
-msgstr ""
+msgstr "Loading of your data has failed. Please check your data key and the selected appointment-file."
 
 #: pages/RestoreForm.tsx:169
 msgid "provider.restore-form.input"
-msgstr ""
+msgstr "Select file"
 
 #: pages/RestoreForm.tsx:178
 msgid "provider.restore-form.input.description"
-msgstr ""
+msgstr "Please upload your appointment-file (vaccination-appointments-2022[Date&Time].enc)"
 
 #: pages/RestoreForm.tsx:97
 msgid "provider.restore-form.invalid-file"
-msgstr ""
+msgstr "Invalid appointment-file"
 
 #: pages/RestoreForm.tsx:50
 msgid "provider.restore-form.invalid-secret"
-msgstr ""
+msgstr "Invalid data key"
 
 #: pages/RestoreForm.tsx:188
 msgid "provider.restore-form.load"
-msgstr ""
+msgstr "Log in"
 
 #: pages/RestoreForm.tsx:30
 msgid "provider.restore-form.missing-file"
-msgstr ""
+msgstr "Appointment-file missing"
 
 #: pages/RestoreForm.tsx:147
 msgid "provider.restore-form.secret.description"
-msgstr ""
+msgstr "The data key you received during registration"
 
 #: pages/RestoreForm.tsx:143
 msgid "provider.restore-form.secret.label"
-msgstr ""
+msgstr "Data key"
 
 #: pages/schedule/CreateAppointmentModal.tsx:77
 msgid "provider.schedule.create-appointment-modal.too-few-slots"
-msgstr ""
+msgstr "Too few appointments given"
 
 #: pages/schedule/CreateAppointmentModal.tsx:71
 msgid "provider.schedule.create-appointment-modal.too-many-slots"
-msgstr ""
+msgstr "Too many appointments given"
 
 #: pages/schedule/CreateAppointmentModal.tsx:323
 msgid "provider.schedule.create.appointment-modal.button"
-msgstr ""
+msgstr "Save"
 
 #: pages/schedule/CreateAppointmentModal.tsx:245
 msgid "provider.schedule.create.appointment-modal.date.label"
-msgstr ""
+msgstr "Date"
 
 #: pages/schedule/CreateAppointmentModal.tsx:283
 msgid "provider.schedule.create.appointment-modal.duration-label"
-msgstr ""
+msgstr "exp. Duration"
 
 #: pages/schedule/CreateAppointmentModal.tsx:290
 msgid "provider.schedule.create.appointment-modal.duration-value"
-msgstr ""
+msgstr "Duration: {duration} minutes"
 
 #: pages/schedule/CreateAppointmentModal.tsx:231
 msgid "provider.schedule.create.appointment-modal.edit-title"
-msgstr ""
+msgstr "Edit appointment"
 
 #: pages/schedule/CreateAppointmentModal.tsx:235
 msgid "provider.schedule.create.appointment-modal.new-title"
-msgstr ""
+msgstr "Create appointment"
 
 #: pages/schedule/CreateAppointmentModal.tsx:270
 msgid "provider.schedule.create.appointment-modal.slots.label"
-msgstr ""
+msgstr "Number of vaccination doses"
 
 #: pages/schedule/CreateAppointmentModal.tsx:257
 msgid "provider.schedule.create.appointment-modal.time.label"
-msgstr ""
+msgstr "Time"
 
 #: pages/schedule/CreateAppointmentModal.tsx:302
 msgid "provider.schedule.create.appointment-modal.vaccine-label"
-msgstr ""
+msgstr "Vaccine"
 
 #: pages/logout.page.tsx:71
 #: pages/onboarding/DataSecret.tsx:21
 msgid "provider.secret.title"
-msgstr ""
+msgstr "Your data key"
 
 #: pages/settings/index.page.tsx:41
 msgid "provider.settings.title"
-msgstr ""
+msgstr "Settings"
 
 #: pages/index.page.tsx:23
 msgid "provider.welcome.loggedout-.notice"
-msgstr ""
+msgstr "You were successfully logged out. You can log in again anytime with your data key and your appointment-file."
 
 #: pages/index.page.tsx:18
 msgid "provider.welcome.title"
-msgstr ""
+msgstr "Vaccination sites"
+
+
