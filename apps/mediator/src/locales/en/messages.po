@@ -55,7 +55,9 @@ msgstr "Log in"
 
 #: pages/logged-out.page.tsx:18
 msgid "mediator.logged-out.notice"
-msgstr "You were logged out successfully. You can log in again anytime with your data key and backup-file."
+msgstr ""
+"You were logged out successfully. You can log in again anytime with your "
+"data key and backup-file."
 
 #: pages/logged-out.page.tsx:14
 msgid "mediator.logged-out.title"
@@ -67,7 +69,10 @@ msgstr "Log out"
 
 #: pages/logout.page.tsx:25
 msgid "mediator.logout.intro"
-msgstr "Do you really want to log out? Please make sure you have written down your data key and saved your backup-file beforehand. You can log in later only with the data key and backup-file combined."
+msgstr ""
+"Do you really want to log out? Please make sure you have written down your "
+"data key and saved your backup-file beforehand. You can log in later only "
+"with the data key and backup-file combined."
 
 #: pages/logout.page.tsx:21
 msgid "mediator.logout.title"
@@ -219,11 +224,11 @@ msgstr "postal code"
 
 #: pages/ReconfirmProvidersModal.tsx:72
 msgid "mediator.providers.reconfirm-modal.button-submit"
-msgstr "Re-confirm {0} vaccination site(s) "
+msgstr "Re-confirm {0} vaccination site(s)"
 
 #: pages/ReconfirmProvidersModal.tsx:60
 msgid "mediator.providers.reconfirm-modal.in-progress"
-msgstr "Confirmation in progress"
+msgstr "Confirmation in progress …"
 
 #: pages/ReconfirmProvidersModal.tsx:64
 msgid "mediator.providers.reconfirm-modal.info"
