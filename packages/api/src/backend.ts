@@ -12,17 +12,18 @@ import {
 } from "vanellus";
 
 export const settingsPath = process.env.KIEBITZ_SETTINGS || "test_backend/keys";
-export const appointmentsPort =
-  process.env.KIEBITZ_APPOINTMENTS_PORT || "22222";
-export const storagePort = process.env.KIEBITZ_STORAGE_PORT || "11111";
 
 export const settingsJSONRPC: Settings = {
   appointment: {
     properties: {},
   },
   apiUrls: {
-    appointments: `http://127.0.0.1:${appointmentsPort}/jsonrpc`,
-    storage: `http://127.0.0.1:${storagePort}/jsonrpc`,
+    storage:
+      process.env.NEXT_PUBLIC_STORAGE_ENDPOINT ||
+      "https://storage.kiebitz.eu/jsonrpc",
+    appointments:
+      process.env.NEXT_PUBLIC_APPOINTMENT_ENDPOINT ||
+      "https://appointments.kiebitz.eu/jsonrpc",
   },
 };
 
@@ -31,25 +32,16 @@ export const settingsREST: Settings = {
     properties: {},
   },
   apiUrls: {
-    appointments: `http://127.0.0.1:${appointmentsPort}/`,
-    storage: `http://127.0.0.1:${storagePort}/`,
+    storage:
+      process.env.NEXT_PUBLIC_STORAGE_ENDPOINT ||
+      "https://storage.kiebitz.eu/jsonrpc",
+    appointments:
+      process.env.NEXT_PUBLIC_APPOINTMENT_ENDPOINT ||
+      "https://appointments.kiebitz.eu/jsonrpc",
   },
 };
 
 export const getBackendInstance = (): Backend => {
-  const settings: Settings = {
-    appointment: {
-      properties: {},
-    },
-    apiUrls: {
-      storage:
-        process.env.NEXT_PUBLIC_STORAGE_ENDPOINT ||
-        "https://storage.kiebitz.eu/jsonrpc",
-      appointments:
-        process.env.NEXT_PUBLIC_APPOINTMENT_ENDPOINT ||
-        "https://appointments.kiebitz.eu/jsonrpc",
-    },
-  };
   const store = new StorageStore(new InMemoryStorage());
   const temporaryStore = new StorageStore(new InMemoryStorage());
 
