@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
-"PO-Revision-Date: 2022-01-05 12:46+0000\n"
-"Last-Translator: Tobias Opialla <tobias.opialla@inoeg.de>\n"
+"PO-Revision-Date: 2022-01-05 15:20+0000\n"
+"Last-Translator: thyx - test_account of thzx <qk1@protonmail.ch>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/kiebitz/user/en/>"
 "\n"
 "Language: en\n"
@@ -52,11 +52,11 @@ msgstr "Language"
 
 #: components/Header.tsx:64
 msgid "header.nav.link.book_vaccination"
-msgstr ""
+msgstr "Book an vaccination appointment"
 
 #: components/Header.tsx:68
 msgid "header.nav.link.faq"
-msgstr ""
+msgstr "Frequent answers & questions"
 
 #: components/Header.tsx:87
 msgid "header.nav.link.lang_english_short"
@@ -68,19 +68,19 @@ msgstr ""
 
 #: pages/finder/AppointmentStep.tsx:88
 msgid "user.finder.appointment.back-link"
-msgstr ""
+msgstr "back to choice of vaccination site"
 
 #: pages/AppointmentCard.tsx:55
 msgid "user.finder.appointment.card.date"
-msgstr ""
+msgstr "on {0}"
 
 #: pages/finder/AppointmentStep.tsx:47
 msgid "user.finder.appointment.card.submit"
-msgstr ""
+msgstr "Choose an appointment"
 
 #: pages/AppointmentCard.tsx:45
 msgid "user.finder.appointment.card.time"
-msgstr ""
+msgstr "{0} o’clock"
 
 #: pages/finder/AppointmentStep.tsx:134
 msgid "user.finder.appointment.no-result"
@@ -88,19 +88,19 @@ msgstr ""
 
 #: pages/finder/AppointmentStep.tsx:102
 msgid "user.finder.appointment.provider.placeholder"
-msgstr ""
+msgstr "Random vaccination site"
 
 #: pages/finder/AppointmentStep.tsx:121
 msgid "user.finder.appointment.time.placeholder"
-msgstr ""
+msgstr "Random time"
 
 #: pages/finder/AppointmentStep.tsx:94
 msgid "user.finder.appointment.title"
-msgstr ""
+msgstr "Appointments"
 
 #: pages/finder/DateStep.tsx:10
 msgid "user.finder.date.back-link"
-msgstr ""
+msgstr "back to choice of apointment"
 
 #: pages/finder/DateStep.tsx:18
 msgid "user.finder.date.intro"
@@ -108,7 +108,7 @@ msgstr ""
 
 #: pages/finder/DateStep.tsx:27
 msgid "user.finder.date.label"
-msgstr ""
+msgstr "Date"
 
 #: pages/finder/DateStep.tsx:47
 msgid "user.finder.date.submit"
