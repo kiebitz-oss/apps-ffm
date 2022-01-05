@@ -22,50 +22,66 @@
     "dev": "next dev",
     "build": "next build && next export --outdir dist",
     "start": "next start",
+    "test": "jest --passWithNoTests",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "i18n": "lingui",
     "i18n:extract": "NODE_ENV=development lingui extract --clean ",
     "i18n:compile": "lingui compile",
     "i18n:build": "NODE_ENV=development lingui extract --clean && lingui compile"
   },
   "dependencies": {
+    "@babel/core": "^7.16.7",
     "@carbon/icons-react": "^10.44.0",
     "@fontsource/ibm-plex-sans": "^4.5.1",
     "@headlessui/react": "^1.4.2",
     "@kiebitz-oss/api": "workspace:*",
     "@kiebitz-oss/config": "workspace:*",
     "@kiebitz-oss/ui": "workspace:*",
+    "@lingui/cli": "^3.13.0",
+    "@lingui/macro": "^3.13.0",
     "@lingui/react": "^3.13.0",
     "@storybook/react": "^6.4.9",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.1",
+    "babel-plugin-macros": "^3.1.0",
     "clsx": "^1.1.1",
     "dayjs": "^1.10.7",
     "make-plural": "^7.0.0",
     "next": "^12.0.7",
+    "next-transpile-modules": "^9.0.0",
+    "postcss": "^8.4.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.2",
-    "react-use": "^17.3.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@lingui/cli": "^3.13.0",
-    "@lingui/macro": "^3.13.0",
-    "@tailwindcss/forms": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.0",
-    "@types/react": "^17.0.37",
-    "autoprefixer": "^10.4.1",
-    "babel-plugin-macros": "^3.1.0",
-    "next-transpile-modules": "^9.0.0",
-    "postcss": "^8.4.5",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^7.0.2",
+    "react-use": "^17.3.1",
     "tailwindcss": "^3.0.7",
     "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^17.0.37",
+    "babel-jest": "^27.4.6",
+    "eslint-config-next": "^12.0.7",
+    "jest": "^27.4.7",
+    "jest-axe": "^5.0.1"
   },
   "browserslist": [
     "defaults",
     "not ie 11",
     "not op_mini all"
   ],
+  "postcss": {
+    "plugins": {
+      "tailwindcss/nesting": {},
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
   "lingui": {
     "locales": [
       "de",
@@ -85,5 +101,55 @@
       }
     ],
     "rootDir": "src"
+  },
+  "jest": {
+    "displayName": "app-provider",
+    "roots": [
+      "<rootDir>"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost:3000/",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom",
+      "@testing-library/jest-dom/extend-expect",
+      "jest-axe/extend-expect"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/.next/",
+      "<rootDir>/dist/"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": [
+        "babel-jest",
+        {
+          "presets": [
+            "next/babel"
+          ],
+          "plugins": [
+            "macros"
+          ]
+        }
+      ]
+    }
+  },
+  "eslintConfig": {
+    "extends": "next/core-web-vitals",
+    "root": true,
+    "settings": {
+      "tailwindcss": {
+        "groupByResponsive": true
+      }
+    },
+    "ignorePatterns": [
+      "node_modules",
+      "dist",
+      ".next"
+    ],
+    "rules": {
+      "tailwindcss/no-custom-classname": "off",
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-img-element": "off"
+    }
   }
 }
