@@ -15,6 +15,8 @@ ENV NEXT_TELEMETRY_DISABLED 1
 ENV NEXT_PROVIDER_BASEPATH "/provider"
 ENV NEXT_MEDIATOR_BASEPATH "/mediator"
 
+ENV NODE_ENV "production"
+
 RUN npm i -g pnpm
 RUN pnpm install --frozen-lockfile --prefer-offline 
 RUN pnpm pnpm run i18n:build --recursive --if-present 
