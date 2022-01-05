@@ -342,7 +342,7 @@ msgstr "Create appointment"
 
 #: pages/schedule/CreateAppointmentModal.tsx:270
 msgid "provider.schedule.create.appointment-modal.slots.label"
-msgstr "Number of vaccination doses"
+msgstr "Number of vaccine doses"
 
 #: pages/schedule/CreateAppointmentModal.tsx:257
 msgid "provider.schedule.create.appointment-modal.time.label"
