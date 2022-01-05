@@ -55,9 +55,7 @@ msgstr "Anmelden"
 
 #: pages/logged-out.page.tsx:18
 msgid "mediator.logged-out.notice"
-msgstr ""
-"Sie wurden erfolgreich abgemeldet. Sie können sich jederzeit mit Ihrem "
-"Datenschlüssel und Ihrer Sicherungsdatei wieder anmelden."
+msgstr "Sie wurden erfolgreich abgemeldet. Sie können sich jederzeit mit Ihrem Datenschlüssel und Ihrer Sicherungsdatei wieder anmelden."
 
 #: pages/logged-out.page.tsx:14
 msgid "mediator.logged-out.title"
@@ -69,10 +67,7 @@ msgstr "Abmelden"
 
 #: pages/logout.page.tsx:25
 msgid "mediator.logout.intro"
-msgstr ""
-"Möchten Sie sich wirklich abmelden? Bitte stellen Sie vorher sicher, dass "
-"Sie Ihren Datenschlüssel notiert und die Sicherungsdatei gespeichert haben. "
-"Nur mit Schlüssel und Datei zusammen können Sie sich später wieder anmelden."
+msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie vorher sicher, dass Sie Ihren Datenschlüssel notiert und die Sicherungsdatei gespeichert haben. Nur mit Schlüssel und Datei zusammen können Sie sich später wieder anmelden."
 
 #: pages/logout.page.tsx:21
 msgid "mediator.logout.title"
@@ -308,6 +303,4 @@ msgstr "Die von Ihnen gewählte Sicherungsdatei ist ungültig."
 
 #: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
-msgstr ""
-"Bitte laden Sie die Sicherungsdatei mit Ihren geheimen "
-"Vermittlerinformationen."
+msgstr "Bitte laden Sie die Sicherungsdatei mit Ihren geheimen Vermittlerinformationen."
