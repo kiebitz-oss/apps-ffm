@@ -16,7 +16,7 @@ msgstr ""
 
 #: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
-msgstr "Impftermin buchen"
+msgstr "Impfterminen buchen"
 
 #: components/NavContent.tsx:69
 msgid "common.footer.link.english"
@@ -84,7 +84,7 @@ msgstr "{0} Uhr"
 
 #: pages/finder/AppointmentStep.tsx:134
 msgid "user.finder.appointment.no-result"
-msgstr "Es sind keine freien Termine verfügbar.<0/><1/>Bitte versuchen Sie einen späteren Zeitpunkt oder eine andere Impfstelle."
+msgstr "Es sind keine freien Termine verfügbar.<0/>Bitte versuchen Sie einen späteren Zeitpunkt oder ein anderen Impfstelle."
 
 #: pages/finder/AppointmentStep.tsx:102
 msgid "user.finder.appointment.provider.placeholder"
@@ -104,7 +104,7 @@ msgstr "zurück zum Terminauswahl"
 
 #: pages/finder/DateStep.tsx:18
 msgid "user.finder.date.intro"
-msgstr "Wann möchten Sie sich impfen lassen? Sie können Datum und Uhrzeit jederzeit im Prozess anpassen, wenn gewünscht. Bitte geben Sie ihren Wunschtermin unten an."
+msgstr "Wann möchten Sie sich impfen lassen, Sie können Datum und Uhrzeit jederzeit im Prozess anpassen, wenn gewünscht. Bitte geben Sie ihren Wunschtermin unten an."
 
 #: pages/finder/DateStep.tsx:27
 msgid "user.finder.date.label"
@@ -148,7 +148,7 @@ msgstr "Termin absagen"
 
 #: pages/finder/SuccessStep.tsx:87
 msgid "user.finder.success.intro"
-msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und bringen Sie ihn unbedingt zur Impfung mit."
+msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und bringen ihn unbedingt zur Impfung mit."
 
 #: pages/finder/SuccessStep.tsx:55
 msgid "user.finder.success.title"
@@ -196,7 +196,7 @@ msgstr "Sie sind jetzt nur noch wenige Klicks von Ihrem Termin entfernt."
 
 #: pages/index.page.tsx:29
 msgid "user.welcome.intro-2"
-msgstr "Wir stellen Ihnen im Folgenden ein paar Fragen, damit Sie den richtigen Impfstoff erhalten. Die Daten verbleiben auf Ihrem Gerät und werden nicht übermittelt."
+msgstr "Wir speichern generell keine persönlichen Daten, aber haben ein paar Fragen, damit Sie den richtigen Impfstoff erhalten."
 
 #: pages/Questionair.tsx:85
 msgid "user.welcome.question1_value"
@@ -212,7 +212,7 @@ msgstr "Liegt Ihre letzte Impfung mehr als 3 Monate zurück?"
 
 #: pages/Questionair.tsx:109
 msgid "user.welcome.question3_value"
-msgstr "Sind Sie jünger als 30 oder schwanger?"
+msgstr "Sind sie schwanger oder jünger als 30?"
 
 #: pages/Questionair.tsx:120
 msgid "user.welcome.question4_error"
@@ -220,7 +220,7 @@ msgstr "Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über d
 
 #: pages/Questionair.tsx:126
 msgid "user.welcome.question4_value"
-msgstr "Ist die zu impfende Person jünger als 12?"
+msgstr "Sind Sie jünger als 12?"
 
 #: pages/index.page.tsx:19
 msgid "user.welcome.title"

@@ -304,5 +304,3 @@ msgstr "Die von Ihnen gewählte Sicherungsdatei ist ungültig."
 #: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
 msgstr "Bitte laden Sie die Sicherungsdatei mit Ihren geheimen Vermittlerinformationen."
-
-
