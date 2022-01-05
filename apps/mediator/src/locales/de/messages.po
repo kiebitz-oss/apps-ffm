@@ -15,7 +15,7 @@ msgstr ""
 
 #: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
-msgstr "TEST Impftermin buchengvdfjbeiopgj3i9r5 TEST"
+msgstr "Impftermin buchen"
 
 #: components/NavContent.tsx:69
 msgid "common.footer.link.english"
