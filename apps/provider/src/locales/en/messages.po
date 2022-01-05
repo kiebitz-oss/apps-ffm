@@ -348,5 +348,3 @@ msgstr "You were successfully logged out. You can log in again anytime with your
 #: pages/index.page.tsx:18
 msgid "provider.welcome.title"
 msgstr "Vaccination sites"
-
-
