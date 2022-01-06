@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
-"PO-Revision-Date: 2022-01-06 11:41+0000\n"
-"Last-Translator: Tobias Opialla <tobias.opialla@inoeg.de>\n"
+"PO-Revision-Date: 2022-01-06 15:06+0000\n"
+"Last-Translator: sanddorn (Thomas) <sanddorn@protonmail.ch>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/kiebitz/user/de/>"
 "\n"
 "Language: de\n"
@@ -84,7 +84,9 @@ msgstr "{0} Uhr"
 
 #: pages/finder/AppointmentStep.tsx:134
 msgid "user.finder.appointment.no-result"
-msgstr "Es sind keine freien Termine verfügbar.<0/>Bitte versuchen Sie einen späteren Zeitpunkt oder ein anderen Impfstelle."
+msgstr ""
+"Es sind keine freien Termine verfügbar.<0/>Bitte versuchen Sie einen "
+"späteren Zeitpunkt oder eine andere Impfstelle."
 
 #: pages/finder/AppointmentStep.tsx:102
 msgid "user.finder.appointment.provider.placeholder"
@@ -100,11 +102,13 @@ msgstr "Termine"
 
 #: pages/finder/DateStep.tsx:10
 msgid "user.finder.date.back-link"
-msgstr "zurück zum Terminauswahl"
+msgstr "Zurück zur Terminauswahl"
 
 #: pages/finder/DateStep.tsx:18
 msgid "user.finder.date.intro"
-msgstr "Wann möchten Sie sich impfen lassen, Sie können Datum und Uhrzeit jederzeit im Prozess anpassen, wenn gewünscht. Bitte geben Sie ihren Wunschtermin unten an."
+msgstr ""
+"Wann möchten Sie sich impfen lassen? Sie können Datum und Uhrzeit noch "
+"jederzeit im Prozess ändern. Bitte geben Sie einfach Ihren Wunschtermin an."
 
 #: pages/finder/DateStep.tsx:27
 msgid "user.finder.date.label"
@@ -148,7 +152,9 @@ msgstr "Termin absagen"
 
 #: pages/finder/SuccessStep.tsx:87
 msgid "user.finder.success.intro"
-msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und bringen ihn unbedingt zur Impfung mit."
+msgstr ""
+"<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und bringen "
+"Sie ihn unbedingt zur Impfung mit."
 
 #: pages/finder/SuccessStep.tsx:55
 msgid "user.finder.success.title"
@@ -168,7 +174,7 @@ msgstr "Ihr Termin"
 
 #: pages/finder/VerifyStep.tsx:23
 msgid "user.finder.verify.back-link"
-msgstr "zurück zum Terminauswahl"
+msgstr "Zurück zur Terminauswahl"
 
 #: pages/finder/VerifyStep.tsx:33
 msgid "user.finder.verify.intro"
@@ -188,7 +194,11 @@ msgstr "Weiter zum Termin"
 
 #: pages/Questionair.tsx:135
 msgid "user.welcome.form_error"
-msgstr "Bitte beantworten Sie alle Fragen, denn sonst können wir keine Termine für Sie heraussuchen. Alle Ihre persönlichen Daten werden nur auf Ihrem Endgerät gespeichert und nicht an einen Server übermittelt oder weitergegeben."
+msgstr ""
+"Bitte beantworten Sie alle Fragen, weil wir sonst keine Termine für Sie "
+"heraussuchen können. Alle Ihre persönlichen Daten werden nur auf Ihrem "
+"Endgerät gespeichert und nicht an einen Server übermittelt oder "
+"weitergegeben."
 
 #: pages/index.page.tsx:23
 msgid "user.welcome.intro-1"
@@ -212,11 +222,14 @@ msgstr "Liegt Ihre letzte Impfung mehr als 3 Monate zurück?"
 
 #: pages/Questionair.tsx:109
 msgid "user.welcome.question3_value"
-msgstr "Sind sie schwanger oder jünger als 30?"
+msgstr "Sind Sie jünger als 30 oder schwanger?"
 
 #: pages/Questionair.tsx:120
 msgid "user.welcome.question4_error"
-msgstr "Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld."
+msgstr ""
+"Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das "
+"Portal. Wir bemühen uns, das Angebot so schnell wie möglich zu erweitern. "
+"Bis dahin bitten wir um Geduld."
 
 #: pages/Questionair.tsx:126
 msgid "user.welcome.question4_value"
