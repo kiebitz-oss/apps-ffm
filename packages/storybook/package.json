@@ -90,7 +90,8 @@
       "en"
     ],
     "sourceLocale": "de",
-    "format": "po"
+    "format": "po",
+    "orderBy": "messageId"
   },
   "eslintConfig": {
     "root": true,

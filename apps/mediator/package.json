@@ -101,7 +101,8 @@
         ]
       }
     ],
-    "rootDir": "src"
+    "rootDir": "src",
+    "orderBy": "messageId"
   },
   "jest": {
     "displayName": "app-mediator",
