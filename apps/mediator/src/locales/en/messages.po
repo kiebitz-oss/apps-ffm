@@ -219,11 +219,11 @@ msgstr "postal code"
 
 #: pages/ReconfirmProvidersModal.tsx:72
 msgid "mediator.providers.reconfirm-modal.button-submit"
-msgstr "Re-confirm {0} vaccination site(s)"
+msgstr "Re-confirm {0} vaccination site(s) "
 
 #: pages/ReconfirmProvidersModal.tsx:60
 msgid "mediator.providers.reconfirm-modal.in-progress"
-msgstr "Confirmation in progress …"
+msgstr "Confirmation in progress"
 
 #: pages/ReconfirmProvidersModal.tsx:64
 msgid "mediator.providers.reconfirm-modal.info"
@@ -304,3 +304,4 @@ msgstr "The backup-file you selected is invalid."
 #: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
 msgstr "Please upload the backup-file with your secret mediator information."
+
