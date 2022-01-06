@@ -24,7 +24,7 @@
     "@kiebitz-oss/config": "workspace:*",
     "buffer": "^6.0.3",
     "dayjs": "^1.10.7",
-    "vanellus": "https://github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.6.0.tgz"
+    "vanellus": "https://github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.7.0.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",

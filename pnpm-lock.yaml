@@ -310,12 +310,12 @@ importers:
       buffer: ^6.0.3
       dayjs: ^1.10.7
       typescript: ^4.5.4
-      vanellus: https://github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.6.0.tgz
+      vanellus: https://github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.7.0.tgz
     dependencies:
       '@kiebitz-oss/config': link:../config
       buffer: 6.0.3
       dayjs: 1.10.7
-      vanellus: '@github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.6.0.tgz_buffer@6.0.3'
+      vanellus: '@github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.7.0.tgz_buffer@6.0.3'
     devDependencies:
       '@babel/core': 7.16.7
       typescript: 4.5.4
@@ -17280,11 +17280,11 @@ packages:
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
 
-  '@github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.6.0.tgz_buffer@6.0.3':
-    resolution: {tarball: https://github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.6.0.tgz}
-    id: '@github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.6.0.tgz'
+  '@github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.7.0.tgz_buffer@6.0.3':
+    resolution: {tarball: https://github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.7.0.tgz}
+    id: '@github.com/kiebitz-oss/vanellus-inoeg/releases/download/v0.7.0/vanellus-0.7.0.tgz'
     name: vanellus
-    version: 0.6.0
+    version: 0.7.0
     engines: {node: '>=16.0.0'}
     peerDependencies:
       buffer: ^6
