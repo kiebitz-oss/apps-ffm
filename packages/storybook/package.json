@@ -89,6 +89,7 @@
       "de",
       "en"
     ],
+    "sourceLocale": "de",
     "format": "po",
     "orderBy": "messageId"
   },
