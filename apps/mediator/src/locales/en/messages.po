@@ -219,11 +219,11 @@ msgstr "postal code"
 
 #: pages/ReconfirmProvidersModal.tsx:72
 msgid "mediator.providers.reconfirm-modal.button-submit"
-msgstr "Re-confirm {0} vaccination site(s)"
+msgstr "Re-confirm {0} vaccination site(s) "
 
 #: pages/ReconfirmProvidersModal.tsx:60
 msgid "mediator.providers.reconfirm-modal.in-progress"
-msgstr "Confirmation in progress …"
+msgstr "Confirmation in progress"
 
 #: pages/ReconfirmProvidersModal.tsx:64
 msgid "mediator.providers.reconfirm-modal.info"
