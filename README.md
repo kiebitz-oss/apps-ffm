@@ -29,6 +29,11 @@ To build the integrated docker-container for all apps, simply run `pnpm docker:b
 
 The UI lives inside `/packages/ui`, is built with [TailwindCSS](https://tailwindcss.com/) and a storybook can be found inside `/packages/storybook`.
 
+# Translations
+
+For translation management we use [Weblate](https://hosted.weblate.org).  
+If you would like to lend a hand, feel free to do so at https://hosted.weblate.org/projects/kiebitz/
+
 # Testing
 
 We are using `jest` for testing of the code. To test the code, simply run
