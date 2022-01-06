@@ -1,17 +1,18 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
+"PO-Revision-Date: 2022-01-06 00:46+0000\n"
+"Last-Translator: Tobias Opialla <tobias.opialla@inoeg.de>\n"
+"Language-Team: English <https://hosted.weblate.org/projects/kiebitz/provider/"
+"en/>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: @lingui/cli\n"
-"Language: en\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: TO\n"
-"Language-Team: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #: pages/onboarding/DataSecret.tsx:12
 msgid "common.data-secret.text"
@@ -135,7 +136,7 @@ msgstr "The name provided seems rather short. Is it possible to provide a longer
 
 #: pages/onboarding/DataStep.tsx:80
 msgid "provider.onboarding.name.error.required"
-msgstr "Please enter a valid name, the name provided seems rather short."
+msgstr "The name entered seems rather short. Can you give a longer one?"
 
 #: pages/onboarding/DataStep.tsx:74
 msgid "provider.onboarding.name.label"
