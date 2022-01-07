@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
-"PO-Revision-Date: 2022-01-07 15:05+0000\n"
+"PO-Revision-Date: 2022-01-07 21:51+0000\n"
 "Last-Translator: sanddorn (Thomas) <sanddorn@protonmail.ch>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/kiebitz/mediator/"
 "en/>\n"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: pages/logged-out.page.tsx:14
 msgid "mediator.logged-out.title"
-msgstr "Logged out"
+msgstr "Succesfully logged out"
 
 #: pages/logout.page.tsx:33
 msgid "mediator.logout.button"
@@ -70,7 +70,10 @@ msgstr "Log out"
 
 #: pages/logout.page.tsx:25
 msgid "mediator.logout.intro"
-msgstr "Do you really want to log out? Please make sure you have written down your data key and saved your backup-file beforehand. You can log in later only with the data key and backup-file combined."
+msgstr ""
+"Do you really want to log out? Please make sure you have written down your "
+"data key and saved your backup file. You can log in later only with both "
+"data key and backup file."
 
 #: pages/logout.page.tsx:21
 msgid "mediator.logout.title"
@@ -78,7 +81,7 @@ msgstr "Log out"
 
 #: pages/providers/ProviderRow.tsx:72
 msgid "mediator.provider-row.button-show"
-msgstr "show"
+msgstr "Show"
 
 #: pages/providers/ProviderRow.tsx:65
 msgid "mediator.provider-row.invalid"
@@ -86,7 +89,7 @@ msgstr "unconfirmed"
 
 #: pages/providers/ProviderRow.tsx:43
 msgid "mediator.provider-row.select-row"
-msgstr "Select or reject vaccination sites"
+msgstr "Select or deselect vaccination sites"
 
 #: pages/providers/ProviderRow.tsx:63
 msgid "mediator.provider-row.valid"
@@ -122,7 +125,7 @@ msgstr "Name"
 
 #: pages/providers/[id].page.tsx:100
 msgid "mediator.provider-show.phone"
-msgstr "Phone"
+msgstr "Phone number"
 
 #: pages/providers/[id].page.tsx:76
 msgid "mediator.provider-show.street"
@@ -178,7 +181,7 @@ msgstr "Confirm vaccination site"
 
 #: pages/ConfirmProviderModal.tsx:78
 msgid "mediator.providers.confirm-modal.city"
-msgstr "Place"
+msgstr "Location"
 
 #: pages/ConfirmProviderModal.tsx:108
 msgid "mediator.providers.confirm-modal.description"
@@ -202,7 +205,7 @@ msgstr "Name"
 
 #: pages/ConfirmProviderModal.tsx:100
 msgid "mediator.providers.confirm-modal.phone"
-msgstr "Phone"
+msgstr "Phone number"
 
 #: pages/ConfirmProviderModal.tsx:70
 msgid "mediator.providers.confirm-modal.street"
@@ -254,7 +257,7 @@ msgstr "Description"
 
 #: pages/UnconfirmProviderModal.tsx:98
 msgid "mediator.providers.unconfirm-modal.email"
-msgstr "E-Mail"
+msgstr "E-mail"
 
 #: pages/UnconfirmProviderModal.tsx:54
 msgid "mediator.providers.unconfirm-modal.field"
@@ -270,7 +273,7 @@ msgstr "Name"
 
 #: pages/UnconfirmProviderModal.tsx:106
 msgid "mediator.providers.unconfirm-modal.phone"
-msgstr "Phone"
+msgstr "Phone number"
 
 #: pages/UnconfirmProviderModal.tsx:74
 msgid "mediator.providers.unconfirm-modal.street"
@@ -294,16 +297,16 @@ msgstr "Log in as mediator"
 
 #: pages/index.page.tsx:63
 msgid "mediator.welcome.upload-key-pairs"
-msgstr "Load backup-file"
+msgstr "Load backup file"
 
 #: pages/index.page.tsx:90
 msgid "mediator.welcome.upload-key-pairs.input"
-msgstr "Select backup-file"
+msgstr "Select backup file"
 
 #: pages/index.page.tsx:70
 msgid "mediator.welcome.upload-key-pairs.invalid-file"
-msgstr "The backup-file you selected is invalid."
+msgstr "The backup file you selected is invalid."
 
 #: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
-msgstr "Please upload the backup-file with your secret mediator information."
+msgstr "Please upload the backup file with your secret mediator information."
