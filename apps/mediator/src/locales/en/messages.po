@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
-"PO-Revision-Date: 2022-01-07 21:51+0000\n"
+"PO-Revision-Date: 2022-01-08 10:46+0000\n"
 "Last-Translator: sanddorn (Thomas) <sanddorn@protonmail.ch>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/kiebitz/mediator/"
 "en/>\n"
@@ -225,11 +225,11 @@ msgstr "Postal code"
 
 #: pages/ReconfirmProvidersModal.tsx:72
 msgid "mediator.providers.reconfirm-modal.button-submit"
-msgstr "Re-confirm {0} vaccination site(s) "
+msgstr "Re-confirm {0} vaccination site(s)"
 
 #: pages/ReconfirmProvidersModal.tsx:60
 msgid "mediator.providers.reconfirm-modal.in-progress"
-msgstr "Confirmation in progress"
+msgstr "Confirmation in progress…"
 
 #: pages/ReconfirmProvidersModal.tsx:64
 msgid "mediator.providers.reconfirm-modal.info"
