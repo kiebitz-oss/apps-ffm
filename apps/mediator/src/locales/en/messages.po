@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
 "PO-Revision-Date: 2022-01-07 15:05+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Last-Translator: sanddorn (Thomas) <sanddorn@protonmail.ch>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/kiebitz/mediator/"
 "en/>\n"
 "Language: en\n"
@@ -44,7 +44,7 @@ msgstr "Data privacy"
 
 #: components/NavContent.tsx:23
 msgid "common.footer.title.informations"
-msgstr "Information"
+msgstr "Further information"
 
 #: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
@@ -56,7 +56,9 @@ msgstr "Log in"
 
 #: pages/logged-out.page.tsx:18
 msgid "mediator.logged-out.notice"
-msgstr "You were logged out successfully. You can log in again anytime with your data key and backup-file."
+msgstr ""
+"You were logged out successfully. You can log in again anytime by means of "
+"your data key and backup file."
 
 #: pages/logged-out.page.tsx:14
 msgid "mediator.logged-out.title"
