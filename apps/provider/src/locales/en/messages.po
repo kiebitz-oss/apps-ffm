@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
-"PO-Revision-Date: 2022-01-07 21:51+0000\n"
+"PO-Revision-Date: 2022-01-08 10:46+0000\n"
 "Last-Translator: sanddorn (Thomas) <sanddorn@protonmail.ch>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/kiebitz/provider/"
 "en/>\n"
@@ -77,9 +77,8 @@ msgstr ""
 "again with both of them together."
 
 #: pages/logout.page.tsx:57
-#, fuzzy
 msgid "provider.logout.notice.logging-out"
-msgstr "Please wait, log out in progress…"
+msgstr "Please wait, logout is in progress…"
 
 #: pages/logout.page.tsx:52
 msgid "provider.logout.title"
