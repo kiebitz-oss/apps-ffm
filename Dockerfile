@@ -1,5 +1,4 @@
-# This dockerfile builds three distinct nextjs-apps into 
-
+# This dockerfile builds three distinct nextjs-apps as static html into one combined nginx-image
 
 ## builder
 FROM node:16-alpine AS builder
@@ -23,8 +22,7 @@ RUN pnpm i18n:build --recursive --if-present
 RUN pnpm build
 
 ## prod
-FROM nginx:alpine
-# probably should switch to nginxinc/nginx-unprivileged
+FROM nginxinc/nginx-unprivileged:stable-alpine
 
 WORKDIR /app
 
@@ -33,20 +31,10 @@ COPY --from=builder build/apps/provider/dist provider
 COPY --from=builder build/apps/mediator/dist mediator
 COPY --from=builder build/.docker/nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN chown -R nginx:nginx /app && chmod -R 555 /app && \
-        chown -R nginx:nginx /var/cache/nginx && \
-        chown -R nginx:nginx /var/log/nginx && \
-        chown -R nginx:nginx /etc/nginx/conf.d
-RUN touch /var/run/nginx.pid && \
-        chown -R nginx:nginx /var/run/nginx.pid
-
-USER nginx
-
 RUN nginx -t
 
+USER nginx
 EXPOSE 3000
 
 ENV PORT 3000
 ENV NEXT_TELEMETRY_DISABLED 1
-
-CMD ["nginx", "-g", "daemon off;"]
