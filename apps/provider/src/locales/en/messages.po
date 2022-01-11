@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: pages/onboarding/DataSecret.tsx:12
-msgid "common.data-secret.text"
+msgid "provider.data-secret.text"
 msgstr ""
 "Please carefully write down your data key! You need it to log in on another "
 "device (PC, tablet, smartphone, etc.) or to access your appointments on "

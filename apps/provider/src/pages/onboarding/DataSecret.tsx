@@ -9,7 +9,7 @@ export const DataSecret: React.FC<DataSecretProps> = ({ secret }) => {
   return (
     <>
       <Text>
-        <Trans id="common.data-secret.text">
+        <Trans id="provider.data-secret.text">
           Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn,
           um sich auf einem anderen PC (Tablet, Smartphone etc.) einzuloggen
           oder auf einem anderen Endgerät auf Ihre Termine zugreifen zu können.
