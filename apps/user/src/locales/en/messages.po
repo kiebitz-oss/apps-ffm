@@ -1,17 +1,18 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
+"PO-Revision-Date: 2022-01-08 10:46+0000\n"
+"Last-Translator: sanddorn (Thomas) <sanddorn@protonmail.ch>\n"
+"Language-Team: English <https://hosted.weblate.org/projects/kiebitz/user/en/>"
+"\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: @lingui/cli\n"
-"Language: en\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: TO\n"
-"Language-Team: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
@@ -43,75 +44,80 @@ msgstr "Data privacy"
 
 #: components/NavContent.tsx:23
 msgid "common.footer.title.informations"
-msgstr "Information"
+msgstr "Further information"
 
 #: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
-msgstr ""
+msgstr "Language"
 
 #: components/Header.tsx:64
 msgid "header.nav.link.book_vaccination"
-msgstr ""
+msgstr "Book appointment"
 
 #: components/Header.tsx:68
 msgid "header.nav.link.faq"
-msgstr ""
+msgstr "Questions & Answers"
 
 #: components/Header.tsx:87
 msgid "header.nav.link.lang_english_short"
-msgstr ""
+msgstr "EN"
 
 #: components/Header.tsx:78
 msgid "header.nav.link.lang_german_short"
-msgstr ""
+msgstr "DE"
 
 #: pages/finder/AppointmentStep.tsx:91
 msgid "user.finder.appointment.back-link"
-msgstr ""
+msgstr "Back to selection of vaccination site"
 
 #: pages/AppointmentCard.tsx:55
 msgid "user.finder.appointment.card.date"
-msgstr ""
+msgstr "on {0}"
 
 #: pages/finder/AppointmentStep.tsx:47
 msgid "user.finder.appointment.card.submit"
-msgstr ""
+msgstr "Select appointment"
 
 #: pages/AppointmentCard.tsx:45
 msgid "user.finder.appointment.card.time"
-msgstr ""
+msgstr "{0} o’clock"
 
 #: pages/finder/AppointmentStep.tsx:137
 msgid "user.finder.appointment.no-result"
 msgstr ""
+"There are no free appointments available.<0/><1/> Please try a later date or "
+"a different vaccination site."
 
 #: pages/finder/AppointmentStep.tsx:105
 msgid "user.finder.appointment.provider.placeholder"
-msgstr ""
+msgstr "Any vaccination site"
 
 #: pages/finder/AppointmentStep.tsx:124
 msgid "user.finder.appointment.time.placeholder"
-msgstr ""
+msgstr "Any time"
 
 #: pages/finder/AppointmentStep.tsx:97
 msgid "user.finder.appointment.title"
-msgstr ""
+msgstr "Appointments"
 
 #: pages/finder/DateStep.tsx:10
 msgid "user.finder.date.back-link"
-msgstr ""
+msgstr "Back to appointment selection"
 
 #: pages/finder/DateStep.tsx:18
 msgid "user.finder.date.intro"
 msgstr ""
+"When would you like to be vaccinated? You can adjust the date and time at "
+"any time in the process if desired. Please indicate your preferred date "
+"below."
 
 #: pages/finder/DateStep.tsx:27
 msgid "user.finder.date.label"
-msgstr ""
+msgstr "Date"
 
 #: pages/finder/DateStep.tsx:47
 msgid "user.finder.date.submit"
-msgstr "Select appointment"
+msgstr "Choose an appointment"
 
 #: pages/finder/DateStep.tsx:14
 msgid "user.finder.date.title"
@@ -187,7 +193,10 @@ msgstr "Continue to the booking"
 
 #: pages/Questionair.tsx:135
 msgid "user.welcome.form_error"
-msgstr "Please answer all questions, otherwise we will not be able to find dates for you. All your personal data will only be stored on your personal device and will not be transmitted or passed on to a server."
+msgstr ""
+"Please answer all questions, otherwise we will not be able to find "
+"appointments for you. All your personal data will only be stored on your "
+"personal device and will not be transmitted or passed on to a server."
 
 #: pages/index.page.tsx:23
 msgid "user.welcome.intro-1"
@@ -195,7 +204,9 @@ msgstr "You are now only a few clicks away from your appointment."
 
 #: pages/index.page.tsx:29
 msgid "user.welcome.intro-2"
-msgstr "We generally do not store any personal data, but have a few questions to ensure that you receive the proper vaccine."
+msgstr ""
+"We will ask you a few questions so you can get the right vaccine. The data "
+"remains on your device and is not transmitted."
 
 #: pages/Questionair.tsx:85
 msgid "user.welcome.question1_value"
@@ -211,7 +222,7 @@ msgstr "Was your last vaccination more than 3 months ago?"
 
 #: pages/Questionair.tsx:109
 msgid "user.welcome.question3_value"
-msgstr "Are you pregnant or younger than 30?"
+msgstr "Are you younger than 30 or pregnant?"
 
 #: pages/Questionair.tsx:120
 msgid "user.welcome.question4_error"
@@ -219,7 +230,7 @@ msgstr "Unfortunately, appointments for child vaccinations are not (yet) offered
 
 #: pages/Questionair.tsx:126
 msgid "user.welcome.question4_value"
-msgstr "Is the vaccinee younger than 12 years of age?"
+msgstr "Are you younger than 12?"
 
 #: pages/index.page.tsx:19
 msgid "user.welcome.title"
