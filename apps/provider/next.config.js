@@ -29,7 +29,6 @@ const config = {
 
 const withTM = require("next-transpile-modules")([
   "@kiebitz-oss/ui",
-  "@kiebitz-oss/api",
   "@kiebitz-oss/config",
 ]);
 

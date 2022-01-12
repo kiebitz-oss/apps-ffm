@@ -65,7 +65,7 @@ msgstr ""
 msgid "header.nav.link.lang_german_short"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:88
+#: pages/finder/AppointmentStep.tsx:91
 msgid "user.finder.appointment.back-link"
 msgstr ""
 
@@ -81,19 +81,19 @@ msgstr ""
 msgid "user.finder.appointment.card.time"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:134
+#: pages/finder/AppointmentStep.tsx:137
 msgid "user.finder.appointment.no-result"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:102
+#: pages/finder/AppointmentStep.tsx:105
 msgid "user.finder.appointment.provider.placeholder"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:121
+#: pages/finder/AppointmentStep.tsx:124
 msgid "user.finder.appointment.time.placeholder"
 msgstr ""
 
-#: pages/finder/AppointmentStep.tsx:94
+#: pages/finder/AppointmentStep.tsx:97
 msgid "user.finder.appointment.title"
 msgstr ""
 

@@ -21,9 +21,9 @@ export const Header: React.FC<HeaderProps> = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   useEffect(() => {
-    api.isAuthenticated().then((result) => {
-      console.log("Authenticated?", result);
-    });
+    const isAuthed = api.isAuthenticated();
+
+    console.log("Authenticated?", isAuthed);
   }, [api]);
 
   useEffect(() => {

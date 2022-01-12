@@ -66,7 +66,7 @@ msgstr "EN"
 msgid "header.nav.link.lang_german_short"
 msgstr "DE"
 
-#: pages/finder/AppointmentStep.tsx:88
+#: pages/finder/AppointmentStep.tsx:91
 msgid "user.finder.appointment.back-link"
 msgstr "Zurück zur Auswahl der Impfstelle"
 
@@ -82,19 +82,19 @@ msgstr "Termin auswählen"
 msgid "user.finder.appointment.card.time"
 msgstr "{0} Uhr"
 
-#: pages/finder/AppointmentStep.tsx:134
+#: pages/finder/AppointmentStep.tsx:137
 msgid "user.finder.appointment.no-result"
 msgstr "Es sind keine freien Termine verfügbar.<0/><1/>Bitte versuchen Sie einen späteren Zeitpunkt oder eine andere Impfstelle."
 
-#: pages/finder/AppointmentStep.tsx:102
+#: pages/finder/AppointmentStep.tsx:105
 msgid "user.finder.appointment.provider.placeholder"
 msgstr "Beliebige Impfstelle"
 
-#: pages/finder/AppointmentStep.tsx:121
+#: pages/finder/AppointmentStep.tsx:124
 msgid "user.finder.appointment.time.placeholder"
 msgstr "Beliebige Zeit"
 
-#: pages/finder/AppointmentStep.tsx:94
+#: pages/finder/AppointmentStep.tsx:97
 msgid "user.finder.appointment.title"
 msgstr "Termine"
 
@@ -188,11 +188,7 @@ msgstr "Weiter zum Termin"
 
 #: pages/Questionair.tsx:135
 msgid "user.welcome.form_error"
-msgstr ""
-"Bitte beantworten Sie alle Fragen, weil wir sonst keine Termine für Sie "
-"heraussuchen können. Alle Ihre persönlichen Daten werden nur auf Ihrem "
-"Endgerät gespeichert und nicht an einen Server übermittelt oder "
-"weitergegeben."
+msgstr "Bitte beantworten Sie alle Fragen, weil wir sonst keine Termine für Sie heraussuchen können. Alle Ihre persönlichen Daten werden nur auf Ihrem Endgerät gespeichert und nicht an einen Server übermittelt oder weitergegeben."
 
 #: pages/index.page.tsx:23
 msgid "user.welcome.intro-1"
@@ -220,10 +216,7 @@ msgstr "Sind Sie jünger als 30 oder schwanger?"
 
 #: pages/Questionair.tsx:120
 msgid "user.welcome.question4_error"
-msgstr ""
-"Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das "
-"Portal. Wir bemühen uns, das Angebot so schnell wie möglich zu erweitern. "
-"Bis dahin bitten wir um Geduld."
+msgstr "Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das Portal. Wir bemühen uns, das Angebot so schnell wie möglich zu erweitern. Bis dahin bitten wir um Geduld."
 
 #: pages/Questionair.tsx:126
 msgid "user.welcome.question4_value"

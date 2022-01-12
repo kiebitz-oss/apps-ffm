@@ -1,5 +1,4 @@
 import { Edit24 } from "@carbon/icons-react";
-import type { Appointment } from "@kiebitz-oss/api";
 import { Button, Error, InputField, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import {
@@ -8,6 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import type { PublicAppointment } from "vanellus";
 import { BackLink } from "../../components/BackLink";
 import { Link } from "../../components/Link";
 import { AppointmentCard } from "../AppointmentCard";
@@ -15,7 +15,7 @@ import { useUserApi } from "../UserApiContext";
 import { Types, useFinderState } from "./FinderStateProvider";
 
 interface AppointmentCardProps {
-  appointment: Appointment;
+  appointment: PublicAppointment;
 }
 
 const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
@@ -54,14 +54,17 @@ const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
 };
 
 export const AppointmentStep: React.FC = () => {
-  const [appointments, setAppointments] = useState<Appointment[] | null>(null);
+  const [appointments, setAppointments] = useState<PublicAppointment[] | null>(
+    null
+  );
   const { dispatch, state } = useFinderState();
   const api = useUserApi();
 
   useEffect(() => {
-    state?.provider?.id
-      ? api.getAppointmentsByProvider(state.provider.id).then(setAppointments)
-      : api.getAppointmentsByZipCode(30363).then(setAppointments);
+    state?.provider?.id;
+    api
+      .getAppointments(10707, new Date("2022-01-12"), new Date("2022-01-14"))
+      .then(setAppointments);
   }, [api, state.provider]);
 
   const onDateChange: ChangeEventHandler<HTMLInputElement> = (event) => {

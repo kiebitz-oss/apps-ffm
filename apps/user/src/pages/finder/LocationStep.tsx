@@ -15,7 +15,7 @@ export const LocationStep: React.FC = () => {
   const { dispatch, state } = useFinderState();
 
   useEffect(() => {
-    api.getProvidersByZip(30363).then((providers) => {
+    api.getProviders("10000", "99999").then((providers) => {
       setProviders(providers);
     });
   }, [api]);
