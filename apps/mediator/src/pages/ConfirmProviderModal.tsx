@@ -1,4 +1,3 @@
-import { Provider } from "@kiebitz-oss/api";
 import {
   Button,
   Modal,
@@ -10,6 +9,7 @@ import {
   Title,
 } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
+import { Provider } from "vanellus";
 import { useMediatorApi } from "./MediatorApiContext";
 
 interface ConfirmProviderModal extends ModalProps {
@@ -95,14 +95,14 @@ export const ConfirmProviderModal: React.FC<ConfirmProviderModal> = ({
               </th>
               <td>{provider.email}</td>
             </tr>
-            <tr>
+            {/* <tr>
               <th>
                 <Trans id="mediator.providers.confirm-modal.phone">
                   Telefonnummer
                 </Trans>
               </th>
               <td>{provider.phone}</td>
-            </tr>
+            </tr> */}
             <tr>
               <th>
                 <Trans id="mediator.providers.confirm-modal.description">

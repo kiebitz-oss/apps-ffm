@@ -13,7 +13,7 @@ class Document extends NextDocument {
     return (
       <Html dir="ltr">
         <Head>
-          <meta httpEquiv="Content-Security-Policy" content={this.csp} />
+          {/* <meta httpEquiv="Content-Security-Policy" content={this.csp} /> */}
           <link rel="icon" href="/favicon.svg" />
         </Head>
         <body>

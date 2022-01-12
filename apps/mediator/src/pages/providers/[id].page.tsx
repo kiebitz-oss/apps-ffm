@@ -1,9 +1,9 @@
-import type { Provider } from "@kiebitz-oss/api";
 import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import type { Provider } from "vanellus";
 import { BackLink } from "../../components/BackLink";
 import { ConfirmProviderModal } from "../ConfirmProviderModal";
 import { useMediatorApi } from "../MediatorApiContext";
@@ -19,7 +19,11 @@ const ProviderShowPage: NextPage = () => {
 
   useEffect(() => {
     if (id) {
-      api.getProvider(id).then((provider) => {
+      api.getVerifiedProviders().then((providers) => {
+        const provider = providers.find(
+          (provider) => provider.id === decodeURIComponent(id)
+        );
+
         if (provider) {
           setProvider(provider);
         }
@@ -95,12 +99,12 @@ const ProviderShowPage: NextPage = () => {
             </th>
             <td>{provider.email || " -- "}</td>
           </tr>
-          <tr>
+          {/* <tr>
             <th>
               <Trans id="mediator.provider-show.phone">Telefonnummer</Trans>
             </th>
             <td>{provider.phone || " -- "}</td>
-          </tr>
+          </tr> */}
           <tr>
             <th>
               <Trans id="mediator.provider-show.description">

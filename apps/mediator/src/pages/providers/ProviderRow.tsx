@@ -1,8 +1,8 @@
-import type { Provider } from "@kiebitz-oss/api";
 import { Tag } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { ChangeEventHandler, useRef } from "react";
+import type { Provider } from "vanellus";
 import { Link } from "../../components/Link";
 
 export interface ProviderRowProps {
@@ -17,7 +17,7 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({
   onSelect,
 }) => {
   const ref = useRef<HTMLInputElement>(null);
-  const providerLink = `/providers/${provider.id}`;
+  const providerLink = `/providers/${encodeURIComponent(provider.id)}`;
 
   const onSelectToggle: ChangeEventHandler<unknown> = () => {
     onSelect(provider.id, !ref.current?.checked);

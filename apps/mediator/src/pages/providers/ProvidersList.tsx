@@ -1,8 +1,8 @@
-import { CheckmarkOutline16, ErrorOutline16 } from "@carbon/icons-react";
-import type { Provider } from "@kiebitz-oss/api";
+import { CheckmarkOutline16 } from "@carbon/icons-react";
 import { Button } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import { ChangeEventHandler, useState } from "react";
+import type { Provider } from "vanellus";
 import { ReconfirmProvidersModal } from "../ReconfirmProvidersModal";
 import { ProviderRow } from "./ProviderRow";
 
@@ -103,7 +103,7 @@ export const ProviderList: React.FC<ProviderListProps> = ({ providers }) => {
                     Anbieter bestätigen
                   </Trans>
                 </Button>
-                <Button
+                {/* <Button
                   variant="secondary"
                   size="sm"
                   className="flex gap-1 items-center"
@@ -115,7 +115,7 @@ export const ProviderList: React.FC<ProviderListProps> = ({ providers }) => {
                   <Trans id="mediator.providers-list.button-unconfirm">
                     Anbieter sperren
                   </Trans>
-                </Button>
+                </Button> */}
               </div>
             </th>
           </tr>

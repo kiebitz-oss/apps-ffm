@@ -9,9 +9,8 @@ const LogoutPage: NextPage = () => {
   const api = useMediatorApi();
 
   const logOut = () => {
-    api.logout().then(() => {
-      router.push("/login");
-    });
+    api.logout();
+    router.push("/");
   };
 
   return (

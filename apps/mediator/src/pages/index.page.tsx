@@ -16,11 +16,11 @@ const MediatorStartPage: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    api.isAuthenticated().then((isAuthenticated) => {
-      if (isAuthenticated) {
-        router.push("/providers");
-      }
-    });
+    const isAuthenticated = api.isAuthenticated();
+
+    if (isAuthenticated) {
+      router.push("/providers");
+    }
   }, [api, authenticated, router]);
 
   const uploadFile: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -40,9 +40,9 @@ const MediatorStartPage: NextPage = () => {
           ) {
             setInvalidFile(true);
           } else {
-            api.authenticate(keyPairs).then((isAuthenticated) => {
-              setAuthenticated(isAuthenticated);
-            });
+            api.authenticate(keyPairs);
+
+            setAuthenticated(api.isAuthenticated());
           }
         }
       };

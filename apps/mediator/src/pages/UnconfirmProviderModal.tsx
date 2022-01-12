@@ -1,4 +1,3 @@
-import type { Provider } from "@kiebitz-oss/api";
 import {
   Button,
   Modal,
@@ -10,6 +9,7 @@ import {
   Title,
 } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
+import type { Provider } from "vanellus";
 import { useMediatorApi } from "./MediatorApiContext";
 
 interface UnconfirmProviderModal extends ModalProps {
