@@ -21,7 +21,7 @@ const ProvidersPage: NextPage = () => {
     } catch (error) {
       router.push("/");
     }
-  }, [api]);
+  }, [api, router]);
 
   return (
     <main>

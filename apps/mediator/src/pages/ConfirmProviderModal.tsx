@@ -9,7 +9,8 @@ import {
   Title,
 } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { Provider } from "vanellus";
+import type { MouseEventHandler } from "react";
+import type { Provider } from "vanellus";
 import { useMediatorApi } from "./MediatorApiContext";
 
 interface ConfirmProviderModal extends ModalProps {
@@ -22,7 +23,7 @@ export const ConfirmProviderModal: React.FC<ConfirmProviderModal> = ({
 }) => {
   const api = useMediatorApi();
 
-  const doConfirmProvider = () => {
+  const doConfirmProvider: MouseEventHandler<HTMLButtonElement> = () => {
     api.confirmProvider(provider).then(() => {
       if (onClose) {
         onClose();
