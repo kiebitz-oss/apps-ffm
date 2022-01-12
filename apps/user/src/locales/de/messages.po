@@ -14,42 +14,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/NavContent.tsx:29
-msgid "common.footer.link.booking"
-msgstr "Impftermin buchen"
-
-#: components/NavContent.tsx:69
-msgid "common.footer.link.english"
-msgstr "English"
-
-#: components/NavContent.tsx:36
-msgid "common.footer.link.faq"
-msgstr "Fragen & Antworten"
-
-#: components/NavContent.tsx:57
-msgid "common.footer.link.german"
-msgstr "Deutsch"
-
-#: components/NavContent.tsx:80
-msgid "common.footer.link.imprint"
-msgstr "Impressum"
-
-#: components/NavContent.tsx:97
-msgid "common.footer.link.kiebitz"
-msgstr "Realisiert mit Kiebitz"
-
-#: components/NavContent.tsx:85
-msgid "common.footer.link.privacy"
-msgstr "Datenschutz"
-
-#: components/NavContent.tsx:23
-msgid "common.footer.title.informations"
-msgstr "Informationen"
-
-#: components/NavContent.tsx:44
-msgid "common.footer.title.languages"
-msgstr "Sprache"
-
 #: components/Header.tsx:64
 msgid "header.nav.link.book_vaccination"
 msgstr "Impftermin buchen"

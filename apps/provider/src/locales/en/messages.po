@@ -20,42 +20,6 @@ msgstr ""
 "device (PC, tablet, smartphone, etc.) or to access your appointments on "
 "another terminal."
 
-#: components/NavContent.tsx:29
-msgid "common.footer.link.booking"
-msgstr "Book appointment"
-
-#: components/NavContent.tsx:69
-msgid "common.footer.link.english"
-msgstr "English"
-
-#: components/NavContent.tsx:36
-msgid "common.footer.link.faq"
-msgstr "Questions & Answers"
-
-#: components/NavContent.tsx:57
-msgid "common.footer.link.german"
-msgstr "Deutsch"
-
-#: components/NavContent.tsx:80
-msgid "common.footer.link.imprint"
-msgstr "Imprint"
-
-#: components/NavContent.tsx:97
-msgid "common.footer.link.kiebitz"
-msgstr "Realized with Kiebitz"
-
-#: components/NavContent.tsx:85
-msgid "common.footer.link.privacy"
-msgstr "Data privacy"
-
-#: components/NavContent.tsx:23
-msgid "common.footer.title.informations"
-msgstr "Information"
-
-#: components/NavContent.tsx:44
-msgid "common.footer.title.languages"
-msgstr "Language"
-
 #: pages/logout.page.tsx:94
 msgid "provider.logout.button"
 msgstr "Log out"
