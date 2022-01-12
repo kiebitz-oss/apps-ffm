@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-01-07 21:51+0000\n"
+"Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/kiebitz/user/fr/>"
+"\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.10.1\n"
+
+#: components/NavContent.tsx:36
+msgid "common.footer.link.faq"
+msgstr "Questions et réponses"
+
+#: components/NavContent.tsx:80
+msgid "common.footer.link.imprint"
+msgstr "Mentions légales"
+
+#: components/NavContent.tsx:97
+msgid "common.footer.link.kiebitz"
+msgstr "Réalisé avec Kiebitz"
+
+#: components/NavContent.tsx:85
+msgid "common.footer.link.privacy"
+msgstr "Vie privé"
+
+#: components/NavContent.tsx:23
+msgid "common.footer.title.informations"
+msgstr "Informations"
+
+#: components/NavContent.tsx:44
+msgid "common.footer.title.languages"
+msgstr "Langue"
+
+#: components/NavContent.tsx:29
+msgid "common.footer.link.booking"
+msgstr "Réserver un rendez-vous de vaccination"
+
+#: components/NavContent.tsx:69
+msgid "common.footer.link.english"
+msgstr "anglais"
+
+#: components/NavContent.tsx:57
+msgid "common.footer.link.german"
+msgstr "allemand"
