@@ -1,5 +1,5 @@
-import type { Provider } from "@kiebitz-oss/api";
 import { createContext, useContext, useReducer } from "react";
+import type { Provider } from "vanellus";
 
 type ActionMap<M extends { [index: string]: unknown }> = {
   [Key in keyof M]: M[Key] extends undefined
@@ -13,9 +13,6 @@ type ActionMap<M extends { [index: string]: unknown }> = {
 };
 
 export interface OnboardingStateData extends Provider {
-  website?: string;
-  phone?: string;
-  email?: string;
   accessCode?: string;
 }
 

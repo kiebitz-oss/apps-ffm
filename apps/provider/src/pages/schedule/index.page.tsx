@@ -2,10 +2,10 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import type { Appointment } from "@kiebitz-oss/api";
 import { Button, Title } from "@kiebitz-oss/ui";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import type { Appointment } from "vanellus";
 import { useProviderApi } from "../ProviderApiContext";
 import { CreateAppointmentModal } from "./CreateAppointmentModal";
 import { WeekCalendar } from "./WeekCalendar";
@@ -17,7 +17,7 @@ const SchedulePage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const api = useProviderApi();
 
-  api.getAppointments().then((appointments) => {
+  api.getAppointments(new Date(), new Date()).then((appointments) => {
     setAppointments(appointments);
   });
 

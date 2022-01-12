@@ -1,8 +1,8 @@
-import { ProviderApi } from "@kiebitz-oss/api";
 import { createContext, useContext } from "react";
+import { ProviderService } from "vanellus";
 
 interface ProviderApiContext {
-  api: ProviderApi;
+  api: ProviderService;
 }
 
 const ProviderApiContext = createContext<ProviderApiContext | undefined>(
@@ -10,7 +10,12 @@ const ProviderApiContext = createContext<ProviderApiContext | undefined>(
 );
 
 export const ProviderApiProvider: React.FC = ({ children }) => {
-  const api = new ProviderApi();
+  const api = new ProviderService({
+    endpoints: {
+      appointments: "http://127.0.0.1:22222/jsonrpc",
+      storage: "http://127.0.0.1:11111/jsonrpc",
+    },
+  });
 
   return (
     <ProviderApiContext.Provider value={{ api }}>

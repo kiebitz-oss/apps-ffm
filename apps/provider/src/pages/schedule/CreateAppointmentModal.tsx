@@ -1,9 +1,3 @@
-import {
-  Appointment,
-  formatDate,
-  formatTime,
-  getHexId,
-} from "@kiebitz-oss/api";
 import { vaccines } from "@kiebitz-oss/config";
 import {
   Button,
@@ -26,6 +20,7 @@ import {
   useForm,
 } from "react-hook-form";
 import { useEffectOnce } from "react-use";
+import type { Appointment } from "vanellus";
 
 interface FormData {
   date?: string;
@@ -125,7 +120,7 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
   let appointment: Appointment | undefined;
 
   if (id !== undefined) {
-    appointment = appointments?.find((app) => getHexId(app.id) === id);
+    appointment = appointments?.find((app) => app.id === id);
   }
 
   useEffectOnce(() => {
@@ -133,7 +128,7 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
       const appointmentData: FormData = {
         time: formatTime(appointment.date || new Date()),
         date: formatDate(appointment.date || new Date()),
-        slots: appointment.slots.length,
+        slots: appointment.slotData.length,
         duration: appointment.duration,
       };
 

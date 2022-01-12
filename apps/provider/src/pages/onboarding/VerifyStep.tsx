@@ -2,10 +2,10 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Provider } from "@kiebitz-oss/api";
 import { Button, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
+import type { Provider } from "vanellus";
 import { Link } from "../../components/Link";
 import { useProviderApi } from "../ProviderApiContext";
 import { ProviderDataSummary } from "../ProviderDataSummary";

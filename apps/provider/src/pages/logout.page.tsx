@@ -14,36 +14,11 @@ import { useProviderApi } from "./ProviderApiContext";
 const LogOutPage: NextPage = () => {
   const [loggingOut, setLoggingOut] = useState(false);
   const api = useProviderApi();
-  const secret = api.getSecret();
+  const secret = "s3cr3t"; // api.getSecret();
   // const navigate = useNavigate();
-  // const backend = useBackend();
 
   const logOut: MouseEventHandler<HTMLButtonElement> = async () => {
     setLoggingOut(true);
-
-    // const kpa = keyPairsAction('logoutKeyPairs');
-
-    // kpa.then((kp: any) => {
-    //     const psa = providerSecretAction(undefined, 'logoutProviderSecret');
-
-    //     psa.then((ps: any) => {
-    //         // we give the backup data action a different name to avoid it being rejected
-    //         // in case there's already a backup in progress... It will still be queued
-    //         // up to ensure no conflicts can occur.
-    //         const ba = backupDataAction(kp.data, ps.data, 'logout');
-
-    //         ba.then(() => {
-    //             backend.local.deleteAll('provider::');
-    //             navigate('/provider?notice=thankyou');
-    //         });
-
-    //         ba.catch(() => setLoggingOut(false));
-    //     });
-
-    //     psa.catch(() => setLoggingOut(false));
-    // });
-
-    // kpa.catch(() => setLoggingOut(false));
   };
 
   return (

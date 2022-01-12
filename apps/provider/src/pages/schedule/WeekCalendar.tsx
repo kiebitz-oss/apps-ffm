@@ -1,5 +1,3 @@
-import type { Appointment } from "@kiebitz-oss/api";
-import { AppointmentItem, AppointmentSet, getHexId } from "@kiebitz-oss/api";
 import { Tag } from "@kiebitz-oss/ui";
 import clsx from "clsx";
 import dayjs from "dayjs";
@@ -10,6 +8,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import { Fragment } from "react";
+import type { Appointment } from "vanellus";
 import { Link } from "../../components/Link";
 
 dayjs.extend(utc);

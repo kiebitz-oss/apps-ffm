@@ -1,9 +1,9 @@
-import type { Provider } from "@kiebitz-oss/api";
 import { Message, Text } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import type { Provider } from "vanellus";
 
 interface ProviderDataSummaryProps {
   provider: Provider;
@@ -96,13 +96,13 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
           <dt>
             <Trans id="provider.provider-data.phone">Telefonnummer</Trans>
           </dt>
-          <dd>
+          {/* <dd>
             {provider.phone || (
               <Trans id="provider.provider-data.not-given">
                 (keine Angabe)
               </Trans>
             )}
-          </dd>
+          </dd> */}
 
           <dt>
             <Trans id="provider.provider-data.email" />
