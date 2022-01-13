@@ -3,7 +3,6 @@ import { Button } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import { ChangeEventHandler, useState } from "react";
 import type { Provider } from "vanellus";
-import { ReconfirmProvidersModal } from "../ReconfirmProvidersModal";
 import { ProviderRow } from "./ProviderRow";
 
 export interface ProviderListProps {
@@ -121,15 +120,6 @@ export const ProviderList: React.FC<ProviderListProps> = ({ providers }) => {
           </tr>
         </tfoot>
       </table>
-
-      {modal && (
-        <ReconfirmProvidersModal
-          providers={providers.filter((provider) =>
-            selectedProviders.includes(provider.id)
-          )}
-          onClose={() => setModal(null)}
-        />
-      )}
     </>
   );
 };

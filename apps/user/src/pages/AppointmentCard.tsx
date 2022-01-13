@@ -1,8 +1,8 @@
-import type { Appointment } from "@kiebitz-oss/api";
 import { vaccines } from "@kiebitz-oss/config";
 import { Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
+import type { Appointment } from "vanellus";
 import { useI18n } from "../components/useI18n";
 
 export interface AppointmentCardProps {
@@ -43,7 +43,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
       <time className="flex flex-col font-semibold text-center">
         <div className="text-4xl">
           <Trans id="user.finder.appointment.card.time">
-            {appointment.date.toLocaleTimeString(i18n.locale, {
+            {appointment.startDate.toLocaleTimeString(i18n.locale, {
               hour: "2-digit",
               minute: "2-digit",
             })}{" "}
@@ -54,7 +54,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
         <div className="text-xl">
           <Trans id="user.finder.appointment.card.date">
             am{" "}
-            {appointment.date.toLocaleDateString(i18n.locale, {
+            {appointment.startDate.toLocaleDateString(i18n.locale, {
               day: "2-digit",
               month: "2-digit",
               year: "2-digit",
@@ -63,7 +63,13 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
         </div>
       </time>
 
-      <p>{vaccines[i18n.locale || "de"][appointment.vaccine].name}</p>
+      <p>
+        {
+          vaccines[i18n.locale || "de"][
+            appointment.properties.vaccine as string
+          ].name
+        }
+      </p>
 
       {/* button */}
       {children}

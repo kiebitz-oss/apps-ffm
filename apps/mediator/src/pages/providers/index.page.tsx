@@ -15,7 +15,7 @@ const ProvidersPage: NextPage = () => {
 
   useEffect(() => {
     try {
-      api.getVerifiedProviders().then((providers) => {
+      api.getPendingProviders().then((providers) => {
         setProviders(providers);
       });
     } catch (error) {

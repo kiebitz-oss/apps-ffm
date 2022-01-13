@@ -7,7 +7,6 @@ import type { Provider } from "vanellus";
 import { BackLink } from "../../components/BackLink";
 import { ConfirmProviderModal } from "../ConfirmProviderModal";
 import { useMediatorApi } from "../MediatorApiContext";
-import { UnconfirmProviderModal } from "../UnconfirmProviderModal";
 
 const ProviderShowPage: NextPage = () => {
   const [provider, setProvider] = useState<Provider>();
@@ -19,7 +18,7 @@ const ProviderShowPage: NextPage = () => {
 
   useEffect(() => {
     if (id) {
-      api.getVerifiedProviders().then((providers) => {
+      api.getPendingProviders().then((providers) => {
         const provider = providers.find(
           (provider) => provider.id === decodeURIComponent(id)
         );
@@ -141,12 +140,6 @@ const ProviderShowPage: NextPage = () => {
       </div>
       {modal === "confirm" && (
         <ConfirmProviderModal
-          provider={provider}
-          onClose={() => setModal(null)}
-        />
-      )}
-      {modal === "unconfirm" && (
-        <UnconfirmProviderModal
           provider={provider}
           onClose={() => setModal(null)}
         />

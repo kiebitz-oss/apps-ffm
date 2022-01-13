@@ -21,7 +21,7 @@ dayjs.locale("de");
 dayjs.tz.setDefault("Europe/Berlin");
 
 interface HourRowProps {
-  appointmentItems: AppointmentItem[];
+  appointmentItems: Appointment[];
   date: Date;
   hour: number;
 }
@@ -119,7 +119,7 @@ interface DayColumnProps {
   date: Date;
   fromHour: number;
   toHour: number;
-  appointmentItems: AppointmentItem[];
+  appointmentItems: Appointment[];
 }
 
 const DayColumn: React.FC<DayColumnProps> = ({
@@ -163,29 +163,22 @@ const DayLabelColumn: React.FC<DayLabelPropsColumnProps> = ({
 };
 
 interface AppointmentCellProps {
-  appointmentItem: AppointmentItem;
+  appointment: Appointment;
 }
 
-const AppointmentCell: React.FC<AppointmentCellProps> = ({
-  appointmentItem,
-}) => {
-  const percentage = Math.floor(
-    (appointmentItem.appointment.duration / 60) * 100
-  );
-  const width = Math.floor(100 / (1 + appointmentItem.maxOverlap));
-  const top = Math.floor(
-    (appointmentItem.appointment.date.getMinutes() / 60) * 100
-  );
+const AppointmentCell: React.FC<AppointmentCellProps> = ({ appointment }) => {
+  const percentage = Math.floor((appointment.duration / 60) * 100);
+  const width = Math.floor(100 / (1 + appointment.maxOverlap));
+  const top = Math.floor((appointment.startDate.getMinutes() / 60) * 100);
 
-  const i = appointmentItem.overlapsWith.filter(
-    (overlappingAppointment) =>
-      overlappingAppointment.index < appointmentItem.index
+  const i = appointment.overlapsWith.filter(
+    (overlappingAppointment) => overlappingAppointment.index < appointment.index
   ).length;
 
   const left = Math.floor(i * width);
   const tiny = percentage < 33 || width < 50;
 
-  const hexId = getHexId(appointmentItem.appointment.id);
+  const hexId = getHexId(appointment.id);
   const action = "week";
 
   return (
@@ -200,13 +193,13 @@ const AppointmentCell: React.FC<AppointmentCellProps> = ({
       className={clsx("appointment-item")}
     >
       <Tag className="open" size="sm">
-        {appointmentItem.appointment.slots.length}
+        {appointment.slotData.length}
       </Tag>
       <Tag className="booked" size="sm">
-        {appointmentItem.appointment.bookings.length}
+        {appointment.bookings.length}
       </Tag>
       <Tag className="vaccine" size="sm">
-        {appointmentItem.appointment.vaccine}
+        {appointment.properties.vaccine}
       </Tag>
       {/* <PropertyTags appointment={appointment} tiny /> */}
     </Link>
@@ -214,23 +207,22 @@ const AppointmentCell: React.FC<AppointmentCellProps> = ({
 };
 
 interface CalendarAppointmentsProps {
-  appointmentItems: AppointmentItem[];
+  appointments: Appointment[];
 }
 
 const CalendarAppointments: React.FC<CalendarAppointmentsProps> = ({
-  appointmentItems,
+  appointments,
 }) => {
   return (
     <div className="appointments">
-      {appointmentItems
+      {appointments
         .filter(
-          (appointmentItem) =>
-            appointmentItem.startsHere &&
-            appointmentItem.appointment.slots.length > 0
+          (appointment) =>
+            appointment.startsHere && appointment.slotData.length > 0
         )
         .map((appointmentItem) => (
           <AppointmentCell
-            key={appointmentItem.appointment.id}
+            key={appointment.id}
             appointmentItem={appointmentItem}
           />
         ))}
@@ -251,7 +243,7 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
   fromHour = 8,
   toHour = 19,
 }) => {
-  const appointmentSet = new AppointmentSet(appointments);
+  const appointmentSet = new AppointmentSeries(appointments);
   const selectedWeekOfYear =
     week && week >= 1 && week <= 52 ? week : dayjs().week();
 

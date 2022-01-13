@@ -35,7 +35,7 @@ export const DataStep: React.FC = () => {
   const { register, handleSubmit, formState } = methods;
 
   const onSubmit: SubmitHandler<OnboardingStateData> = (data) => {
-    api.storeProvider(data).then(() => {
+    api.register(data).then(() => {
       dispatch({ type: Types.SET_DATA, payload: { data } });
 
       // we redirect to the 'verify' step
@@ -174,13 +174,13 @@ export const DataStep: React.FC = () => {
                   </Text>
                 </legend>
 
-                <InputField
+                {/* <InputField
                   label={t({
                     id: "provider.onboarding.phone.label",
                     message: "Telefonnummer",
                   })}
                   {...register("phone")}
-                />
+                /> */}
 
                 <InputField
                   label={t({

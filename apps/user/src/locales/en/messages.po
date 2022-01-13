@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
 "PO-Revision-Date: 2022-01-08 10:46+0000\n"
 "Last-Translator: sanddorn (Thomas) <sanddorn@protonmail.ch>\n"
-"Language-Team: English <https://hosted.weblate.org/projects/kiebitz/user/en/>"
-"\n"
+"Language-Team: English <https://hosted.weblate.org/projects/kiebitz/user/en/>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -84,9 +83,7 @@ msgstr "{0} o’clock"
 
 #: pages/finder/AppointmentStep.tsx:137
 msgid "user.finder.appointment.no-result"
-msgstr ""
-"There are no free appointments available.<0/><1/> Please try a later date or "
-"a different vaccination site."
+msgstr "There are no free appointments available.<0/><1/> Please try a later date or a different vaccination site."
 
 #: pages/finder/AppointmentStep.tsx:105
 msgid "user.finder.appointment.provider.placeholder"
@@ -106,10 +103,7 @@ msgstr "Back to appointment selection"
 
 #: pages/finder/DateStep.tsx:18
 msgid "user.finder.date.intro"
-msgstr ""
-"When would you like to be vaccinated? You can adjust the date and time at "
-"any time in the process if desired. Please indicate your preferred date "
-"below."
+msgstr "When would you like to be vaccinated? You can adjust the date and time at any time in the process if desired. Please indicate your preferred date below."
 
 #: pages/finder/DateStep.tsx:27
 msgid "user.finder.date.label"
@@ -193,10 +187,7 @@ msgstr "Continue to the booking"
 
 #: pages/Questionair.tsx:135
 msgid "user.welcome.form_error"
-msgstr ""
-"Please answer all questions, otherwise we will not be able to find "
-"appointments for you. All your personal data will only be stored on your "
-"personal device and will not be transmitted or passed on to a server."
+msgstr "Please answer all questions, otherwise we will not be able to find appointments for you. All your personal data will only be stored on your personal device and will not be transmitted or passed on to a server."
 
 #: pages/index.page.tsx:23
 msgid "user.welcome.intro-1"
@@ -204,9 +195,7 @@ msgstr "You are now only a few clicks away from your appointment."
 
 #: pages/index.page.tsx:29
 msgid "user.welcome.intro-2"
-msgstr ""
-"We will ask you a few questions so you can get the right vaccine. The data "
-"remains on your device and is not transmitted."
+msgstr "We will ask you a few questions so you can get the right vaccine. The data remains on your device and is not transmitted."
 
 #: pages/Questionair.tsx:85
 msgid "user.welcome.question1_value"
