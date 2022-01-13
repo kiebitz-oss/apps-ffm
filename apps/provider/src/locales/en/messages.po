@@ -77,7 +77,7 @@ msgstr "Information for people who want to be vaccinated (e.g. if you recommend 
 msgid "provider.onboarding.description.title"
 msgstr "Description"
 
-#: pages/onboarding/BackupDataLink.tsx:59
+#: pages/onboarding/BackupDataLink.tsx:56
 msgid "provider.onboarding.download-backup-data"
 msgstr "Download appointment-file"
 
@@ -85,7 +85,7 @@ msgstr "Download appointment-file"
 msgid "provider.onboarding.email.label"
 msgstr "E-mail address"
 
-#: pages/onboarding/BackupDataLink.tsx:69
+#: pages/onboarding/BackupDataLink.tsx:66
 msgid "provider.onboarding.generating-backup-data"
 msgstr "Please wait, creating file…"
 
@@ -296,7 +296,7 @@ msgstr "Vaccine"
 msgid "provider.secret.title"
 msgstr "Your data key"
 
-#: pages/settings/index.page.tsx:32
+#: pages/settings/index.page.tsx:35
 msgid "provider.settings.title"
 msgstr "Settings"
 

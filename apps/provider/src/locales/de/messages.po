@@ -77,7 +77,7 @@ msgstr "Informationen für Impfwillige (z.B. wenn Sie einen Impfstoff nur bestim
 msgid "provider.onboarding.description.title"
 msgstr "Beschreibung"
 
-#: pages/onboarding/BackupDataLink.tsx:59
+#: pages/onboarding/BackupDataLink.tsx:56
 msgid "provider.onboarding.download-backup-data"
 msgstr "Termin-Datei herunterladen"
 
@@ -85,7 +85,7 @@ msgstr "Termin-Datei herunterladen"
 msgid "provider.onboarding.email.label"
 msgstr "E-Mail-Adresse"
 
-#: pages/onboarding/BackupDataLink.tsx:69
+#: pages/onboarding/BackupDataLink.tsx:66
 msgid "provider.onboarding.generating-backup-data"
 msgstr "Bitte warten, erstelle Datei …"
 
@@ -296,7 +296,7 @@ msgstr "Impfstoff"
 msgid "provider.secret.title"
 msgstr "Ihr Datenschlüssel"
 
-#: pages/settings/index.page.tsx:32
+#: pages/settings/index.page.tsx:35
 msgid "provider.settings.title"
 msgstr "Einstellungen"
 
