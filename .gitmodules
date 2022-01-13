@@ -1,0 +1,3 @@
+[submodule "packages/vanellus"]
+	path = packages/vanellus
+	url = ../vanellus
