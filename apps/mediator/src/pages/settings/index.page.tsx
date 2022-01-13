@@ -1,8 +1,7 @@
-import { Title } from "@kiebitz-oss/ui";
+import { BackLink, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
-import { BackLink } from "components/BackLink";
 import type { NextPage } from "next";
-import { useMediatorApi } from "pages/MediatorApiContext";
+import { useMediatorApi } from "../MediatorApiContext";
 
 const SettingsIndexPage: NextPage = () => {
   const api = useMediatorApi();

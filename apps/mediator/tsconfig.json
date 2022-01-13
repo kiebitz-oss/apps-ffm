@@ -1,12 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@kiebitz-oss/provider",
+  "display": "@kiebitz-oss/mediator",
   "compilerOptions": {
     "lib": ["es2020", "DOM", "DOM.Iterable"],
     "target": "es5",
     "outDir": "dist",
-    "baseUrl": "src",
     "incremental": true,
     "tsBuildInfoFile": ".tsbuildinfo",
     "jsx": "preserve"

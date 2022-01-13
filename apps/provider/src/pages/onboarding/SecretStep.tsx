@@ -2,11 +2,10 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Text, Title } from "@kiebitz-oss/ui";
+import { Link, Text, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { Link } from "../../components/Link";
 import { BackupDataLink } from "./BackupDataLink";
 import { DataSecret } from "./DataSecret";
 import { useOnboardingState } from "./OnboardingStateProvider";

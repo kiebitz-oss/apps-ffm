@@ -19,7 +19,10 @@ const SettingsPage: NextPage = () => {
 
     console.log(`PUBLISHED ${series.appointments.length} NEW APPOINTMENTS`);
 
-    const appointments = await api.getAppointments(new Date(), new Date());
+    const appointments = await api.getProviderAppointments(
+      new Date(),
+      new Date()
+    );
 
     console.log(`GOT ${appointments.length} APPOINTMENTS`);
 

@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2022-01-13 20:06+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: NavContent.tsx:27
+msgid "common.footer.link.booking"
+msgstr ""
+
+#: NavContent.tsx:67
+msgid "common.footer.link.english"
+msgstr ""
+
+#: NavContent.tsx:34
+msgid "common.footer.link.faq"
+msgstr ""
+
+#: NavContent.tsx:55
+msgid "common.footer.link.german"
+msgstr ""
+
+#: NavContent.tsx:78
+msgid "common.footer.link.imprint"
+msgstr ""
+
+#: NavContent.tsx:95
+msgid "common.footer.link.kiebitz"
+msgstr ""
+
+#: NavContent.tsx:83
+msgid "common.footer.link.privacy"
+msgstr ""
+
+#: NavContent.tsx:21
+msgid "common.footer.title.informations"
+msgstr ""
+
+#: NavContent.tsx:42
+msgid "common.footer.title.languages"
+msgstr ""

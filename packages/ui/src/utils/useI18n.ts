@@ -10,7 +10,8 @@ export const useI18n = () => {
 export const loadLocale = async (i18n: I18n, locale?: string) => {
   if (locale && i18n.locale !== locale) {
     try {
-      const { messages } = await import(`../locales/${locale}/messages.js`);
+      // const { messages } = await import(`../../../locales/${locale}/messages.js`);
+      const messages = {};
 
       i18n.load(locale, messages);
       i18n.activate(locale);

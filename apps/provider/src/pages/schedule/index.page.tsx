@@ -4,7 +4,7 @@
 
 import { Button, Title } from "@kiebitz-oss/ui";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Appointment } from "vanellus";
 import { useProviderApi } from "../ProviderApiContext";
 import { CreateAppointmentModal } from "./CreateAppointmentModal";
@@ -17,9 +17,11 @@ const SchedulePage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const api = useProviderApi();
 
-  api.getAppointments(new Date(), new Date()).then((appointments) => {
-    setAppointments(appointments);
-  });
+  useEffect(() => {
+    api.getProviderAppointments(new Date(), new Date()).then((appointments) => {
+      setAppointments(appointments);
+    });
+  }, [api, setAppointments]);
 
   const toggleModal = () => {
     setShowModal(!showModal);

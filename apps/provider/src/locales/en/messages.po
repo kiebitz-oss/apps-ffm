@@ -17,63 +17,27 @@ msgstr ""
 msgid "common.data-secret.text"
 msgstr "Please carefully write down your data key! You need it to log in on another device (PC, tablet, smartphone, etc.) or to access your appointments on another terminal."
 
-#: components/NavContent.tsx:29
-msgid "common.footer.link.booking"
-msgstr "Book appointment"
-
-#: components/NavContent.tsx:69
-msgid "common.footer.link.english"
-msgstr "English"
-
-#: components/NavContent.tsx:36
-msgid "common.footer.link.faq"
-msgstr "Questions & Answers"
-
-#: components/NavContent.tsx:57
-msgid "common.footer.link.german"
-msgstr "Deutsch"
-
-#: components/NavContent.tsx:80
-msgid "common.footer.link.imprint"
-msgstr "Imprint"
-
-#: components/NavContent.tsx:97
-msgid "common.footer.link.kiebitz"
-msgstr "Realized with Kiebitz"
-
-#: components/NavContent.tsx:85
-msgid "common.footer.link.privacy"
-msgstr "Data privacy"
-
-#: components/NavContent.tsx:23
-msgid "common.footer.title.informations"
-msgstr "Further information"
-
-#: components/NavContent.tsx:44
-msgid "common.footer.title.languages"
-msgstr "Language"
-
-#: pages/logout.page.tsx:94
+#: pages/logout.page.tsx:70
 msgid "provider.logout.button"
 msgstr "Log out"
 
-#: pages/logout.page.tsx:79
+#: pages/logout.page.tsx:55
 msgid "provider.logout.copy-secret"
 msgstr "Copy data key"
 
-#: pages/logout.page.tsx:85
+#: pages/logout.page.tsx:61
 msgid "provider.logout.download-backup"
 msgstr "Download appointment-file"
 
-#: pages/logout.page.tsx:61
+#: pages/logout.page.tsx:37
 msgid "provider.logout.intro"
 msgstr "Do you really want to log out? Please make sure that you have written down your data key and downloaded your appointment-file. You can only log in again with both of them together."
 
-#: pages/logout.page.tsx:57
+#: pages/logout.page.tsx:33
 msgid "provider.logout.notice.logging-out"
 msgstr "Please wait, logout is in progress…"
 
-#: pages/logout.page.tsx:52
+#: pages/logout.page.tsx:28
 msgid "provider.logout.title"
 msgstr "Log out"
 
@@ -141,19 +105,15 @@ msgstr "The name provided seems rather short. Is it possible to provide a longer
 msgid "provider.onboarding.name.label"
 msgstr "Full name"
 
-#: pages/onboarding/DataStep.tsx:178
-msgid "provider.onboarding.phone.label"
-msgstr "Phone"
-
 #: pages/onboarding/DataStep.tsx:230
 msgid "provider.onboarding.save-and-continue"
 msgstr "Next"
 
-#: pages/onboarding/SecretStep.tsx:43
+#: pages/onboarding/SecretStep.tsx:42
 msgid "provider.onboarding.secret.button"
 msgstr "Finalize & go to scheduling"
 
-#: pages/onboarding/SecretStep.tsx:30
+#: pages/onboarding/SecretStep.tsx:29
 msgid "provider.onboarding.secret.notice"
 msgstr "To log in again later and to access your appointments, you need both the your downloaded appointment file and your data key. Please download the appointment file now and make a note of the data key afterwards."
 
@@ -173,11 +133,11 @@ msgstr "Street and Number"
 msgid "provider.onboarding.title"
 msgstr "General details"
 
-#: pages/onboarding/VerifyStep.tsx:43
+#: pages/onboarding/VerifyStep.tsx:42
 msgid "provider.onboarding.verify.button"
 msgstr "Next"
 
-#: pages/onboarding/VerifyStep.tsx:39
+#: pages/onboarding/VerifyStep.tsx:38
 msgid "provider.onboarding.verify.edit-data"
 msgstr "Edit"
 
@@ -223,7 +183,6 @@ msgstr "Full name"
 
 #: pages/ProviderDataSummary.tsx:77
 #: pages/ProviderDataSummary.tsx:90
-#: pages/ProviderDataSummary.tsx:101
 #: pages/ProviderDataSummary.tsx:112
 msgid "provider.provider-data.not-given"
 msgstr "(No answer)"
@@ -252,99 +211,99 @@ msgstr "Website"
 msgid "provider.provider-data.zip-code"
 msgstr "Postal code"
 
-#: pages/RestoreForm.tsx:135
+#: pages/RestoreForm.tsx:136
 msgid "provider.restore-form.failed"
 msgstr "Loading of your data has failed. Please check your data key and the selected appointment-file."
 
-#: pages/RestoreForm.tsx:169
+#: pages/RestoreForm.tsx:170
 msgid "provider.restore-form.input"
 msgstr "Select file"
 
-#: pages/RestoreForm.tsx:178
+#: pages/RestoreForm.tsx:179
 msgid "provider.restore-form.input.description"
 msgstr "Please upload your appointment file (vaccination-appointments-2022[Date&Time].enc)."
 
-#: pages/RestoreForm.tsx:97
+#: pages/RestoreForm.tsx:98
 msgid "provider.restore-form.invalid-file"
 msgstr "Invalid appointment-file"
 
-#: pages/RestoreForm.tsx:50
+#: pages/RestoreForm.tsx:51
 msgid "provider.restore-form.invalid-secret"
 msgstr "Invalid data key"
 
-#: pages/RestoreForm.tsx:188
+#: pages/RestoreForm.tsx:189
 msgid "provider.restore-form.load"
 msgstr "Log in"
 
-#: pages/RestoreForm.tsx:30
+#: pages/RestoreForm.tsx:31
 msgid "provider.restore-form.missing-file"
 msgstr "Appointment-file missing"
 
-#: pages/RestoreForm.tsx:147
+#: pages/RestoreForm.tsx:148
 msgid "provider.restore-form.secret.description"
 msgstr "The data key you received during registration"
 
-#: pages/RestoreForm.tsx:143
+#: pages/RestoreForm.tsx:144
 msgid "provider.restore-form.secret.label"
 msgstr "Data key"
 
-#: pages/schedule/CreateAppointmentModal.tsx:77
+#: pages/schedule/CreateAppointmentModal.tsx:72
 msgid "provider.schedule.create-appointment-modal.too-few-slots"
 msgstr "Too few appointments given"
 
-#: pages/schedule/CreateAppointmentModal.tsx:71
+#: pages/schedule/CreateAppointmentModal.tsx:66
 msgid "provider.schedule.create-appointment-modal.too-many-slots"
 msgstr "Too many appointments given"
 
-#: pages/schedule/CreateAppointmentModal.tsx:323
+#: pages/schedule/CreateAppointmentModal.tsx:318
 msgid "provider.schedule.create.appointment-modal.button"
 msgstr "Save"
 
-#: pages/schedule/CreateAppointmentModal.tsx:245
+#: pages/schedule/CreateAppointmentModal.tsx:240
 msgid "provider.schedule.create.appointment-modal.date.label"
 msgstr "Date"
 
-#: pages/schedule/CreateAppointmentModal.tsx:283
+#: pages/schedule/CreateAppointmentModal.tsx:278
 msgid "provider.schedule.create.appointment-modal.duration-label"
 msgstr "exp. Duration"
 
-#: pages/schedule/CreateAppointmentModal.tsx:290
+#: pages/schedule/CreateAppointmentModal.tsx:285
 msgid "provider.schedule.create.appointment-modal.duration-value"
 msgstr "Duration: {duration} minutes"
 
-#: pages/schedule/CreateAppointmentModal.tsx:231
+#: pages/schedule/CreateAppointmentModal.tsx:226
 msgid "provider.schedule.create.appointment-modal.edit-title"
 msgstr "Edit appointment"
 
-#: pages/schedule/CreateAppointmentModal.tsx:235
+#: pages/schedule/CreateAppointmentModal.tsx:230
 msgid "provider.schedule.create.appointment-modal.new-title"
 msgstr "Create appointment"
 
-#: pages/schedule/CreateAppointmentModal.tsx:270
+#: pages/schedule/CreateAppointmentModal.tsx:265
 msgid "provider.schedule.create.appointment-modal.slots.label"
 msgstr "Number of vaccination doses"
 
-#: pages/schedule/CreateAppointmentModal.tsx:257
+#: pages/schedule/CreateAppointmentModal.tsx:252
 msgid "provider.schedule.create.appointment-modal.time.label"
 msgstr "Time"
 
-#: pages/schedule/CreateAppointmentModal.tsx:302
+#: pages/schedule/CreateAppointmentModal.tsx:297
 msgid "provider.schedule.create.appointment-modal.vaccine-label"
 msgstr "Vaccine"
 
-#: pages/logout.page.tsx:71
+#: pages/logout.page.tsx:47
 #: pages/onboarding/DataSecret.tsx:21
 msgid "provider.secret.title"
 msgstr "Your data key"
 
-#: pages/settings/index.page.tsx:41
+#: pages/settings/index.page.tsx:32
 msgid "provider.settings.title"
 msgstr "Settings"
 
-#: pages/index.page.tsx:23
+#: pages/index.page.tsx:22
 msgid "provider.welcome.loggedout-.notice"
 msgstr "You were successfully logged out. You can log in again anytime with your data key and your appointment-file."
 
-#: pages/index.page.tsx:18
+#: pages/index.page.tsx:17
 msgid "provider.welcome.title"
 msgstr "Vaccination sites"

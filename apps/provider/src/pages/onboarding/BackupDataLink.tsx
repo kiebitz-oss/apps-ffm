@@ -34,10 +34,7 @@ export const BackupDataLink: React.FC<BackupDataLinkProps> = ({
   let providerName = "Impfzentrum 3000";
 
   try {
-    providerName = providerName
-      .replaceAll(" ", "-")
-      .replaceAll(".", "-")
-      .toLowerCase();
+    providerName = providerName.replace(/[^a-zA-Z0-9 ]/g, "-").toLowerCase();
   } catch (e) {
     // ignore?
   }

@@ -5,7 +5,6 @@
   "author": "Benjamin Bender <bb@codepoet.de>",
   "private": true,
   "license": "AGPL-3.0-or-later",
-  "type": "module",
   "main": "src/index.ts",
   "sideEffects": false,
   "repository": {
@@ -19,11 +18,19 @@
   },
   "scripts": {
     "test": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "i18n": "lingui",
+    "i18n:extract": "NODE_ENV=development lingui extract --clean ",
+    "i18n:compile": "lingui compile",
+    "i18n:build": "NODE_ENV=development lingui extract --clean && lingui compile"
   },
   "dependencies": {
     "@babel/core": "^7.16.7",
     "@headlessui/react": "^1.4.2",
+    "@lingui/cli": "^3.13.0",
+    "@lingui/macro": "^3.13.0",
+    "@lingui/react": "^3.13.0",
+    "babel-plugin-macros": "^3.1.0",
     "clsx": "^1.1.1",
     "next": "^12.0.8",
     "react": "^17.0.2",
@@ -51,6 +58,27 @@
     "not ie 11",
     "not op_mini all"
   ],
+  "lingui": {
+    "locales": [
+      "de",
+      "en"
+    ],
+    "sourceLocale": "de",
+    "format": "po",
+    "catalogs": [
+      {
+        "path": "<rootDir>/locales/{locale}/messages",
+        "include": [
+          "<rootDir>"
+        ],
+        "exclude": [
+          "**/node_modules/**"
+        ]
+      }
+    ],
+    "rootDir": "src",
+    "orderBy": "messageId"
+  },
   "jest": {
     "displayName": "ui",
     "roots": [

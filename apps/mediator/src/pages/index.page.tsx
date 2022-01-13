@@ -29,9 +29,9 @@ const MediatorStartPage: NextPage = () => {
     if (file) {
       const reader = new FileReader();
 
-      reader.onload = function (e) {
-        if (e.target?.result && typeof e.target.result === "string") {
-          const keyPairs = JSON.parse(e.target.result);
+      reader.onload = (error) => {
+        if (error.target?.result && typeof error.target.result === "string") {
+          const keyPairs = JSON.parse(error.target.result);
 
           if (
             keyPairs.signing === undefined ||
@@ -74,7 +74,7 @@ const MediatorStartPage: NextPage = () => {
           )}
 
           {!invalidFile && (
-            <Text>
+            <Text className="mb-8">
               <Trans id="mediator.welcome.upload-key-pairs.notice">
                 Bitte laden Sie die Datei mit Ihren geheimen
                 Vermittlerschlüsseln.

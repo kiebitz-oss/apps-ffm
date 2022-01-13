@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { MediatorService } from "vanellus";
+import { MediatorService } from "../lib/MediatorService";
 
 interface MediatorApiContext {
   api: MediatorService;
@@ -9,14 +9,10 @@ const MediatorApiContext = createContext<MediatorApiContext | undefined>(
   undefined
 );
 
-export const MediatorApiProvider: React.FC = ({ children }) => {
-  const api = new MediatorService({
-    endpoints: {
-      appointments: "http://127.0.0.1:22222/jsonrpc",
-      storage: "http://127.0.0.1:11111/jsonrpc",
-    },
-  });
-
+export const MediatorApiProvider: React.FC<{ api: MediatorService }> = ({
+  children,
+  api,
+}) => {
   return (
     <MediatorApiContext.Provider value={{ api }}>
       {children}

@@ -7,8 +7,16 @@ import { useEffect } from "react";
 import "../../../../app.css";
 import { Layout } from "../components/Layout";
 import { loadLocale } from "../components/useI18n";
+import { UserService } from "../lib/UserService";
 import { messages } from "../locales/de/messages";
 import { UserApiProvider } from "./UserApiContext";
+
+const api = new UserService({
+  jsonrpc: {
+    appointments: "http://127.0.0.1:22222/jsonrpc",
+    storage: "http://127.0.0.1:11111/jsonrpc",
+  },
+});
 
 i18n.loadLocaleData({
   de: { plurals: de },
@@ -29,7 +37,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <I18nProvider i18n={i18n}>
-      <UserApiProvider>
+      <UserApiProvider api={api}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

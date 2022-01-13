@@ -1,14 +1,22 @@
 import "@fontsource/ibm-plex-sans/latin.css";
+import { Layout } from "@kiebitz-oss/ui";
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import { de, en } from "make-plural/plurals";
 import type { AppProps } from "next/app";
-import "provider.css";
 import { useEffect } from "react";
 import "../../../../app.css";
-import { Layout } from "../components/Layout";
 import { loadLocale } from "../components/useI18n";
+import { ProviderService } from "../lib/ProviderService";
+import "../provider.css";
 import { ProviderApiProvider } from "./ProviderApiContext";
+
+const api = new ProviderService({
+  jsonrpc: {
+    appointments: "http://127.0.0.1:22222/jsonrpc",
+    storage: "http://127.0.0.1:11111/jsonrpc",
+  },
+});
 
 i18n.loadLocaleData({
   de: { plurals: de },
@@ -28,7 +36,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <I18nProvider i18n={i18n}>
-      <ProviderApiProvider>
+      <ProviderApiProvider api={api}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

@@ -7,7 +7,8 @@ import {
 } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import type { NextPage } from "next";
-import { MouseEventHandler, useState } from "react";
+import type { MouseEventHandler } from "react";
+import { useState } from "react";
 import { BackupDataLink } from "./onboarding/BackupDataLink";
 import { useProviderApi } from "./ProviderApiContext";
 

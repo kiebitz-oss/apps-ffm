@@ -1,10 +1,8 @@
-import { Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
-import gaFfmUrl from "../../public/assets/ga-ffm-logo.svg";
-import stadtFfmUrl from "../../public/assets/stadt-ffm-logo.svg";
 import { Link } from "./Link";
-import { useI18n } from "./useI18n";
+import { Title } from "./Title";
+import { useI18n } from "./utils/useI18n";
 
 export interface NavContent {
   className?: string;
@@ -106,7 +104,7 @@ const NavContent: React.FC<NavContent> = ({ className, ...props }) => {
         <Link href="https://frankfurt.de/" external>
           <img
             width="300"
-            src={stadtFfmUrl.src}
+            src="/assets/stadt-ffm-logo.svg"
             alt="Stadt Frankfurt"
             className="max-w-[70vw] md:max-w-[200px] lg:max-w-[300px]"
           />
@@ -117,7 +115,7 @@ const NavContent: React.FC<NavContent> = ({ className, ...props }) => {
         >
           <img
             width="300"
-            src={gaFfmUrl.src}
+            src="/assets/ga-ffm-logo.svg"
             alt="Gesundheitsamt Frankfurt"
             className="max-w-[70vw] md:max-w-[200px] lg:max-w-[300px]"
           />

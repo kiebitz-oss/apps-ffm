@@ -1,7 +1,7 @@
 import { Login16, Logout16 } from "@carbon/icons-react";
+import { Link } from "@kiebitz-oss/ui";
 import { useEffect, useState } from "react";
 import { useProviderApi } from "../pages/ProviderApiContext";
-import { Link } from "./Link";
 
 export const Nav: React.FC = () => {
   const api = useProviderApi();

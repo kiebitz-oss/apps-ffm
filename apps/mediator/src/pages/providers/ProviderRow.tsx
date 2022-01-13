@@ -1,9 +1,8 @@
-import { Tag } from "@kiebitz-oss/ui";
+import { Link, Tag } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { ChangeEventHandler, useRef } from "react";
 import type { Provider } from "vanellus";
-import { Link } from "../../components/Link";
 
 export interface ProviderRowProps {
   provider: Provider;
