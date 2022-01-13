@@ -1,5 +1,5 @@
 import { GeneratePdf16 } from "@carbon/icons-react";
-import { vaccines } from "@kiebitz-oss/config";
+import { Vaccine, vaccines } from "@kiebitz-oss/config";
 import { Text, Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
@@ -23,9 +23,9 @@ export const SuccessStep: React.FC = () => {
       router.push("/finder");
     } else {
       api
-        .bookAppointment(appointment.id)
-        .then((secret) => {
-          setSecret(secret);
+        .bookAppointment(appointment)
+        .then((booking) => {
+          setSecret(booking.code);
         })
         .catch((error) => {
           // @TODO handle failure
@@ -37,7 +37,7 @@ export const SuccessStep: React.FC = () => {
   const onCancel: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
 
-    api.cancelAppointment(appointment.id, appointment.provider.id).then(() => {
+    api.cancelBooking(appointment).then(() => {
       router.push("/finder");
     });
   };
@@ -141,24 +141,28 @@ export const SuccessStep: React.FC = () => {
           </Title>
 
           <ul className="grid grid-flow-row gap-4 pb-6">
-            {vaccines[i18n.locale || "de"][appointment.vaccine].pdfs.map(
-              (pdf) => (
-                <li key={pdf.label}>
-                  <Link
-                    href={pdf.url}
-                    external
-                    className="text-primary bg-primary/10 button md"
-                  >
-                    <GeneratePdf16 />
-                    <span className="break-all">{pdf.label}</span>
-                  </Link>
-                </li>
-              )
-            )}
+            {vaccines[i18n.locale || "de"][
+              appointment.properties.vaccine as unknown as Vaccine
+            ].pdfs.map((pdf) => (
+              <li key={pdf.label}>
+                <Link
+                  href={pdf.url}
+                  external
+                  className="text-primary bg-primary/10 button md"
+                >
+                  <GeneratePdf16 />
+                  <span className="break-all">{pdf.label}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <Text variant="text2">
-            {vaccines[i18n.locale || "de"][appointment.vaccine].pdfDescription}
+            {
+              vaccines[i18n.locale || "de"][
+                appointment.properties.vaccine as unknown as Vaccine
+              ].pdfDescription
+            }
           </Text>
         </section>
 

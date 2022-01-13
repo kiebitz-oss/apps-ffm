@@ -12,5 +12,5 @@
     "jsx": "preserve"
   },
   "include": ["next-env.d.ts", "assets.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", ".next", "dist"]
+  "exclude": ["node_modules", ".next", "dist", "**/*.stories.tsx"]
 }

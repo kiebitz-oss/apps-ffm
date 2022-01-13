@@ -126,8 +126,8 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
   useEffectOnce(() => {
     if (appointment) {
       const appointmentData: FormData = {
-        time: formatTime(appointment.date || new Date()),
-        date: formatDate(appointment.date || new Date()),
+        time: new Date().toLocaleDateString(),
+        date: new Date().toLocaleTimeString(),
         slots: appointment.slotData.length,
         duration: appointment.duration,
       };
@@ -139,8 +139,8 @@ export const CreateAppointmentModal: React.FC<CreateAppointmentModal> = ({
       const newData: FormData = {
         duration: data.duration || 30,
         slots: data.slots || 1,
-        time: formatTime(date),
-        date: formatDate(date),
+        time: new Date().toLocaleDateString(),
+        date: new Date().toLocaleTimeString(),
       };
 
       // let firstProperty;

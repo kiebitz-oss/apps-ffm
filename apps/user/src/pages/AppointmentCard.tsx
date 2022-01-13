@@ -1,12 +1,11 @@
-import { vaccines } from "@kiebitz-oss/config";
 import { Title } from "@kiebitz-oss/ui";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
-import type { Appointment } from "vanellus";
+import type { PublicAppointment } from "vanellus";
 import { useI18n } from "../components/useI18n";
 
 export interface AppointmentCardProps {
-  appointment: Appointment;
+  appointment: PublicAppointment;
   className?: string;
   border?: true | undefined;
 }
@@ -65,9 +64,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
 
       <p>
         {
-          vaccines[i18n.locale || "de"][
-            appointment.properties.vaccine as string
-          ].name
+          // vaccines[i18n.locale || "de"][(appointment.properties.vaccine as unknown as Vaccine).name
         }
       </p>
 

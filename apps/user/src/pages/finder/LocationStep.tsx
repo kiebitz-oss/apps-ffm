@@ -1,7 +1,7 @@
-import type { PublicProvider } from "@kiebitz-oss/api";
 import { CheckboxField, Text, Title } from "@kiebitz-oss/ui";
 import { t, Trans } from "@lingui/macro";
 import { ChangeEventHandler, useEffect, useState } from "react";
+import type { PublicProvider } from "vanellus";
 import { BackLink } from "../../components/BackLink";
 import { Link } from "../../components/Link";
 import { ProviderCard } from "../../components/ProviderCard";

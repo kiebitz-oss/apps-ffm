@@ -58,8 +58,8 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({
       </td>
 
       <td>
-        <Tag variant={provider.verified ? "success" : "warning"}>
-          {provider.verified ? (
+        <Tag variant={provider /* .verified */ ? "success" : "warning"}>
+          {provider /* .verified */ ? (
             <Trans id="mediator.provider-row.valid">bestätigt</Trans>
           ) : (
             <Trans id="mediator.provider-row.invalid">unbestätigt</Trans>

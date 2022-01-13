@@ -78,7 +78,7 @@ export const Questionaire: React.FC = () => {
   return (
     <form
       className="flex flex-col mb-6 md:mb-8 lg:max-w-full flex-grow"
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmit as any)}
     >
       <div className="flex flex-col flex-1 gap-5">
         <QuestionaireBox control={control} name="q1">

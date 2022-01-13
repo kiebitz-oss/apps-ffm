@@ -1,5 +1,5 @@
-import type { Appointment, PublicProvider } from "@kiebitz-oss/api";
 import { createContext, useContext, useReducer } from "react";
+import type { PublicAppointment, PublicProvider } from "vanellus";
 
 type ActionMap<M extends { [index: string]: unknown }> = {
   [Key in keyof M]: M[Key] extends undefined
@@ -26,14 +26,14 @@ type Payload = {
     provider: PublicProvider | null;
   };
   [Types.SET_APPOINTMENT]: {
-    appointment: Appointment;
+    appointment: PublicAppointment;
   };
 };
 
 type State = {
   date: Date;
   provider: PublicProvider | null;
-  appointment: Appointment | null;
+  appointment: PublicAppointment | null;
 };
 
 const initialState: State = {
