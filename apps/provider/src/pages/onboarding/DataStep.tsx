@@ -35,12 +35,10 @@ export const DataStep: React.FC = () => {
   const { register, handleSubmit, formState } = methods;
 
   const onSubmit: SubmitHandler<OnboardingStateData> = (data) => {
-    api.register(data).then(() => {
-      dispatch({ type: Types.SET_DATA, payload: { data } });
+    dispatch({ type: Types.SET_DATA, payload: { data } });
 
-      // we redirect to the 'verify' step
-      router.push(`/onboarding/verify`);
-    });
+    // we redirect to the 'verify' step
+    router.push(`/onboarding/verify`);
   };
 
   return (

@@ -13,7 +13,7 @@ services:
       - 3000:3000
 
   backend:
-    image: "ghcr.io/kiebitz-oss/services-inoeg:latest"
+    image: "ghcr.io/kiebitz-oss/services-inoeg:main"
     depends_on:
       - redis
     environment:
@@ -30,5 +30,5 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - "./node_modules/.cache/redis:/data"
+      - "./.cache/redis:/data"
     command: "redis-server --loglevel verbose"

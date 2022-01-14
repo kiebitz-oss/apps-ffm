@@ -5,14 +5,14 @@ meter:
   type: redis
   settings:
     addresses: ["redis:6379"]
-    database: 3
+    database: 1
     password: ""
 database:
   name: db
   type: redis
   settings:
     addresses: ["redis:6379"]
-    database: 2
+    database: 0
     password: ""
 metrics:
   bind_address: "localhost:9091"
@@ -49,7 +49,9 @@ appointments:
   aggregated_max_provider: 100
   aggregated_max_appointment: 1000
   validate:
-    vaccines: ["biontech", "moderna", "astrazeneca", "johnson-johnson"]
+    # minimum and maximum duration for appointments in minutes
+    appointment_duration_min: 5
+    appointment_duration_max: 300
     # the maximum duration for the time window for anonymous requests in days
     anon_max_time_window: 2
     # the maximum duration for the time window for aggregated anonymous requests
@@ -57,6 +59,7 @@ appointments:
     anon_aggregated_max_time_window: 7
     # the maximum duration for the time window for provider requests in days
     provider_max_time_window: 14
+    vaccines: ["biontech", "moderna", "astrazeneca", "johnson-johnson"]
   keys: []
   http:
     bind_address: 0.0.0.0:22222
@@ -66,11 +69,21 @@ appointments:
     #  key_file: "/$DIR/certs/storage-1.key"
   jsonrpc:
     cors:
-      allowed_hosts: ["http://localhost:3000"]
+      allowed_hosts:
+        [
+          "http://localhost:3000",
+          "http://localhost:3001",
+          "http://localhost:3002",
+        ]
       allowed_headers: ["*"]
       allowed_methods: ["POST"]
   rest:
     cors:
-      allowed_hosts: ["http://localhost:3000"]
+      allowed_hosts:
+        [
+          "http://localhost:3000",
+          "http://localhost:3001",
+          "http://localhost:3002",
+        ]
       allowed_headers: ["*"]
       allowed_methods: ["GET", "POST", "PUT", "DELETE"]

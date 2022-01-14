@@ -60,7 +60,7 @@ const ProviderShowPage: NextPage = () => {
               <Trans id="mediator.provider-show.verified">Bestätigt?</Trans>
             </th>
             <td>
-              {provider /* .verified */ ? (
+              {provider.verified ? (
                 <span className="font-semibold text-green-700">ja</span>
               ) : (
                 <span className="font-semibold text-red-700">nein</span>
@@ -115,7 +115,7 @@ const ProviderShowPage: NextPage = () => {
       </table>
 
       <div className="buttons-list">
-        {!provider /* .verified */ ? (
+        {!provider.verified ? (
           <Button
             variant="primary"
             size="sm"

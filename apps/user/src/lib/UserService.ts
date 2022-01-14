@@ -76,7 +76,7 @@ export class UserService {
   }
 
   public async getAppointments(
-    zipCode: number,
+    zipCode: string,
     from: Date,
     to: Date,
     radius = 50
@@ -84,7 +84,7 @@ export class UserService {
     return this.anonymousApi.getAppointments(zipCode, from, to, radius);
   }
 
-  public async getProviders(zipFrom: string | number, zipTo?: string | number) {
+  public async getProviders(zipFrom: string, zipTo?: string) {
     return this.anonymousApi.getProviders(zipFrom, zipTo ? zipTo : zipFrom);
   }
 
