@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-01-07 21:51+0000\n"
+"PO-Revision-Date: 2022-01-20 22:53+0000\n"
 "Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/kiebitz/mediator/"
 "fr/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.11-dev\n"
 
 #: components/NavContent.tsx:85
 msgid "common.footer.link.privacy"
@@ -102,3 +102,69 @@ msgstr "Mentions légales"
 #: pages/providers/ProvidersList.tsx:65
 msgid "mediator.providers-list.address"
 msgstr "Adresse"
+
+#: pages/logged-out.page.tsx:14
+msgid "mediator.logged-out.title"
+msgstr "Déconnecté avec succès"
+
+#: pages/logged-out.page.tsx:18
+msgid "mediator.logged-out.notice"
+msgstr ""
+"Vous avez été bien déconnecté(e). Vous pouvez vous reconnecter à tout moment "
+"avec votre clé de données et votre fichier de sauvegarde."
+
+#: pages/providers/ProviderRow.tsx:43
+msgid "mediator.provider-row.select-row"
+msgstr "Sélectionner ou désélectionner des sites de vaccination"
+
+#: pages/providers/ProviderRow.tsx:63
+msgid "mediator.provider-row.valid"
+msgstr "confirmé"
+
+#: pages/providers/[id].page.tsx:132
+msgid "mediator.provider-show.button-unconfirm"
+msgstr "Verrouiller le centre de vaccination"
+
+#: pages/UnconfirmProviderModal.tsx:90
+msgid "mediator.providers.unconfirm-modal.zip-code"
+msgstr "Code postal"
+
+#: pages/UnconfirmProviderModal.tsx:106
+msgid "mediator.providers.unconfirm-modal.phone"
+msgstr "Numéro de téléphone"
+
+#: pages/UnconfirmProviderModal.tsx:74
+msgid "mediator.providers.unconfirm-modal.street"
+msgstr "Rue"
+
+#: pages/UnconfirmProviderModal.tsx:37
+msgid "mediator.providers.unconfirm-modal.title"
+msgstr "Verrouiller le site de vaccination"
+
+#: pages/UnconfirmProviderModal.tsx:59
+msgid "mediator.providers.unconfirm-modal.value"
+msgstr "Valeur"
+
+#: pages/UnconfirmProviderModal.tsx:98
+msgid "mediator.providers.unconfirm-modal.email"
+msgstr "Courriel"
+
+#: pages/index.page.tsx:90
+msgid "mediator.welcome.upload-key-pairs.input"
+msgstr "Sélectionner le fichier de sauvegarde"
+
+#: pages/index.page.tsx:70
+msgid "mediator.welcome.upload-key-pairs.invalid-file"
+msgstr "Le fichier de sauvegarde que vous avez sélectionné n'est pas valide."
+
+#: pages/providers/[id].page.tsx:122
+msgid "mediator.provider-show.button-confirm"
+msgstr "Déverrouiller le site de vaccination"
+
+#: pages/index.page.tsx:63
+msgid "mediator.welcome.upload-key-pairs"
+msgstr "Charger le fichier de sauvegarde"
+
+#: pages/ConfirmProviderModal.tsx:92
+msgid "mediator.providers.confirm-modal.email"
+msgstr "Courriel"
