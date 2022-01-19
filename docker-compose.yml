@@ -13,7 +13,7 @@ services:
       - 3000:3000
 
   backend:
-    image: "ghcr.io/kiebitz-oss/services-inoeg:main"
+    image: "ghcr.io/impfen/services-inoeg:main"
     depends_on:
       - redis
     environment:
