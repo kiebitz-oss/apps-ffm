@@ -24,15 +24,10 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "start-storybook -p 9000",
     "test": "jest",
     "lint": "eslint . --ext .ts,tsx",
-    "lint:fix": "eslint . --ext .ts,tsx",
-    "build:sb": "build-storybook --output-dir dist",
-    "clean": "rimraf --no-glob ./dist .tsbuildinfo .ultra.cache.json",
-    "typecheck": "tsc --noEmit",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint:fix": "eslint . --ext .ts,tsx --fix",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",

@@ -1,4 +1,4 @@
-const twConfig = require("./tailwind.config");
+const twConfig = require("./tailwind.config.cjs");
 
 /**
  * @type {import('@typescript-eslint/experimental-utils').TSESLint.Linter.Config}
@@ -25,7 +25,7 @@ const config = {
       config: twConfig,
     },
   },
-  plugins: ["react", "jsx-a11y", "storybook", "jest", "testing-library"],
+  plugins: ["react", "jsx-a11y", "jest", "testing-library"],
   rules: {
     "tailwindcss/no-custom-classname": "off",
     "react/no-unescaped-entities": "off",
@@ -78,13 +78,6 @@ const config = {
         "@typescript-eslint/no-object-literal-type-assertion": "off",
         "@typescript-eslint/no-empty-function": "off",
         "jest/no-commented-out-tests": "off",
-      },
-    },
-    {
-      files: ["**/*.stories.{ts,tsx,mdx}"],
-      extends: ["plugin:storybook/recommended", "plugin:storybook/csf-strict"],
-      rules: {
-        "storybook/use-storybook-testing-library": "off",
       },
     },
     {

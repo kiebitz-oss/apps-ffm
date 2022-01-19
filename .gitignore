@@ -33,7 +33,7 @@ __pycache__
 .tmp
 *.orig
 *.log
-**/locales/**/messages.js
+**/locales/**/messages.ts
 .out
 
 # debug
