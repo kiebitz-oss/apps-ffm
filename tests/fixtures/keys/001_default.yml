@@ -27,12 +27,22 @@ storage:
     #  key_file: "/$DIR/certs/storage-1.key"
   jsonrpc:
     cors:
-      allowed_hosts: ["http://localhost:8080"]
+      allowed_hosts:
+        [
+          "http://localhost:3000",
+          "http://localhost:3001",
+          "http://localhost:3002",
+        ]
       allowed_headers: ["*"]
       allowed_methods: ["POST"]
   rest:
     cors:
-      allowed_hosts: ["http://localhost:8080"]
+      allowed_hosts:
+        [
+          "http://localhost:3000",
+          "http://localhost:3001",
+          "http://localhost:3002",
+        ]
       allowed_headers: ["*"]
       allowed_methods: ["GET", "POST", "PUT", "DELETE"]
 admin:
@@ -45,7 +55,7 @@ appointments:
   provider_codes_enabled: false
   user_codes_enabled: false
   response_max_provider: 10
-  response_max_appointment: 10
+  response_max_appointment: 1000
   aggregated_max_provider: 100
   aggregated_max_appointment: 1000
   validate:

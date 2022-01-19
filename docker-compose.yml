@@ -23,7 +23,7 @@ services:
     ports:
       - 11111:11111
       - 22222:22222
-    command: "./kiebitz --level debug run all"
+    command: "./kiebitz --level trace run all"
 
   redis:
     image: "redis:alpine"

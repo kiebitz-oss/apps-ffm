@@ -3,13 +3,12 @@
 /**
  * @type {import('tailwindcss/tailwind-config').TailwindConfig}
  **/
-module.exports = {
+const config = {
   mode: "jit",
   content: [
+    "../../packages/common/src/ui/**/*.tsx",
     "./src/**/*.tsx",
     "./src/**/*.mdx",
-    "../../packages/ui/src/**/*.tsx",
-    "./packages/ui/src/**/*.tsx",
   ],
 
   theme: {
@@ -47,11 +46,6 @@ module.exports = {
       },
     },
   },
-
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms")({
-      strategy: "class",
-    }),
-  ],
 };
+
+module.exports = config;

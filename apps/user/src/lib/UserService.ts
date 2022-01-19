@@ -76,16 +76,15 @@ export class UserService {
   }
 
   public async getAppointments(
-    zipCode: string,
-    from: Date,
-    to: Date,
-    radius = 50
+    date: Date,
+    zipFrom: number | string = 60306,
+    zipTo: number | string = 65936
   ) {
-    return this.anonymousApi.getAppointments(zipCode, from, to, radius);
+    return this.anonymousApi.getAggregatedAppointments(date, zipFrom, zipTo);
   }
 
-  public async getProviders(zipFrom: string, zipTo?: string) {
-    return this.anonymousApi.getProviders(zipFrom, zipTo ? zipTo : zipFrom);
+  public async getProviders(zipFrom: number | string, zipTo?: number | string) {
+    return this.anonymousApi.getProviders(zipFrom, zipTo);
   }
 
   public async bookAppointment(appointment: PublicAppointment) {

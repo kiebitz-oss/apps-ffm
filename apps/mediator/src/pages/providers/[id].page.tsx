@@ -1,31 +1,27 @@
-import { BackLink, Button, Title } from "@kiebitz-oss/ui";
+import { BackLink, Button, Title } from "@kiebitz-oss/common";
 import { Trans } from "@lingui/macro";
+import { ConfirmProviderModal } from "components/ConfirmProviderModal";
+import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import type { Provider } from "vanellus";
-import { ConfirmProviderModal } from "../ConfirmProviderModal";
-import { useMediatorApi } from "../MediatorApiContext";
 
 const ProviderShowPage: NextPage = () => {
-  const [provider, setProvider] = useState<Provider>();
+  const [provider, setProvider] = useState<Provider | null>(null);
   const [modal, setModal] = useState<"confirm" | "unconfirm" | null>(null);
   const router = useRouter();
-  const api = useMediatorApi();
+  const { api } = useApp();
 
-  const id = router.query?.id as string;
+  const id = router.query?.id
+    ? decodeURIComponent(
+        Buffer.from(router.query?.id as string, "hex").toString()
+      )
+    : null;
 
   useEffect(() => {
     if (id) {
-      api.getPendingProviders().then((providers) => {
-        const provider = providers.find(
-          (provider) => provider.id === decodeURIComponent(id)
-        );
-
-        if (provider) {
-          setProvider(provider);
-        }
-      });
+      api.getProvider(id).then(setProvider);
     }
   }, [api, id]);
 
@@ -97,6 +93,7 @@ const ProviderShowPage: NextPage = () => {
             </th>
             <td>{provider.email || " -- "}</td>
           </tr>
+
           {/* <tr>
             <th>
               <Trans id="mediator.provider-show.phone">Telefonnummer</Trans>
@@ -110,6 +107,16 @@ const ProviderShowPage: NextPage = () => {
               </Trans>
             </th>
             <td>{provider.description || " -- "}</td>
+          </tr>
+          <tr>
+            <th>
+              <Trans id="mediator.provider-show.accessible">
+                Barrierefreier Zugang?
+              </Trans>
+            </th>
+            <td>
+              {provider.accessible ? <Trans>Ja</Trans> : <Trans>Nein</Trans>}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -125,22 +132,19 @@ const ProviderShowPage: NextPage = () => {
               Anbieter bestätigen
             </Trans>
           </Button>
-        ) : (
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={() => setModal("unconfirm")}
-          >
-            <Trans id="mediator.provider-show.button-unconfirm">
-              Anbieter sperren
-            </Trans>
-          </Button>
-        )}
+        ) : null}
       </div>
+
       {modal === "confirm" && (
         <ConfirmProviderModal
           provider={provider}
-          onClose={() => setModal(null)}
+          onClose={() => {
+            if (id) {
+              api.getProvider(id).then(setProvider);
+            }
+
+            setModal(null);
+          }}
         />
       )}
     </main>

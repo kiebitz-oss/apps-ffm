@@ -1,5 +1,5 @@
 {
-  "name": "kiebitz-ffm",
+  "name": "kiebitz-oss",
   "description": "Kiebitz Web Applications",
   "version": "1.0.0",
   "private": true,
@@ -18,73 +18,60 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "changeset": "changeset",
-    "build": "pnpm run build --recursive --if-present",
+    "build": "pnpm run build --filter ./apps*",
     "build:user": "pnpm build --filter ./apps/user",
     "build:mediator": "pnpm build --filter ./apps/mediator",
     "build:provider": "pnpm build --filter ./apps/provider",
-    "build:sb": "pnpm build:sb --filter './common/storybook'",
-    "build:i18n": "pnpm run i18n:build --parallel --recursive --if-present",
+    "build:i18n": "NODE_ENV=development lingui extract --clean && lingui compile",
+    "dev": "pnpm dev --filter ./apps*",
     "dev:user": "pnpm dev --filter ./apps/user",
     "dev:provider": "pnpm dev --filter ./apps/provider",
     "dev:mediator": "pnpm dev --filter ./apps/mediator",
-    "dev:sb": "pnpm dev --filter ./common/storybook",
     "lint": "pnpm run lint --recursive --if-present",
     "lint:staged": "lint-staged --allow-empty",
     "lint:css": "npx stylelint '**/*.css'",
     "typecheck": "pnpm run typecheck --parallel --recursive --if-present",
     "test": "jest",
-    "test:e2e": "start-server-and-test test:e2e:serve http-get://localhost:3000 'cypress open'",
-    "test:e2e:serve": "lingui compile & webpack serve --mode=development",
-    "release": "pnpm build && changeset publish",
+    "test:e2e": "pnpm run test:e2e --filter ./apps*",
     "docker": "docker run -p 3000:3000 -it apps-inoeg:main",
-    "docker:build": "docker build . -f Dockerfile -t apps-inoeg:main"
+    "docker:build": "docker build . -f Dockerfile -t apps-inoeg:main",
+    "i18n": "lingui",
+    "i18n:extract": "NODE_ENV=development lingui extract --clean",
+    "i18n:compile": "lingui compile",
+    "i18n:build": "NODE_ENV=development lingui extract --clean && lingui compile"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.16.7",
-    "@changesets/changelog-github": "^0.4.2",
-    "@changesets/cli": "^2.19.0",
-    "@commitlint/cli": "^16.0.2",
-    "@commitlint/config-conventional": "^16.0.0",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-typescript": "^7.16.7",
+    "@lingui/cli": "^3.13.0",
     "@lingui/conf": "^3.13.0",
     "@lingui/core": "^3.13.0",
-    "@types/node": "^17.0.8",
-    "cypress": "^9.2.1",
-    "cypress-fail-fast": "^3.3.0",
+    "babel-plugin-macros": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.10",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
-    "start-server-and-test": "^1.14.0",
     "stylelint": "^14.2.0",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-no-unsupported-browser-features": "^5.0.2",
     "typescript": "^4.5.4"
   },
   "resolutions": {
-    "browserslist": "^4.16.5",
-    "immer": "^9.0.6",
-    "glob-parent": "^6",
-    "trim": "^1",
-    "webpack": "^5",
-    "ansi-regex": "5.0.1",
-    "resolve": "2.0.0-next.3"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "browserslist": [
     "defaults",
     "not ie 11",
     "not op_mini all"
   ],
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {}
-  },
-  "eslintConfig": {},
   "jest": {
     "testEnvironment": "jsdom",
     "projects": [
-      "<rootDir>/packages/ui",
+      "<rootDir>/packages/common",
       "<rootDir>/apps/user",
       "<rootDir>/apps/provider",
       "<rootDir>/apps/mediator"
@@ -124,8 +111,5 @@
         }
       ]
     }
-  },
-  "dependencies": {
-    "@lingui/cli": "^3.13.0"
   }
 }

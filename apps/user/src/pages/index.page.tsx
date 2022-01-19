@@ -2,12 +2,12 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Text, Title } from "@kiebitz-oss/ui";
+import { Text, Title } from "@kiebitz-oss/common";
 import { Trans } from "@lingui/macro";
+import { Questionaire } from "components/questionaire";
 import type { NextPage } from "next";
-import { Questionaire } from "./Questionair";
 
-const UserStartPage: NextPage = () => {
+const IndexPage: NextPage = () => {
   return (
     <main id="welcome">
       <Title
@@ -37,4 +37,4 @@ const UserStartPage: NextPage = () => {
   );
 };
 
-export default UserStartPage;
+export default IndexPage;

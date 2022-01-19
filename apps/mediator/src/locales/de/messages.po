@@ -13,186 +13,146 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.10.1\n"
 
-#: pages/logged-out.page.tsx:24
+msgid "Ja"
+msgstr ""
+
+msgid "Nein"
+msgstr ""
+
 msgid "mediator.logged-out.log-in-again"
 msgstr "Anmelden"
 
-#: pages/logged-out.page.tsx:17
 msgid "mediator.logged-out.notice"
 msgstr "Sie wurden erfolgreich abgemeldet. Sie können sich jederzeit mit Ihrem Datenschlüssel und Ihrer Sicherungsdatei wieder anmelden."
 
-#: pages/logged-out.page.tsx:13
 msgid "mediator.logged-out.title"
 msgstr "Erfolgreich abgemeldet"
 
-#: pages/logout.page.tsx:32
 msgid "mediator.logout.button"
 msgstr "Abmelden"
 
-#: pages/logout.page.tsx:24
 msgid "mediator.logout.intro"
 msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie vorher sicher, dass Sie Ihren Datenschlüssel notiert und die Sicherungsdatei gespeichert haben. Nur mit Schlüssel und Datei zusammen können Sie sich später wieder anmelden."
 
-#: pages/logout.page.tsx:20
 msgid "mediator.logout.title"
 msgstr "Abmelden"
 
-#: pages/providers/ProviderRow.tsx:71
 msgid "mediator.provider-row.button-show"
 msgstr "Anzeigen"
 
-#: pages/providers/ProviderRow.tsx:64
 msgid "mediator.provider-row.invalid"
 msgstr "unbestätigt"
 
-#: pages/providers/ProviderRow.tsx:42
 msgid "mediator.provider-row.select-row"
 msgstr "Impfstellen auswählen oder abwählen"
 
-#: pages/providers/ProviderRow.tsx:62
 msgid "mediator.provider-row.valid"
 msgstr "bestätigt"
 
-#: pages/providers/[id].page.tsx:124
+msgid "mediator.provider-show.accessible"
+msgstr ""
+
 msgid "mediator.provider-show.button-confirm"
 msgstr "Impfstelle freischalten"
 
-#: pages/providers/[id].page.tsx:134
-msgid "mediator.provider-show.button-unconfirm"
-msgstr "Impfstelle sperren"
-
-#: pages/providers/[id].page.tsx:84
 msgid "mediator.provider-show.city"
 msgstr "Ort"
 
-#: pages/providers/[id].page.tsx:108
 msgid "mediator.provider-show.description"
 msgstr "Beschreibung"
 
-#: pages/providers/[id].page.tsx:96
 msgid "mediator.provider-show.email"
 msgstr "E-Mail"
 
-#: pages/providers/[id].page.tsx:50
 msgid "mediator.provider-show.field"
 msgstr "Feld"
 
-#: pages/providers/[id].page.tsx:72
 msgid "mediator.provider-show.name"
 msgstr "Name"
 
-#: pages/providers/[id].page.tsx:78
 msgid "mediator.provider-show.street"
 msgstr "Straße"
 
-#: pages/providers/[id].page.tsx:41
 msgid "mediator.provider-show.title"
 msgstr "Impfstellen \"{0}\""
 
-#: pages/providers/[id].page.tsx:53
 msgid "mediator.provider-show.value"
 msgstr "Wert"
 
-#: pages/providers/[id].page.tsx:60
 msgid "mediator.provider-show.verified"
 msgstr "Verifiziert?"
 
-#: pages/providers/[id].page.tsx:90
 msgid "mediator.provider-show.zip-code"
 msgstr "Postleitzahl"
 
-#: pages/providers/ProvidersList.tsx:64
 msgid "mediator.providers-list.address"
 msgstr "Adresse"
 
-#: pages/providers/ProvidersList.tsx:101
 msgid "mediator.providers-list.button-confirm"
 msgstr "Impfstelle bestätigen"
 
-#: pages/providers/ProvidersList.tsx:40
 msgid "mediator.providers-list.caption"
 msgstr "Liste der Impfstellen"
 
-#: pages/providers/ProvidersList.tsx:61
 msgid "mediator.providers-list.name"
 msgstr "Name"
 
-#: pages/providers/ProvidersList.tsx:53
 msgid "mediator.providers-list.select-all"
 msgstr "Alle Impfstellen auswählen oder abwählen"
 
-#: pages/providers/ProvidersList.tsx:67
 msgid "mediator.providers-list.status"
 msgstr "Status"
 
-#: pages/ConfirmProviderModal.tsx:121
 msgid "mediator.providers.confirm-modal.button-confirm"
 msgstr "Impfstelle bestätigen"
 
-#: pages/ConfirmProviderModal.tsx:79
 msgid "mediator.providers.confirm-modal.city"
 msgstr "Ort"
 
-#: pages/ConfirmProviderModal.tsx:109
 msgid "mediator.providers.confirm-modal.description"
 msgstr "Beschreibung"
 
-#: pages/ConfirmProviderModal.tsx:93
 msgid "mediator.providers.confirm-modal.email"
 msgstr "E-Mail"
 
-#: pages/ConfirmProviderModal.tsx:55
 msgid "mediator.providers.confirm-modal.field"
 msgstr "Feld"
 
-#: pages/ConfirmProviderModal.tsx:46
 msgid "mediator.providers.confirm-modal.intro"
 msgstr "Wollen Sie die Impfstelle wirklich freischalten?"
 
-#: pages/ConfirmProviderModal.tsx:65
 msgid "mediator.providers.confirm-modal.name"
 msgstr "Name"
 
-#: pages/ConfirmProviderModal.tsx:71
 msgid "mediator.providers.confirm-modal.street"
 msgstr "Straße"
 
-#: pages/ConfirmProviderModal.tsx:38
 msgid "mediator.providers.confirm-modal.title"
 msgstr "Impfstelle freischalten"
 
-#: pages/ConfirmProviderModal.tsx:58
 msgid "mediator.providers.confirm-modal.value"
 msgstr "Wert"
 
-#: pages/ConfirmProviderModal.tsx:85
 msgid "mediator.providers.confirm-modal.zip-code"
 msgstr "Postleitzahl"
 
-#: pages/providers/index.page.tsx:29
 msgid "mediator.providers.title"
 msgstr "Impfstellen anzeigen"
 
-#: pages/settings/index.page.tsx:14
 msgid "mediator.settings-index.title"
 msgstr "Einstellungen"
 
-#: pages/index.page.tsx:58
 msgid "mediator.welcome.title"
 msgstr "Als Mediator anmelden"
 
-#: pages/index.page.tsx:63
 msgid "mediator.welcome.upload-key-pairs"
 msgstr "Sicherungsdatei laden"
 
-#: pages/index.page.tsx:90
 msgid "mediator.welcome.upload-key-pairs.input"
 msgstr "Sicherungsdatei auswählen"
 
-#: pages/index.page.tsx:70
 msgid "mediator.welcome.upload-key-pairs.invalid-file"
 msgstr "Die von Ihnen gewählte Sicherungsdatei ist ungültig."
 
-#: pages/index.page.tsx:78
 msgid "mediator.welcome.upload-key-pairs.notice"
 msgstr "Bitte laden Sie die Sicherungsdatei mit Ihren geheimen Vermittlerinformationen."

@@ -1,9 +1,8 @@
+import type { Provider, VanellusConfig } from "vanellus";
 import {
   AuthError,
   MediatorApi,
   MediatorKeyPairs,
-  Provider,
-  VanellusConfig,
   VanellusStorage,
 } from "vanellus";
 
@@ -12,16 +11,13 @@ import {
  */
 export class MediatorService {
   protected mediatorApi: MediatorApi;
-  protected keyPairs: MediatorKeyPairs | null = null;
+  protected keyPairs?: MediatorKeyPairs | null;
   protected storage: VanellusStorage;
 
   public constructor(readonly config: VanellusConfig) {
     this.mediatorApi = new MediatorApi(config);
     this.storage = new VanellusStorage("mediator");
-
-    if (typeof window !== "undefined") {
-      this.keyPairs = this.storage.get<MediatorKeyPairs>("keyPairs", undefined);
-    }
+    this.keyPairs = this.storage.get<MediatorKeyPairs>("keyPairs", undefined);
   }
 
   public authenticate(keyPairs: MediatorKeyPairs) {
@@ -32,12 +28,12 @@ export class MediatorService {
   }
 
   public isAuthenticated() {
-    return null !== this.keyPairs;
+    return typeof this.keyPairs === "object";
   }
 
-  public logout() {
+  public async logout() {
     this.keyPairs = null;
-    this.storage.removeItem("keyPairs");
+    await this.storage.removeAll();
 
     return true;
   }
@@ -46,26 +42,24 @@ export class MediatorService {
     return this.mediatorApi.confirmProvider(provider, this.getKeyPairs());
   }
 
-  /**
-   *
-   * @throws AuthError if proper keys are absent
-   */
-  public getPendingProviders(limit?: number) {
-    return this.mediatorApi.getPendingProviders(this.getKeyPairs(), limit);
+  public async getProvider(id: string) {
+    const providers = await this.getProviders();
+
+    return providers.find((provider) => provider.id === id) || null;
   }
 
-  /**
-   *
-   * @throws AuthError if proper keys are absent
-   */
-  public getVerifiedProviders(limit?: number) {
-    return this.mediatorApi.getVerifiedProviders(this.getKeyPairs(), limit);
+  public async getProviders() {
+    const providers = await Promise.all([
+      this.mediatorApi.getPendingProviders(this.getKeyPairs()),
+      this.mediatorApi.getVerifiedProviders(this.getKeyPairs()),
+    ]);
+
+    return providers[0].concat(providers[1]);
   }
 
   protected getKeyPairs() {
-    if (null === this.keyPairs) {
-      this.keyPairs = null;
-      this.storage.removeItem("keyPairs");
+    if (!this.keyPairs) {
+      this.logout();
 
       throw new AuthError();
     }

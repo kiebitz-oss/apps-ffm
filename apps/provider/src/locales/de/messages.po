@@ -13,297 +13,221 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.10.1\n"
 
-#: pages/onboarding/DataSecret.tsx:12
 msgid "common.data-secret.text"
 msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn, um sich auf einem anderen Gerät (PC, Tablet, Smartphone etc.) einzuloggen oder dort auf Ihre Termine zugreifen zu können."
 
-#: pages/logout.page.tsx:70
 msgid "provider.logout.button"
 msgstr "Abmelden"
 
-#: pages/logout.page.tsx:55
 msgid "provider.logout.copy-secret"
 msgstr "Datenschlüssel kopieren"
 
-#: pages/logout.page.tsx:61
 msgid "provider.logout.download-backup"
 msgstr "Termin-Datei herunterladen"
 
-#: pages/logout.page.tsx:37
 msgid "provider.logout.intro"
 msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie Ihren Datenschlüssel notiert und Ihre Termin-Datei heruntergeladen haben. Nur mit beidem zusammen können Sie sich erneut einloggen."
 
-#: pages/logout.page.tsx:33
 msgid "provider.logout.notice.logging-out"
 msgstr "Bitte warten, Sie werden abgemeldet …"
 
-#: pages/logout.page.tsx:28
 msgid "provider.logout.title"
 msgstr "Abmelden"
 
-#: pages/onboarding/DataStep.tsx:195
 msgid "provider.onboarding.access-code.description"
 msgstr "Falls Sie einen spezifischen Zugangscode erhalten haben, geben Sie ihn bitte hier ein."
 
-#: pages/onboarding/DataStep.tsx:200
 msgid "provider.onboarding.access-code.label"
 msgstr "Zugangscode (falls vorhanden)"
 
-#: pages/onboarding/DataStep.tsx:219
 msgid "provider.onboarding.accessible.label"
 msgstr "Barrierefreier Zugang zur Praxis/zur Impfstelle"
 
-#: pages/onboarding/DataStep.tsx:131
 msgid "provider.onboarding.city.error"
 msgstr "Bitte gegen Sie einen amtlichen Ortsnamen an"
 
-#: pages/onboarding/DataStep.tsx:125
 msgid "provider.onboarding.city.label"
 msgstr "Ort"
 
-#: pages/onboarding/DataStep.tsx:170
 msgid "provider.onboarding.data-description"
 msgstr "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit dem Support-Team."
 
-#: pages/onboarding/DataStep.tsx:164
 msgid "provider.onboarding.data-title"
 msgstr "Kontaktdaten"
 
-#: pages/onboarding/DataStep.tsx:152
 msgid "provider.onboarding.description.description"
 msgstr "Informationen für Impfwillige (z.B. wenn Sie einen Impfstoff nur bestimmten Gruppen empfehlen)"
 
-#: pages/onboarding/DataStep.tsx:148
 msgid "provider.onboarding.description.title"
 msgstr "Beschreibung"
 
-#: pages/onboarding/BackupDataLink.tsx:56
 msgid "provider.onboarding.download-backup-data"
 msgstr "Termin-Datei herunterladen"
 
-#: pages/onboarding/DataStep.tsx:186
 msgid "provider.onboarding.email.label"
 msgstr "E-Mail-Adresse"
 
-#: pages/onboarding/BackupDataLink.tsx:66
 msgid "provider.onboarding.generating-backup-data"
 msgstr "Bitte warten, erstelle Datei …"
 
-#: pages/onboarding/DataStep.tsx:67
 msgid "provider.onboarding.intro"
 msgstr "Dies sind die allgemeinen Kontaktdaten."
 
-#: pages/onboarding/DataStep.tsx:86
 msgid "provider.onboarding.name.error.min-length"
 msgstr "Der angegebene Name ist sehr kurz. Geht es ausführlicher?"
 
-#: pages/onboarding/DataStep.tsx:80
 msgid "provider.onboarding.name.error.required"
 msgstr "Der angegebene Name ist sehr kurz. Geht es ausführlicher?"
 
-#: pages/onboarding/DataStep.tsx:74
 msgid "provider.onboarding.name.label"
 msgstr "Vollständiger Name"
 
-#: pages/onboarding/DataStep.tsx:230
 msgid "provider.onboarding.save-and-continue"
 msgstr "Weiter"
 
-#: pages/onboarding/SecretStep.tsx:42
 msgid "provider.onboarding.secret.button"
 msgstr "Abschließen & zur Terminplanung"
 
-#: pages/onboarding/SecretStep.tsx:29
 msgid "provider.onboarding.secret.notice"
 msgstr "Um sich später wieder einzuloggen bzw. auf Ihre Termine zugreifen zu können, benötigen Sie Ihre heruntergeladene Termin-Datei und Ihren Datenschlüssel. Bitte laden Sie jetzt Ihre Termin-Datei herunter und notieren Sie sich im Anschluss den Datenschlüssel."
 
-#: pages/onboarding/DataStep.tsx:212
 msgid "provider.onboarding.settings-description"
 msgstr "Weitere Angaben"
 
-#: pages/onboarding/DataStep.tsx:101
 msgid "provider.onboarding.street.error"
 msgstr "Bitte geben Sie einen amtlichen Straßennamen an"
 
-#: pages/onboarding/DataStep.tsx:95
 msgid "provider.onboarding.street.label"
 msgstr "Straße & Hausnummer"
 
-#: pages/onboarding/DataStep.tsx:61
 msgid "provider.onboarding.title"
 msgstr "Allgemeine Daten"
 
-#: pages/onboarding/VerifyStep.tsx:42
 msgid "provider.onboarding.verify.button"
 msgstr "Weiter"
 
-#: pages/onboarding/VerifyStep.tsx:38
 msgid "provider.onboarding.verify.edit-data"
 msgstr "Anpassen"
 
-#: pages/onboarding/DataStep.tsx:140
 msgid "provider.onboarding.website.label"
 msgstr "Webseite"
 
-#: pages/onboarding/DataStep.tsx:116
 msgid "provider.onboarding.zip-code.error"
 msgstr "Bitte geben Sie eine gültige Postleitzahl an"
 
-#: pages/onboarding/DataStep.tsx:110
 msgid "provider.onboarding.zip-code.label"
 msgstr "Postleitzahl"
 
-#: pages/ProviderDataSummary.tsx:132
 msgid "provider.provider-data.accessible"
 msgstr "Barrierefreier Zugang zur Praxis/zur Impfstelle"
 
-#: pages/ProviderDataSummary.tsx:141
 msgid "provider.provider-data.accessible-no"
 msgstr "Nein"
 
-#: pages/ProviderDataSummary.tsx:139
 msgid "provider.provider-data.accessible-yes"
 msgstr "Ja"
 
-#: pages/ProviderDataSummary.tsx:69
 msgid "provider.provider-data.city"
 msgstr "Ort"
 
-#: pages/ProviderDataSummary.tsx:84
 msgid "provider.provider-data.description"
 msgstr "Informationen für Impfwillige"
 
-#: pages/ProviderDataSummary.tsx:108
 msgid "provider.provider-data.email"
 msgstr "E-Mail-Adresse"
 
-#: pages/ProviderDataSummary.tsx:53
 msgid "provider.provider-data.name"
 msgstr "Vollständiger Name"
 
-#: pages/ProviderDataSummary.tsx:77
-#: pages/ProviderDataSummary.tsx:90
-#: pages/ProviderDataSummary.tsx:112
 msgid "provider.provider-data.not-given"
 msgstr "(keine Angabe)"
 
-#: pages/ProviderDataSummary.tsx:30
 msgid "provider.provider-data.not-verified-yet"
 msgstr "Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie Verständnis, dass die Verifizierung bis zu 48h dauern kann."
 
-#: pages/ProviderDataSummary.tsx:41
 msgid "provider.provider-data.notice"
 msgstr "Bitte überprüfen Sie Ihre Daten, bevor Sie den Vorgang abschließen."
 
-#: pages/ProviderDataSummary.tsx:97
 msgid "provider.provider-data.phone"
 msgstr "Telefonnummer"
 
-#: pages/ProviderDataSummary.tsx:58
 msgid "provider.provider-data.street"
 msgstr "Straße & Hausnummer"
 
-#: pages/ProviderDataSummary.tsx:73
 msgid "provider.provider-data.website"
 msgstr "Webseite"
 
-#: pages/ProviderDataSummary.tsx:65
 msgid "provider.provider-data.zip-code"
 msgstr "Postleitzahl"
 
-#: pages/RestoreForm.tsx:136
 msgid "provider.restore-form.failed"
 msgstr "Das Laden Ihrer Daten ist leider fehlgeschlagen. Bitte prüfen Sie Ihren Datenschlüssel sowie die ausgewählte Termin-Datei."
 
-#: pages/RestoreForm.tsx:170
 msgid "provider.restore-form.input"
 msgstr "Termin-Datei wählen"
 
-#: pages/RestoreForm.tsx:179
 msgid "provider.restore-form.input.description"
 msgstr "Bitte laden Sie hier Ihre Termin-Datei (Impftermine-2022[Datum&Uhrzeit].enc) hoch."
 
-#: pages/RestoreForm.tsx:98
 msgid "provider.restore-form.invalid-file"
 msgstr "Termin-Datei ungültig"
 
-#: pages/RestoreForm.tsx:51
 msgid "provider.restore-form.invalid-secret"
 msgstr "Datenschlüssel ungültig"
 
-#: pages/RestoreForm.tsx:189
 msgid "provider.restore-form.load"
 msgstr "Anmelden"
 
-#: pages/RestoreForm.tsx:31
 msgid "provider.restore-form.missing-file"
 msgstr "Termin-Datei fehlt"
 
-#: pages/RestoreForm.tsx:148
 msgid "provider.restore-form.secret.description"
 msgstr "Der Datenschlüssel, den Sie bei der Registrierung erhalten haben"
 
-#: pages/RestoreForm.tsx:144
 msgid "provider.restore-form.secret.label"
 msgstr "Datenschlüssel"
 
-#: pages/schedule/CreateAppointmentModal.tsx:72
 msgid "provider.schedule.create-appointment-modal.too-few-slots"
 msgstr "Zu wenig Termine angegeben"
 
-#: pages/schedule/CreateAppointmentModal.tsx:66
 msgid "provider.schedule.create-appointment-modal.too-many-slots"
 msgstr "Zu viele Termine angegeben"
 
-#: pages/schedule/CreateAppointmentModal.tsx:318
 msgid "provider.schedule.create.appointment-modal.button"
 msgstr "Speichern"
 
-#: pages/schedule/CreateAppointmentModal.tsx:240
 msgid "provider.schedule.create.appointment-modal.date.label"
 msgstr "Datum"
 
-#: pages/schedule/CreateAppointmentModal.tsx:278
 msgid "provider.schedule.create.appointment-modal.duration-label"
 msgstr "Voraussichtliche Dauer"
 
-#: pages/schedule/CreateAppointmentModal.tsx:285
 msgid "provider.schedule.create.appointment-modal.duration-value"
 msgstr "Dauer: {duration} Minuten"
 
-#: pages/schedule/CreateAppointmentModal.tsx:226
 msgid "provider.schedule.create.appointment-modal.edit-title"
 msgstr "Termin bearbeiten"
 
-#: pages/schedule/CreateAppointmentModal.tsx:230
 msgid "provider.schedule.create.appointment-modal.new-title"
 msgstr "Neuen Termin erstellen"
 
-#: pages/schedule/CreateAppointmentModal.tsx:265
 msgid "provider.schedule.create.appointment-modal.slots.label"
 msgstr "Anzahl Impfdosen"
 
-#: pages/schedule/CreateAppointmentModal.tsx:252
 msgid "provider.schedule.create.appointment-modal.time.label"
 msgstr "Uhrzeit"
 
-#: pages/schedule/CreateAppointmentModal.tsx:297
 msgid "provider.schedule.create.appointment-modal.vaccine-label"
 msgstr "Impfstoff"
 
-#: pages/logout.page.tsx:47
-#: pages/onboarding/DataSecret.tsx:21
 msgid "provider.secret.title"
 msgstr "Ihr Datenschlüssel"
 
-#: pages/settings/index.page.tsx:35
 msgid "provider.settings.title"
 msgstr "Einstellungen"
 
-#: pages/index.page.tsx:22
 msgid "provider.welcome.loggedout-.notice"
 msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit Ihrem Datenschlüssel und Ihrer Termin-Datei wiederherstellen."
 
-#: pages/index.page.tsx:17
 msgid "provider.welcome.title"
 msgstr "Impfstellen"

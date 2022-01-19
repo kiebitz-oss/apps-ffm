@@ -2,11 +2,11 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Divider, Link, Message, Section, Title } from "@kiebitz-oss/ui";
+import { Divider, Link, Message, Section, Title } from "@kiebitz-oss/common";
 import { Trans } from "@lingui/macro";
+import { RestoreForm } from "components/RestoreForm";
 import type { NextPage } from "next";
 import { useSearchParam } from "react-use";
-import { RestoreForm } from "./RestoreForm";
 
 const ProviderStartPage: NextPage = () => {
   const notice = useSearchParam("notice");

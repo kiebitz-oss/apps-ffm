@@ -1,3 +1,11 @@
-const config = require("../../tailwind.config");
+const config = require("../../tailwind.config.js");
 
-module.exports = config;
+module.exports = {
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms")({
+      strategy: "class",
+    }),
+  ],
+  ...config,
+};

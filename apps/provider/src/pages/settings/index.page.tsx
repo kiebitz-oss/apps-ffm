@@ -1,32 +1,31 @@
-import { Button, Title } from "@kiebitz-oss/ui";
+import { Button, Title } from "@kiebitz-oss/common";
 import { Trans } from "@lingui/macro";
+import { useProviderApi } from "components/ProviderApiContext";
+import { ProviderDataSummary } from "components/ProviderDataSummary";
+import { ProviderForm } from "components/ProviderForm";
+import dayjs from "dayjs";
 import type { NextPage } from "next";
-import { useProviderApi } from "../ProviderApiContext";
+import { useEffect, useState } from "react";
+import type { ProviderData } from "vanellus";
 
 const SettingsPage: NextPage = () => {
   const api = useProviderApi();
+  const [providerData, setProviderData] = useState<ProviderData>();
+
+  useEffect(() => {
+    api.getProviderData().then(setProviderData);
+  }, [api]);
 
   const createTestSet = async () => {
     const series = await api.createAppointmentSeries(
-      new Date(),
-      new Date(),
-      3,
+      dayjs().add(1, "day").hour(9).toDate(),
+      dayjs().add(1, "day").hour(17).toDate(),
+      5,
       "moderna",
       3
     );
 
-    api.publishAppointments(series.appointments);
-
-    console.log(`PUBLISHED ${series.appointments.length} NEW APPOINTMENTS`);
-
-    const appointments = await api.getProviderAppointments(
-      new Date(),
-      new Date()
-    );
-
-    console.log(`GOT ${appointments.length} APPOINTMENTS`);
-
-    console.log(appointments);
+    await api.publishAppointments(series.appointments);
   };
 
   return (
@@ -34,6 +33,17 @@ const SettingsPage: NextPage = () => {
       <Title>
         <Trans id="provider.settings.title">Einstellungen</Trans>
       </Title>
+
+      {providerData?.verifiedProvider && (
+        <ProviderDataSummary provider={providerData?.verifiedProvider} />
+      )}
+
+      <ProviderForm
+        defaultValues={providerData?.verifiedProvider || {}}
+        onSubmit={(data) => {
+          console.log(data);
+        }}
+      />
 
       <Button onClick={() => createTestSet()}>Create TestSet</Button>
     </main>

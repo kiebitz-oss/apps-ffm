@@ -1,10 +1,10 @@
-import { BackLink, Title } from "@kiebitz-oss/ui";
+import { BackLink, Title } from "@kiebitz-oss/common";
 import { Trans } from "@lingui/macro";
+import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";
-import { useMediatorApi } from "../MediatorApiContext";
 
 const SettingsIndexPage: NextPage = () => {
-  const api = useMediatorApi();
+  const { api } = useApp();
 
   return (
     <main>

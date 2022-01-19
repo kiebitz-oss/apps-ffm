@@ -34,6 +34,7 @@ __pycache__
 *.orig
 *.log
 **/locales/**/messages.js
+.out
 
 # debug
 pnpm-debug.log*

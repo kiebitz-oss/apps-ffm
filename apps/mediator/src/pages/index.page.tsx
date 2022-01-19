@@ -2,26 +2,19 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Message, Section, Text, Title } from "@kiebitz-oss/ui";
+import { Message, Section, Text, Title } from "@kiebitz-oss/common";
 import { Trans } from "@lingui/macro";
+import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { ChangeEventHandler, useEffect, useState } from "react";
-import { useMediatorApi } from "./MediatorApiContext";
+import type { ChangeEventHandler } from "react";
+import { useState } from "react";
 
 const MediatorStartPage: NextPage = () => {
   const [authenticated, setAuthenticated] = useState<boolean>(false);
   const [invalidFile, setInvalidFile] = useState(false);
-  const api = useMediatorApi();
+  const { api } = useApp();
   const router = useRouter();
-
-  useEffect(() => {
-    const isAuthenticated = api.isAuthenticated();
-
-    if (isAuthenticated) {
-      router.push("/providers");
-    }
-  }, [api, authenticated, router]);
 
   const uploadFile: ChangeEventHandler<HTMLInputElement> = (event) => {
     const file = event.target.files?.[0];
@@ -43,6 +36,8 @@ const MediatorStartPage: NextPage = () => {
             api.authenticate(keyPairs);
 
             setAuthenticated(api.isAuthenticated());
+
+            router.push("/providers");
           }
         }
       };

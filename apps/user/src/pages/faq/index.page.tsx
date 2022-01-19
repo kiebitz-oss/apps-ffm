@@ -1,10 +1,10 @@
+import { useLingui } from "@lingui/react";
 import type { NextPage } from "next";
-import { useI18n } from "../../components/useI18n";
-import FaqDePage from "./faq.de.mdx";
-import FaqEnPage from "./faq.en.mdx";
+import FaqDePage from "./de.page.mdx";
+import FaqEnPage from "./en.page.mdx";
 
 const FaqPage: NextPage = () => {
-  const i18n = useI18n();
+  const { i18n } = useLingui();
   const locale = i18n.locale;
 
   switch (locale) {

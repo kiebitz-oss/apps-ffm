@@ -1,8 +1,10 @@
+import {
+  DataStep,
+  OnboardingStateProvider,
+  SecretStep,
+  VerifyStep,
+} from "components/onboarding";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { DataStep } from "./DataStep";
-import { OnboardingStateProvider } from "./OnboardingStateProvider";
-import { SecretStep } from "./SecretStep";
-import { VerifyStep } from "./VerifyStep";
 
 enum Steps {
   data = "data",

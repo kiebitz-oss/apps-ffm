@@ -1,21 +1,20 @@
-import { Title } from "@kiebitz-oss/ui";
+import { Title } from "@kiebitz-oss/common";
 import { Trans } from "@lingui/macro";
+import { ProviderList } from "components/providers";
+import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import type { Provider } from "vanellus";
-import { useMediatorApi } from "../MediatorApiContext";
-import { ProviderList } from "./ProvidersList";
 
 const ProvidersPage: NextPage = () => {
   const [providers, setProviders] = useState<Provider[]>([]);
-
-  const api = useMediatorApi();
+  const { api } = useApp();
   const router = useRouter();
 
   useEffect(() => {
     try {
-      api.getPendingProviders().then((providers) => {
+      api.getProviders().then((providers) => {
         setProviders(providers);
       });
     } catch (error) {
