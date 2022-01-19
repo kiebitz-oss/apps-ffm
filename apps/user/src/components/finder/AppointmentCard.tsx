@@ -30,8 +30,8 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
       )}
       {...props}
     >
-      <address className="flex flex-col items-center font-medium">
-        <Title variant="h3" as="h3">
+      <address className="flex flex-col items-center min-w-[15rem] font-medium text-center">
+        <Title variant="h3" as="h3" className="pb-4">
           {appointment.provider.name}
         </Title>
         {appointment.provider.street},
@@ -62,7 +62,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
         </div>
       </time>
 
-      <p>
+      <p className="text-center">
         {
           vaccines[i18n.locale || "de"][
             appointment.properties.vaccine as Vaccine

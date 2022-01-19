@@ -15,48 +15,17 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
-import { Appointment } from "vanellus";
 
 interface FormData {
-  id?: string;
-  startDate: string;
+  startAt: string;
+  endAt: string;
+  interval: number;
   slotCount: number;
-  duration: number;
   vaccine: Vaccine;
 }
 
 const resolver: Resolver<FormData> = async (values) => {
   const errors: any = {};
-
-  // if (values.date === undefined) {
-  //     errors.date = t({
-  //         id: 'provider.schedule.create-appointment-modal.please-enter-date',
-  //     });
-  // } else if (values.time === undefined) {
-  //     errors.time = t({
-  //         id: 'provider.schedule.create-appointment-modal.please-enter-time',
-  //     });
-  // } else {
-  //     values.startdate = new Date(`${values.date} ${values.time}`);
-
-  //     if (values.startdate < new Date()) {
-  //         errors.date = t({
-  //             id: 'provider.schedule.create-appointment-modal.in-the-past',
-  //         });
-  //     }
-
-  //     // we allow appointments max. 30 days in the future
-  //     if (
-  //         values.startdate >
-  //         new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30)
-  //     ) {
-  //         errors.date = t({
-  //             id: 'provider.schedule.create-appointment-modal.too-far-in-the-future',
-  //             message:
-  //                 'Bitte wählen Sie Termine die maximal 30 Tage in der Zukunft liegen',
-  //         });
-  //     }
-  // }
 
   if (values.slotCount > 50) {
     errors.slots = t({
@@ -76,24 +45,29 @@ const resolver: Resolver<FormData> = async (values) => {
   };
 };
 
-interface AppointmentFormProps {
-  appointment?: Appointment;
+interface AppointmentSeriesFormProps {
   onSuccess?: () => void;
 }
 
-export const AppointmentForm: React.FC<AppointmentFormProps> = ({
-  appointment,
+export const AppointmentSeriesForm: React.FC<AppointmentSeriesFormProps> = ({
   onSuccess,
 }) => {
   const methods = useForm<FormData>({
     mode: "onBlur",
     defaultValues: {
-      startDate: dayjs(appointment?.startDate)
+      startAt: dayjs()
         .utc()
+        .set("hour", 8)
+        .set("minute", 0)
         .toISOString()
         .substring(16, 0),
-      slotCount: appointment?.slotData.length || 5,
-      duration: appointment?.duration || 5,
+      endAt: dayjs()
+        .utc()
+        .set("hour", 18)
+        .set("minute", 0)
+        .toISOString()
+        .substring(16, 0),
+      slotCount: 5,
     },
     resolver,
   });
@@ -103,13 +77,16 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     const result = await api
-      .createAppointment(
-        dayjs(data.startDate).utc().toDate(),
-        data.duration,
+      .createAppointmentSeries(
+        dayjs(data.startAt).utc().toDate(),
+        dayjs(data.endAt).utc().toDate(),
+        Number(data.interval),
         data.vaccine,
         data.slotCount
       )
-      .then((appointment) => api.publishAppointments([appointment]))
+      .then((appointmentSeries) => {
+        return api.publishAppointments(appointmentSeries.appointments);
+      })
       .then((result) => {
         if (onSuccess) {
           onSuccess();
@@ -123,23 +100,14 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
     <FormProvider {...methods}>
       <Form name="appointment-modal" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-6 w-full">
-          {appointment && (
-            <input
-              {...register("id", {
-                value: appointment.id,
-              })}
-              type="hidden"
-            />
-          )}
-
           <InputField
             label={t({
-              id: "provider.schedule.create.appointment-modal.date.label",
-              message: "Datum",
+              id: "provider.schedule.create.appointment-series-modal.date.label",
+              message: "Beginn",
             })}
             type="datetime-local"
             className="grow"
-            {...register("startDate", {
+            {...register("startAt", {
               required: true,
               valueAsDate: true,
             })}
@@ -147,7 +115,20 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
           <InputField
             label={t({
-              id: "provider.schedule.create.appointment-modal.slots.label",
+              id: "provider.schedule.create.appointment-series-modal.date.label",
+              message: "Ende",
+            })}
+            type="datetime-local"
+            className="grow"
+            {...register("endAt", {
+              required: true,
+              valueAsDate: true,
+            })}
+          />
+
+          <InputField
+            label={t({
+              id: "provider.schedule.create.appointment-series-modal.slots.label",
               message: "Anzahl Impfdosen",
             })}
             type="number"
@@ -161,26 +142,26 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
           <SelectField
             label={t({
-              id: "provider.schedule.create.appointment-modal.duration-label",
+              id: "provider.schedule.create.appointment-series-modal.duration-label",
               message: "Vstl. Dauer",
             })}
             options={[
               5, 10, 15, 20, 30, 45, 60, 90, 120, 150, 180, 210, 240,
             ].map((duration) => ({
               label: t({
-                id: "provider.schedule.create.appointment-modal.duration-value",
+                id: "provider.schedule.create.appointment-series-modal.duration-value",
                 message: `Dauer: ${duration} Minuten`,
               }),
               value: duration,
             }))}
-            {...register("duration", {
+            {...register("interval", {
               required: true,
             })}
           />
 
           <SelectField
             label={t({
-              id: "provider.schedule.create.appointment-modal.vaccine-label",
+              id: "provider.schedule.create.appointment-series-modal.vaccine-label",
               message: "Impfstoff",
             })}
             options={Object.keys(vaccines.de).map((vaccineKey) => {
@@ -195,7 +176,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
           />
 
           <Button disabled={!formState.isValid || formState.isSubmitting}>
-            <Trans id="provider.schedule.create.appointment-modal.button">
+            <Trans id="provider.schedule.create.appointment-series-modal.button">
               Speichern
             </Trans>
           </Button>

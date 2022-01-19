@@ -370,6 +370,7 @@ importers:
       '@types/jest-axe': ^3.5.3
       '@types/react': ^17.0.38
       '@types/react-dom': ^17.0.11
+      '@types/tailwindcss': ^3.0.2
       '@typescript-eslint/eslint-plugin': ^5.10.0
       '@typescript-eslint/parser': ^5.10.0
       autoprefixer: ^10.4.2
@@ -415,6 +416,7 @@ importers:
       '@types/jest-axe': 3.5.3
       '@types/react': 17.0.38
       '@types/react-dom': 17.0.11
+      '@types/tailwindcss': 3.0.2
       '@typescript-eslint/eslint-plugin': 5.10.0_3b6b276e93ead7cf6063f183a5e18d1f
       '@typescript-eslint/parser': 5.10.0_eslint@8.7.0+typescript@4.5.4
       autoprefixer: 10.4.2_postcss@8.4.5
@@ -2902,6 +2904,10 @@ packages:
 
   /@types/stack-utils/2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
+    dev: true
+
+  /@types/tailwindcss/3.0.2:
+    resolution: {integrity: sha512-4nilb5vk7aZXaQvMZin5dSHX+AIHZNDmKtDDRHfVKE/XNkQK9OjZ9V+zo+XHoH/fdLzureJno3+C5wIGdrBzgQ==}
     dev: true
 
   /@types/testing-library__jest-dom/5.14.2:

@@ -5,16 +5,23 @@
 import { Button, Title } from "@kiebitz-oss/common";
 import { useProviderApi } from "components/ProviderApiContext";
 import { CreateAppointmentModal, WeekCalendar } from "components/schedule";
+import { CreateAppointmentSeriesModal } from "components/schedule/CreateAppointmentSeriesModal";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { Appointment, AppointmentStatus } from "vanellus";
 
+enum Modal {
+  APPOINTMENT,
+  SERIES,
+}
+
 const SchedulePage: React.FC = () => {
   const router = useRouter();
   const week = router.query.week as string;
   const [appointments, setAppointments] = useState<Appointment[]>([]);
-  const [showModal, setShowModal] = useState(false);
+  const [modal, setModal] = useState<Modal | null>(null);
+
   const api = useProviderApi();
 
   const refreshAppointments = useCallback(() => {
@@ -30,10 +37,10 @@ const SchedulePage: React.FC = () => {
     refreshAppointments();
   }, [refreshAppointments]);
 
-  const toggleModal = () => {
+  const closeModal = () => {
     refreshAppointments();
 
-    setShowModal(!showModal);
+    setModal(null);
   };
 
   return (
@@ -41,8 +48,12 @@ const SchedulePage: React.FC = () => {
       <div className="flex flex-row justify-between w-full">
         <Title>Impftermine</Title>
 
-        <Button size="sm" onClick={toggleModal}>
+        <Button size="sm" onClick={() => setModal(Modal.APPOINTMENT)}>
           Impftermin anlegen
+        </Button>
+
+        <Button size="sm" onClick={() => setModal(Modal.SERIES)}>
+          Impfserie anlegen
         </Button>
       </div>
 
@@ -74,7 +85,14 @@ const SchedulePage: React.FC = () => {
         appointments={appointments}
         week={week ? Number(week) : undefined}
       />
-      {showModal && <CreateAppointmentModal onClose={toggleModal} />}
+
+      {modal === Modal.APPOINTMENT && (
+        <CreateAppointmentModal onClose={closeModal} />
+      )}
+
+      {modal === Modal.SERIES && (
+        <CreateAppointmentSeriesModal onClose={closeModal} />
+      )}
     </main>
   );
 };

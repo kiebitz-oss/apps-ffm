@@ -13,7 +13,9 @@ const config = {
 
   theme: {
     container: {
+      // @ts-expect-error incorrect types
       center: true,
+      // @ts-expect-error incorrect types
       padding: false,
     },
 
