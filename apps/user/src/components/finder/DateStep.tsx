@@ -1,11 +1,4 @@
-import {
-  BackLink,
-  Form,
-  InputField,
-  Link,
-  Text,
-  Title,
-} from "@kiebitz-oss/common";
+import { BackLink, Form, InputField, Link, Text, Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 
 export const DateStep: React.FC = () => {

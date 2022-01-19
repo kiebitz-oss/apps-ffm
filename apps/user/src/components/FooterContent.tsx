@@ -1,6 +1,6 @@
-import { Link, Title } from "@kiebitz-oss/common";
-import gaFfmUrl from "@kiebitz-oss/common/assets/ga-ffm-logo.svg";
-import stadtFfmUrl from "@kiebitz-oss/common/assets/stadt-ffm-logo.svg";
+import { Link, Title } from "@impfen/common";
+import gaFfmUrl from "@impfen/common/assets/ga-ffm-logo.svg";
+import stadtFfmUrl from "@impfen/common/assets/stadt-ffm-logo.svg";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 
@@ -96,7 +96,7 @@ export const FooterContent: React.FC<FooterContentContent> = ({
           </li>
 
           <li>
-            <Link href="https://github.com/kiebitz-oss" external>
+            <Link href="https://github.com/impfen" external>
               Github
             </Link>
           </li>

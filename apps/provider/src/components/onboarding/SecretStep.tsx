@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Link, SecretBox, Text, Title } from "@kiebitz-oss/common";
+import { Link, SecretBox, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useProviderApi } from "components/ProviderApiContext";
 import { useRouter } from "next/router";

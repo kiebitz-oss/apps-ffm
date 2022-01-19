@@ -4,7 +4,7 @@ import {
   ModalHeader,
   ModalProps,
   Title,
-} from "@kiebitz-oss/common";
+} from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import type { Appointment } from "vanellus";
 import { AppointmentForm } from "./AppointmentForm";

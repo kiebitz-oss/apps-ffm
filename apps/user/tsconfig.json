@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@kiebitz-oss/user",
+  "display": "@impfen/user",
   "compilerOptions": {
     "module": "esnext",
     "target": "es5",
@@ -11,8 +11,8 @@
     "jsx": "preserve",
     "baseUrl": "./src",
     "paths": {
-      "@kiebitz-oss/common": ["../../../packages/common/src"],
-      "@kiebitz-oss/common/*": ["../../../packages/common/src/*"],
+      "@impfen/common": ["../../../packages/common/src"],
+      "@impfen/common/*": ["../../../packages/common/src/*"],
       "vanellus": ["../../../packages/vanellus/src"]
     },
     "esModuleInterop": true,

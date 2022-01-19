@@ -1,5 +1,5 @@
 import { Accessibility24 } from "@carbon/icons-react";
-import { Title } from "@kiebitz-oss/common";
+import { Title } from "@impfen/common";
 import clsx from "clsx";
 import type { PublicProvider } from "vanellus";
 

@@ -1,5 +1,5 @@
 import { Edit24 } from "@carbon/icons-react";
-import { BackLink, InputField, Link, Title } from "@kiebitz-oss/common";
+import { BackLink, InputField, Link, Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { useApp } from "lib/AppProvider";
 import { useRouter } from "next/router";

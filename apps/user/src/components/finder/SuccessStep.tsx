@@ -1,5 +1,5 @@
 import { GeneratePdf16 } from "@carbon/icons-react";
-import { Link, Text, Title, Vaccine, vaccines } from "@kiebitz-oss/common";
+import { Link, Text, Title, Vaccine, vaccines } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import { useApp } from "lib/AppProvider";

@@ -1,4 +1,4 @@
-import { Error } from "@kiebitz-oss/common";
+import { Error } from "@impfen/common";
 import clsx from "clsx";
 import { Control, Controller } from "react-hook-form";
 

@@ -1,4 +1,4 @@
-import { Button, Error } from "@kiebitz-oss/common";
+import { Button, Error } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";

@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Button, Link, Title } from "@kiebitz-oss/common";
+import { Button, Link, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useProviderApi } from "components/ProviderApiContext";
 import { ProviderDataSummary } from "components/ProviderDataSummary";

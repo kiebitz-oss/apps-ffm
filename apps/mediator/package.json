@@ -1,5 +1,5 @@
 {
-  "name": "@kiebitz-oss/app-mediator",
+  "name": "@impfen/app-mediator",
   "description": "Kiebitz Mediator Web Applications",
   "version": "1.0.0",
   "private": true,
@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiebitz-oss/apps-inoeg",
+    "url": "https://github.com/impfen/apps-inoeg",
     "directory": "apps/mediator"
   },
-  "bugs": "https://github.com/kiebitz-oss/apps-inoeg/issues",
+  "bugs": "https://github.com/impfen/apps-inoeg/issues",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -31,7 +31,7 @@
     "@carbon/icons-react": "^10.45.0",
     "@fontsource/ibm-plex-sans": "^4.5.1",
     "@headlessui/react": "^1.4.3",
-    "@kiebitz-oss/common": "workspace:*",
+    "@impfen/common": "workspace:*",
     "@lingui/macro": "^3.13.0",
     "@lingui/react": "^3.13.0",
     "@mdx-js/loader": "^1.6.22",

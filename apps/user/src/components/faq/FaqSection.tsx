@@ -1,4 +1,4 @@
-import { Title } from "@kiebitz-oss/common";
+import { Title } from "@impfen/common";
 
 export interface FaqSectionProps {
   title: string;

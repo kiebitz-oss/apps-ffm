@@ -1,4 +1,4 @@
-import { Button, Title } from "@kiebitz-oss/common";
+import { Button, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useProviderApi } from "components/ProviderApiContext";
 import { ProviderDataSummary } from "components/ProviderDataSummary";

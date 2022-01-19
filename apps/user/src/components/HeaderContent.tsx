@@ -1,4 +1,4 @@
-import { Link } from "@kiebitz-oss/common";
+import { Link } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 

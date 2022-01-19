@@ -1,5 +1,5 @@
 import { Login16, Logout16 } from "@carbon/icons-react";
-import { Link } from "@kiebitz-oss/common";
+import { Link } from "@impfen/common";
 import { useProviderApi } from "components/ProviderApiContext";
 
 interface HeaderContentProps {

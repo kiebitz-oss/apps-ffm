@@ -1,4 +1,4 @@
-import { Title } from "@kiebitz-oss/common";
+import { Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { ProviderList } from "components/providers";
 import { useApp } from "lib/AppProvider";

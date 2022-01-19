@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Text, Title } from "@kiebitz-oss/common";
+import { Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { Questionaire } from "components/questionaire";
 import type { NextPage } from "next";

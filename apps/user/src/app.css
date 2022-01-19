@@ -1,7 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "@kiebitz-oss/common/src/ui.css";
+@import "@impfen/common/src/ui.css";
 
 #welcome {
   & .h1 {

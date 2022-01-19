@@ -1,5 +1,5 @@
 {
-  "name": "@kiebitz-oss/common",
+  "name": "@impfen/common",
   "description": "Kiebitz Web Applications",
   "version": "1.0.0",
   "author": "Benjamin Bender <bb@codepoet.de>",
@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiebitz-oss/apps-inoeg",
+    "url": "https://github.com/impfen/apps-inoeg",
     "directory": "packages/storybook"
   },
-  "bugs": "https://github.com/kiebitz-oss/apps-inoeg/issues",
+  "bugs": "https://github.com/impfen/apps-inoeg/issues",
   "engines": {
     "node": ">=16.0.0"
   },

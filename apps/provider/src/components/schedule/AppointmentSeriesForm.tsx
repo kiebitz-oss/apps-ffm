@@ -5,7 +5,7 @@ import {
   SelectField,
   Vaccine,
   vaccines,
-} from "@kiebitz-oss/common";
+} from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import dayjs from "dayjs";
 import { useApp } from "lib/AppProvider";

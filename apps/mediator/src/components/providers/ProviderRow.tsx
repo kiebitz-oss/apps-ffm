@@ -1,4 +1,4 @@
-import { Link, Tag } from "@kiebitz-oss/common";
+import { Link, Tag } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { ChangeEventHandler, useRef } from "react";

@@ -1,4 +1,4 @@
-import { Message, theme } from "@kiebitz-oss/common";
+import { Message, theme } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import dayjs from "dayjs";

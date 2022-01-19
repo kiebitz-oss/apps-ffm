@@ -1,4 +1,4 @@
-import { Button, Link } from "@kiebitz-oss/common";
+import { Button, Link } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import type { MouseEventHandler } from "react";
 import type { AggregatedPublicAppointment } from "vanellus";

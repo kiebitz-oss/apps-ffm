@@ -3,7 +3,7 @@ export const WeekCalendar: React.FC<{
   week?: number;
 }> = () => null;
 
-// import { Tag } from "@kiebitz-oss/common";
+// import { Tag } from "@impfen/common";
 // import clsx from "clsx";
 // import dayjs from "dayjs";
 // import "dayjs/locale/de";

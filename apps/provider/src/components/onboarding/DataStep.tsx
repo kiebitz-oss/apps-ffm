@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Title } from "@kiebitz-oss/common";
+import { Title } from "@impfen/common";
 import { ProviderForm } from "components/ProviderForm";
 import { useRouter } from "next/router";
 import { SubmitHandler } from "react-hook-form";

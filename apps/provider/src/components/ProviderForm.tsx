@@ -6,7 +6,7 @@ import {
   Text,
   TextareaField,
   Title,
-} from "@kiebitz-oss/common";
+} from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import React, { useEffect } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";

@@ -1,4 +1,4 @@
-import { BackLink, Title } from "@kiebitz-oss/common";
+import { BackLink, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";

@@ -1,7 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "@kiebitz-oss/common/src/ui.css";
+@import "@impfen/common/src/ui.css";
 
 .week-calendar {
   @apply relative border overflow-x-auto mt-5 grid grid-flow-col w-full;

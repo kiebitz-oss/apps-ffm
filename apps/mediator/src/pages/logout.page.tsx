@@ -1,4 +1,4 @@
-import { Button, Text, Title } from "@kiebitz-oss/common";
+import { Button, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";

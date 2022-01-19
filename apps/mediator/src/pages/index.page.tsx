@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Message, Section, Text, Title } from "@kiebitz-oss/common";
+import { Message, Section, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";

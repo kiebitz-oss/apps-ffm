@@ -1,4 +1,4 @@
-import { BackLink, Link, Text, Title } from "@kiebitz-oss/common";
+import { BackLink, Link, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { AppointmentCard } from "components/finder/AppointmentCard";
 import { useRouter } from "next/router";

@@ -1,10 +1,4 @@
-import {
-  BackLink,
-  CheckboxField,
-  Link,
-  Text,
-  Title,
-} from "@kiebitz-oss/common";
+import { BackLink, CheckboxField, Link, Text, Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { useApp } from "lib/AppProvider";
 import { useRouter } from "next/router";

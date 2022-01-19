@@ -4,7 +4,7 @@ import {
   SecretBox,
   Text,
   Title,
-} from "@kiebitz-oss/common";
+} from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { BackupDataLink } from "components/onboarding/BackupDataLink";
 import { useProviderApi } from "components/ProviderApiContext";

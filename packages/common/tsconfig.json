@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@kiebitz-oss/common",
+  "display": "@impfen/common",
   "compilerOptions": {
     "lib": ["es2020", "DOM", "DOM.Iterable"],
     "target": "es2020",

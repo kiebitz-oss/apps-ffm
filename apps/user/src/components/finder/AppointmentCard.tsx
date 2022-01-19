@@ -1,4 +1,4 @@
-import { Title, Vaccine, vaccines } from "@kiebitz-oss/common";
+import { Title, Vaccine, vaccines } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import clsx from "clsx";

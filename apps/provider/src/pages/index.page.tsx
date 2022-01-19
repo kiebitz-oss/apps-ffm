@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Divider, Link, Message, Section, Title } from "@kiebitz-oss/common";
+import { Divider, Link, Message, Section, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { RestoreForm } from "components/RestoreForm";
 import type { NextPage } from "next";

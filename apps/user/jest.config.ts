@@ -25,8 +25,8 @@ const config = {
   },
   moduleNameMapper: {
     "^components/(.*)$": "<rootDir>/src/components/$1",
-    "^@kiebitz-oss/common$": "<rootDir>/../../packages/common/src/index.ts",
-    "^@kiebitz-oss/common/(.*)$": "<rootDir>/../../packages/common/src/$1",
+    "^@impfen/common$": "<rootDir>/../../packages/common/src/index.ts",
+    "^@impfen/common/(.*)$": "<rootDir>/../../packages/common/src/$1",
     "^vanellus": "<rootDir>/../../packages/vanellus/src/index.ts",
     "^vanellus/(.*)$": "<rootDir>/../../packages/vanellus/src/$1",
   },

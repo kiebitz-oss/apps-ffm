@@ -1,4 +1,4 @@
-import { BackLink, Button, Title } from "@kiebitz-oss/common";
+import { BackLink, Button, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { ConfirmProviderModal } from "components/ConfirmProviderModal";
 import { useApp } from "lib/AppProvider";

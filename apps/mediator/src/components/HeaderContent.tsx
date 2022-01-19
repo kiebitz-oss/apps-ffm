@@ -1,5 +1,5 @@
 import { Logout16 } from "@carbon/icons-react";
-import { Link } from "@kiebitz-oss/common";
+import { Link } from "@impfen/common";
 import React from "react";
 
 interface HeaderContentProps extends React.ComponentProps<"header"> {}

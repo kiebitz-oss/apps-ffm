@@ -8,7 +8,7 @@ import {
   InputField,
   Message,
   Upload,
-} from "@kiebitz-oss/common";
+} from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { ChangeEventHandler, useEffect, useRef, useState } from "react";

@@ -1,5 +1,5 @@
 import "@fontsource/ibm-plex-sans/latin.css";
-import { Layout } from "@kiebitz-oss/common";
+import { Layout } from "@impfen/common";
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import "app.css";
@@ -26,7 +26,7 @@ export const loadLocale = async (locale?: string) => {
       if (!loadedLocales.includes(locale)) {
         const { messages } = await import(`../locales/${locale}/messages`);
         const { messages: commonMessages } = await import(
-          `@kiebitz-oss/common/locales/${locale}/messages`
+          `@impfen/common/locales/${locale}/messages`
         );
 
         i18n.load(locale, { ...commonMessages, ...messages });

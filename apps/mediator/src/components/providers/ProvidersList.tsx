@@ -1,5 +1,5 @@
 import { CheckmarkOutline16 } from "@carbon/icons-react";
-import { Button } from "@kiebitz-oss/common";
+import { Button } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import type { ChangeEventHandler } from "react";
 import { useState } from "react";

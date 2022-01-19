@@ -7,7 +7,7 @@ import {
   ModalProps,
   Text,
   Title,
-} from "@kiebitz-oss/common";
+} from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useApp } from "lib/AppProvider";
 import type { MouseEventHandler } from "react";

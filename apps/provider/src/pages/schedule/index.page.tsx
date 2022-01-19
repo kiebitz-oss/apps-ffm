@@ -2,7 +2,7 @@
 // Copyright (C) 2021-2021 The Kiebitz Authors
 // README.md contains license information.
 
-import { Button, Title } from "@kiebitz-oss/common";
+import { Button, Title } from "@impfen/common";
 import { useProviderApi } from "components/ProviderApiContext";
 import { CreateAppointmentModal, WeekCalendar } from "components/schedule";
 import { CreateAppointmentSeriesModal } from "components/schedule/CreateAppointmentSeriesModal";

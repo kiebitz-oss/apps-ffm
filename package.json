@@ -1,5 +1,5 @@
 {
-  "name": "kiebitz-oss",
+  "name": "impfen",
   "description": "Kiebitz Web Applications",
   "version": "1.0.0",
   "private": true,
@@ -10,9 +10,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiebitz-oss/apps-inoeg"
+    "url": "https://github.com/impfen/apps-inoeg"
   },
-  "bugs": "https://github.com/kiebitz-oss/apps-inoeg/issues",
+  "bugs": "https://github.com/impfen/apps-inoeg/issues",
   "engines": {
     "node": ">=16.0.0"
   },

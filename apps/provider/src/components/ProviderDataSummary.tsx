@@ -1,4 +1,4 @@
-import { Message, Text } from "@kiebitz-oss/common";
+import { Message, Text } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { useRouter } from "next/router";
