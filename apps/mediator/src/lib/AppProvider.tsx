@@ -1,56 +1,65 @@
 import { MediatorService } from "lib/MediatorService";
-import type { Reducer } from "react";
 import React, {
   createContext,
+  Reducer,
   useCallback,
   useContext,
   useMemo,
   useReducer,
 } from "react";
-import type { Booking, UserKeyPairs, Vaccine } from "vanellus";
+import type { MediatorKeyPairs } from "vanellus";
 
 enum ActionType {
   AUTHENTICATE = "AUTHENTICATE",
+  LOGOUT = "LOGOUT",
 }
 
 type State = {
   api: MediatorService;
-  booking?: Booking;
-  keyPairs?: UserKeyPairs;
-  secret?: string;
-  vaccine?: Vaccine;
+  isAuthenticated: boolean;
+  keyPairs?: MediatorKeyPairs;
 };
 
-type Actions = {
-  type: ActionType.AUTHENTICATE;
-  keyPairs: UserKeyPairs;
-};
+type Actions =
+  | {
+      type: ActionType.AUTHENTICATE;
+      keyPairs: MediatorKeyPairs;
+    }
+  | {
+      type: ActionType.LOGOUT;
+    };
 
-const api = new MediatorService({
+interface Context extends State {
+  authenticate: (keyPairs: MediatorKeyPairs) => void;
+  logout: () => void;
+}
+
+export const api = new MediatorService({
   jsonrpc: {
-    appointments: process.env
-      .NEXT_PUBLIC_KIEBITZ_APPOINTMENTS_ENDPOINT as string,
-    storage: process.env.NEXT_PUBLIC_KIEBITZ_STORAGE_ENDPOINT as string,
+    appointments: process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT as string,
+    storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT as string,
   },
 });
 
 const initialState: State = {
   api,
+  isAuthenticated: true,
 };
-
-interface Context extends State {
-  authenticate: (keyPairs: UserKeyPairs) => void;
-}
 
 export const AppContext = createContext<Context>({
   ...initialState,
   authenticate: () => undefined,
+  logout: () => undefined,
 });
 
 const reducer: Reducer<State, Actions> = (state, action) => {
   switch (action.type) {
     case ActionType.AUTHENTICATE: {
-      return { ...state, keyPairs: action.keyPairs };
+      return { ...state, keyPairs: action.keyPairs, isAuthenticated: true };
+    }
+
+    case ActionType.LOGOUT: {
+      return { ...state, keyPairs: undefined, isAuthenticated: false };
     }
 
     default: {
@@ -63,11 +72,32 @@ export const AppProvider: React.FC = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const authenticate = useCallback(
-    (keyPairs: UserKeyPairs) =>
-      dispatch({
-        type: ActionType.AUTHENTICATE,
-        keyPairs,
+    (keyPairs: MediatorKeyPairs) =>
+      new Promise((resolve) => {
+        api.authenticate(keyPairs);
+
+        dispatch({
+          type: ActionType.AUTHENTICATE,
+          keyPairs,
+        });
+
+        resolve(true);
       }),
+    []
+  );
+
+  const logout = useCallback(
+    () =>
+      new Promise((resolve) => {
+        api.logout();
+
+        dispatch({
+          type: ActionType.LOGOUT,
+        });
+
+        resolve(true);
+      }),
+
     []
   );
 
@@ -75,8 +105,9 @@ export const AppProvider: React.FC = (props) => {
     () => ({
       ...state,
       authenticate,
+      logout,
     }),
-    [authenticate, state]
+    [authenticate, logout, state]
   );
 
   return <AppContext.Provider value={value} {...props} />;

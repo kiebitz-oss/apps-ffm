@@ -1,7 +1,3 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import { Link, Message, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import type { NextPage } from "next";

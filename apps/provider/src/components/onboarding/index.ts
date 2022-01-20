@@ -1,4 +1,4 @@
-export * from "./BackupDataLink";
+export * from "../BackupDataLink";
 export * from "./DataStep";
 export * from "./OnboardingStateProvider";
 export * from "./SecretStep";

@@ -1,10 +1,6 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import { Divider, Link, Message, Section, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { RestoreForm } from "components/RestoreForm";
+import { LoginForm } from "components/LoginForm";
 import type { NextPage } from "next";
 import { useSearchParam } from "react-use";
 
@@ -40,7 +36,7 @@ const ProviderStartPage: NextPage = () => {
       <Section className="mt-10 w-full sm:mt-0">
         <Title variant="h2">Mit bestehendem Account einloggen</Title>
 
-        <RestoreForm className="mt-5 w-full md:col-span-2 md:mt-0" />
+        <LoginForm className="mt-5 w-full md:col-span-2 md:mt-0" />
       </Section>
     </main>
   );

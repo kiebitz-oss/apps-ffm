@@ -7,50 +7,59 @@ import React, {
   useMemo,
   useReducer,
 } from "react";
-import type { Booking, UserKeyPairs, Vaccine } from "vanellus";
+import type { Booking, ProviderKeyPairs, Vaccine } from "vanellus";
 
 enum ActionType {
   AUTHENTICATE = "AUTHENTICATE",
+  LOGOUT = "LOGOUT",
 }
 
 type State = {
   api: ProviderService;
+  isAuthenticated: boolean;
   booking?: Booking;
-  keyPairs?: UserKeyPairs;
+  keyPairs?: ProviderKeyPairs;
   secret?: string;
   vaccine?: Vaccine;
 };
 
-type Actions = {
-  type: ActionType.AUTHENTICATE;
-  keyPairs: UserKeyPairs;
-};
+type Actions =
+  | {
+      type: ActionType.AUTHENTICATE;
+      keyPairs: ProviderKeyPairs;
+      secret: string;
+    }
+  | {
+      type: ActionType.LOGOUT;
+    };
 
 const api = new ProviderService({
   jsonrpc: {
-    appointments: process.env
-      .NEXT_PUBLIC_KIEBITZ_APPOINTMENTS_ENDPOINT as string,
-    storage: process.env.NEXT_PUBLIC_KIEBITZ_STORAGE_ENDPOINT as string,
+    appointments: process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT as string,
+    storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT as string,
   },
 });
 
 const initialState: State = {
   api,
+  isAuthenticated: true,
 };
 
 interface Context extends State {
-  authenticate: (keyPairs: UserKeyPairs) => void;
+  authenticate: (secret: string, keyPairs: ProviderKeyPairs) => void;
+  logout: () => void;
 }
 
 export const AppContext = createContext<Context>({
   ...initialState,
   authenticate: () => undefined,
+  logout: () => undefined,
 });
 
 const reducer: Reducer<State, Actions> = (state, action) => {
   switch (action.type) {
     case ActionType.AUTHENTICATE: {
-      return { ...state, keyPairs: action.keyPairs };
+      return { ...state, keyPairs: action.keyPairs, secret: action.secret };
     }
 
     default: {
@@ -63,11 +72,33 @@ export const AppProvider: React.FC = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const authenticate = useCallback(
-    (keyPairs: UserKeyPairs) =>
-      dispatch({
-        type: ActionType.AUTHENTICATE,
-        keyPairs,
+    (secret: string, keyPairs: ProviderKeyPairs) =>
+      new Promise((resolve) => {
+        api.authenticate(secret, keyPairs);
+
+        dispatch({
+          type: ActionType.AUTHENTICATE,
+          keyPairs,
+          secret,
+        });
+
+        resolve(true);
       }),
+    []
+  );
+
+  const logout = useCallback(
+    () =>
+      new Promise((resolve) => {
+        api.logout();
+
+        dispatch({
+          type: ActionType.LOGOUT,
+        });
+
+        resolve(true);
+      }),
+
     []
   );
 
@@ -75,8 +106,9 @@ export const AppProvider: React.FC = (props) => {
     () => ({
       ...state,
       authenticate,
+      logout,
     }),
-    [authenticate, state]
+    [authenticate, logout, state]
   );
 
   return <AppContext.Provider value={value} {...props} />;

@@ -1,15 +1,15 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import { Button, Title } from "@impfen/common";
 import { useProviderApi } from "components/ProviderApiContext";
-import { CreateAppointmentModal, WeekCalendar } from "components/schedule";
+import {
+  AppointmentCard,
+  CreateAppointmentModal,
+  WeekCalendar,
+} from "components/schedule";
 import { CreateAppointmentSeriesModal } from "components/schedule/CreateAppointmentSeriesModal";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
-import { Appointment, AppointmentStatus } from "vanellus";
+import { Appointment } from "vanellus";
 
 enum Modal {
   APPOINTMENT,
@@ -45,41 +45,29 @@ const SchedulePage: React.FC = () => {
 
   return (
     <main className="content">
-      <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-row justify-between mb-8 w-full">
         <Title>Impftermine</Title>
 
-        <Button size="sm" onClick={() => setModal(Modal.APPOINTMENT)}>
-          Impftermin anlegen
-        </Button>
+        <div className="buttons-list">
+          <Button size="sm" onClick={() => setModal(Modal.APPOINTMENT)}>
+            Impftermin anlegen
+          </Button>
 
-        <Button size="sm" onClick={() => setModal(Modal.SERIES)}>
-          Impfserie anlegen
-        </Button>
+          <Button size="sm" onClick={() => setModal(Modal.SERIES)}>
+            Impfserie anlegen
+          </Button>
+        </div>
       </div>
 
-      <ul>
+      <div className="flex flex-col flex-wrap gap-3 px-4 mb-10 w-full md:flex-row md:justify-between md:px-0">
         {appointments.map((appointment) => (
-          <li key={appointment.id}>
-            <div>
-              {appointment.startDate.toLocaleString()} (
-              {appointment.bookings.length}/{appointment.slotData.length}) [
-              {appointment.status}]{" "}
-              {appointment.status !== AppointmentStatus.CANCELED && (
-                <button onClick={() => api.cancelAppointment(appointment)}>
-                  Cancel
-                </button>
-              )}
-            </div>
-            {appointment.bookings ? (
-              <ul>
-                {appointment.bookings.map((booking) => (
-                  <li key={booking.slotId}>{booking.code}</li>
-                ))}
-              </ul>
-            ) : null}
-          </li>
+          <AppointmentCard
+            key={appointment.id}
+            appointment={appointment}
+            border
+          />
         ))}
-      </ul>
+      </div>
 
       <WeekCalendar
         appointments={appointments}

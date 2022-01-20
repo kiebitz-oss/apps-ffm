@@ -13,8 +13,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.10.1\n"
 
-msgid "common.data-secret.text"
-msgstr "Bitte notieren Sie Ihren Datenschlüssel sorgfältig! Sie benötigen ihn, um sich auf einem anderen Gerät (PC, Tablet, Smartphone etc.) einzuloggen oder dort auf Ihre Termine zugreifen zu können."
+msgid "provider.account.edit.notice-validation"
+msgstr "Bitte beachten Sie, dass Ihre Daten bei Änderungen einen Verifizierungsprozess durchlaufen und erst nach der Bestätigung für Impfwillige sichtbar werden."
+
+msgid "provider.account.edit.submit-button"
+msgstr "Daten zur Verifizierung speichern"
+
+msgid "provider.account.edit.title"
+msgstr "Ihren Account bearbeiten"
+
+msgid "provider.account.index.title"
+msgstr "Ihr Account"
+
+msgid "provider.account.not-verified-yet"
+msgstr "Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie Verständnis, dass die Verifizierung bis zu 48h dauern kann."
 
 msgid "provider.logout.button"
 msgstr "Abmelden"
@@ -34,12 +46,6 @@ msgstr "Bitte warten, Sie werden abgemeldet …"
 msgid "provider.logout.title"
 msgstr "Abmelden"
 
-msgid "provider.onboarding.access-code.description"
-msgstr "Falls Sie einen spezifischen Zugangscode erhalten haben, geben Sie ihn bitte hier ein."
-
-msgid "provider.onboarding.access-code.label"
-msgstr "Zugangscode (falls vorhanden)"
-
 msgid "provider.onboarding.accessible.label"
 msgstr "Barrierefreier Zugang zur Praxis/zur Impfstelle"
 
@@ -54,6 +60,12 @@ msgstr "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit 
 
 msgid "provider.onboarding.data-title"
 msgstr "Kontaktdaten"
+
+msgid "provider.onboarding.data.save-and-continue"
+msgstr "Speichern und weiter"
+
+msgid "provider.onboarding.data.title"
+msgstr "Daten der Impfstelle erfassen"
 
 msgid "provider.onboarding.description.description"
 msgstr "Informationen für Impfwillige (z.B. wenn Sie einen Impfstoff nur bestimmten Gruppen empfehlen)"
@@ -88,8 +100,17 @@ msgstr "Weiter"
 msgid "provider.onboarding.secret.button"
 msgstr "Abschließen & zur Terminplanung"
 
+msgid "provider.onboarding.secret.intro"
+msgstr "Um sich später wieder einzuloggen oder Ihre Termine zugreifen zu können, benötigen Sie Ihre SICHERHEITSDATEI und Ihren SICHERHEITSCODE. Bitte speichern Sie jetzt Ihre SICHERHEITSDATEI und notieren Sie sich im Anschluss den SICHERHEITSCODE."
+
 msgid "provider.onboarding.secret.notice"
 msgstr "Um sich später wieder einzuloggen bzw. auf Ihre Termine zugreifen zu können, benötigen Sie Ihre heruntergeladene Termin-Datei und Ihren Datenschlüssel. Bitte laden Sie jetzt Ihre Termin-Datei herunter und notieren Sie sich im Anschluss den Datenschlüssel."
+
+msgid "provider.onboarding.secret.title"
+msgstr "Logindaten speichern"
+
+msgid "provider.onboarding.secret.your-code"
+msgstr "Ihr Sicherheitscode"
 
 msgid "provider.onboarding.settings-description"
 msgstr "Weitere Angaben"
@@ -108,6 +129,9 @@ msgstr "Weiter"
 
 msgid "provider.onboarding.verify.edit-data"
 msgstr "Anpassen"
+
+msgid "provider.onboarding.verify.title"
+msgstr "Bitte überprüfen Sie ihre Daten"
 
 msgid "provider.onboarding.website.label"
 msgstr "Webseite"
@@ -141,12 +165,6 @@ msgstr "Vollständiger Name"
 
 msgid "provider.provider-data.not-given"
 msgstr "(keine Angabe)"
-
-msgid "provider.provider-data.not-verified-yet"
-msgstr "Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie Verständnis, dass die Verifizierung bis zu 48h dauern kann."
-
-msgid "provider.provider-data.notice"
-msgstr "Bitte überprüfen Sie Ihre Daten, bevor Sie den Vorgang abschließen."
 
 msgid "provider.provider-data.phone"
 msgstr "Telefonnummer"
@@ -187,23 +205,68 @@ msgstr "Der Datenschlüssel, den Sie bei der Registrierung erhalten haben"
 msgid "provider.restore-form.secret.label"
 msgstr "Datenschlüssel"
 
+msgid "provider.schedule.appointment-modal.button"
+msgstr "Speichern"
+
+msgid "provider.schedule.appointment-modal.duration.description"
+msgstr "Vstl. Dauer pro Impftermin in Minuten"
+
+msgid "provider.schedule.appointment-modal.duration.error-required"
+msgstr "Bitte gegen Sie die Anzahl der Impfdosen ein"
+
+msgid "provider.schedule.appointment-modal.duration.error.max"
+msgstr "Die maximale Dauer eines Impftermins beträgt 240 Minuten"
+
+msgid "provider.schedule.appointment-modal.duration.error.min"
+msgstr "Die minimale Dauer eines Impftermins beträgt 5 Minuten"
+
+msgid "provider.schedule.appointment-modal.duration.label"
+msgstr "Vstl. Dauer"
+
+msgid "provider.schedule.appointment-modal.slots.description"
+msgstr "Die verfügbaren Impfdosen pro Zeiteinheit."
+
+msgid "provider.schedule.appointment-modal.slots.error.max"
+msgstr "Die maximale Anzahl der Impfdosen pro Termin beträgt 50"
+
+msgid "provider.schedule.appointment-modal.slots.error.min"
+msgstr "Die minimale Anzahl der Impfdosen pro Termin beträgt 1"
+
+msgid "provider.schedule.appointment-modal.slots.error.required"
+msgstr "Bitte gegen Sie die Anzahl der Impfdosen ein"
+
+msgid "provider.schedule.appointment-modal.slots.label"
+msgstr "Anzahl Impfdosen"
+
+msgid "provider.schedule.appointment-modal.start-date.description"
+msgstr "Das Datum des Impftermins"
+
+msgid "provider.schedule.appointment-modal.start-date.error.max"
+msgstr "Der Impftermin darf maximal 30 Tage in der Zukunft liegen"
+
+msgid "provider.schedule.appointment-modal.start-date.error.min"
+msgstr "Der Impftermin darf nicht in der Vergangenheit liegen"
+
+msgid "provider.schedule.appointment-modal.start-date.error.required"
+msgstr "Bitte gegen Sie einen Startdatum an"
+
+msgid "provider.schedule.appointment-modal.start-date.label"
+msgstr "Startdatum"
+
+msgid "provider.schedule.appointment-modal.vaccine-label"
+msgstr "Impfstoff"
+
+msgid "provider.schedule.appointment-modal.vaccine.description"
+msgstr "Der verimpfte Impfstoff"
+
+msgid "provider.schedule.appointment-modal.vaccine.error-required"
+msgstr "Bitte gegen Sie den Impfstoff an"
+
 msgid "provider.schedule.create-appointment-modal.too-few-slots"
 msgstr "Zu wenig Termine angegeben"
 
 msgid "provider.schedule.create-appointment-modal.too-many-slots"
 msgstr "Zu viele Termine angegeben"
-
-msgid "provider.schedule.create.appointment-modal.button"
-msgstr "Speichern"
-
-msgid "provider.schedule.create.appointment-modal.date.label"
-msgstr "Datum"
-
-msgid "provider.schedule.create.appointment-modal.duration-label"
-msgstr "Voraussichtliche Dauer"
-
-msgid "provider.schedule.create.appointment-modal.duration-value"
-msgstr "Dauer: {duration} Minuten"
 
 msgid "provider.schedule.create.appointment-modal.edit-title"
 msgstr "Termin bearbeiten"
@@ -211,23 +274,41 @@ msgstr "Termin bearbeiten"
 msgid "provider.schedule.create.appointment-modal.new-title"
 msgstr "Neuen Termin erstellen"
 
-msgid "provider.schedule.create.appointment-modal.slots.label"
+msgid "provider.schedule.create.appointment-series-modal.button"
+msgstr "Speichern"
+
+msgid "provider.schedule.create.appointment-series-modal.duration-label"
+msgstr "Vstl. Dauer"
+
+msgid "provider.schedule.create.appointment-series-modal.duration-value"
+msgstr "Dauer: {duration} Minuten"
+
+msgid "provider.schedule.create.appointment-series-modal.end-at.label"
+msgstr "Ende"
+
+msgid "provider.schedule.create.appointment-series-modal.new-title"
+msgstr "Neue Terminserie erstellen"
+
+msgid "provider.schedule.create.appointment-series-modal.slots.label"
 msgstr "Anzahl Impfdosen"
 
-msgid "provider.schedule.create.appointment-modal.time.label"
-msgstr "Uhrzeit"
+msgid "provider.schedule.create.appointment-series-modal.start-at.label"
+msgstr "Beginn"
 
-msgid "provider.schedule.create.appointment-modal.vaccine-label"
+msgid "provider.schedule.create.appointment-series-modal.vaccine-label"
 msgstr "Impfstoff"
 
 msgid "provider.secret.title"
 msgstr "Ihr Datenschlüssel"
-
-msgid "provider.settings.title"
-msgstr "Einstellungen"
 
 msgid "provider.welcome.loggedout-.notice"
 msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit Ihrem Datenschlüssel und Ihrer Termin-Datei wiederherstellen."
 
 msgid "provider.welcome.title"
 msgstr "Impfstellen"
+
+msgid "user.finder.appointment.card.date"
+msgstr "am {0}"
+
+msgid "user.finder.appointment.card.time"
+msgstr "{0} Uhr"

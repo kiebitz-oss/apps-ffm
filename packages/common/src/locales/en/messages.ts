@@ -1,1 +1,1 @@
-/*eslint-disable*/export const messages={};
+/*eslint-disable*/export const messages={"common.close":"common.close"};

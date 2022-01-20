@@ -1,6 +1,6 @@
 import { Login16, Logout16 } from "@carbon/icons-react";
-import { Link } from "@impfen/common";
-import { useProviderApi } from "components/ProviderApiContext";
+import { NavLink } from "@impfen/common";
+import { useApp } from "lib/AppProvider";
 
 interface HeaderContentProps {
   locale?: string;
@@ -11,28 +11,32 @@ export const HeaderContent: React.FC<HeaderContentProps> = ({
   locale,
   setLocale,
 }) => {
-  const api = useProviderApi();
+  const { isAuthenticated } = useApp();
 
   return (
     <nav>
       <ul className="flex gap-8">
-        <li>
-          <Link href="/schedule">Terminplan</Link>
-        </li>
-        <li>
-          <Link href="/settings">Einstellungen</Link>
-        </li>
+        {isAuthenticated ? (
+          <>
+            <li>
+              <NavLink href="/schedule">Impftermine</NavLink>
+            </li>
+            <li>
+              <NavLink href="/account">Ihr Account</NavLink>
+            </li>
+          </>
+        ) : null}
         <li className="ml-8">
-          {true === api.isAuthenticated() ? (
-            <Link href="/logout">
+          {isAuthenticated ? (
+            <NavLink href="/logout">
               <Logout16 />
               Abmelden
-            </Link>
+            </NavLink>
           ) : (
-            <Link href="/onboarding">
+            <NavLink href="/onboarding">
               <Login16 />
               Anmelden
-            </Link>
+            </NavLink>
           )}
         </li>
       </ul>

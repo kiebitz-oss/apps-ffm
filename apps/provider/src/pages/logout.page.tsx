@@ -6,7 +6,7 @@ import {
   Title,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { BackupDataLink } from "components/onboarding/BackupDataLink";
+import { BackupDataLink } from "components/BackupDataLink";
 import { useProviderApi } from "components/ProviderApiContext";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -60,31 +60,36 @@ const LogOutPage: NextPage = () => {
         )}
       </Text>
 
-      <div>
-        <Title variant="book" as="h3">
-          <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
-        </Title>
-        {secret && <SecretBox secret={secret} />}
-      </div>
-
-      {secret && (
-        <div className="flex flex-row justify-between pb-8">
-          <CopyToClipboardButton toCopy={secret}>
-            <Trans id="provider.logout.copy-secret">
-              Datenschlüssel kopieren
-            </Trans>
-          </CopyToClipboardButton>
-
-          <BackupDataLink
-            blob={blob}
-            providerName="~IMPFSTELLE 3000~"
-            downloadText={t({
-              id: "provider.logout.download-backup",
-              message: "Sicherungsdatei herunterladen",
-            })}
-          />
+      <div className="max-w-3xl">
+        <div className="mb-2">
+          <Title variant="book" as="h3">
+            <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
+          </Title>
+          {secret && <SecretBox secret={secret} copy />}
         </div>
-      )}
+
+        {secret && (
+          <div className="flex flex-row justify-between pb-8">
+            <CopyToClipboardButton
+              toCopy={secret}
+              className="button sm primary"
+            >
+              <Trans id="provider.logout.copy-secret">
+                Datenschlüssel kopieren
+              </Trans>
+            </CopyToClipboardButton>
+
+            <BackupDataLink
+              blob={blob}
+              providerName="~IMPFSTELLE 3000~"
+              downloadText={t({
+                id: "provider.logout.download-backup",
+                message: "Sicherungsdatei herunterladen",
+              })}
+            />
+          </div>
+        )}
+      </div>
 
       <Button onClick={logOut} disabled={loggingOut}>
         <Trans id="provider.logout.button">Abmelden</Trans>

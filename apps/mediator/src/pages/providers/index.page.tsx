@@ -1,38 +1,32 @@
-import { Title } from "@impfen/common";
+import { Link, Loading, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { ProviderList } from "components/providers";
-import { useApp } from "lib/AppProvider";
+import { ProvidersContainer } from "components/providers/ProvidersContainer";
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import type { Provider } from "vanellus";
+import { Suspense } from "react";
 
 const ProvidersPage: NextPage = () => {
-  const [providers, setProviders] = useState<Provider[]>([]);
-  const { api } = useApp();
-  const router = useRouter();
-
-  useEffect(() => {
-    try {
-      api.getProviders().then((providers) => {
-        setProviders(providers);
-      });
-    } catch (error) {
-      router.push("/");
-    }
-  }, [api, router]);
-
   return (
     <main>
-      <Title>
-        <Trans id="mediator.providers.title">Impfanbieter</Trans>
-      </Title>
+      <div className="flex flex-row justify-between mb-8">
+        <Title>
+          <Title>
+            <Trans id="mediator.providers.title">Impfstellen anzeigen</Trans>
+          </Title>
+        </Title>
 
-      {providers.length > 0 ? (
-        <ProviderList providers={providers} />
-      ) : (
-        <>Loading</>
-      )}
+        <div className="buttons-list">
+          <Link href="/providers" type="button" className="primary sm">
+            Unbestätigte Impfstellen
+          </Link>
+          <Link href="/providers" type="button" className="primary sm">
+            Bestätigte Impfstellen
+          </Link>
+        </div>
+      </div>
+
+      <Suspense fallback={<Loading />}>
+        <ProvidersContainer />
+      </Suspense>
     </main>
   );
 };

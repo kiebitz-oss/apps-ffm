@@ -102,7 +102,7 @@ export const AppointmentSeriesForm: React.FC<AppointmentSeriesFormProps> = ({
         <div className="flex flex-col gap-6 w-full">
           <InputField
             label={t({
-              id: "provider.schedule.create.appointment-series-modal.date.label",
+              id: "provider.schedule.create.appointment-series-modal.start-at.label",
               message: "Beginn",
             })}
             type="datetime-local"
@@ -115,7 +115,7 @@ export const AppointmentSeriesForm: React.FC<AppointmentSeriesFormProps> = ({
 
           <InputField
             label={t({
-              id: "provider.schedule.create.appointment-series-modal.date.label",
+              id: "provider.schedule.create.appointment-series-modal.end-at.label",
               message: "Ende",
             })}
             type="datetime-local"

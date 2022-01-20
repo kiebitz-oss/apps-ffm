@@ -103,17 +103,47 @@ msgstr "Choose from the available options where you would like to be vaccinated.
 msgid "user.finder.location.title"
 msgstr "Vaccination sites"
 
+msgid "user.finder.success.additional-preperation.part-1"
+msgstr ""
+
+msgid "user.finder.success.additional-preperation.part-2"
+msgstr ""
+
+msgid "user.finder.success.additional-preperation.part-3"
+msgstr ""
+
+msgid "user.finder.success.additional-preperation.title"
+msgstr ""
+
 msgid "user.finder.success.appointment-code"
 msgstr "Your booking-code"
 
 msgid "user.finder.success.appointment-title"
 msgstr "Your appointment"
 
+msgid "user.finder.success.bring-along.mask"
+msgstr ""
+
+msgid "user.finder.success.bring-along.papers"
+msgstr ""
+
+msgid "user.finder.success.bring-along.title"
+msgstr ""
+
+msgid "user.finder.success.bring-along.vaccination-card"
+msgstr ""
+
 msgid "user.finder.success.cancel-button"
 msgstr "Cancel appointment"
 
+msgid "user.finder.success.cancel-text"
+msgstr ""
+
 msgid "user.finder.success.intro"
 msgstr "<0>Important:</0> Please write down the code below and make sure you bring it with you to the vaccination."
+
+msgid "user.finder.success.preperation.title"
+msgstr ""
 
 msgid "user.finder.success.title"
 msgstr "Your appointment is booked!"

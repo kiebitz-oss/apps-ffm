@@ -1,7 +1,3 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import { forwardRef } from "react";
 import { Field, FieldProps } from "./Field";
 import { Select, SelectProps } from "./Select";

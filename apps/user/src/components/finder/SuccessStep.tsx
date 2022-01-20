@@ -137,8 +137,10 @@ export const SuccessStep: React.FC = () => {
 
           <div className="flex flex-col gap-4 mx-4 md:mx-0">
             <Text variant="text2">
-              Sollte Sie Ihren Termin nicht wahrnehmen können, stornieren Sie
-              ihn bitte mit nachstehendem Button.
+              <Trans id="user.finder.success.cancel-text">
+                Sollte Sie Ihren Termin nicht wahrnehmen können, stornieren Sie
+                ihn bitte mit nachstehendem Button.
+              </Trans>
             </Text>
 
             <button
@@ -154,35 +156,45 @@ export const SuccessStep: React.FC = () => {
 
         <section className="mx-4 md:mx-0">
           <Title as="h3" variant="h2">
-            Das müssen Sie zur Impfung gegen COVID-19 mitbringen:
+            <Trans id="user.finder.success.bring-along.title">
+              Das müssen Sie zur Impfung gegen COVID-19 mitbringen:
+            </Trans>
           </Title>
 
           <ul className="flex flex-col gap-4">
             <li>
-              <strong>Ein amtliches Ausweisdokument</strong>
-              <br />
-              <i>(Personalausweis, Reisepass)</i>
+              <Trans id="user.finder.success.bring-along.papers">
+                <strong>Ein amtliches Ausweisdokument</strong>
+                <br />
+                <i>(Personalausweis, Reisepass)</i>
+              </Trans>
             </li>
 
             <li>
-              <strong>Impfpass</strong>
-              <br />
-              <i>
-                (wenn nicht vorhanden, erhalten Sie eine Ersatzbescheinigung.)
-              </i>
+              <Trans id="user.finder.success.bring-along.vaccination-card">
+                <strong>Impfpass</strong>
+                <br />
+                <i>
+                  (wenn nicht vorhanden, erhalten Sie eine Ersatzbescheinigung.)
+                </i>
+              </Trans>
             </li>
 
             <li>
-              <strong>FFP2-Maske</strong>
-              <br />
-              <i>(zur Einhaltung der Hygienemaßnahmen)</i>
+              <Trans id="user.finder.success.bring-along.mask">
+                <strong>FFP2-Maske</strong>
+                <br />
+                <i>(zur Einhaltung der Hygienemaßnahmen)</i>
+              </Trans>
             </li>
           </ul>
         </section>
 
         <section className="mx-4 md:mx-0">
           <Title as="h3" variant="h2">
-            Impfvorbereitungen
+            <Trans id="user.finder.success.preperation.title">
+              Impfvorbereitungen
+            </Trans>
           </Title>
 
           {appointment?.properties.vaccine && (
@@ -217,32 +229,42 @@ export const SuccessStep: React.FC = () => {
 
         <section className="mx-4 md:mx-0">
           <Title as="h3" variant="h2">
-            Mit den folgenden Schritten können Sie sich zusätzlich auf Ihren
-            Impftermin vorbereiten:
+            <Trans id="user.finder.success.additional-preperation.title">
+              Mit den folgenden Schritten können Sie sich zusätzlich auf Ihren
+              Impftermin vorbereiten:
+            </Trans>
           </Title>
 
           <ul className="flex flex-col gap-4">
             <li>
-              <Text>An- und Rückfahrt planen und organisieren</Text>
-            </li>
-
-            <li>
               <Text>
-                Zeit für <strong>Nachbeobachtung</strong> einplanen.
-                <br />
-                <i>
-                  (ca. 15 Minuten, bei bestimmten Vorerkrankungen gegebenenfalls
-                  auch etwas länger)
-                </i>
+                <Trans id="user.finder.success.additional-preperation.part-1">
+                  An- und Rückfahrt planen und organisieren
+                </Trans>
               </Text>
             </li>
 
             <li>
               <Text>
-                Gedanken zur eigenen <strong>Krankheitsgeschichte</strong>{" "}
-                <i>(zum Beispiel Allergien, Ohnmachtsanfälle)</i> machen, um
-                diese der Ärztin oder dem Arzt bei der Impfung mitteilen und
-                mögliche Risiken der Impfung abwägen zu können.
+                <Trans id="user.finder.success.additional-preperation.part-2">
+                  Zeit für <strong>Nachbeobachtung</strong> einplanen.
+                  <br />
+                  <i>
+                    (ca. 15 Minuten, bei bestimmten Vorerkrankungen
+                    gegebenenfalls auch etwas länger)
+                  </i>
+                </Trans>
+              </Text>
+            </li>
+
+            <li>
+              <Text>
+                <Trans id="user.finder.success.additional-preperation.part-3">
+                  Gedanken zur eigenen <strong>Krankheitsgeschichte</strong>{" "}
+                  <i>(zum Beispiel Allergien, Ohnmachtsanfälle)</i> machen, um
+                  diese der Ärztin oder dem Arzt bei der Impfung mitteilen und
+                  mögliche Risiken der Impfung abwägen zu können.
+                </Trans>
               </Text>
             </li>
           </ul>

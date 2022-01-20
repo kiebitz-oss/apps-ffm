@@ -1,6 +1,6 @@
 @layer base {
   .default-focus {
-    @apply focus:outline-none focus:ring-0 focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-[3px] focus-visible:outline-pink-500;
+    @apply focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2;
   }
 
   :root {
@@ -57,11 +57,6 @@
 
   dd {
     @apply mb-2;
-  }
-
-  a,
-  button {
-    @apply default-focus;
   }
 
   address {
@@ -128,14 +123,12 @@
   }
 
   .field-error {
-    @apply text-error pl-8 font-bold relative;
+    @apply text-error pl-8 font-medium relative;
 
     &::before {
-      content: url("data:image/svg+xml;utf8,<svg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M10 1.49512C5 1.49512 1 5.48281 1 10.4674C1 15.452 5 19.4397 10 19.4397C15 19.4397 19 15.452 19 10.4674C19 5.48281 15 1.49512 10 1.49512ZM6.5 14.9536L14.5 6.97819L13.5 5.98127L5.5 13.9567L6.5 14.9536Z' fill='%23DA1E28'/><path opacity='0.01' fill-rule='evenodd' clip-rule='evenodd' d='M6.5 14.9538L14.5 6.97837L13.5 5.98145L5.5 13.9568L6.5 14.9538Z' fill='%23DA1E28'/></svg>");
+      content: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M10 1.49512C5 1.49512 1 5.48281 1 10.4674C1 15.452 5 19.4397 10 19.4397C15 19.4397 19 15.452 19 10.4674C19 5.48281 15 1.49512 10 1.49512ZM6.5 14.9536L14.5 6.97819L13.5 5.98127L5.5 13.9567L6.5 14.9536Z' fill='%23DA1E28'/><path opacity='0.01' fill-rule='evenodd' clip-rule='evenodd' d='M6.5 14.9538L14.5 6.97837L13.5 5.98145L5.5 13.9568L6.5 14.9538Z' fill='%23DA1E28'/></svg>");
 
-      @apply block absolute w-6 h-6;
-      left: 0px;
-      top: 12px;
+      @apply block absolute w-6 h-6 left-[4px] top-0;
     }
   }
 
@@ -197,10 +190,14 @@
 
   .link {
     @apply hover:text-primary inline-flex items-center gap-1;
+
+    &.current {
+      @apply underline underline-offset-2;
+    }
   }
 
   .buttons-list {
-    @apply flex flex-row gap-2;
+    @apply flex flex-row gap-2 items-start;
   }
 
   .button {

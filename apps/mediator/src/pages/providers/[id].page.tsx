@@ -1,6 +1,5 @@
 import { BackLink, Button, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { ConfirmProviderModal } from "components/ConfirmProviderModal";
 import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -9,7 +8,7 @@ import type { Provider } from "vanellus";
 
 const ProviderShowPage: NextPage = () => {
   const [provider, setProvider] = useState<Provider | null>(null);
-  const [modal, setModal] = useState<"confirm" | "unconfirm" | null>(null);
+
   const router = useRouter();
   const { api } = useApp();
 
@@ -50,6 +49,7 @@ const ProviderShowPage: NextPage = () => {
             </th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
             <th>
@@ -63,30 +63,35 @@ const ProviderShowPage: NextPage = () => {
               )}
             </td>
           </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.name">Name</Trans>
             </th>
             <td>{provider.name}</td>
           </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.street">Straße</Trans>
             </th>
             <td>{provider.street}</td>
           </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.city">Stadt</Trans>
             </th>
             <td>{provider.city || " -- "}</td>
           </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.zip-code">Postleitzahl</Trans>
             </th>
             <td>{provider.zipCode}</td>
           </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.email">E-Mail</Trans>
@@ -94,12 +99,6 @@ const ProviderShowPage: NextPage = () => {
             <td>{provider.email || " -- "}</td>
           </tr>
 
-          {/* <tr>
-            <th>
-              <Trans id="mediator.provider-show.phone">Telefonnummer</Trans>
-            </th>
-            <td>{provider.phone || " -- "}</td>
-          </tr> */}
           <tr>
             <th>
               <Trans id="mediator.provider-show.description">
@@ -108,6 +107,7 @@ const ProviderShowPage: NextPage = () => {
             </th>
             <td>{provider.description || " -- "}</td>
           </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.accessible">
@@ -123,30 +123,13 @@ const ProviderShowPage: NextPage = () => {
 
       <div className="buttons-list">
         {!provider.verified ? (
-          <Button
-            variant="primary"
-            size="sm"
-            onClick={() => setModal("confirm")}
-          >
-            <Trans id="mediator.provider-show.button-confirm">
+          <Button variant="primary" size="sm">
+            <Trans id="mediator.provider-show.button-show">
               Anbieter bestätigen
             </Trans>
           </Button>
         ) : null}
       </div>
-
-      {modal === "confirm" && (
-        <ConfirmProviderModal
-          provider={provider}
-          onClose={() => {
-            if (id) {
-              api.getProvider(id).then(setProvider);
-            }
-
-            setModal(null);
-          }}
-        />
-      )}
     </main>
   );
 };

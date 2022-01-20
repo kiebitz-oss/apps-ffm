@@ -1,8 +1,5 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import { Title } from "@impfen/common";
+import { t, Trans } from "@lingui/macro";
 import { ProviderForm } from "components/ProviderForm";
 import { useRouter } from "next/router";
 import { SubmitHandler } from "react-hook-form";
@@ -26,11 +23,20 @@ export const DataStep: React.FC = () => {
   return (
     <main className="content">
       <div className="lg:w-2/3">
-        <Title>Daten der Impfstelle erfassen</Title>
+        <Title>
+          <Trans id="provider.onboarding.data.title">
+            Daten der Impfstelle erfassen
+          </Trans>
+        </Title>
 
-        {state.data && (
-          <ProviderForm onSubmit={onSubmit} defaultValues={state.data} />
-        )}
+        <ProviderForm
+          onSubmit={onSubmit}
+          defaultValues={state.data}
+          submitText={t({
+            id: "provider.onboarding.data.save-and-continue",
+            message: "Speichern und weiter",
+          })}
+        />
       </div>
     </main>
   );

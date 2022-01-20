@@ -3,13 +3,17 @@ import { Trans } from "@lingui/macro";
 import { useApp } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import { MouseEventHandler } from "react";
 
 const LogoutPage: NextPage = () => {
   const router = useRouter();
-  const { api } = useApp();
+  const { logout } = useApp();
 
-  const logOut = () => {
-    api.logout();
+  const logOut: MouseEventHandler<HTMLButtonElement> = async (event) => {
+    event.preventDefault();
+
+    await logout();
+
     router.push("/");
   };
 
@@ -22,9 +26,10 @@ const LogoutPage: NextPage = () => {
 
         <Text className="pb-8">
           <Trans id="mediator.logout.intro">
-            Möchtest Du Dich wirklich abmelden? Bitte stelle vorher sicher, dass
-            Du Deinen Sicherheitscode notiert hast. Nur mit diesem Code kannst
-            Du Dich später wieder anmelden.
+            Möchten Sie sich wirklich abmelden? Bitte stellen Sie vorher sicher,
+            dass Sie Ihren Datenschlüssel heruntergeladen haben und diesen
+            sicher verwahren. Der Datenschlüssel ist zur erneuten Anmeldung am
+            System zwingend erforderlich.
           </Trans>
         </Text>
 

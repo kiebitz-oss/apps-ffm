@@ -19,6 +19,9 @@ msgstr ""
 msgid "Nein"
 msgstr ""
 
+msgid "mediator.download-backup-data"
+msgstr ""
+
 msgid "mediator.logged-out.log-in-again"
 msgstr "Log in"
 
@@ -42,9 +45,6 @@ msgstr "Show"
 
 msgid "mediator.provider-row.invalid"
 msgstr "unconfirmed"
-
-msgid "mediator.provider-row.select-row"
-msgstr "Select or deselect vaccination sites"
 
 msgid "mediator.provider-row.valid"
 msgstr "confirmed"
@@ -88,17 +88,11 @@ msgstr "Postal code"
 msgid "mediator.providers-list.address"
 msgstr "Address"
 
-msgid "mediator.providers-list.button-confirm"
-msgstr "Confirm vaccination site"
-
 msgid "mediator.providers-list.caption"
 msgstr "Provider list"
 
 msgid "mediator.providers-list.name"
 msgstr "Name"
-
-msgid "mediator.providers-list.select-all"
-msgstr "Select or deselect all vaccination sites"
 
 msgid "mediator.providers-list.status"
 msgstr "Status"
@@ -139,11 +133,11 @@ msgstr "Postal code"
 msgid "mediator.providers.title"
 msgstr "Show vaccination sites"
 
-msgid "mediator.settings-index.title"
+msgid "mediator.welcome.title-authenticated"
 msgstr ""
 
-msgid "mediator.welcome.title"
-msgstr "Log in as mediator"
+msgid "mediator.welcome.title-unauthenticated"
+msgstr ""
 
 msgid "mediator.welcome.upload-key-pairs"
 msgstr "Load backup file"

@@ -1,7 +1,3 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import {
   Form,
   FormSubmitButton,
@@ -49,11 +45,11 @@ const resolver: Resolver<FormData> = async (values) => {
   return { values, errors };
 };
 
-interface RestoreFormProps {
+interface LoginFormProps {
   className: string;
 }
 
-export const RestoreForm: React.FC<RestoreFormProps> = ({ className }) => {
+export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
   const [keyPairs, setKeyPairs] = useState<string>();
   const fileInput = useRef<HTMLInputElement>(null);
   const [failed, setFailed] = useState<boolean>(false);
@@ -146,7 +142,10 @@ export const RestoreForm: React.FC<RestoreFormProps> = ({ className }) => {
                 message:
                   "Der Datenschlüssel, den Sie bei der Registrierung erhalten haben.",
               })}
+              pattern="[A-Za-z0-9]{16}"
+              maxLength={16}
               required
+              className="max-w-[20rem]"
               {...register("secret")}
             />
 

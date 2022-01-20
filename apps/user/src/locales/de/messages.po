@@ -103,17 +103,47 @@ msgstr "Wählen Sie aus den möglichen Optionen, wo Sie geimpft werden möchten.
 msgid "user.finder.location.title"
 msgstr "Impfstellen"
 
+msgid "user.finder.success.additional-preperation.part-1"
+msgstr "An- und Rückfahrt planen und organisieren"
+
+msgid "user.finder.success.additional-preperation.part-2"
+msgstr "Zeit für <0>Nachbeobachtung</0> einplanen.<1/><2>(ca. 15 Minuten, bei bestimmten Vorerkrankungen gegebenenfalls auch etwas länger)</2>"
+
+msgid "user.finder.success.additional-preperation.part-3"
+msgstr "Gedanken zur eigenen <0>Krankheitsgeschichte</0> <1>(zum Beispiel Allergien, Ohnmachtsanfälle)</1> machen, um diese der Ärztin oder dem Arzt bei der Impfung mitteilen und mögliche Risiken der Impfung abwägen zu können."
+
+msgid "user.finder.success.additional-preperation.title"
+msgstr "Mit den folgenden Schritten können Sie sich zusätzlich auf Ihren Impftermin vorbereiten:"
+
 msgid "user.finder.success.appointment-code"
 msgstr "Ihr Buchungscode"
 
 msgid "user.finder.success.appointment-title"
 msgstr "Ihr Termin"
 
+msgid "user.finder.success.bring-along.mask"
+msgstr "<0>FFP2-Maske</0><1/><2>(zur Einhaltung der Hygienemaßnahmen)</2>"
+
+msgid "user.finder.success.bring-along.papers"
+msgstr "<0>Ein amtliches Ausweisdokument</0><1/><2>(Personalausweis, Reisepass)</2>"
+
+msgid "user.finder.success.bring-along.title"
+msgstr "Das müssen Sie zur Impfung gegen COVID-19 mitbringen:"
+
+msgid "user.finder.success.bring-along.vaccination-card"
+msgstr "<0>Impfpass</0><1/><2>(wenn nicht vorhanden, erhalten Sie eine Ersatzbescheinigung.)</2>"
+
 msgid "user.finder.success.cancel-button"
 msgstr "Termin absagen"
 
+msgid "user.finder.success.cancel-text"
+msgstr "Sollte Sie Ihren Termin nicht wahrnehmen können, stornieren Sie ihn bitte mit nachstehendem Button."
+
 msgid "user.finder.success.intro"
 msgstr "<0>Wichtig:</0> Bitte notieren Sie sich den untenstehenden Code und bringen Sie ihn unbedingt zur Impfung mit."
+
+msgid "user.finder.success.preperation.title"
+msgstr "Impfvorbereitungen"
 
 msgid "user.finder.success.title"
 msgstr "Ihr Termin ist gebucht!"

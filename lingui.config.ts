@@ -2,6 +2,7 @@ import type { LinguiConfig } from "@lingui/conf";
 
 const config: Partial<LinguiConfig> = {
   locales: ["de", "en"],
+  sourceLocale: "de",
   format: "po",
   catalogs: [
     {

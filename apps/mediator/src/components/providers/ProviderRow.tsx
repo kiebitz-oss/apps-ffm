@@ -1,61 +1,29 @@
 import { Link, Tag } from "@impfen/common";
-import { t, Trans } from "@lingui/macro";
+import { Trans } from "@lingui/macro";
 import clsx from "clsx";
-import { ChangeEventHandler, useRef } from "react";
 import type { Provider } from "vanellus";
 
 export interface ProviderRowProps {
   provider: Provider;
-  selected: boolean;
-  onSelect: (providerId: string, selected: boolean) => void;
 }
 
-export const ProviderRow: React.FC<ProviderRowProps> = ({
-  provider,
-  selected = false,
-  onSelect,
-}) => {
-  const ref = useRef<HTMLInputElement>(null);
+export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
   const providerLink = `/providers/${encodeURIComponent(
     Buffer.from(provider.id).toString("hex")
   )}`;
 
-  const onSelectToggle: ChangeEventHandler<unknown> = () => {
-    onSelect(provider.id, !selected);
-  };
-
   return (
-    <tr
-      key={provider.id}
-      className={clsx("provider-table-row", {
-        ["selected"]: selected,
-      })}
-      onClick={onSelectToggle}
-    >
+    <tr key={provider.id} className={clsx("providers-list-row")}>
       <td>
-        <input
-          type="checkbox"
-          className="checkbox"
-          name="providers[]"
-          onChange={onSelectToggle}
-          value={provider.id}
-          checked={selected}
-          ref={ref}
-          aria-label={t({
-            id: "mediator.provider-row.select-row",
-            message: "Impfanbieter auswählen oder abwählen",
-          })}
-        />
+        <Link href={providerLink}>{provider.name}</Link>
       </td>
 
-      <td>
-        <Link href={providerLink}>{provider.name || "Name missing"}</Link>
-      </td>
-
-      <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">
-        {provider.street}
-        <br />
-        {provider.zipCode} {provider.city}
+      <td className="py-4 px-6 ">
+        <address className="text-sm text-gray-500 whitespace-nowrap">
+          {provider.street}
+          <br />
+          {provider.zipCode} {provider.city}
+        </address>
       </td>
 
       <td>

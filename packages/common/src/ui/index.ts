@@ -1,7 +1,3 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 export * from "./BackLink";
 export * from "./Button";
 export * from "./Checkbox";
@@ -17,11 +13,13 @@ export * from "./InputField";
 export * from "./Label";
 export * from "./Layout";
 export * from "./Link";
+export * from "./Loading";
 export * from "./Message";
 export * from "./Modal";
 export * from "./ModalContent";
 export * from "./ModalFooter";
 export * from "./ModalHeader";
+export * from "./NavLink";
 export * from "./Radio";
 export * from "./RadioField";
 export * from "./SecretBox";

@@ -9,12 +9,7 @@ import {
 import { t, Trans } from "@lingui/macro";
 import dayjs from "dayjs";
 import { useApp } from "lib/AppProvider";
-import {
-  FormProvider,
-  Resolver,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { Appointment } from "vanellus";
 
 interface FormData {
@@ -24,57 +19,6 @@ interface FormData {
   duration: number;
   vaccine: Vaccine;
 }
-
-const resolver: Resolver<FormData> = async (values) => {
-  const errors: any = {};
-
-  // if (values.date === undefined) {
-  //     errors.date = t({
-  //         id: 'provider.schedule.create-appointment-modal.please-enter-date',
-  //     });
-  // } else if (values.time === undefined) {
-  //     errors.time = t({
-  //         id: 'provider.schedule.create-appointment-modal.please-enter-time',
-  //     });
-  // } else {
-  //     values.startdate = new Date(`${values.date} ${values.time}`);
-
-  //     if (values.startdate < new Date()) {
-  //         errors.date = t({
-  //             id: 'provider.schedule.create-appointment-modal.in-the-past',
-  //         });
-  //     }
-
-  //     // we allow appointments max. 30 days in the future
-  //     if (
-  //         values.startdate >
-  //         new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30)
-  //     ) {
-  //         errors.date = t({
-  //             id: 'provider.schedule.create-appointment-modal.too-far-in-the-future',
-  //             message:
-  //                 'Bitte wählen Sie Termine die maximal 30 Tage in der Zukunft liegen',
-  //         });
-  //     }
-  // }
-
-  if (values.slotCount > 50) {
-    errors.slots = t({
-      id: "provider.schedule.create-appointment-modal.too-many-slots",
-    });
-  }
-
-  if (values.slotCount < 1) {
-    errors.slots = t({
-      id: "provider.schedule.create-appointment-modal.too-few-slots",
-    });
-  }
-
-  return {
-    values,
-    errors,
-  };
-};
 
 interface AppointmentFormProps {
   appointment?: Appointment;
@@ -87,24 +31,26 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 }) => {
   const methods = useForm<FormData>({
     mode: "onBlur",
+    reValidateMode: "onBlur",
     defaultValues: {
       startDate: dayjs(appointment?.startDate)
-        .utc()
-        .toISOString()
-        .substring(16, 0),
+        .add(1, "day")
+        .set("hour", 10)
+        .set("minute", 0)
+        .format("YYYY-MM-DDThh:mm"),
       slotCount: appointment?.slotData.length || 5,
       duration: appointment?.duration || 5,
     },
-    resolver,
+    // resolver,
   });
 
   const { register, handleSubmit, formState } = methods;
   const { api } = useApp();
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    const result = await api
+  const onSubmit: SubmitHandler<FormData> = async (data) =>
+    api
       .createAppointment(
-        dayjs(data.startDate).utc().toDate(),
+        dayjs(data.startDate).toDate(),
         data.duration,
         data.vaccine,
         data.slotCount
@@ -117,7 +63,6 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
         return result;
       });
-  };
 
   return (
     <FormProvider {...methods}>
@@ -134,53 +79,119 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
           <InputField
             label={t({
-              id: "provider.schedule.create.appointment-modal.date.label",
-              message: "Datum",
+              id: "provider.schedule.appointment-modal.start-date.label",
+              message: "Startdatum",
             })}
             type="datetime-local"
-            className="grow"
+            description={t({
+              id: "provider.schedule.appointment-modal.start-date.description",
+              message: "Das Datum des Impftermins",
+            })}
+            required
             {...register("startDate", {
-              required: true,
-              valueAsDate: true,
+              // valueAsDate: true,
+              required: t({
+                id: "provider.schedule.appointment-modal.start-date.error.required",
+                message: "Bitte gegen Sie einen Startdatum an",
+              }),
+              min: {
+                value: dayjs().toISOString().substring(0, 16),
+                message: t({
+                  id: "provider.schedule.appointment-modal.start-date.error.min",
+                  message:
+                    "Der Impftermin darf nicht in der Vergangenheit liegen",
+                }),
+              },
+              max: {
+                value: dayjs()
+                  .add(30, "days")
+
+                  .toISOString()
+                  .substring(0, 16),
+                message: t({
+                  id: "provider.schedule.appointment-modal.start-date.error.max",
+                  message:
+                    "Der Impftermin darf maximal 30 Tage in der Zukunft liegen",
+                }),
+              },
             })}
           />
 
           <InputField
             label={t({
-              id: "provider.schedule.create.appointment-modal.slots.label",
+              id: "provider.schedule.appointment-modal.slots.label",
               message: "Anzahl Impfdosen",
             })}
             type="number"
-            step={1}
-            min={1}
-            max={50}
+            required
+            description={t({
+              id: "provider.schedule.appointment-modal.slots.description",
+              message: "Die verfügbaren Impfdosen pro Zeiteinheit.",
+            })}
             {...register("slotCount", {
-              required: true,
+              valueAsNumber: true,
+              required: t({
+                id: "provider.schedule.appointment-modal.slots.error.required",
+                message: "Bitte gegen Sie die Anzahl der Impfdosen ein",
+              }),
+              min: {
+                value: 1,
+                message: t({
+                  id: "provider.schedule.appointment-modal.slots.error.min",
+                  message:
+                    "Die minimale Anzahl der Impfdosen pro Termin beträgt 1",
+                }),
+              },
+              max: {
+                value: 50,
+                message: t({
+                  id: "provider.schedule.appointment-modal.slots.error.max",
+                  message:
+                    "Die maximale Anzahl der Impfdosen pro Termin beträgt 50",
+                }),
+              },
             })}
           />
 
-          <SelectField
+          <InputField
             label={t({
-              id: "provider.schedule.create.appointment-modal.duration-label",
+              id: "provider.schedule.appointment-modal.duration.label",
               message: "Vstl. Dauer",
             })}
-            options={[
-              5, 10, 15, 20, 30, 45, 60, 90, 120, 150, 180, 210, 240,
-            ].map((duration) => ({
-              label: t({
-                id: "provider.schedule.create.appointment-modal.duration-value",
-                message: `Dauer: ${duration} Minuten`,
-              }),
-              value: duration,
-            }))}
+            type="number"
+            description={t({
+              id: "provider.schedule.appointment-modal.duration.description",
+              message: "Vstl. Dauer pro Impftermin in Minuten",
+            })}
+            required
             {...register("duration", {
-              required: true,
+              valueAsNumber: true,
+              required: t({
+                id: "provider.schedule.appointment-modal.duration.error-required",
+                message: "Bitte gegen Sie die Anzahl der Impfdosen ein",
+              }),
+              min: {
+                value: 5,
+                message: t({
+                  id: "provider.schedule.appointment-modal.duration.error.min",
+                  message:
+                    "Die minimale Dauer eines Impftermins beträgt 5 Minuten",
+                }),
+              },
+              max: {
+                value: 50,
+                message: t({
+                  id: "provider.schedule.appointment-modal.duration.error.max",
+                  message:
+                    "Die maximale Dauer eines Impftermins beträgt 240 Minuten",
+                }),
+              },
             })}
           />
 
           <SelectField
             label={t({
-              id: "provider.schedule.create.appointment-modal.vaccine-label",
+              id: "provider.schedule.appointment-modal.vaccine-label",
               message: "Impfstoff",
             })}
             options={Object.keys(vaccines.de).map((vaccineKey) => {
@@ -189,13 +200,21 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 value: vaccineKey,
               };
             })}
+            description={t({
+              id: "provider.schedule.appointment-modal.vaccine.description",
+              message: "Der verimpfte Impfstoff",
+            })}
+            required
             {...register("vaccine", {
-              required: true,
+              required: t({
+                id: "provider.schedule.appointment-modal.vaccine.error-required",
+                message: "Bitte gegen Sie den Impfstoff an",
+              }),
             })}
           />
 
           <Button disabled={!formState.isValid || formState.isSubmitting}>
-            <Trans id="provider.schedule.create.appointment-modal.button">
+            <Trans id="provider.schedule.appointment-modal.button">
               Speichern
             </Trans>
           </Button>

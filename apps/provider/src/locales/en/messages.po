@@ -13,8 +13,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.10.1\n"
 
-msgid "common.data-secret.text"
-msgstr "Please carefully write down your data key! You need it to log in on another device (PC, tablet, smartphone, etc.) or to access your appointments on another terminal."
+msgid "provider.account.edit.notice-validation"
+msgstr ""
+
+msgid "provider.account.edit.submit-button"
+msgstr ""
+
+msgid "provider.account.edit.title"
+msgstr ""
+
+msgid "provider.account.index.title"
+msgstr ""
+
+msgid "provider.account.not-verified-yet"
+msgstr ""
 
 msgid "provider.logout.button"
 msgstr "Log out"
@@ -34,12 +46,6 @@ msgstr "Please wait, logout is in progress…"
 msgid "provider.logout.title"
 msgstr "Log out"
 
-msgid "provider.onboarding.access-code.description"
-msgstr "If you have received a specific access code, please enter it here."
-
-msgid "provider.onboarding.access-code.label"
-msgstr "Access code (if available)"
-
 msgid "provider.onboarding.accessible.label"
 msgstr "Barrier-free access to the practice/vaccination site"
 
@@ -54,6 +60,12 @@ msgstr "The following contact details are used exclusively for communication wit
 
 msgid "provider.onboarding.data-title"
 msgstr "Contact details"
+
+msgid "provider.onboarding.data.save-and-continue"
+msgstr ""
+
+msgid "provider.onboarding.data.title"
+msgstr ""
 
 msgid "provider.onboarding.description.description"
 msgstr "Information for people who want to be vaccinated (e.g. if you recommend a vaccine only for certain groups)"
@@ -88,8 +100,17 @@ msgstr "Next"
 msgid "provider.onboarding.secret.button"
 msgstr "Finalize & go to scheduling"
 
+msgid "provider.onboarding.secret.intro"
+msgstr ""
+
 msgid "provider.onboarding.secret.notice"
 msgstr "To log in again later and to access your appointments, you need both the your downloaded appointment file and your data key. Please download the appointment file now and make a note of the data key afterwards."
+
+msgid "provider.onboarding.secret.title"
+msgstr ""
+
+msgid "provider.onboarding.secret.your-code"
+msgstr ""
 
 msgid "provider.onboarding.settings-description"
 msgstr "Further details"
@@ -108,6 +129,9 @@ msgstr "Next"
 
 msgid "provider.onboarding.verify.edit-data"
 msgstr "Edit"
+
+msgid "provider.onboarding.verify.title"
+msgstr ""
 
 msgid "provider.onboarding.website.label"
 msgstr "Website"
@@ -141,12 +165,6 @@ msgstr "Full name"
 
 msgid "provider.provider-data.not-given"
 msgstr "(No answer)"
-
-msgid "provider.provider-data.not-verified-yet"
-msgstr "Your data has not yet been verified. Please understand that verification can take up to 48h."
-
-msgid "provider.provider-data.notice"
-msgstr "Please check your data before you finalise the process."
 
 msgid "provider.provider-data.phone"
 msgstr "Phone number"
@@ -187,23 +205,68 @@ msgstr "The data key you received during registration"
 msgid "provider.restore-form.secret.label"
 msgstr "Data key"
 
+msgid "provider.schedule.appointment-modal.button"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.duration.description"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.duration.error-required"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.duration.error.max"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.duration.error.min"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.duration.label"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.slots.description"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.slots.error.max"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.slots.error.min"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.slots.error.required"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.slots.label"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.start-date.description"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.start-date.error.max"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.start-date.error.min"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.start-date.error.required"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.start-date.label"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.vaccine-label"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.vaccine.description"
+msgstr ""
+
+msgid "provider.schedule.appointment-modal.vaccine.error-required"
+msgstr ""
+
 msgid "provider.schedule.create-appointment-modal.too-few-slots"
 msgstr "Too few appointments given"
 
 msgid "provider.schedule.create-appointment-modal.too-many-slots"
 msgstr "Too many appointments given"
-
-msgid "provider.schedule.create.appointment-modal.button"
-msgstr "Save"
-
-msgid "provider.schedule.create.appointment-modal.date.label"
-msgstr "Date"
-
-msgid "provider.schedule.create.appointment-modal.duration-label"
-msgstr "exp. Duration"
-
-msgid "provider.schedule.create.appointment-modal.duration-value"
-msgstr "Duration: {duration} minutes"
 
 msgid "provider.schedule.create.appointment-modal.edit-title"
 msgstr "Edit appointment"
@@ -211,23 +274,41 @@ msgstr "Edit appointment"
 msgid "provider.schedule.create.appointment-modal.new-title"
 msgstr "Create appointment"
 
-msgid "provider.schedule.create.appointment-modal.slots.label"
-msgstr "Number of vaccination doses"
+msgid "provider.schedule.create.appointment-series-modal.button"
+msgstr ""
 
-msgid "provider.schedule.create.appointment-modal.time.label"
-msgstr "Time"
+msgid "provider.schedule.create.appointment-series-modal.duration-label"
+msgstr ""
 
-msgid "provider.schedule.create.appointment-modal.vaccine-label"
-msgstr "Vaccine"
+msgid "provider.schedule.create.appointment-series-modal.duration-value"
+msgstr ""
+
+msgid "provider.schedule.create.appointment-series-modal.end-at.label"
+msgstr ""
+
+msgid "provider.schedule.create.appointment-series-modal.new-title"
+msgstr ""
+
+msgid "provider.schedule.create.appointment-series-modal.slots.label"
+msgstr ""
+
+msgid "provider.schedule.create.appointment-series-modal.start-at.label"
+msgstr ""
+
+msgid "provider.schedule.create.appointment-series-modal.vaccine-label"
+msgstr ""
 
 msgid "provider.secret.title"
 msgstr "Your data key"
-
-msgid "provider.settings.title"
-msgstr "Settings"
 
 msgid "provider.welcome.loggedout-.notice"
 msgstr "You were successfully logged out. You can log in again anytime with your data key and your appointment-file."
 
 msgid "provider.welcome.title"
 msgstr "Vaccination sites"
+
+msgid "user.finder.appointment.card.date"
+msgstr ""
+
+msgid "user.finder.appointment.card.time"
+msgstr ""

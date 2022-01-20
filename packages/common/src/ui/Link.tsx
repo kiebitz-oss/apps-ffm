@@ -1,14 +1,11 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import clsx from "clsx";
 import RouterLink from "next/link";
 
 export interface LinkProps extends React.ComponentProps<"a"> {
+  href: string;
   external?: boolean;
   type?: "link" | "button";
-  href: string;
+  current?: boolean;
   locale?: string;
   variant?: string;
   size?: string;
@@ -24,6 +21,7 @@ export const Link: React.FC<LinkProps> = ({
   target,
   locale,
   variant,
+  current,
   size = "md",
   ...props
 }) => {
@@ -35,6 +33,7 @@ export const Link: React.FC<LinkProps> = ({
           {
             ["button"]: type === "button",
             ["link"]: !type,
+            ["current"]: current === true,
           },
           variant,
           size,
@@ -42,6 +41,7 @@ export const Link: React.FC<LinkProps> = ({
         )}
         rel={external && !rel ? "noreferrer" : rel}
         target={external && !target ? "_blank" : target}
+        aria-current={current === true ? true : undefined}
         href={href}
       >
         {children}
@@ -56,6 +56,7 @@ export const Link: React.FC<LinkProps> = ({
           {
             ["button"]: type === "button",
             ["link"]: !type,
+            ["current"]: current === true,
           },
           variant,
           size,
@@ -64,6 +65,7 @@ export const Link: React.FC<LinkProps> = ({
         rel={rel}
         target={target}
         lang={locale}
+        aria-current={current === true ? true : undefined}
         {...props}
       >
         {children}

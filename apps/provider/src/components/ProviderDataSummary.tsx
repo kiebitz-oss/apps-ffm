@@ -1,4 +1,3 @@
-import { Message, Text } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { useRouter } from "next/router";
@@ -25,24 +24,6 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
 
   return (
     <>
-      {!verified && (
-        <Text>
-          <Trans id="provider.provider-data.not-verified-yet">
-            Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie
-            Verständnis, dass die Verifizierung bis zu 48h dauern kann.
-          </Trans>
-        </Text>
-      )}
-
-      <Message
-        variant="warning"
-        className="py-3 my-6 text-xl font-semibold text-center"
-      >
-        <Trans id="provider.provider-data.notice">
-          Bitte überprüfen Sie Ihre Daten, bevor Sie den Vorgang abschließen.
-        </Trans>
-      </Message>
-
       <div
         className={clsx("mb-4 provider-data-summary", {
           ["verified"]: verified,
@@ -50,7 +31,7 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
       >
         <dl>
           <dt>
-            <Trans id="provider.provider-data.name">Vollständiger Name</Trans>
+            <Trans id="provider.provider-data.name">Name der Impfstelle</Trans>
           </dt>
           <dd>{provider.name}</dd>
 

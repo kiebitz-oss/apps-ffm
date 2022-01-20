@@ -1,4 +1,4 @@
-import { Link } from "@impfen/common";
+import { Link, NavLink } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 
@@ -15,13 +15,13 @@ export const HeaderContent: React.FC<HeaderContentProps> = ({
 
   return (
     <nav className="hidden gap-12 justify-center sm:flex">
-      <Link href="/">
+      <NavLink href="/" exact>
         <Trans id="header.nav.link.book_vaccination">Impftermin buchen</Trans>
-      </Link>
+      </NavLink>
 
-      <Link href="/faq">
+      <NavLink href="/faq">
         <Trans id="header.nav.link.faq">Fragen & Antworten</Trans>
-      </Link>
+      </NavLink>
 
       <div>
         <Link

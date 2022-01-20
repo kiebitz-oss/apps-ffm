@@ -1,7 +1,3 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import { Button, Link, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useProviderApi } from "components/ProviderApiContext";
@@ -29,7 +25,11 @@ export const VerifyStep: React.FC = () => {
   return (
     <main className="content">
       <div className="lg:w-2/3">
-        <Title>Bitte überprüfen Sie ihre Daten</Title>
+        <Title>
+          <Trans id="provider.onboarding.verify.title">
+            Bitte überprüfen Sie ihre Daten
+          </Trans>
+        </Title>
 
         {state.data && <ProviderDataSummary provider={state.data} />}
 

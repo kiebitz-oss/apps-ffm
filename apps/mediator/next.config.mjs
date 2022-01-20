@@ -24,9 +24,9 @@ const config = {
     dirs: ["src"],
   },
   env: {
-    NEXT_PUBLIC_KIEBITZ_APPOINTMENTS_ENDPOINT:
+    NEXT_PUBLIC_APPOINTMENTS_ENDPOINT:
       process.env.KIEBITZ_APPOINTMENTS_ENDPOINT,
-    NEXT_PUBLIC_KIEBITZ_STORAGE_ENDPOINT: process.env.KIEBITZ_STORAGE_ENDPOINT,
+    NEXT_PUBLIC_STORAGE_ENDPOINT: process.env.KIEBITZ_STORAGE_ENDPOINT,
   },
   webpack(config) {
     config.module.rules.push({

@@ -23,12 +23,12 @@ export const ConfirmProviderModal: React.FC<ConfirmProviderModal> = ({
 }) => {
   const { api } = useApp();
 
-  const doConfirmProvider: MouseEventHandler<HTMLButtonElement> = () => {
-    api.confirmProvider(provider).then(() => {
-      if (onClose) {
-        onClose();
-      }
-    });
+  const doConfirmProvider: MouseEventHandler<HTMLButtonElement> = async () => {
+    await api.confirmProvider(provider);
+
+    if (onClose) {
+      onClose();
+    }
   };
 
   return (

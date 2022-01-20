@@ -38,6 +38,15 @@ export class MediatorService {
     return true;
   }
 
+  public async getProviders() {
+    const providers = await Promise.all([
+      this.mediatorApi.getPendingProviders(this.getKeyPairs()),
+      this.mediatorApi.getVerifiedProviders(this.getKeyPairs()),
+    ]);
+
+    return providers[0].concat(providers[1]);
+  }
+
   public async confirmProvider(provider: Provider) {
     return this.mediatorApi.confirmProvider(provider, this.getKeyPairs());
   }
@@ -46,15 +55,6 @@ export class MediatorService {
     const providers = await this.getProviders();
 
     return providers.find((provider) => provider.id === id) || null;
-  }
-
-  public async getProviders() {
-    const providers = await Promise.all([
-      this.mediatorApi.getPendingProviders(this.getKeyPairs()),
-      this.mediatorApi.getVerifiedProviders(this.getKeyPairs()),
-    ]);
-
-    return providers[0].concat(providers[1]);
   }
 
   protected getKeyPairs() {

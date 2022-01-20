@@ -1,7 +1,3 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
 import { ArrowLeft16 } from "@carbon/icons-react";
 import clsx from "clsx";
 import { Link, LinkProps } from "./Link";

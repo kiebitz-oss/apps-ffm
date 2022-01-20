@@ -19,6 +19,9 @@ msgstr ""
 msgid "Nein"
 msgstr ""
 
+msgid "mediator.download-backup-data"
+msgstr "Sicherungsdatei herunterladen"
+
 msgid "mediator.logged-out.log-in-again"
 msgstr "Anmelden"
 
@@ -42,9 +45,6 @@ msgstr "Anzeigen"
 
 msgid "mediator.provider-row.invalid"
 msgstr "unbestätigt"
-
-msgid "mediator.provider-row.select-row"
-msgstr "Impfstellen auswählen oder abwählen"
 
 msgid "mediator.provider-row.valid"
 msgstr "bestätigt"
@@ -88,17 +88,11 @@ msgstr "Postleitzahl"
 msgid "mediator.providers-list.address"
 msgstr "Adresse"
 
-msgid "mediator.providers-list.button-confirm"
-msgstr "Impfstelle bestätigen"
-
 msgid "mediator.providers-list.caption"
 msgstr "Liste der Impfstellen"
 
 msgid "mediator.providers-list.name"
 msgstr "Name"
-
-msgid "mediator.providers-list.select-all"
-msgstr "Alle Impfstellen auswählen oder abwählen"
 
 msgid "mediator.providers-list.status"
 msgstr "Status"
@@ -139,10 +133,10 @@ msgstr "Postleitzahl"
 msgid "mediator.providers.title"
 msgstr "Impfstellen anzeigen"
 
-msgid "mediator.settings-index.title"
-msgstr "Einstellungen"
+msgid "mediator.welcome.title-authenticated"
+msgstr "Willkommen"
 
-msgid "mediator.welcome.title"
+msgid "mediator.welcome.title-unauthenticated"
 msgstr "Als Mediator anmelden"
 
 msgid "mediator.welcome.upload-key-pairs"

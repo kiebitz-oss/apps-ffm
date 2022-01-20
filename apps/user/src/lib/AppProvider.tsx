@@ -34,9 +34,8 @@ type Actions =
 
 const api = new UserService({
   jsonrpc: {
-    appointments: process.env
-      .NEXT_PUBLIC_KIEBITZ_APPOINTMENTS_ENDPOINT as string,
-    storage: process.env.NEXT_PUBLIC_KIEBITZ_STORAGE_ENDPOINT as string,
+    appointments: process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT as string,
+    storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT as string,
   },
 });
 

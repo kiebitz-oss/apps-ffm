@@ -15,11 +15,13 @@ import type { Provider } from "vanellus";
 interface ProviderFormProps {
   onSubmit: SubmitHandler<Provider>;
   defaultValues?: Partial<Provider>;
+  submitText?: string;
 }
 
 export const ProviderForm: React.FC<ProviderFormProps> = ({
   onSubmit,
   defaultValues = {},
+  submitText,
 }) => {
   const methods = useForm<Provider>({
     mode: "onBlur",
@@ -40,15 +42,15 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col gap-12">
-          <fieldset className="flex flex-col gap-6">
-            <legend>
+          <fieldset className="flex flex-col gap-8">
+            <legend className="mb-8">
               <Title variant="h3">
                 <Trans id="provider.onboarding.title">Allgemeine Daten</Trans>
               </Title>
 
               <Text>
                 <Trans id="provider.onboarding.intro">
-                  Dies sind die allgemeinen Kontaktdaten.
+                  Dies sind die allgemeinen Kontaktdaten der Impfstelle.
                 </Trans>
               </Text>
             </legend>
@@ -142,7 +144,7 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
           </fieldset>
 
           <fieldset className="flex flex-col gap-6">
-            <legend>
+            <legend className="mb-8">
               <Title variant="h3">
                 <Trans id="provider.onboarding.data-title">Kontaktdaten</Trans>
               </Title>
@@ -163,27 +165,14 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
               type="email"
               {...register("email")}
             />
-
-            {/* <InputField
-              description={t({
-                id: "provider.onboarding.access-code.description",
-                message:
-                  "Falls Sie einen spezifischen Zugangscode erhalten haben geben Sie diesen bitte hier ein.",
-              })}
-              label={t({
-                id: "provider.onboarding.access-code.label",
-                message: "Zugangscode (falls vorhanden)",
-              })}
-              {...register("accessCode")}
-            /> */}
           </fieldset>
 
           <fieldset className="flex flex-col gap-6">
-            <legend>
+            <legend className="mb-8">
               <Title variant="h3">Einstellungen</Title>
               <Text>
                 <Trans id="provider.onboarding.settings-description">
-                  Weitere Angaben
+                  Weitere Einstellungen
                 </Trans>
               </Text>
             </legend>
@@ -200,7 +189,9 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
 
         <div>
           <FormSubmitButton formState={formState}>
-            <Trans id="provider.onboarding.save-and-continue">Weiter</Trans>
+            {submitText || (
+              <Trans id="provider.onboarding.save-and-continue">Weiter</Trans>
+            )}
           </FormSubmitButton>
         </div>
       </Form>
