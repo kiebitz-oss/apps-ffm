@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-01-07 21:51+0000\n"
+"PO-Revision-Date: 2022-01-20 22:55+0000\n"
 "Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/kiebitz/provider/"
 "fr/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.11-dev\n"
 
 #: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
@@ -46,3 +46,30 @@ msgstr "Langue"
 #: components/NavContent.tsx:57
 msgid "common.footer.link.german"
 msgstr "allemand"
+
+#: pages/logout.page.tsx:94
+msgid "provider.logout.button"
+msgstr "Se déconnecter"
+
+#: pages/logout.page.tsx:79
+msgid "provider.logout.copy-secret"
+msgstr "Copier la clé de données"
+
+#: pages/logout.page.tsx:85
+msgid "provider.logout.download-backup"
+msgstr "Télécharger le fichier de rendez-vous"
+
+#: pages/logout.page.tsx:52
+msgid "provider.logout.title"
+msgstr "Déconnexion"
+
+#: pages/logout.page.tsx:57
+msgid "provider.logout.notice.logging-out"
+msgstr "Veuillez patienter, vous allez être déconnecté(e)…"
+
+#: pages/logout.page.tsx:61
+msgid "provider.logout.intro"
+msgstr ""
+"Vous voulez vraiment vous désinscrire ? Veuillez vous assurer que vous avez "
+"noté votre clé de données et que vous avez téléchargé votre fichier de "
+"rendez-vous. Vous ne pourrez vous reconnecter qu'avec ces deux éléments."
