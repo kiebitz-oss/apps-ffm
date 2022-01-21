@@ -28,6 +28,7 @@
     "dev:provider": "pnpm dev --filter ./apps/provider",
     "dev:mediator": "pnpm dev --filter ./apps/mediator",
     "lint": "pnpm run lint --recursive --if-present",
+    "lint:fix": "pnpm run lint:fix --recursive --if-present",
     "lint:staged": "lint-staged --allow-empty",
     "lint:css": "npx stylelint '**/*.css'",
     "typecheck": "pnpm run typecheck --parallel --recursive --if-present",

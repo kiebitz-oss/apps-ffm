@@ -18,9 +18,9 @@ const MediatorStartPage: NextPage = () => {
               </Trans>
             </Title>
 
-            <div className="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="bg-white overflow-hidden shadow rounded-lg flex items-center p-5">
-                <div className="ml-5 w-0 flex-1">
+            <div className="grid grid-cols-1 gap-5 mt-2 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex overflow-hidden items-center p-5 bg-white shadow rounded-lg">
+                <div className="flex-1 ml-5 w-0">
                   <dl>
                     <dt className="text-sm font-medium text-gray-500 truncate">
                       Unbestätigte Impfanbieter
@@ -34,8 +34,8 @@ const MediatorStartPage: NextPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white overflow-hidden shadow rounded-lg flex items-center p-5">
-                <div className="ml-5 w-0 flex-1">
+              <div className="flex overflow-hidden items-center p-5 bg-white shadow rounded-lg">
+                <div className="flex-1 ml-5 w-0">
                   <dl>
                     <dt className="text-sm font-medium text-gray-500 truncate">
                       Bestätigte Impfanbieter
@@ -49,8 +49,8 @@ const MediatorStartPage: NextPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white overflow-hidden shadow rounded-lg flex items-center p-5">
-                <div className="ml-5 w-0 flex-1">
+              <div className="flex overflow-hidden items-center p-5 bg-white shadow rounded-lg">
+                <div className="flex-1 ml-5 w-0">
                   <dl>
                     <dt className="text-sm font-medium text-gray-500 truncate">
                       Impfanbieter gesamt
