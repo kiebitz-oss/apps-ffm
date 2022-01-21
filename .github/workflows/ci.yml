@@ -1,14 +1,9 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+  - push
+  - pull_request
+  - workflow_dispatch
 
 jobs:
   ci:
@@ -16,6 +11,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -33,7 +29,10 @@ jobs:
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.27.1
-          run_install: true
+
+      - name: Install dependencies
+        run: |
+          pnpm install
 
       - name: Linter
         run: |
