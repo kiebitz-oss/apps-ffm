@@ -6,10 +6,8 @@ on:
       - main
 
   pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -19,11 +17,12 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.20.3
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
