@@ -1,16 +1,16 @@
-import { composeStories } from "@storybook/testing-react";
 import { render, screen } from "@testing-library/react";
-import * as stories from "./Text.stories";
-
-const { Default } = composeStories(stories);
+import { axe } from "jest-axe";
+import { Text } from "./Text";
 
 describe("ui/Text", () => {
   it("should render", async () => {
     expect.hasAssertions();
 
-    render(<Default />);
+    const { container } = render(<Text>Text</Text>);
 
     const element = screen.getAllByText("Text");
     expect(element).not.toBeNull();
+
+    await expect(axe(container)).resolves.toHaveNoViolations();
   });
 });

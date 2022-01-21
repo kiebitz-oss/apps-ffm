@@ -184,6 +184,7 @@ importers:
       eslint-plugin-testing-library: ^5.0.3
       jest: ^27.4.7
       jest-axe: ^5.0.1
+      jest-transform-stub: ^2.0.0
       make-plural: ^7.0.0
       next: ^12.0.8
       postcss: ^8.4.5
@@ -246,6 +247,7 @@ importers:
       eslint-plugin-testing-library: 5.0.3_eslint@8.7.0+typescript@4.5.5
       jest: 27.4.7
       jest-axe: 5.0.1
+      jest-transform-stub: 2.0.0
 
   apps/user:
     specifiers:
@@ -288,6 +290,7 @@ importers:
       eslint-plugin-testing-library: ^5.0.3
       jest: ^27.4.7
       jest-axe: ^5.0.1
+      jest-transform-stub: ^2.0.0
       make-plural: ^7.0.0
       next: ^12.0.8
       postcss: ^8.4.5
@@ -351,6 +354,7 @@ importers:
       eslint-plugin-testing-library: 5.0.3_eslint@8.7.0+typescript@4.5.5
       jest: 27.4.7
       jest-axe: 5.0.1
+      jest-transform-stub: 2.0.0
 
   packages/common:
     specifiers:
@@ -6456,6 +6460,10 @@ packages:
       semver: 7.3.5
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /jest-transform-stub/2.0.0:
+    resolution: {integrity: sha512-lspHaCRx/mBbnm3h4uMMS3R5aZzMwyNpNIJLXj4cEsV0mIUtS4IjYJLSoyjRCtnxb6RIGJ4NL2quZzfIeNhbkg==}
     dev: true
 
   /jest-util/27.4.2:

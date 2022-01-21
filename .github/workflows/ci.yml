@@ -42,4 +42,8 @@ jobs:
 
       - name: Unit tests
         run: |
+          pnpm build:i18n
+
+      - name: Unit tests
+        run: |
           pnpm test

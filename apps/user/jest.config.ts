@@ -22,8 +22,12 @@ const config = {
         plugins: ["macros"],
       },
     ],
+    "^.+.(css||png|jpe?g|woff2?|svg)$": "jest-transform-stub",
   },
   moduleNameMapper: {
+    "^actions$": "<rootDir>/src/actions/index.ts",
+    "^actions/(.*)$": "<rootDir>/src/actions/$1",
+    "^components$": "<rootDir>/src/components/index.ts",
     "^components/(.*)$": "<rootDir>/src/components/$1",
     "^@impfen/common$": "<rootDir>/../../packages/common/src/index.ts",
     "^@impfen/common/(.*)$": "<rootDir>/../../packages/common/src/$1",
