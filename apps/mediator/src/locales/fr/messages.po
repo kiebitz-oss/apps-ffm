@@ -11,25 +11,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.11-dev\n"
 
-#: components/NavContent.tsx:85
-msgid "common.footer.link.privacy"
-msgstr "Vie privé"
-
 #: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
 msgstr "Langue"
 
-#: components/NavContent.tsx:36
-msgid "common.footer.link.faq"
-msgstr "Questions et réponses"
-
 #: components/NavContent.tsx:97
 msgid "common.footer.link.kiebitz"
 msgstr "Réalisé avec Kiebitz"
-
-#: components/NavContent.tsx:23
-msgid "common.footer.title.informations"
-msgstr "Informations"
 
 #: pages/providers/ProviderRow.tsx:72
 msgid "mediator.provider-row.button-show"
@@ -59,17 +47,9 @@ msgstr "Champ"
 msgid "mediator.provider-show.name"
 msgstr "Nom"
 
-#: pages/providers/[id].page.tsx:100
-msgid "mediator.provider-show.phone"
-msgstr "Numéro de téléphone"
-
 #: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
 msgstr "Réserver un rendez-vous de vaccination"
-
-#: components/NavContent.tsx:69
-msgid "common.footer.link.english"
-msgstr "anglais"
 
 #: pages/logged-out.page.tsx:25
 msgid "mediator.logged-out.log-in-again"
@@ -91,10 +71,6 @@ msgstr "Rue"
 msgid "mediator.provider-show.zip-code"
 msgstr "Code postal"
 
-#: components/NavContent.tsx:57
-msgid "common.footer.link.german"
-msgstr "allemand"
-
 #: components/NavContent.tsx:80
 msgid "common.footer.link.imprint"
 msgstr "Mentions légales"
@@ -113,41 +89,21 @@ msgstr ""
 "Vous avez été bien déconnecté(e). Vous pouvez vous reconnecter à tout moment "
 "avec votre clé de données et votre fichier de sauvegarde."
 
-#: pages/providers/ProviderRow.tsx:43
-msgid "mediator.provider-row.select-row"
-msgstr "Sélectionner ou désélectionner des sites de vaccination"
-
 #: pages/providers/ProviderRow.tsx:63
 msgid "mediator.provider-row.valid"
 msgstr "confirmé"
-
-#: pages/providers/[id].page.tsx:132
-msgid "mediator.provider-show.button-unconfirm"
-msgstr "Verrouiller le centre de vaccination"
 
 #: pages/UnconfirmProviderModal.tsx:90
 msgid "mediator.providers.unconfirm-modal.zip-code"
 msgstr "Code postal"
 
-#: pages/UnconfirmProviderModal.tsx:106
-msgid "mediator.providers.unconfirm-modal.phone"
-msgstr "Numéro de téléphone"
-
 #: pages/UnconfirmProviderModal.tsx:74
 msgid "mediator.providers.unconfirm-modal.street"
 msgstr "Rue"
 
-#: pages/UnconfirmProviderModal.tsx:37
-msgid "mediator.providers.unconfirm-modal.title"
-msgstr "Verrouiller le site de vaccination"
-
 #: pages/UnconfirmProviderModal.tsx:59
 msgid "mediator.providers.unconfirm-modal.value"
 msgstr "Valeur"
-
-#: pages/UnconfirmProviderModal.tsx:98
-msgid "mediator.providers.unconfirm-modal.email"
-msgstr "Courriel"
 
 #: pages/index.page.tsx:90
 msgid "mediator.welcome.upload-key-pairs.input"
@@ -157,14 +113,6 @@ msgstr "Sélectionner le fichier de sauvegarde"
 msgid "mediator.welcome.upload-key-pairs.invalid-file"
 msgstr "Le fichier de sauvegarde que vous avez sélectionné n'est pas valide."
 
-#: pages/providers/[id].page.tsx:122
-msgid "mediator.provider-show.button-confirm"
-msgstr "Déverrouiller le site de vaccination"
-
 #: pages/index.page.tsx:63
 msgid "mediator.welcome.upload-key-pairs"
 msgstr "Charger le fichier de sauvegarde"
-
-#: pages/ConfirmProviderModal.tsx:92
-msgid "mediator.providers.confirm-modal.email"
-msgstr "Courriel"

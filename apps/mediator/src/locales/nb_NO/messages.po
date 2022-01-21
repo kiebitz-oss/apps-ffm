@@ -11,32 +11,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.10.1\n"
 
-#: components/NavContent.tsx:44
-msgid "common.footer.title.languages"
-msgstr "Språk"
-
 #: components/NavContent.tsx:36
 msgid "common.footer.link.faq"
 msgstr "Spørsmål og svar"
-
-#: components/NavContent.tsx:85
-msgid "common.footer.link.privacy"
-msgstr "Datasikkerhet"
 
 #: pages/ConfirmProviderModal.tsx:100
 msgid "mediator.providers.confirm-modal.phone"
 msgstr "Telefonnummer"
 
-#: components/NavContent.tsx:23
-msgid "common.footer.title.informations"
-msgstr "Info"
-
 #: pages/providers/[id].page.tsx:106
 msgid "mediator.provider-show.description"
-msgstr "Beskrivelse"
-
-#: pages/ConfirmProviderModal.tsx:108
-msgid "mediator.providers.confirm-modal.description"
 msgstr "Beskrivelse"
 
 #: pages/ConfirmProviderModal.tsx:57
@@ -47,10 +31,6 @@ msgstr "Verdi"
 msgid "mediator.provider-show.email"
 msgstr "E-post"
 
-#: pages/ConfirmProviderModal.tsx:54
-msgid "mediator.providers.confirm-modal.field"
-msgstr "Felt"
-
 #: pages/ConfirmProviderModal.tsx:64
 msgid "mediator.providers.confirm-modal.name"
 msgstr "Navn"
@@ -58,10 +38,6 @@ msgstr "Navn"
 #: pages/index.page.tsx:70
 msgid "mediator.welcome.upload-key-pairs.invalid-file"
 msgstr "Sikkerhetskopifilen du valgte er ugyldig."
-
-#: components/NavContent.tsx:69
-msgid "common.footer.link.english"
-msgstr "Engelsk"
 
 #: components/NavContent.tsx:57
 msgid "common.footer.link.german"
@@ -107,10 +83,6 @@ msgstr "Verdi"
 msgid "mediator.provider-show.name"
 msgstr "Navn"
 
-#: pages/providers/[id].page.tsx:100
-msgid "mediator.provider-show.phone"
-msgstr "Telefonnummer"
-
 #: pages/providers/[id].page.tsx:58
 msgid "mediator.provider-show.verified"
 msgstr "Bekreftet?"
@@ -139,33 +111,17 @@ msgstr "Tilbyderliste"
 msgid "mediator.providers-list.status"
 msgstr "Status"
 
-#: pages/ConfirmProviderModal.tsx:78
-msgid "mediator.providers.confirm-modal.city"
-msgstr "Sted"
-
 #: pages/ConfirmProviderModal.tsx:92
 msgid "mediator.providers.confirm-modal.email"
 msgstr "E-post"
-
-#: pages/ConfirmProviderModal.tsx:84
-msgid "mediator.providers.confirm-modal.zip-code"
-msgstr "Postnummer"
 
 #: pages/UnconfirmProviderModal.tsx:114
 msgid "mediator.providers.unconfirm-modal.description"
 msgstr "Beskrivelse"
 
-#: pages/UnconfirmProviderModal.tsx:54
-msgid "mediator.providers.unconfirm-modal.field"
-msgstr "Felt"
-
 #: pages/UnconfirmProviderModal.tsx:68
 msgid "mediator.providers.unconfirm-modal.name"
 msgstr "Navn"
-
-#: pages/UnconfirmProviderModal.tsx:106
-msgid "mediator.providers.unconfirm-modal.phone"
-msgstr "Telefonnummer"
 
 #: pages/UnconfirmProviderModal.tsx:59
 msgid "mediator.providers.unconfirm-modal.value"
