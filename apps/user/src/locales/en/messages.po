@@ -64,6 +64,9 @@ msgstr "Select appointment"
 msgid "user.finder.appointment.card.time"
 msgstr "{0} o’clock"
 
+msgid "user.finder.appointment.date-past"
+msgstr ""
+
 msgid "user.finder.appointment.no-result"
 msgstr "There are no free appointments available.<0/><1/> Please try a later date or a different vaccination site."
 
@@ -168,6 +171,15 @@ msgstr "Book appointment now"
 
 msgid "user.finder.verify.title"
 msgstr "Overview"
+
+msgid "user.questionaire.error.default"
+msgstr ""
+
+msgid "user.questionaire.no"
+msgstr ""
+
+msgid "user.questionaire.yes"
+msgstr ""
 
 msgid "user.welcome.button"
 msgstr "Continue to the booking"

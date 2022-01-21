@@ -31,17 +31,17 @@ msgstr ""
 msgid "provider.logout.button"
 msgstr "Log out"
 
-msgid "provider.logout.copy-secret"
-msgstr "Copy data key"
-
 msgid "provider.logout.download-backup"
 msgstr "Download appointment-file"
 
 msgid "provider.logout.intro"
 msgstr "Do you really want to log out? Please make sure that you have written down your data key and downloaded your appointment-file. You can only log in again with both of them together."
 
-msgid "provider.logout.notice.logging-out"
-msgstr "Please wait, logout is in progress…"
+msgid "provider.logout.secret.copy"
+msgstr ""
+
+msgid "provider.logout.secret.title"
+msgstr ""
 
 msgid "provider.logout.title"
 msgstr "Log out"
@@ -298,11 +298,20 @@ msgstr ""
 msgid "provider.schedule.create.appointment-series-modal.vaccine-label"
 msgstr ""
 
-msgid "provider.secret.title"
-msgstr "Your data key"
+msgid "provider.welcome.login.intro"
+msgstr ""
 
-msgid "provider.welcome.loggedout-.notice"
-msgstr "You were successfully logged out. You can log in again anytime with your data key and your appointment-file."
+msgid "provider.welcome.login.title"
+msgstr ""
+
+msgid "provider.welcome.register.intro"
+msgstr ""
+
+msgid "provider.welcome.register.link-start"
+msgstr ""
+
+msgid "provider.welcome.register.title"
+msgstr ""
 
 msgid "provider.welcome.title"
 msgstr "Vaccination sites"

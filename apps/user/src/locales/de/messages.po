@@ -64,6 +64,9 @@ msgstr "Termin auswählen"
 msgid "user.finder.appointment.card.time"
 msgstr "{0} Uhr"
 
+msgid "user.finder.appointment.date-past"
+msgstr "Das gewählte Impfdatum liegt in der Vergangenheit."
+
 msgid "user.finder.appointment.no-result"
 msgstr "Es sind keine freien Termine verfügbar.<0/><1/>Bitte versuchen Sie einen späteren Zeitpunkt oder eine andere Impfstelle."
 
@@ -168,6 +171,15 @@ msgstr "Termin jetzt buchen"
 
 msgid "user.finder.verify.title"
 msgstr "Übersicht"
+
+msgid "user.questionaire.error.default"
+msgstr "Ihre letzte Impfung muss mehr. Bitte haben Sie Verständnis für die aktuellen Regeln. Diese können sich ändern, bleiben Sie informiert."
+
+msgid "user.questionaire.no"
+msgstr "nein"
+
+msgid "user.questionaire.yes"
+msgstr "ja"
 
 msgid "user.welcome.button"
 msgstr "Weiter zum Termin"

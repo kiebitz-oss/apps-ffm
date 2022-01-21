@@ -52,8 +52,8 @@ msgstr "bestätigt"
 msgid "mediator.provider-show.accessible"
 msgstr ""
 
-msgid "mediator.provider-show.button-confirm"
-msgstr "Impfstelle freischalten"
+msgid "mediator.provider-show.button-show"
+msgstr "Anbieter bestätigen"
 
 msgid "mediator.provider-show.city"
 msgstr "Ort"
@@ -70,6 +70,9 @@ msgstr "Feld"
 msgid "mediator.provider-show.name"
 msgstr "Name"
 
+msgid "mediator.provider-show.notification.success"
+msgstr "Impfanbieter erfolgreich bestätigt"
+
 msgid "mediator.provider-show.street"
 msgstr "Straße"
 
@@ -81,6 +84,9 @@ msgstr "Wert"
 
 msgid "mediator.provider-show.verified"
 msgstr "Verifiziert?"
+
+msgid "mediator.provider-show.website"
+msgstr "Website"
 
 msgid "mediator.provider-show.zip-code"
 msgstr "Postleitzahl"
@@ -96,39 +102,6 @@ msgstr "Name"
 
 msgid "mediator.providers-list.status"
 msgstr "Status"
-
-msgid "mediator.providers.confirm-modal.button-confirm"
-msgstr "Impfstelle bestätigen"
-
-msgid "mediator.providers.confirm-modal.city"
-msgstr "Ort"
-
-msgid "mediator.providers.confirm-modal.description"
-msgstr "Beschreibung"
-
-msgid "mediator.providers.confirm-modal.email"
-msgstr "E-Mail"
-
-msgid "mediator.providers.confirm-modal.field"
-msgstr "Feld"
-
-msgid "mediator.providers.confirm-modal.intro"
-msgstr "Wollen Sie die Impfstelle wirklich freischalten?"
-
-msgid "mediator.providers.confirm-modal.name"
-msgstr "Name"
-
-msgid "mediator.providers.confirm-modal.street"
-msgstr "Straße"
-
-msgid "mediator.providers.confirm-modal.title"
-msgstr "Impfstelle freischalten"
-
-msgid "mediator.providers.confirm-modal.value"
-msgstr "Wert"
-
-msgid "mediator.providers.confirm-modal.zip-code"
-msgstr "Postleitzahl"
 
 msgid "mediator.providers.title"
 msgstr "Impfstellen anzeigen"

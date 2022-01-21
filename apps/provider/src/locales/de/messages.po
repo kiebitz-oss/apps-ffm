@@ -31,17 +31,17 @@ msgstr "Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie Verständnis, 
 msgid "provider.logout.button"
 msgstr "Abmelden"
 
-msgid "provider.logout.copy-secret"
-msgstr "Datenschlüssel kopieren"
-
 msgid "provider.logout.download-backup"
 msgstr "Termin-Datei herunterladen"
 
 msgid "provider.logout.intro"
 msgstr "Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie Ihren Datenschlüssel notiert und Ihre Termin-Datei heruntergeladen haben. Nur mit beidem zusammen können Sie sich erneut einloggen."
 
-msgid "provider.logout.notice.logging-out"
-msgstr "Bitte warten, Sie werden abgemeldet …"
+msgid "provider.logout.secret.copy"
+msgstr "Datenschlüssel kopieren"
+
+msgid "provider.logout.secret.title"
+msgstr "Ihr Sicherheitscode"
 
 msgid "provider.logout.title"
 msgstr "Abmelden"
@@ -298,11 +298,20 @@ msgstr "Beginn"
 msgid "provider.schedule.create.appointment-series-modal.vaccine-label"
 msgstr "Impfstoff"
 
-msgid "provider.secret.title"
-msgstr "Ihr Datenschlüssel"
+msgid "provider.welcome.login.intro"
+msgstr "Text dies das Dinge"
 
-msgid "provider.welcome.loggedout-.notice"
-msgstr "Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit mit Ihrem Datenschlüssel und Ihrer Termin-Datei wiederherstellen."
+msgid "provider.welcome.login.title"
+msgstr "Als Impfstelle einloggen"
+
+msgid "provider.welcome.register.intro"
+msgstr "Text dies das Dinge"
+
+msgid "provider.welcome.register.link-start"
+msgstr "Registrierung starten"
+
+msgid "provider.welcome.register.title"
+msgstr "Als Impfstelle registrieren"
 
 msgid "provider.welcome.title"
 msgstr "Impfstellen"

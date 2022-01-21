@@ -8,7 +8,6 @@ WORKDIR /build
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
-
 ENV NEXT_PROVIDER_BASEPATH "/provider"
 ENV NEXT_MEDIATOR_BASEPATH "/mediator"
 ENV KIEBITZ_APPOINTMENTS_ENDPOINT "http://localhost:22222/jsonrpc"
@@ -17,7 +16,7 @@ ENV KIEBITZ_STORAGE_ENDPOINT "http://localhost:11111/jsonrpc"
 ENV NODE_ENV "production"
 
 RUN npm i -g pnpm
-RUN pnpm install --frozen-lockfile --prefer-offline 
+RUN pnpm install --frozen-lockfile --prefer-offline --ignore-scripts --prod
 RUN pnpm build:i18n
 RUN pnpm build
 

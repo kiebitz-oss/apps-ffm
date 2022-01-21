@@ -32,7 +32,6 @@ export const AppointmentStep: React.FC = () => {
   }, [date, oldDate]);
 
   useEffect(() => {
-    console.log("pid", provider?.id);
     setFilteredAppointments(
       appointments.filter(
         (appointment) =>

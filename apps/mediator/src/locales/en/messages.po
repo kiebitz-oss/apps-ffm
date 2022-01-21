@@ -52,8 +52,8 @@ msgstr "confirmed"
 msgid "mediator.provider-show.accessible"
 msgstr ""
 
-msgid "mediator.provider-show.button-confirm"
-msgstr "Confirm vaccination site"
+msgid "mediator.provider-show.button-show"
+msgstr ""
 
 msgid "mediator.provider-show.city"
 msgstr "Place"
@@ -70,6 +70,9 @@ msgstr "Field"
 msgid "mediator.provider-show.name"
 msgstr "Name"
 
+msgid "mediator.provider-show.notification.success"
+msgstr ""
+
 msgid "mediator.provider-show.street"
 msgstr "Street"
 
@@ -81,6 +84,9 @@ msgstr "Value"
 
 msgid "mediator.provider-show.verified"
 msgstr "Verified?"
+
+msgid "mediator.provider-show.website"
+msgstr ""
 
 msgid "mediator.provider-show.zip-code"
 msgstr "Postal code"
@@ -96,39 +102,6 @@ msgstr "Name"
 
 msgid "mediator.providers-list.status"
 msgstr "Status"
-
-msgid "mediator.providers.confirm-modal.button-confirm"
-msgstr "Confirm vaccination site"
-
-msgid "mediator.providers.confirm-modal.city"
-msgstr "Location"
-
-msgid "mediator.providers.confirm-modal.description"
-msgstr "Description"
-
-msgid "mediator.providers.confirm-modal.email"
-msgstr "E-mail"
-
-msgid "mediator.providers.confirm-modal.field"
-msgstr "Field"
-
-msgid "mediator.providers.confirm-modal.intro"
-msgstr "Do you really want to confirm the vaccination site?"
-
-msgid "mediator.providers.confirm-modal.name"
-msgstr "Name"
-
-msgid "mediator.providers.confirm-modal.street"
-msgstr "Street"
-
-msgid "mediator.providers.confirm-modal.title"
-msgstr "Confirm vaccination site"
-
-msgid "mediator.providers.confirm-modal.value"
-msgstr "Value"
-
-msgid "mediator.providers.confirm-modal.zip-code"
-msgstr "Postal code"
 
 msgid "mediator.providers.title"
 msgstr "Show vaccination sites"

@@ -14,8 +14,7 @@ export const createAppointmentSeries = async (
   const { verifiedProvider } = await getProviderData();
 
   if (!verifiedProvider) {
-    console.error(verifiedProvider);
-    throw new AuthError("");
+    throw new AuthError("Please authenticate");
   }
 
   return api.createAppointmentSeries(

@@ -79,7 +79,6 @@ export const AppProvider: React.FC = (props) => {
   const authenticate = useCallback(
     (secret: string, keyPairs: ProviderKeyPairs) =>
       new Promise(async (resolve) => {
-        console.log(secret, keyPairs);
         setSecret(secret);
         await setKeyPairs(keyPairs);
         // await restore(secret, keyPairs);

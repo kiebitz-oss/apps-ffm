@@ -11,8 +11,7 @@ const SettingsPage: NextPage = () => {
   const [providerData, setProviderData] = useState<ProviderData>();
 
   const handleOnSubmit: SubmitHandler<Provider> = useCallback(async (data) => {
-    const x = await storeProvider(data);
-    console.log(x);
+    await storeProvider(data);
   }, []);
 
   useEffect(() => {
