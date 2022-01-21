@@ -1,2 +1,241 @@
 msgid ""
-msgstr "X-Generator: Weblate\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit"
+msgstr ""
+"PO-Revision-Date: 2022-01-21 18:21+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/kiebitz/"
+"user/nb_NO/>\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.11-dev\n"
+
+msgid "common.footer.link.german"
+msgstr "Tysk"
+
+msgid "common.footer.link.privacy"
+msgstr "Datapersonvern"
+
+msgid "common.footer.link.kiebitz"
+msgstr "Muliggjort med Kiebitz"
+
+msgid "user.finder.date.label"
+msgstr "Dato"
+
+msgid "user.finder.date.submit"
+msgstr "Velg en time"
+
+msgid "user.finder.location.accessible.label"
+msgstr "Kun barrièrefrie vaksinasjonssteder"
+
+msgid "user.finder.location.intro"
+msgstr "Velg et mulig alternativ for vaksinering."
+
+#, fuzzy
+msgid "user.finder.success.additional-preperation.part-3"
+msgstr ""
+"Tenk over egen <0>sykdomshistorikk</0> <1>(f.eks. allergi og "
+"illebefinnende)</1> for å kunne informere helsepersonell om det før "
+"vaksinasjonen."
+
+msgid "user.finder.success.additional-preperation.title"
+msgstr "Slik kan du forberede deg på din vaksinasjonstime:"
+
+msgid "user.finder.success.bring-along.mask"
+msgstr "<0>FFP2-Maske</0><1/><2>(i smittevernsøyemed)</2>"
+
+msgid "user.finder.success.bring-along.title"
+msgstr "Dette trenger du å ta med for COVID-19-vaksine:"
+
+msgid "user.finder.success.cancel-button"
+msgstr "Kanseller time"
+
+msgid "user.finder.success.cancel-text"
+msgstr "Hvis du ikke kan møte til time, kan du kansellere med knappen nedenfor."
+
+msgid "user.finder.time.label"
+msgstr "Tid"
+
+msgid "user.finder.success.title"
+msgstr "Du har nå bestilt time."
+
+msgid "user.finder.success.preperation.title"
+msgstr "Vaksineforberedelser"
+
+msgid "user.questionaire.no"
+msgstr "nei"
+
+msgid "user.questionaire.error.default"
+msgstr ""
+"Din neste vaksinasjon krever sitt. Hold deg oppdatert om gjeldende og "
+"skiftende regler."
+
+msgid "user.welcome.intro-1"
+msgstr "Du har nesten fullført din timebestilling."
+
+msgid "user.welcome.question2_error"
+msgstr ""
+"Det må være tre måneder siden din siste vaksinering før du kan få en "
+"tilleggsdose."
+
+msgid "user.welcome.question1_value"
+msgstr "Er dette en tilleggsdose?"
+
+msgid "user.welcome.question3_value"
+msgstr "Er du yngre enn 30 eller gravid?"
+
+msgid "user.welcome.question4_value"
+msgstr "Er du yngre enn 12?"
+
+msgid "common.footer.link.english"
+msgstr "Engelsk"
+
+msgid "common.footer.link.faq"
+msgstr "Spørsmål og svar"
+
+msgid "user.finder.appointment.title"
+msgstr "Timer"
+
+msgid "user.finder.date.back-link"
+msgstr "Tilbake til valg av timer"
+
+msgid "user.finder.date.title"
+msgstr "Dato og tid"
+
+msgid "user.finder.appointment.date-past"
+msgstr "Valgt vaksinasjonsdato er i fortiden."
+
+msgid "user.finder.date.intro"
+msgstr ""
+"Når ønsker du å vaksineres? Du kan justere dato og tid når som helst. Velg "
+"foretrukket dato nedenfor."
+
+msgid "user.questionaire.yes"
+msgstr "ja"
+
+msgid "user.finder.verify.appointment.description"
+msgstr "{0}"
+
+msgid "user.finder.verify.back-link"
+msgstr "Tilbake til timevalg"
+
+msgid "user.finder.verify.appointment.subtitle"
+msgstr "Din time"
+
+msgid "user.welcome.button"
+msgstr "Fortsett til timebestillingen"
+
+msgid "user.welcome.question2_value"
+msgstr "Er det mer en tre måneder siden din siste vaksinering?"
+
+msgid "user.finder.success.additional-preperation.part-1"
+msgstr "Planlegg transport og retur"
+
+#, fuzzy
+msgid "common.footer.link.imprint"
+msgstr "Impressum"
+
+msgid "user.welcome.question4_error"
+msgstr ""
+"Timebestilling for barn er ikke tilgjengelig via portalen (enda). Tilbudet "
+"vil bli utvidet så snart som mulig."
+
+msgid "user.finder.success.appointment-code"
+msgstr "Din bestillingskode"
+
+msgid "user.welcome.form_error"
+msgstr ""
+"Besvar alle spørsmål for å finne time. All personlig data lagres kun på din "
+"enhet og videresendes ikke."
+
+msgid "user.welcome.intro-2"
+msgstr ""
+"Besvar disse spørsmålene for å få rett vaksine. Dataen forblir på enheten og "
+"videresendes ikke."
+
+msgid "user.finder.success.additional-preperation.part-2"
+msgstr ""
+"Planlegging av tidspunkt for <0>overvåkning</0>.<1/><2>(Ca. et kvarter, med "
+"mulig forlengelse for underliggende komorbiditeter.)</2>"
+
+msgid "user.finder.success.bring-along.papers"
+msgstr "<0>Identifikasjonsbevis</0><1/><2>(Identitetskort, pass.)</2>"
+
+msgid "user.finder.success.bring-along.vaccination-card"
+msgstr ""
+"<0>Vaksinasjonskort</0><1/><2>(Hvis ikke vil du få et "
+"erstatningssertifikat.)</2>"
+
+msgid "user.finder.success.intro"
+msgstr ""
+"<0>Viktig:</0> Skriv ned koden nedenfor og forsikre deg om at du tar den med "
+"på vaksinasjonen."
+
+msgid "common.footer.link.booking"
+msgstr "Bestill time"
+
+msgid "common.footer.title.informations"
+msgstr "Informasjon"
+
+msgid "common.footer.title.languages"
+msgstr "Språk"
+
+msgid "header.nav.link.book_vaccination"
+msgstr "Bestill time"
+
+msgid "header.nav.link.faq"
+msgstr "Spørsmål og svar"
+
+msgid "header.nav.link.lang_english_short"
+msgstr "EN"
+
+msgid "header.nav.link.lang_german_short"
+msgstr "DE"
+
+msgid "user.finder.appointment.back-link"
+msgstr "Tilbake til valg av vaksinasjonssted"
+
+#, fuzzy
+msgid "user.finder.appointment.card.date"
+msgstr "den {0}"
+
+msgid "user.finder.appointment.card.submit"
+msgstr "Velg time"
+
+msgid "user.finder.appointment.card.time"
+msgstr "klokken {0}"
+
+msgid "user.finder.appointment.no-result"
+msgstr ""
+"Ingen ledige timer.<0/><1/> Velg en senere dato eller et annet "
+"vaksinasjonssted."
+
+msgid "user.finder.appointment.provider.placeholder"
+msgstr "Hvilket som helst vaksinasjonssted"
+
+msgid "user.finder.appointment.time.placeholder"
+msgstr "Når som helst"
+
+msgid "user.finder.location.back-link"
+msgstr "Tilbake til generell info"
+
+msgid "user.finder.location.title"
+msgstr "Vaksinasjonssteder"
+
+msgid "user.finder.success.appointment-title"
+msgstr "Din time"
+
+msgid "user.finder.verify.intro"
+msgstr ""
+"Dette er din valgte time. Sjekk nøye at alt stemmer.<0/> Du kan så fullføre "
+"din timebestilling."
+
+msgid "user.finder.verify.submit"
+msgstr "Bestill time nå"
+
+msgid "user.finder.verify.title"
+msgstr "Oversikt"
+
+msgid "user.welcome.title"
+msgstr "Velkommen."
