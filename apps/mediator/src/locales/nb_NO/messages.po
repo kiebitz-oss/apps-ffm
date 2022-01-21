@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-01-07 21:51+0000\n"
+"PO-Revision-Date: 2022-01-23 23:53+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/kiebitz/"
 "mediator/nb_NO/>\n"
@@ -9,11 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10.1\n"
-
-#: components/NavContent.tsx:36
-msgid "common.footer.link.faq"
-msgstr "Spørsmål og svar"
+"X-Generator: Weblate 4.11-dev\n"
 
 #: pages/ConfirmProviderModal.tsx:100
 msgid "mediator.providers.confirm-modal.phone"
@@ -23,25 +19,13 @@ msgstr "Telefonnummer"
 msgid "mediator.provider-show.description"
 msgstr "Beskrivelse"
 
-#: pages/ConfirmProviderModal.tsx:57
-msgid "mediator.providers.confirm-modal.value"
-msgstr "Verdi"
-
 #: pages/providers/[id].page.tsx:94
 msgid "mediator.provider-show.email"
 msgstr "E-post"
 
-#: pages/ConfirmProviderModal.tsx:64
-msgid "mediator.providers.confirm-modal.name"
-msgstr "Navn"
-
 #: pages/index.page.tsx:70
 msgid "mediator.welcome.upload-key-pairs.invalid-file"
 msgstr "Sikkerhetskopifilen du valgte er ugyldig."
-
-#: components/NavContent.tsx:57
-msgid "common.footer.link.german"
-msgstr "Tysk"
 
 #: pages/logged-out.page.tsx:25
 msgid "mediator.logged-out.log-in-again"
@@ -111,17 +95,9 @@ msgstr "Tilbyderliste"
 msgid "mediator.providers-list.status"
 msgstr "Status"
 
-#: pages/ConfirmProviderModal.tsx:92
-msgid "mediator.providers.confirm-modal.email"
-msgstr "E-post"
-
 #: pages/UnconfirmProviderModal.tsx:114
 msgid "mediator.providers.unconfirm-modal.description"
 msgstr "Beskrivelse"
-
-#: pages/UnconfirmProviderModal.tsx:68
-msgid "mediator.providers.unconfirm-modal.name"
-msgstr "Navn"
 
 #: pages/UnconfirmProviderModal.tsx:59
 msgid "mediator.providers.unconfirm-modal.value"
@@ -134,3 +110,12 @@ msgstr "Last inn sikkerhetskopifil"
 #: pages/index.page.tsx:90
 msgid "mediator.welcome.upload-key-pairs.input"
 msgstr "Velg sikkerhetskopifil"
+
+msgid "mediator.welcome.title-authenticated"
+msgstr "Velkommen"
+
+msgid "mediator.providers.title"
+msgstr "Vis vaksinasjonssteder"
+
+msgid "mediator.provider-show.website"
+msgstr "Nettside"
