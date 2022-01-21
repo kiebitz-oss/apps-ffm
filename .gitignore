@@ -34,6 +34,7 @@ __pycache__
 *.orig
 *.log
 **/locales/**/messages.ts
+**/locales/**/messages.d.ts
 .out
 
 # debug
