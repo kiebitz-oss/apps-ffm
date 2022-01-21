@@ -1,15 +1,15 @@
 import { Button, Title } from "@impfen/common";
-import { useProviderApi } from "components/ProviderApiContext";
+import { getProviderAppointments } from "actions";
 import {
   AppointmentCard,
   CreateAppointmentModal,
+  CreateAppointmentSeriesModal,
   WeekCalendar,
-} from "components/schedule";
-import { CreateAppointmentSeriesModal } from "components/schedule/CreateAppointmentSeriesModal";
+} from "components";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
-import { Appointment } from "vanellus";
+import type { Appointment } from "vanellus";
 
 enum Modal {
   APPOINTMENT,
@@ -22,16 +22,12 @@ const SchedulePage: React.FC = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [modal, setModal] = useState<Modal | null>(null);
 
-  const api = useProviderApi();
-
   const refreshAppointments = useCallback(() => {
-    api
-      .getProviderAppointments(
-        dayjs().toDate(),
-        dayjs().add(7, "days").toDate()
-      )
-      .then(setAppointments);
-  }, [api]);
+    getProviderAppointments(
+      dayjs().toDate(),
+      dayjs().add(7, "days").toDate()
+    ).then(setAppointments);
+  }, []);
 
   useEffect(() => {
     refreshAppointments();

@@ -1,18 +1,17 @@
 import { Link, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { useProviderApi } from "components/ProviderApiContext";
-import { ProviderDataSummary } from "components/ProviderDataSummary";
+import { getProviderData } from "actions";
+import { ProviderDataSummary } from "components";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import type { ProviderData } from "vanellus";
 
 const SettingsPage: NextPage = () => {
-  const api = useProviderApi();
   const [providerData, setProviderData] = useState<ProviderData>();
 
   useEffect(() => {
-    api.getProviderData().then(setProviderData);
-  }, [api]);
+    getProviderData().then(setProviderData);
+  }, []);
 
   return (
     <main>

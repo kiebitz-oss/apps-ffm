@@ -1,20 +1,19 @@
 import { Button, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { useApp } from "lib/AppProvider";
+import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { MouseEventHandler } from "react";
+import type { MouseEventHandler } from "react";
 
 const LogoutPage: NextPage = () => {
   const router = useRouter();
-  const { logout } = useApp();
+  const { logout } = useAppState();
 
   const logOut: MouseEventHandler<HTMLButtonElement> = async (event) => {
     event.preventDefault();
 
     await logout();
-
-    router.push("/");
+    await router.push("/");
   };
 
   return (

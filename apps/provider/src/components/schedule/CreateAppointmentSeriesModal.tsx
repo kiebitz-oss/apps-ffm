@@ -6,7 +6,7 @@ import {
   Title,
 } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { AppointmentSeriesForm } from ".";
+import { AppointmentSeriesForm } from "./AppointmentSeriesForm";
 
 interface CreateAppointmentSeriesModal extends ModalProps {}
 

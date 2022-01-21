@@ -1,13 +1,13 @@
-import { ProviderService } from "lib/ProviderService";
+import { getKeyPairs, getStorage, setKeyPairs, setSecret } from "actions";
 import type { Reducer } from "react";
-import React, {
+import {
   createContext,
   useCallback,
   useContext,
   useMemo,
   useReducer,
 } from "react";
-import type { Booking, ProviderKeyPairs, Vaccine } from "vanellus";
+import type { ProviderKeyPairs } from "vanellus";
 
 enum ActionType {
   AUTHENTICATE = "AUTHENTICATE",
@@ -15,34 +15,19 @@ enum ActionType {
 }
 
 type State = {
-  api: ProviderService;
   isAuthenticated: boolean;
-  booking?: Booking;
-  keyPairs?: ProviderKeyPairs;
-  secret?: string;
-  vaccine?: Vaccine;
 };
 
 type Actions =
   | {
       type: ActionType.AUTHENTICATE;
-      keyPairs: ProviderKeyPairs;
-      secret: string;
     }
   | {
       type: ActionType.LOGOUT;
     };
 
-const api = new ProviderService({
-  jsonrpc: {
-    appointments: process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT as string,
-    storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT as string,
-  },
-});
-
 const initialState: State = {
-  api,
-  isAuthenticated: true,
+  isAuthenticated: false,
 };
 
 interface Context extends State {
@@ -56,10 +41,30 @@ export const AppContext = createContext<Context>({
   logout: () => undefined,
 });
 
+const init = () => {
+  try {
+    const keyPairs = getKeyPairs();
+
+    return {
+      isAuthenticated: !!keyPairs,
+    };
+  } catch (error) {
+    // intentionally empty
+  }
+
+  return {
+    isAuthenticated: false,
+  };
+};
+
 const reducer: Reducer<State, Actions> = (state, action) => {
   switch (action.type) {
     case ActionType.AUTHENTICATE: {
-      return { ...state, keyPairs: action.keyPairs, secret: action.secret };
+      return { ...state, isAuthenticated: true };
+    }
+
+    case ActionType.LOGOUT: {
+      return { ...state, isAuthenticated: false };
     }
 
     default: {
@@ -69,34 +74,38 @@ const reducer: Reducer<State, Actions> = (state, action) => {
 };
 
 export const AppProvider: React.FC = (props) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState, init);
 
   const authenticate = useCallback(
     (secret: string, keyPairs: ProviderKeyPairs) =>
-      new Promise((resolve) => {
-        api.authenticate(secret, keyPairs);
+      new Promise(async (resolve) => {
+        console.log(secret, keyPairs);
+        setSecret(secret);
+        await setKeyPairs(keyPairs);
+        // await restore(secret, keyPairs);
 
         dispatch({
           type: ActionType.AUTHENTICATE,
-          keyPairs,
-          secret,
         });
 
-        resolve(true);
+        return resolve(true);
       }),
     []
   );
 
   const logout = useCallback(
     () =>
-      new Promise((resolve) => {
-        api.logout();
+      new Promise(async (resolve) => {
+        // await backup();
+        setSecret();
+        await setKeyPairs();
+        getStorage().removeAll();
 
         dispatch({
           type: ActionType.LOGOUT,
         });
 
-        resolve(true);
+        return resolve(true);
       }),
 
     []
@@ -114,11 +123,11 @@ export const AppProvider: React.FC = (props) => {
   return <AppContext.Provider value={value} {...props} />;
 };
 
-export const useApp = () => {
+export const useAppState = () => {
   const context = useContext(AppContext);
 
   if (context === undefined) {
-    throw new Error("useApp must be used within a AppProvider");
+    throw new Error("useAppState must be used within a AppProvider");
   }
 
   return context;

@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import type { Reducer } from "react";
 import {
   createContext,
@@ -29,7 +30,7 @@ export type State = {
 };
 
 const initialState: State = {
-  date: new Date(),
+  date: dayjs().toDate(),
   provider: null,
   appointment: null,
 };
@@ -60,7 +61,12 @@ interface Context extends State {
   setDate: (date: Date) => void;
 }
 
-export const FinderContext = createContext<State | any>(initialState);
+export const FinderContext = createContext<Context>({
+  ...initialState,
+  setAppointment: () => undefined,
+  setProvider: () => undefined,
+  setDate: () => undefined,
+});
 
 export const FinderProvider: React.FC = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);

@@ -1,6 +1,6 @@
 import { Link, SecretBox, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { useProviderApi } from "components/ProviderApiContext";
+import { backup } from "actions";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { BackupDataLink } from "../BackupDataLink";
@@ -9,7 +9,6 @@ import { useOnboardingState } from "./OnboardingStateProvider";
 export const SecretStep: React.FC = () => {
   const { state } = useOnboardingState();
   const router = useRouter();
-  const api = useProviderApi();
 
   useEffect(() => {
     if (!state.data) {
@@ -21,7 +20,7 @@ export const SecretStep: React.FC = () => {
   const [secret, setSecret] = useState<string | null>(null);
 
   useEffect(() => {
-    api.createBackup().then(({ keyPairs, secret }) => {
+    backup().then(({ keyPairs, secret }) => {
       setSecret(secret || "???");
       setBlob(
         new Blob([new TextEncoder().encode(JSON.stringify(keyPairs))], {
@@ -29,7 +28,7 @@ export const SecretStep: React.FC = () => {
         })
       );
     });
-  }, [api]);
+  }, []);
 
   return (
     <main>

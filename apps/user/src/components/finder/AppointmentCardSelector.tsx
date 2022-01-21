@@ -2,8 +2,8 @@ import { Button, Link } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import type { MouseEventHandler } from "react";
 import type { AggregatedPublicAppointment } from "vanellus";
-import { useFinder } from ".";
 import { AppointmentCard } from "./AppointmentCard";
+import { useFinder } from "./FinderProvider";
 
 interface AppointmentCardProps {
   appointment: AggregatedPublicAppointment;

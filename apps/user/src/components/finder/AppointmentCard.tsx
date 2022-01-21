@@ -43,6 +43,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
         <div className="text-4xl">
           <Trans id="user.finder.appointment.card.time">
             {appointment.startDate.toLocaleTimeString(i18n.locale, {
+              timeZone: "Europe/Berlin",
               hour: "2-digit",
               minute: "2-digit",
             })}{" "}
@@ -54,6 +55,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
           <Trans id="user.finder.appointment.card.date">
             am{" "}
             {appointment.startDate.toLocaleDateString(i18n.locale, {
+              timeZone: "Europe/Berlin",
               day: "2-digit",
               month: "2-digit",
               year: "2-digit",

@@ -1,5 +1,6 @@
 import { Link, Tag } from "@impfen/common";
 import { Trans } from "@lingui/macro";
+import { encodeProviderId } from "actions/encodeProviderId";
 import clsx from "clsx";
 import type { Provider } from "vanellus";
 
@@ -8,9 +9,7 @@ export interface ProviderRowProps {
 }
 
 export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
-  const providerLink = `/providers/${encodeURIComponent(
-    Buffer.from(provider.id).toString("hex")
-  )}`;
+  const providerLink = `/providers/${encodeProviderId(provider.id)}`;
 
   return (
     <tr key={provider.id} className={clsx("providers-list-row")}>

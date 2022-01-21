@@ -1,19 +1,22 @@
 import { Edit24 } from "@carbon/icons-react";
 import { BackLink, InputField, Link, Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { useApp } from "lib/AppProvider";
+import { getAppointments } from "actions";
+import dayjs from "dayjs";
+import "dayjs/locale/de";
+import "dayjs/locale/en";
 import { useRouter } from "next/router";
-import { ChangeEventHandler, useCallback, useEffect, useState } from "react";
+import type { ChangeEventHandler } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { AggregatedPublicAppointment } from "vanellus";
-import { dayjs } from "../../../../../packages/vanellus/src/utils";
 import { AppointmentCardSelector } from "./AppointmentCardSelector";
 import { useFinder } from "./FinderProvider";
 
 export const AppointmentStep: React.FC = () => {
   const { setProvider, provider } = useFinder();
-  const { api } = useApp();
   const router = useRouter();
   const [date, setDate] = useState<Date>(new Date());
+  const [oldDate, setOldDate] = useState<Date>();
   const [appointments, setAppointments] = useState<
     AggregatedPublicAppointment[]
   >([]);
@@ -22,22 +25,27 @@ export const AppointmentStep: React.FC = () => {
   >([]);
 
   useEffect(() => {
-    const now = dayjs().utc().toDate();
-
-    api.getAppointments(now, "10000", "99999").then(setAppointments);
-  }, [date, api]);
+    if (!oldDate || !dayjs(oldDate).isSame(dayjs(date), "day")) {
+      getAppointments(date, "10000", "99999").then(setAppointments);
+      setOldDate(date);
+    }
+  }, [date, oldDate]);
 
   useEffect(() => {
+    console.log("pid", provider?.id);
     setFilteredAppointments(
-      appointments.filter((appointment) =>
-        dayjs(appointment.startDate).isAfter(dayjs(date).utc(), "minute")
+      appointments.filter(
+        (appointment) =>
+          provider &&
+          appointment.provider.id === provider.id &&
+          dayjs(appointment.startDate).isAfter(dayjs(date), "minute")
       )
     );
-  }, [appointments, date]);
+  }, [appointments, provider, date]);
 
   const handleDateChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     async (event) => {
-      setDate(dayjs(event.currentTarget.value).utc().toDate());
+      setDate(dayjs(event.currentTarget.value).toDate());
     },
     [setDate]
   );
@@ -98,31 +106,41 @@ export const AppointmentStep: React.FC = () => {
             message: "Beliebige Zeit",
           })}
           onChange={handleDateChange}
-          defaultValue={dayjs(date).utc().toISOString().substring(0, 16)}
+          min={dayjs(date).format("YYYY-MM-DDThh:mm")}
+          max={dayjs(date).add(30, "days").format("YYYY-MM-DDThh:mm")}
+          defaultValue={dayjs(date).add(5, "minute").format("YYYY-MM-DDThh:mm")}
         />
       </div>
 
       {/* {state.loading && <div>Loading</div>} */}
 
-      {filteredAppointments.length < 1 && (
-        <Trans id="user.finder.appointment.no-result">
-          Es sind keine freien Termine verfügbar.
-          <br />
-          Bitte versuchen Sie einen späteren Zeitpunkt oder ein anderen
-          Impfstelle.
+      {dayjs(date).isBefore(dayjs(), "minutes") && (
+        <Trans id="user.finder.appointment.date-past">
+          Das gewählte Impfdatum liegt in der Vergangenheit.
         </Trans>
       )}
 
-      {filteredAppointments.length > 0 && (
-        <div className="grid grid-cols-1 gap-4 w-full sm:grid-cols-2 lg:grid-cols-3">
-          {filteredAppointments.map((appointment) => (
-            <AppointmentCardSelector
-              appointment={appointment}
-              key={appointment.id}
-            />
-          ))}
-        </div>
-      )}
+      {dayjs(date).add(10, "minutes").isAfter(dayjs(), "minutes") &&
+        filteredAppointments.length < 1 && (
+          <Trans id="user.finder.appointment.no-result">
+            Es sind keine freien Termine verfügbar.
+            <br />
+            Bitte versuchen Sie einen späteren Zeitpunkt oder ein anderen
+            Impfstelle.
+          </Trans>
+        )}
+
+      {dayjs(date).add(10, "minutes").isAfter(dayjs(), "minutes") &&
+        filteredAppointments.length > 0 && (
+          <div className="grid grid-cols-1 gap-4 w-full sm:grid-cols-2 lg:grid-cols-3">
+            {filteredAppointments.map((appointment) => (
+              <AppointmentCardSelector
+                appointment={appointment}
+                key={appointment.id}
+              />
+            ))}
+          </div>
+        )}
     </main>
   );
 };

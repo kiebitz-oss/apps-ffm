@@ -1,12 +1,13 @@
 import { Message, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { useApp } from "lib/AppProvider";
+import { useAppState } from "lib/AppProvider";
 import { useRouter } from "next/router";
-import { ChangeEventHandler, useState } from "react";
+import type { ChangeEventHandler } from "react";
+import { useState } from "react";
 
 export const LoginForm: React.FC = () => {
   const [invalidFile, setInvalidFile] = useState(false);
-  const { authenticate } = useApp();
+  const { authenticate } = useAppState();
   const router = useRouter();
 
   const uploadFile: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -26,9 +27,7 @@ export const LoginForm: React.FC = () => {
           ) {
             setInvalidFile(true);
           } else {
-            authenticate(keyPairs).then(() => {
-              router.push("/providers");
-            });
+            authenticate(keyPairs).then(() => router.push("/providers"));
           }
         }
       };

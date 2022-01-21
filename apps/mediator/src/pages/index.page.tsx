@@ -1,11 +1,11 @@
 import { Section, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { LoginForm } from "components/LoginForm";
-import { useApp } from "lib/AppProvider";
+import { LoginForm } from "components";
+import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
 
 const MediatorStartPage: NextPage = () => {
-  const { isAuthenticated } = useApp();
+  const { isAuthenticated } = useAppState();
 
   return (
     <main>

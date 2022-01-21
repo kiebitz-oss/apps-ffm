@@ -8,7 +8,6 @@ import {
   Title,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import React, { useEffect } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import type { Provider } from "vanellus";
 
@@ -26,13 +25,10 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
   const methods = useForm<Provider>({
     mode: "onBlur",
     reValidateMode: "onBlur",
+    defaultValues,
   });
 
-  const { register, handleSubmit, formState, setValue, reset } = methods;
-
-  useEffect(() => {
-    reset(defaultValues);
-  }, [defaultValues, reset]);
+  const { register, handleSubmit, formState } = methods;
 
   return (
     <FormProvider {...methods}>

@@ -3,7 +3,10 @@ import { Layout } from "@impfen/common";
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import "app.css";
-import { HeaderContent } from "components/HeaderContent";
+import { HeaderContent, Notifications } from "components";
+import dayjs from "dayjs";
+import "dayjs/locale/de";
+import "dayjs/locale/en";
 import { AppProvider } from "lib/AppProvider";
 import { de, en } from "make-plural/plurals";
 import type { AppProps } from "next/app";
@@ -47,10 +50,11 @@ i18n.loadLocaleData({
 loadLocale("de");
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const [locale, setLocale] = useState(i18n.locale);
+  const [locale, setLocale] = useState(i18n.locale || "de");
 
   useEffect(() => {
     loadLocale(locale);
+    dayjs.locale(locale);
   }, [locale]);
 
   return (
@@ -58,6 +62,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <I18nProvider i18n={i18n}>
         <AppProvider>
           <Layout header={HeaderContent} locale={locale} setLocale={setLocale}>
+            <Notifications />
             <Component {...pageProps} />
           </Layout>
         </AppProvider>

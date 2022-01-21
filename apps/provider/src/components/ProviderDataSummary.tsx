@@ -79,13 +79,6 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
           <dt>
             <Trans id="provider.provider-data.phone">Telefonnummer</Trans>
           </dt>
-          {/* <dd>
-            {provider.phone || (
-              <Trans id="provider.provider-data.not-given">
-                (keine Angabe)
-              </Trans>
-            )}
-          </dd> */}
 
           <dt>
             <Trans id="provider.provider-data.email" />
@@ -97,19 +90,6 @@ export const ProviderDataSummary: React.FC<ProviderDataSummaryProps> = ({
               </Trans>
             )}
           </dd>
-
-          {/* <dt>
-              <Trans id="provider.provider-data.access-code.label">
-                  Zugangscode (falls vorhanden)
-              </Trans>
-          </dt>
-          <dd>
-              {provider.code || (
-                  <Trans id="provider.provider-data.not-given">
-                      (keine Angabe)
-                  </Trans>
-              )}
-          </dd> */}
 
           <dt>
             <Trans id="provider.provider-data.accessible">

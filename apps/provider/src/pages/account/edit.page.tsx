@@ -1,18 +1,23 @@
 import { Link, Text, Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { useProviderApi } from "components/ProviderApiContext";
-import { ProviderForm } from "components/ProviderForm";
+import { getProviderData, storeProvider } from "actions";
+import { ProviderForm } from "components";
 import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import type { ProviderData } from "vanellus";
+import { useCallback, useEffect, useState } from "react";
+import type { SubmitHandler } from "react-hook-form";
+import type { Provider, ProviderData } from "vanellus";
 
 const SettingsPage: NextPage = () => {
-  const api = useProviderApi();
   const [providerData, setProviderData] = useState<ProviderData>();
 
+  const handleOnSubmit: SubmitHandler<Provider> = useCallback(async (data) => {
+    const x = await storeProvider(data);
+    console.log(x);
+  }, []);
+
   useEffect(() => {
-    api.getProviderData().then(setProviderData);
-  }, [api]);
+    getProviderData().then(setProviderData);
+  }, []);
 
   return (
     <main>
@@ -39,16 +44,16 @@ const SettingsPage: NextPage = () => {
       </Text>
 
       <div className="max-w-3xl">
-        <ProviderForm
-          defaultValues={providerData?.verifiedProvider || {}}
-          submitText={t({
-            id: "provider.account.edit.submit-button",
-            message: "Daten zur Verifizierung speichern",
-          })}
-          onSubmit={(data) => {
-            console.log(data);
-          }}
-        />
+        {providerData?.verifiedProvider && (
+          <ProviderForm
+            defaultValues={providerData.verifiedProvider}
+            submitText={t({
+              id: "provider.account.edit.submit-button",
+              message: "Daten zur Verifizierung speichern",
+            })}
+            onSubmit={handleOnSubmit}
+          />
+        )}
       </div>
     </main>
   );

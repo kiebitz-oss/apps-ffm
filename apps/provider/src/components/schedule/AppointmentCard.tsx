@@ -1,9 +1,10 @@
 import { Button, Vaccine, vaccines } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
+import { cancelAppointment } from "actions";
 import clsx from "clsx";
-import { useApp } from "lib/AppProvider";
-import { Appointment, AppointmentStatus } from "vanellus";
+import type { Appointment } from "vanellus";
+import { AppointmentStatus } from "vanellus";
 
 export interface AppointmentCardProps {
   appointment: Appointment;
@@ -19,7 +20,6 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
   ...props
 }) => {
   const { i18n } = useLingui();
-  const { api } = useApp();
 
   return (
     <div
@@ -68,7 +68,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
         {appointment.status}
         <br />
         {appointment.status !== AppointmentStatus.CANCELED && (
-          <Button size="sm" onClick={() => api.cancelAppointment(appointment)}>
+          <Button size="sm" onClick={() => cancelAppointment(appointment)}>
             Cancel
           </Button>
         )}

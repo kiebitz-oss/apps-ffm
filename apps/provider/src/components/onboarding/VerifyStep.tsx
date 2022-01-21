@@ -1,7 +1,7 @@
 import { Button, Link, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { useProviderApi } from "components/ProviderApiContext";
-import { ProviderDataSummary } from "components/ProviderDataSummary";
+import { register } from "actions";
+import { ProviderDataSummary } from "components";
 import { useRouter } from "next/router";
 import type { Provider } from "vanellus";
 import { useOnboardingState } from "./OnboardingStateProvider";
@@ -12,12 +12,11 @@ the setup. Once the button gets clicked, the system generates the QR
 codes, encrypts the contact data and stores the settings in the storage backend.
 */
 export const VerifyStep: React.FC = () => {
-  const api = useProviderApi();
   const { state } = useOnboardingState();
   const router = useRouter();
 
   const submit: React.MouseEventHandler<HTMLButtonElement> = () => {
-    api.register(state.data as Provider).then(() => {
+    register(state.data as Provider).then(() => {
       router.push("/onboarding/secret");
     });
   };

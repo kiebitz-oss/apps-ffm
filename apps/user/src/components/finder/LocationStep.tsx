@@ -1,8 +1,9 @@
 import { BackLink, CheckboxField, Link, Text, Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { useApp } from "lib/AppProvider";
+import { getProviders } from "actions/getProviders";
 import { useRouter } from "next/router";
-import { ChangeEventHandler, Reducer, useEffect, useReducer } from "react";
+import type { ChangeEventHandler, Reducer } from "react";
+import { useEffect, useReducer } from "react";
 import type { PublicProvider } from "vanellus";
 import { useFinder } from "./FinderProvider";
 import { ProviderCard } from "./ProviderCard";
@@ -65,17 +66,15 @@ const reducer: Reducer<State, Action> = (state, action) => {
 
 export const LocationStep: React.FC = () => {
   const router = useRouter();
-  const { api } = useApp();
+
   const { setProvider } = useFinder();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    api
-      .getProviders("10000", "99999")
-      .then((providers) =>
-        dispatch({ type: ActionType.SET_PROVIDERS, providers })
-      );
-  }, [api]);
+    getProviders("10000", "99999").then((providers) =>
+      dispatch({ type: ActionType.SET_PROVIDERS, providers })
+    );
+  }, []);
 
   const handleAccessibleChange: ChangeEventHandler<HTMLInputElement> = (
     event

@@ -1,4 +1,4 @@
-import { MediatorService } from "lib/MediatorService";
+import { getKeyPairs, getStorage, setKeyPairs } from "actions";
 import React, {
   createContext,
   Reducer,
@@ -9,57 +9,95 @@ import React, {
 } from "react";
 import type { MediatorKeyPairs } from "vanellus";
 
+type Notification = {
+  id: number;
+  message: string;
+  type: "INFO";
+  shown: boolean;
+};
+
 enum ActionType {
   AUTHENTICATE = "AUTHENTICATE",
   LOGOUT = "LOGOUT",
+  ADD_NOTIFICATION = "ADD_NOTIFICATION",
+  GET_NOTIFICATIONS = "GET_NOTIFICATIONS",
 }
 
 type State = {
-  api: MediatorService;
   isAuthenticated: boolean;
-  keyPairs?: MediatorKeyPairs;
+  notifications: Notification[];
 };
 
 type Actions =
   | {
       type: ActionType.AUTHENTICATE;
-      keyPairs: MediatorKeyPairs;
     }
   | {
       type: ActionType.LOGOUT;
+    }
+  | {
+      type: ActionType.ADD_NOTIFICATION;
+      message: string;
+    }
+  | {
+      type: ActionType.GET_NOTIFICATIONS;
     };
 
 interface Context extends State {
-  authenticate: (keyPairs: MediatorKeyPairs) => void;
-  logout: () => void;
+  authenticate: (keyPairs: MediatorKeyPairs) => Promise<boolean>;
+  logout: () => Promise<boolean>;
+  addNotification: (message: string) => boolean;
+  getNotifications: () => Notification[];
 }
 
-export const api = new MediatorService({
-  jsonrpc: {
-    appointments: process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT as string,
-    storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT as string,
-  },
-});
-
 const initialState: State = {
-  api,
-  isAuthenticated: true,
+  isAuthenticated: false,
+  notifications: [],
 };
 
 export const AppContext = createContext<Context>({
   ...initialState,
-  authenticate: () => undefined,
-  logout: () => undefined,
+  authenticate: () => Promise.resolve().then(() => false),
+  logout: () => Promise.resolve().then(() => false),
+  addNotification: () => false,
+  getNotifications: () => [],
 });
 
 const reducer: Reducer<State, Actions> = (state, action) => {
   switch (action.type) {
     case ActionType.AUTHENTICATE: {
-      return { ...state, keyPairs: action.keyPairs, isAuthenticated: true };
+      return { ...state, isAuthenticated: true };
     }
 
     case ActionType.LOGOUT: {
-      return { ...state, keyPairs: undefined, isAuthenticated: false };
+      return { ...state, isAuthenticated: false };
+    }
+
+    case ActionType.ADD_NOTIFICATION: {
+      return {
+        ...state,
+        notifications: [
+          ...state.notifications,
+          {
+            id: +new Date(),
+            message: action.message,
+            type: "INFO",
+            shown: false,
+          },
+        ],
+      };
+    }
+
+    case ActionType.GET_NOTIFICATIONS: {
+      return {
+        ...state,
+        notifications: state.notifications
+          .filter((notification) => !notification.shown)
+          .map((notification) => ({
+            ...notification,
+            shown: true,
+          })),
+      };
     }
 
     default: {
@@ -68,56 +106,100 @@ const reducer: Reducer<State, Actions> = (state, action) => {
   }
 };
 
+const init = () => {
+  try {
+    const keyPairs = getKeyPairs();
+
+    return {
+      ...initialState,
+      isAuthenticated: !!keyPairs,
+    };
+  } catch (error) {
+    // intentionally empty
+  }
+
+  return {
+    ...initialState,
+    isAuthenticated: false,
+  };
+};
+
 export const AppProvider: React.FC = (props) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState, init);
 
   const authenticate = useCallback(
     (keyPairs: MediatorKeyPairs) =>
-      new Promise((resolve) => {
-        api.authenticate(keyPairs);
+      new Promise<boolean>(async (resolve) => {
+        if (keyPairs) {
+          const isValidKeyPairs = await setKeyPairs(keyPairs);
 
-        dispatch({
-          type: ActionType.AUTHENTICATE,
-          keyPairs,
-        });
+          if (isValidKeyPairs) {
+            dispatch({
+              type: ActionType.AUTHENTICATE,
+            });
 
-        resolve(true);
+            return resolve(true);
+          }
+        }
+
+        return resolve(false);
       }),
     []
   );
 
   const logout = useCallback(
     () =>
-      new Promise((resolve) => {
-        api.logout();
+      new Promise<boolean>(async (resolve) => {
+        await setKeyPairs(null);
+        await getStorage().removeAll();
 
         dispatch({
           type: ActionType.LOGOUT,
         });
 
-        resolve(true);
+        return resolve(true);
       }),
-
     []
   );
+
+  const addNotification = useCallback((message: string) => {
+    dispatch({
+      type: ActionType.ADD_NOTIFICATION,
+      message,
+    });
+
+    return true;
+  }, []);
+
+  const getNotifications = useCallback(() => {
+    const notifications = state.notifications;
+
+    dispatch({
+      type: ActionType.GET_NOTIFICATIONS,
+    });
+
+    return notifications;
+  }, []);
 
   const value = useMemo(
     () => ({
       ...state,
       authenticate,
       logout,
+      addNotification,
+      getNotifications,
     }),
-    [authenticate, logout, state]
+    [state]
   );
 
   return <AppContext.Provider value={value} {...props} />;
 };
 
-export const useApp = () => {
+export const useAppState = () => {
   const context = useContext(AppContext);
 
   if (context === undefined) {
-    throw new Error("useApp must be used within a AppProvider");
+    throw new Error("useAppState must be used within a AppProvider");
   }
 
   return context;

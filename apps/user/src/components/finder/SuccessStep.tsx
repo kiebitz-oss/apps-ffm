@@ -1,94 +1,54 @@
-import { GeneratePdf16 } from "@carbon/icons-react";
-import { Link, Text, Title, Vaccine, vaccines } from "@impfen/common";
+import { Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { useApp } from "lib/AppProvider";
+import { cancelBooking } from "actions/cancelBooking";
+import { getAppointment } from "actions/getAppointment";
+import { getBooking } from "actions/getBooking";
+import { setBooking } from "actions/setBooking";
 import { useRouter } from "next/router";
-import type { MouseEventHandler } from "react";
-import { useEffect, useState } from "react";
-import { PublicAppointment, UnexpectedError } from "vanellus";
+import { MouseEventHandler, useEffect, useState } from "react";
+import { PublicAppointment } from "../../../../../packages/vanellus/dist";
 import { AppointmentCard } from "./AppointmentCard";
-import { useFinder } from "./FinderProvider";
 
 export const SuccessStep: React.FC = () => {
-  const { api } = useApp();
   const { i18n } = useLingui();
-  const {
-    appointment: aggregatedAppointment,
-    setAppointment: setAggegatedAppointment,
-  } = useFinder();
-  const { booking, setBooking } = useApp();
-  const [appointment, setAppointment] = useState<PublicAppointment>();
-
   const router = useRouter();
-
-  useEffect(() => {
-    if (!aggregatedAppointment && !booking) {
-      router.push("/finder");
-    }
-  }, [aggregatedAppointment, booking, router]);
+  const booking = getBooking();
+  const [appointment, setAppointment] = useState<PublicAppointment>();
 
   useEffect(() => {
     if (booking) {
-      api
-        .getAppointment(booking.appointmentId, booking.providerId)
-        .then(setAppointment);
+      getAppointment(booking.appointmentId, booking.providerId).then(
+        setAppointment
+      );
     }
-  }, [api, booking]);
+  }, [booking]);
 
-  useEffect(() => {
-    if (!booking && aggregatedAppointment) {
-      api
-        .getAppointment(
-          aggregatedAppointment.id,
-          aggregatedAppointment.provider.id
-        )
-        .then(setAppointment);
-    }
-  }, [api, booking, aggregatedAppointment]);
+  // safeguard
+  if (!booking) {
+    router.push("/finder");
 
-  useEffect(() => {
-    if (appointment && !booking) {
-      api
-        .bookAppointment(appointment)
-        .then((booking) => {
-          setBooking(booking);
-        })
-        .catch((error) => {
-          if (error instanceof UnexpectedError) {
-            console.log("DOUBLE BOOKING DETECTED");
-          } else {
-            throw error;
-          }
-        });
-    }
-  }, [api, setBooking, booking, appointment]);
+    return null;
+  }
 
-  const onCancel: MouseEventHandler<HTMLButtonElement> = async (event) => {
+  const handleCancel: MouseEventHandler<HTMLButtonElement> = async (event) => {
     event.preventDefault();
 
-    if (!appointment) {
+    if (!booking) {
       console.error("could not find booking");
       await router.push("/finder");
 
       return null;
-    } else {
-      await api.cancelBooking(appointment).catch((error) => {
-        console.error(error);
-      });
-
-      setAppointment(undefined);
-      setAggegatedAppointment(undefined);
-      setBooking(undefined);
-
-      await router.push("/finder");
     }
-  };
 
-  // safeguard
-  if (!appointment && !booking) {
-    return null;
-  }
+    await cancelBooking(booking).catch((error) => {
+      console.error(error);
+    });
+
+    setBooking(undefined);
+
+    await router.push("/finder");
+  };
 
   return (
     <main id="finder-success">
@@ -144,7 +104,7 @@ export const SuccessStep: React.FC = () => {
             </Text>
 
             <button
-              onClick={onCancel}
+              onClick={handleCancel}
               className="text-primary bg-primary/10 button md"
             >
               <Trans id="user.finder.success.cancel-button">
@@ -196,35 +156,31 @@ export const SuccessStep: React.FC = () => {
               Impfvorbereitungen
             </Trans>
           </Title>
+          {/* 
+          <ul className="grid grid-flow-row gap-4 pb-6">
+            {vaccines[i18n.locale || "de"][
+              appointment.vaccine as unknown as Vaccine
+            ].pdfs.map((pdf) => (
+              <li key={pdf.label}>
+                <Link
+                  href={pdf.url}
+                  external
+                  className="text-primary bg-primary/10 button md"
+                >
+                  <GeneratePdf16 />
+                  <span className="break-all">{pdf.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-          {appointment?.properties.vaccine && (
-            <ul className="grid grid-flow-row gap-4 pb-6">
-              {vaccines[i18n.locale || "de"][
-                appointment?.properties.vaccine as unknown as Vaccine
-              ].pdfs.map((pdf) => (
-                <li key={pdf.label}>
-                  <Link
-                    href={pdf.url}
-                    external
-                    className="text-primary bg-primary/10 button md"
-                  >
-                    <GeneratePdf16 />
-                    <span className="break-all">{pdf.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {appointment?.properties.vaccine && (
-            <Text variant="text2">
-              {
-                vaccines[i18n.locale || "de"][
-                  appointment?.properties.vaccine as unknown as Vaccine
-                ].pdfDescription
-              }
-            </Text>
-          )}
+          <Text variant="text2">
+            {
+              vaccines[i18n.locale || "de"][
+                appointment.vaccine as unknown as Vaccine
+              ].pdfDescription
+            }
+          </Text> */}
         </section>
 
         <section className="mx-4 md:mx-0">

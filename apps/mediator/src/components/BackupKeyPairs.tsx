@@ -1,8 +1,8 @@
 import { theme } from "@impfen/common";
 import { Trans } from "@lingui/macro";
+import { getKeyPairs } from "actions";
 import clsx from "clsx";
 import dayjs from "dayjs";
-import { useApp } from "lib/AppProvider";
 
 interface BackupKeyPairsProps {
   className?: string;
@@ -15,10 +15,8 @@ export const BackupKeyPairs: React.FC<BackupKeyPairsProps> = ({
   onSuccess,
   downloadText,
 }) => {
-  const { keyPairs } = useApp();
-
+  const keyPairs = getKeyPairs();
   const dateString = dayjs().format("YYYY-MM-DD-HH-mm");
-
   const filename = `${theme.title}-backup-${dateString}.enc`.toLowerCase();
 
   return (

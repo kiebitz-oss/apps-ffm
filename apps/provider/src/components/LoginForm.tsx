@@ -6,15 +6,12 @@ import {
   Upload,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
+import { useAppState } from "lib/AppProvider";
 import { useRouter } from "next/router";
-import { ChangeEventHandler, useEffect, useRef, useState } from "react";
-import {
-  FormProvider,
-  Resolver,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
-import { useProviderApi } from "./ProviderApiContext";
+import type { ChangeEventHandler } from "react";
+import { useEffect, useRef, useState } from "react";
+import type { Resolver, SubmitHandler } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 
 interface FormData {
   keyPairs: string;
@@ -53,7 +50,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
   const [keyPairs, setKeyPairs] = useState<string>();
   const fileInput = useRef<HTMLInputElement>(null);
   const [failed, setFailed] = useState<boolean>(false);
-  const api = useProviderApi();
+  const { authenticate } = useAppState();
   const router = useRouter();
 
   const methods = useForm<FormData>({
@@ -102,16 +99,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
   };
 
   const onSubmit: SubmitHandler<FormData> = async ({ secret, keyPairs }) => {
-    await api.authenticate(secret, JSON.parse(keyPairs));
+    await authenticate(secret, JSON.parse(keyPairs));
+
     await router.push("/schedule");
-    // restoreFromBackup(data.secret, data.file)
-    //     .then(() => {
-    //         navigate('/schedule');
-    //     })
-    //     .catch((error) => {
-    //         console.error(error);
-    //         setFailed(true);
-    //     });
   };
 
   return (

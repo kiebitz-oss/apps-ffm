@@ -6,23 +6,20 @@ import {
   Title,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { BackupDataLink } from "components/BackupDataLink";
-import { useProviderApi } from "components/ProviderApiContext";
+import { backup } from "actions";
+import { BackupDataLink } from "components";
+import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import type { MouseEventHandler } from "react";
 import { useEffect, useState } from "react";
 
 const LogOutPage: NextPage = () => {
-  const [loggingOut, setLoggingOut] = useState(false);
   const router = useRouter();
-  const api = useProviderApi();
+  const { logout } = useAppState();
 
   const logOut: MouseEventHandler<HTMLButtonElement> = async () => {
-    setLoggingOut(true);
-
-    await api.logout();
-
+    await logout();
     await router.push("/");
   };
 
@@ -30,15 +27,15 @@ const LogOutPage: NextPage = () => {
   const [secret, setSecret] = useState<string | null>(null);
 
   useEffect(() => {
-    api.createBackup().then(({ keyPairs, secret }) => {
-      setSecret(secret || "???");
+    backup().then(({ keyPairs, secret }) => {
+      setSecret(secret);
       setBlob(
         new Blob([new TextEncoder().encode(JSON.stringify(keyPairs))], {
           type: "application/octet-stream",
         })
       );
     });
-  }, [api]);
+  }, []);
 
   return (
     <main>
@@ -47,23 +44,17 @@ const LogOutPage: NextPage = () => {
       </Title>
 
       <Text className="pb-8">
-        {loggingOut ? (
-          <Trans id="provider.logout.notice.logging-out">
-            Bitte warten, Sie werden abgemeldet...
-          </Trans>
-        ) : (
-          <Trans id="provider.logout.intro">
-            Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass
-            Sie Ihren Datenschlüssel notiert und Ihre Sicherungsdatei
-            heruntergeladen haben . Nur damit können Sie sich erneut einloggen.
-          </Trans>
-        )}
+        <Trans id="provider.logout.intro">
+          Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie
+          Ihren Datenschlüssel notiert und Ihre Sicherungsdatei heruntergeladen
+          haben . Nur damit können Sie sich erneut einloggen.
+        </Trans>
       </Text>
 
       <div className="max-w-3xl">
         <div className="mb-2">
           <Title variant="book" as="h3">
-            <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
+            <Trans id="provider.logout.secret.title">Ihr Sicherheitscode</Trans>
           </Title>
           {secret && <SecretBox secret={secret} copy />}
         </div>
@@ -72,9 +63,9 @@ const LogOutPage: NextPage = () => {
           <div className="flex flex-row justify-between pb-8">
             <CopyToClipboardButton
               toCopy={secret}
-              className="button sm primary"
+              className="button sm secondary"
             >
-              <Trans id="provider.logout.copy-secret">
+              <Trans id="provider.logout.secret.copy">
                 Datenschlüssel kopieren
               </Trans>
             </CopyToClipboardButton>
@@ -91,7 +82,7 @@ const LogOutPage: NextPage = () => {
         )}
       </div>
 
-      <Button onClick={logOut} disabled={loggingOut}>
+      <Button onClick={logOut}>
         <Trans id="provider.logout.button">Abmelden</Trans>
       </Button>
     </main>

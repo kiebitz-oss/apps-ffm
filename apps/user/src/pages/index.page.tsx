@@ -1,6 +1,6 @@
 import { Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { Questionaire } from "components/questionaire";
+import { Questionaire } from "components";
 import type { NextPage } from "next";
 
 const IndexPage: NextPage = () => {

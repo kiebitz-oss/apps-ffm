@@ -7,8 +7,8 @@ import {
   vaccines,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
+import { createAppointmentSeries, publishAppointments } from "actions";
 import dayjs from "dayjs";
-import { useApp } from "lib/AppProvider";
 import {
   FormProvider,
   Resolver,
@@ -59,34 +59,30 @@ export const AppointmentSeriesForm: React.FC<AppointmentSeriesFormProps> = ({
         .utc()
         .set("hour", 8)
         .set("minute", 0)
-        .toISOString()
-        .substring(16, 0),
+        .format("YYYY-MM-DDThh:mm"),
       endAt: dayjs()
         .utc()
         .set("hour", 18)
         .set("minute", 0)
-        .toISOString()
-        .substring(16, 0),
+        .format("YYYY-MM-DDThh:mm"),
       slotCount: 5,
     },
     resolver,
   });
 
   const { register, handleSubmit, formState } = methods;
-  const { api } = useApp();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    const result = await api
-      .createAppointmentSeries(
-        dayjs(data.startAt).utc().toDate(),
-        dayjs(data.endAt).utc().toDate(),
-        Number(data.interval),
-        data.vaccine,
-        data.slotCount
+    await createAppointmentSeries(
+      dayjs(data.startAt).utc().toDate(),
+      dayjs(data.endAt).utc().toDate(),
+      Number(data.interval),
+      data.vaccine,
+      data.slotCount
+    )
+      .then((appointmentSeries) =>
+        publishAppointments(appointmentSeries.appointments)
       )
-      .then((appointmentSeries) => {
-        return api.publishAppointments(appointmentSeries.appointments);
-      })
       .then((result) => {
         if (onSuccess) {
           onSuccess();

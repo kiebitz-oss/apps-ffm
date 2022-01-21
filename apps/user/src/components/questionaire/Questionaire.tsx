@@ -81,53 +81,56 @@ export const Questionaire: React.FC = () => {
       onSubmit={handleSubmit(onSubmit as any)}
     >
       <div className="flex flex-col flex-1 gap-5">
-        <QuestionaireBox control={control} name="q1">
+        <QuestionaireBox name="q1" control={control}>
           <Trans id="user.welcome.question1_value">
             Handelt es sich um eine Booster-Impfung?
           </Trans>
         </QuestionaireBox>
 
-        {q1Value === true && (
-          <QuestionaireBox
-            control={control}
-            name="q2"
-            error={q2Value === false}
-            errorMessage={t({
-              id: "user.welcome.question2_error",
-              message:
-                "Es müssen 3 Monate seit Ihrem letzten Impftermin vergangen sein, bevor Sie sich boostern lassen können.",
-            })}
-          >
-            <Trans id="user.welcome.question2_value">
-              Liegt Ihre letzte Impfung mehr als 3 Monate zurück?
-            </Trans>
-          </QuestionaireBox>
-        )}
+        <QuestionaireBox
+          name="q2"
+          condition={q1Value === true}
+          error={q2Value === false}
+          errorMessage={t({
+            id: "user.welcome.question2_error",
+            message:
+              "Es müssen 3 Monate seit Ihrem letzten Impftermin vergangen sein, bevor Sie sich boostern lassen können.",
+          })}
+          control={control}
+        >
+          <Trans id="user.welcome.question2_value">
+            Liegt Ihre letzte Impfung mehr als 3 Monate zurück?
+          </Trans>
+        </QuestionaireBox>
 
-        {(q1Value === false || q2Value === true) && (
-          <QuestionaireBox control={control} name="q3">
-            <Trans id="user.welcome.question3_value">
-              Sind sie schwanger oder jünger als 30?
-            </Trans>
-          </QuestionaireBox>
-        )}
+        <QuestionaireBox
+          name="q3"
+          condition={q1Value === false || q2Value === true}
+          control={control}
+        >
+          <Trans id="user.welcome.question3_value">
+            Sind sie schwanger oder jünger als 30?
+          </Trans>
+        </QuestionaireBox>
 
-        {(q1Value === false || q2Value === true) && q3Value === true && (
-          <QuestionaireBox
-            control={control}
-            name="q4"
-            error={q4Value === true}
-            errorMessage={t({
-              id: "user.welcome.question4_error",
-              message:
-                "Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld.",
-            })}
-          >
-            <Trans id="user.welcome.question4_value">
-              Sind Sie jünger als 12?
-            </Trans>
-          </QuestionaireBox>
-        )}
+        {/* no = biontech */}
+        <QuestionaireBox
+          name="q4"
+          condition={
+            (q1Value === false || q2Value === true) && q3Value === true
+          }
+          error={q4Value === true}
+          control={control}
+          errorMessage={t({
+            id: "user.welcome.question4_error",
+            message:
+              "Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld.",
+          })}
+        >
+          <Trans id="user.welcome.question4_value">
+            Sind Sie jünger als 12?
+          </Trans>
+        </QuestionaireBox>
       </div>
 
       {error && !valid && (

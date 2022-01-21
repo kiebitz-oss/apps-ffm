@@ -1,10 +1,12 @@
 import { Error } from "@impfen/common";
+import { t, Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { Control, Controller } from "react-hook-form";
 
 type QuestionBoxProps = {
   name: string;
   control: Control;
+  condition?: boolean;
   error?: boolean;
   errorMessage?: string;
 };
@@ -13,9 +15,14 @@ export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
   children,
   control,
   name,
+  condition = true,
   error,
-  errorMessage = "Ihre letzte Impfung muss mehr. Bitte haben Sie Verständnis für die aktuellen Regeln. Diese können sich ändern, bleiben Sie informiert.",
+  errorMessage,
 }) => {
+  if (!condition) {
+    return null;
+  }
+
   return (
     <Controller
       control={control}
@@ -28,7 +35,7 @@ export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
                 className={clsx(
                   "flex flex-col gap-5 py-3 px-4 font-semibold bg-white rounded shadow-box sm:w-[500px]",
                   {
-                    ["border-error border-2"]: error,
+                    ["border-2 border-error"]: error,
                   }
                 )}
               >
@@ -52,7 +59,7 @@ export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
                       onChange={() => onChange(true)}
                       value="1"
                     />
-                    ja
+                    <Trans id="user.questionaire.yes">ja</Trans>
                   </label>
 
                   <label
@@ -68,14 +75,19 @@ export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
                       onChange={() => onChange(false)}
                       value="0"
                     />
-                    nein
+                    <Trans id="user.questionaire.no">nein</Trans>
                   </label>
                 </div>
               </div>
 
               {error && (
                 <Error className="mx-4 sm:w-[500px] xl:mt-2">
-                  {errorMessage}
+                  {errorMessage ||
+                    t({
+                      id: "user.questionaire.error.default",
+                      message:
+                        "Ihre letzte Impfung muss mehr. Bitte haben Sie Verständnis für die aktuellen Regeln. Diese können sich ändern, bleiben Sie informiert.",
+                    })}
                 </Error>
               )}
             </div>

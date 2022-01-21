@@ -33,7 +33,7 @@ export const BackupDataLink: React.FC<BackupDataLinkProps> = ({
     return (
       <a
         onClick={onSuccess}
-        className={clsx("button primary sm", className)}
+        className={clsx("button secondary sm", className)}
         download={filename}
         href={URL.createObjectURL(blob)}
       >

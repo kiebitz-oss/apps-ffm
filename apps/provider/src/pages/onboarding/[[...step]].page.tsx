@@ -3,8 +3,8 @@ import {
   OnboardingStateProvider,
   SecretStep,
   VerifyStep,
-} from "components/onboarding";
-import { useApp } from "lib/AppProvider";
+} from "components";
+import { useAppState } from "lib/AppProvider";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 
@@ -35,7 +35,7 @@ const StepRenderer: React.FC<{ step: string }> = ({ step }) => {
 
 const OnboardingPage: NextPage<{ step?: Steps }> = ({ step = defaultStep }) => {
   const router = useRouter();
-  const { isAuthenticated } = useApp();
+  const { isAuthenticated } = useAppState();
 
   if (isAuthenticated) {
     router.push("/account");

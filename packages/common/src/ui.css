@@ -201,7 +201,7 @@
   }
 
   .button {
-    @apply default-focus rounded min-w-max max-w-full sm:w-max text-center break-words;
+    @apply default-focus rounded min-w-max max-w-full sm:w-max text-center break-words inline-block;
 
     &.primary {
       @apply border-transparent border-2 text-white bg-primary hover:bg-white hover:text-black hover:border-black;

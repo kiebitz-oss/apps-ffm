@@ -1,3 +1,4 @@
+import { getBooking } from "actions";
 import {
   AppointmentStep,
   DateStep,
@@ -5,8 +6,7 @@ import {
   LocationStep,
   SuccessStep,
   VerifyStep,
-} from "components/finder";
-import { useApp } from "lib/AppProvider";
+} from "components";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 
@@ -54,7 +54,7 @@ interface FinderPageProps {
 
 const FinderPage: NextPage<FinderPageProps> = ({ step = defaultStep }) => {
   const router = useRouter();
-  const { booking } = useApp();
+  const booking = getBooking();
 
   if (booking && !router.asPath.startsWith("/finder/success")) {
     router.push("/finder/success");

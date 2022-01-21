@@ -1,4 +1,7 @@
-import { UserService } from "lib/UserService";
+import { backup } from "actions/backup";
+import { restore } from "actions/restore";
+import { setBooking } from "actions/setBooking";
+import { setSecret } from "actions/setSecret";
 import type { Reducer } from "react";
 import React, {
   createContext,
@@ -7,61 +10,47 @@ import React, {
   useMemo,
   useReducer,
 } from "react";
-import type { Booking, UserKeyPairs, Vaccine } from "vanellus";
 
 enum ActionType {
   AUTHENTICATE = "AUTHENTICATE",
-  SET_BOOKING = "SET_BOOKING",
+  LOGOUT = "LOGOUT",
 }
 
 type State = {
-  api: UserService;
-  booking?: Booking;
-  keyPairs?: UserKeyPairs;
-  secret?: string;
-  vaccine?: Vaccine;
+  isAuthenticated: boolean;
 };
 
 type Actions =
   | {
       type: ActionType.AUTHENTICATE;
-      keyPairs: UserKeyPairs;
     }
   | {
-      type: ActionType.SET_BOOKING;
-      booking?: Booking;
+      type: ActionType.LOGOUT;
     };
 
-const api = new UserService({
-  jsonrpc: {
-    appointments: process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT as string,
-    storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT as string,
-  },
-});
-
 const initialState: State = {
-  api,
+  isAuthenticated: false,
 };
 
 interface Context extends State {
-  authenticate: (keyPairs: UserKeyPairs) => void;
-  setBooking: (booking?: Booking) => void;
+  authenticate: (secret: string) => void;
+  logout: () => void;
 }
 
 export const AppContext = createContext<Context>({
   ...initialState,
   authenticate: () => undefined,
-  setBooking: () => undefined,
+  logout: () => undefined,
 });
 
 const reducer: Reducer<State, Actions> = (state, action) => {
   switch (action.type) {
     case ActionType.AUTHENTICATE: {
-      return { ...state, keyPairs: action.keyPairs };
+      return { ...state, isAuthenticated: true };
     }
 
-    case ActionType.SET_BOOKING: {
-      return { ...state, booking: action.booking };
+    case ActionType.LOGOUT: {
+      return { ...state, isAuthenticated: false };
     }
 
     default: {
@@ -74,19 +63,31 @@ export const AppProvider: React.FC = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const authenticate = useCallback(
-    (keyPairs: UserKeyPairs) =>
-      dispatch({
-        type: ActionType.AUTHENTICATE,
-        keyPairs,
+    (secret: string) =>
+      new Promise(async (resolve) => {
+        await restore(secret);
+
+        dispatch({
+          type: ActionType.AUTHENTICATE,
+        });
+
+        resolve(true);
       }),
+
     []
   );
 
-  const setBooking = useCallback(
-    (booking?: Booking) =>
-      dispatch({
-        type: ActionType.SET_BOOKING,
-        booking,
+  const logout = useCallback(
+    () =>
+      new Promise(async (resolve) => {
+        await backup(true);
+        setSecret();
+        setBooking();
+
+        dispatch({
+          type: ActionType.LOGOUT,
+        }),
+          resolve(true);
       }),
     []
   );
@@ -95,19 +96,19 @@ export const AppProvider: React.FC = (props) => {
     () => ({
       ...state,
       authenticate,
-      setBooking,
+      logout,
     }),
-    [authenticate, setBooking, state]
+    [authenticate, logout, state]
   );
 
   return <AppContext.Provider value={value} {...props} />;
 };
 
-export const useApp = () => {
+export const useAppState = () => {
   const context = useContext(AppContext);
 
   if (context === undefined) {
-    throw new Error("useApp must be used within a AppProvider");
+    throw new Error("useAppState must be used within a AppProvider");
   }
 
   return context;

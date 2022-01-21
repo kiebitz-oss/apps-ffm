@@ -1,6 +1,6 @@
 import { Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { ProviderForm } from "components/ProviderForm";
+import { ProviderForm } from "components";
 import { useRouter } from "next/router";
 import { SubmitHandler } from "react-hook-form";
 import {

@@ -1,28 +1,43 @@
-import { BackLink, Button, Title } from "@impfen/common";
-import { Trans } from "@lingui/macro";
-import { useApp } from "lib/AppProvider";
+import { BackLink, Button, Link, Title } from "@impfen/common";
+import { t, Trans } from "@lingui/macro";
+import { confirmProvider, decodeProviderId, getProvider } from "actions";
+import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import type { MouseEventHandler } from "react";
 import { useEffect, useState } from "react";
 import type { Provider } from "vanellus";
 
 const ProviderShowPage: NextPage = () => {
   const [provider, setProvider] = useState<Provider | null>(null);
-
   const router = useRouter();
-  const { api } = useApp();
+  const { addNotification } = useAppState();
 
-  const id = router.query?.id
-    ? decodeURIComponent(
-        Buffer.from(router.query?.id as string, "hex").toString()
-      )
-    : null;
+  const id = decodeProviderId(router.query?.id as string);
+
+  const refreshProvider = async (id: string) => {
+    return getProvider(id).then(setProvider);
+  };
+
+  const handleConfirmProvider: MouseEventHandler<
+    HTMLButtonElement
+  > = async () => {
+    if (provider) {
+      await confirmProvider(provider);
+      await refreshProvider(id);
+
+      addNotification(
+        t({
+          id: "mediator.provider-show.notification.success",
+          message: "Impfanbieter erfolgreich bestätigt",
+        })
+      );
+    }
+  };
 
   useEffect(() => {
-    if (id) {
-      api.getProvider(id).then(setProvider);
-    }
-  }, [api, id]);
+    refreshProvider(id);
+  }, [id]);
 
   if (!provider) {
     return <main>Provider nicht gefunden</main>;
@@ -80,13 +95,6 @@ const ProviderShowPage: NextPage = () => {
 
           <tr>
             <th>
-              <Trans id="mediator.provider-show.city">Stadt</Trans>
-            </th>
-            <td>{provider.city || " -- "}</td>
-          </tr>
-
-          <tr>
-            <th>
               <Trans id="mediator.provider-show.zip-code">Postleitzahl</Trans>
             </th>
             <td>{provider.zipCode}</td>
@@ -94,9 +102,35 @@ const ProviderShowPage: NextPage = () => {
 
           <tr>
             <th>
+              <Trans id="mediator.provider-show.city">Stadt</Trans>
+            </th>
+            <td>{provider.city}</td>
+          </tr>
+
+          <tr>
+            <th>
+              <Trans id="mediator.provider-show.website">Website</Trans>
+            </th>
+            <td>
+              {provider.website ? (
+                <Link href={provider.website} external>
+                  {provider.website}
+                </Link>
+              ) : (
+                " -- "
+              )}
+            </td>
+          </tr>
+
+          <tr>
+            <th>
               <Trans id="mediator.provider-show.email">E-Mail</Trans>
             </th>
-            <td>{provider.email || " -- "}</td>
+            <td>
+              <a className="link" href={`mailto:${provider.email}`}>
+                {provider.email}
+              </a>
+            </td>
           </tr>
 
           <tr>
@@ -123,7 +157,7 @@ const ProviderShowPage: NextPage = () => {
 
       <div className="buttons-list">
         {!provider.verified ? (
-          <Button variant="primary" size="sm">
+          <Button variant="primary" size="sm" onClick={handleConfirmProvider}>
             <Trans id="mediator.provider-show.button-show">
               Anbieter bestätigen
             </Trans>

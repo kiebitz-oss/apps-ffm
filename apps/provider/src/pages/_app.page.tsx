@@ -4,14 +4,13 @@ import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import "app.css";
 import { HeaderContent } from "components/HeaderContent";
-import { ProviderApiProvider } from "components/ProviderApiContext";
-import dayjsEn from "dayjs/locale/de";
-import dayjsDe from "dayjs/locale/en";
-import { ProviderService } from "lib/ProviderService";
+import dayjs from "dayjs";
+import "dayjs/locale/de";
+import "dayjs/locale/en";
+import { AppProvider } from "lib/AppProvider";
 import { de, en } from "make-plural/plurals";
 import type { AppProps } from "next/app";
 import React, { useEffect, useState } from "react";
-import { dayjs } from "../../../../packages/vanellus/src/utils";
 
 const SafeHydrate: React.FC = ({ children }) => {
   return (
@@ -35,8 +34,6 @@ export const loadLocale = async (locale?: string) => {
         i18n.load(locale, { ...commonMessages, ...messages });
       }
 
-      dayjs.locale(locale === "de" ? dayjsDe : dayjsEn);
-
       i18n.activate(locale);
       loadedLocales.push(locale);
     } catch (error) {
@@ -52,28 +49,22 @@ i18n.loadLocaleData({
 
 loadLocale("de");
 
-const api = new ProviderService({
-  jsonrpc: {
-    appointments: process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT as string,
-    storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT as string,
-  },
-});
-
 const App = ({ Component, pageProps }: AppProps) => {
-  const [locale, setLocale] = useState(i18n.locale);
+  const [locale, setLocale] = useState(i18n.locale || "de");
 
   useEffect(() => {
     loadLocale(locale);
+    dayjs.locale(locale);
   }, [locale]);
 
   return (
     <SafeHydrate>
       <I18nProvider i18n={i18n}>
-        <ProviderApiProvider api={api}>
+        <AppProvider>
           <Layout header={HeaderContent} locale={locale} setLocale={setLocale}>
             <Component {...pageProps} />
           </Layout>
-        </ProviderApiProvider>
+        </AppProvider>
       </I18nProvider>
     </SafeHydrate>
   );

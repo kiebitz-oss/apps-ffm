@@ -7,10 +7,10 @@ import {
   vaccines,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
+import { createAppointment, publishAppointments } from "actions";
 import dayjs from "dayjs";
-import { useApp } from "lib/AppProvider";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { Appointment } from "vanellus";
+import type { Appointment } from "vanellus";
 
 interface FormData {
   id?: string;
@@ -45,17 +45,15 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
   });
 
   const { register, handleSubmit, formState } = methods;
-  const { api } = useApp();
 
   const onSubmit: SubmitHandler<FormData> = async (data) =>
-    api
-      .createAppointment(
-        dayjs(data.startDate).toDate(),
-        data.duration,
-        data.vaccine,
-        data.slotCount
-      )
-      .then((appointment) => api.publishAppointments([appointment]))
+    createAppointment(
+      dayjs(data.startDate).toDate(),
+      data.duration,
+      data.vaccine,
+      data.slotCount
+    )
+      .then((appointment) => publishAppointments([appointment]))
       .then((result) => {
         if (onSuccess) {
           onSuccess();
@@ -95,7 +93,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 message: "Bitte gegen Sie einen Startdatum an",
               }),
               min: {
-                value: dayjs().toISOString().substring(0, 16),
+                value: dayjs().format("YYYY-MM-DDThh:mm"),
                 message: t({
                   id: "provider.schedule.appointment-modal.start-date.error.min",
                   message:
@@ -103,11 +101,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 }),
               },
               max: {
-                value: dayjs()
-                  .add(30, "days")
-
-                  .toISOString()
-                  .substring(0, 16),
+                value: dayjs().add(30, "days").format("YYYY-MM-DDThh:mm"),
                 message: t({
                   id: "provider.schedule.appointment-modal.start-date.error.max",
                   message:
