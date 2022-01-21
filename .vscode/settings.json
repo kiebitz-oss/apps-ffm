@@ -14,5 +14,13 @@
   "editor.guides.bracketPairs": true,
   "files.exclude": {
     "node_module": true
-  }
+  },
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./apps/*/"
+    },
+    {
+      "pattern": "./packages/*/"
+    }
+  ]
 }

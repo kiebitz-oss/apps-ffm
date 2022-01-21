@@ -1,5 +1,5 @@
 {
-  "name": "@kiebitz-oss/app-user",
+  "name": "@impfen/app-user",
   "description": "Kiebitz User Web Applications",
   "version": "1.0.0",
   "private": true,
@@ -10,151 +10,85 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiebitz-oss/apps-inoeg",
+    "url": "https://github.com/impfen/apps-inoeg",
     "directory": "apps/user"
   },
-  "bugs": "https://github.com/kiebitz-oss/apps-inoeg/issues",
+  "bugs": "https://github.com/impfen/apps-inoeg/issues",
   "engines": {
     "node": ">=16.0.0"
   },
   "scripts": {
-    "postinstall": "pnpm i18n:build",
-    "dev": "next dev",
+    "dev": "next dev -p 3000",
     "build": "next build && next export --outdir dist",
     "start": "next start",
     "test": "jest",
+    "test:e2e": "playwright test",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",
     "i18n": "lingui",
-    "i18n:extract": "NODE_ENV=development lingui extract --clean ",
+    "i18n:extract": "NODE_ENV=development lingui extract --clean",
     "i18n:compile": "lingui compile",
     "i18n:build": "NODE_ENV=development lingui extract --clean && lingui compile"
   },
   "dependencies": {
-    "@babel/core": "^7.16.7",
-    "@carbon/icons-react": "^10.44.0",
+    "@babel/core": "^7.16.10",
+    "@carbon/icons-react": "^10.45.0",
     "@fontsource/ibm-plex-sans": "^4.5.1",
-    "@headlessui/react": "^1.4.2",
-    "@kiebitz-oss/api": "workspace:*",
-    "@kiebitz-oss/config": "workspace:*",
-    "@kiebitz-oss/ui": "workspace:*",
+    "@headlessui/react": "^1.4.3",
+    "@impfen/common": "workspace:*",
     "@lingui/cli": "^3.13.0",
-    "@lingui/core": "^3.13.0",
     "@lingui/macro": "^3.13.0",
     "@lingui/react": "^3.13.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@next/mdx": "^12.0.7",
-    "@storybook/react": "^6.4.9",
-    "@types/node": "^17.0.8",
-    "autoprefixer": "^10.4.1",
+    "@next/mdx": "^12.0.8",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "@types/node": "^17.0.10",
+    "@types/react": "^17.0.38",
+    "autoprefixer": "^10.4.2",
     "babel-plugin-macros": "^3.1.0",
     "clsx": "^1.1.1",
+    "dayjs": "^1.10.7",
+    "destr": "^1.1.0",
     "make-plural": "^7.0.0",
-    "next": "^12.0.7",
-    "next-transpile-modules": "^9.0.0",
+    "next": "^12.0.8",
     "postcss": "^8.4.5",
+    "postcss-import": "^14.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.22.2",
-    "react-use": "^17.3.1",
-    "tailwindcss": "^3.0.7",
-    "typescript": "^4.5.4"
+    "react-hook-form": "^7.24.2",
+    "react-use": "^17.3.2",
+    "tailwindcss": "^3.0.15",
+    "typescript": "^4.5.5",
+    "vanellus": "workspace:*"
   },
   "devDependencies": {
-    "@testing-library/dom": "^8.11.1",
+    "@playwright/test": "^1.18.0",
+    "@testing-library/dom": "^8.11.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.0.3",
-    "@types/react": "^17.0.37",
+    "@types/jest": "^27.4.0",
+    "@types/jest-axe": "^3.5.3",
     "babel-jest": "^27.4.6",
-    "eslint": "^8.5.0",
-    "eslint-config-next": "^12.0.7",
+    "eslint": "^8.7.0",
+    "eslint-config-next": "^12.0.8",
+    "eslint-plugin-jest": "^25.7.0",
+    "eslint-plugin-playwright": "^0.7.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-regexp": "^1.5.1",
+    "eslint-plugin-tailwindcss": "^3.3.0",
+    "eslint-plugin-testing-library": "^5.0.3",
     "jest": "^27.4.7",
-    "jest-axe": "^5.0.1"
+    "jest-axe": "^5.0.1",
+    "jest-transform-stub": "^2.0.0"
   },
   "browserslist": [
     "defaults",
     "not ie 11",
     "not op_mini all"
-  ],
-  "postcss": {
-    "plugins": {
-      "tailwindcss/nesting": {},
-      "tailwindcss": {},
-      "autoprefixer": {}
-    }
-  },
-  "lingui": {
-    "locales": [
-      "de",
-      "en"
-    ],
-    "sourceLocale": "de",
-    "format": "po",
-    "catalogs": [
-      {
-        "path": "<rootDir>/locales/{locale}/messages",
-        "include": [
-          "<rootDir>"
-        ],
-        "exclude": [
-          "**/node_modules/**"
-        ]
-      }
-    ],
-    "rootDir": "src",
-    "orderBy": "messageId"
-  },
-  "jest": {
-    "displayName": "app-user",
-    "roots": [
-      "<rootDir>"
-    ],
-    "testEnvironment": "jsdom",
-    "testURL": "http://localhost:3000/",
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom",
-      "@testing-library/jest-dom/extend-expect",
-      "jest-axe/extend-expect"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/.next/",
-      "<rootDir>/dist/"
-    ],
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)$": [
-        "babel-jest",
-        {
-          "presets": [
-            "next/babel"
-          ],
-          "plugins": [
-            "macros"
-          ]
-        }
-      ]
-    }
-  },
-  "eslintConfig": {
-    "extends": "next/core-web-vitals",
-    "root": true,
-    "settings": {
-      "tailwindcss": {
-        "groupByResponsive": true
-      }
-    },
-    "ignorePatterns": [
-      "node_modules",
-      "dist",
-      ".next"
-    ],
-    "rules": {
-      "tailwindcss/no-custom-classname": "off",
-      "react/no-unescaped-entities": "off",
-      "@next/next/no-img-element": "off"
-    }
-  }
+  ]
 }

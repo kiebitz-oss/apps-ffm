@@ -1,0 +1,3 @@
+[submodule "packages/vanellus"]
+	path = packages/vanellus
+	url = https://github.com/impfen/vanellus-inoeg.git

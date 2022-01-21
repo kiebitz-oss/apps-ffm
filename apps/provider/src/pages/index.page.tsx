@@ -1,47 +1,49 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
-import { Divider, Message, Section, Title } from "@kiebitz-oss/ui";
+import { Divider, Link, Section, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
+import { LoginForm } from "components";
 import type { NextPage } from "next";
-import { useSearchParam } from "react-use";
-import { Link } from "../components/Link";
-import { RestoreForm } from "./RestoreForm";
 
 const ProviderStartPage: NextPage = () => {
-  const notice = useSearchParam("notice");
-
   return (
     <main className="content">
       <Title variant="h1">
         <Trans id="provider.welcome.title">Impstellen</Trans>
       </Title>
 
-      {notice === "thankyou" && (
-        <Message variant="success">
-          <Trans id="provider.welcome.loggedout-.notice">
-            Sie wurden erfolgreich abgemeldet. Sie können Ihre Daten jederzeit
-            mit Ihrem Datenschlüssel und Ihrer Sicherheitsdatei
-            wiederherstellen.
-          </Trans>
-        </Message>
-      )}
-
       <Section className="mt-10 w-full sm:mt-0">
-        <Title variant="h2">Als neue Impfstelle registrieren</Title>
+        <Title variant="h2">
+          <Trans id="provider.welcome.register.title">
+            Als Impfstelle registrieren
+          </Trans>
+        </Title>
+
+        <Text>
+          <Trans id="provider.welcome.register.intro">
+            Text dies das Dinge
+          </Trans>
+        </Text>
 
         <Link type="button" variant="primary" href="/onboarding">
-          Registrierung starten
+          <Trans id="provider.welcome.register.link-start">
+            Registrierung starten
+          </Trans>
         </Link>
       </Section>
 
       <Divider className="my-12" />
 
       <Section className="mt-10 w-full sm:mt-0">
-        <Title variant="h2">Mit bestehendem Account einloggen</Title>
+        <Title variant="h2">
+          <Trans id="provider.welcome.login.title">
+            Als Impfstelle einloggen
+          </Trans>
+        </Title>
 
-        <RestoreForm className="mt-5 w-full md:col-span-2 md:mt-0" />
+        <Text>
+          <Trans id="provider.welcome.login.intro">Text dies das Dinge</Trans>
+        </Text>
+
+        <LoginForm className="mt-5 w-full md:col-span-2 md:mt-0" />
       </Section>
     </main>
   );

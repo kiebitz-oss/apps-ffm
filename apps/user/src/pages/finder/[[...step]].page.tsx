@@ -1,12 +1,16 @@
+import { getBooking } from "actions";
+import {
+  AppointmentStep,
+  DateStep,
+  FinderProvider,
+  LocationStep,
+  SuccessStep,
+  VerifyStep,
+} from "components";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { AppointmentStep } from "./AppointmentStep";
-import { DateStep } from "./DateStep";
-import { FinderStateProvider } from "./FinderStateProvider";
-import { LocationStep } from "./LocationStep";
-import { SuccessStep } from "./SuccessStep";
-import { VerifyStep } from "./VerifyStep";
+import { useRouter } from "next/router";
 
-enum Steps {
+enum Step {
   location = "location",
   appointment = "appointment",
   date = "date",
@@ -14,37 +18,54 @@ enum Steps {
   success = "success",
 }
 
-const defaultStep = Steps.location;
+const defaultStep = Step.location;
 
-const StepRenderer: React.FC<{ step: string }> = ({ step }) => {
+interface StepRendererProps {
+  step: Step;
+}
+
+const StepRenderer: React.FC<StepRendererProps> = ({ step }) => {
   switch (step) {
-    case Steps.appointment: {
+    case Step.appointment: {
       return <AppointmentStep />;
     }
 
-    case Steps.date: {
+    case Step.date: {
       return <DateStep />;
     }
 
-    case Steps.verify: {
+    case Step.verify: {
       return <VerifyStep />;
     }
 
-    case Steps.success: {
+    case Step.success: {
       return <SuccessStep />;
     }
 
-    case Steps.location:
+    case Step.location:
     default:
       return <LocationStep />;
   }
 };
 
-const FinderPage: NextPage<{ step?: Steps }> = ({ step = defaultStep }) => {
+interface FinderPageProps {
+  step?: Step;
+}
+
+const FinderPage: NextPage<FinderPageProps> = ({ step = defaultStep }) => {
+  const router = useRouter();
+  const booking = getBooking();
+
+  if (booking && !router.asPath.startsWith("/finder/success")) {
+    router.push("/finder/success");
+
+    return null;
+  }
+
   return (
-    <FinderStateProvider>
+    <FinderProvider>
       <StepRenderer step={step} />
-    </FinderStateProvider>
+    </FinderProvider>
   );
 };
 

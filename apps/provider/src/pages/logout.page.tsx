@@ -4,47 +4,38 @@ import {
   SecretBox,
   Text,
   Title,
-} from "@kiebitz-oss/ui";
+} from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
+import { backup } from "actions";
+import { BackupDataLink } from "components";
+import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
-import { MouseEventHandler, useState } from "react";
-import { BackupDataLink } from "./onboarding/BackupDataLink";
-import { useProviderApi } from "./ProviderApiContext";
+import { useRouter } from "next/router";
+import type { MouseEventHandler } from "react";
+import { useEffect, useState } from "react";
 
 const LogOutPage: NextPage = () => {
-  const [loggingOut, setLoggingOut] = useState(false);
-  const api = useProviderApi();
-  const secret = api.getSecret();
-  // const navigate = useNavigate();
-  // const backend = useBackend();
+  const router = useRouter();
+  const { logout } = useAppState();
 
   const logOut: MouseEventHandler<HTMLButtonElement> = async () => {
-    setLoggingOut(true);
-
-    // const kpa = keyPairsAction('logoutKeyPairs');
-
-    // kpa.then((kp: any) => {
-    //     const psa = providerSecretAction(undefined, 'logoutProviderSecret');
-
-    //     psa.then((ps: any) => {
-    //         // we give the backup data action a different name to avoid it being rejected
-    //         // in case there's already a backup in progress... It will still be queued
-    //         // up to ensure no conflicts can occur.
-    //         const ba = backupDataAction(kp.data, ps.data, 'logout');
-
-    //         ba.then(() => {
-    //             backend.local.deleteAll('provider::');
-    //             navigate('/provider?notice=thankyou');
-    //         });
-
-    //         ba.catch(() => setLoggingOut(false));
-    //     });
-
-    //     psa.catch(() => setLoggingOut(false));
-    // });
-
-    // kpa.catch(() => setLoggingOut(false));
+    await logout();
+    await router.push("/");
   };
+
+  const [blob, setBlob] = useState<Blob | null>(null);
+  const [secret, setSecret] = useState<string | null>(null);
+
+  useEffect(() => {
+    backup().then(({ keyPairs, secret }) => {
+      setSecret(secret);
+      setBlob(
+        new Blob([new TextEncoder().encode(JSON.stringify(keyPairs))], {
+          type: "application/octet-stream",
+        })
+      );
+    });
+  }, []);
 
   return (
     <main>
@@ -52,45 +43,46 @@ const LogOutPage: NextPage = () => {
         <Trans id="provider.logout.title">Abmelden</Trans>
       </Title>
 
-      <Text>
-        {loggingOut ? (
-          <Trans id="provider.logout.notice.logging-out">
-            Bitte warten, Sie werden abgemeldet...
-          </Trans>
-        ) : (
-          <Trans id="provider.logout.intro">
-            Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass
-            Sie Ihren Datenschlüssel notiert und Ihre Sicherungsdatei
-            heruntergeladen haben . Nur damit können Sie sich erneut einloggen.
-          </Trans>
-        )}
+      <Text className="pb-8">
+        <Trans id="provider.logout.intro">
+          Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie
+          Ihren Datenschlüssel notiert und Ihre Sicherungsdatei heruntergeladen
+          haben . Nur damit können Sie sich erneut einloggen.
+        </Trans>
       </Text>
 
-      <div>
-        <Title variant="book" as="h3">
-          <Trans id="provider.secret.title">Ihr Sicherheitscode</Trans>
-        </Title>
-        {secret && <SecretBox secret={secret} />}
+      <div className="max-w-3xl">
+        <div className="mb-2">
+          <Title variant="book" as="h3">
+            <Trans id="provider.logout.secret.title">Ihr Sicherheitscode</Trans>
+          </Title>
+          {secret && <SecretBox secret={secret} copy />}
+        </div>
+
+        {secret && (
+          <div className="flex flex-row justify-between pb-8">
+            <CopyToClipboardButton
+              toCopy={secret}
+              className="button sm secondary"
+            >
+              <Trans id="provider.logout.secret.copy">
+                Datenschlüssel kopieren
+              </Trans>
+            </CopyToClipboardButton>
+
+            <BackupDataLink
+              blob={blob}
+              providerName="~IMPFSTELLE 3000~"
+              downloadText={t({
+                id: "provider.logout.download-backup",
+                message: "Sicherungsdatei herunterladen",
+              })}
+            />
+          </div>
+        )}
       </div>
 
-      {secret && (
-        <div className="flex flex-row justify-between">
-          <CopyToClipboardButton toCopy={secret}>
-            <Trans id="provider.logout.copy-secret">
-              Datenschlüssel kopieren
-            </Trans>
-          </CopyToClipboardButton>
-
-          <BackupDataLink
-            downloadText={t({
-              id: "provider.logout.download-backup",
-              message: "Sicherungsdatei herunterladen",
-            })}
-          />
-        </div>
-      )}
-
-      <Button onClick={logOut} disabled={loggingOut}>
+      <Button onClick={logOut}>
         <Trans id="provider.logout.button">Abmelden</Trans>
       </Button>
     </main>

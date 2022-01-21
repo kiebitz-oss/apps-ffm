@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "@impfen/common/src/ui.css";
+
+@layer components {
+  .providers-list {
+    @apply min-w-full divide-y divide-gray-200 table w-full striped;
+  }
+
+  .providers-list-row {
+  }
+}

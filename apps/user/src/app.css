@@ -1,0 +1,47 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "@impfen/common/src/ui.css";
+
+#welcome {
+  & .h1 {
+    @apply px-4 md:px-0;
+  }
+
+  & .text {
+    @apply max-w-[48ch] px-4 md:px-0;
+  }
+}
+
+#finder-location {
+  & .h1,
+  & .text {
+    @apply px-4 md:px-0;
+  }
+}
+
+#finder-appointment {
+  & .h1,
+  & .text {
+    @apply px-4 md:px-0;
+  }
+}
+
+#finder-verify {
+  .h1,
+  .text {
+    @apply px-4 sm:px-0;
+  }
+}
+
+#faq {
+  @apply md:pr-[25%] md:pt-24 md:pb-16 md:pl-16;
+}
+
+#privacy {
+  @apply md:pr-[25%] md:pt-24 md:pb-16 md:pl-16;
+}
+
+#imprint {
+  @apply md:pr-[25%] md:pt-24 md:pb-16 md:pl-16;
+}

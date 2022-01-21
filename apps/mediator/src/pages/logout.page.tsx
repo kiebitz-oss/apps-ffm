@@ -1,17 +1,19 @@
-import { Button, Text, Title } from "@kiebitz-oss/ui";
+import { Button, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
+import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { useMediatorApi } from "./MediatorApiContext";
+import type { MouseEventHandler } from "react";
 
 const LogoutPage: NextPage = () => {
   const router = useRouter();
-  const api = useMediatorApi();
+  const { logout } = useAppState();
 
-  const logOut = () => {
-    api.logout().then(() => {
-      router.push("/login");
-    });
+  const logOut: MouseEventHandler<HTMLButtonElement> = async (event) => {
+    event.preventDefault();
+
+    await logout();
+    await router.push("/");
   };
 
   return (
@@ -21,11 +23,12 @@ const LogoutPage: NextPage = () => {
           <Trans id="mediator.logout.title">Abmelden</Trans>
         </Title>
 
-        <Text>
+        <Text className="pb-8">
           <Trans id="mediator.logout.intro">
-            Möchtest Du Dich wirklich abmelden? Bitte stelle vorher sicher, dass
-            Du Deinen Sicherheitscode notiert hast. Nur mit diesem Code kannst
-            Du Dich später wieder anmelden.
+            Möchten Sie sich wirklich abmelden? Bitte stellen Sie vorher sicher,
+            dass Sie Ihren Datenschlüssel heruntergeladen haben und diesen
+            sicher verwahren. Der Datenschlüssel ist zur erneuten Anmeldung am
+            System zwingend erforderlich.
           </Trans>
         </Text>
 

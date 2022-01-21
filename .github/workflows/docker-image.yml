@@ -8,12 +8,12 @@ name: Create and publish a Docker image
 on:
   push:
     branches:
-      - "main"
+      - main
     tags:
       - "v*"
   pull_request:
     branches:
-      - "main"
+      - main
 
 env:
   REGISTRY: ghcr.io
@@ -29,6 +29,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - name: Log in to the Container registry
         if: github.event_name != 'pull_request'

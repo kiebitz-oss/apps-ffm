@@ -5,8 +5,7 @@ msgstr ""
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
 "PO-Revision-Date: 2022-01-08 10:46+0000\n"
 "Last-Translator: sanddorn (Thomas) <sanddorn@protonmail.ch>\n"
-"Language-Team: English <https://hosted.weblate.org/projects/kiebitz/user/en/>"
-"\n"
+"Language-Team: English <https://hosted.weblate.org/projects/kiebitz/user/en/>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -14,224 +13,203 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.10.1\n"
 
-#: components/NavContent.tsx:29
 msgid "common.footer.link.booking"
 msgstr "Book appointment"
 
-#: components/NavContent.tsx:69
 msgid "common.footer.link.english"
 msgstr "English"
 
-#: components/NavContent.tsx:36
 msgid "common.footer.link.faq"
 msgstr "Questions & Answers"
 
-#: components/NavContent.tsx:57
 msgid "common.footer.link.german"
 msgstr "Deutsch"
 
-#: components/NavContent.tsx:80
 msgid "common.footer.link.imprint"
 msgstr "Imprint"
 
-#: components/NavContent.tsx:97
 msgid "common.footer.link.kiebitz"
 msgstr "Realized with Kiebitz"
 
-#: components/NavContent.tsx:85
 msgid "common.footer.link.privacy"
 msgstr "Data privacy"
 
-#: components/NavContent.tsx:23
 msgid "common.footer.title.informations"
 msgstr "Further information"
 
-#: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
 msgstr "Language"
 
-#: components/Header.tsx:64
 msgid "header.nav.link.book_vaccination"
 msgstr "Book appointment"
 
-#: components/Header.tsx:68
 msgid "header.nav.link.faq"
 msgstr "Questions & Answers"
 
-#: components/Header.tsx:87
 msgid "header.nav.link.lang_english_short"
 msgstr "EN"
 
-#: components/Header.tsx:78
 msgid "header.nav.link.lang_german_short"
 msgstr "DE"
 
-#: pages/finder/AppointmentStep.tsx:88
 msgid "user.finder.appointment.back-link"
 msgstr "Back to selection of vaccination site"
 
-#: pages/AppointmentCard.tsx:55
 msgid "user.finder.appointment.card.date"
 msgstr "on {0}"
 
-#: pages/finder/AppointmentStep.tsx:47
 msgid "user.finder.appointment.card.submit"
 msgstr "Select appointment"
 
-#: pages/AppointmentCard.tsx:45
 msgid "user.finder.appointment.card.time"
 msgstr "{0} o’clock"
 
-#: pages/finder/AppointmentStep.tsx:134
-msgid "user.finder.appointment.no-result"
+msgid "user.finder.appointment.date-past"
 msgstr ""
-"There are no free appointments available.<0/><1/> Please try a later date or "
-"a different vaccination site."
 
-#: pages/finder/AppointmentStep.tsx:102
+msgid "user.finder.appointment.no-result"
+msgstr "There are no free appointments available.<0/><1/> Please try a later date or a different vaccination site."
+
 msgid "user.finder.appointment.provider.placeholder"
 msgstr "Any vaccination site"
 
-#: pages/finder/AppointmentStep.tsx:121
 msgid "user.finder.appointment.time.placeholder"
 msgstr "Any time"
 
-#: pages/finder/AppointmentStep.tsx:94
 msgid "user.finder.appointment.title"
 msgstr "Appointments"
 
-#: pages/finder/DateStep.tsx:10
 msgid "user.finder.date.back-link"
 msgstr "Back to appointment selection"
 
-#: pages/finder/DateStep.tsx:18
 msgid "user.finder.date.intro"
-msgstr ""
-"When would you like to be vaccinated? You can adjust the date and time at "
-"any time in the process if desired. Please indicate your preferred date "
-"below."
+msgstr "When would you like to be vaccinated? You can adjust the date and time at any time in the process if desired. Please indicate your preferred date below."
 
-#: pages/finder/DateStep.tsx:27
 msgid "user.finder.date.label"
 msgstr "Date"
 
-#: pages/finder/DateStep.tsx:47
 msgid "user.finder.date.submit"
 msgstr "Choose an appointment"
 
-#: pages/finder/DateStep.tsx:14
 msgid "user.finder.date.title"
 msgstr "Date and Time"
 
-#: pages/finder/LocationStep.tsx:56
 msgid "user.finder.location.accessible.label"
 msgstr "Only barrier-free vaccination sites"
 
-#: pages/finder/LocationStep.tsx:39
 msgid "user.finder.location.back-link"
 msgstr "Back to general information"
 
-#: pages/finder/LocationStep.tsx:49
 msgid "user.finder.location.intro"
 msgstr "Choose from the available options where you would like to be vaccinated."
 
-#: pages/finder/LocationStep.tsx:45
 msgid "user.finder.location.title"
 msgstr "Vaccination sites"
 
-#: pages/finder/SuccessStep.tsx:73
+msgid "user.finder.success.additional-preperation.part-1"
+msgstr ""
+
+msgid "user.finder.success.additional-preperation.part-2"
+msgstr ""
+
+msgid "user.finder.success.additional-preperation.part-3"
+msgstr ""
+
+msgid "user.finder.success.additional-preperation.title"
+msgstr ""
+
 msgid "user.finder.success.appointment-code"
 msgstr "Your booking-code"
 
-#: pages/finder/SuccessStep.tsx:63
 msgid "user.finder.success.appointment-title"
 msgstr "Your appointment"
 
-#: pages/finder/SuccessStep.tsx:103
+msgid "user.finder.success.bring-along.mask"
+msgstr ""
+
+msgid "user.finder.success.bring-along.papers"
+msgstr ""
+
+msgid "user.finder.success.bring-along.title"
+msgstr ""
+
+msgid "user.finder.success.bring-along.vaccination-card"
+msgstr ""
+
 msgid "user.finder.success.cancel-button"
 msgstr "Cancel appointment"
 
-#: pages/finder/SuccessStep.tsx:87
+msgid "user.finder.success.cancel-text"
+msgstr ""
+
 msgid "user.finder.success.intro"
 msgstr "<0>Important:</0> Please write down the code below and make sure you bring it with you to the vaccination."
 
-#: pages/finder/SuccessStep.tsx:55
+msgid "user.finder.success.preperation.title"
+msgstr ""
+
 msgid "user.finder.success.title"
 msgstr "Your appointment is booked!"
 
-#: pages/finder/DateStep.tsx:37
 msgid "user.finder.time.label"
 msgstr "Time"
 
-#: pages/finder/VerifyStep.tsx:57
 msgid "user.finder.verify.appointment.description"
 msgstr "{0}"
 
-#: pages/finder/VerifyStep.tsx:43
 msgid "user.finder.verify.appointment.subtitle"
 msgstr "Your appointment"
 
-#: pages/finder/VerifyStep.tsx:23
 msgid "user.finder.verify.back-link"
 msgstr "Back to appointment selection"
 
-#: pages/finder/VerifyStep.tsx:33
 msgid "user.finder.verify.intro"
 msgstr "This is your selected appointment. Please check carefully that everything is correct.<0/> You can then finalise your booking."
 
-#: pages/finder/VerifyStep.tsx:70
 msgid "user.finder.verify.submit"
 msgstr "Book appointment now"
 
-#: pages/finder/VerifyStep.tsx:29
 msgid "user.finder.verify.title"
 msgstr "Overview"
 
-#: pages/Questionair.tsx:149
+msgid "user.questionaire.error.default"
+msgstr ""
+
+msgid "user.questionaire.no"
+msgstr ""
+
+msgid "user.questionaire.yes"
+msgstr ""
+
 msgid "user.welcome.button"
 msgstr "Continue to the booking"
 
-#: pages/Questionair.tsx:135
 msgid "user.welcome.form_error"
-msgstr ""
-"Please answer all questions, otherwise we will not be able to find "
-"appointments for you. All your personal data will only be stored on your "
-"personal device and will not be transmitted or passed on to a server."
+msgstr "Please answer all questions, otherwise we will not be able to find appointments for you. All your personal data will only be stored on your personal device and will not be transmitted or passed on to a server."
 
-#: pages/index.page.tsx:23
 msgid "user.welcome.intro-1"
 msgstr "You are now only a few clicks away from your appointment."
 
-#: pages/index.page.tsx:29
 msgid "user.welcome.intro-2"
-msgstr ""
-"We will ask you a few questions so you can get the right vaccine. The data "
-"remains on your device and is not transmitted."
+msgstr "We will ask you a few questions so you can get the right vaccine. The data remains on your device and is not transmitted."
 
-#: pages/Questionair.tsx:85
 msgid "user.welcome.question1_value"
 msgstr "Is this a booster vaccination?"
 
-#: pages/Questionair.tsx:95
 msgid "user.welcome.question2_error"
 msgstr "It must be 3 months since your last vaccination appointment before you can receive a booster."
 
-#: pages/Questionair.tsx:101
 msgid "user.welcome.question2_value"
 msgstr "Was your last vaccination more than 3 months ago?"
 
-#: pages/Questionair.tsx:109
 msgid "user.welcome.question3_value"
 msgstr "Are you younger than 30 or pregnant?"
 
-#: pages/Questionair.tsx:120
 msgid "user.welcome.question4_error"
 msgstr "Unfortunately, appointments for child vaccinations are not (yet) offered via the portal. We will try to expand the offer as soon as possible and ask for your patience until then."
 
-#: pages/Questionair.tsx:126
 msgid "user.welcome.question4_value"
 msgstr "Are you younger than 12?"
 
-#: pages/index.page.tsx:19
 msgid "user.welcome.title"
 msgstr "Welcome!"

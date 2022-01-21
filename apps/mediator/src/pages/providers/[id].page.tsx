@@ -1,31 +1,43 @@
-import type { Provider } from "@kiebitz-oss/api";
-import { Button, Title } from "@kiebitz-oss/ui";
-import { Trans } from "@lingui/macro";
+import { BackLink, Button, Link, Title } from "@impfen/common";
+import { t, Trans } from "@lingui/macro";
+import { confirmProvider, decodeProviderId, getProvider } from "actions";
+import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import type { MouseEventHandler } from "react";
 import { useEffect, useState } from "react";
-import { BackLink } from "../../components/BackLink";
-import { ConfirmProviderModal } from "../ConfirmProviderModal";
-import { useMediatorApi } from "../MediatorApiContext";
-import { UnconfirmProviderModal } from "../UnconfirmProviderModal";
+import type { Provider } from "vanellus";
 
 const ProviderShowPage: NextPage = () => {
-  const [provider, setProvider] = useState<Provider>();
-  const [modal, setModal] = useState<"confirm" | "unconfirm" | null>(null);
+  const [provider, setProvider] = useState<Provider | null>(null);
   const router = useRouter();
-  const api = useMediatorApi();
+  const { addNotification } = useAppState();
 
-  const id = router.query?.id as string;
+  const id = decodeProviderId(router.query?.id as string);
+
+  const refreshProvider = async (id: string) => {
+    return getProvider(id).then(setProvider);
+  };
+
+  const handleConfirmProvider: MouseEventHandler<
+    HTMLButtonElement
+  > = async () => {
+    if (provider) {
+      await confirmProvider(provider);
+      await refreshProvider(id);
+
+      addNotification(
+        t({
+          id: "mediator.provider-show.notification.success",
+          message: "Impfanbieter erfolgreich bestätigt",
+        })
+      );
+    }
+  };
 
   useEffect(() => {
-    if (id) {
-      api.getProvider(id).then((provider) => {
-        if (provider) {
-          setProvider(provider);
-        }
-      });
-    }
-  }, [api, id]);
+    refreshProvider(id);
+  }, [id]);
 
   if (!provider) {
     return <main>Provider nicht gefunden</main>;
@@ -52,6 +64,7 @@ const ProviderShowPage: NextPage = () => {
             </th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
             <th>
@@ -65,42 +78,61 @@ const ProviderShowPage: NextPage = () => {
               )}
             </td>
           </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.name">Name</Trans>
             </th>
             <td>{provider.name}</td>
           </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.street">Straße</Trans>
             </th>
             <td>{provider.street}</td>
           </tr>
-          <tr>
-            <th>
-              <Trans id="mediator.provider-show.city">Stadt</Trans>
-            </th>
-            <td>{provider.city || " -- "}</td>
-          </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.zip-code">Postleitzahl</Trans>
             </th>
             <td>{provider.zipCode}</td>
           </tr>
+
+          <tr>
+            <th>
+              <Trans id="mediator.provider-show.city">Stadt</Trans>
+            </th>
+            <td>{provider.city}</td>
+          </tr>
+
+          <tr>
+            <th>
+              <Trans id="mediator.provider-show.website">Website</Trans>
+            </th>
+            <td>
+              {provider.website ? (
+                <Link href={provider.website} external>
+                  {provider.website}
+                </Link>
+              ) : (
+                " -- "
+              )}
+            </td>
+          </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.email">E-Mail</Trans>
             </th>
-            <td>{provider.email || " -- "}</td>
+            <td>
+              <a className="link" href={`mailto:${provider.email}`}>
+                {provider.email}
+              </a>
+            </td>
           </tr>
-          <tr>
-            <th>
-              <Trans id="mediator.provider-show.phone">Telefonnummer</Trans>
-            </th>
-            <td>{provider.phone || " -- "}</td>
-          </tr>
+
           <tr>
             <th>
               <Trans id="mediator.provider-show.description">
@@ -109,44 +141,29 @@ const ProviderShowPage: NextPage = () => {
             </th>
             <td>{provider.description || " -- "}</td>
           </tr>
+
+          <tr>
+            <th>
+              <Trans id="mediator.provider-show.accessible">
+                Barrierefreier Zugang?
+              </Trans>
+            </th>
+            <td>
+              {provider.accessible ? <Trans>Ja</Trans> : <Trans>Nein</Trans>}
+            </td>
+          </tr>
         </tbody>
       </table>
 
       <div className="buttons-list">
         {!provider.verified ? (
-          <Button
-            variant="primary"
-            size="sm"
-            onClick={() => setModal("confirm")}
-          >
-            <Trans id="mediator.provider-show.button-confirm">
+          <Button variant="primary" size="sm" onClick={handleConfirmProvider}>
+            <Trans id="mediator.provider-show.button-show">
               Anbieter bestätigen
             </Trans>
           </Button>
-        ) : (
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={() => setModal("unconfirm")}
-          >
-            <Trans id="mediator.provider-show.button-unconfirm">
-              Anbieter sperren
-            </Trans>
-          </Button>
-        )}
+        ) : null}
       </div>
-      {modal === "confirm" && (
-        <ConfirmProviderModal
-          provider={provider}
-          onClose={() => setModal(null)}
-        />
-      )}
-      {modal === "unconfirm" && (
-        <UnconfirmProviderModal
-          provider={provider}
-          onClose={() => setModal(null)}
-        />
-      )}
     </main>
   );
 };

@@ -1,8 +1,12 @@
+import {
+  DataStep,
+  OnboardingStateProvider,
+  SecretStep,
+  VerifyStep,
+} from "components";
+import { useAppState } from "lib/AppProvider";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { DataStep } from "./DataStep";
-import { OnboardingStateProvider } from "./OnboardingStateProvider";
-import { SecretStep } from "./SecretStep";
-import { VerifyStep } from "./VerifyStep";
+import { useRouter } from "next/router";
 
 enum Steps {
   data = "data",
@@ -30,6 +34,15 @@ const StepRenderer: React.FC<{ step: string }> = ({ step }) => {
 };
 
 const OnboardingPage: NextPage<{ step?: Steps }> = ({ step = defaultStep }) => {
+  const router = useRouter();
+  const { isAuthenticated } = useAppState();
+
+  if (isAuthenticated) {
+    router.push("/account");
+
+    return null;
+  }
+
   return (
     <OnboardingStateProvider>
       <StepRenderer step={step} />

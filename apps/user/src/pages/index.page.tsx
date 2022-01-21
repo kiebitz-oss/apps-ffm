@@ -1,13 +1,9 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
-import { Text, Title } from "@kiebitz-oss/ui";
+import { Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
+import { Questionaire } from "components";
 import type { NextPage } from "next";
-import { Questionaire } from "./Questionair";
 
-const UserStartPage: NextPage = () => {
+const IndexPage: NextPage = () => {
   return (
     <main id="welcome">
       <Title
@@ -37,4 +33,4 @@ const UserStartPage: NextPage = () => {
   );
 };
 
-export default UserStartPage;
+export default IndexPage;

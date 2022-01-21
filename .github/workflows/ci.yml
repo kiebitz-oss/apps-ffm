@@ -4,12 +4,9 @@ on:
   push:
     branches:
       - main
-
   pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -18,26 +15,34 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
 
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.20.3
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: |
-          pnpm install
+          version: 6.27.1
+          run_install: |
+            - args: [--no-frozen-lockfile]
 
       - name: Linter
         run: |
           pnpm lint
+
+      - name: Unit tests
+        run: |
+          pnpm build:i18n
 
       - name: Unit tests
         run: |

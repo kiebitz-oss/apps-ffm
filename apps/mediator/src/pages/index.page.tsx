@@ -1,105 +1,81 @@
-// Kiebitz - Privacy-Friendly Appointments
-// Copyright (C) 2021-2021 The Kiebitz Authors
-// README.md contains license information.
-
-import { Message, Section, Text, Title } from "@kiebitz-oss/ui";
+import { Section, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
+import { LoginForm } from "components";
+import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
-import { ChangeEventHandler, useEffect, useState } from "react";
-import { useMediatorApi } from "./MediatorApiContext";
 
 const MediatorStartPage: NextPage = () => {
-  const [authenticated, setAuthenticated] = useState<boolean>(false);
-  const [invalidFile, setInvalidFile] = useState(false);
-  const api = useMediatorApi();
-  const router = useRouter();
-
-  useEffect(() => {
-    api.isAuthenticated().then((isAuthenticated) => {
-      if (isAuthenticated) {
-        router.push("/providers");
-      }
-    });
-  }, [api, authenticated, router]);
-
-  const uploadFile: ChangeEventHandler<HTMLInputElement> = (event) => {
-    const file = event.target.files?.[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        if (e.target?.result && typeof e.target.result === "string") {
-          const keyPairs = JSON.parse(e.target.result);
-
-          if (
-            keyPairs.signing === undefined ||
-            keyPairs.encryption === undefined ||
-            keyPairs.provider === undefined
-          ) {
-            setInvalidFile(true);
-          } else {
-            api.authenticate(keyPairs).then((isAuthenticated) => {
-              setAuthenticated(isAuthenticated);
-            });
-          }
-        }
-      };
-
-      reader.readAsBinaryString(file);
-    }
-  };
+  const { isAuthenticated } = useAppState();
 
   return (
     <main>
       <Section className="mt-10 w-full sm:mt-0">
-        <Title className="text-2xl font-bold leading-relaxed text-gray-900">
-          <Trans id="mediator.welcome.title">Als Mediator anmelden</Trans>
-        </Title>
-
-        <div>
-          <Title variant="h3">
-            <Trans id="mediator.welcome.upload-key-pairs">
-              Geheime Schlüssel laden
-            </Trans>
-          </Title>
-
-          {invalidFile && (
-            <Message variant="secondary">
-              <Trans id="mediator.welcome.upload-key-pairs.invalid-file">
-                Die von Ihnen gewählte Datei ist ungültig.
+        {isAuthenticated ? (
+          <>
+            <Title>
+              <Trans id="mediator.welcome.title-authenticated">
+                Willkommen
               </Trans>
-            </Message>
-          )}
+            </Title>
 
-          {!invalidFile && (
-            <Text>
-              <Trans id="mediator.welcome.upload-key-pairs.notice">
-                Bitte laden Sie die Datei mit Ihren geheimen
-                Vermittlerschlüsseln.
+            <div className="grid grid-cols-1 gap-5 mt-2 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex overflow-hidden items-center p-5 bg-white shadow rounded-lg">
+                <div className="flex-1 ml-5 w-0">
+                  <dl>
+                    <dt className="text-sm font-medium text-gray-500 truncate">
+                      Unbestätigte Impfanbieter
+                    </dt>
+                    <dd>
+                      <div className="text-4xl font-extrabold text-gray-900">
+                        23
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div className="flex overflow-hidden items-center p-5 bg-white shadow rounded-lg">
+                <div className="flex-1 ml-5 w-0">
+                  <dl>
+                    <dt className="text-sm font-medium text-gray-500 truncate">
+                      Bestätigte Impfanbieter
+                    </dt>
+                    <dd>
+                      <div className="text-4xl font-extrabold text-gray-900">
+                        19
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div className="flex overflow-hidden items-center p-5 bg-white shadow rounded-lg">
+                <div className="flex-1 ml-5 w-0">
+                  <dl>
+                    <dt className="text-sm font-medium text-gray-500 truncate">
+                      Impfanbieter gesamt
+                    </dt>
+                    <dd>
+                      <div className="text-4xl font-extrabold text-gray-900">
+                        42
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <Title>
+              <Trans id="mediator.welcome.title-unauthenticated">
+                Als Mediator anmelden
               </Trans>
-            </Text>
-          )}
+            </Title>
 
-          <form>
-            <label
-              htmlFor="file-upload"
-              className="relative cursor-pointer button primary md"
-            >
-              <Trans id="mediator.welcome.upload-key-pairs.input">
-                Datei auswählen
-              </Trans>
-
-              <input
-                id="file-upload"
-                className="absolute inset-0 -z-10 w-auto opacity-0"
-                type="file"
-                onChange={uploadFile}
-              />
-            </label>
-          </form>
-        </div>
+            <LoginForm />
+          </>
+        )}
       </Section>
     </main>
   );
