@@ -1,9 +1,9 @@
 import { BackLink, Link, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { bookAppointment } from "actions/bookAppointment";
-import { AppointmentCard } from "components/finder/AppointmentCard";
+import { bookAppointment } from "actions";
 import { useRouter } from "next/router";
-import { MouseEventHandler } from "react";
+import type { MouseEventHandler } from "react";
+import { AppointmentCard } from "./AppointmentCard";
 import { useFinder } from "./FinderProvider";
 
 export const VerifyStep: React.FC = () => {

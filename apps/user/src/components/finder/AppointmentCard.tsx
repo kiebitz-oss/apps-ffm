@@ -20,7 +20,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
   const { i18n } = useLingui();
 
   return (
-    <div
+    <article
       className={clsx(
         "flex flex-col gap-4 items-center p-4 font-semibold default-focus",
         {
@@ -42,20 +42,14 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
       <time className="flex flex-col font-semibold text-center">
         <div className="text-4xl">
           <Trans id="user.finder.appointment.card.time">
-            {appointment.startDate.toLocaleTimeString(i18n.locale, {
-              timeZone: "Europe/Berlin",
-              hour: "2-digit",
-              minute: "2-digit",
-            })}{" "}
-            Uhr
+            {i18n.date(appointment.startDate, { timeStyle: "short" })} Uhr
           </Trans>
         </div>
 
         <div className="text-xl">
           <Trans id="user.finder.appointment.card.date">
             am{" "}
-            {appointment.startDate.toLocaleDateString(i18n.locale, {
-              timeZone: "Europe/Berlin",
+            {i18n.date(appointment.startDate, {
               day: "2-digit",
               month: "2-digit",
               year: "2-digit",
@@ -74,6 +68,6 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
 
       {/* button */}
       {children}
-    </div>
+    </article>
   );
 };

@@ -19,7 +19,6 @@ export const Link: React.FC<LinkProps> = ({
   external,
   rel,
   target,
-  locale,
   variant,
   current,
   size = "md",
@@ -64,7 +63,6 @@ export const Link: React.FC<LinkProps> = ({
         )}
         rel={rel}
         target={target}
-        lang={locale}
         aria-current={current === true ? true : undefined}
         {...props}
       >

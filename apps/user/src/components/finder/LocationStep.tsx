@@ -1,9 +1,14 @@
 import { BackLink, CheckboxField, Link, Text, Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { getProviders } from "actions/getProviders";
+import { getProviders } from "actions";
 import { useRouter } from "next/router";
-import type { ChangeEventHandler, Reducer } from "react";
-import { useEffect, useReducer } from "react";
+import {
+  ChangeEventHandler,
+  Reducer,
+  useCallback,
+  useEffect,
+  useReducer,
+} from "react";
 import type { PublicProvider } from "vanellus";
 import { useFinder } from "./FinderProvider";
 import { ProviderCard } from "./ProviderCard";
@@ -76,14 +81,13 @@ export const LocationStep: React.FC = () => {
     );
   }, []);
 
-  const handleAccessibleChange: ChangeEventHandler<HTMLInputElement> = (
-    event
-  ) => {
-    dispatch({
-      type: ActionType.SET_ACCESSIBLE,
-      accessible: event.currentTarget.checked,
-    });
-  };
+  const handleAccessibleChange: ChangeEventHandler<HTMLInputElement> =
+    useCallback((event) => {
+      dispatch({
+        type: ActionType.SET_ACCESSIBLE,
+        accessible: event.currentTarget.checked,
+      });
+    }, []);
 
   return (
     <main id="finder-location">
@@ -93,7 +97,7 @@ export const LocationStep: React.FC = () => {
         </Trans>
       </BackLink>
 
-      <Title variant="h1" as="h2" className="ml-4 sm:ml-0">
+      <Title variant="h1" as="h1" className="ml-4 sm:ml-0">
         <Trans id="user.finder.location.title">Impfstellen</Trans>
       </Title>
 

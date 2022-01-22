@@ -38,7 +38,7 @@ export const LoginForm: React.FC = () => {
 
   return (
     <div>
-      <Title variant="h3">
+      <Title variant="h3" as="h2">
         <Trans id="mediator.welcome.upload-key-pairs">
           Geheime Schlüssel laden
         </Trans>

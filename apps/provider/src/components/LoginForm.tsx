@@ -62,7 +62,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
   const { register, handleSubmit, formState, setError, setValue } = methods;
 
   useEffect(() => {
-    if (keyPairs !== undefined) {
+    if (keyPairs) {
       setValue("keyPairs", keyPairs, {
         shouldDirty: true,
       });

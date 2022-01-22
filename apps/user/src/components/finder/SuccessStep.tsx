@@ -1,13 +1,11 @@
 import { Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { cancelBooking } from "actions/cancelBooking";
-import { getAppointment } from "actions/getAppointment";
-import { getBooking } from "actions/getBooking";
-import { setBooking } from "actions/setBooking";
+import { cancelBooking, getAppointment, getBooking, setBooking } from "actions";
 import { useRouter } from "next/router";
-import { MouseEventHandler, useEffect, useState } from "react";
-import { PublicAppointment } from "../../../../../packages/vanellus/dist";
+import type { MouseEventHandler } from "react";
+import { useEffect, useState } from "react";
+import type { PublicAppointment } from "vanellus";
 import { AppointmentCard } from "./AppointmentCard";
 
 export const SuccessStep: React.FC = () => {

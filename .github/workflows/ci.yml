@@ -33,16 +33,15 @@ jobs:
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.27.1
-          run_install: |
-            - args: [--no-frozen-lockfile]
+          run_install: true
+
+      - name: Build locales
+        run: |
+          pnpm build:i18n
 
       - name: Linter
         run: |
           pnpm lint
-
-      - name: Unit tests
-        run: |
-          pnpm build:i18n
 
       - name: Unit tests
         run: |

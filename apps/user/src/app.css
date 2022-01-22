@@ -3,6 +3,10 @@
 @import "tailwindcss/utilities";
 @import "@impfen/common/src/ui.css";
 
+.provider-card {
+  @apply flex gap-4 justify-between p-4 min-w-full rounded border-2 border-black hover:border-highlight hover:shadow-provider;
+}
+
 #welcome {
   & .h1 {
     @apply px-4 md:px-0;

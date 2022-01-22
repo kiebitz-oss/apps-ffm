@@ -12,6 +12,8 @@ const config = {
   basePath: process.env.NEXT_USER_BASEPATH || "",
   experimental: {
     externalDir: true,
+    scrollRestoration: true,
+    esmExternals: true,
   },
   images: {
     disableStaticImages: true,
