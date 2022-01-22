@@ -1,5 +1,6 @@
 import "@fontsource/ibm-plex-sans/latin.css";
-import { Layout, loadLocale, setupI18n } from "@impfen/common";
+import { Layout, loadLocale } from "@impfen/common";
+import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import "app.css";
 import { HeaderContent } from "components/HeaderContent";
@@ -15,8 +16,6 @@ const SafeHydrate: React.FC = ({ children }) => {
     </div>
   );
 };
-
-const i18n = setupI18n();
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [locale, setLocale] = useState(i18n.locale || "de");
