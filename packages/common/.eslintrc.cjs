@@ -57,7 +57,7 @@ const config = {
     sourceType: "module",
     allowImportExportEverywhere: true,
   },
-  ignorePatterns: ["node_modules", "dist", ".next"],
+  ignorePatterns: ["node_modules", "dist", ".next", "src/locales/**/*.ts"],
   overrides: [
     {
       files: ["**/*.ts?(x)"],

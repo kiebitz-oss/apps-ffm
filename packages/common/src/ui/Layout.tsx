@@ -3,6 +3,7 @@ import { Footer, Header } from "./page";
 interface LayoutProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   header?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   footer?: any;
   locale?: string;
   setLocale: (locale: string) => void;

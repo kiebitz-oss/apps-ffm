@@ -179,7 +179,7 @@ export const AppProvider: React.FC = (props) => {
     });
 
     return notifications;
-  }, []);
+  }, [state.notifications]);
 
   const value = useMemo(
     () => ({
@@ -189,7 +189,7 @@ export const AppProvider: React.FC = (props) => {
       addNotification,
       getNotifications,
     }),
-    [state]
+    [addNotification, authenticate, getNotifications, logout, state]
   );
 
   return <AppContext.Provider value={value} {...props} />;

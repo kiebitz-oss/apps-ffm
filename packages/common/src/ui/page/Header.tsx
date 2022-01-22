@@ -6,6 +6,7 @@ import { Link } from "../Link";
 import { Hamburger } from "./Hamburger";
 
 export interface HeaderProps extends React.ComponentProps<"header"> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mobile: any;
 }
 

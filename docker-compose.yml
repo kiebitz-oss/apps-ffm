@@ -2,8 +2,9 @@ version: "3.7"
 
 services:
   apps:
-    build: .
-    image: "apps-inoeg:main"
+    image: "ghcr.io/impfen/apps-inoeg:main"
+    # build: .
+    # image: "apps-inoeg:main"
     depends_on:
       - backend
     ports:

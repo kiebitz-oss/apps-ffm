@@ -25,7 +25,7 @@ const config = {
     "react/no-unescaped-entities": "off",
     "@next/next/no-img-element": "off",
   },
-  ignorePatterns: ["node_modules", "dist", ".next"],
+  ignorePatterns: ["node_modules", "dist", ".next", "src/locales/**/*.ts"],
   overrides: [
     {
       files: ["**/?(*.)+(test).{ts,tsx}"],

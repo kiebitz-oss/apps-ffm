@@ -13,14 +13,7 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({
   className,
 }) => {
   return (
-    <section
-      className={clsx(
-        "flex gap-4 justify-between p-4 min-w-full rounded border-2 border-black",
-        "hover:border-highlight hover:shadow-provider",
-        className
-      )}
-      key={provider.id}
-    >
+    <article className={clsx("provider-card", className)} key={provider.id}>
       <div>
         <Title variant="h3">{provider.name}</Title>
 
@@ -30,6 +23,6 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({
       </div>
 
       {provider.accessible && <Accessibility24 />}
-    </section>
+    </article>
   );
 };
