@@ -4,7 +4,7 @@
  * @type {import('@jest/types').Config.InitialOptions}
  */
 const config = {
-  displayName: "app-user",
+  displayName: "app-provider",
   roots: ["<rootDir>"],
   testURL: "http://localhost:3000/",
   testEnvironment: "<rootDir>/src/tests/test-environment.mjs",
