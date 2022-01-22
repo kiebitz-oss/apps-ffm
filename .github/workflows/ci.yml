@@ -37,7 +37,7 @@ jobs:
 
       - name: Build locales
         run: |
-          pnpm build:i18n -- --stream
+          pnpm build:i18n
 
       - name: Linter
         run: |
