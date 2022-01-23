@@ -7,7 +7,6 @@ import {
   vaccines,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { createAppointmentSeries, publishAppointments } from "actions";
 import dayjs from "dayjs";
 import {
   FormProvider,
@@ -15,6 +14,7 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
+import { createAppointmentSeries } from "stores/app";
 
 interface FormData {
   startAt: string;
@@ -59,12 +59,12 @@ export const AppointmentSeriesForm: React.FC<AppointmentSeriesFormProps> = ({
         .utc()
         .set("hour", 8)
         .set("minute", 0)
-        .format("YYYY-MM-DDThh:mm"),
+        .format("YYYY-MM-DDTHH:mm"),
       endAt: dayjs()
         .utc()
         .set("hour", 18)
         .set("minute", 0)
-        .format("YYYY-MM-DDThh:mm"),
+        .format("YYYY-MM-DDTHH:mm"),
       slotCount: 5,
     },
     resolver,
@@ -79,17 +79,13 @@ export const AppointmentSeriesForm: React.FC<AppointmentSeriesFormProps> = ({
       Number(data.interval),
       data.vaccine,
       data.slotCount
-    )
-      .then((appointmentSeries) =>
-        publishAppointments(appointmentSeries.appointments)
-      )
-      .then((result) => {
-        if (onSuccess) {
-          onSuccess();
-        }
+    ).then((result) => {
+      if (onSuccess) {
+        onSuccess();
+      }
 
-        return result;
-      });
+      return result;
+    });
   };
 
   return (

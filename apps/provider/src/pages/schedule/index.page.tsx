@@ -1,5 +1,5 @@
-import { Button, Title } from "@impfen/common";
-import { getProviderAppointments } from "actions";
+import { Button, PageHeader } from "@impfen/common";
+import { t } from "@lingui/macro";
 import {
   AppointmentCard,
   CreateAppointmentModal,
@@ -9,6 +9,7 @@ import {
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
+import { getProviderAppointments } from "stores/app";
 import type { Appointment } from "vanellus";
 
 enum Modal {
@@ -40,20 +41,31 @@ const SchedulePage: React.FC = () => {
   };
 
   return (
-    <main className="content">
-      <div className="flex flex-row justify-between mb-8 w-full">
-        <Title>Impftermine</Title>
-
+    <main>
+      <PageHeader
+        title={t({
+          id: "provider.schedule.index.title",
+          message: "Impftermine",
+        })}
+      >
         <div className="buttons-list">
-          <Button size="sm" onClick={() => setModal(Modal.APPOINTMENT)}>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => setModal(Modal.APPOINTMENT)}
+          >
             Impftermin anlegen
           </Button>
 
-          <Button size="sm" onClick={() => setModal(Modal.SERIES)}>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => setModal(Modal.SERIES)}
+          >
             Impfserie anlegen
           </Button>
         </div>
-      </div>
+      </PageHeader>
 
       <div className="flex flex-col flex-wrap gap-3 px-4 mb-10 w-full md:flex-row md:justify-between md:px-0">
         {appointments.map((appointment) => (

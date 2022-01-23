@@ -2,10 +2,10 @@ import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import type { Provider } from "vanellus";
+import type { ProviderInput } from "vanellus";
 
 interface ProviderDataSummaryProps {
-  provider: Provider;
+  provider: ProviderInput;
   changeHref?: string;
   verified?: boolean;
 }

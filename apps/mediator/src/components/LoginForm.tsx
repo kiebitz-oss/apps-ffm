@@ -1,13 +1,12 @@
 import { Message, Text, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { useAppState } from "lib/AppProvider";
 import { useRouter } from "next/router";
 import type { ChangeEventHandler } from "react";
 import { useState } from "react";
+import { authenticate } from "stores/app";
 
 export const LoginForm: React.FC = () => {
   const [invalidFile, setInvalidFile] = useState(false);
-  const { authenticate } = useAppState();
   const router = useRouter();
 
   const uploadFile: ChangeEventHandler<HTMLInputElement> = (event) => {

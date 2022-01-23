@@ -20,6 +20,8 @@ export * from "./ModalContent";
 export * from "./ModalFooter";
 export * from "./ModalHeader";
 export * from "./NavLink";
+export * from "./Notifications";
+export * from "./PageHeader";
 export * from "./Radio";
 export * from "./RadioField";
 export * from "./SecretBox";

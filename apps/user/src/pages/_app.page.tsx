@@ -5,7 +5,6 @@ import { I18nProvider } from "@lingui/react";
 import "app.css";
 import { FooterContent, HeaderContent } from "components";
 import dayjs from "dayjs";
-import { AppProvider } from "lib/AppProvider";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 
@@ -30,16 +29,14 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <SafeHydrate>
       <I18nProvider i18n={i18n}>
-        <AppProvider>
-          <Layout
-            header={HeaderContent}
-            footer={FooterContent}
-            locale={locale}
-            setLocale={setLocale}
-          >
-            <Component {...pageProps} />
-          </Layout>
-        </AppProvider>
+        <Layout
+          header={HeaderContent}
+          footer={FooterContent}
+          locale={locale}
+          setLocale={setLocale}
+        >
+          <Component {...pageProps} />
+        </Layout>
       </I18nProvider>
     </SafeHydrate>
   );

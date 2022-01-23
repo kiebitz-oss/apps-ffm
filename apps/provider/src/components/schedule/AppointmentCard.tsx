@@ -1,8 +1,9 @@
 import { Button, Vaccine, vaccines } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { cancelAppointment } from "actions";
 import clsx from "clsx";
+import { useCallback, useState } from "react";
+import { cancelAppointment } from "stores/app";
 import type { Appointment } from "vanellus";
 import { AppointmentStatus } from "vanellus";
 
@@ -20,6 +21,12 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
   ...props
 }) => {
   const { i18n } = useLingui();
+  let [actualAppointment, setActualAppointment] =
+    useState<Appointment>(appointment);
+
+  const handleCancelAppointment = useCallback(async () => {
+    cancelAppointment(appointment).then(setActualAppointment);
+  }, [appointment]);
 
   return (
     <div
@@ -35,7 +42,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
       <time className="flex flex-col font-semibold text-center">
         <div className="text-4xl">
           <Trans id="user.finder.appointment.card.time">
-            {appointment.startDate.toLocaleTimeString(i18n.locale, {
+            {i18n.date(actualAppointment.startDate, {
               hour: "2-digit",
               minute: "2-digit",
             })}{" "}
@@ -46,7 +53,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
         <div className="text-xl">
           <Trans id="user.finder.appointment.card.date">
             am{" "}
-            {appointment.startDate.toLocaleDateString(i18n.locale, {
+            {i18n.date(actualAppointment.startDate, {
               day: "2-digit",
               month: "2-digit",
               year: "2-digit",
@@ -58,17 +65,17 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
       <p className="text-center">
         {
           vaccines[i18n.locale || "de"][
-            appointment.properties.vaccine as Vaccine
+            actualAppointment.properties.vaccine as Vaccine
           ].name
         }
       </p>
 
       <div className="text-center">
-        Slots: {appointment.bookings.length}/{appointment.slotData.length} -
-        {appointment.status}
+        Slots: {actualAppointment.bookings.length}/
+        {actualAppointment.slotData.length} -{actualAppointment.status}
         <br />
-        {appointment.status !== AppointmentStatus.CANCELED && (
-          <Button size="sm" onClick={() => cancelAppointment(appointment)}>
+        {actualAppointment.status !== AppointmentStatus.CANCELED && (
+          <Button size="sm" onClick={handleCancelAppointment}>
             Cancel
           </Button>
         )}

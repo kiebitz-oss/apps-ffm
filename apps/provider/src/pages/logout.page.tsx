@@ -1,30 +1,27 @@
 import {
   Button,
   CopyToClipboardButton,
+  PageHeader,
   SecretBox,
   Text,
   Title,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { backup } from "actions";
 import { BackupDataLink } from "components";
-import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import type { MouseEventHandler } from "react";
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useCallback, useEffect, useState } from "react";
+import { backup, logout } from "stores/app";
 
 const LogOutPage: NextPage = () => {
   const router = useRouter();
-  const { logout } = useAppState();
-
-  const logOut: MouseEventHandler<HTMLButtonElement> = async () => {
-    await logout();
-    await router.push("/");
-  };
-
   const [blob, setBlob] = useState<Blob | null>(null);
   const [secret, setSecret] = useState<string | null>(null);
+
+  const logOut: MouseEventHandler<HTMLButtonElement> = useCallback(async () => {
+    await logout();
+    await router.push("/");
+  }, [router]);
 
   useEffect(() => {
     backup().then(({ keyPairs, secret }) => {
@@ -39,9 +36,12 @@ const LogOutPage: NextPage = () => {
 
   return (
     <main>
-      <Title>
-        <Trans id="provider.logout.title">Abmelden</Trans>
-      </Title>
+      <PageHeader
+        title={t({
+          id: "provider.logout.title",
+          message: "Abmelden",
+        })}
+      />
 
       <Text className="pb-8">
         <Trans id="provider.logout.intro">

@@ -6,12 +6,12 @@ import {
   Upload,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { useAppState } from "lib/AppProvider";
 import { useRouter } from "next/router";
 import type { ChangeEventHandler } from "react";
 import { useEffect, useRef, useState } from "react";
 import type { Resolver, SubmitHandler } from "react-hook-form";
 import { FormProvider, useForm } from "react-hook-form";
+import { authenticate } from "stores/app";
 
 interface FormData {
   keyPairs: string;
@@ -50,7 +50,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
   const [keyPairs, setKeyPairs] = useState<string>();
   const fileInput = useRef<HTMLInputElement>(null);
   const [failed, setFailed] = useState<boolean>(false);
-  const { authenticate } = useAppState();
+
   const router = useRouter();
 
   const methods = useForm<FormData>({

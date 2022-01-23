@@ -1,7 +1,7 @@
-import { useAppState } from "lib/AppProvider";
+import { useNotifications } from "stores/notifications";
 
 export const Notifications: React.FC = () => {
-  const { notifications } = useAppState();
+  const notifications = useNotifications((state) => state.notifications);
 
   return notifications ? (
     <ul>

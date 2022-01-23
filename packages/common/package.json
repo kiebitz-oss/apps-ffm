@@ -15,7 +15,8 @@
   },
   "bugs": "https://github.com/impfen/apps-inoeg/issues",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=16.0.0",
+    "pnpm": ">= 6.9.0"
   },
   "type": "module",
   "sideEffects": false,

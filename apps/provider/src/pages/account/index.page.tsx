@@ -1,9 +1,9 @@
-import { Link, Text, Title } from "@impfen/common";
-import { Trans } from "@lingui/macro";
-import { getProviderData } from "actions";
+import { Link, PageHeader, Text } from "@impfen/common";
+import { t, Trans } from "@lingui/macro";
 import { ProviderDataSummary } from "components";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
+import { getProviderData } from "stores/app";
 import type { ProviderData } from "vanellus";
 
 const SettingsPage: NextPage = () => {
@@ -15,17 +15,25 @@ const SettingsPage: NextPage = () => {
 
   return (
     <main>
-      <div className="flex flex-row justify-between mb-8">
-        <Title>
-          <Trans id="provider.account.index.title">Ihr Account</Trans>
-        </Title>
-
+      <PageHeader
+        title={t({
+          id: "provider.account.index.title",
+          message: "Account",
+        })}
+      >
         <div className="buttons-list">
-          <Link href="/account/edit" type="button" className="primary sm">
-            Ihre Daten bearbeiten
+          <Link
+            href="/account/edit"
+            type="button"
+            variant="secondary"
+            size="sm"
+          >
+            <Trans id="provider.account.index.edit-button">
+              Account bearbeiten
+            </Trans>
           </Link>
         </div>
-      </div>
+      </PageHeader>
 
       {!providerData?.verifiedProvider && (
         <Text className="mb-8">
@@ -37,7 +45,9 @@ const SettingsPage: NextPage = () => {
       )}
 
       {providerData?.verifiedProvider && (
-        <ProviderDataSummary provider={providerData?.verifiedProvider} />
+        <div className="max-w-3xl">
+          <ProviderDataSummary provider={providerData?.verifiedProvider} />
+        </div>
       )}
     </main>
   );

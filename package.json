@@ -14,7 +14,8 @@
   },
   "bugs": "https://github.com/impfen/apps-inoeg/issues",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=16.0.0",
+    "pnpm": ">= 6.9.0"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -36,6 +37,7 @@
     "test:e2e": "pnpm run test:e2e --filter ./apps*",
     "docker": "docker run -p 3000:3000 -it apps-inoeg:main",
     "docker:build": "docker build . -f Dockerfile -t apps-inoeg:main",
+    "docker:build:dev": "docker-compose build",
     "i18n": "lingui",
     "i18n:extract": "NODE_ENV=development lingui extract --clean",
     "i18n:compile": "lingui compile",

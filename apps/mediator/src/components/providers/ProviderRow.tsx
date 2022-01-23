@@ -1,21 +1,21 @@
 import { Link, Tag } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { encodeProviderId } from "actions/encodeProviderId";
 import clsx from "clsx";
 import type { Provider } from "vanellus";
+import { encodeBase64url } from "vanellus";
 
 export interface ProviderRowProps {
   provider: Provider;
 }
 
 export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
-  const providerLink = `/providers/${encodeProviderId(provider.id)}`;
+  const providerLink = `/providers/${encodeBase64url(provider.id)}`;
 
   return (
     <tr key={provider.id} className={clsx("providers-list-row")}>
-      <td>
+      <th scope="row">
         <Link href={providerLink}>{provider.name}</Link>
-      </td>
+      </th>
 
       <td className="py-4 px-6 ">
         <address className="text-sm text-gray-500 whitespace-nowrap">
