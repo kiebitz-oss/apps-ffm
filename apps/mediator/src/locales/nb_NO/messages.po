@@ -11,10 +11,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.11-dev\n"
 
-#: pages/ConfirmProviderModal.tsx:100
-msgid "mediator.providers.confirm-modal.phone"
-msgstr "Telefonnummer"
-
 #: pages/providers/[id].page.tsx:106
 msgid "mediator.provider-show.description"
 msgstr "Beskrivelse"
@@ -94,10 +90,6 @@ msgstr "Tilbyderliste"
 #: pages/providers/ProvidersList.tsx:68
 msgid "mediator.providers-list.status"
 msgstr "Status"
-
-#: pages/UnconfirmProviderModal.tsx:114
-msgid "mediator.providers.unconfirm-modal.description"
-msgstr "Beskrivelse"
 
 #: pages/UnconfirmProviderModal.tsx:59
 msgid "mediator.providers.unconfirm-modal.value"

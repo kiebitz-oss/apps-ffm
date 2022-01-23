@@ -11,10 +11,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.11-dev\n"
 
-#: components/NavContent.tsx:97
-msgid "common.footer.link.kiebitz"
-msgstr "Réalisé avec Kiebitz"
-
 #: pages/providers/ProviderRow.tsx:72
 msgid "mediator.provider-row.button-show"
 msgstr "Afficher"
@@ -80,10 +76,6 @@ msgstr ""
 #: pages/providers/ProviderRow.tsx:63
 msgid "mediator.provider-row.valid"
 msgstr "confirmé"
-
-#: pages/UnconfirmProviderModal.tsx:74
-msgid "mediator.providers.unconfirm-modal.street"
-msgstr "Rue"
 
 #: pages/index.page.tsx:90
 msgid "mediator.welcome.upload-key-pairs.input"
