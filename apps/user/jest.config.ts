@@ -26,8 +26,6 @@ const config = {
     ".mdx?$": "jest-transformer-mdx",
   },
   moduleNameMapper: {
-    "^lib$": "<rootDir>/src/lib/index.ts",
-    "^lib/(.*)$": "<rootDir>/src/lib/$1",
     "^actions$": "<rootDir>/src/actions/index.ts",
     "^actions/(.*)$": "<rootDir>/src/actions/$1",
     "^components$": "<rootDir>/src/components/index.ts",
