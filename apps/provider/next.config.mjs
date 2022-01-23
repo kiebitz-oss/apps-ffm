@@ -6,14 +6,15 @@ import nextMDX from "@next/mdx";
 const config = {
   poweredByHeader: false,
   reactStrictMode: true,
-  cleanDistDir: true,
   trailingSlash: true,
   pageExtensions: ["page.tsx", "page.mdx"],
-  basePath: process.env.NEXT_PROVIDER_BASEPATH || "",
+  basePath: process.env.NEXT_PROVIDER_BASEPATH || undefined,
+  outputFileTracing: false,
   experimental: {
+    cpus: 4,
     externalDir: true,
-    scrollRestoration: true,
-    esmExternals: true,
+    removeConsole: true,
+    esmExternals: false,
   },
   images: {
     disableStaticImages: true,

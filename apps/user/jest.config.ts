@@ -32,7 +32,7 @@ const config = {
     "^vanellus/(.*)$": "<rootDir>/../../packages/vanellus/src/$1",
   },
   testPathIgnorePatterns: ["<rootDir>/src/tests/e2e/"],
-  collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}"],
+  collectCoverageFrom: ["src/**/*.{ts,tsx}"],
 };
 
 export default config;

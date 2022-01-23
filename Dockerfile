@@ -27,9 +27,7 @@ ENV NODE_ENV "production"
 RUN npm i --global pnpm
 RUN pnpm install --ignore-scripts --prod
 RUN pnpm build:i18n
-RUN pnpm build:user
-RUN pnpm build:mediator
-RUN pnpm build:provider
+RUN pnpm build
 
 ## prod
 FROM nginxinc/nginx-unprivileged:stable-alpine
