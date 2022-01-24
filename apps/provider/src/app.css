@@ -3,6 +3,14 @@
 @import "tailwindcss/utilities";
 @import "@impfen/common/src/ui.css";
 
+.appointments {
+  @apply relative;
+}
+
+.appointment-cell {
+  @apply absolute overflow-hidden flex flex-col cursor-pointer pl-1 opacity-80 min-h-full bg-green-100 z-10 hover:z-20 hover:opacity-100 hover:bg-green-200;
+}
+/**
 .week-calendar {
   @apply relative border overflow-x-auto mt-5 flex w-full overflow-y-hidden;
 
@@ -52,3 +60,4 @@
     @apply border-r;
   }
 }
+*/

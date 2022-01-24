@@ -1,13 +1,12 @@
 import { Link } from "@impfen/common";
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
 import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import type { Appointment } from "vanellus";
+import { AppointmentCell } from "./AppointmentCell";
 import { AppointmentSet } from "./AppointmentSet";
-import { DayColumn } from "./DayColumn";
-import { DayLabelColumn } from "./DayLabelColumn";
 
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
@@ -53,6 +52,18 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
     endDate
   );
 
+  let days: Dayjs[] = [];
+
+  for (let i = 0; i <= 6; i++) {
+    days.push(startDate.add(i, "days"));
+  }
+
+  let hours: number[] = [];
+
+  for (let i = fromHour; i <= toHour; i++) {
+    hours.push(i);
+  }
+
   return (
     <section id="week-calendar">
       <header id="week-calendar-header">
@@ -79,23 +90,54 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
         </Link>
       </div>
 
-      <div className=" week-calendar">
-        <DayLabelColumn fromHour={fromHour} toHour={toHour} key="-" />
+      <table className="w-full border border-gray-300 border-collapse table-fixed">
+        <thead>
+          <tr>
+            <th className="w-[75px] border border-gray-300">&nbsp;</th>
 
-        {Array.from(Array(7).keys()).map((dayNr) => {
-          const date = startDate.add(dayNr, "days");
+            {days.map((day) => (
+              <th
+                scope="row"
+                className="border border-gray-300"
+                key={day.toISOString()}
+              >
+                {day.format("dd")}
+                <br />
+                {day.format("DD.MM.")}
+              </th>
+            ))}
+          </tr>
+        </thead>
 
-          return (
-            <DayColumn
-              appointmentItems={filteredAppointments}
-              fromHour={fromHour}
-              toHour={toHour}
-              date={date}
-              key={`day-${dayNr}`}
-            />
-          );
-        })}
-      </div>
+        <tbody>
+          {hours.map((hour) => (
+            <tr key={hour}>
+              <th scope="col" className="border border-gray-300">
+                {hour}:00
+              </th>
+
+              {days.map((day) => (
+                <td
+                  key={`${hour}-${day.format("DD-MM")}`}
+                  className="h-[100px] border border-gray-300 appointments"
+                >
+                  {appointmentSet
+                    .filterBetweenDates(
+                      day.set("hour", hour),
+                      day.set("hour", hour + 1)
+                    )
+                    .map((appointment) => (
+                      <AppointmentCell
+                        key={appointment.appointment.id}
+                        appointmentItem={appointment}
+                      />
+                    ))}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
   );
 };
