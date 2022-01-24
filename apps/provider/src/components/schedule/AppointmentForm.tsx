@@ -48,7 +48,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
   const onSubmit: SubmitHandler<FormData> = async (data) =>
     createAppointment(
-      dayjs(data.startDate).toDate(),
+      dayjs(data.startDate),
       data.duration,
       data.vaccine,
       data.slotCount
@@ -171,7 +171,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 }),
               },
               max: {
-                value: 50,
+                value: 240,
                 message: t({
                   id: "provider.schedule.appointment-modal.duration.error.max",
                   message:

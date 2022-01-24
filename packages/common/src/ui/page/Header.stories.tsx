@@ -1,4 +1,4 @@
-import { ComponentStory, Meta } from "@storybook/react";
+import type { ComponentStory, Meta } from "@storybook/react";
 import { Header, HeaderProps } from "./Header";
 
 export default {

@@ -1,11 +1,10 @@
 import { Button, PageHeader } from "@impfen/common";
 import { t } from "@lingui/macro";
 import {
-  AppointmentCard,
   CreateAppointmentModal,
   CreateAppointmentSeriesModal,
-  WeekCalendar,
 } from "components";
+import { WeekCalendar } from "components/WeekCalendar/WeekCalendar";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
@@ -24,10 +23,9 @@ const SchedulePage: React.FC = () => {
   const [modal, setModal] = useState<Modal | null>(null);
 
   const refreshAppointments = useCallback(() => {
-    getProviderAppointments(
-      dayjs().toDate(),
-      dayjs().add(7, "days").toDate()
-    ).then(setAppointments);
+    getProviderAppointments(dayjs(), dayjs().add(14, "days")).then(
+      setAppointments
+    );
   }, []);
 
   useEffect(() => {
@@ -67,7 +65,7 @@ const SchedulePage: React.FC = () => {
         </div>
       </PageHeader>
 
-      <div className="flex flex-col flex-wrap gap-3 px-4 mb-10 w-full md:flex-row md:justify-between md:px-0">
+      {/* <div className="flex flex-col flex-wrap gap-3 px-4 mb-10 w-full md:flex-row md:justify-between md:px-0">
         {appointments.map((appointment) => (
           <AppointmentCard
             key={appointment.id}
@@ -75,7 +73,7 @@ const SchedulePage: React.FC = () => {
             border
           />
         ))}
-      </div>
+      </div> */}
 
       <WeekCalendar
         appointments={appointments}

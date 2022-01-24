@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/macro";
+import type { Dayjs } from "dayjs";
 import dayjs from "dayjs";
-import type { FC } from "react";
 import { useEffect, useState } from "react";
 import { getAppointments } from "stores/app";
 import { suspend } from "suspend-react";
@@ -8,13 +8,13 @@ import type { AggregatedPublicAppointment } from "vanellus";
 import { AppointmentCardSelector } from "./AppointmentCardSelector";
 
 interface AppointmentsListProps {
-  date?: Date;
+  date?: Dayjs;
   providerId: string;
 }
 
-export const AppointmentsList: FC<AppointmentsListProps> = ({
+export const AppointmentsList: React.FC<AppointmentsListProps> = ({
   providerId,
-  date = new Date(),
+  date = dayjs(),
 }) => {
   const appointments = suspend(
     async () => {

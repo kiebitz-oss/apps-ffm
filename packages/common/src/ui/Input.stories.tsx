@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory, StoryObj } from "@storybook/react";
+import type { ComponentMeta, ComponentStory, StoryObj } from "@storybook/react";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Input } from "./Input";

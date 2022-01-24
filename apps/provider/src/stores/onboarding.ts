@@ -1,4 +1,4 @@
-import { ProviderInput } from "vanellus";
+import type { ProviderInput } from "vanellus";
 import create from "zustand";
 import { persist } from "zustand/middleware";
 

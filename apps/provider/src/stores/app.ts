@@ -1,4 +1,5 @@
 import { getApiConfig } from "@impfen/common";
+import type { Dayjs } from "dayjs";
 import {
   AnonymousApi,
   Appointment,
@@ -40,7 +41,7 @@ export const useApp = create<AppState>(
 );
 
 export const createAppointment = async (
-  start: Date,
+  start: Dayjs,
   duration: number,
   vaccine: Vaccine,
   slotCount: number
@@ -64,8 +65,8 @@ export const createAppointment = async (
 };
 
 export const createAppointmentSeries = async (
-  startAt: Date,
-  endAt: Date,
+  startAt: Dayjs,
+  endAt: Dayjs,
   interval: number,
   vaccine: Vaccine,
   lanes: number
@@ -94,7 +95,9 @@ export const cancelAppointment = (appointment: Appointment) => {
   return getApi().cancelAppointment(appointment, getKeyPairs());
 };
 
-export const getProviderAppointments = (from: Date, to: Date) => {
+export const getProviderAppointments = (from: Dayjs, to?: Dayjs) => {
+  to = to ? to : from.add(1, "day");
+
   return getApi().getProviderAppointments(from, to, getKeyPairs());
 };
 

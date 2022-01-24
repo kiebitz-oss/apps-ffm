@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { MessageVariant } from "./types";
+import type { MessageVariant } from "./types";
 
 interface MessageProps {
   className?: string;

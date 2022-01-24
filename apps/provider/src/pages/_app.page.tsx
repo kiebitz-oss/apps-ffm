@@ -5,8 +5,13 @@ import { I18nProvider } from "@lingui/react";
 import "app.css";
 import { HeaderContent } from "components/HeaderContent";
 import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import type { AppProps } from "next/app";
 import React, { useEffect, useState } from "react";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const SafeHydrate: React.FC = ({ children }) => {
   return (

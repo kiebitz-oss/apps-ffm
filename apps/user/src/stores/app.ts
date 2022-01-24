@@ -1,4 +1,5 @@
 import { getApiConfig } from "@impfen/common";
+import type { Dayjs } from "dayjs";
 import type {
   AggregatedPublicAppointment,
   Booking,
@@ -80,7 +81,7 @@ export const getAppointment = async (
 };
 
 export const getAppointments = (
-  date: Date,
+  date: Dayjs,
   zipFrom: number | string = 10000,
   zipTo: number | string = 99999
 ) => {

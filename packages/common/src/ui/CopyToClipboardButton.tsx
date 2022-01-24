@@ -1,6 +1,6 @@
-import { MouseEventHandler } from "react";
+import type { MouseEventHandler } from "react";
 import { useCopyToClipboard } from "react-use";
-import { ButtonProps } from "./Button";
+import type { ButtonProps } from "./Button";
 
 interface CopyToClipboardButton extends ButtonProps {
   toCopy: string;

@@ -42,14 +42,15 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
       <time className="flex flex-col font-semibold text-center">
         <div className="text-4xl">
           <Trans id="user.finder.appointment.card.time">
-            {i18n.date(appointment.startDate, { timeStyle: "short" })} Uhr
+            {i18n.date(appointment.startDate.toDate(), { timeStyle: "short" })}{" "}
+            Uhr
           </Trans>
         </div>
 
         <div className="text-xl">
           <Trans id="user.finder.appointment.card.date">
             am{" "}
-            {i18n.date(appointment.startDate, {
+            {i18n.date(appointment.startDate.toDate(), {
               day: "2-digit",
               month: "2-digit",
               year: "2-digit",

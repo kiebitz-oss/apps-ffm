@@ -74,8 +74,8 @@ export const AppointmentSeriesForm: React.FC<AppointmentSeriesFormProps> = ({
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     await createAppointmentSeries(
-      dayjs(data.startAt).utc().toDate(),
-      dayjs(data.endAt).utc().toDate(),
+      dayjs(data.startAt),
+      dayjs(data.endAt),
       Number(data.interval),
       data.vaccine,
       data.slotCount

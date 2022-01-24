@@ -5,12 +5,15 @@ import { I18nProvider } from "@lingui/react";
 import "app.css";
 import { HeaderContent } from "components";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import type { FallbackProps } from "react-error-boundary";
 import { ErrorBoundary } from "react-error-boundary";
 import { AuthError } from "vanellus";
+
+dayjs.extend(utc);
 
 const ErrorFallback: React.FC<FallbackProps> = ({
   error,

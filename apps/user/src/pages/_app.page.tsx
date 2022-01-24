@@ -5,8 +5,11 @@ import { I18nProvider } from "@lingui/react";
 import "app.css";
 import { FooterContent, HeaderContent } from "components";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
+
+dayjs.extend(utc);
 
 const SafeHydrate: React.FC = ({ children }) => {
   return (

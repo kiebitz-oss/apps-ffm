@@ -2,7 +2,7 @@ import { Edit24 } from "@carbon/icons-react";
 import { InputField, Link, PageHeader } from "@impfen/common";
 import { t } from "@lingui/macro";
 import { AppointmentsList } from "components/finder";
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import type { ChangeEventHandler } from "react";
@@ -13,19 +13,19 @@ import { useFinder } from "stores/finder";
 const AppointmentStep: NextPage = () => {
   const provider = useFinder((state) => state.provider);
   const router = useRouter();
-  const [date, setDate] = useState<Date>(new Date());
-  const [oldDate, setOldDate] = useState<Date>();
+  const [date, setDate] = useState<Dayjs>(dayjs());
+  const [oldDate, setOldDate] = useState<Dayjs>();
   const booking = useApp((state) => state.booking);
 
   useEffect(() => {
-    if (!oldDate || !dayjs(oldDate).isSame(dayjs(date), "day")) {
+    if (!oldDate || !oldDate.isSame(date, "day")) {
       setOldDate(date);
     }
   }, [date, oldDate]);
 
   const handleDateChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     async (event) => {
-      setDate(dayjs(event.currentTarget.value).toDate());
+      setDate(dayjs(event.currentTarget.value));
     },
     [setDate]
   );
@@ -96,9 +96,9 @@ const AppointmentStep: NextPage = () => {
             message: "Beliebige Zeit",
           })}
           onChange={handleDateChange}
-          min={dayjs(date).format("YYYY-MM-DDTHH:mm")}
-          max={dayjs(date).add(30, "days").format("YYYY-MM-DDTHH:mm")}
-          defaultValue={dayjs(date).add(5, "minute").format("YYYY-MM-DDTHH:mm")}
+          min={date.format("YYYY-MM-DDTHH:mm")}
+          max={date.add(30, "days").format("YYYY-MM-DDTHH:mm")}
+          defaultValue={date.add(5, "minute").format("YYYY-MM-DDTHH:mm")}
         />
       </div>
 
