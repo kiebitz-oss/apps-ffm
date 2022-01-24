@@ -60,7 +60,7 @@ export const logout = async () => {
   return true;
 };
 
-export const isAuthenticated = () => {
+export const useIsAuthenticated = () => {
   return Boolean(useApp.getState().keyPairs);
 };
 

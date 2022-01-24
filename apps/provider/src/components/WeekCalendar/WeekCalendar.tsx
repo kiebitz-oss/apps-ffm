@@ -6,7 +6,7 @@ import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import type { Appointment } from "vanellus";
 import { AppointmentCell } from "./AppointmentCell";
-import { AppointmentSet } from "./AppointmentSet";
+import { AppointmentItem, AppointmentSet } from "./AppointmentSet";
 
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
@@ -16,15 +16,17 @@ dayjs.extend(isBetween);
 interface WeekCalendarProps {
   appointments: Appointment[];
   week?: number;
-  fromHour?: number;
-  toHour?: number;
+  autoAdjustHours?: boolean;
+  defaultFromHour?: number;
+  defaultToHour?: number;
 }
 
 export const WeekCalendar: React.FC<WeekCalendarProps> = ({
   week,
   appointments,
-  fromHour = 8,
-  toHour = 18,
+  autoAdjustHours = true,
+  defaultFromHour = 9,
+  defaultToHour = 16,
 }) => {
   const selectedWeekOfYear =
     week && week >= 1 && week <= 52 ? week : dayjs().week();
@@ -36,21 +38,54 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
 
   const startDate = selectedWeek
     .startOf("week")
-    .set("hour", fromHour)
+    .set("hour", 0)
     .set("minute", 0)
     .set("second", 0);
 
   const endDate = selectedWeek
     .endOf("week")
-    .set("hour", toHour)
+    .set("hour", 23)
     .set("minute", 59)
     .set("second", 59);
 
-  const appointmentSet = new AppointmentSet(appointments);
-  const filteredAppointments = appointmentSet.filterBetweenDates(
-    startDate,
-    endDate
+  const filteredAppointments = appointments.filter((appointment) =>
+    appointment.startDate.isBetween(startDate, endDate, "minute", "[)")
   );
+
+  const appointmentSet = new AppointmentSet(filteredAppointments);
+
+  let fromHour = defaultFromHour;
+  let toHour = defaultToHour;
+
+  let appointmentsMatrix: Record<
+    string,
+    Record<number, AppointmentItem[]>
+  > = {};
+
+  appointmentSet.appointmentItems.forEach((appointmentItem) => {
+    const dateIdx = appointmentItem.startDate.format("DD-MM");
+
+    if (dateIdx in appointmentsMatrix === false) {
+      appointmentsMatrix[dateIdx] = {};
+    }
+
+    const hourIdx = Number(appointmentItem.startDate.format("H"));
+
+    if (hourIdx in appointmentsMatrix[dateIdx] === false) {
+      appointmentsMatrix[dateIdx][hourIdx] = [];
+    }
+
+    if (autoAdjustHours || (fromHour <= hourIdx && toHour >= hourIdx))
+      appointmentsMatrix[dateIdx][hourIdx].push(appointmentItem);
+
+    if (autoAdjustHours && fromHour > hourIdx) {
+      fromHour = hourIdx;
+    }
+
+    if (autoAdjustHours && toHour <= hourIdx) {
+      toHour = hourIdx;
+    }
+  });
 
   let days: Dayjs[] = [];
 
@@ -64,33 +99,35 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
     hours.push(i);
   }
 
+  console.log(appointmentsMatrix);
+
   return (
     <section id="week-calendar">
       <header id="week-calendar-header">
         week: {selectedWeek.week()}
         <br />
-        start: {startDate.toDate().toLocaleString()}
+        start: {startDate.set("hour", fromHour).toDate().toLocaleString()}
         <br />
-        end: {endDate.toDate().toLocaleString()}
+        end: {endDate.set("hour", toHour).toDate().toLocaleString()}
       </header>
 
-      <div className="flex flex-row justify-between w-full">
+      <div className="flex flex-row justify-between my-4 w-full">
         <Link
           href={`/schedule/${lastWeek < 0 ? 52 : lastWeek}`}
-          className="hover"
+          className="text-4xl font-medium hover"
         >
-          zurück
+          ❮ zurück
         </Link>
 
         <Link
           href={`/schedule/${nextWeek > 52 ? 1 : nextWeek}`}
-          className="hover"
+          className="text-4xl font-medium hover"
         >
-          vor
+          vor ❯
         </Link>
       </div>
 
-      <table className="w-full border border-gray-300 border-collapse table-fixed">
+      <table className="overflow-x-auto overflow-y-hidden w-full border border-gray-300 border-collapse table-fixed">
         <thead>
           <tr>
             <th className="w-[75px] border border-gray-300">&nbsp;</th>
@@ -99,7 +136,7 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
               <th
                 scope="row"
                 className="border border-gray-300"
-                key={day.toISOString()}
+                key={day.format("DD.MM.")}
               >
                 {day.format("dd")}
                 <br />
@@ -119,19 +156,18 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
               {days.map((day) => (
                 <td
                   key={`${hour}-${day.format("DD-MM")}`}
-                  className="h-[100px] border border-gray-300 appointments"
+                  className="  border border-gray-300"
                 >
-                  {appointmentSet
-                    .filterBetweenDates(
-                      day.set("hour", hour),
-                      day.set("hour", hour + 1)
-                    )
-                    .map((appointment) => (
-                      <AppointmentCell
-                        key={appointment.appointment.id}
-                        appointmentItem={appointment}
-                      />
-                    ))}
+                  <div className="relative h-auto min-h-[100px]">
+                    {appointmentsMatrix[day.format("DD-MM")]?.[hour]?.map(
+                      (appointmentItem) => (
+                        <AppointmentCell
+                          key={appointmentItem.appointment.id}
+                          appointmentItem={appointmentItem}
+                        />
+                      )
+                    )}
+                  </div>
                 </td>
               ))}
             </tr>

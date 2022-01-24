@@ -1,23 +1,23 @@
 import { Login16, Logout16 } from "@carbon/icons-react";
 import { NavLink } from "@impfen/common";
-import { isAuthenticated } from "stores/app";
+import { useIsAuthenticated } from "stores/app";
 
 interface HeaderContentProps extends React.ComponentProps<"header"> {}
 
 export const HeaderContent: React.FC<HeaderContentProps> = () => {
-  const authenticated = isAuthenticated();
+  const isAuthenticated = useIsAuthenticated();
 
   return (
     <nav>
       <ul className="flex gap-8">
-        {authenticated ? (
+        {isAuthenticated ? (
           <li>
             <NavLink href="/providers">Impfanbieter</NavLink>
           </li>
         ) : null}
 
         <li className="ml-8">
-          {authenticated ? (
+          {isAuthenticated ? (
             <NavLink href="/logout">
               <Logout16 />
               Abmelden

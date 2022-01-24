@@ -23,13 +23,11 @@ export class AppointmentSet {
     let activeAppointmentItems: AppointmentItem[] = [];
 
     this.appointmentItems = appointments
-      // filter appointments without slots
-      .filter((app) => app.slotData.length > 0)
       // sort by startDate
-      .sort(
-        (a, b) =>
-          a.startDate.toDate().getTime() - b.startDate.toDate().getTime()
-      )
+      // .sort(
+      //   (a, b) =>
+      //     a.startDate.toDate().getTime() - b.startDate.toDate().getTime()
+      // )
       // map to AppointmentItem
       .map((appointment, i) => {
         const appointmentItem =
@@ -62,18 +60,5 @@ export class AppointmentSet {
 
         return appointmentItem;
       });
-  }
-
-  public filterBetweenDates(
-    from: Dayjs,
-    to: Dayjs,
-    appointmentItems?: AppointmentItem[]
-  ) {
-    return (appointmentItems || this.appointmentItems).filter(
-      (appointmentItem) => {
-        // starts in interval;
-        return appointmentItem.startDate.isBetween(from, to, "minute", "[)");
-      }
-    );
   }
 }

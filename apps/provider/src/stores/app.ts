@@ -142,7 +142,7 @@ export const logout = async () => {
   return true;
 };
 
-export const isAuthenticated = () => {
+export const useIsAuthenticated = () => {
   const state = useApp.getState();
 
   return state.keyPairs && state.secret;

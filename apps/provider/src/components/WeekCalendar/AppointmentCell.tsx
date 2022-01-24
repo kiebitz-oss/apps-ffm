@@ -1,6 +1,3 @@
-import { Link } from "@impfen/common";
-import clsx from "clsx";
-import { encodeBase64url } from "vanellus";
 import type { AppointmentItem } from "./AppointmentSet";
 
 interface AppointmentCellProps {
@@ -10,9 +7,7 @@ interface AppointmentCellProps {
 export const AppointmentCell: React.FC<AppointmentCellProps> = ({
   appointmentItem,
 }) => {
-  const percentage = Math.floor(
-    (appointmentItem.appointment.duration / 60) * 100
-  );
+  const height = Math.floor((appointmentItem.appointment.duration / 60) * 100);
   const width = Math.floor(100 / (1 + appointmentItem.maxOverlap));
   const top = Math.floor((appointmentItem.startDate.get("minutes") / 60) * 100);
 
@@ -22,36 +17,40 @@ export const AppointmentCell: React.FC<AppointmentCellProps> = ({
   ).length;
 
   const left = Math.floor(i * width);
-  const tiny = percentage < 33 || width < 50;
-
-  const hexId = encodeBase64url(appointmentItem.appointment.id);
+  // const tiny = height < 33 || width < 50;
 
   // if (tiny) {
   //   return null;
   // }
 
+  const rand = Math.floor(Math.random() * 100 + 1);
+
   return (
-    <Link
+    <div
       style={{
-        height: `${percentage}%`,
+        height: `${height}%`,
+        minHeight: `${height}%`,
         width: `${width}%`,
         top: `${top}%`,
         left: `${left}%`,
+        backgroundColor: `hsl(${((100 - rand) / 100) * 120}, 75%, 50%)`,
       }}
-      href={`/schedule/show/${hexId}`}
-      className={clsx("appointment-cell")}
+      className="overflow-hidden hover:overflow-visible absolute z-10 hover:z-20 flex-col p-2 hover:!w-full hover:!h-auto text-xs hover:text-base opacity-80 hover:opacity-100 transition-all cursor-pointer"
     >
       <h4>
-        {appointmentItem.startDate.format("HH:mm")} - <br />
+        {appointmentItem.startDate.format("HH:mm")} -
         {appointmentItem.endDate.format("HH:mm")}
       </h4>
 
       <div>
-        {appointmentItem.appointment.bookings.length}/
-        {appointmentItem.appointment.slotData.length}
+        {appointmentItem.appointment.properties?.seriesId ? (
+          <>SERIE - </>
+        ) : null}
+        {/* {appointmentItem.appointment.bookings.length}/{appointmentItem.appointment.slotData.length} */}
+        {rand}/100
       </div>
 
       {(appointmentItem.appointment.properties?.vaccine as string) || ""}
-    </Link>
+    </div>
   );
 };

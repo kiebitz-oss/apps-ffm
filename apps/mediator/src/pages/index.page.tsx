@@ -2,15 +2,15 @@ import { PageHeader, Section } from "@impfen/common";
 import { t } from "@lingui/macro";
 import { LoginForm } from "components";
 import type { NextPage } from "next";
-import { isAuthenticated } from "stores/app";
+import { useIsAuthenticated } from "stores/app";
 
 const MediatorStartPage: NextPage = () => {
-  const authenticated = isAuthenticated();
+  const isAuthenticated = useIsAuthenticated();
 
   return (
     <main>
       <Section className="mt-10 w-full sm:mt-0">
-        {authenticated ? (
+        {isAuthenticated ? (
           <>
             <PageHeader
               title={t({

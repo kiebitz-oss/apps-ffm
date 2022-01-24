@@ -1,21 +1,21 @@
 import { Login16, Logout16 } from "@carbon/icons-react";
 import { NavLink } from "@impfen/common";
-import { isAuthenticated } from "stores/app";
+import { useIsAuthenticated } from "stores/app";
 
 interface HeaderContentProps {}
 
 export const HeaderContent: React.FC<HeaderContentProps> = ({}) => {
-  const authenticated = isAuthenticated();
+  const isAuthenticated = useIsAuthenticated();
 
   return (
     <nav className="hidden gap-12 justify-center sm:flex">
-      {authenticated ? (
+      {isAuthenticated ? (
         <>
           <NavLink href="/schedule">Impftermine</NavLink>
           <NavLink href="/account">Ihr Account</NavLink>
         </>
       ) : null}
-      {authenticated ? (
+      {isAuthenticated ? (
         <NavLink href="/logout">
           <Logout16 />
           Abmelden
