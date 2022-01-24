@@ -38,7 +38,7 @@ export const AppointmentCell: React.FC<AppointmentCellProps> = ({
       className="overflow-hidden hover:overflow-visible absolute z-10 hover:z-20 flex-col p-2 hover:!w-full hover:!h-auto text-xs hover:text-base opacity-80 hover:opacity-100 transition-all cursor-pointer"
     >
       <h4>
-        {appointmentItem.startDate.format("HH:mm")} -
+        {appointmentItem.startDate.format("HH:mm")} -{" "}
         {appointmentItem.endDate.format("HH:mm")}
       </h4>
 

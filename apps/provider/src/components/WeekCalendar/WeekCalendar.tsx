@@ -99,8 +99,6 @@ export const WeekCalendar: React.FC<WeekCalendarProps> = ({
     hours.push(i);
   }
 
-  console.log(appointmentsMatrix);
-
   return (
     <section id="week-calendar">
       <header id="week-calendar-header">

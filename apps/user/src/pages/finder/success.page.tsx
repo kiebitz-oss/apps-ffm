@@ -1,4 +1,6 @@
-import { Text, Title } from "@impfen/common";
+import { GeneratePdf16 } from "@carbon/icons-react";
+import { Link, Text, Title, Vaccine, vaccines } from "@impfen/common";
+import { i18n } from "@lingui/core";
 import { Trans } from "@lingui/macro";
 import { AppointmentCard } from "components/finder";
 import type { NextPage } from "next";
@@ -140,10 +142,10 @@ const SuccessStep: NextPage = () => {
               Impfvorbereitungen
             </Trans>
           </Title>
-          {/* 
+
           <ul className="grid grid-flow-row gap-4 pb-6">
             {vaccines[i18n.locale || "de"][
-              booking.appointment.vaccine as unknown as Vaccine
+              booking.appointment.vaccine as Vaccine
             ].pdfs.map((pdf) => (
               <li key={pdf.label}>
                 <Link
@@ -161,10 +163,10 @@ const SuccessStep: NextPage = () => {
           <Text variant="text2">
             {
               vaccines[i18n.locale || "de"][
-                booking.appointment.vaccine as unknown as Vaccine
+                booking.appointment.vaccine as Vaccine
               ].pdfDescription
             }
-          </Text> */}
+          </Text>
         </section>
 
         <section className="mx-4 md:mx-0">
