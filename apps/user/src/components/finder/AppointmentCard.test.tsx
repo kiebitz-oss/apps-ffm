@@ -20,9 +20,8 @@ const appointment: AggregatedPublicAppointment = {
   startDate: dayjs(),
   endDate: dayjs().add(5, "minutes"),
   duration: 5,
-  properties: {
-    vaccine: "moderna",
-  },
+  vaccine: "moderna",
+  properties: {},
 };
 
 describe("appointmentCard", () => {
