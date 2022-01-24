@@ -9,7 +9,8 @@ import utc from "dayjs/plugin/utc";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { ErrorBoundary, FallbackProps } from "react-error-boundary";
+import type { FallbackProps } from "react-error-boundary";
+import { ErrorBoundary } from "react-error-boundary";
 import { AuthError } from "vanellus";
 
 dayjs.extend(utc);
