@@ -1,11 +1,11 @@
-import { Button, Link, PageHeader } from "@impfen/common";
+import { Button, Link, Page, PageHeader } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { ProviderDataSummary } from "components";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { register } from "stores/app";
-import { useOnboarding } from "stores/onboarding";
+import { resetOnboarding, useOnboarding } from "stores/onboarding";
 
 /*
 Here the user has a chance to review all data that was entered before confirming
@@ -19,8 +19,10 @@ const OnboardingVerifyPage: NextPage = () => {
   const submit: React.MouseEventHandler<HTMLButtonElement> =
     useCallback(async () => {
       if (provider) {
-        register(provider).then(() => {
-          router.push("/onboarding/backup");
+        await register(provider).then(() => {
+          resetOnboarding();
+
+          return router.push("/onboarding/backup");
         });
       }
     }, [provider, router]);
@@ -32,28 +34,26 @@ const OnboardingVerifyPage: NextPage = () => {
   }
 
   return (
-    <main className="content">
-      <div className="max-w-3xl">
-        <PageHeader
-          title={t({
-            id: "provider.onboarding.verify.title",
-            message: "Bitte überprüfen Sie ihre Daten",
-          })}
-        />
+    <Page narrow>
+      <PageHeader
+        title={t({
+          id: "provider.onboarding.verify.title",
+          message: "Bitte überprüfen Sie ihre Daten",
+        })}
+      />
 
-        <ProviderDataSummary provider={provider} />
+      <ProviderDataSummary provider={provider} />
 
-        <div className="flex justify-between">
-          <Link href="/onboarding" type="button" variant="secondary">
-            <Trans id="provider.onboarding.verify.edit-data">Anpassen</Trans>
-          </Link>
+      <div className="flex justify-between">
+        <Link href="/onboarding" type="button" variant="secondary">
+          <Trans id="provider.onboarding.verify.edit-data">Anpassen</Trans>
+        </Link>
 
-          <Button onClick={submit}>
-            <Trans id="provider.onboarding.verify.button">Weiter</Trans>
-          </Button>
-        </div>
+        <Button onClick={submit}>
+          <Trans id="provider.onboarding.verify.button">Weiter</Trans>
+        </Button>
       </div>
-    </main>
+    </Page>
   );
 };
 

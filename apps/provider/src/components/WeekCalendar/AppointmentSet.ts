@@ -1,18 +1,18 @@
-import dayjs, { Dayjs } from "dayjs";
+import type { Dayjs } from "dayjs";
 import type { Appointment } from "vanellus";
 
 export class AppointmentItem {
   public appointment: Appointment;
-  public startDate: Dayjs;
-  public endDate: Dayjs;
+  public startAt: Dayjs;
+  public endAt: Dayjs;
   public overlapsWith: AppointmentItem[] = [];
   public maxOverlap = 0;
   public index = 0;
 
   constructor(appointment: Appointment) {
     this.appointment = appointment;
-    this.startDate = dayjs(this.appointment.startDate);
-    this.endDate = dayjs(this.appointment.endDate);
+    this.startAt = this.appointment.startAt;
+    this.endAt = this.appointment.endAt;
   }
 }
 
@@ -23,10 +23,10 @@ export class AppointmentSet {
     let activeAppointmentItems: AppointmentItem[] = [];
 
     this.appointmentItems = appointments
-      // sort by startDate
+      // sort by startAt
       // .sort(
       //   (a, b) =>
-      //     a.startDate.toDate().getTime() - b.startDate.toDate().getTime()
+      //     a.startAt.toDate().getTime() - b.startAt.toDate().getTime()
       // )
       // map to AppointmentItem
       .map((appointment, i) => {
@@ -39,7 +39,7 @@ export class AppointmentSet {
 
         activeAppointmentItems = activeAppointmentItems.filter(
           (activeAppointmentItem) =>
-            appointmentItem.startDate.isBefore(activeAppointmentItem.endDate)
+            appointmentItem.startAt.isBefore(activeAppointmentItem.endAt)
         );
 
         appointmentItem.overlapsWith = [...activeAppointmentItems];

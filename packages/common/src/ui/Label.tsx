@@ -14,7 +14,7 @@ export const Label: React.FC<LabelProps> = ({
 }) => {
   return (
     <label className={clsx("label", className)} htmlFor={id} {...props}>
-      {children} {required ? "(*)" : null}
+      {children} {required ? "*" : null}
     </label>
   );
 };

@@ -1,10 +1,10 @@
-import { Link, PageHeader } from "@impfen/common";
+import { Link, Page, PageHeader } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import type { NextPage } from "next";
 
 const LoggedOutPage: NextPage = () => {
   return (
-    <main className="content">
+    <Page>
       <PageHeader
         title={t({
           id: "mediator.logged-out.title",
@@ -20,7 +20,7 @@ const LoggedOutPage: NextPage = () => {
       <Link href="/mediator" type="button" variant="primary">
         <Trans id="mediator.logged-out.log-in-again">Einloggen</Trans>
       </Link>
-    </main>
+    </Page>
   );
 };
 

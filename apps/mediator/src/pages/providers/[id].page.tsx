@@ -1,4 +1,4 @@
-import { Loading } from "@impfen/common";
+import { Loading, Page } from "@impfen/common";
 import { ProviderData } from "components";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -10,11 +10,11 @@ const ProviderShowPage: NextPage = () => {
   const id = decodeBase64url(router.query?.id as string);
 
   return (
-    <main>
+    <Page narrow title="Impfanbieter">
       <Suspense fallback={<Loading />}>
         <ProviderData id={id} />
       </Suspense>
-    </main>
+    </Page>
   );
 };
 

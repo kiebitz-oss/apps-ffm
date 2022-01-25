@@ -33,7 +33,7 @@ export const Modal: React.FC<ModalProps> = ({
           <div className="hidden absolute top-0 right-0 pt-6 pr-6 sm:block">
             <button
               type="button"
-              className="text-gray-700 hover:text-gray-900 rounded-md"
+              className="text-gray-700 hover:text-primary rounded-md"
               onClick={handleClose}
             >
               <span className="sr-only">

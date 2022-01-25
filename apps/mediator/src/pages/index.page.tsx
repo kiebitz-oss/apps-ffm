@@ -1,4 +1,4 @@
-import { PageHeader, Section } from "@impfen/common";
+import { Page, PageHeader, Section } from "@impfen/common";
 import { t } from "@lingui/macro";
 import { LoginForm } from "components";
 import type { NextPage } from "next";
@@ -8,7 +8,7 @@ const MediatorStartPage: NextPage = () => {
   const isAuthenticated = useIsAuthenticated();
 
   return (
-    <main>
+    <Page>
       <Section className="mt-10 w-full sm:mt-0">
         {isAuthenticated ? (
           <>
@@ -79,7 +79,7 @@ const MediatorStartPage: NextPage = () => {
           </>
         )}
       </Section>
-    </main>
+    </Page>
   );
 };
 

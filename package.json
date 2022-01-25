@@ -47,13 +47,13 @@
     "@babel/core": "^7.16.12",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
-    "@lingui/cli": "3.13.0",
-    "@lingui/conf": "3.13.0",
-    "@lingui/core": "3.13.0",
+    "@lingui/cli": "^3.13.2",
+    "@lingui/conf": "^3.13.2",
+    "@lingui/core": "^3.13.2",
     "babel-plugin-macros": "^3.1.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.10",
+    "@types/node": "^17.0.12",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",

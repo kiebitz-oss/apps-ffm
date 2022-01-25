@@ -2,3 +2,21 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "@impfen/common/src/ui.css";
+
+@layer components {
+  .provider-data-summary {
+    @apply p-4 rounded;
+
+    & dt {
+      @apply font-bold;
+    }
+
+    &:not(.verified) {
+      @apply bg-gray-50;
+    }
+
+    &.verified {
+      @apply bg-green-100;
+    }
+  }
+}

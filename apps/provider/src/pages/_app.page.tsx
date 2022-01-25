@@ -20,6 +20,7 @@ const ErrorFallback: React.FC<FallbackProps> = ({
   resetErrorBoundary,
 }) => {
   const router = useRouter();
+
   if (error instanceof AuthError) {
     router.push("/login").finally(() => resetErrorBoundary());
 

@@ -1,3 +1,5 @@
+import Head from "next/head";
+import { title } from "process";
 import { Footer, Header } from "./page";
 
 interface LayoutProps {
@@ -21,6 +23,10 @@ export const Layout: React.FC<LayoutProps> = ({
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+
       <Header mobile={footer}>
         <HeaderContent locale={locale} setLocale={setLocale} />
       </Header>

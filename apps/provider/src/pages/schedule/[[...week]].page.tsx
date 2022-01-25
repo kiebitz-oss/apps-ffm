@@ -1,4 +1,4 @@
-import { Button, PageHeader } from "@impfen/common";
+import { Button, Page, PageHeader, Vaccine } from "@impfen/common";
 import { t } from "@lingui/macro";
 import {
   CreateAppointmentModal,
@@ -19,7 +19,7 @@ enum Modal {
 const SchedulePage: React.FC = () => {
   const router = useRouter();
   const week = router.query.week as string;
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [appointments, setAppointments] = useState<Appointment<Vaccine>[]>([]);
   const [modal, setModal] = useState<Modal | null>(null);
 
   const refreshAppointments = useCallback(() => {
@@ -39,7 +39,7 @@ const SchedulePage: React.FC = () => {
   };
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "provider.schedule.index.title",
@@ -65,16 +65,6 @@ const SchedulePage: React.FC = () => {
         </div>
       </PageHeader>
 
-      {/* <div className="flex flex-col flex-wrap gap-3 px-4 mb-10 w-full md:flex-row md:justify-between md:px-0">
-        {appointments.map((appointment) => (
-          <AppointmentCard
-            key={appointment.id}
-            appointment={appointment}
-            border
-          />
-        ))}
-      </div> */}
-
       <WeekCalendar
         appointments={appointments}
         week={week ? Number(week) : undefined}
@@ -87,7 +77,7 @@ const SchedulePage: React.FC = () => {
       {modal === Modal.SERIES && (
         <CreateAppointmentSeriesModal onClose={closeModal} />
       )}
-    </main>
+    </Page>
   );
 };
 

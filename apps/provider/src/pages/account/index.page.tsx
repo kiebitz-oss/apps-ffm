@@ -1,20 +1,43 @@
-import { Link, PageHeader, Text } from "@impfen/common";
+import { Link, Page, PageHeader, Text } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { ProviderDataSummary } from "components";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import { getProviderData } from "stores/app";
-import type { ProviderData } from "vanellus";
+import { getProviderData, setUnverifiedProvider, useApp } from "stores/app";
 
 const SettingsPage: NextPage = () => {
-  const [providerData, setProviderData] = useState<ProviderData>();
+  const [providerState, setProviderState] = useState<
+    "unverified" | "verified" | "updated"
+  >();
+  const unverifiedProvider = useApp((state) => state.unverifiedProvider);
 
   useEffect(() => {
-    getProviderData().then(setProviderData);
-  }, []);
+    getProviderData().then((providerData) => {
+      if (!unverifiedProvider && providerData.verifiedProvider) {
+        setUnverifiedProvider(providerData.verifiedProvider);
+      }
+
+      if (
+        unverifiedProvider &&
+        JSON.stringify(unverifiedProvider) !==
+          JSON.stringify(providerData.verifiedProvider)
+      ) {
+        setProviderState("updated");
+      } else if (providerData.verifiedProvider) {
+        setProviderState("verified");
+      } else {
+        setProviderState("unverified");
+      }
+    });
+  }, [providerState, unverifiedProvider]);
+
+  // saveguard
+  if (!unverifiedProvider) {
+    return null;
+  }
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "provider.account.index.title",
@@ -35,7 +58,7 @@ const SettingsPage: NextPage = () => {
         </div>
       </PageHeader>
 
-      {!providerData?.verifiedProvider && (
+      {providerState !== "verified" && (
         <Text className="mb-8">
           <Trans id="provider.account.not-verified-yet">
             Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie
@@ -44,12 +67,12 @@ const SettingsPage: NextPage = () => {
         </Text>
       )}
 
-      {providerData?.verifiedProvider && (
-        <div className="max-w-3xl">
-          <ProviderDataSummary provider={providerData?.verifiedProvider} />
-        </div>
-      )}
-    </main>
+      {providerState ? providerState : "--"}
+
+      <div className="max-w-3xl">
+        <ProviderDataSummary provider={unverifiedProvider} />
+      </div>
+    </Page>
   );
 };
 

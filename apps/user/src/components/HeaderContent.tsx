@@ -1,3 +1,4 @@
+import { Calendar16, Help16 } from "@carbon/icons-react";
 import { Link, NavLink } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
@@ -14,12 +15,14 @@ export const HeaderContent: React.FC<HeaderContentProps> = ({
   const router = useRouter();
 
   return (
-    <nav className="hidden gap-12 justify-center sm:flex">
+    <nav className="hidden sm:flex sm:gap-4 sm:mt-8 md:gap-12">
       <NavLink href="/" exact>
+        <Calendar16 />
         <Trans id="header.nav.link.book_vaccination">Impftermin buchen</Trans>
       </NavLink>
 
       <NavLink href="/faq">
+        <Help16 />
         <Trans id="header.nav.link.faq">Fragen & Antworten</Trans>
       </NavLink>
 

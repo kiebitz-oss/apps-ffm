@@ -2,6 +2,7 @@ import { Title, Vaccine, vaccines } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
 import clsx from "clsx";
+import dayjs from "dayjs";
 import type { AggregatedPublicAppointment, PublicAppointment } from "vanellus";
 
 export interface AppointmentCardProps {
@@ -42,7 +43,9 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
       <time className="flex flex-col font-semibold text-center">
         <div className="text-4xl">
           <Trans id="user.finder.appointment.card.time">
-            {i18n.date(appointment.startDate.toDate(), { timeStyle: "short" })}{" "}
+            {i18n.date(dayjs(appointment.startAt).toDate(), {
+              timeStyle: "short",
+            })}{" "}
             Uhr
           </Trans>
         </div>
@@ -50,7 +53,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
         <div className="text-xl">
           <Trans id="user.finder.appointment.card.date">
             am{" "}
-            {i18n.date(appointment.startDate.toDate(), {
+            {i18n.date(dayjs(appointment.startAt).toDate(), {
               day: "2-digit",
               month: "2-digit",
               year: "2-digit",

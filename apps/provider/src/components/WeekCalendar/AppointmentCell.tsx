@@ -1,19 +1,16 @@
-import type { AppointmentItem } from "./AppointmentSet";
+import type { CalendarItem } from "./CalendarItem";
 
 interface AppointmentCellProps {
-  appointmentItem: AppointmentItem;
+  item: CalendarItem;
 }
 
-export const AppointmentCell: React.FC<AppointmentCellProps> = ({
-  appointmentItem,
-}) => {
-  const height = Math.floor((appointmentItem.appointment.duration / 60) * 100);
-  const width = Math.floor(100 / (1 + appointmentItem.maxOverlap));
-  const top = Math.floor((appointmentItem.startDate.get("minutes") / 60) * 100);
+export const AppointmentCell: React.FC<AppointmentCellProps> = ({ item }) => {
+  const height = Math.floor((item.duration / 60) * 100);
+  const width = Math.floor(100 / (1 + item.maxOverlap));
+  const top = Math.floor((item.startAt.get("minutes") / 60) * 100);
 
-  const i = appointmentItem.overlapsWith.filter(
-    (overlappingAppointment) =>
-      overlappingAppointment.index < appointmentItem.index
+  const i = item.overlapsWith.filter(
+    (overlappingItem) => overlappingItem.overlapIndex < item.overlapIndex
   ).length;
 
   const left = Math.floor(i * width);
@@ -23,34 +20,39 @@ export const AppointmentCell: React.FC<AppointmentCellProps> = ({
   //   return null;
   // }
 
-  const rand = Math.floor(Math.random() * 100 + 1);
+  const percentUsed = item.bookedSlots * (item.slots / 100);
 
   return (
     <div
       style={{
-        height: `${height}%`,
-        minHeight: `${height}%`,
+        height: `${height}px`,
+        minHeight: `${height}px`,
         width: `${width}%`,
         top: `${top}%`,
         left: `${left}%`,
-        backgroundColor: `hsl(${((100 - rand) / 100) * 120}, 75%, 50%)`,
+        backgroundColor: `hsl(${((100 - percentUsed) / 100) * 120}, 88%, 43%)`,
       }}
-      className="overflow-hidden hover:overflow-visible absolute z-10 hover:z-20 flex-col p-2 hover:!w-full hover:!h-auto text-xs hover:text-base opacity-80 hover:opacity-100 transition-all cursor-pointer"
+      className="overflow-hidden hover:overflow-visible absolute z-10 hover:z-20 flex-col p-2 hover:!w-full hover:!h-auto text-xs hover:text-base hover:shadow-box opacity-80 hover:opacity-100 transition-all cursor-pointer"
     >
       <h4>
-        {appointmentItem.startDate.format("HH:mm")} -{" "}
-        {appointmentItem.endDate.format("HH:mm")}
+        {item.startAt.format("HH:mm")} - {item.endAt.format("HH:mm")}
       </h4>
 
       <div>
-        {appointmentItem.appointment.properties?.seriesId ? (
-          <>SERIE - </>
-        ) : null}
-        {/* {appointmentItem.appointment.bookings.length}/{appointmentItem.appointment.slotData.length} */}
-        {rand}/100
+        {item.isSeries ? <>SERIE - </> : null}
+        {item.bookedSlots}/{item.slots}
+        {item.isSeries ? (
+          <>
+            <br />
+            {item.items.length} x {item.items[0].duration} Min auf{" "}
+            {item.items[0].slotData.length} Lanes mit {item.vaccine}
+          </>
+        ) : (
+          " " + item.vaccine
+        )}
       </div>
 
-      {(appointmentItem.appointment.properties?.vaccine as string) || ""}
+      {/* {item.vaccine} */}
     </div>
   );
 };

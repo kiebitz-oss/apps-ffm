@@ -1,8 +1,8 @@
-import { Button, Link, PageHeader } from "@impfen/common";
+import { addNotification, Button, Link, PageHeader } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
+import { useRouter } from "next/router";
 import { MouseEventHandler, useCallback, useEffect } from "react";
 import { confirmProvider, getProvider } from "stores/app";
-import { addNotification } from "stores/notifications";
 import { clear, suspend } from "suspend-react";
 
 interface ProviderDataProps {
@@ -10,6 +10,7 @@ interface ProviderDataProps {
 }
 
 export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
+  const router = useRouter();
   const provider = suspend(async () => {
     return getProvider(id);
   }, [id]);
@@ -22,7 +23,6 @@ export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
     useCallback(async () => {
       if (provider) {
         await confirmProvider(provider);
-        await refreshProvider(id);
 
         addNotification(
           t({
@@ -30,8 +30,10 @@ export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
             message: "Impfanbieter erfolgreich bestätigt",
           })
         );
+
+        await router.push("/providers");
       }
-    }, [id, provider, refreshProvider]);
+    }, [provider, router]);
 
   useEffect(() => {
     refreshProvider(id);
@@ -156,13 +158,13 @@ export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
       </table>
 
       <div className="buttons-list">
-        {!provider.verified ? (
-          <Button variant="primary" size="sm" onClick={handleConfirmProvider}>
-            <Trans id="mediator.provider-show.button-show">
-              Anbieter bestätigen
-            </Trans>
-          </Button>
-        ) : null}
+        {/* {!provider.verified ? ( */}
+        <Button variant="primary" onClick={handleConfirmProvider}>
+          <Trans id="mediator.provider-show.button-show">
+            Anbieter bestätigen
+          </Trans>
+        </Button>
+        {/* ) : null} */}
       </div>
     </>
   );

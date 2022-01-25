@@ -9,5 +9,6 @@
   }
 
   .providers-list-row {
+    @apply align-top;
   }
 }

@@ -1,18 +1,18 @@
 import create from "zustand";
 
-enum NotificationType {
+export enum NotificationType {
   SUCCESS = "SUCCESS",
   INFO = "INFO",
   WARNING = "WARNING",
-  ERROR = "ERROR",
+  DANGER = "DANGER",
 }
 
 type Notification = {
   id: number;
   message: string;
-  type?: NotificationType;
-  duration?: number;
-  isClosable?: boolean;
+  type: NotificationType;
+  duration: number;
+  persistant: boolean;
 };
 
 type NotificationState = {
@@ -26,14 +26,14 @@ export const useNotifications = create<NotificationState>(() => ({
 export const addNotification = (
   message: string,
   type: NotificationType = NotificationType.INFO,
-  duration: number = 30,
-  isClosable: boolean = true
+  duration = 5,
+  persistant = false
 ) => {
   const notification: Notification = {
     id: Math.round(Math.random() * 1000),
     message,
     type,
-    isClosable,
+    persistant,
     duration,
   };
 

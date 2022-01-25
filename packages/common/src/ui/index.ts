@@ -21,6 +21,7 @@ export * from "./ModalFooter";
 export * from "./ModalHeader";
 export * from "./NavLink";
 export * from "./Notifications";
+export * from "./page";
 export * from "./PageHeader";
 export * from "./Radio";
 export * from "./RadioField";

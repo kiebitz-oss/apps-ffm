@@ -1,4 +1,4 @@
-import { Link, Loading, PageHeader } from "@impfen/common";
+import { Link, Loading, Page, PageHeader } from "@impfen/common";
 import { t } from "@lingui/macro";
 import { ProvidersContainer } from "components";
 import type { NextPage } from "next";
@@ -8,7 +8,7 @@ const ProvidersPage: NextPage = () => {
   const [showPending, setShowPending] = useState<boolean>(true);
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "mediator.providers.title",
@@ -46,7 +46,7 @@ const ProvidersPage: NextPage = () => {
       <Suspense fallback={<Loading />}>
         <ProvidersContainer pending={showPending} />
       </Suspense>
-    </main>
+    </Page>
   );
 };
 

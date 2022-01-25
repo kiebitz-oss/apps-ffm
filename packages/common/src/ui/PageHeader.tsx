@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { BackLink } from "./BackLink";
 import { Text } from "./Text";
 import { Title } from "./Title";
@@ -23,7 +24,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         <BackLink href={backLink.href}>{backLink.title}</BackLink>
       ) : null}
 
-      <div className="ml-4 sm:ml-0">
+      <div className={clsx("ml-4 sm:ml-0", { "mt-8": !backLink })}>
         <div className="flex flex-row justify-between">
           <Title variant="h1" as="h1">
             {title}

@@ -1,4 +1,4 @@
-import { Button, PageHeader } from "@impfen/common";
+import { Button, Page, PageHeader } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -16,7 +16,7 @@ const LogoutPage: NextPage = () => {
   };
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "mediator.logout.title",
@@ -32,7 +32,7 @@ const LogoutPage: NextPage = () => {
       <Button onClick={logOut}>
         <Trans id="mediator.logout.button">Abmelden</Trans>
       </Button>
-    </main>
+    </Page>
   );
 };
 

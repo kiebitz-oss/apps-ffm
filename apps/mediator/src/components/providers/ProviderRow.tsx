@@ -14,7 +14,9 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
   return (
     <tr key={provider.id} className={clsx("providers-list-row")}>
       <th scope="row">
-        <Link href={providerLink}>{provider.name}</Link>
+        <Link href={providerLink} className="text-base">
+          {provider.name}
+        </Link>
       </th>
 
       <td className="py-4 px-6 ">
@@ -36,7 +38,7 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
       </td>
 
       <td className="flex gap-4 justify-end">
-        <Link href={providerLink}>
+        <Link href={providerLink} type="button" variant="tertiary" size="sm">
           <Trans id="mediator.provider-row.button-show">anzeigen</Trans>
         </Link>
       </td>

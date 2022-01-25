@@ -1,5 +1,5 @@
 import { GeneratePdf16 } from "@carbon/icons-react";
-import { Link, Text, Title, Vaccine, vaccines } from "@impfen/common";
+import { Button, Link, Text, Title, Vaccine, vaccines } from "@impfen/common";
 import { i18n } from "@lingui/core";
 import { Trans } from "@lingui/macro";
 import { AppointmentCard } from "components/finder";
@@ -89,14 +89,11 @@ const SuccessStep: NextPage = () => {
               </Trans>
             </Text>
 
-            <button
-              onClick={handleCancel}
-              className="text-primary bg-primary/10 button md"
-            >
+            <Button onClick={handleCancel} variant="tertiary" size="md">
               <Trans id="user.finder.success.cancel-button">
                 Termin absagen
               </Trans>
-            </button>
+            </Button>
           </div>
         </section>
 
@@ -151,10 +148,14 @@ const SuccessStep: NextPage = () => {
                 <Link
                   href={pdf.url}
                   external
-                  className="text-primary bg-primary/10 button md"
+                  type="button"
+                  variant="tertiary"
+                  size="md"
                 >
-                  <GeneratePdf16 />
-                  <span className="break-all">{pdf.label}</span>
+                  <span className="inline-flex gap-1 items-center">
+                    <GeneratePdf16 />
+                    <span className="break-all">{pdf.label}</span>
+                  </span>
                 </Link>
               </li>
             ))}

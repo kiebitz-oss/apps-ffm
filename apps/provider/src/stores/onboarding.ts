@@ -18,3 +18,5 @@ export const setProvider = (provider: ProviderInput) => {
     provider,
   });
 };
+
+export const resetOnboarding = () => useOnboarding.setState({}, true);

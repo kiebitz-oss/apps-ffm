@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import logoUrl from "../../assets/ffm-logo.svg";
+import { theme } from "../../theme";
 import { Link } from "../Link";
 import { Hamburger } from "./Hamburger";
 
@@ -31,10 +31,10 @@ export const Header: React.FC<HeaderProps> = ({ children, mobile }) => {
   return (
     <header className="flex justify-between items-center px-8 min-w-full min-h-[86px] md:px-12 md:min-h-[100px]">
       <Link href="/">
-        <img src={logoUrl} alt="Impfen Frankfurt" />
+        <img src={theme.logoUrl} alt={theme.logoAlt} />
       </Link>
 
-      <button className="sm:hidden" onClick={() => setShowMenu(!showMenu)}>
+      <button className="mt-4 sm:hidden" onClick={() => setShowMenu(!showMenu)}>
         <Hamburger />
       </button>
 

@@ -1,3 +1,4 @@
+import type { Vaccine } from "@impfen/common";
 import { getApiConfig } from "@impfen/common";
 import type { Dayjs } from "dayjs";
 import type {
@@ -11,18 +12,18 @@ import { AnonymousApi, UserApi } from "vanellus";
 import create from "zustand";
 import { persist } from "zustand/middleware";
 
-let anonymousApi: AnonymousApi;
+let anonymousApi: AnonymousApi<Vaccine>;
 
 export const getAnonymousApi = () => {
   return !anonymousApi
-    ? (anonymousApi = new AnonymousApi(getApiConfig()))
+    ? (anonymousApi = new AnonymousApi<Vaccine>(getApiConfig()))
     : anonymousApi;
 };
 
 let userApi: UserApi;
 
 export const getApi = () => {
-  return !userApi ? (userApi = new UserApi(getApiConfig())) : userApi;
+  return !userApi ? (userApi = new UserApi<Vaccine>(getApiConfig())) : userApi;
 };
 
 type AppState = {
@@ -82,15 +83,15 @@ export const getAppointment = async (
 
 export const getAppointments = (
   date: Dayjs,
-  zipFrom: number | string = 10000,
-  zipTo: number | string = 99999
+  zipFrom: number | string = "00001",
+  zipTo: number | string = "99999"
 ) => {
   return getAnonymousApi().getAggregatedAppointments(date, zipFrom, zipTo);
 };
 
 export const getProviders = async (
-  zipFrom: number | string = 10000,
-  zipTo: number | string = 99999
+  zipFrom: number | string = "00001",
+  zipTo: number | string = "99999"
 ) => {
   return getAnonymousApi().getProviders(zipFrom, zipTo);
 };

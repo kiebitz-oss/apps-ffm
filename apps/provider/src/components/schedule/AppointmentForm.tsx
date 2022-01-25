@@ -14,7 +14,7 @@ import type { Appointment } from "vanellus";
 
 interface FormData {
   id?: string;
-  startDate: string;
+  startAt: string;
   slotCount: number;
   duration: number;
   vaccine: Vaccine;
@@ -33,13 +33,13 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
     mode: "onBlur",
     reValidateMode: "onBlur",
     defaultValues: {
-      startDate: dayjs(appointment?.startDate)
+      startAt: dayjs(appointment?.startAt)
         .add(1, "day")
         .set("hour", 10)
         .set("minute", 0)
         .format("YYYY-MM-DDTHH:mm"),
       slotCount: appointment?.slotData.length || 5,
-      duration: appointment?.duration || 5,
+      duration: appointment?.duration || 30,
     },
     // resolver,
   });
@@ -48,7 +48,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
   const onSubmit: SubmitHandler<FormData> = async (data) =>
     createAppointment(
-      dayjs(data.startDate),
+      dayjs(data.startAt),
       data.duration,
       data.vaccine,
       data.slotCount
@@ -84,7 +84,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
               message: "Das Datum des Impftermins",
             })}
             required
-            {...register("startDate", {
+            {...register("startAt", {
               // valueAsDate: true,
               required: t({
                 id: "provider.schedule.appointment-modal.start-date.error.required",

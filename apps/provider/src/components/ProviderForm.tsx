@@ -63,7 +63,7 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
                   message: "Bitte gegen Sie einen gültigen Namen an",
                 }),
                 minLength: {
-                  value: 5,
+                  value: 2,
                   message: t({
                     id: "provider.onboarding.name.error.min-length",
                     message: "Bitte gegen Sie einen gültigen Namen an",
@@ -87,6 +87,7 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
             />
             <div className="grid grid-cols-6 gap-4">
               <InputField
+                type="number"
                 className="col-span-6 md:col-span-2"
                 label={t({
                   id: "provider.onboarding.zip-code.label",
@@ -98,6 +99,20 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
                     id: "provider.onboarding.zip-code.error",
                     message: "Bitte gegen Sie eine gültige Postleitzahl an",
                   }),
+                  minLength: {
+                    value: 5,
+                    message: t({
+                      id: "provider.onboarding.zip-code.error.min-length",
+                      message: "Bitte gegen Sie eine gültige Postleitzahl an",
+                    }),
+                  },
+                  maxLength: {
+                    value: 5,
+                    message: t({
+                      id: "provider.onboarding.zip-code.error.min-length",
+                      message: "Bitte gegen Sie eine gültige Postleitzahl an",
+                    }),
+                  },
                 })}
               />
 
@@ -154,12 +169,18 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
             </legend>
 
             <InputField
+              type="email"
               label={t({
                 id: "provider.onboarding.email.label",
                 message: "E-Mail Adresse",
               })}
-              type="email"
-              {...register("email")}
+              required
+              {...register("email", {
+                required: t({
+                  id: "provider.onboarding.email.error.required",
+                  message: "Bitte gegen Sie eine gültige E-Mail-Adresse an",
+                }),
+              })}
             />
           </fieldset>
 

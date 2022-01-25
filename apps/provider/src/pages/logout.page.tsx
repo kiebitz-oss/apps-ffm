@@ -1,6 +1,7 @@
 import {
   Button,
   CopyToClipboardButton,
+  Page,
   PageHeader,
   SecretBox,
   Text,
@@ -35,7 +36,7 @@ const LogOutPage: NextPage = () => {
   }, []);
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "provider.logout.title",
@@ -85,7 +86,7 @@ const LogOutPage: NextPage = () => {
       <Button onClick={logOut}>
         <Trans id="provider.logout.button">Abmelden</Trans>
       </Button>
-    </main>
+    </Page>
   );
 };
 

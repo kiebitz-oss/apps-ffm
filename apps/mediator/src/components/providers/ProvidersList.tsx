@@ -36,9 +36,17 @@ export const ProviderList: React.FC<ProviderListProps> = ({ providers }) => {
       </thead>
 
       <tbody>
-        {providers.map((provider) => (
-          <ProviderRow key={provider.id} provider={provider} />
-        ))}
+        {providers.length >= 1 ? (
+          providers.map((provider) => (
+            <ProviderRow key={provider.id} provider={provider} />
+          ))
+        ) : (
+          <tr>
+            <td colSpan={4} className="font-medium text-center">
+              nope
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );

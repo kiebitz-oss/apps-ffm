@@ -1,31 +1,43 @@
-enum NotificationType {
-  INFO = "INFO",
-}
-
-type Notification = {
-  id: number;
-  message: string;
-  type: NotificationType;
-  persistant?: boolean;
-};
+import clsx from "clsx";
+import {
+  NotificationType,
+  removeNotification,
+  useNotifications,
+} from "../stores/notifications";
 
 export const Notifications: React.FC = () => {
-  const notifications: Notification[] = [
-    {
-      id: 1,
-      message: "Ihr Termin wurde storniert.",
-      persistant: false,
-      type: NotificationType.INFO,
-    },
-  ];
+  const notifications = useNotifications((store) => store.notifications);
+
+  if (notifications.length <= 1) {
+    return null;
+  }
 
   return (
-    <ul className="pb-8">
-      {notifications.map((notification) => (
-        <li key={notification.id} className="p-4 font-medium bg-yellow-300">
-          {notification.message}
-        </li>
-      ))}
+    <ul className="flex flex-col gap-2 pb-8">
+      {notifications.map((notification) => {
+        if (!notification.persistant) {
+          setTimeout(() => {
+            removeNotification(notification.id);
+          }, notification.duration * 1000);
+        }
+
+        return (
+          <li
+            key={notification.id}
+            className={clsx("notification", {
+              ["success"]: NotificationType.SUCCESS === notification.type,
+              ["info"]: NotificationType.INFO === notification.type,
+              ["warning"]: NotificationType.WARNING === notification.type,
+              ["danger"]: NotificationType.DANGER === notification.type,
+            })}
+          >
+            <div>{notification.message}</div>
+            <button onClick={() => removeNotification(notification.id)}>
+              x
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 };

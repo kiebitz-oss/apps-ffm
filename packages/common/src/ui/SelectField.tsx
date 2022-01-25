@@ -7,7 +7,7 @@ export interface SelectFieldProps extends SelectProps, FieldProps {
 }
 
 export const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
-  ({ name, label, description, className, ...props }, ref) => {
+  ({ name, label, description, className, required, ...props }, ref) => {
     const id = !props.id ? name : props.id;
 
     return (
@@ -17,8 +17,9 @@ export const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
         description={description}
         label={label}
         className={className}
+        required={required}
       >
-        <Select id={id} name={name} ref={ref} {...props} />
+        <Select id={id} name={name} ref={ref} required={required} {...props} />
       </Field>
     );
   }

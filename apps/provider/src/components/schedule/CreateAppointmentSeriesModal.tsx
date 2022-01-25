@@ -1,10 +1,4 @@
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalProps,
-  Title,
-} from "@impfen/common";
+import { Modal, ModalProps, Title } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import { AppointmentSeriesForm } from "./AppointmentSeriesForm";
 
@@ -15,17 +9,13 @@ export const CreateAppointmentSeriesModal: React.FC<
 > = ({ onClose }) => {
   return (
     <Modal onClose={onClose}>
-      <ModalHeader>
-        <Title>
-          <Trans id="provider.schedule.create.appointment-series-modal.new-title">
-            Neue Terminserie erstellen
-          </Trans>
-        </Title>
-      </ModalHeader>
+      <Title>
+        <Trans id="provider.schedule.create.appointment-series-modal.new-title">
+          Neue Terminserie erstellen
+        </Trans>
+      </Title>
 
-      <ModalContent className="flex flex-col gap-6">
-        <AppointmentSeriesForm onSuccess={onClose} />
-      </ModalContent>
+      <AppointmentSeriesForm onSuccess={onClose} />
     </Modal>
   );
 };

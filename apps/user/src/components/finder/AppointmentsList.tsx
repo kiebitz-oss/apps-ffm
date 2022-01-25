@@ -3,6 +3,7 @@ import type { Dayjs } from "dayjs";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { getAppointments } from "stores/app";
+import { useFinder } from "stores/finder";
 import { suspend } from "suspend-react";
 import type { AggregatedPublicAppointment } from "vanellus";
 import { AppointmentCardSelector } from "./AppointmentCardSelector";
@@ -28,12 +29,15 @@ export const AppointmentsList: React.FC<AppointmentsListProps> = ({
     AggregatedPublicAppointment[]
   >([]);
 
+  const vaccine = useFinder((state) => state.vaccine);
+
   useEffect(() => {
     setFilteredAppointments(
       appointments.filter(
         (appointment) =>
           appointment.provider.id === providerId &&
-          dayjs(appointment.startDate).isAfter(dayjs(date), "minute")
+          dayjs(appointment.startAt).isAfter(dayjs(date), "minute") &&
+          (!vaccine || vaccine === appointment.vaccine)
       )
     );
   }, [appointments, providerId, date]);

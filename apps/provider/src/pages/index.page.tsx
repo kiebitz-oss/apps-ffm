@@ -1,6 +1,7 @@
 import {
   Divider,
   Link,
+  Page,
   PageHeader,
   Section,
   Text,
@@ -12,7 +13,7 @@ import type { NextPage } from "next";
 
 const ProviderStartPage: NextPage = () => {
   return (
-    <main className="content">
+    <Page>
       <PageHeader
         title={t({
           id: "provider.welcome.title",
@@ -57,7 +58,7 @@ const ProviderStartPage: NextPage = () => {
           <LoginForm className="mt-5 w-full md:col-span-2 md:mt-0" />
         </Section>
       </div>
-    </main>
+    </Page>
   );
 };
 

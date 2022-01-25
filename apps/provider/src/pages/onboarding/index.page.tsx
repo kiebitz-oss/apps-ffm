@@ -1,4 +1,4 @@
-import { PageHeader } from "@impfen/common";
+import { Page, PageHeader } from "@impfen/common";
 import { t } from "@lingui/macro";
 import { ProviderForm } from "components";
 import type { NextPage } from "next";
@@ -19,25 +19,23 @@ const OnboardingIndexPage: NextPage = () => {
   };
 
   return (
-    <main className="content">
-      <div className="max-w-3xl">
-        <PageHeader
-          title={t({
-            id: "provider.onboarding.data.title",
-            message: "Daten der Impfstelle erfassen",
-          })}
-        />
+    <Page narrow>
+      <PageHeader
+        title={t({
+          id: "provider.onboarding.data.title",
+          message: "Daten der Impfstelle erfassen",
+        })}
+      />
 
-        <ProviderForm
-          onSubmit={onSubmit}
-          defaultValues={provider}
-          submitText={t({
-            id: "provider.onboarding.data.save-and-continue",
-            message: "Speichern und weiter",
-          })}
-        />
-      </div>
-    </main>
+      <ProviderForm
+        onSubmit={onSubmit}
+        defaultValues={provider}
+        submitText={t({
+          id: "provider.onboarding.data.save-and-continue",
+          message: "Speichern und weiter",
+        })}
+      />
+    </Page>
   );
 };
 
