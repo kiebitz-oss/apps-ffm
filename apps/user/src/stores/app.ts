@@ -20,7 +20,7 @@ export const getAnonymousApi = () => {
     : anonymousApi;
 };
 
-let userApi: UserApi;
+let userApi: UserApi<Vaccine>;
 
 export const getApi = () => {
   return !userApi ? (userApi = new UserApi<Vaccine>(getApiConfig())) : userApi;
@@ -43,7 +43,7 @@ export const useApp = create<AppState>(
 );
 
 export const bookAppointment = async (
-  appointment: AggregatedPublicAppointment | PublicAppointment
+  appointment: AggregatedPublicAppointment<Vaccine> | PublicAppointment<Vaccine>
 ): Promise<Booking> => {
   const secret = generateSecret();
   const token = await createUserQueueToken(secret);
@@ -51,7 +51,7 @@ export const bookAppointment = async (
   const publicAppointment =
     appointment && "slotData" in appointment === false
       ? await getAppointment(appointment.id, appointment.provider.id)
-      : (appointment as PublicAppointment);
+      : (appointment as PublicAppointment<Vaccine>);
 
   const booking = await getApi().bookAppointment(publicAppointment, token);
 
@@ -64,7 +64,7 @@ export const bookAppointment = async (
   return booking;
 };
 
-export const cancelBooking = async (booking: Booking) => {
+export const cancelBooking = async (booking: Booking<Vaccine>) => {
   const result = await getApi().cancelBooking(booking);
 
   if (result) {

@@ -215,8 +215,6 @@ export const backup = async () => {
     state.secret
   );
 
-  console.log(x, "backup");
-
   return Promise.resolve({
     secret: state.secret,
     keyPairs: state.keyPairs,
