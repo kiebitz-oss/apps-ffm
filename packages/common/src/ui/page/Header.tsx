@@ -34,9 +34,11 @@ export const Header: React.FC<HeaderProps> = ({ children, mobile }) => {
         <img src={theme.logoUrl} alt={theme.logoAlt} />
       </Link>
 
-      <button className="mt-4 sm:hidden" onClick={() => setShowMenu(!showMenu)}>
-        <Hamburger />
-      </button>
+      <Hamburger
+        className="mt-4 sm:hidden"
+        onClick={() => setShowMenu(!showMenu)}
+        open={showMenu}
+      />
 
       {mobile && (
         <aside

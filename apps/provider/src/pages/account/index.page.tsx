@@ -4,11 +4,10 @@ import { ProviderDataSummary } from "components";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { getProviderData, setUnverifiedProvider, useApp } from "stores/app";
+import { ProviderStatus } from "vanellus";
 
 const SettingsPage: NextPage = () => {
-  const [providerState, setProviderState] = useState<
-    "unverified" | "verified" | "updated"
-  >();
+  const [providerState, setProviderState] = useState<ProviderStatus>();
   const unverifiedProvider = useApp((state) => state.unverifiedProvider);
 
   useEffect(() => {
@@ -22,11 +21,11 @@ const SettingsPage: NextPage = () => {
         JSON.stringify(unverifiedProvider) !==
           JSON.stringify(providerData.verifiedProvider)
       ) {
-        setProviderState("updated");
+        setProviderState(ProviderStatus.UPDATED);
       } else if (providerData.verifiedProvider) {
-        setProviderState("verified");
+        setProviderState(ProviderStatus.VERIFIED);
       } else {
-        setProviderState("unverified");
+        setProviderState(ProviderStatus.UNVERIFIED);
       }
     });
   }, [providerState, unverifiedProvider]);
@@ -58,7 +57,7 @@ const SettingsPage: NextPage = () => {
         </div>
       </PageHeader>
 
-      {providerState !== "verified" && (
+      {providerState !== ProviderStatus.VERIFIED && (
         <Text className="mb-8">
           <Trans id="provider.account.not-verified-yet">
             Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie

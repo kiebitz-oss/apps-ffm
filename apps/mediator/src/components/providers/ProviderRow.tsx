@@ -1,4 +1,4 @@
-import { Link, Tag } from "@impfen/common";
+import { Link } from "@impfen/common";
 import { Trans } from "@lingui/macro";
 import clsx from "clsx";
 import type { Provider } from "vanellus";
@@ -27,7 +27,7 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
         </address>
       </td>
 
-      <td>
+      {/* <td>
         <Tag variant={provider.verified ? "success" : "warning"}>
           {provider.verified ? (
             <Trans id="mediator.provider-row.valid">bestätigt</Trans>
@@ -35,7 +35,7 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
             <Trans id="mediator.provider-row.invalid">unbestätigt</Trans>
           )}
         </Tag>
-      </td>
+      </td> */}
 
       <td className="flex gap-4 justify-end">
         <Link href={providerLink} type="button" variant="tertiary" size="sm">

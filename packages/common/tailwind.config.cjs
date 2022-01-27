@@ -4,7 +4,6 @@
  * @type {import('tailwindcss/tailwind-config').TailwindConfig}
  **/
 const config = {
-  mode: "jit",
   content: [
     "../../packages/common/src/ui/**/*.tsx",
     "./src/**/*.tsx",

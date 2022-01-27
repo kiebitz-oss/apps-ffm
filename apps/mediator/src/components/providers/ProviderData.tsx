@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { MouseEventHandler, useCallback, useEffect } from "react";
 import { confirmProvider, getProvider } from "stores/app";
 import { clear, suspend } from "suspend-react";
+import { ProviderStatus } from "vanellus";
 
 interface ProviderDataProps {
   id: string;
@@ -11,7 +12,7 @@ interface ProviderDataProps {
 
 export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
   const router = useRouter();
-  const provider = suspend(async () => {
+  const { unverifiedProvider, verifiedProvider, status } = suspend(async () => {
     return getProvider(id);
   }, [id]);
 
@@ -21,8 +22,8 @@ export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
 
   const handleConfirmProvider: MouseEventHandler<HTMLButtonElement> =
     useCallback(async () => {
-      if (provider) {
-        await confirmProvider(provider);
+      if (unverifiedProvider) {
+        await confirmProvider(unverifiedProvider);
 
         addNotification(
           t({
@@ -33,11 +34,16 @@ export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
 
         await router.push("/providers");
       }
-    }, [provider, router]);
+    }, [unverifiedProvider, router]);
 
   useEffect(() => {
     refreshProvider(id);
   }, [id, refreshProvider]);
+
+  const provider =
+    status === ProviderStatus.VERIFIED && verifiedProvider
+      ? verifiedProvider
+      : unverifiedProvider;
 
   return (
     <>
@@ -73,7 +79,7 @@ export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
               <Trans id="mediator.provider-show.verified">Bestätigt?</Trans>
             </th>
             <td>
-              {provider.verified ? (
+              {status !== ProviderStatus.VERIFIED ? (
                 <span className="font-semibold text-green-700">ja</span>
               ) : (
                 <span className="font-semibold text-red-700">nein</span>
@@ -158,13 +164,13 @@ export const ProviderData: React.FC<ProviderDataProps> = ({ id }) => {
       </table>
 
       <div className="buttons-list">
-        {/* {!provider.verified ? ( */}
-        <Button variant="primary" onClick={handleConfirmProvider}>
-          <Trans id="mediator.provider-show.button-show">
-            Anbieter bestätigen
-          </Trans>
-        </Button>
-        {/* ) : null} */}
+        {status !== ProviderStatus.VERIFIED ? (
+          <Button variant="primary" onClick={handleConfirmProvider}>
+            <Trans id="mediator.provider-show.button-show">
+              Anbieter bestätigen
+            </Trans>
+          </Button>
+        ) : null}
       </div>
     </>
   );

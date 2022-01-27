@@ -1,7 +1,7 @@
 // @see https://headlessui.dev/react/dialog
 
 import { Dialog } from "@headlessui/react";
-import { Trans } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import { useState } from "react";
 
 export interface ModalProps {
@@ -35,10 +35,11 @@ export const Modal: React.FC<ModalProps> = ({
               type="button"
               className="text-gray-700 hover:text-primary rounded-md"
               onClick={handleClose}
+              aria-label={t({
+                id: "common.close",
+                message: "schließen",
+              })}
             >
-              <span className="sr-only">
-                <Trans id="common.close">Schließen</Trans>
-              </span>
               <svg
                 className="w-8 h-8"
                 xmlns="http://www.w3.org/2000/svg"

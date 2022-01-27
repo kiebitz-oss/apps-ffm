@@ -24,8 +24,9 @@ export const useApp = create<AppState>(
   })
 );
 
-export const getProvider = (providerId: string) =>
-  getApi().getProvider(providerId, getKeyPairs());
+export const getProvider = (providerId: string) => {
+  return getApi().getProvider(providerId, getKeyPairs());
+};
 
 export const confirmProvider = async (provider: Provider) => {
   return getApi().confirmProvider(provider, getKeyPairs());
