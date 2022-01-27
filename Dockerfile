@@ -29,8 +29,8 @@ RUN pnpm install --ignore-scripts --prod
 RUN pnpm build:i18n
 RUN pnpm build
 
-## prod
-FROM nginxinc/nginx-unprivileged:stable-alpine
+## origin
+FROM nginxinc/nginx-unprivileged:stable-alpine AS origin
 
 WORKDIR /app
 
@@ -44,5 +44,29 @@ RUN nginx -t
 USER nginx
 EXPOSE 3000
 
-ENV PORT 3000
-ENV NEXT_TELEMETRY_DISABLED 1
+ADD  https://raw.githubusercontent.com/thomasfricke/container-hardening/main/harden /harden
+
+WORKDIR /
+USER 0
+
+RUN chmod +x /harden
+RUN mkdir /tmp/harden
+
+RUN /harden  -d /usr/sbin/nginx \
+             -f /etc/nginx  /var/log/nginx/ /var/run/nginx.pid /var/cache/nginx  /etc/passwd /etc/group \
+                /usr/share/nginx /usr/share/licenses/ /var/run /app /tmp \
+             -c /var/log/nginx/ /var/cache/nginx /var/run
+
+
+## harden
+FROM scratch
+
+COPY --from=origin /tmp/harden/ /
+
+USER 101
+
+WORKDIR /app
+
+EXPOSE 3000
+
+ENTRYPOINT ["/usr/sbin/nginx","-g","daemon off;"]
