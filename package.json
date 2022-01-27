@@ -20,6 +20,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "pnpm run build --filter ./apps*",
+    "build:local": "pnpm run build:local --filter ./apps*",
     "build:user": "pnpm build --filter ./apps/user",
     "build:mediator": "pnpm build --filter ./apps/mediator",
     "build:provider": "pnpm build --filter ./apps/provider",

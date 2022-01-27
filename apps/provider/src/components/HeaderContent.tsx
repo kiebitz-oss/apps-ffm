@@ -26,12 +26,12 @@ export const HeaderContent: React.FC<HeaderContentProps> = ({}) => {
       {isAuthenticated ? (
         <NavLink href="/logout">
           <Logout16 />
-          <Trans id="header.nav.link.login">Abmelden</Trans>
+          <Trans id="header.nav.link.logout">Abmelden</Trans>
         </NavLink>
       ) : (
         <NavLink href="/onboarding">
           <Login16 />
-          <Trans id="header.nav.link.logout">Anmelden</Trans>
+          <Trans id="header.nav.link.login">Anmelden</Trans>
         </NavLink>
       )}
     </nav>
