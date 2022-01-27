@@ -9,7 +9,7 @@
 
   html,
   body {
-    @apply overflow-x-hidden overscroll-x-none relative min-h-screen m-0 font-sans bg-gray-100;
+    @apply relative min-h-screen m-0 font-sans bg-gray-100;
   }
 
   :disabled {
@@ -17,7 +17,7 @@
   }
 
   #__next {
-    @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto sm:mx-5 lg:mx-10 xl:mx-24 2xl:mx-28;
+    @apply h-screen flex-col flex min-h-screen max-w-[1440px] mx-auto sm:mx-5 lg:mx-10 xl:mx-24 2xl:mx-auto;
 
     & > .open > footer,
     & > .closed > footer {
@@ -52,7 +52,7 @@
   }
 
   main {
-    @apply relative min-h-[calc(100vh-150px)] flex flex-col flex-none bg-white text-black rounded py-10 px-4 md:px-20 md:pt-24 md:pb-8;
+    @apply relative min-h-[calc(100vh-150px)] flex flex-col flex-none bg-white text-black rounded p-10 md:px-16 lg:px-20 md:py-12;
   }
 
   dd {
@@ -74,20 +74,28 @@
     @apply break-words;
   }
 
+  .prose h1,
   .h1 {
     @apply font-bold text-4xl mb-5;
   }
 
+  .prose h2,
   .h2 {
     @apply font-bold text-lg mb-5;
   }
 
+  .prose h3,
   .h3 {
     @apply font-semibold text-[19px];
   }
 
+  .prose h4,
   .h4 {
     @apply font-semibold;
+  }
+
+  .prose h1 {
+    @apply mb-16;
   }
 
   .book {
@@ -168,8 +176,9 @@
     @apply button primary  cursor-pointer file:font-semibold file:text-white file:bg-primary  file:rounded file:border-0 file:cursor-pointer file:py-2 file:px-4 file:mr-4 file:text-sm;
   }
 
+  .notification,
   .message {
-    @apply w-full px-4 py-3 rounded;
+    @apply w-full px-4 py-3 rounded flex flex-row justify-between;
 
     &.success {
       @apply bg-green-100 text-green-600;
@@ -201,14 +210,18 @@
   }
 
   .button {
-    @apply default-focus rounded min-w-max max-w-full sm:w-max text-center break-words inline-block;
+    @apply default-focus box-border border-2 transition-all rounded min-w-max max-w-full sm:w-max text-center break-words inline-block;
 
     &.primary {
-      @apply border-transparent border-2 text-white bg-primary hover:bg-white hover:text-black hover:border-black;
+      @apply border-transparent  text-white bg-primary hover:bg-white hover:text-black hover:border-black;
     }
 
     &.secondary {
       @apply border-black border-2 text-black hover:bg-primary hover:border-primary hover:text-white;
+    }
+
+    &.tertiary {
+      @apply bg-highlight border-transparent text-primary hover:bg-primary hover:text-white;
     }
 
     &.invalid {
@@ -216,11 +229,11 @@
     }
 
     &.sm {
-      @apply px-4 py-2;
+      @apply px-3 py-1 text-sm;
     }
 
     &.md {
-      @apply px-8 py-3 md:py-2 md:px-6 font-semibold text-[18px];
+      @apply px-6 py-2 font-medium;
     }
   }
 
@@ -228,15 +241,15 @@
     @apply overflow-y-auto fixed inset-0 z-10;
 
     & .overlay {
-      @apply fixed inset-0 bg-black opacity-80;
+      @apply fixed inset-0 bg-white/20 backdrop-blur-md;
     }
 
     & .container {
-      @apply flex justify-center items-center min-h-screen mx-auto;
+      @apply flex justify-center items-center min-h-screen mx-auto shadow-appointment;
     }
 
     & .inner {
-      @apply relative mx-auto bg-white  rounded overflow-hidden max-w-[90vw] md:max-w-[80vw] w-full py-8;
+      @apply relative mx-auto bg-white rounded overflow-hidden max-w-[90vw] md:max-w-[80vw] px-16 py-12;
     }
 
     & .content {
@@ -308,7 +321,7 @@
   }
 
   .tag {
-    @apply py-1 px-3 rounded text-black;
+    @apply py-1 px-3 rounded-sm text-black select-none;
 
     &.warning {
       @apply bg-notice text-yellow-700;
@@ -320,22 +333,6 @@
 
     &.error {
       @apply bg-red-100 text-red-700;
-    }
-  }
-
-  .provider-data-summary {
-    @apply p-4 rounded;
-
-    & dt {
-      @apply font-bold;
-    }
-
-    &:not(.verified) {
-      @apply bg-gray-50;
-    }
-
-    &.verified {
-      @apply bg-green-100;
     }
   }
 }

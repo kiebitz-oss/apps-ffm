@@ -10,7 +10,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
   ...props
 }) => {
   return (
-    <section className="flex flex-col" {...props}>
+    <section className="flex flex-col mb-16" {...props}>
       <Title
         as="h3"
         variant="section"

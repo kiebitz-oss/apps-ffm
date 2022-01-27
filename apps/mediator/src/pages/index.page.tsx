@@ -1,22 +1,23 @@
-import { Section, Title } from "@impfen/common";
-import { Trans } from "@lingui/macro";
+import { Page, PageHeader, Section } from "@impfen/common";
+import { t } from "@lingui/macro";
 import { LoginForm } from "components";
-import { useAppState } from "lib/AppProvider";
 import type { NextPage } from "next";
+import { useIsAuthenticated } from "stores/app";
 
 const MediatorStartPage: NextPage = () => {
-  const { isAuthenticated } = useAppState();
+  const isAuthenticated = useIsAuthenticated();
 
   return (
-    <main>
+    <Page>
       <Section className="mt-10 w-full sm:mt-0">
         {isAuthenticated ? (
           <>
-            <Title>
-              <Trans id="mediator.welcome.title-authenticated">
-                Willkommen
-              </Trans>
-            </Title>
+            <PageHeader
+              title={t({
+                id: "mediator.welcome.title-authenticated",
+                message: "Willkommen",
+              })}
+            />
 
             <div className="grid grid-cols-1 gap-5 mt-2 sm:grid-cols-2 lg:grid-cols-3">
               <div className="flex overflow-hidden items-center p-5 bg-white shadow rounded-lg">
@@ -67,17 +68,18 @@ const MediatorStartPage: NextPage = () => {
           </>
         ) : (
           <>
-            <Title>
-              <Trans id="mediator.welcome.title-unauthenticated">
-                Als Mediator anmelden
-              </Trans>
-            </Title>
+            <PageHeader
+              title={t({
+                id: "mediator.welcome.title-unauthenticated",
+                message: "Als Mediator anmelden",
+              })}
+            />
 
             <LoginForm />
           </>
         )}
       </Section>
-    </main>
+    </Page>
   );
 };
 

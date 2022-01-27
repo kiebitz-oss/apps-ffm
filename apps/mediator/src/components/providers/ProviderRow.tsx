@@ -1,21 +1,23 @@
-import { Link, Tag } from "@impfen/common";
+import { Link } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { encodeProviderId } from "actions/encodeProviderId";
 import clsx from "clsx";
 import type { Provider } from "vanellus";
+import { encodeBase64url } from "vanellus";
 
 export interface ProviderRowProps {
   provider: Provider;
 }
 
 export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
-  const providerLink = `/providers/${encodeProviderId(provider.id)}`;
+  const providerLink = `/providers/${encodeBase64url(provider.id)}`;
 
   return (
     <tr key={provider.id} className={clsx("providers-list-row")}>
-      <td>
-        <Link href={providerLink}>{provider.name}</Link>
-      </td>
+      <th scope="row">
+        <Link href={providerLink} className="text-base">
+          {provider.name}
+        </Link>
+      </th>
 
       <td className="py-4 px-6 ">
         <address className="text-sm text-gray-500 whitespace-nowrap">
@@ -25,7 +27,7 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
         </address>
       </td>
 
-      <td>
+      {/* <td>
         <Tag variant={provider.verified ? "success" : "warning"}>
           {provider.verified ? (
             <Trans id="mediator.provider-row.valid">bestätigt</Trans>
@@ -33,10 +35,10 @@ export const ProviderRow: React.FC<ProviderRowProps> = ({ provider }) => {
             <Trans id="mediator.provider-row.invalid">unbestätigt</Trans>
           )}
         </Tag>
-      </td>
+      </td> */}
 
       <td className="flex gap-4 justify-end">
-        <Link href={providerLink}>
+        <Link href={providerLink} type="button" variant="tertiary" size="sm">
           <Trans id="mediator.provider-row.button-show">anzeigen</Trans>
         </Link>
       </td>

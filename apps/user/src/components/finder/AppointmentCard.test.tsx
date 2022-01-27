@@ -17,12 +17,11 @@ const provider: PublicProvider = {
 const appointment: AggregatedPublicAppointment = {
   id: "1",
   provider,
-  startDate: dayjs().toDate(),
-  endDate: dayjs().add(5, "minutes").toDate(),
+  startAt: dayjs(),
+  endAt: dayjs().add(5, "minutes"),
   duration: 5,
-  properties: {
-    vaccine: "moderna",
-  },
+  vaccine: "moderna",
+  properties: {},
 };
 
 describe("appointmentCard", () => {

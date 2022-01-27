@@ -4,6 +4,7 @@
   "display": "@impfen/common",
   "compilerOptions": {
     "lib": ["es2020", "DOM", "DOM.Iterable"],
+    "allowJs": true,
     "target": "es2020",
     "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo",
@@ -15,5 +16,5 @@
     "preserveConstEnums": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules", "*.stories.tsx"]
 }

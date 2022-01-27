@@ -15,7 +15,7 @@ export const FaqQuestion: React.FC<FaqQuestionProps> = ({
         </h4>
       </summary>
 
-      <p>{children}</p>
+      {children}
     </details>
   );
 };

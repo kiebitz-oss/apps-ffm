@@ -18,7 +18,8 @@
     "declarationMap": true,
     "useUnknownInCatchVariables": true,
     "useDefineForClassFields": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "importsNotUsedAsValues": "error"
   },
   "exclude": ["node_modules", "dist", ".next"]
 }

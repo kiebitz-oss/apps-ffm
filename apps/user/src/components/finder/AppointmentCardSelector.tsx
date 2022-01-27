@@ -1,9 +1,9 @@
 import { Button, Link } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import type { MouseEventHandler } from "react";
+import { useRouter } from "next/router";
+import { setAppointment } from "stores/finder";
 import type { AggregatedPublicAppointment } from "vanellus";
 import { AppointmentCard } from "./AppointmentCard";
-import { useFinder } from "./FinderProvider";
 
 interface AppointmentCardProps {
   appointment: AggregatedPublicAppointment;
@@ -12,17 +12,22 @@ interface AppointmentCardProps {
 export const AppointmentCardSelector: React.FC<AppointmentCardProps> = ({
   appointment,
 }) => {
-  const { setAppointment } = useFinder();
+  const router = useRouter();
 
-  const onAppointmentSelect: MouseEventHandler<HTMLAnchorElement> = () => {
-    setAppointment(appointment);
-  };
+  // const onAppointmentSelect: MouseEventHandler<HTMLAnchorElement> =
+  //   useCallback(async () => {
+  //     setAppointment(appointment);
+  //   }, []);
 
   return (
     <Link
       href="/finder/verify"
       className="group justify-center p-4 w-full text-center hover:text-black no-underline rounded shadow-appointment hover:shadow-appointment2 sm:mx-0"
-      onClick={onAppointmentSelect}
+      onClick={async (event) => {
+        event.preventDefault();
+        setAppointment(appointment);
+        await router.push("/finder/verify");
+      }}
       data-id={appointment.id}
     >
       <AppointmentCard appointment={appointment}>

@@ -3,6 +3,7 @@ import { t, Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Resolver, SubmitHandler, useForm } from "react-hook-form";
+import { setVaccine } from "stores/finder";
 import { QuestionaireBox } from "./QuestionaireBox";
 
 interface FormData {
@@ -65,6 +66,14 @@ export const Questionaire: React.FC = () => {
 
           case "q3": {
             resetField("q4");
+          }
+
+          case "q4": {
+            if (values["q4"] === true) {
+              setVaccine(undefined);
+            } else {
+              setVaccine("biontech");
+            }
           }
         }
       }

@@ -10,8 +10,17 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NEXT_PROVIDER_BASEPATH "/provider"
 ENV NEXT_MEDIATOR_BASEPATH "/mediator"
-ENV KIEBITZ_APPOINTMENTS_ENDPOINT "http://localhost:22222/jsonrpc"
-ENV KIEBITZ_STORAGE_ENDPOINT "http://localhost:11111/jsonrpc"
+
+ARG KIEBITZ_APPOINTMENTS_ENDPOINT
+ENV KIEBITZ_APPOINTMENTS_ENDPOINT $KIEBITZ_APPOINTMENTS_ENDPOINT
+
+ARG KIEBITZ_STORAGE_ENDPOINT
+ENV KIEBITZ_STORAGE_ENDPOINT $KIEBITZ_STORAGE_ENDPOINT
+
+# if those vars are set while doing the build, the apps will use those api-urls.
+# if not, the url of the app will be used: $(origin)/api/v1/[appointments|storage]
+# ENV KIEBITZ_APPOINTMENTS_ENDPOINT "http://localhost:22222/jsonrpc"
+# ENV KIEBITZ_STORAGE_ENDPOINT "http://localhost:11111/jsonrpc"
 
 ENV NODE_ENV "production"
 

@@ -41,7 +41,7 @@ export const QuestionaireBox: React.FC<QuestionBoxProps> = ({
               >
                 <div className="flex justify-between pr-4">
                   <legend>
-                    <h3>{children}</h3>
+                    <h2>{children}</h2>
                   </legend>
                 </div>
 

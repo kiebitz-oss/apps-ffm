@@ -5,9 +5,36 @@ import { I18nProvider } from "@lingui/react";
 import "app.css";
 import { HeaderContent } from "components/HeaderContent";
 import dayjs from "dayjs";
-import { AppProvider } from "lib/AppProvider";
+import utc from "dayjs/plugin/utc";
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import type { FallbackProps } from "react-error-boundary";
+import { ErrorBoundary } from "react-error-boundary";
+import { AuthError } from "vanellus";
+
+dayjs.extend(utc);
+
+const ErrorFallback: React.FC<FallbackProps> = ({
+  error,
+  resetErrorBoundary,
+}) => {
+  const router = useRouter();
+
+  if (error instanceof AuthError) {
+    router.push("/login").finally(() => resetErrorBoundary());
+
+    return null;
+  }
+
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  );
+};
 
 const SafeHydrate: React.FC = ({ children }) => {
   return (
@@ -29,13 +56,18 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <SafeHydrate>
-      <I18nProvider i18n={i18n}>
-        <AppProvider>
+      <ErrorBoundary
+        FallbackComponent={ErrorFallback}
+        onReset={() => {
+          // reset the state of your app so the error doesn't happen again
+        }}
+      >
+        <I18nProvider i18n={i18n}>
           <Layout header={HeaderContent} locale={locale} setLocale={setLocale}>
             <Component {...pageProps} />
           </Layout>
-        </AppProvider>
-      </I18nProvider>
+        </I18nProvider>
+      </ErrorBoundary>
     </SafeHydrate>
   );
 };

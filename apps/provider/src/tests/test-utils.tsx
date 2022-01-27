@@ -2,8 +2,7 @@ import { loadLocale } from "@impfen/common";
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import { render, RenderOptions } from "@testing-library/react";
-import { AppProvider } from "lib/AppProvider";
-import { FC, ReactElement } from "react";
+import type { ReactElement } from "react";
 
 import(`../locales/de/messages`).then(({ messages }) =>
   loadLocale("de", messages)
@@ -14,12 +13,8 @@ import(`../locales/de/messages`).then(({ messages }) =>
 jest.mock("next/dist/client/router", () => require("next-router-mock"));
 jest.mock("next/router", () => require("next-router-mock"));
 
-const AppProviders: FC = ({ children }) => {
-  return (
-    <I18nProvider i18n={i18n}>
-      <AppProvider>{children}</AppProvider>
-    </I18nProvider>
-  );
+const AppProviders: React.FC = ({ children }) => {
+  return <I18nProvider i18n={i18n}>{children}</I18nProvider>;
 };
 
 const customRender: any = (

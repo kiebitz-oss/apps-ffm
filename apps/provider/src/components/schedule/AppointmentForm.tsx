@@ -7,14 +7,14 @@ import {
   vaccines,
 } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { createAppointment, publishAppointments } from "actions";
 import dayjs from "dayjs";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { createAppointment } from "stores/app";
 import type { Appointment } from "vanellus";
 
 interface FormData {
   id?: string;
-  startDate: string;
+  startAt: string;
   slotCount: number;
   duration: number;
   vaccine: Vaccine;
@@ -33,13 +33,13 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
     mode: "onBlur",
     reValidateMode: "onBlur",
     defaultValues: {
-      startDate: dayjs(appointment?.startDate)
+      startAt: dayjs(appointment?.startAt)
         .add(1, "day")
         .set("hour", 10)
         .set("minute", 0)
-        .format("YYYY-MM-DDThh:mm"),
+        .format("YYYY-MM-DDTHH:mm"),
       slotCount: appointment?.slotData.length || 5,
-      duration: appointment?.duration || 5,
+      duration: appointment?.duration || 30,
     },
     // resolver,
   });
@@ -48,19 +48,17 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
   const onSubmit: SubmitHandler<FormData> = async (data) =>
     createAppointment(
-      dayjs(data.startDate).toDate(),
+      dayjs(data.startAt),
       data.duration,
       data.vaccine,
       data.slotCount
-    )
-      .then((appointment) => publishAppointments([appointment]))
-      .then((result) => {
-        if (onSuccess) {
-          onSuccess();
-        }
+    ).then((result) => {
+      if (onSuccess) {
+        onSuccess();
+      }
 
-        return result;
-      });
+      return result;
+    });
 
   return (
     <FormProvider {...methods}>
@@ -86,14 +84,14 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
               message: "Das Datum des Impftermins",
             })}
             required
-            {...register("startDate", {
+            {...register("startAt", {
               // valueAsDate: true,
               required: t({
                 id: "provider.schedule.appointment-modal.start-date.error.required",
                 message: "Bitte gegen Sie einen Startdatum an",
               }),
               min: {
-                value: dayjs().format("YYYY-MM-DDThh:mm"),
+                value: dayjs().format("YYYY-MM-DDTHH:mm"),
                 message: t({
                   id: "provider.schedule.appointment-modal.start-date.error.min",
                   message:
@@ -101,7 +99,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 }),
               },
               max: {
-                value: dayjs().add(30, "days").format("YYYY-MM-DDThh:mm"),
+                value: dayjs().add(30, "days").format("YYYY-MM-DDTHH:mm"),
                 message: t({
                   id: "provider.schedule.appointment-modal.start-date.error.max",
                   message:
@@ -173,7 +171,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 }),
               },
               max: {
-                value: 50,
+                value: 240,
                 message: t({
                   id: "provider.schedule.appointment-modal.duration.error.max",
                   message:

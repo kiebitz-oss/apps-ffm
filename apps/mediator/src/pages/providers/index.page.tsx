@@ -1,5 +1,5 @@
-import { Link, Loading, Title } from "@impfen/common";
-import { Trans } from "@lingui/macro";
+import { Link, Loading, Page, PageHeader } from "@impfen/common";
+import { t } from "@lingui/macro";
 import { ProvidersContainer } from "components";
 import type { NextPage } from "next";
 import { Suspense, useState } from "react";
@@ -8,17 +8,19 @@ const ProvidersPage: NextPage = () => {
   const [showPending, setShowPending] = useState<boolean>(true);
 
   return (
-    <main>
-      <div className="flex flex-row justify-between mb-8">
-        <Title>
-          <Trans id="mediator.providers.title">Impfstellen anzeigen</Trans>
-        </Title>
-
+    <Page>
+      <PageHeader
+        title={t({
+          id: "mediator.providers.title",
+          message: "Impfstellen anzeigen",
+        })}
+      >
         <div className="buttons-list">
           <Link
             href="/providers"
             type="button"
-            className="primary sm"
+            variant={showPending ? "primary" : "secondary"}
+            size="sm"
             onClick={(event) => {
               event.preventDefault();
               setShowPending(true);
@@ -29,7 +31,8 @@ const ProvidersPage: NextPage = () => {
           <Link
             href="/providers"
             type="button"
-            className="primary sm"
+            variant={showPending ? "secondary" : "primary"}
+            size="sm"
             onClick={(event) => {
               event.preventDefault();
               setShowPending(false);
@@ -38,12 +41,12 @@ const ProvidersPage: NextPage = () => {
             Bestätigte Impfstellen
           </Link>
         </div>
-      </div>
+      </PageHeader>
 
       <Suspense fallback={<Loading />}>
         <ProvidersContainer pending={showPending} />
       </Suspense>
-    </main>
+    </Page>
   );
 };
 

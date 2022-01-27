@@ -1,35 +1,37 @@
-import { Login16, Logout16 } from "@carbon/icons-react";
+import { Calendar16, Login16, Logout16, Settings16 } from "@carbon/icons-react";
 import { NavLink } from "@impfen/common";
-import { useAppState } from "lib/AppProvider";
+import { Trans } from "@lingui/macro";
+import { useIsAuthenticated } from "stores/app";
 
-interface HeaderContentProps {
-  locale?: string;
-  setLocale: (locale: string) => void;
-}
+interface HeaderContentProps {}
 
-export const HeaderContent: React.FC<HeaderContentProps> = ({
-  locale,
-  setLocale,
-}) => {
-  const { isAuthenticated } = useAppState();
+export const HeaderContent: React.FC<HeaderContentProps> = ({}) => {
+  const isAuthenticated = useIsAuthenticated();
 
   return (
-    <nav className="hidden gap-12 justify-center sm:flex">
+    <nav className="hidden sm:flex sm:gap-4 sm:mt-8 md:gap-12">
       {isAuthenticated ? (
         <>
-          <NavLink href="/schedule">Impftermine</NavLink>
-          <NavLink href="/account">Ihr Account</NavLink>
+          <NavLink href="/schedule">
+            <Calendar16 />
+            <Trans id="header.nav.link.appointments">Impftermine</Trans>
+          </NavLink>
+          <NavLink href="/account">
+            <Settings16 />
+
+            <Trans id="header.nav.link.your_account">Ihr Account</Trans>
+          </NavLink>
         </>
       ) : null}
       {isAuthenticated ? (
         <NavLink href="/logout">
           <Logout16 />
-          Abmelden
+          <Trans id="header.nav.link.logout">Abmelden</Trans>
         </NavLink>
       ) : (
         <NavLink href="/onboarding">
           <Login16 />
-          Anmelden
+          <Trans id="header.nav.link.login">Anmelden</Trans>
         </NavLink>
       )}
     </nav>

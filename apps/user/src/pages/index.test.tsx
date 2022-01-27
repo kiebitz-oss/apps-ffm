@@ -20,8 +20,7 @@ describe("indexPage", () => {
 
     render(<IndexPage />);
 
-    expect(screen.getByTestId("view.title")).toBeInTheDocument();
-    expect(screen.getByText("Willkommen!")).toBeDefined();
+    expect(screen.getByText("Willkommen!")).toBeInTheDocument();
   });
 
   // cannot work while wrapped

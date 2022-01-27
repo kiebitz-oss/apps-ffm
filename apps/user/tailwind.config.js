@@ -8,7 +8,6 @@ module.exports = Object.assign({}, config, {
     "./src/**/*.mdx",
   ],
   plugins: [
-    require("@tailwindcss/typography"),
     require("@tailwindcss/forms")({
       strategy: "class",
     }),

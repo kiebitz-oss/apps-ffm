@@ -4,7 +4,6 @@
  * @type {import('tailwindcss/tailwind-config').TailwindConfig}
  **/
 const config = {
-  mode: "jit",
   content: [
     "../../packages/common/src/ui/**/*.tsx",
     "./src/**/*.tsx",
@@ -20,6 +19,7 @@ const config = {
     },
 
     borderRadius: {
+      sm: ".5rem",
       DEFAULT: "1rem",
     },
 
@@ -44,7 +44,7 @@ const config = {
         notice: "#FFF1C0",
         error: "#DA1E28",
         aa_blau: "#0067AF",
-        highlight: "#0E7FCE",
+        highlight: "#4589ff1a",
       },
     },
   },

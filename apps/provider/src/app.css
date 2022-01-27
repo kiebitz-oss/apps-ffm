@@ -3,59 +3,20 @@
 @import "tailwindcss/utilities";
 @import "@impfen/common/src/ui.css";
 
-.week-calendar {
-  @apply relative border overflow-x-auto mt-5 grid grid-flow-col w-full;
+@layer components {
+  .provider-data-summary {
+    @apply p-4 rounded;
 
-  & .day-column {
-    @apply min-w-[120px];
-
-    & .hour-row {
-      @apply border-b block h-[100px] p-0 bg-white z-[3] cursor-pointer hover:bg-green-50;
-
-      &.hour-label {
-        @apply flex bg-gray-50 items-center justify-center;
-      }
-
-      &.day-label {
-        @apply bg-gray-50 flex flex-col justify-evenly items-center;
-
-        span.day,
-        span.date {
-          @apply font-bold;
-        }
-
-        span.date {
-          @apply text-sm font-semibold;
-        }
-      }
-
-      & .appointments {
-        @apply relative h-full;
-      }
-
-      & .appointment-item {
-        @apply absolute overflow-hidden w-[95%] cursor-pointer z-[2] py-0 pr-0 pl-1 opacity-80 min-h-[45px] bg-green-100;
-
-        top: 4px;
-        left: 2.5%;
-
-        &.kip-is-active {
-          z-index: 3;
-          opacity: 1;
-        }
-      }
+    & dt {
+      @apply font-bold;
     }
 
-    &.is-day-label {
-      @apply font-bold text-sm;
+    &:not(.verified) {
+      @apply bg-gray-50;
     }
 
-    .hour-row:not(:last-child) {
-      @apply border-b;
+    &.verified {
+      @apply bg-green-100;
     }
-  }
-
-  .day-column:not(:last-child) {
-    @apply border-r;
   }
 }

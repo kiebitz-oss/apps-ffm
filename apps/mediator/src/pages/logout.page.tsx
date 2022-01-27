@@ -1,13 +1,12 @@
-import { Button, Text, Title } from "@impfen/common";
-import { Trans } from "@lingui/macro";
-import { useAppState } from "lib/AppProvider";
+import { Button, Page, PageHeader } from "@impfen/common";
+import { t, Trans } from "@lingui/macro";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import type { MouseEventHandler } from "react";
+import { logout } from "stores/app";
 
 const LogoutPage: NextPage = () => {
   const router = useRouter();
-  const { logout } = useAppState();
 
   const logOut: MouseEventHandler<HTMLButtonElement> = async (event) => {
     event.preventDefault();
@@ -17,26 +16,23 @@ const LogoutPage: NextPage = () => {
   };
 
   return (
-    <main>
-      <section>
-        <Title>
-          <Trans id="mediator.logout.title">Abmelden</Trans>
-        </Title>
+    <Page>
+      <PageHeader
+        title={t({
+          id: "mediator.logout.title",
+          message: "Abmelden",
+        })}
+        intro={t({
+          id: "mediator.logout.intro",
+          message:
+            "Möchten Sie sich wirklich abmelden? Bitte stellen Sie vorher sicher, dass Sie Ihren Datenschlüssel heruntergeladen haben und diesen sicher verwahren. Der Datenschlüssel ist zur erneuten Anmeldung am System zwingend erforderlich.",
+        })}
+      />
 
-        <Text className="pb-8">
-          <Trans id="mediator.logout.intro">
-            Möchten Sie sich wirklich abmelden? Bitte stellen Sie vorher sicher,
-            dass Sie Ihren Datenschlüssel heruntergeladen haben und diesen
-            sicher verwahren. Der Datenschlüssel ist zur erneuten Anmeldung am
-            System zwingend erforderlich.
-          </Trans>
-        </Text>
-
-        <Button onClick={logOut}>
-          <Trans id="mediator.logout.button">Abmelden</Trans>
-        </Button>
-      </section>
-    </main>
+      <Button onClick={logOut}>
+        <Trans id="mediator.logout.button">Abmelden</Trans>
+      </Button>
+    </Page>
   );
 };
 

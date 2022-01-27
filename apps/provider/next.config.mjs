@@ -1,19 +1,15 @@
-import nextMDX from "@next/mdx";
-
 /**
  * @type {import('next').NextConfig}
  **/
 const config = {
   poweredByHeader: false,
   reactStrictMode: true,
-  cleanDistDir: true,
   trailingSlash: true,
   pageExtensions: ["page.tsx", "page.mdx"],
-  basePath: process.env.NEXT_PROVIDER_BASEPATH || "",
+  basePath: process.env.NEXT_PROVIDER_BASEPATH || undefined,
   experimental: {
+    cpus: 4,
     externalDir: true,
-    scrollRestoration: true,
-    esmExternals: true,
   },
   images: {
     disableStaticImages: true,
@@ -36,8 +32,19 @@ const config = {
       type: "asset/resource",
     });
 
+    config.module.rules.push({
+      test: /\.mdx?$/,
+      use: [
+        {
+          loader: "@mdx-js/loader",
+          /** @type {import('@mdx-js/loader').Options} */
+          options: {},
+        },
+      ],
+    });
+
     return config;
   },
 };
 
-export default nextMDX()(config);
+export default config;

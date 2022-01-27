@@ -1,38 +1,42 @@
-import { Link, Text, Title } from "@impfen/common";
+import { addNotification, Link, Page, PageHeader, Text } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { getProviderData, storeProvider } from "actions";
 import { ProviderForm } from "components";
 import type { NextPage } from "next";
-import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useCallback } from "react";
 import type { SubmitHandler } from "react-hook-form";
-import type { Provider, ProviderData } from "vanellus";
+import { storeProvider, useApp } from "stores/app";
+import type { Provider } from "vanellus";
 
 const SettingsPage: NextPage = () => {
-  const [providerData, setProviderData] = useState<ProviderData>();
+  const provider = useApp((state) => state.unverifiedProvider);
+  const router = useRouter();
 
-  const handleOnSubmit: SubmitHandler<Provider> = useCallback(async (data) => {
-    await storeProvider(data);
-  }, []);
-
-  useEffect(() => {
-    getProviderData().then(setProviderData);
-  }, []);
+  const handleOnSubmit: SubmitHandler<Provider> = useCallback(
+    async (data) => {
+      await storeProvider(data);
+      addNotification("Daten gespeichert");
+      await router.push("/account");
+    },
+    [router]
+  );
 
   return (
-    <main>
-      <div className="flex flex-row justify-between mb-8">
-        <Title>
-          <Trans id="provider.account.edit.title">
-            Ihren Account bearbeiten
-          </Trans>
-        </Title>
-
+    <Page>
+      <PageHeader
+        title={t({
+          id: "provider.account.edit.title",
+          message: "Account bearbeiten",
+        })}
+      >
         <div className="buttons-list">
-          <Link href="/account" type="button" className="primary sm">
-            Ihre Daten anzeigen
+          <Link href="/account" type="button" variant="secondary" size="sm">
+            <Trans id="provider.account.edit.index-button">
+              Account ansehen
+            </Trans>
           </Link>
         </div>
-      </div>
+      </PageHeader>
 
       <Text className="mb-8">
         <Trans id="provider.account.edit.notice-validation">
@@ -43,18 +47,16 @@ const SettingsPage: NextPage = () => {
       </Text>
 
       <div className="max-w-3xl">
-        {providerData?.verifiedProvider && (
-          <ProviderForm
-            defaultValues={providerData.verifiedProvider}
-            submitText={t({
-              id: "provider.account.edit.submit-button",
-              message: "Daten zur Verifizierung speichern",
-            })}
-            onSubmit={handleOnSubmit}
-          />
-        )}
+        <ProviderForm
+          defaultValues={provider}
+          submitText={t({
+            id: "provider.account.edit.submit-button",
+            message: "Daten zur Verifizierung speichern",
+          })}
+          onSubmit={handleOnSubmit}
+        />
       </div>
-    </main>
+    </Page>
   );
 };
 

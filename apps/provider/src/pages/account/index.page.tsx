@@ -1,33 +1,63 @@
-import { Link, Text, Title } from "@impfen/common";
-import { Trans } from "@lingui/macro";
-import { getProviderData } from "actions";
+import { Link, Page, PageHeader, Text } from "@impfen/common";
+import { t, Trans } from "@lingui/macro";
 import { ProviderDataSummary } from "components";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import type { ProviderData } from "vanellus";
+import { getProviderData, setUnverifiedProvider, useApp } from "stores/app";
+import { ProviderStatus } from "vanellus";
 
 const SettingsPage: NextPage = () => {
-  const [providerData, setProviderData] = useState<ProviderData>();
+  const [providerState, setProviderState] = useState<ProviderStatus>();
+  const unverifiedProvider = useApp((state) => state.unverifiedProvider);
 
   useEffect(() => {
-    getProviderData().then(setProviderData);
-  }, []);
+    getProviderData().then((providerData) => {
+      if (!unverifiedProvider && providerData.verifiedProvider) {
+        setUnverifiedProvider(providerData.verifiedProvider);
+      }
+
+      if (
+        unverifiedProvider &&
+        JSON.stringify(unverifiedProvider) !==
+          JSON.stringify(providerData.verifiedProvider)
+      ) {
+        setProviderState(ProviderStatus.UPDATED);
+      } else if (providerData.verifiedProvider) {
+        setProviderState(ProviderStatus.VERIFIED);
+      } else {
+        setProviderState(ProviderStatus.UNVERIFIED);
+      }
+    });
+  }, [providerState, unverifiedProvider]);
+
+  // saveguard
+  if (!unverifiedProvider) {
+    return null;
+  }
 
   return (
-    <main>
-      <div className="flex flex-row justify-between mb-8">
-        <Title>
-          <Trans id="provider.account.index.title">Ihr Account</Trans>
-        </Title>
-
+    <Page>
+      <PageHeader
+        title={t({
+          id: "provider.account.index.title",
+          message: "Account",
+        })}
+      >
         <div className="buttons-list">
-          <Link href="/account/edit" type="button" className="primary sm">
-            Ihre Daten bearbeiten
+          <Link
+            href="/account/edit"
+            type="button"
+            variant="secondary"
+            size="sm"
+          >
+            <Trans id="provider.account.index.edit-button">
+              Account bearbeiten
+            </Trans>
           </Link>
         </div>
-      </div>
+      </PageHeader>
 
-      {!providerData?.verifiedProvider && (
+      {providerState !== ProviderStatus.VERIFIED && (
         <Text className="mb-8">
           <Trans id="provider.account.not-verified-yet">
             Ihre Daten wurden noch nicht verifiziert. Bitte haben Sie
@@ -36,10 +66,12 @@ const SettingsPage: NextPage = () => {
         </Text>
       )}
 
-      {providerData?.verifiedProvider && (
-        <ProviderDataSummary provider={providerData?.verifiedProvider} />
-      )}
-    </main>
+      {providerState ? providerState : "--"}
+
+      <div className="max-w-3xl">
+        <ProviderDataSummary provider={unverifiedProvider} />
+      </div>
+    </Page>
   );
 };
 

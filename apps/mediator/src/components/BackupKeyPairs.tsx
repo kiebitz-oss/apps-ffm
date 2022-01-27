@@ -1,8 +1,8 @@
 import { theme } from "@impfen/common";
 import { Trans } from "@lingui/macro";
-import { getKeyPairs } from "actions";
 import clsx from "clsx";
 import dayjs from "dayjs";
+import { getKeyPairs } from "stores/app";
 
 interface BackupKeyPairsProps {
   className?: string;

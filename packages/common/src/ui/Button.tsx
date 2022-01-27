@@ -1,9 +1,8 @@
 import clsx from "clsx";
-import { Size } from "./types/Size";
-import { Variant } from "./types/Variant";
+import type { Size } from "./types";
 
 export interface ButtonProps extends React.ComponentProps<"button"> {
-  variant?: Variant | "invalid";
+  variant?: "primary" | "secondary" | "tertiary" | "invalid";
   size?: Size;
   waiting?: boolean;
 }

@@ -1,17 +1,11 @@
-import {
-  Form,
-  FormSubmitButton,
-  InputField,
-  Message,
-  Upload,
-} from "@impfen/common";
+import { Form, FormSubmitButton, InputField, Upload } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
-import { useAppState } from "lib/AppProvider";
 import { useRouter } from "next/router";
 import type { ChangeEventHandler } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import type { Resolver, SubmitHandler } from "react-hook-form";
 import { FormProvider, useForm } from "react-hook-form";
+import { authenticate } from "stores/app";
 
 interface FormData {
   keyPairs: string;
@@ -47,10 +41,7 @@ interface LoginFormProps {
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
-  const [keyPairs, setKeyPairs] = useState<string>();
   const fileInput = useRef<HTMLInputElement>(null);
-  const [failed, setFailed] = useState<boolean>(false);
-  const { authenticate } = useAppState();
   const router = useRouter();
 
   const methods = useForm<FormData>({
@@ -61,14 +52,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
 
   const { register, handleSubmit, formState, setError, setValue } = methods;
 
-  useEffect(() => {
-    if (keyPairs) {
-      setValue("keyPairs", keyPairs, {
-        shouldDirty: true,
-      });
-    }
-  }, [keyPairs, setValue]);
-
   const onFileChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     const keyPairs = event.currentTarget.files?.[0];
     const reader = new FileReader();
@@ -77,7 +60,14 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
       "load",
       (event) => {
         try {
-          setKeyPairs(event.target?.result?.toString());
+          const keyPairs = event.target?.result?.toString();
+          if (keyPairs) {
+            setValue("keyPairs", keyPairs, {
+              shouldDirty: true,
+            });
+          } else {
+            throw new Error("invalid");
+          }
         } catch (error) {
           setError(
             "keyPairs",
@@ -113,14 +103,14 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
       >
         <div>
           <div className="flex flex-col gap-8">
-            {failed && (
+            {/* {failed && (
               <Message variant="danger">
                 <Trans id="provider.restore-form.failed">
                   Das Laden Ihrer Daten ist leider fehlgeschlagen. Bitte prüfen
                   Sie Ihren Datenschlüssel sowie die angegebene Datei.
                 </Trans>
               </Message>
-            )}
+            )} */}
 
             <InputField
               label={t({
@@ -132,8 +122,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
                 message:
                   "Der Datenschlüssel, den Sie bei der Registrierung erhalten haben.",
               })}
-              pattern="[A-Za-z0-9]{16}"
-              maxLength={16}
+              pattern="[A-Za-z0-9]{16,24}"
+              minLength={16}
+              maxLength={24}
               required
               className="max-w-[20rem]"
               {...register("secret")}
