@@ -23,6 +23,10 @@ jobs:
       contents: read
       packages: write
 
+    env:
+      KIEBITZ_STORAGE_ENDPOINT: https://dev-cd.impfterm.in
+      KIEBITZ_APPOINTMENTS_ENDPOINT: https://dev-cd.impfterm.in
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
