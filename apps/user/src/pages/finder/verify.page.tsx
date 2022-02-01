@@ -1,4 +1,4 @@
-import { Link, PageHeader, Text, Title } from "@impfen/common";
+import { Link, Page, PageHeader, Text, Title } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { AppointmentCard } from "components/finder";
 import type { NextPage } from "next";
@@ -40,7 +40,7 @@ const VerifyStep: NextPage = () => {
   }
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "user.finder.verify.title",
@@ -90,7 +90,7 @@ const VerifyStep: NextPage = () => {
           <Trans id="user.finder.verify.submit">Termin jetzt buchen</Trans>
         </Link>
       </div>
-    </main>
+    </Page>
   );
 };
 

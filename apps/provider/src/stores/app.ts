@@ -158,11 +158,7 @@ export const authenticate = async (
 ) => {
   let backup;
 
-  try {
-    backup = await restore(secret);
-  } catch (error) {
-    console.error(error);
-  }
+  backup = await restore(secret);
 
   useApp.setState(
     {
@@ -211,7 +207,7 @@ export const backup = async () => {
 
   const providerData = await getProviderData();
 
-  const x = await api.backupData(
+  await api.backupData(
     {
       unverifiedProvider: state.unverifiedProvider || undefined,
       verifiedProvider: providerData.verifiedProvider || undefined,
@@ -230,10 +226,21 @@ export const restore = async (secret: string) => {
 };
 
 // Private helpers
+const setKeyPairs = async (keyPairs: ProviderKeyPairs) => {
+  // checks if a keyPair is valid
+  const isValid = await getApi().isValidKeyPairs(keyPairs);
+
+  if (!isValid) {
+    throw new AuthError("Please authenticate");
+  }
+
+  return useApp.setState({ keyPairs });
+};
+
 const publishAppointments = (
   unpublishedAppointments: UnpublishedPublicAppointment<Vaccine>[]
 ) => {
   return getApi().publishAppointments(unpublishedAppointments, getKeyPairs());
 };
 
-const reset = () => useApp.setState({}, true);
+export const reset = () => useApp.setState({}, true);

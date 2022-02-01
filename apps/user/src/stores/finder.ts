@@ -4,22 +4,24 @@ import create from "zustand";
 
 type FinderState = {
   date: Date;
-  provider?: PublicProvider;
+  provider?: PublicProvider | true;
   accessible?: true;
   vaccine?: Vaccine;
-  appointment?: AggregatedPublicAppointment;
+  appointment?: AggregatedPublicAppointment<Vaccine>;
 };
 
 export const useFinder = create<FinderState>(() => ({
   date: new Date(),
 }));
 
-export const setProvider = (provider: PublicProvider) =>
+export const setProvider = (provider: PublicProvider | true) =>
   useFinder.setState({ provider });
 
 export const setDate = (date: Date) => useFinder.setState({ date });
 
-export const setAppointment = (appointment: AggregatedPublicAppointment) =>
+export const setAppointment = (
+  appointment: AggregatedPublicAppointment<Vaccine>
+) =>
   useFinder.setState({
     appointment,
   });

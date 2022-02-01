@@ -1,5 +1,5 @@
 import { Edit24 } from "@carbon/icons-react";
-import { InputField, Link, PageHeader } from "@impfen/common";
+import { InputField, Link, Page, PageHeader } from "@impfen/common";
 import { t } from "@lingui/macro";
 import { AppointmentsList } from "components/finder";
 import dayjs, { Dayjs } from "dayjs";
@@ -52,7 +52,7 @@ const AppointmentStep: NextPage = () => {
   }
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "user.finder.appointment.title",
@@ -76,7 +76,9 @@ const AppointmentStep: NextPage = () => {
               id: "user.finder.appointment.provider.placeholder",
               message: "Beliebige Impfstelle",
             })}
-            value={provider.name}
+            value={
+              provider !== true && provider?.name ? provider.name : undefined
+            }
             onChange={handleResetProvider}
             className="flex-1"
           />
@@ -103,9 +105,12 @@ const AppointmentStep: NextPage = () => {
       </div>
 
       <Suspense fallback={null}>
-        <AppointmentsList date={date} providerId={provider.id} />
+        <AppointmentsList
+          date={date}
+          providerId={provider === true ? true : provider.id}
+        />
       </Suspense>
-    </main>
+    </Page>
   );
 };
 

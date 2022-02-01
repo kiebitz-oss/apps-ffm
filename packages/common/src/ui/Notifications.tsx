@@ -8,12 +8,12 @@ import {
 export const Notifications: React.FC = () => {
   const notifications = useNotifications((store) => store.notifications);
 
-  if (notifications.length <= 1) {
+  if (notifications.length < 1) {
     return null;
   }
 
   return (
-    <ul className="flex flex-col gap-2 pb-8">
+    <ul className="flex flex-col gap-2 pb-8 max-w-3xl">
       {notifications.map((notification) => {
         if (!notification.persistant) {
           setTimeout(() => {

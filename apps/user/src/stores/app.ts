@@ -27,7 +27,7 @@ export const getApi = () => {
 };
 
 type AppState = {
-  booking?: Booking;
+  booking?: Booking<Vaccine>;
   secret?: string;
   token?: UserQueueToken;
 };

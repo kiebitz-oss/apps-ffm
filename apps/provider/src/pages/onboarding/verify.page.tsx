@@ -1,4 +1,10 @@
-import { Button, Link, Page, PageHeader } from "@impfen/common";
+import {
+  addNotification,
+  Button,
+  Link,
+  Page,
+  PageHeader,
+} from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { ProviderDataSummary } from "components";
 import type { NextPage } from "next";
@@ -19,11 +25,19 @@ const OnboardingVerifyPage: NextPage = () => {
   const submit: React.MouseEventHandler<HTMLButtonElement> =
     useCallback(async () => {
       if (provider) {
-        await register(provider).then(() => {
-          resetOnboarding();
+        await register(provider)
+          .then(() => {
+            resetOnboarding();
 
-          return router.push("/onboarding/backup");
-        });
+            return router.push("/onboarding/backup");
+          })
+          .catch(() => {
+            resetOnboarding();
+
+            addNotification("Registrierung fehlgeschlagen.");
+
+            return router.push("/onboarding");
+          });
       }
     }, [provider, router]);
 

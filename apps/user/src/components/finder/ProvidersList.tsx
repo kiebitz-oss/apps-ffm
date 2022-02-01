@@ -7,6 +7,7 @@ import { getProviders } from "stores/app";
 import { setProvider } from "stores/finder";
 import { preload, suspend } from "suspend-react";
 import type { PublicProvider } from "vanellus";
+import { AnyProviderCard } from "./AnyProviderCard";
 import { ProviderCard } from "./ProviderCard";
 
 const fetchProviders = async () => {
@@ -49,6 +50,20 @@ export const ProvidersList: FC<ProvidersListProps> = ({ accessible }) => {
 
   return (
     <ul className="grid grid-flow-row gap-4 md:px-0 md:max-w-2xl">
+      <li key="any">
+        <Link
+          href="/finder/appointment"
+          onClick={(event) => {
+            event.preventDefault();
+            setProvider(true);
+            router.push("/finder/appointment");
+          }}
+          className="block"
+        >
+          <AnyProviderCard />
+        </Link>
+      </li>
+
       {filteredProviders?.map((provider) => (
         <li key={provider.id}>
           <Link

@@ -1,4 +1,4 @@
-import { CheckboxField, Loading, PageHeader } from "@impfen/common";
+import { CheckboxField, Loading, Page, PageHeader } from "@impfen/common";
 import { t } from "@lingui/macro";
 import { ProvidersList } from "components/finder";
 import type { NextPage } from "next";
@@ -44,7 +44,7 @@ const ProviderStep: React.FC = () => {
   }
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "user.finder.location.title",
@@ -69,7 +69,7 @@ const ProviderStep: React.FC = () => {
       <Suspense fallback={<Loading />}>
         <ProvidersList accessible={accessible} />
       </Suspense>
-    </main>
+    </Page>
   );
 };
 

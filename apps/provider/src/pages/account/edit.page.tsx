@@ -14,9 +14,17 @@ const SettingsPage: NextPage = () => {
 
   const handleOnSubmit: SubmitHandler<Provider> = useCallback(
     async (data) => {
-      await storeProvider(data);
-      addNotification("Daten gespeichert");
-      await router.push("/account");
+      await storeProvider(data)
+        .then(() => {
+          addNotification("Daten gespeichert");
+
+          return router.push("/account");
+        })
+        .catch(() => {
+          addNotification("Speichern fehlgeschlagen");
+
+          return router.push("/account");
+        });
     },
     [router]
   );
