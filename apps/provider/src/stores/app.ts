@@ -30,14 +30,14 @@ export const getApi = () => {
     : providerApi;
 };
 
-type AppState = {
+type useApp = {
   secret?: string;
   keyPairs?: ProviderKeyPairs;
   unverifiedProvider?: Provider;
   verifiedProvider?: Provider;
 };
 
-export const useApp = create<AppState>(
+export const useApp = create<useApp>(
   persist(() => ({}), {
     name: "provider:app",
   })

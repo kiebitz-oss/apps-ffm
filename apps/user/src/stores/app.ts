@@ -26,13 +26,13 @@ export const getApi = () => {
   return !userApi ? (userApi = new UserApi<Vaccine>(getApiConfig())) : userApi;
 };
 
-type AppState = {
+type useApp = {
   booking?: Booking<Vaccine>;
   secret?: string;
   token?: UserQueueToken;
 };
 
-export const useApp = create<AppState>(
+export const useApp = create<useApp>(
   persist(() => ({}), {
     name: "user:app",
     partialize: (state) =>
@@ -45,7 +45,7 @@ export const useApp = create<AppState>(
 export const bookAppointment = async (
   appointment: AggregatedPublicAppointment<Vaccine> | PublicAppointment<Vaccine>
 ): Promise<Booking> => {
-  const secret = generateSecret();
+  const secret = getSecret();
   const token = await createUserQueueToken(secret);
 
   const publicAppointment =
@@ -56,7 +56,6 @@ export const bookAppointment = async (
   const booking = await getApi().bookAppointment(publicAppointment, token);
 
   useApp.setState({
-    secret,
     token,
     booking,
   });
@@ -135,6 +134,20 @@ export const restore = async (secret: string) => {
 };
 
 // private helpers
+const getSecret = () => {
+  let secret = useApp.getState().secret;
+
+  if (!secret) {
+    secret = generateSecret();
+
+    useApp.setState({
+      secret,
+    });
+  }
+
+  return secret;
+};
+
 const generateSecret = () => {
   return getApi().generateSecret();
 };
