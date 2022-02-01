@@ -158,11 +158,7 @@ export const authenticate = async (
 ) => {
   let backup;
 
-  try {
-    backup = await restore(secret);
-  } catch (error) {
-    console.error(error);
-  }
+  backup = await restore(secret);
 
   useApp.setState(
     {

@@ -10,20 +10,16 @@ import { AppointmentCardSelector } from "./AppointmentCardSelector";
 
 interface AppointmentsListProps {
   date?: Dayjs;
-  providerId: string;
+  providerId: string | true;
 }
 
 export const AppointmentsList: React.FC<AppointmentsListProps> = ({
   providerId,
   date = dayjs(),
 }) => {
-  const appointments = suspend(
-    async () => {
-      return getAppointments(date);
-    },
-    [date, providerId],
-    { lifespan: 5 * 60 * 1000 /* 5 minutes cache in miliseconds */ }
-  );
+  const appointments = suspend(async () => {
+    return getAppointments(date);
+  }, [date]);
 
   const [filteredAppointments, setFilteredAppointments] = useState<
     AggregatedPublicAppointment[]
@@ -35,7 +31,7 @@ export const AppointmentsList: React.FC<AppointmentsListProps> = ({
     setFilteredAppointments(
       appointments.filter(
         (appointment) =>
-          appointment.provider.id === providerId &&
+          (providerId === true || appointment.provider.id === providerId) &&
           dayjs(appointment.startAt).isAfter(dayjs(date), "minute") &&
           (!vaccine || vaccine === appointment.vaccine)
       )

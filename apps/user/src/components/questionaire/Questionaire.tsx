@@ -27,10 +27,6 @@ export const Questionaire: React.FC = () => {
   const [valid, setValid] = useState<boolean>(false);
   const router = useRouter();
 
-  useEffect(() => {
-    setVaccine(undefined);
-  });
-
   const { watch, control, handleSubmit, resetField } = useForm({
     reValidateMode: "onChange",
     resolver,
@@ -53,6 +49,7 @@ export const Questionaire: React.FC = () => {
     const subscription = watch((values, { name, type }) => {
       // reset global error
       setError(false);
+      setVaccine(undefined);
 
       // reset later fields
       if (type === "change") {
@@ -76,11 +73,13 @@ export const Questionaire: React.FC = () => {
           case "q4": {
             if (values["q4"] === true) {
               setVaccine(undefined);
-            } else {
-              setVaccine("biontech");
             }
           }
         }
+      }
+
+      if (values["q4"] === false) {
+        setVaccine("biontech");
       }
 
       setValid(values["q3"] === false || values["q4"] === false || false);

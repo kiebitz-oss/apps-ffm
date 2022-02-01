@@ -76,7 +76,9 @@ const AppointmentStep: NextPage = () => {
               id: "user.finder.appointment.provider.placeholder",
               message: "Beliebige Impfstelle",
             })}
-            value={provider.name}
+            value={
+              provider !== true && provider?.name ? provider.name : undefined
+            }
             onChange={handleResetProvider}
             className="flex-1"
           />
@@ -103,7 +105,10 @@ const AppointmentStep: NextPage = () => {
       </div>
 
       <Suspense fallback={null}>
-        <AppointmentsList date={date} providerId={provider.id} />
+        <AppointmentsList
+          date={date}
+          providerId={provider === true ? true : provider.id}
+        />
       </Suspense>
     </Page>
   );

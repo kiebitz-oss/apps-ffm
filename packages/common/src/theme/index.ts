@@ -1,8 +1,5 @@
 import logoUrl from "../assets/ffm-logo.svg";
-// import Imprint from "../assets/imprint.page.mdx";
 import type { Theme } from "./Theme";
-
-// console.log(Imprint);
 
 export const theme: Theme = {
   title: "Frankfurt",
