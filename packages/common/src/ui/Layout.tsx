@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
 import { Footer, Header } from "./page";
 
@@ -12,6 +13,7 @@ interface LayoutProps {
 
 const ErrorBoundary: React.FC = ({ children }) => {
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const promiseRejectionHandler = useCallback((event) => {
     setError(event.reason);
@@ -19,7 +21,10 @@ const ErrorBoundary: React.FC = ({ children }) => {
 
   const resetError = useCallback(() => {
     setError("");
-  }, []);
+    window.sessionStorage.clear();
+    window.localStorage.clear();
+    router.push("/");
+  }, [router]);
 
   useEffect(() => {
     window.addEventListener("unhandledrejection", promiseRejectionHandler);
@@ -32,9 +37,11 @@ const ErrorBoundary: React.FC = ({ children }) => {
 
   return error ? (
     <React.Fragment>
-      <h1 style={{ color: "red" }}>{error.toString()}</h1>
+      <h1 className="h1">Ein Fehler ist aufgetreten</h1>
 
-      <button type="button" onClick={resetError}>
+      <p className="mb-8">{error.toString()}</p>
+
+      <button type="button" className="button primary md" onClick={resetError}>
         Reset
       </button>
     </React.Fragment>
@@ -58,18 +65,18 @@ export const Layout: React.FC<LayoutProps> = ({
   }, [locale]);
 
   return (
-    <ErrorBoundary>
+    <>
       <Header mobile={footer}>
         <HeaderContent locale={locale} setLocale={setLocale} />
       </Header>
 
-      {children}
+      <ErrorBoundary>{children}</ErrorBoundary>
 
       {FooterContent && (
         <Footer>
           <FooterContent locale={locale} setLocale={setLocale} />
         </Footer>
       )}
-    </ErrorBoundary>
+    </>
   );
 };
