@@ -14,11 +14,11 @@ export const getApi = () => {
   return api;
 };
 
-type useApp = {
+type AppState = {
   keyPairs?: MediatorKeyPairs;
 };
 
-export const useApp = create<useApp>(
+export const useApp = create<AppState>(
   persist(() => ({}), {
     name: "mediator:app",
   })

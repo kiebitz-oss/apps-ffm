@@ -26,13 +26,13 @@ export const getApi = () => {
   return !userApi ? (userApi = new UserApi<Vaccine>(getApiConfig())) : userApi;
 };
 
-type useApp = {
+type AppState = {
   booking?: Booking<Vaccine>;
   secret?: string;
   token?: UserQueueToken;
 };
 
-export const useApp = create<useApp>(
+export const useApp = create<AppState>(
   persist(() => ({}), {
     name: "user:app",
     partialize: (state) =>
