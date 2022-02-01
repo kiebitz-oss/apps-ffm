@@ -91,7 +91,6 @@ importers:
       postcss-import: ^14.0.2
       react: ^17
       react-dom: ^17
-      react-error-boundary: ^3.1.4
       react-hook-form: ^7.25.3
       react-use: ^17.3.2
       suspend-react: ^0.0.8
@@ -123,7 +122,6 @@ importers:
       postcss-import: 14.0.2_postcss@8.4.5
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-error-boundary: 3.1.4_react@17.0.2
       react-hook-form: 7.25.3_react@17.0.2
       react-use: 17.3.2_react-dom@17.0.2+react@17.0.2
       suspend-react: 0.0.8_react@17.0.2
@@ -206,7 +204,6 @@ importers:
       postcss-import: ^14.0.2
       react: ^17
       react-dom: ^17
-      react-error-boundary: ^3.1.4
       react-hook-form: ^7.25.3
       react-use: ^17.3.2
       suspend-react: ^0.0.8
@@ -239,7 +236,6 @@ importers:
       postcss-import: 14.0.2_postcss@8.4.5
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-error-boundary: 3.1.4_react@17.0.2
       react-hook-form: 7.25.3_react@17.0.2
       react-use: 17.3.2_react-dom@17.0.2+react@17.0.2
       suspend-react: 0.0.8_react@17.0.2
@@ -325,7 +321,6 @@ importers:
       postcss-import: ^14.0.2
       react: ^17
       react-dom: ^17
-      react-error-boundary: ^3.1.4
       react-hook-form: ^7.25.3
       react-use: ^17.3.2
       suspend-react: ^0.0.8
@@ -359,7 +354,6 @@ importers:
       postcss-import: 14.0.2_postcss@8.4.5
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-error-boundary: 3.1.4_react@17.0.2
       react-hook-form: 7.25.3_react@17.0.2
       react-use: 17.3.2_react-dom@17.0.2+react@17.0.2
       suspend-react: 0.0.8_react@17.0.2
@@ -13490,6 +13484,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.7
       react: 17.0.2
+    dev: true
 
   /react-fast-compare/3.2.0:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}

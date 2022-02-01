@@ -1,4 +1,12 @@
-import { Link, Page, PageHeader, SecretBox, Text, Title } from "@impfen/common";
+import {
+  addNotification,
+  Link,
+  Page,
+  PageHeader,
+  SecretBox,
+  Text,
+  Title,
+} from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { BackupDataLink } from "components";
 import type { NextPage } from "next";
@@ -12,13 +20,17 @@ const OnboardingBackupPage: NextPage = () => {
   const [blob, setBlob] = useState<Blob | null>(null);
 
   useEffect(() => {
-    backup().then(() => {
-      setBlob(
-        new Blob([new TextEncoder().encode(JSON.stringify(state.keyPairs))], {
-          type: "application/octet-stream",
-        })
-      );
-    });
+    backup()
+      .then(() => {
+        setBlob(
+          new Blob([new TextEncoder().encode(JSON.stringify(state.keyPairs))], {
+            type: "application/octet-stream",
+          })
+        );
+      })
+      .catch(() => {
+        addNotification("Erstellung des Backups fehlgeschlagen.");
+      });
   }, [state.keyPairs]);
 
   if (!state.secret || !state.keyPairs) {

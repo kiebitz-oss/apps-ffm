@@ -247,4 +247,4 @@ const publishAppointments = (
   return getApi().publishAppointments(unpublishedAppointments, getKeyPairs());
 };
 
-const reset = () => useApp.setState({}, true);
+export const reset = () => useApp.setState({}, true);

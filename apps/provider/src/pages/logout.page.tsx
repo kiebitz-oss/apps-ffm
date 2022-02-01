@@ -1,4 +1,5 @@
 import {
+  addNotification,
   Button,
   CopyToClipboardButton,
   Page,
@@ -25,18 +26,22 @@ const LogOutPage: NextPage = () => {
   }, [router]);
 
   useEffect(() => {
-    backup().then(({ keyPairs, secret }) => {
-      setSecret(secret);
-      setBlob(
-        new Blob([new TextEncoder().encode(JSON.stringify(keyPairs))], {
-          type: "application/octet-stream",
-        })
-      );
-    });
+    backup()
+      .then(({ keyPairs, secret }) => {
+        setSecret(secret);
+        setBlob(
+          new Blob([new TextEncoder().encode(JSON.stringify(keyPairs))], {
+            type: "application/octet-stream",
+          })
+        );
+      })
+      .catch(() => {
+        addNotification("Backup fehlgeschlagen");
+      });
   }, []);
 
   return (
-    <Page>
+    <Page narrow>
       <PageHeader
         title={t({
           id: "provider.logout.title",
@@ -52,36 +57,34 @@ const LogOutPage: NextPage = () => {
         </Trans>
       </Text>
 
-      <div className="max-w-3xl">
-        <div className="mb-2">
-          <Title variant="book" as="h3">
-            <Trans id="provider.logout.secret.title">Ihr Sicherheitscode</Trans>
-          </Title>
-          {secret && <SecretBox secret={secret} copy />}
-        </div>
-
-        {secret && (
-          <div className="flex flex-row justify-between pb-8">
-            <CopyToClipboardButton
-              toCopy={secret}
-              className="button sm secondary"
-            >
-              <Trans id="provider.logout.secret.copy">
-                Datenschlüssel kopieren
-              </Trans>
-            </CopyToClipboardButton>
-
-            <BackupDataLink
-              blob={blob}
-              providerName="~IMPFSTELLE 3000~"
-              downloadText={t({
-                id: "provider.logout.download-backup",
-                message: "Sicherungsdatei herunterladen",
-              })}
-            />
-          </div>
-        )}
+      <div className="mb-2">
+        <Title variant="book" as="h3">
+          <Trans id="provider.logout.secret.title">Ihr Sicherheitscode</Trans>
+        </Title>
+        {secret && <SecretBox secret={secret} copy />}
       </div>
+
+      {secret && (
+        <div className="flex flex-row justify-between pb-8">
+          <CopyToClipboardButton
+            toCopy={secret}
+            className="button sm secondary"
+          >
+            <Trans id="provider.logout.secret.copy">
+              Datenschlüssel kopieren
+            </Trans>
+          </CopyToClipboardButton>
+
+          <BackupDataLink
+            blob={blob}
+            providerName="~IMPFSTELLE 3000~"
+            downloadText={t({
+              id: "provider.logout.download-backup",
+              message: "Sicherungsdatei herunterladen",
+            })}
+          />
+        </div>
+      )}
 
       <Button onClick={logOut}>
         <Trans id="provider.logout.button">Abmelden</Trans>

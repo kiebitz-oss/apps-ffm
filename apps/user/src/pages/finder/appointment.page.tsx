@@ -1,5 +1,5 @@
 import { Edit24 } from "@carbon/icons-react";
-import { InputField, Link, PageHeader } from "@impfen/common";
+import { InputField, Link, Page, PageHeader } from "@impfen/common";
 import { t } from "@lingui/macro";
 import { AppointmentsList } from "components/finder";
 import dayjs, { Dayjs } from "dayjs";
@@ -52,7 +52,7 @@ const AppointmentStep: NextPage = () => {
   }
 
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "user.finder.appointment.title",
@@ -105,7 +105,7 @@ const AppointmentStep: NextPage = () => {
       <Suspense fallback={null}>
         <AppointmentsList date={date} providerId={provider.id} />
       </Suspense>
-    </main>
+    </Page>
   );
 };
 

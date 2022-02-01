@@ -11,11 +11,11 @@ const OnboardingIndexPage: NextPage = () => {
   const router = useRouter();
   const provider = useOnboarding((state) => state.provider);
 
-  const onSubmit: SubmitHandler<ProviderInput> = (data) => {
+  const onSubmit: SubmitHandler<ProviderInput> = async (data) => {
     setProvider(data);
 
     // we redirect to the 'verify' step
-    router.push(`/onboarding/verify`);
+    await router.push(`/onboarding/verify`);
   };
 
   return (
