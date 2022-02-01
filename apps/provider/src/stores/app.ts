@@ -137,11 +137,15 @@ export const register = async (
 
   const keyPairs = await api.generateKeyPairs();
   const secret = await api.generateSecret();
-  const unverifiedProvider = await storeProvider(providerInput, signupCode);
 
   useApp.setState({
     keyPairs,
     secret,
+  });
+
+  const unverifiedProvider = await storeProvider(providerInput, signupCode);
+
+  useApp.setState({
     unverifiedProvider,
   });
 
