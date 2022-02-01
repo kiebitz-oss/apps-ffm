@@ -1,11 +1,11 @@
-import { PageHeader, Text } from "@impfen/common";
+import { Page, PageHeader, Text } from "@impfen/common";
 import { t, Trans } from "@lingui/macro";
 import { Questionaire } from "components";
 import type { NextPage } from "next";
 
 const IndexPage: NextPage = () => {
   return (
-    <main>
+    <Page>
       <PageHeader
         title={t({
           id: "user.welcome.title",
@@ -27,7 +27,7 @@ const IndexPage: NextPage = () => {
       </Text>
 
       <Questionaire />
-    </main>
+    </Page>
   );
 };
 

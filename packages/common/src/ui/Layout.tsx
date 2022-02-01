@@ -1,5 +1,4 @@
-import Head from "next/head";
-import { title } from "process";
+import { useEffect } from "react";
 import { Footer, Header } from "./page";
 
 interface LayoutProps {
@@ -21,12 +20,12 @@ export const Layout: React.FC<LayoutProps> = ({
   const HeaderContent = header;
   const FooterContent = footer;
 
+  useEffect(() => {
+    document.documentElement.setAttribute("lang", locale);
+  }, [locale]);
+
   return (
     <>
-      <Head>
-        <title>{title}</title>
-      </Head>
-
       <Header mobile={footer}>
         <HeaderContent locale={locale} setLocale={setLocale} />
       </Header>

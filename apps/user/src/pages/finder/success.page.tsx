@@ -1,7 +1,15 @@
 import { GeneratePdf16 } from "@carbon/icons-react";
-import { Button, Link, Text, Title, Vaccine, vaccines } from "@impfen/common";
+import {
+  Button,
+  Link,
+  Page,
+  Text,
+  Title,
+  Vaccine,
+  vaccines,
+} from "@impfen/common";
 import { i18n } from "@lingui/core";
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { AppointmentCard } from "components/finder";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -17,16 +25,26 @@ const SuccessStep: NextPage = () => {
     async (event) => {
       event.preventDefault();
 
-      if (!booking) {
-        console.error("could not find booking");
+      if (
+        confirm(
+          t({
+            id: "user.finder.success.cancelation-confirm",
+            message:
+              "Sind Sie sicher, dass Sie den gebuchten Termin absagen wollen?",
+          })
+        )
+      ) {
+        if (!booking) {
+          console.error("could not find booking");
+          await router.push("/finder");
+
+          return null;
+        }
+
+        await cancelBooking(booking);
+
         await router.push("/finder");
-
-        return null;
       }
-
-      await cancelBooking(booking);
-
-      await router.push("/finder");
     },
     [booking, router]
   );
@@ -39,7 +57,7 @@ const SuccessStep: NextPage = () => {
   }
 
   return (
-    <main>
+    <Page>
       <article className="flex flex-col gap-14">
         <section className="flex flex-col gap-8">
           <Title variant="h1" as="h2" className="mx-4 mb-4 md:mx-0">
@@ -213,7 +231,7 @@ const SuccessStep: NextPage = () => {
           </ul>
         </section>
       </article>
-    </main>
+    </Page>
   );
 };
 

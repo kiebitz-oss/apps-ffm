@@ -29,7 +29,7 @@ class Document extends NextDocument {
 
   render() {
     return (
-      <Html dir="ltr">
+      <Html lang="de" dir="ltr">
         <Head>
           <meta httpEquiv="Content-Security-Policy" content={this.csp} />
           <link rel="icon" href="/favicon.svg" />

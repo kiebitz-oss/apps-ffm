@@ -40,7 +40,7 @@ export const AppointmentsList: React.FC<AppointmentsListProps> = ({
           (!vaccine || vaccine === appointment.vaccine)
       )
     );
-  }, [appointments, providerId, date]);
+  }, [appointments, providerId, date, vaccine]);
 
   if (dayjs(date).isBefore(dayjs(), "minutes")) {
     return (

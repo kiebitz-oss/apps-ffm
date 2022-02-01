@@ -211,7 +211,7 @@ export const backup = async () => {
 
   const providerData = await getProviderData();
 
-  const x = await api.backupData(
+  await api.backupData(
     {
       unverifiedProvider: state.unverifiedProvider || undefined,
       verifiedProvider: providerData.verifiedProvider || undefined,
@@ -230,6 +230,17 @@ export const restore = async (secret: string) => {
 };
 
 // Private helpers
+const setKeyPairs = async (keyPairs: ProviderKeyPairs) => {
+  // checks if a keyPair is valid
+  const isValid = await getApi().isValidKeyPairs(keyPairs);
+
+  if (!isValid) {
+    throw new AuthError("Please authenticate");
+  }
+
+  return useApp.setState({ keyPairs });
+};
+
 const publishAppointments = (
   unpublishedAppointments: UnpublishedPublicAppointment<Vaccine>[]
 ) => {
