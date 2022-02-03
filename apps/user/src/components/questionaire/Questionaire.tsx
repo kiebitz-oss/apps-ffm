@@ -44,6 +44,7 @@ export const Questionaire: React.FC = () => {
   const q2Value = watch("q2");
   const q3Value = watch("q3");
   const q4Value = watch("q4");
+  const q5Value = watch("q5");
 
   useEffect(() => {
     const subscription = watch((values, { name, type }) => {
@@ -82,7 +83,16 @@ export const Questionaire: React.FC = () => {
         setVaccine("biontech");
       }
 
-      setValid(values["q3"] === false || values["q4"] === false || false);
+      if (values["q5"] === false) {
+        setVaccine("biontechchildren");
+      }
+
+      setValid(
+        values["q3"] === false ||
+          values["q4"] === false ||
+          values["q5"] === false ||
+          false
+      );
     });
 
     return () => subscription.unsubscribe();
@@ -133,7 +143,6 @@ export const Questionaire: React.FC = () => {
           condition={
             (q1Value === false || q2Value === true) && q3Value === true
           }
-          error={q4Value === true}
           control={control}
           errorMessage={t({
             id: "user.welcome.question4_error",
@@ -143,6 +152,22 @@ export const Questionaire: React.FC = () => {
         >
           <Trans id="user.welcome.question4_value">
             Sind Sie jünger als 12?
+          </Trans>
+        </QuestionaireBox>
+
+        <QuestionaireBox
+          name="q5"
+          condition={q4Value === true}
+          error={q5Value === true}
+          control={control}
+          errorMessage={t({
+            id: "user.welcome.question5_error",
+            message:
+              "Leider gibt es aktuell (noch) keine Termine für Kinder unter 5 Jahren über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld.",
+          })}
+        >
+          <Trans id="user.welcome.question5_value">
+            Sind Sie jünger als 5?
           </Trans>
         </QuestionaireBox>
       </div>
