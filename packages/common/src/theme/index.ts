@@ -1,16 +1,16 @@
-import logoUrl from "../assets/ffm-logo.svg";
+import logoUrl from "../assets/demo-logo.svg";
 import type { Theme } from "./Theme";
 
 export const theme: Theme = {
-  title: "Frankfurt",
-  supportEmail: "impfen@frankfurt.de",
-  logoAlt: "Impfen in Frankfurt",
+  title: "Impfterm.in",
+  supportEmail: "impftermin@inoeg.de ",
+  logoAlt: "Impfterm.in",
   logoUrl,
   meta: {
-    title: "Impfen Frankfurt",
-    siteName: "Impfen Frankfurt",
-    description: "Impfen Frankfurt dies das dinge...",
-    url: "https://impfen-frankfurt.de",
+    title: "Impfterm.in",
+    siteName: "Impfterm.in",
+    description: "Impfterm.in",
+    url: "https://impfterm.in",
     type: "website",
     robots: "follow, index",
     image: "",

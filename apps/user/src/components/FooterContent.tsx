@@ -1,6 +1,6 @@
 import { Link, Title } from "@impfen/common";
-import gaFfmUrl from "@impfen/common/assets/ga-ffm-logo.svg";
-import stadtFfmUrl from "@impfen/common/assets/stadt-ffm-logo.svg";
+// import gaFfmUrl from "@impfen/common/assets/ga-ffm-logo.svg";
+// import stadtFfmUrl from "@impfen/common/assets/stadt-ffm-logo.svg";
 import { Trans } from "@lingui/macro";
 import { useRouter } from "next/router";
 
@@ -112,7 +112,7 @@ export const FooterContent: React.FC<FooterContentContent> = ({
       </section>
 
       <section className="hidden flex-col gap-4 items-center mt-auto mb-8 sm:flex sm:flex-[1] sm:justify-center sm:my-0 xl:flex-[2]">
-        <Link href="https://frankfurt.de/" external>
+        {/* <Link href="https://frankfurt.de/" external>
           <img
             width="300"
             src={stadtFfmUrl}
@@ -130,7 +130,7 @@ export const FooterContent: React.FC<FooterContentContent> = ({
             alt="Gesundheitsamt Frankfurt"
             className="max-w-[70vw] md:max-w-[200px] lg:max-w-[300px]"
           />
-        </Link>
+        </Link> */}
       </section>
     </>
   );
