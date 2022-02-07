@@ -25,7 +25,7 @@ const AppointmentStep: NextPage = () => {
 
   const handleDateChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     async (event) => {
-      setDate(dayjs(event.currentTarget.value));
+      setDate(dayjs(event.currentTarget.value || new Date()));
     },
     [setDate]
   );
@@ -97,7 +97,7 @@ const AppointmentStep: NextPage = () => {
             id: "user.finder.appointment.time.placeholder",
             message: "Beliebige Zeit",
           })}
-          onChange={handleDateChange}
+          onBlur={handleDateChange}
           min={date.format("YYYY-MM-DDTHH:mm")}
           max={date.add(30, "days").format("YYYY-MM-DDTHH:mm")}
           defaultValue={date.add(5, "minute").format("YYYY-MM-DDTHH:mm")}
