@@ -25,7 +25,7 @@ const AppointmentStep: NextPage = () => {
 
   const handleDateChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     async (event) => {
-      setDate(dayjs(event.currentTarget.value || new Date()));
+      setDate(dayjs(event.currentTarget.value || new Date()));
     },
     [setDate]
   );
