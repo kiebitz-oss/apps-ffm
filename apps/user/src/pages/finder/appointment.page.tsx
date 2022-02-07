@@ -98,7 +98,7 @@ const AppointmentStep: NextPage = () => {
             message: "Beliebige Zeit",
           })}
           onBlur={handleDateChange}
-          min={date.format("YYYY-MM-DDTHH:mm")}
+          min={dayjs().format("YYYY-MM-DDTHH:mm")}
           max={date.add(30, "days").format("YYYY-MM-DDTHH:mm")}
           defaultValue={date.add(5, "minute").format("YYYY-MM-DDTHH:mm")}
         />
