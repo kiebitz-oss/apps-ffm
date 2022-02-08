@@ -11,10 +11,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.11-dev\n"
 
-#: components/NavContent.tsx:80
-msgid "common.footer.link.imprint"
-msgstr "Mentions légales"
-
 #: components/NavContent.tsx:44
 msgid "common.footer.title.languages"
 msgstr "Langue"
