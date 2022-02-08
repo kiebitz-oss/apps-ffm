@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-17 20:33+0100\n"
-"PO-Revision-Date: 2022-01-23 23:53+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2022-02-09 17:54+0000\n"
+"Last-Translator: Tobias Opialla <tobias.opialla@inoeg.de>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/kiebitz/mediator/"
 "en/>\n"
 "Language: en\n"
@@ -15,13 +15,13 @@ msgstr ""
 "X-Generator: Weblate 4.11-dev\n"
 
 msgid "Ja"
-msgstr ""
+msgstr "Yes"
 
 msgid "Nein"
-msgstr ""
+msgstr "No"
 
 msgid "mediator.download-backup-data"
-msgstr ""
+msgstr "Download backup file"
 
 msgid "mediator.logged-out.log-in-again"
 msgstr "Log in"
@@ -51,10 +51,10 @@ msgid "mediator.provider-row.valid"
 msgstr "confirmed"
 
 msgid "mediator.provider-show.accessible"
-msgstr ""
+msgstr "Barrier-free access?"
 
 msgid "mediator.provider-show.button-show"
-msgstr ""
+msgstr "Confirm vaccination site"
 
 msgid "mediator.provider-show.city"
 msgstr "Place"
@@ -72,7 +72,7 @@ msgid "mediator.provider-show.name"
 msgstr "Name"
 
 msgid "mediator.provider-show.notification.success"
-msgstr ""
+msgstr "Vaccination site confirmed"
 
 msgid "mediator.provider-show.street"
 msgstr "Street"
@@ -87,7 +87,7 @@ msgid "mediator.provider-show.verified"
 msgstr "Verified?"
 
 msgid "mediator.provider-show.website"
-msgstr ""
+msgstr "Website"
 
 msgid "mediator.provider-show.zip-code"
 msgstr "Postal code"
@@ -108,10 +108,10 @@ msgid "mediator.providers.title"
 msgstr "Show vaccination sites"
 
 msgid "mediator.welcome.title-authenticated"
-msgstr ""
+msgstr "Welcome!"
 
 msgid "mediator.welcome.title-unauthenticated"
-msgstr ""
+msgstr "Log in as mediator"
 
 msgid "mediator.welcome.upload-key-pairs"
 msgstr "Load backup file"
