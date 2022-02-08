@@ -157,13 +157,30 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
           <fieldset className="flex flex-col gap-6">
             <legend className="mb-8">
               <Title variant="h3">
+              	<Trans id="provider.onboarding.settings-description">Weitere Einstellungen</Trans>
+              </Title>
+            </legend>
+
+            <SwitchField
+              label={t({
+                id: "provider.onboarding.accessible.label",
+                message: "Barrierefreier Zugang zur Praxis/zum Impfzentrum",
+              })}
+              {...register("accessible")}
+            />
+          </fieldset>
+        </div>
+
+          <fieldset className="flex flex-col gap-6">
+            <legend className="mb-8">
+              <Title variant="h3">
                 <Trans id="provider.onboarding.data-title">Kontaktdaten</Trans>
               </Title>
 
               <Text>
                 <Trans id="provider.onboarding.data-description">
                   Die folgenden Kontaktdaten dienen ausschließlich zur
-                  Kommunikation mit dem Support-Team.
+                  Kommunikation mit dem Support-Team. Diese werden nicht öffentlich angezeigt.
                 </Trans>
               </Text>
             </legend>
@@ -183,26 +200,6 @@ export const ProviderForm: React.FC<ProviderFormProps> = ({
               })}
             />
           </fieldset>
-
-          <fieldset className="flex flex-col gap-6">
-            <legend className="mb-8">
-              <Title variant="h3">Einstellungen</Title>
-              <Text>
-                <Trans id="provider.onboarding.settings-description">
-                  Weitere Einstellungen
-                </Trans>
-              </Text>
-            </legend>
-
-            <SwitchField
-              label={t({
-                id: "provider.onboarding.accessible.label",
-                message: "Barrierefreier Zugang zur Praxis/zum Impfzentrum",
-              })}
-              {...register("accessible")}
-            />
-          </fieldset>
-        </div>
 
         <div>
           <FormSubmitButton formState={formState}>
