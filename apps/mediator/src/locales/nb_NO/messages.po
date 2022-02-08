@@ -91,10 +91,6 @@ msgstr "Tilbyderliste"
 msgid "mediator.providers-list.status"
 msgstr "Status"
 
-#: pages/UnconfirmProviderModal.tsx:59
-msgid "mediator.providers.unconfirm-modal.value"
-msgstr "Verdi"
-
 #: pages/index.page.tsx:63
 msgid "mediator.welcome.upload-key-pairs"
 msgstr "Last inn sikkerhetskopifil"
