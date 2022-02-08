@@ -13,7 +13,7 @@ export const HeaderContent: React.FC<HeaderContentProps> = () => {
       {isAuthenticated ? (
         <NavLink href="/providers">
           <UserMultiple16 />
-          <Trans id="header.nav.link.providers">Impfanbieter</Trans>
+          <Trans id="header.nav.link.providers">Übersicht Impfstellen</Trans>
         </NavLink>
       ) : null}
 
