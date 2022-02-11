@@ -2,21 +2,20 @@
 @import "../../ui.css";
 
 :root {
-  --font-sans: "IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif";
-  --font-mono: var(--font-sand);
-  --font-body: var(--font-sand);
-  --font-title: var(--font-sand);
+  
 
-  --primary: purple;
-  --link: purple;
-  --link-visited: darkorange;
-  --link-hover: darkorange;
+  --primary: #01ffa8;
+  --highlight: #01ffa8;
+  --link: var(--primary);
+  --link-hover: var(--highlight);
   --black: #1b1b1b;
   --white: white;
   --page-bg: #f3f4f6;
-  --error: darkred;
-  --error-bg: red;
+
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif";
 }
+
+
 
 /*
   colors: {
