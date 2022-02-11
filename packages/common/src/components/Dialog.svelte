@@ -8,7 +8,7 @@
   export let ignoreEscape = false;
   export let ignoreClickOutside = false;
 
-  const dispatch = createEventDispatcher<{ close }>();
+  const dispatch = createEventDispatcher<{ close: never }>();
 
   let ref: HTMLDivElement;
 

@@ -134,7 +134,7 @@ export const isAuthenticated = () => {
   return keyPairs && secret;
 };
 
-export const isValidated = () => {
+export const isVerified = () => {
   if (!keyPairs) {
     return false;
   }

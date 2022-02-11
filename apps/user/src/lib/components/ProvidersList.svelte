@@ -62,7 +62,7 @@
     </li>
   {/if}
 
-  {#each filteredProviders as provider, id (provider.id)}
+  {#each filteredProviders as provider}
     <li aria-label={provider.name}>
       <a
         href="/finder/appointment"

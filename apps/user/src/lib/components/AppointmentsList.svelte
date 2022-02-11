@@ -91,7 +91,7 @@
     id="appointments-list"
     aria-label={$t("user.appointments-list.list-of-appointments")}
   >
-    {#each filteredAppointments as appointment, id (appointment.id)}
+    {#each filteredAppointments as appointment}
       {@const handler = () => handleSelectAppointment(appointment)}
       <li>
         <a href="/finder/verify" on:click|preventDefault={handler}>

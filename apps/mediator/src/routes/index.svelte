@@ -38,7 +38,7 @@
             console.error(error);
           });
 
-          await addNotification(
+          addNotification(
             $t("mediator.welcome.login.notification.success"),
             NotificationType.SUCCESS
           );

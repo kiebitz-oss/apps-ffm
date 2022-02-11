@@ -6,6 +6,10 @@
     "index.js",
     "supported-browsers.js"
   ],
+  "exports": {
+    "./supported-browsers.js": "./supported-browsers.js",
+    ".": "./index.js"
+  },
   "scripts": {
     "postinstall": "echo \"export const supportedBrowsers = $(browserslist-useragent-regexp --allowHigherVersions);\" > supported-browsers.js"
   },

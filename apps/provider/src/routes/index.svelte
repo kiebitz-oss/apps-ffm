@@ -47,7 +47,6 @@
   $: if ($keyPairs) {
     goto("/schedule").catch((error) => {
       console.error(error);
-      addNotification("ERROR...");
     });
   }
 </script>

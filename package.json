@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@impfen/browserslist-config": "workspace:^1.0.0",
-    "@impfen/stylelint-config": "workspace:^1.0.0",
     "@impfen/postcss-config": "workspace:^1.0.0",
+    "@impfen/stylelint-config": "workspace:^1.0.0",
     "browserslist": "^4.19.1",
     "jest": "^27.5.1",
     "postcss": "^8.4.6",
@@ -48,7 +48,7 @@
     "postcss-preset-env": "^7.3.1",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.6.0",
-    "stylelint": "^14.4.0",
+    "stylelint": "^14.5.0",
     "stylelint-config-recommended": "^7.0.0",
     "stylelint-no-unsupported-browser-features": "^5.0.2",
     "svelte": "^3.46.4"

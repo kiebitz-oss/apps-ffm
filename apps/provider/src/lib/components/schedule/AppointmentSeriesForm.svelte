@@ -11,8 +11,6 @@
   import { locale, t } from "svelte-intl-precompile";
   import type { PublicAppointment } from "vanellus";
 
-  export let onSuccess: () => void | undefined = undefined;
-
   let startDate = dayjs()
     .utc()
     .add(1, "day")
