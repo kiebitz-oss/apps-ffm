@@ -1,12 +1,7 @@
-/* @import 'normalize.css';
-@import 'sanitize.css';
-@import 'sanitize.css/forms';
-@import 'sanitize.css/assets'; */
-
 /* base */
-@import "styles/__normalize.css";
-@import "styles/tokens.css";
-@import "styles/__media.css";
+@import "@impfen/common/styles/normalize.css";
+@import "@impfen/common/tokens.css";
+@import "styles/media.css";
 @import "styles/_layout.css";
 @import "styles/_typography.css";
 

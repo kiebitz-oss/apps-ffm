@@ -33,7 +33,8 @@
     "typecheck": "pnpm run typecheck --parallel --recursive --if-present",
     "docker": "docker run -p 3000:3000 -it apps-inoeg:main",
     "docker:build": "docker build . -f Dockerfile -t apps-inoeg:main",
-    "docker:build:dev": "docker-compose build"
+    "docker:build:dev": "docker-compose build",
+    "docker:import-mediator-key": " docker exec -it impfen-backend-1 ./kiebitz admin mediators upload /settings/secret-mediator-keys.json"
   },
   "devDependencies": {
     "@impfen/browserslist-config": "workspace:^1.0.0",
