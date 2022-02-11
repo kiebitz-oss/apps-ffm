@@ -20,7 +20,7 @@
   "user.questionaire.error.default": "Ihre letzte Impfung muss mehr. Bitte haben Sie Verständnis für die aktuellen Regeln. Diese können sich ändern, bleiben Sie informiert.",
   "user.welcome.question1_value": "Handelt es sich um eine Booster-Impfung?",
   "user.welcome.question2_value": "Liegt Ihre letzte Impfung mehr als 3 Monate zurück?",
-  "user.welcome.question3_value": "Sind sie schwanger oder jünger als 30?",
+  "user.welcome.question3_value": "Sind sie schwanger?",
   "user.welcome.question4_value": "Sind Sie jünger als 12?",
   "user.welcome.question4_error": "Leider gibt es aktuell (noch) keine Termine für Kinderimpfungen über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld.",
   "user.welcome.question5_error": "Leider gibt es aktuell (noch) keine Termine für Kinder unter 5 Jahren über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld.",
@@ -52,5 +52,11 @@
   "user.login.title": "Impfterminstatus prüfen",
   "user.login.label-secret": "Datenschlüssel",
   "user.welcome.button-submit": "Anmelden",
-  "user.finder.location.no-results": "Keine Impfstellen gefunden"
+  "user.finder.location.no-results": "Keine Impfstellen gefunden",
+  "user.welcome.question0_value": "Wie alt sind Sie bzw. die zu Impfende Person?",
+  "user.questionaire.age_5_or_below": "unter 5",
+  "user.questionaire.age_5_to_11": "5–12 Jahre",
+  "user.questionaire.age_12_to_18": "12–18 Jahre",
+  "user.questionaire.age_18_to_30": "18–30 Jahre",
+  "user.questionaire.age_30_or_above": "über 30 Jahre"
 }

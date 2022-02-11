@@ -8,6 +8,14 @@
   let valid = false;
   let error = false;
 
+  enum AGE_RANGES {
+    AGE_5_OR_BELOW = "age_5_or_below",
+    AGE_5_TO_11 = "age_5_to_11",
+    AGE_12_TO_17 = "age_12_to_17",
+    AGE_18_TO_29 = "age_age_18_to_29",
+    AGE_30_OR_ABOVE = "age_30_or_above",
+  }
+
   const handleSubmit: svelte.JSX.EventHandler<
     SubmitEvent,
     HTMLFormElement
@@ -23,53 +31,59 @@
   const q1Value = writable<boolean | undefined>();
   const q2Value = writable<boolean | undefined>();
   const q3Value = writable<boolean | undefined>();
-  const q4Value = writable<boolean | undefined>();
-  const q5Value = writable<boolean | undefined>();
+
+  q0Value.subscribe((value) => {
+    $q1Value = undefined;
+    $q2Value = undefined;
+    $q3Value = undefined;
+    $vaccine = undefined;
+    error = false;
+
+    if (value === AGE_RANGES.AGE_5_TO_11) {
+      $vaccine = "biontechchildren";
+    } else if (
+      $q0Value === AGE_RANGES.AGE_12_TO_17 ||
+      $q0Value === AGE_RANGES.AGE_18_TO_29
+    ) {
+      $vaccine = "biontech";
+    }
+  });
 
   q1Value.subscribe(() => {
     $q2Value = undefined;
     $q3Value = undefined;
-    $q4Value = undefined;
-    $q5Value = undefined;
-    $vaccine = undefined;
+
     error = false;
   });
 
   q2Value.subscribe(() => {
     $q3Value = undefined;
-    $q4Value = undefined;
-    $q5Value = undefined;
-    $vaccine = undefined;
+
     error = false;
   });
 
-  q3Value.subscribe(() => {
-    $q4Value = undefined;
-    $q5Value = undefined;
-    $vaccine = undefined;
-    error = false;
-  });
-
-  q4Value.subscribe((value) => {
-    $q5Value = undefined;
-    $vaccine = undefined;
+  q3Value.subscribe((value) => {
     error = false;
 
-    if (value === false) {
+    if (value === true) {
       $vaccine = "biontech";
-    }
-  });
-
-  q5Value.subscribe((value) => {
-    $vaccine = undefined;
-
-    if (value === false) {
-      $vaccine = "biontechchildren";
+    } else {
+      $vaccine = undefined;
     }
   });
 
   $: valid =
-    $q3Value === false || $q4Value === false || $q5Value === false || false;
+    $q0Value === AGE_RANGES.AGE_5_TO_11 ||
+    (($q0Value === AGE_RANGES.AGE_12_TO_17 ||
+      $q0Value === AGE_RANGES.AGE_18_TO_29) &&
+      $q1Value === false) ||
+    (($q0Value === AGE_RANGES.AGE_12_TO_17 ||
+      $q0Value === AGE_RANGES.AGE_18_TO_29) &&
+      $q2Value === true) ||
+    $q3Value !== undefined ||
+    false;
+
+  $: console.log($vaccine);
 </script>
 
 <form
@@ -80,7 +94,12 @@
   on:submit|preventDefault={handleSubmit}
 >
   <div class="stack-v gap-m">
-    <QuestionaireCard name="q0" value={q0Value}>
+    <QuestionaireCard
+      name="q0"
+      value={q0Value}
+      error={$q0Value === AGE_RANGES.AGE_5_OR_BELOW}
+      errorMessage={$t("user.welcome.question0_error")}
+    >
       {$t("user.welcome.question0_value")}
 
       <svelte:fragment slot="options">
@@ -89,9 +108,9 @@
             <input
               class="radio black l"
               type="radio"
-              id={`age-age_5_or_below`}
+              id={`age-${AGE_RANGES.AGE_5_OR_BELOW}`}
               name="age"
-              value="age_5_or_below"
+              value={AGE_RANGES.AGE_5_OR_BELOW}
               bind:group={$q0Value}
               required
             />
@@ -102,10 +121,10 @@
             <input
               class="radio black l"
               type="radio"
-              id={`age-age_5_to_11`}
+              id={`age-${AGE_RANGES.AGE_5_TO_11}`}
               name="age"
               bind:group={$q0Value}
-              value="age_5_to_11"
+              value={AGE_RANGES.AGE_5_TO_11}
             />
             {$t("user.questionaire.age_5_to_11")}
           </label>
@@ -114,10 +133,10 @@
             <input
               class="radio black l"
               type="radio"
-              id={`age-age_12_to_18`}
+              id={`age-${AGE_RANGES.AGE_12_TO_17}`}
               name="age"
               bind:group={$q0Value}
-              value="age_12_to_18"
+              value={AGE_RANGES.AGE_12_TO_17}
             />
             {$t("user.questionaire.age_12_to_18")}
           </label>
@@ -125,10 +144,10 @@
             <input
               class="radio black l"
               type="radio"
-              id={`age-age_18_to_30`}
+              id={`age-${AGE_RANGES.AGE_18_TO_29}`}
               name="age"
               bind:group={$q0Value}
-              value="age_18_to_30"
+              value={AGE_RANGES.AGE_18_TO_29}
             />
             {$t("user.questionaire.age_18_to_30")}
           </label>
@@ -136,10 +155,10 @@
             <input
               class="radio black l"
               type="radio"
-              id={`age-age_30_or_above`}
+              id={`age-${AGE_RANGES.AGE_30_OR_ABOVE}`}
               name="age"
               bind:group={$q0Value}
-              value="age_30_or_above"
+              value={AGE_RANGES.AGE_30_OR_ABOVE}
             />
             {$t("user.questionaire.age_30_or_above")}
           </label>
@@ -147,14 +166,18 @@
       </svelte:fragment>
     </QuestionaireCard>
 
+    <!-- is booster -->
     <QuestionaireCard
       name="q1"
       value={q1Value}
-      condition={$q0Value !== undefined}
+      condition={$q0Value === AGE_RANGES.AGE_12_TO_17 ||
+        $q0Value === AGE_RANGES.AGE_18_TO_29 ||
+        $q0Value === AGE_RANGES.AGE_30_OR_ABOVE}
     >
       {$t("user.welcome.question1_value")}
     </QuestionaireCard>
 
+    <!-- booster more than 3 month ago -->
     <QuestionaireCard
       name="q2"
       value={q2Value}
@@ -165,31 +188,14 @@
       {$t("user.welcome.question2_value")}
     </QuestionaireCard>
 
+    <!-- are you pregnant -->
     <QuestionaireCard
       name="q3"
       value={q3Value}
-      condition={$q1Value === false || $q2Value === true}
+      condition={$q0Value === AGE_RANGES.AGE_30_OR_ABOVE &&
+        ($q1Value === false || $q2Value === true)}
     >
       {$t("user.welcome.question3_value")}
-    </QuestionaireCard>
-
-    <QuestionaireCard
-      name="q4"
-      value={q4Value}
-      condition={($q1Value === false || $q2Value === true) && $q3Value === true}
-      errorMessage={$t("user.welcome.question4_error")}
-    >
-      {$t("user.welcome.question4_value")}
-    </QuestionaireCard>
-
-    <QuestionaireCard
-      name="q5"
-      condition={$q4Value === true}
-      error={$q5Value === true}
-      errorMessage={$t("user.welcome.question5_error")}
-      value={q5Value}
-    >
-      {$t("user.welcome.question5_value")}
     </QuestionaireCard>
   </div>
 

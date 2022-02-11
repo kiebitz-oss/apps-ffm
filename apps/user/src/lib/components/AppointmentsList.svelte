@@ -68,7 +68,7 @@
   </div>
 
   <div style="display: flex; flex-direction: column; align-items: flex-start; ">
-    <label for="provider" class="book">Datum ändern</label>
+    <label for="provider" class="book">Tag auswählen</label>
     <input
       name="date"
       type="datetime-local"
