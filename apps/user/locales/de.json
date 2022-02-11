@@ -51,5 +51,6 @@
   "user.menu.faq": "Fragen & Antworten",
   "user.login.title": "Impfterminstatus prüfen",
   "user.login.label-secret": "Datenschlüssel",
-  "user.welcome.button-submit": "Anmelden"
+  "user.welcome.button-submit": "Anmelden",
+  "user.finder.location.no-results": "Keine Impfstellen gefunden"
 }
