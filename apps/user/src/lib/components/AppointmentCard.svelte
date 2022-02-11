@@ -2,14 +2,13 @@
   import type { Vaccine } from "@impfen/common";
   import { vaccines } from "@impfen/common";
   import dayjs from "dayjs";
-  import { date, time } from "svelte-intl-precompile";
+  import { date, locale, time } from "svelte-intl-precompile";
   import type { AggregatedPublicAppointment } from "vanellus";
 
   export let appointment: AggregatedPublicAppointment;
   export let border = false;
 
-  const locale = "de";
-  const vaccine = vaccines[locale || "de"][appointment.vaccine as Vaccine];
+  const vaccine = vaccines[$locale][appointment.vaccine as Vaccine];
 </script>
 
 <article
@@ -33,17 +32,20 @@
   <!-- svelte-ignore component-name-lowercase -->
   <time>
     <div>
-      {$time(dayjs(appointment.startAt).toDate(), {
-        format: "short",
-      })}{" "}
-      Uhr
+      {$date(dayjs(appointment.startAt).toDate(), {
+        weekday: "short",
+        day: "2-digit",
+        month: "short",
+      })}
     </div>
 
     <div>
-      am{" "}
-      {$date(dayjs(appointment.startAt).toDate(), {
-        format: "short",
+      um
+      {$time(dayjs(appointment.startAt).toDate(), {
+        hour: "2-digit",
+        minute: "2-digit",
       })}
+      Uhr
     </div>
   </time>
 
