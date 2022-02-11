@@ -7,7 +7,7 @@
     "supported-browsers.js"
   ],
   "exports": {
-    "./supported-browsers.js": "./supported-browsers.js",
+    "./supported-browsers": "./supported-browsers.js",
     ".": "./index.js"
   },
   "scripts": {
