@@ -1,17 +1,25 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { login } from "$lib/api";
-  import { Content, Page, PageHeader } from "@impfen/common";
+  import {
+    addNotification,
+    Content,
+    NotificationType,
+    Page,
+    PageHeader,
+  } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
 
   let secret: string;
-  let isValid = undefined;
 
   const handleSubmit = async () => {
     await login(secret)
       .then(() => goto("/status"))
       .catch(() => {
-        isValid = false;
+        addNotification(
+          $t("user.login.notification.error"),
+          NotificationType.DANGER
+        );
       });
   };
 </script>
@@ -19,10 +27,6 @@
 <Page title={$t("user.login.page-title")}>
   <Content class="stack-v gap-m s">
     <PageHeader><h1 class="h1">{$t("user.login.title")}</h1></PageHeader>
-
-    {#if false === isValid}
-      ungültiger Schlüssel
-    {/if}
 
     <form
       name="login"

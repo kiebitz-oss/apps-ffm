@@ -9,13 +9,6 @@
   export let errorMessage = "";
 </script>
 
-<!-- class={clsx(
-  "flex flex-col gap-5 py-3 px-4 font-semibold bg-white rounded shadow-box sm:w-[500px]",
-  {
-    ["border-2 border-error"]: error,
-  }
-)} -->
-
 {#if condition}
   <div class="questionaire-card" aria-live="polite">
     <fieldset aria-errormessage={error ? `${name}-error` : undefined}>

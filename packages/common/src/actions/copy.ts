@@ -10,7 +10,7 @@ export const copy: Action<string> = (element, text) => {
             );
           })
           .catch((error) => {
-            console.log(error);
+            console.error(error);
           });
       } catch (error) {
         element.dispatchEvent(

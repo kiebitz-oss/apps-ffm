@@ -82,8 +82,6 @@
       $q2Value === true) ||
     $q3Value !== undefined ||
     false;
-
-  $: console.log($vaccine);
 </script>
 
 <form

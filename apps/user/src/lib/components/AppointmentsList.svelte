@@ -47,7 +47,9 @@
 
 <form id="filter-bar" class="stack-h mb-m">
   <div style="display: flex; flex-direction: column; align-items: flex-start;">
-    <label class="book" for="provider">Impfstelle ändern</label>
+    <label class="book" for="provider"
+      >{$t("user.appointments-list.title-provider")}</label
+    >
     <a href="/finder">
       <div class="field-group">
         <input
@@ -68,7 +70,9 @@
   </div>
 
   <div style="display: flex; flex-direction: column; align-items: flex-start; ">
-    <label for="provider" class="book">Tag auswählen</label>
+    <label for="provider" class="book"
+      >{$t("user.appointments-list.title-date")}</label
+    >
     <input
       name="date"
       type="datetime-local"

@@ -3,12 +3,8 @@
   import { logout } from "$lib/api";
   import { SecretBox } from "$lib/components";
   import { secret } from "$lib/stores";
-  import { Content, Page } from "@impfen/common";
+  import { addNotification, Content, Page } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
-
-  // $: if (!$secret) {
-  //   goto("/");
-  // }
 
   const handleLogout: svelte.JSX.EventHandler<
     MouseEvent,
@@ -17,6 +13,8 @@
     await logout();
 
     await goto("/");
+
+    addNotification($t("user.logout.notification.success"));
   };
 </script>
 

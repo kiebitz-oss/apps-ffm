@@ -3,8 +3,9 @@
   import { bookAppointment } from "$lib/api";
   import { AppointmentCard } from "$lib/components";
   import { appointment } from "$lib/stores";
-  import { Page, PageHeader } from "@impfen/common";
+  import { addNotification, Page, PageHeader } from "@impfen/common";
   import Content from "@impfen/common/src/components/Content.svelte";
+  import { t } from "svelte-intl-precompile";
 
   $: if (!$appointment) {
     goto("/finder").catch((error) => {
@@ -13,33 +14,38 @@
   }
 
   const handleBooking = async () => {
-    await bookAppointment($appointment)
-      .then(() => goto("/status"))
-      .catch((error) => {
-        console.error(error);
-      });
+    try {
+      await bookAppointment($appointment);
+
+      await goto("/status");
+
+      addNotification($t("user.finder.verify.notification.success"));
+    } catch (error) {
+      console.error(error);
+
+      addNotification($t("user.finder.verify.notification.error"));
+    }
   };
 </script>
 
 {#if $appointment}
-  <Page title="">
+  <Page title={$t("user.finder.verify.title")}>
     <Content class="stack-v gap-l">
       <PageHeader>
-        <h1 class="h1">Übersicht</h1>
+        <h1 class="h1">{$t("user.finder.verify.title")}</h1>
 
         <a slot="backLink" class="back-link" href="/finder/appointment"
-          >Zurück zur Terminauswahl</a
+          >{$t("user.finder.verify.back-link")}</a
         >
 
         <p class="text-1 max-w-m" slot="intro">
-          Hier ist Ihr gewählt er Termin. Prüfen Sie bitte genau, ob alles
-          stimmt. Anschließend können Sie den Termin endgültig buchen.
+          {$t("user.finder.verify.intro")}
         </p>
       </PageHeader>
 
       <div class="appointment-verify">
         <div>
-          <h3 class="book">Ihr Termin</h3>
+          <h3 class="book">{$t("user.finder.verify.appointment-title")}</h3>
 
           <AppointmentCard appointment={$appointment} border />
         </div>
@@ -57,7 +63,7 @@
           href="/finder/success"
           on:click|preventDefault={handleBooking}
         >
-          Termin jetzt buchen
+          {$t("user.finder.verify.button-submit")}
         </a>
       </div>
     </Content>

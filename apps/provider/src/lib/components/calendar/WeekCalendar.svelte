@@ -142,8 +142,6 @@
   for (let i = fromHour; i <= toHour; i++) {
     hours.push(i);
   }
-
-  console.log(appointmentsMatrix);
 </script>
 
 <section id="week-calendar" class="stack-v gap-m">

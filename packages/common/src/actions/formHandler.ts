@@ -16,8 +16,6 @@ export const formHandler: Action<Parameters, HTMLFormElement> = (form) => {
       // Workaround to fix typing issues...
       const field = element as unknown as HTMLFormElement;
 
-      console.log(field.name, field);
-
       // Workaround to select invalid fields with ":not(:placeholder-shown):invalid" or
       // ":not(:focus):not(:placeholder-shown):invalid" if you want to simulate native
       // onBlur-validation.

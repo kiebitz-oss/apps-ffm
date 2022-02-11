@@ -33,20 +33,23 @@
 
       await goto("/");
 
-      addNotification("Buchung abgesagt");
+      addNotification(
+        $t("user.finder.success.cancelation.notification.success")
+      );
     }
   };
 </script>
 
 <h1 class="mx-4 mb-4 md:mx-0">
   {#if status === BookingStatus.VALID}
-    Ihr Termin ist gebucht!
+    {$t("user.finder.success.title-valid")}
   {:else if status === BookingStatus.PROVIDER_CANCELED}
-    Ihr Termin ist abgesagt!
+    {$t("user.finder.success.title-provider-canceled")}
   {:else if status === BookingStatus.USER_CANCELED}
-    Du hast den Termin abgesagt!
+    {$t("user.finder.success.title-provider-canceled")}
   {:else}
     Fishy!
+    {$t("user.finder.success.title-error")}
   {/if}
 </h1>
 
@@ -54,13 +57,13 @@
   <section class="stack-v gap-m">
     <div class="booking-details">
       <div class="flex flex-col flex-1">
-        <h2 class="book">Ihr Termin</h2>
+        <h2 class="book">{$t("user.finder.success.appointment-title")}</h2>
 
         <AppointmentCard appointment={booking.appointment} border />
       </div>
 
       <div class="flex flex-col flex-1">
-        <h2 class="book">Ihr Buchungscode</h2>
+        <h2 class="book">{$t("user.finder.success.your-code")}</h2>
 
         <div class="appointment-code">
           {booking.token.code.toUpperCase().slice(0, 4)}
@@ -69,14 +72,12 @@
     </div>
 
     <p class="text-2 mx-4 md:mx-0">
-      <strong>Wichtig:</strong> Bitte notieren Sie sich den untenstehenden Code und
-      bringen ihn unbedingt zur Impfung mit.
+      {$t("user.finder.success.notice-code")}
     </p>
 
     <div class="flex flex-col gap-4 mx-4 md:mx-0">
       <p class="text-2">
-        Sollte Sie Ihren Termin nicht wahrnehmen können, stornieren Sie ihn
-        bitte mit nachstehendem Button.
+        {$t("user.finder.success.notice-cancelation")}
       </p>
 
       <div class="stack-h gap-s">
@@ -84,11 +85,11 @@
           class="button tertiary m"
           on:click|preventDefault={handleCancel}
         >
-          Termin absagen
+          {$t("user.finder.success.button-cancelation")}
         </button>
 
         <a class="button tertiary m" href="/logout">
-          Abschließen und weiteren Termin buchen
+          {$t("user.finder.success.button-logout")}
         </a>
       </div>
     </div>

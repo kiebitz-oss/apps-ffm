@@ -1,6 +1,6 @@
 /* base */
-@import "./styles/normalize.css";
 @import "./styles/tokens.css";
+@import "./styles/normalize.css";
 @import "./styles/media.css";
 @import "./styles/layout.css";
 @import "./styles/typography.css";

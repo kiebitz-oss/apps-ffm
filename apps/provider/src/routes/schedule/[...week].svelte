@@ -46,7 +46,6 @@
         {appointments}
         on:open={({ detail }) => {
           selectedDetail = detail;
-          console.log(detail.isSeries);
 
           if (detail.isSeries === true) {
             modal = Modal.SHOW_SERIES;

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cancelAppointment } from "$lib/api";
   import { vaccines, type Vaccine } from "@impfen/common";
-  import { date, t, time } from "svelte-intl-precompile";
+  import { date, locale, t, time } from "svelte-intl-precompile";
   import type { Appointment } from "vanellus";
   import { AppointmentStatus } from "vanellus";
 
@@ -12,10 +12,7 @@
     await cancelAppointment(appointment);
   };
 
-  const locale = "de";
-  const vaccine = vaccines[locale][appointment.vaccine];
-
-  console.log(appointment);
+  const vaccine = vaccines[$locale][appointment.vaccine];
 </script>
 
 <div
