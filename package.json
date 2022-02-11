@@ -26,7 +26,7 @@
     "build:user": "pnpm build --filter ./apps/user",
     "build:mediator": "pnpm build --filter ./apps/mediator",
     "build:provider": "pnpm build --filter ./apps/provider",
-    "test": "pnpm run test --recursive --if-present",
+    "test": "jest",
     "lint": "pnpm run lint --recursive --if-present",
     "lint:fix": "pnpm run lint:fix --recursive --if-present",
     "lint:css": "stylelint 'packages/common/**/*.{css,svelte}' 'apps/**/*.{css,svelte}' '!**/{build,dist}/**'",

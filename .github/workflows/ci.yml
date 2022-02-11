@@ -45,4 +45,4 @@ jobs:
 
       - name: Build
         run: |
-          pnpm build
+          pnpm build -- --stream
