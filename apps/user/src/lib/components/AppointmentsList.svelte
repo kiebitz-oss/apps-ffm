@@ -46,32 +46,38 @@
 </script>
 
 <form id="filter-bar" class="stack-h mb-m">
-  <a href="/finder" aria-hidden>
-    <div class="field-group">
-      <input
-        name="provider"
-        type="text"
-        value={$provider !== true && $provider?.name
-          ? $provider.name
-          : $t("user.appointments-list.any-provider")}
-        class="flex-1"
-        style:pointer-event="none"
-        style:text-decoration="none"
-      />
-      <span>
-        <IconEdit aria-hidden />
-      </span>
-    </div>
-  </a>
+  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <label class="book" for="provider">Impfstelle ändern</label>
+    <a href="/finder">
+      <div class="field-group">
+        <input
+          name="provider"
+          type="text"
+          value={$provider !== true && $provider?.name
+            ? $provider.name
+            : $t("user.appointments-list.any-provider")}
+          class="flex-1"
+          style:pointer-event="none"
+          style:text-decoration="none"
+        />
+        <span>
+          <IconEdit aria-hidden />
+        </span>
+      </div>
+    </a>
+  </div>
 
-  <input
-    name="date"
-    type="datetime-local"
-    min={dayjs().format("YYYY-MM-DDTHH:mm")}
-    max={date.add(30, "days").format("YYYY-MM-DDTHH:mm")}
-    value={date.format("YYYY-MM-DDTHH:mm")}
-    on:change|preventDefault={handleDateChange}
-  />
+  <div style="display: flex; flex-direction: column; align-items: flex-start; ">
+    <label for="provider" class="book">Datum ändern</label>
+    <input
+      name="date"
+      type="datetime-local"
+      min={dayjs().format("YYYY-MM-DDTHH:mm")}
+      max={date.add(30, "days").format("YYYY-MM-DDTHH:mm")}
+      value={date.format("YYYY-MM-DDTHH:mm")}
+      on:change|preventDefault={handleDateChange}
+    />
+  </div>
 </form>
 
 {#if dayjs(date).isBefore(dayjs().subtract(10, "minutes"), "minutes")}
@@ -109,10 +115,4 @@
 {/if}
 
 <style lang="postcss">
-  .notice {
-    margin: 0 auto;
-    max-width: 66%;
-    padding-bottom: 2rem;
-    font-size: 115%;
-  }
 </style>
