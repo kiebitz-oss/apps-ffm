@@ -134,12 +134,18 @@ export const isAuthenticated = () => {
   return keyPairs && secret;
 };
 
-export const isVerified = () => {
+export const isVerified = async () => {
   if (!keyPairs) {
     return false;
   }
 
-  return api.isValidatedKeyPairs(getKeyPairs());
+  try {
+    const isVerified = await api.isValidatedKeyPairs(getKeyPairs());
+
+    return isVerified;
+  } catch (e) {
+    return false;
+  }
 };
 
 export const backup = async () => {

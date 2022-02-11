@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import { page } from "$app/stores";
   import { getProviderAppointments } from "$lib/api";
   import { WeekCalendar } from "$lib/components";
   import AppointmentDetails from "$lib/components/schedule/AppointmentDetails.svelte";
   import AppointmentForm from "$lib/components/schedule/AppointmentForm.svelte";
   import AppointmentSeriesForm from "$lib/components/schedule/AppointmentSeriesForm.svelte";
+  import { verified } from "$lib/stores";
   import { Content, Dialog, Page, type Vaccine } from "@impfen/common";
   import dayjs from "dayjs";
   import type { Appointment } from "vanellus";
@@ -20,6 +22,10 @@
   let modal: Modal;
 
   let appointmentPromise: Promise<Appointment<Vaccine>[]>;
+
+  $: if (!$verified) {
+    goto("/account");
+  }
 
   $: if (modal === undefined) {
     appointmentPromise = getProviderAppointments(

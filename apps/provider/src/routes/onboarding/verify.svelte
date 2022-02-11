@@ -42,7 +42,7 @@
         {$t("provider.onboarding.verify.edit-data")}
       </a>
 
-      <button on:click|preventDefault={handleSubmit} class="button primary l">
+      <button on:click|preventDefault={handleSubmit} class="button primary m">
         {$t("provider.onboarding.verify.button")}
       </button>
     </div>

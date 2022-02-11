@@ -16,9 +16,8 @@
     MouseEvent,
     HTMLButtonElement
   > = async () => {
-    await logout();
-
     await goto("/");
+    await logout();
   };
 </script>
 
