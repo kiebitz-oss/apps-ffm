@@ -11,7 +11,7 @@
     }
   };
 
-  const handleClick = (event: MouseEvent) => {
+  const handleClick = () => {
     if (!ignoreClickOutside) {
       onClose();
     }

@@ -4,7 +4,6 @@ import type { Dayjs } from "dayjs";
 import { get } from "svelte/store";
 import {
   AnonymousApi,
-  StorageApi,
   UserApi,
   type AggregatedPublicAppointment,
   type Booking,
@@ -15,7 +14,6 @@ import { booking, secret, token } from "./stores";
 
 let anonymousApi: AnonymousApi<Vaccine>;
 let userApi: UserApi<Vaccine>;
-let storageApi: StorageApi;
 
 export const bookAppointment = async (
   appointment: AggregatedPublicAppointment<Vaccine> | PublicAppointment<Vaccine>
@@ -166,12 +164,6 @@ const getAnonymousApi = () => {
   return !anonymousApi
     ? (anonymousApi = new AnonymousApi<Vaccine>(getApiConfig()))
     : anonymousApi;
-};
-
-const getStorageApi = () => {
-  return !storageApi
-    ? (storageApi = new StorageApi(getApiConfig()))
-    : storageApi;
 };
 
 const reset = () => {

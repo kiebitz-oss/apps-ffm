@@ -10,7 +10,9 @@ export const demoTheme: Theme = {
   logoAlt: "Impfterm.in",
   logoUrl,
   content: {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     imprint: Imprint,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     privacy: Privacy,
   },
   meta: {

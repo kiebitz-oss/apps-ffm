@@ -1,5 +1,4 @@
 // https://github.com/romkor/svelte-portal/blob/master/src/Portal.svelte
-import type { Action } from "src/app";
 
 /**
  * Usage: <div use:portal={'css selector'}> or <div use:portal={document.body}>

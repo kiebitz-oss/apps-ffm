@@ -4,7 +4,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:regexp/recommended",
     "plugin:promise/recommended",
     "prettier",
@@ -49,13 +49,13 @@ module.exports = {
       files: ["*.svelte"],
       processor: "svelte3/svelte3",
     },
-    // {
-    //   files: ["*.js"],
-    //   parser: "espree",
-    //   parserOptions: {
-    //     ecmaVersion: 2017,
-    //   },
-    // },
+    {
+      files: ["*.js"],
+      parser: "espree",
+      parserOptions: {
+        ecmaVersion: 2017,
+      },
+    },
   ],
   ignorePatterns: ["dist"],
 };

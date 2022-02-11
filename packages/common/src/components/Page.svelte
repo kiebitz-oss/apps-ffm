@@ -1,4 +1,7 @@
 <script lang="ts" context="module">
+  /** eslint-disable @typescript-eslint/no-unsafe-call */
+  /** eslint-disable @typescript-eslint/no-unsafe-call */
+
   import { browser } from "$app/env";
   import { supportedBrowsers } from "@impfen/browserslist-config/supported-browsers";
   import dayjs from "dayjs";
@@ -8,7 +11,10 @@
 
   dayjs.extend(utc);
 
-  if (browser && !supportedBrowsers.test(navigator.userAgent)) {
+  // stupid hack to make ts happy...
+  const forcedSupportedBrowsers: string = (supportedBrowsers as string) || "";
+
+  if (browser && !forcedSupportedBrowsers.match(navigator.userAgent)) {
     alert("Your browser is supported.");
   }
 </script>

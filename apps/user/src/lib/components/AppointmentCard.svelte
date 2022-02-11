@@ -6,7 +6,7 @@
   import type { AggregatedPublicAppointment } from "vanellus";
 
   export let appointment: AggregatedPublicAppointment;
-  export let border: boolean = false;
+  export let border = false;
 
   const locale = "de";
   const vaccine = vaccines[locale || "de"][appointment.vaccine as Vaccine];

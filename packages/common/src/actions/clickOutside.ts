@@ -1,5 +1,3 @@
-import type { Action } from "src/app";
-
 export const clickOutside: Action<() => void> = (node, handler) => {
   const onClick = (event: MouseEvent) =>
     node &&

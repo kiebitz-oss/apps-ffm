@@ -1,5 +1,4 @@
 import { page } from "$app/stores";
-import type { Action } from "src/app";
 
 interface CurrentLinkParameters {
   exact?: boolean;

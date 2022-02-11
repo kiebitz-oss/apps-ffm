@@ -1,5 +1,3 @@
-import type { Action } from "src/app";
-
 export const copy: Action<string> = (element, text) => {
   const clickHandler = () => {
     if (text)

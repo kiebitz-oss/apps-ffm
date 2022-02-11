@@ -4,7 +4,9 @@ export interface Theme {
   logoAlt: string;
   logoUrl: string;
   content: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     imprint: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     privacy: any;
   };
   meta: {

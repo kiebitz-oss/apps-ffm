@@ -11,12 +11,12 @@ interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
 
-export interface ActionReturn<Parameters = any> {
+interface ActionReturn<Parameters = unknown> {
   update?: (parameters: Parameters) => void;
   destroy?: () => void;
 }
 
-export interface Action<Parameters = any, Element = HTMLElement> {
+interface Action<Parameters = unknown, Element = HTMLElement> {
   <Node extends Element>(
     node: Node,
     parameters?: Parameters

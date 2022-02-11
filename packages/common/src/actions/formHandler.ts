@@ -1,5 +1,3 @@
-import type { Action } from "src/app";
-
 type InitialValues = Record<string, string>;
 
 type Parameters = Record<string, never>;

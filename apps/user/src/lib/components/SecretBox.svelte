@@ -10,11 +10,15 @@
     HTMLButtonElement
   > = async () => {
     try {
+      // eslint-disable-next-line compat/compat
       await navigator.clipboard.writeText(secret);
     } catch (error) {
       console.error(error);
     }
   };
+
+  // eslint-disable-next-line compat/compat
+  const supportsClipboard = typeof navigator?.clipboard === "object";
 </script>
 
 <section {...$$restProps}>
@@ -24,7 +28,7 @@
     {/each}
   </div>
 
-  {#if copy && typeof navigator?.clipboard === "object"}
+  {#if copy && supportsClipboard}
     <button
       aria-label="Secret in Zwischenablage kopieren"
       on:click|preventDefault={handleCopy}><IconCopy aria-hidden /></button
