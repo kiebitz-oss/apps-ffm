@@ -46,19 +46,21 @@
   id="providers-list"
   aria-label={$t("user.finder.location.providers-list.title")}
 >
-  <li aria-label={$t("user.finder.location.any-provider")}>
-    <a
-      href="/finder/appointment"
-      class="block"
-      on:click={() => handleSelectProvider(true)}
-    >
-      <article class="provider-card">
-        <h2 class="h4">
-          {$t("user.finder.location.any-provider")}
-        </h2>
-      </article>
-    </a>
-  </li>
+  {#if filteredProviders.length > 0}
+    <li aria-label={$t("user.finder.location.any-provider")}>
+      <a
+        href="/finder/appointment"
+        class="block"
+        on:click={() => handleSelectProvider(true)}
+      >
+        <article class="provider-card">
+          <h2 class="h4">
+            {$t("user.finder.location.any-provider")}
+          </h2>
+        </article>
+      </a>
+    </li>
+  {/if}
 
   {#each filteredProviders as provider, id (provider.id)}
     <li aria-label={provider.name}>
@@ -72,7 +74,11 @@
     </li>
   {:else}
     <li>
-      <p>{$t("user.finder.location.no-results")}</p>
+      <article class="provider-card">
+        <h2 class="h4">
+          {$t("user.finder.location.no-results")}
+        </h2>
+      </article>
     </li>
   {/each}
 </ul>
