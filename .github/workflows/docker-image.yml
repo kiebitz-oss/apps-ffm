@@ -56,8 +56,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            KIEBITZ_STORAGE_ENDPOINT=https://dev-cd.impfterm.in/api/v1/storage/jsonrpc
-            KIEBITZ_APPOINTMENTS_ENDPOINT=https://dev-cd.impfterm.in/api/v1/appointments/jsonrpc
+            VITE_IMPFEN_STORAGE_ENDPOINT=https://dev-cd.impfterm.in/api/v1/storage/jsonrpc
+            VITE_IMPFEN_APPOINTMENTS_ENDPOINT=https://dev-cd.impfterm.in/api/v1/appointments/jsonrpc
 
       - name: Dispatch deployment
         uses: peter-evans/repository-dispatch@v1

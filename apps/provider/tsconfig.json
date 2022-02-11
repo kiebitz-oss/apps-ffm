@@ -1,31 +1,39 @@
 {
-  "extends": "../../tsconfig.json",
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "@impfen/provider",
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "outDir": "dist",
-    "incremental": true,
-    "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo",
-    "jsx": "preserve",
-    "baseUrl": "./src",
-    "paths": {
-      "@impfen/common": ["../../../packages/common/src"],
-      "@impfen/common/*": ["../../../packages/common/src/*"],
-      "vanellus": ["../../../packages/vanellus/src"]
-    },
-    "esModuleInterop": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "moduleResolution": "node",
+    "module": "es2020",
+    "lib": ["dom", "dom.iterable", "es2020"],
+    "target": "es2020",
+    "downlevelIteration": true,
+    /**
+			svelte-preprocess cannot figure out whether you have a value or a type, so tell TypeScript
+			to enforce using \`import type\` instead of \`import\` for Types.
+			*/
+    "importsNotUsedAsValues": "error",
+    /**
+			TypeScript doesn't know about import usages in the template because it only sees the
+			script of a Svelte file. Therefore preserve all value imports. Requires TS 4.5 or higher.
+		*/
+    "preserveValueImports": true,
+    "isolatedModules": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    /**
+			To have warnings/errors of the Svelte compiler at the correct position,
+			enable source maps by default.
+			*/
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "checkJs": true,
+    "paths": {
+      "$lib": ["src/lib"],
+      "$lib/*": ["src/lib/*"]
+    }
   },
-  "include": ["next-env.d.ts", "assets.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", ".next", "dist", "**/*.stories.tsx"]
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
 }

@@ -35,17 +35,13 @@ jobs:
           version: 6.27.1
           run_install: true
 
-      - name: Build locales
-        run: |
-          pnpm build:i18n
-
       - name: Linter
         run: |
           pnpm lint -- --stream
 
       - name: Unit tests
         run: |
-          pnpm test
+          pnpm test -- --stream
 
       - name: Build
         run: |

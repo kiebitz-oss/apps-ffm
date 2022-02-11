@@ -1,0 +1,16 @@
+module.exports = [
+  "defaults",
+  "supports es6-module",
+  "supports es6-module-dynamic-import",
+  "not Firefox < 60",
+  "not Edge < 79",
+  "not Chrome < 61",
+  "not Safari < 11",
+  "not Opera < 48",
+  "not IE 11",
+  "not ios_saf < 11",
+  "not safari < 11",
+  "not Samsung > 0",
+  "not and_qq > 0",
+  "not OperaMini all",
+];

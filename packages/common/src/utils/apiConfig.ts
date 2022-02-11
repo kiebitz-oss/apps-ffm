@@ -1,12 +1,12 @@
 export const getApiConfig = () => {
   return {
     jsonrpc: {
-      appointments: process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT
-        ? process.env.NEXT_PUBLIC_APPOINTMENTS_ENDPOINT
-        : `${window.origin}/api/v1/appointments/jsonrpc`,
-      storage: process.env.NEXT_PUBLIC_STORAGE_ENDPOINT
-        ? process.env.NEXT_PUBLIC_STORAGE_ENDPOINT
-        : `${window.origin}/api/v1/storage/jsonrpc`,
+      appointments:
+        import.meta.env.VITE_IMPFEN_APPOINTMENTS_ENDPOINT ||
+        "http://localhost:22222/jsonrpc",
+      storage:
+        import.meta.env.VITE_IMPFEN_STORAGE_ENDPOINT ||
+        "http://localhost:11111/jsonrpc",
     },
   };
 };

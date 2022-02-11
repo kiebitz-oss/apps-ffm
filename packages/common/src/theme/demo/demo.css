@@ -1,0 +1,31 @@
+@import "@fontsource/ibm-plex-sans/latin.css";
+@import "../../ui.css";
+
+:root {
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif";
+  --font-mono: var(--font-sand);
+  --font-body: var(--font-sand);
+  --font-title: var(--font-sand);
+
+  --primary: purple;
+  --link: purple;
+  --link-visited: darkorange;
+  --link-hover: darkorange;
+  --black: #1b1b1b;
+  --white: white;
+  --page-bg: #f3f4f6;
+  --error: darkred;
+  --error-bg: red;
+}
+
+/*
+  colors: {
+    white: "#FFFFFF",
+    black: "#1B1B1B",
+    primary: "#0E7FCE",
+    notice: "#FFF1C0",
+    error: "#DA1E28",
+    aa_blau: "#0067AF",
+    highlight: "#4589ff1a",
+  },
+*/

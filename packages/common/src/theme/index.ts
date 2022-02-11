@@ -1,18 +1,12 @@
-import logoUrl from "../assets/demo-logo.svg";
+// import { demoTheme } from "./demo";
+import { ffmTheme } from "./ffm";
 import type { Theme } from "./Theme";
 
-export const theme: Theme = {
-  title: "Impfterm.in",
-  supportEmail: "impftermin@inoeg.de ",
-  logoAlt: "Impfterm.in",
-  logoUrl,
-  meta: {
-    title: "Impfterm.in",
-    siteName: "Impfterm.in",
-    description: "Impfterm.in",
-    url: "https://impfterm.in",
-    type: "website",
-    robots: "follow, index",
-    image: "",
-  },
-};
+export type { Theme } from "./Theme";
+
+// export const themes: Record<string, Theme> = {
+//   demo: demoTheme,
+//   ffm: ffmTheme,
+// };
+
+export const theme: Theme = ffmTheme;
