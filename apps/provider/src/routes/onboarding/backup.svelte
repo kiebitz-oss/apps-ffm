@@ -16,12 +16,12 @@
     </p>
 
     <div>
-      <h2 class="book">Schritt 1: Secret notieren</h2>
+      <h2 class="book">{$t("provider.onboarding.backup.step-1")}</h2>
       <SecretBox secret={$secret} copy />
     </div>
 
     <div>
-      <h2 class="book">Schritt 2: Schlüssel herunterladen</h2>
+      <h2 class="book">{$t("provider.onboarding.backup.step-2")}</h2>
       <DownloadBackupDataButton
         providerName={$unverifiedProvider.name}
         class="block secondary button m"

@@ -22,7 +22,7 @@
   };
 </script>
 
-<Page title="Logout">
+<Page title={$t("provider.logout.page-title")}>
   <Content class="stack-v m gap-l">
     <h1 class="h1">{$t("provider.logout.title")}</h1>
 

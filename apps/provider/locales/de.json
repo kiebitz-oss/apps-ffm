@@ -53,5 +53,19 @@
   "provider.logout.button": "Abmelden",
   "user.finder.appointment.card.date": "Datum: {date}",
   "user.finder.appointment.card.time": "Uhrzeit: {time}",
-  "user.finder.appointment.card.button-cancel": "Impftermin absagen"
+  "user.finder.appointment.card.button-cancel": "Impftermin absagen",
+  "provider.onboarding.backup.step-1": "Schritt 1: Secret notieren",
+  "provider.onboarding.backup.step-2": "Schritt 2: Schlüssel herunterladen",
+  "provider.onboarding.backup.next": "Weiter",
+  "provider.onboarding.backup.download-keypairs": "Datenschlüssel herunterladen",
+  "provider.onboarding.index.title": "Daten der Impfstelle erfassen",
+  "provider.onboarding.index.page-title": "Daten der Impfstelle erfassen",
+  "provider.nav.schedule": "Impftermine",
+  "provider.nav.account": "Ihr Account",
+  "provider.nav.logout": "Abmelden",
+  "provider.nav.onboarding": "Als Impfstelle registrieren",
+  "provider.nav.login": "Einloggen",
+  "provider.imprint.page-title": "Impressum",
+  "provider.logout.page-title": "Abmelden",
+  "provider.privacy.page-title": "Provider"
 }

@@ -57,7 +57,6 @@
     "extends @impfen/browserslist-config"
   ],
   "jest": {
-    "root": true,
     "projects": [
       "<rootDir>/packages/common",
       "<rootDir>/apps/user",

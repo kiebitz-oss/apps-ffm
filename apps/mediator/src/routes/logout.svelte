@@ -11,7 +11,7 @@
     logout();
 
     await goto("/")
-      .then(() => addNotification("Logged out.."))
+      .then(() => addNotification($t("mediator.logout.notification.success")))
       .catch((error) => {
         console.error(error);
       });

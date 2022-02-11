@@ -214,13 +214,3 @@
     {$t("user.welcome.button")}
   </button>
 </form>
-
-<!-- <script lang="ts">
-  import { questionaireMachine } from "$lib/machines/questionaire";
-  import { useMachine } from "@xstate/svelte/lib/fsm";
-
-  const { state, service, send } = useMachine(questionaireMachine);
-</script>
-
-<h1>state: {JSON.stringify($state, null, 2)}</h1>
-<div>Questionaire</div> -->

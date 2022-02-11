@@ -19,11 +19,13 @@
     if (confirm($t("mediator.providers.details.confirm-question"))) {
       await confirmProvider(unverifiedProvider)
         .then(() => {
-          return addNotification("Yeah...");
+          return addNotification(
+            $t("mediator.providers.details.notification.success")
+          );
         })
         .catch((error) => {
           console.error(error);
-          addNotification("Something went wrong...");
+          addNotification($t("mediator.providers.details.notification.error"));
         });
 
       provider = getProvider(id);
@@ -109,7 +111,8 @@
       {#if status !== ProviderStatus.VERIFIED}
         <button
           class="button primary m"
-          on:click|preventDefault={doHandleConfirm}>Confirm</button
+          on:click|preventDefault={doHandleConfirm}
+          >$t("mediator.providers.show.button-confirm")</button
         >
       {/if}
     {:catch error}

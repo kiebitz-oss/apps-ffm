@@ -3,7 +3,7 @@
   import { register } from "$lib/api";
   import { ProviderSummary } from "$lib/components";
   import { unverifiedProvider } from "$lib/stores";
-  import { Content, Page, PageHeader } from "@impfen/common";
+  import { addNotification, Content, Page, PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
 
   const handleSubmit = async () => {
@@ -14,11 +14,13 @@
   $: if (!$unverifiedProvider) {
     goto("/onboarding").catch((error) => {
       console.error(error);
+
+      addNotification($t("provider.onboarding.verify.notification-error"));
     });
   }
 </script>
 
-<Page title="">
+<Page title={$t("provider.onboarding.verify.page-title")}>
   <Content size="l">
     <PageHeader>
       <h1>{$t("provider.onboarding.verify.title")}</h1>

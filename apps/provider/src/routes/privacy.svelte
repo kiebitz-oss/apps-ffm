@@ -3,7 +3,7 @@
   import { t } from "svelte-intl-precompile";
 </script>
 
-<Page title={$t("user.privacy.page-title")}>
+<Page title={$t("provider.privacy.page-title")}>
   <Content>
     <div class="stack-v gap-m max-w-m">
       <svelte:component this={theme.content.privacy} />

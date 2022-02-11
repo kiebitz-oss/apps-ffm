@@ -3,7 +3,7 @@
   import { t } from "svelte-intl-precompile";
 </script>
 
-<Page title={$t("user.imprint.page-title")}>
+<Page title={$t("provider.imprint.page-title")}>
   <Content>
     <div class="stack-v gap-m max-w-m">
       <svelte:component this={theme.content.imprint} />

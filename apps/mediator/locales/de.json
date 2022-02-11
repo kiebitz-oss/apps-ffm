@@ -35,5 +35,13 @@
   "mediator.providers.show.accessible-yes": "ja",
   "mediator.providers.show.accessible-no": "nein",
   "mediator.providers.details.confirm-question": "Sind Sie sicher, dass Sie die Daten der Impfstelle bestätigen wollen?",
-  "mediator.providers.details.back-link": "Zurück zur Übersicht"
+  "mediator.providers.details.back-link": "Zurück zur Übersicht",
+  "mediator.imprint.page-title": "Impressum",
+  "mediator.logout.notification.success": "Erfolgreich abgemeldet",
+  "mediator.privacy.page-title": "Datenschutzerklärung",
+  "mediator.providers.details.notification.success": "Impfanbieter erfolgreich bestätigt",
+  "mediator.providers.details.notification.error": "Bestätigung des Impfanbieters fehlgeschlagen",
+  "mediator.providers.show.button-confirm": "Impfstelle bestätigen",
+  "mediator.nav.providers": "Impfstellen",
+  "mediator.nav.logout": "Abmelden"
 }
