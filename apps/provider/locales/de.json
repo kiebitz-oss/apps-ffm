@@ -79,5 +79,7 @@
   "provider.account.edit.title": "Account bearbeiten",
   "provider.account.edit.show-button": "Account anzeigen",
   "provider.account.edit.notification-success": "Daten erfolgreich gespeichert",
-  "provider.account.edit.notification-error": "Beim speichern der Daten ist ein Fehler aufgetreten"
+  "provider.account.edit.notification-error": "Beim speichern der Daten ist ein Fehler aufgetreten",
+  "provider.welcome.login.notification.upload-error": "Die hochgeladene Datei scheint ungültig zu sein",
+  "provider.welcome.login.notification.decrypt-error": "Bei der Anmeldung ist ein Problem aufgetreten"
 }

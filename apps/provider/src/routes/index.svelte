@@ -6,7 +6,6 @@
   import { t } from "svelte-intl-precompile";
   import type { AESData } from "vanellus";
 
-  let isValid: boolean;
   let secret: string;
   let files: FileList;
   let encryptedBackupData: AESData;
@@ -18,34 +17,37 @@
     if (files[0]) {
       const reader = new FileReader();
 
-      reader.addEventListener("loadend", () => {
+      reader.addEventListener("loadend", async () => {
         try {
           encryptedBackupData = JSON.parse(reader.result.toString()) as AESData;
         } catch (error) {
-          isValid = false;
-          addNotification("JSON-ERROR...");
           console.error(error);
+
+          addNotification(
+            $t("provider.welcome.login.notification.upload-error")
+          );
         }
 
-        login(encryptedBackupData, secret)
-          .then(() => goto("/schedule"))
-          .catch((error: Error) => {
-            isValid = false;
-            addNotification("DECRYPTION-ERROR...");
-            console.error(error);
-          });
+        try {
+          await login(encryptedBackupData, secret);
+
+          await goto("/schedule");
+        } catch (error) {
+          console.error(error);
+          addNotification(
+            $t("provider.welcome.login.notification.decrypt-error")
+          );
+        }
       });
 
       reader.readAsBinaryString(files[0]);
-    } else {
-      isValid = false;
     }
   };
 
   $: if ($keyPairs) {
     goto("/schedule").catch((error) => {
-      addNotification("ERROR...");
       console.error(error);
+      addNotification("ERROR...");
     });
   }
 </script>

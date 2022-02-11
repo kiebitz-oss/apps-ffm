@@ -1,7 +1,11 @@
 import { getApiConfig } from "@impfen/common";
 import { get } from "svelte/store";
-import type { MediatorKeyPairs, Provider } from "vanellus";
-import { MediatorApi } from "vanellus";
+import {
+  AuthError,
+  MediatorApi,
+  type MediatorKeyPairs,
+  type Provider,
+} from "vanellus";
 import { keyPairs } from "./stores";
 
 const api = new MediatorApi(getApiConfig());
@@ -33,7 +37,14 @@ export const getProviders = async () => {
 
 export const logout = () => keyPairs.set(null);
 
-export const login = (newKeyPairs: MediatorKeyPairs) =>
-  keyPairs.set(newKeyPairs);
+export const login = async (newKeyPairs: MediatorKeyPairs) => {
+  if (api.isValidKeyPairs(newKeyPairs)) {
+    keyPairs.set(newKeyPairs);
+
+    return true;
+  }
+
+  throw new AuthError("Could not login or verify data");
+};
 
 export const getKeyPairs = () => get(keyPairs);

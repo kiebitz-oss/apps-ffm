@@ -12,7 +12,6 @@
   import type { MediatorKeyPairs } from "vanellus";
 
   let files: FileList;
-  let isValid: boolean;
   let uploadedKeyPairs: MediatorKeyPairs;
 
   const handleSubmit: svelte.JSX.EventHandler<
@@ -22,35 +21,37 @@
     if (files[0]) {
       const reader = new FileReader();
 
-      reader.addEventListener("loadend", () => {
+      reader.addEventListener("loadend", async () => {
         try {
           uploadedKeyPairs = JSON.parse(
             reader.result.toString()
           ) as MediatorKeyPairs;
         } catch (error) {
-          isValid = false;
           addNotification("JSON-ERROR...");
           console.error(error);
         }
 
         try {
-          login(uploadedKeyPairs);
+          await login(uploadedKeyPairs);
 
-          goto("/providers").catch((error) => {
+          await goto("/providers").catch((error) => {
             console.error(error);
           });
 
-          addNotification("Welcome back..", NotificationType.SUCCESS);
+          await addNotification(
+            $t("mediator.welcome.login.notification.success"),
+            NotificationType.SUCCESS
+          );
         } catch (error) {
-          isValid = false;
-          addNotification("ERROR...");
+          addNotification(
+            $t("mediator.welcome.login.notification.error"),
+            NotificationType.DANGER
+          );
           console.error(error);
         }
       });
 
       reader.readAsBinaryString(files[0]);
-    } else {
-      isValid = false;
     }
   };
 

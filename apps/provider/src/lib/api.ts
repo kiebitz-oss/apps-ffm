@@ -1,6 +1,5 @@
 import { keyPairs, verifiedProvider } from "$lib/stores";
-import type { Vaccine } from "@impfen/common";
-import { getApiConfig } from "@impfen/common";
+import { getApiConfig, type Vaccine } from "@impfen/common";
 import type { Dayjs } from "dayjs";
 import { get } from "svelte/store";
 import type {
@@ -11,24 +10,10 @@ import type {
   ProviderKeyPairs,
   UnpublishedPublicAppointment,
 } from "vanellus";
-import { AnonymousApi, AuthError, ProviderApi } from "vanellus";
+import { AuthError, ProviderApi } from "vanellus";
 import { secret, unverifiedProvider } from "./stores";
 
-let anonymousApi: AnonymousApi<Vaccine>;
-
-export const getAnonymousApi = () => {
-  return !anonymousApi
-    ? (anonymousApi = new AnonymousApi<Vaccine>(getApiConfig()))
-    : anonymousApi;
-};
-
-let providerApi: ProviderApi<Vaccine>;
-
-export const getApi = () => {
-  return !providerApi
-    ? (providerApi = new ProviderApi<Vaccine>(getApiConfig()))
-    : providerApi;
-};
+const api = new ProviderApi<Vaccine>(getApiConfig());
 
 export const createAppointment = async (
   start: Dayjs,
@@ -36,7 +21,7 @@ export const createAppointment = async (
   vaccine: Vaccine,
   slotCount: number
 ) => {
-  const appointment = getApi().createAppointment(
+  const appointment = api.createAppointment(
     start,
     duration,
     vaccine,
@@ -55,7 +40,6 @@ export const createAppointmentSeries = async (
   vaccine: Vaccine,
   lanes: number
 ) => {
-  const api = getApi();
   const series = api.createAppointmentSeries(
     startAt,
     endAt,
@@ -70,17 +54,17 @@ export const createAppointmentSeries = async (
 };
 
 export const cancelAppointment = (appointment: Appointment<Vaccine>) => {
-  return getApi().cancelAppointment(appointment, getKeyPairs());
+  return api.cancelAppointment(appointment, getKeyPairs());
 };
 
 export const getProviderAppointments = (from: Dayjs, to?: Dayjs) => {
   to = to ? to : from.add(1, "day");
 
-  return getApi().getProviderAppointments(from, to, getKeyPairs());
+  return api.getProviderAppointments(from, to, getKeyPairs());
 };
 
 export const getProviderData = async () => {
-  return getApi().checkProvider(getKeyPairs());
+  return api.checkProvider(getKeyPairs());
 };
 
 export const storeProvider = async (
@@ -89,7 +73,7 @@ export const storeProvider = async (
 ) => {
   const keyPairs = getKeyPairs();
 
-  const unverifiedProvider = await getApi().storeProvider(
+  const unverifiedProvider = await api.storeProvider(
     {
       name: String(providerInput.name),
       street: String(providerInput.street),
@@ -113,8 +97,6 @@ export const register = async (
   providerInput: ProviderInput,
   signupCode?: string
 ) => {
-  const api = getApi();
-
   const newKeyPairs = await api.generateKeyPairs();
   const newSecret = api.generateSecret();
 
@@ -127,11 +109,17 @@ export const register = async (
 export const login = async (backupData: AESData, newSecret: string) => {
   const backup = await restore(backupData, newSecret);
 
-  setUnverifiedProvider(backup.publicProvider);
-  setSecret(newSecret);
-  await setKeyPairs(backup.providerKeyPairs);
+  const isValidKeyPairs = await api.isValidKeyPairs(backup.providerKeyPairs);
 
-  return true;
+  if (isValidKeyPairs) {
+    setUnverifiedProvider(backup.publicProvider);
+    setSecret(newSecret);
+    await setKeyPairs(backup.providerKeyPairs);
+
+    return true;
+  }
+
+  throw new AuthError("Could not login or verify data");
 };
 
 export const logout = async () => {
@@ -146,9 +134,15 @@ export const isAuthenticated = () => {
   return keyPairs && secret;
 };
 
-export const backup = async () => {
-  const api = getApi();
+export const isValidated = () => {
+  if (!keyPairs) {
+    return false;
+  }
 
+  return api.isValidatedKeyPairs(getKeyPairs());
+};
+
+export const backup = async () => {
   if (!secret || !keyPairs) {
     throw new AuthError("error...");
   }
@@ -160,14 +154,14 @@ export const restore = async (
   encryptedLocalBackup: AESData,
   secret: string
 ) => {
-  return getApi().restoreFromBackup(encryptedLocalBackup, secret);
+  return api.restoreFromBackup(encryptedLocalBackup, secret);
 };
 
 // Private helpers
 const setKeyPairs = async (newKeyPairs: ProviderKeyPairs, doCheck = true) => {
   // checks if a keyPair is valid
   if (doCheck) {
-    const isValid = await getApi().isValidKeyPairs(newKeyPairs);
+    const isValid = await api.isValidKeyPairs(newKeyPairs);
 
     if (!isValid) {
       throw new AuthError("Please authenticate");
@@ -220,7 +214,7 @@ const getVerifiedProvider = () => {
 const publishAppointments = (
   unpublishedAppointments: UnpublishedPublicAppointment<Vaccine>[]
 ) => {
-  return getApi().publishAppointments(unpublishedAppointments, getKeyPairs());
+  return api.publishAppointments(unpublishedAppointments, getKeyPairs());
 };
 
 export const reset = () => {
