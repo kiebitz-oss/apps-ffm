@@ -10,10 +10,3 @@ export const verifiedProvider = persistantWriteable<Provider>(
 export const secret = persistantWriteable<string>("mediator:secret");
 export const keyPairs =
   persistantWriteable<ProviderKeyPairs>("mediator:keyPairs");
-
-export const logout = () => {
-  secret.set(undefined);
-  keyPairs.set(undefined);
-  verifiedProvider.set(undefined);
-  unverifiedProvider.set(undefined);
-};

@@ -22,7 +22,7 @@
 <Page title={$t("mediator.providers.index.page-title")}>
   <Content class="stack-v gap-l">
     <PageHeader>
-      <h1>{$t("mediator.providers.index.title")}</h1>
+      <h1 class="h1">{$t("mediator.providers.index.title")}</h1>
 
       <div slot="actions" class="stack-h gap-s">
         <a

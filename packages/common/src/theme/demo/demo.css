@@ -2,8 +2,8 @@
 @import "../../ui.css";
 
 :root {
-  --primary: #01ffa8;
-  --highlight: #01ffa8;
+  --primary: #005793;
+  --highlight: #77a9ff;
   --link: var(--primary);
   --link-hover: var(--highlight);
   --black: #1b1b1b;

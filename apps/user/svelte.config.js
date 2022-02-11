@@ -9,11 +9,11 @@ const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
   preprocess: [
-    preprocess({
-      postcss: true,
-    }),
     mdsvex({
       extensions: [".md", ".mdx"],
+    }),
+    preprocess({
+      postcss: true,
     }),
   ],
 

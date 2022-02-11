@@ -5,13 +5,9 @@
   import AppointmentDetails from "$lib/components/schedule/AppointmentDetails.svelte";
   import AppointmentForm from "$lib/components/schedule/AppointmentForm.svelte";
   import AppointmentSeriesForm from "$lib/components/schedule/AppointmentSeriesForm.svelte";
-  import { Content, Dialog, Page } from "@impfen/common";
+  import { Content, Dialog, Page, type Vaccine } from "@impfen/common";
   import dayjs from "dayjs";
-
-  let appointmentPromise = getProviderAppointments(
-    dayjs(),
-    dayjs().add(13, "days")
-  );
+  import type { Appointment } from "vanellus";
 
   enum Modal {
     CREATE_APPOINTMENT,
@@ -21,8 +17,16 @@
   }
 
   let selectedDetail;
-
   let modal: Modal;
+
+  let appointmentPromise: Promise<Appointment<Vaccine>[]>;
+
+  $: if (modal === undefined) {
+    appointmentPromise = getProviderAppointments(
+      dayjs(),
+      dayjs().add(13, "days")
+    );
+  }
 </script>
 
 <Page title="Impftermine">
@@ -65,7 +69,11 @@
       modal = undefined;
     }}
   >
-    <AppointmentForm />
+    <AppointmentForm
+      on:success={() => {
+        modal = undefined;
+      }}
+    />
   </Dialog>
   <!-- <CreateAppointmentModal onClose={closeModal} /> -->
 {:else if modal === Modal.CREATE_SERIES}
@@ -75,7 +83,11 @@
       modal = undefined;
     }}
   >
-    <AppointmentSeriesForm />
+    <AppointmentSeriesForm
+      on:success={() => {
+        modal = undefined;
+      }}
+    />
   </Dialog>
 {:else if modal === Modal.SHOW_APPOINTMENT}
   <Dialog

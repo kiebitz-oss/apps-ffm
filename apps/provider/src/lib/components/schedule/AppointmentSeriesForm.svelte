@@ -1,8 +1,15 @@
 <script lang="ts">
   import { createAppointmentSeries } from "$lib/api";
-  import { Field, vaccines, type Vaccine } from "@impfen/common";
+  import {
+    addNotification,
+    Field,
+    vaccines,
+    type Vaccine,
+  } from "@impfen/common";
   import dayjs from "dayjs";
+  import { createEventDispatcher } from "svelte";
   import { locale, t } from "svelte-intl-precompile";
+  import type { PublicAppointment } from "vanellus";
 
   export let onSuccess: () => void | undefined = undefined;
 
@@ -18,6 +25,10 @@
   let interval = 15;
   let vaccine: Vaccine;
   let isSubmitting = false;
+
+  const dispatcher = createEventDispatcher<{
+    success: PublicAppointment<Vaccine>[];
+  }>();
 
   const handleSubmit = async () => {
     isSubmitting = true;
@@ -36,9 +47,8 @@
       vaccine,
       slotCount
     ).then((result) => {
-      if (onSuccess) {
-        onSuccess();
-      }
+      addNotification("success");
+      dispatcher("success", result);
 
       isSubmitting = false;
 

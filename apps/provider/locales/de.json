@@ -67,5 +67,17 @@
   "provider.nav.login": "Einloggen",
   "provider.imprint.page-title": "Impressum",
   "provider.logout.page-title": "Abmelden",
-  "provider.privacy.page-title": "Provider"
+  "provider.privacy.page-title": "Provider",
+  "provider.onboarding.verify.edit-data": "Daten bearbeiten",
+  "provider.onboarding.verify.button": "Bestätigen & weiter",
+  "provider.onboarding.verify.page-title": "Bitte überprüfen Sie ihre Daten",
+  "provider.onboarding.verify.title": "Bitte überprüfen Sie ihre Daten",
+  "provider.onboarding.verify.notification-error": "Beim speichern der Daten ist ein Fehler aufgetreten",
+  "provider.onboarding.backup.title": "Logindaten speichern",
+  "provider.onboarding.backup.intro": "Um sich später wieder einzuloggen oder Ihre Termine zugreifen zu können, benötigen Sie Ihre SICHERHEITSDATEI und Ihren SICHERHEITSCODE. Bitte speichern Sie jetzt Ihre SICHERHEITSDATEI und notieren Sie sich im Anschluss den SICHERHEITSCODE.",
+  "provider.account.edit.page-title": "Account bearbeiten",
+  "provider.account.edit.title": "Account bearbeiten",
+  "provider.account.edit.show-button": "Account anzeigen",
+  "provider.account.edit.notification-success": "Daten erfolgreich gespeichert",
+  "provider.account.edit.notification-error": "Beim speichern der Daten ist ein Fehler aufgetreten"
 }

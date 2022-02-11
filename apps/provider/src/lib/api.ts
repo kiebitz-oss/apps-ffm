@@ -1,4 +1,4 @@
-import { keyPairs } from "$lib/stores";
+import { keyPairs, verifiedProvider } from "$lib/stores";
 import type { Vaccine } from "@impfen/common";
 import { getApiConfig } from "@impfen/common";
 import type { Dayjs } from "dayjs";
@@ -41,7 +41,7 @@ export const createAppointment = async (
     duration,
     vaccine,
     slotCount,
-    getUnverifiedProvider(),
+    getVerifiedProvider(),
     getKeyPairs()
   );
 
@@ -62,7 +62,7 @@ export const createAppointmentSeries = async (
     interval,
     lanes,
     vaccine,
-    getUnverifiedProvider(),
+    getVerifiedProvider(),
     getKeyPairs()
   );
 
@@ -213,6 +213,10 @@ const getUnverifiedProvider = () => {
   return get(unverifiedProvider);
 };
 
+const getVerifiedProvider = () => {
+  return get(verifiedProvider);
+};
+
 const publishAppointments = (
   unpublishedAppointments: UnpublishedPublicAppointment<Vaccine>[]
 ) => {
@@ -222,6 +226,8 @@ const publishAppointments = (
 export const reset = () => {
   keyPairs.set(null);
   secret.set(null);
+  unverifiedProvider.set(null);
+  verifiedProvider.set(null);
 
   localStorage.clear();
   sessionStorage.clear();

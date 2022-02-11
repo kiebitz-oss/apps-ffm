@@ -1,12 +1,17 @@
 <script lang="ts">
   import { createAppointment } from "$lib/api";
-  import { Field, vaccines, type Vaccine } from "@impfen/common";
+  import {
+    addNotification,
+    Field,
+    vaccines,
+    type Vaccine,
+  } from "@impfen/common";
   import dayjs from "dayjs";
+  import { createEventDispatcher } from "svelte";
   import { locale, t } from "svelte-intl-precompile";
-  import type { Appointment } from "vanellus";
+  import type { Appointment, PublicAppointment } from "vanellus";
 
   export let appointment: Appointment | undefined = undefined;
-  export let onSuccess: () => void | undefined = undefined;
 
   let startAt = dayjs(appointment?.startAt)
     .add(1, "day")
@@ -16,9 +21,11 @@
   let slotCount = appointment?.slotData.length || 5;
   let duration = appointment?.duration || 30;
   let vaccine: Vaccine;
-
-  let isValid = true;
   let isSubmitting = false;
+
+  const dispatcher = createEventDispatcher<{
+    success: PublicAppointment<Vaccine>[];
+  }>();
 
   const handleSubmit: svelte.JSX.EventHandler<
     SubmitEvent,
@@ -28,15 +35,13 @@
 
     await createAppointment(dayjs(startAt), duration, vaccine, slotCount)
       .then((result) => {
-        if (onSuccess) {
-          onSuccess();
-        }
+        addNotification("success");
+        dispatcher("success", result);
 
         return result;
       })
       .catch((error) => {
         console.error(error);
-        isValid = false;
       });
 
     isSubmitting = false;

@@ -22,7 +22,7 @@
   <Content class="stack-v m gap-l">
     <h1 class="h1">{$t("user.logout.title")}</h1>
 
-    <p class="text-2">
+    <p class="text-1">
       {$t("user.logout.intro")}
     </p>
 

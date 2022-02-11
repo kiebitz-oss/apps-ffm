@@ -80,5 +80,7 @@
   "user.finder.success.button-cancelation": "Termin absagen",
   "user.finder.success.button-logout": "Abschließen und weiteren Termin buchen",
   "user.appointments-list.title-date": "Tag auswählen",
-  "user.appointments-list.title-provider": "Impfstelle ändern"
+  "user.appointments-list.title-provider": "Impfstelle ändern",
+  "user.welcome.question0_error": "Leider sind zur Zeit Impfungen für unter 5-Jährige noch nicht verfügbar",
+  "user.login.intro": "Hier können Sie ihren Impfterminstatus prüfen"
 }

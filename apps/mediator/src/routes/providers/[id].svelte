@@ -112,7 +112,7 @@
         <button
           class="button primary m"
           on:click|preventDefault={doHandleConfirm}
-          >$t("mediator.providers.show.button-confirm")</button
+          >{$t("mediator.providers.show.button-confirm")}</button
         >
       {/if}
     {:catch error}

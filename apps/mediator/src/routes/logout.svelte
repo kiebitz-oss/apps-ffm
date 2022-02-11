@@ -20,7 +20,7 @@
 
 <Page title={$t("mediator.logout.page-title")}>
   <Content class="stack-v gap-m m">
-    <h1>{$t("mediator.logout.title")}</h1>
+    <h1 class="h1">{$t("mediator.logout.title")}</h1>
 
     <p class="text-2">
       {$t("mediator.logout.intro")}

@@ -149,7 +149,7 @@
     <div class="stack-h">
       <a href={`/schedule/${lastWeek < 0 ? 52 : lastWeek}`}> ❮ zurück </a>
 
-      <h1>Impftermine</h1>
+      <h1 class="h1">Impftermine</h1>
 
       <a href={`/schedule/${nextWeek > 52 ? 1 : nextWeek}`}> vor ❯ </a>
     </div>

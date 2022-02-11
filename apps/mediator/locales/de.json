@@ -14,7 +14,7 @@
   "mediator.welcome.input-select-keypairs": "Sicherungsdatei",
   "mediator.welcome.button-submit": "Als Vermittler anmelden",
   "mediator.logout.title": "Abmelden",
-  "mediator.logout.intro": "Wollen Sie sich wirklich abmelden?",
+  "mediator.logout.intro": "Wollen Sie sich wirklich abmelden? \n Bitte stellen Sie sicher, dass Sie ihre Logindaten gespeichert haben.",
   "mediator.logout.button": "Abmelden",
   "mediator.providers.index.page-title": "Impfstellen",
   "mediator.providers.details.provider": "Impfstelle",

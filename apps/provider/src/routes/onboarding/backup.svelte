@@ -8,10 +8,10 @@
 <Page title="">
   <Content class="stack-v gap-l m">
     <PageHeader>
-      <h1>{$t("provider.onboarding.backup.title")}</h1>
+      <h1 class="h1">{$t("provider.onboarding.backup.title")}</h1>
     </PageHeader>
 
-    <p class="text-2">
+    <p class="text-1">
       {$t("provider.onboarding.backup.intro")}
     </p>
 

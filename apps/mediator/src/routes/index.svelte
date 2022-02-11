@@ -63,9 +63,9 @@
 
 <Page title={$t("mediator.welcome.page-title")}>
   <Content class="m stack-v gap-m">
-    <h1>{$t("mediator.welcome.title")}</h1>
+    <h1 class="h1">{$t("mediator.welcome.title")}</h1>
 
-    <p class="text-2">{$t("mediator.welcome.intro")}</p>
+    <p class="text-1">{$t("mediator.welcome.intro")}</p>
 
     <form
       name="login"

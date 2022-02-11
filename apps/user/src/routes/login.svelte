@@ -28,6 +28,8 @@
   <Content class="stack-v gap-m s">
     <PageHeader><h1 class="h1">{$t("user.login.title")}</h1></PageHeader>
 
+    <p class="text-1">{$t("user.login.intro")}</p>
+
     <form
       name="login"
       class="stack-v gap-m"
