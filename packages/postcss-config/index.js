@@ -1,7 +1,6 @@
 module.exports = {
   plugins: {
     "postcss-import": {},
-    // "postcss-normalize": {},
     "postcss-preset-env": {
       // debug: true,
       stage: 3,
