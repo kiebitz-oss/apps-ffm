@@ -41,8 +41,8 @@ jobs:
 
       - name: Unit tests
         run: |
-          pnpm test -- --stream
+          pnpm test
 
       - name: Build
         run: |
-          pnpm build -- --stream
+          pnpm build
