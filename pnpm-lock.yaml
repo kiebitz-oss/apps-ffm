@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@impfen/browserslist-config': workspace:^1.0.0
+      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       browserslist: ^4.19.1
       jest: ^27.5.1
@@ -20,6 +21,7 @@ importers:
       svelte: ^3.46.4
     devDependencies:
       '@impfen/browserslist-config': link:packages/browserlist-config
+      '@impfen/postcss-config': link:packages/postcss-config
       '@impfen/stylelint-config': link:packages/stylelint-config
       browserslist: 4.19.1
       jest: 27.5.1
@@ -40,6 +42,7 @@ importers:
       '@impfen/common': workspace:^1.0.0
       '@impfen/eslint-config': workspace:^1.0.0
       '@impfen/jest-config': workspace:^1.0.0
+      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/adapter-static': next
       '@sveltejs/kit': next
@@ -75,6 +78,7 @@ importers:
       '@impfen/common': link:../../packages/common
       '@impfen/eslint-config': link:../../packages/eslint-config
       '@impfen/jest-config': link:../../packages/jest-config
+      '@impfen/postcss-config': link:../../packages/postcss-config
       '@impfen/stylelint-config': link:../../packages/stylelint-config
       '@sveltejs/adapter-static': 1.0.0-next.28
       '@sveltejs/kit': 1.0.0-next.265_svelte@3.46.4
@@ -112,6 +116,7 @@ importers:
       '@impfen/common': workspace:^1.0.0
       '@impfen/eslint-config': workspace:^1.0.0
       '@impfen/jest-config': workspace:^1.0.0
+      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/adapter-static': next
       '@sveltejs/kit': next
@@ -148,6 +153,7 @@ importers:
       '@impfen/common': link:../../packages/common
       '@impfen/eslint-config': link:../../packages/eslint-config
       '@impfen/jest-config': link:../../packages/jest-config
+      '@impfen/postcss-config': link:../../packages/postcss-config
       '@impfen/stylelint-config': link:../../packages/stylelint-config
       '@sveltejs/adapter-static': 1.0.0-next.28
       '@sveltejs/kit': 1.0.0-next.265_svelte@3.46.4
@@ -187,6 +193,7 @@ importers:
       '@impfen/common': workspace:^1.0.0
       '@impfen/eslint-config': workspace:^1.0.0
       '@impfen/jest-config': workspace:^1.0.0
+      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/adapter-static': next
       '@sveltejs/kit': next
@@ -226,6 +233,7 @@ importers:
       '@impfen/common': link:../../packages/common
       '@impfen/eslint-config': link:../../packages/eslint-config
       '@impfen/jest-config': link:../../packages/jest-config
+      '@impfen/postcss-config': link:../../packages/postcss-config
       '@impfen/stylelint-config': link:../../packages/stylelint-config
       '@sveltejs/adapter-static': 1.0.0-next.28
       '@sveltejs/kit': 1.0.0-next.265_svelte@3.46.4
@@ -272,6 +280,7 @@ importers:
       '@impfen/browserslist-config': workspace:^1.0.0
       '@impfen/eslint-config': workspace:^1.0.0
       '@impfen/jest-config': workspace:^1.0.0
+      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/kit': next
       '@typescript-eslint/eslint-plugin': ^5.11.0
@@ -305,6 +314,7 @@ importers:
       '@impfen/browserslist-config': link:../browserlist-config
       '@impfen/eslint-config': link:../eslint-config
       '@impfen/jest-config': link:../jest-config
+      '@impfen/postcss-config': link:../postcss-config
       '@impfen/stylelint-config': link:../stylelint-config
       '@sveltejs/kit': 1.0.0-next.265_svelte@3.46.4
       '@typescript-eslint/eslint-plugin': 5.11.0_de5a1ddccd75ca1e499b8b8491d3dcba
@@ -361,6 +371,15 @@ importers:
       svelte: 3.46.4
       ts-jest: 27.1.3_1e2406a8ca2ae3dc934d01f9ee2aebbb
       typescript: 4.5.5
+
+  packages/postcss-config:
+    specifiers:
+      '@impfen/browserslist-config': workspace:^1.0.0
+      browserslist: ^4.19.1
+    dependencies:
+      '@impfen/browserslist-config': link:../browserlist-config
+    devDependencies:
+      browserslist: 4.19.1
 
   packages/stylelint-config:
     specifiers:

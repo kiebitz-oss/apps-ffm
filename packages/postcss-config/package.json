@@ -1,0 +1,23 @@
+{
+  "name": "@impfen/postcss-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@impfen/browserslist-config": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "browserslist": "^4.19.1"
+  },
+  "peerDependencies": {
+    "postcss": "^8",
+    "postcss-import": "^14",
+    "postcss-normalize": "^10",
+    "postcss-preset-env": "^7"
+  },
+  "browserslist": [
+    "extends @impfen/browserslist-config"
+  ]
+}

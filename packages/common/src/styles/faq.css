@@ -1,0 +1,38 @@
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+
+  & > h3 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+.faq-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  & details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+summary {
+  list-style-position: outside;
+  margin-bottom: 0.25rem;
+
+  & > h4 {
+    display: inline;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+}

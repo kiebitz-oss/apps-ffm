@@ -1,27 +1,27 @@
 /* base */
-@import "@impfen/common/styles/normalize.css";
-@import "@impfen/common/tokens.css";
-@import "styles/media.css";
-@import "styles/_layout.css";
-@import "styles/_typography.css";
+@import "./styles/normalize.css";
+@import "./styles/tokens.css";
+@import "./styles/media.css";
+@import "./styles/layout.css";
+@import "./styles/typography.css";
 
 /* components */
-@import "styles/_button.css";
-@import "styles/_table.css";
-@import "styles/_form.css";
-@import "styles/_notification.css";
-@import "styles/_tooltip.css";
-@import "styles/_navbar.css";
-@import "styles/_badge.css";
-@import "styles/_link.css";
+@import "./styles/button.css";
+@import "./styles/table.css";
+@import "./styles/form.css";
+@import "./styles/notification.css";
+@import "./styles/tooltip.css";
+@import "./styles/navbar.css";
+@import "./styles/badge.css";
+@import "./styles/link.css";
 
-@import "styles/_providers.css";
-@import "styles/_appointments.css";
-@import "styles/_faq.css";
+@import "./styles/providers.css";
+@import "./styles/appointments.css";
+@import "./styles/faq.css";
 
 /* rest */
-@import "styles/_utilities.css";
-@import "styles/_a11y.css";
+@import "./styles/utilities.css";
+@import "./styles/a11y.css";
 
 /* input, button, textarea, select,
 input[type="file"]::-webkit-file-upload-button {

@@ -1,0 +1,39 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:focus-visible {
+  outline-color: var(--link);
+}
+
+/* Respect reduce motion preferences */
+@media (--motionNotOK) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* Respect opacity preferences */
+@media (--opacityNotOK) {
+  *,
+  ::before,
+  ::after {
+    opacity: 1 !important;
+  }
+}

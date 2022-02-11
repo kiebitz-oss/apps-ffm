@@ -1,0 +1,43 @@
+.table {
+  display: table;
+  min-width: 100%;
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &.fixed {
+    table-layout: fixed;
+  }
+
+  &.auto {
+    table-layout: auto;
+  }
+
+  & thead {
+    border-width: 1px 0;
+    background-color: rgb(249 250 251/1);
+    border-color: rgb(229 231 235/1);
+  }
+
+  & th,
+  & td {
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+    vertical-align: top;
+
+    &.middle {
+      vertical-align: middle;
+    }
+  }
+
+  & th {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgb(107 114 128 / 1);
+  }
+}
