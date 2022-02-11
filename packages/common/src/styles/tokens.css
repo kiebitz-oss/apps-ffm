@@ -8,8 +8,8 @@ html {
   --font-weight-7: 700;
   --font-weight-8: 800;
   --font-weight-9: 900;
-  
-  --font-lineheight-00: .95;
+
+  --font-lineheight-00: 0.95;
   --font-lineheight-0: 1.1;
   --font-lineheight-1: 1.25;
   --font-lineheight-2: 1.375;
@@ -17,18 +17,18 @@ html {
   --font-lineheight-4: 1.75;
   --font-lineheight-5: 2;
   --font-lineheight-6: 2.5;
-  
-  --font-letterspacing-0: -.05em;
-  --font-letterspacing-1: .025em;
-  --font-letterspacing-2: .050em;
-  --font-letterspacing-3: .075em;
-  --font-letterspacing-4: .150em;
-  --font-letterspacing-5: .500em;
-  --font-letterspacing-6: .750em;
+
+  --font-letterspacing-0: -0.05em;
+  --font-letterspacing-1: 0.025em;
+  --font-letterspacing-2: 0.05em;
+  --font-letterspacing-3: 0.075em;
+  --font-letterspacing-4: 0.15em;
+  --font-letterspacing-5: 0.5em;
+  --font-letterspacing-6: 0.75em;
   --font-letterspacing-7: 1em;
-  
-  --font-size-00: .5rem;
-  --font-size-0: .75rem;
+
+  --font-size-00: 0.5rem;
+  --font-size-0: 0.75rem;
   --font-size-1: 1rem;
   --font-size-2: 1.1rem;
   --font-size-3: 1.25rem;
@@ -37,29 +37,29 @@ html {
   --font-size-6: 2.25rem;
   --font-size-7: 2.5rem;
   --font-size-8: 2.75rem;
-  
-  --font-size-fluid-0: clamp(.75rem, 2vw, 1rem);
+
+  --font-size-fluid-0: clamp(0.75rem, 2vw, 1rem);
   --font-size-fluid-1: clamp(1rem, 4vw, 1.5rem);
   --font-size-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
   --font-size-fluid-3: clamp(2rem, 9vw, 3.5rem);
 
-  --size-base: .25rem;
-  --size-1: calc(var(--size-base) * 1);    /* 1 * 4 =   4px */
-  --size-2: calc(var(--size-base) * 2);    /* 2 * 4 =   8px */
-  --size-3: calc(var(--size-base) * 3);    /* 3 * 4 =  12px */
-  --size-4: calc(var(--size-base) * 4);    /* 4 * 4 =  16px */
-  --size-5: calc(var(--size-base) * 5);    /* 5 * 4 =  20px */
-  --size-6: calc(var(--size-base) * 6);    /* 6 * 4 =  24px */
-  --size-7: calc(var(--size-base) * 7);    /* 7 * 4 =  28px */
-  --size-8: calc(var(--size-base) * 8);    /* 8 * 4 =  32px */
-  --size-9: calc(var(--size-base) * 9);    /* 9 * 4 =  36px */
-  --size-10: calc(var(--size-base) * 10);  /* 10 * 4 = 40px */
-  --size-11: calc(var(--size-base) * 11);  /* 11 * 4 = 44px */
-  --size-12: calc(var(--size-base) * 12);  /* 12 * 4 = 48px */
-  --size-13: calc(var(--size-base) * 13);  /* 13 * 4 = 52px */
-  --size-14: calc(var(--size-base) * 14);  /* 14 * 4 = 56px */
-  --size-15: calc(var(--size-base) * 15);  /* 15 * 4 = 60px */
-  --size-16: calc(var(--size-base) * 16);  /* 16 * 4 = 64px */
+  --size-base: 0.25rem;
+  --size-1: calc(var(--size-base) * 1); /* 1 * 4 =   4px */
+  --size-2: calc(var(--size-base) * 2); /* 2 * 4 =   8px */
+  --size-3: calc(var(--size-base) * 3); /* 3 * 4 =  12px */
+  --size-4: calc(var(--size-base) * 4); /* 4 * 4 =  16px */
+  --size-5: calc(var(--size-base) * 5); /* 5 * 4 =  20px */
+  --size-6: calc(var(--size-base) * 6); /* 6 * 4 =  24px */
+  --size-7: calc(var(--size-base) * 7); /* 7 * 4 =  28px */
+  --size-8: calc(var(--size-base) * 8); /* 8 * 4 =  32px */
+  --size-9: calc(var(--size-base) * 9); /* 9 * 4 =  36px */
+  --size-10: calc(var(--size-base) * 10); /* 10 * 4 = 40px */
+  --size-11: calc(var(--size-base) * 11); /* 11 * 4 = 44px */
+  --size-12: calc(var(--size-base) * 12); /* 12 * 4 = 48px */
+  --size-13: calc(var(--size-base) * 13); /* 13 * 4 = 52px */
+  --size-14: calc(var(--size-base) * 14); /* 14 * 4 = 56px */
+  --size-15: calc(var(--size-base) * 15); /* 15 * 4 = 60px */
+  --size-16: calc(var(--size-base) * 16); /* 16 * 4 = 64px */
 
   --gap-s: var(--size-2);
   --gap-m: var(--size-4);
@@ -76,7 +76,7 @@ html {
   --scrollbar-color: var(--gray-7);
 
   --radius-round: 1e5px;
-  --radius-s: .5rem;
+  --radius-s: 0.5rem;
   --radius-m: 1rem;
   --radius-l: 1.5rem;
 
@@ -87,7 +87,7 @@ html {
   --shadow-box: 0px 2px 6px rgba(0, 0, 0, 0.25);
   --shadow-appointment: 0px 4px 11px rgba(0, 0, 0, 0.25);
   --shadow-appointment-2: 0px 12px 16px rgba(0, 0, 0, 0.25);
-  --shadow-highligh: 0px 0px 8px var(--highlight); 
+  --shadow-highligh: 0px 0px 8px var(--highlight);
 
   scrollbar-color: var(--scrollbar-color) transparent;
   accent-color: var(--primary);

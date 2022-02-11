@@ -2,8 +2,6 @@
 @import "../../ui.css";
 
 :root {
-  
-
   --primary: #01ffa8;
   --highlight: #01ffa8;
   --link: var(--primary);
@@ -14,8 +12,6 @@
 
   --font-sans: "IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif";
 }
-
-
 
 /*
   colors: {

@@ -3,7 +3,7 @@
 
 html {
   --primary: #005793;
-  --highlight: #77A9FF;
+  --highlight: #77a9ff;
   --link: var(--primary);
   --link-hover: var(--highlight);
   --black: #1b1b1b;

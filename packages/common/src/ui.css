@@ -10,7 +10,6 @@
 @import "./styles/_layout.css";
 @import "./styles/_typography.css";
 
-
 /* components */
 @import "./styles/_button.css";
 @import "./styles/_table.css";
@@ -28,19 +27,6 @@
 /* rest */
 @import "./styles/_utilities.css";
 @import "./styles/_a11y.css";
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* input, button, textarea, select,
 input[type="file"]::-webkit-file-upload-button {
@@ -82,7 +68,6 @@ input[type="checkbox"][role="switch"] {
 ::after {
   margin: 0;
 }
-
 
 .error {
   background-color: var(--error-bg);
