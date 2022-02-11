@@ -5,36 +5,34 @@ importers:
   .:
     specifiers:
       '@impfen/browserslist-config': workspace:^1.0.0
-      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       browserslist: ^4.19.1
       jest: ^27.5.1
       postcss: ^8.4.6
       postcss-html: ^1.3.0
       postcss-import: ^14.0.2
-      postcss-normalize: ^10.0.1
       postcss-preset-env: ^7.3.1
       prettier: ^2.5.1
       prettier-plugin-svelte: ^2.6.0
       stylelint: ^14.4.0
       stylelint-config-recommended: ^7.0.0
       stylelint-no-unsupported-browser-features: ^5.0.2
+      svelte: ^3.46.4
     devDependencies:
       '@impfen/browserslist-config': link:packages/browserlist-config
-      '@impfen/postcss-config': link:packages/postcss-config
       '@impfen/stylelint-config': link:packages/stylelint-config
       browserslist: 4.19.1
       jest: 27.5.1
       postcss: 8.4.6
       postcss-html: 1.3.0
       postcss-import: 14.0.2_postcss@8.4.6
-      postcss-normalize: 10.0.1_3762e1ae487ee11145f4d9b6e71ce368
       postcss-preset-env: 7.3.1_postcss@8.4.6
       prettier: 2.5.1
-      prettier-plugin-svelte: 2.6.0_prettier@2.5.1
+      prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.4
       stylelint: 14.5.0
       stylelint-config-recommended: 7.0.0_stylelint@14.5.0
       stylelint-no-unsupported-browser-features: 5.0.2_stylelint@14.5.0
+      svelte: 3.46.4
 
   apps/mediator:
     specifiers:
@@ -42,7 +40,6 @@ importers:
       '@impfen/common': workspace:^1.0.0
       '@impfen/eslint-config': workspace:^1.0.0
       '@impfen/jest-config': workspace:^1.0.0
-      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/adapter-static': next
       '@sveltejs/kit': next
@@ -62,7 +59,6 @@ importers:
       postcss: ^8.4.6
       postcss-import: ^14.0.2
       postcss-load-config: ^3.1.2
-      postcss-normalize: ^10.0.1
       postcss-preset-env: ^7.3.1
       prettier: ^2.5.1
       prettier-plugin-svelte: ^2.6.0
@@ -79,7 +75,6 @@ importers:
       '@impfen/common': link:../../packages/common
       '@impfen/eslint-config': link:../../packages/eslint-config
       '@impfen/jest-config': link:../../packages/jest-config
-      '@impfen/postcss-config': link:../../packages/postcss-config
       '@impfen/stylelint-config': link:../../packages/stylelint-config
       '@sveltejs/adapter-static': 1.0.0-next.28
       '@sveltejs/kit': 1.0.0-next.265_svelte@3.46.4
@@ -99,7 +94,6 @@ importers:
       postcss: 8.4.6
       postcss-import: 14.0.2_postcss@8.4.6
       postcss-load-config: 3.1.2
-      postcss-normalize: 10.0.1_3762e1ae487ee11145f4d9b6e71ce368
       postcss-preset-env: 7.3.1_postcss@8.4.6
       prettier: 2.5.1
       prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.4
@@ -118,7 +112,6 @@ importers:
       '@impfen/common': workspace:^1.0.0
       '@impfen/eslint-config': workspace:^1.0.0
       '@impfen/jest-config': workspace:^1.0.0
-      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/adapter-static': next
       '@sveltejs/kit': next
@@ -139,7 +132,6 @@ importers:
       postcss: ^8.4.6
       postcss-import: ^14.0.2
       postcss-load-config: ^3.1.2
-      postcss-normalize: ^10.0.1
       postcss-preset-env: ^7.3.1
       prettier: ^2.5.1
       prettier-plugin-svelte: ^2.6.0
@@ -156,7 +148,6 @@ importers:
       '@impfen/common': link:../../packages/common
       '@impfen/eslint-config': link:../../packages/eslint-config
       '@impfen/jest-config': link:../../packages/jest-config
-      '@impfen/postcss-config': link:../../packages/postcss-config
       '@impfen/stylelint-config': link:../../packages/stylelint-config
       '@sveltejs/adapter-static': 1.0.0-next.28
       '@sveltejs/kit': 1.0.0-next.265_svelte@3.46.4
@@ -177,7 +168,6 @@ importers:
       postcss: 8.4.6
       postcss-import: 14.0.2_postcss@8.4.6
       postcss-load-config: 3.1.2
-      postcss-normalize: 10.0.1_3762e1ae487ee11145f4d9b6e71ce368
       postcss-preset-env: 7.3.1_postcss@8.4.6
       prettier: 2.5.1
       prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.4
@@ -197,7 +187,6 @@ importers:
       '@impfen/common': workspace:^1.0.0
       '@impfen/eslint-config': workspace:^1.0.0
       '@impfen/jest-config': workspace:^1.0.0
-      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/adapter-static': next
       '@sveltejs/kit': next
@@ -220,7 +209,6 @@ importers:
       postcss: ^8.4.6
       postcss-import: ^14.0.2
       postcss-load-config: ^3.1.2
-      postcss-normalize: ^10.0.1
       postcss-preset-env: ^7.3.1
       prettier: ^2.5.1
       prettier-plugin-svelte: ^2.6.0
@@ -238,7 +226,6 @@ importers:
       '@impfen/common': link:../../packages/common
       '@impfen/eslint-config': link:../../packages/eslint-config
       '@impfen/jest-config': link:../../packages/jest-config
-      '@impfen/postcss-config': link:../../packages/postcss-config
       '@impfen/stylelint-config': link:../../packages/stylelint-config
       '@sveltejs/adapter-static': 1.0.0-next.28
       '@sveltejs/kit': 1.0.0-next.265_svelte@3.46.4
@@ -261,7 +248,6 @@ importers:
       postcss: 8.4.6
       postcss-import: 14.0.2_postcss@8.4.6
       postcss-load-config: 3.1.2
-      postcss-normalize: 10.0.1_3762e1ae487ee11145f4d9b6e71ce368
       postcss-preset-env: 7.3.1_postcss@8.4.6
       prettier: 2.5.1
       prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.4
@@ -286,7 +272,6 @@ importers:
       '@impfen/browserslist-config': workspace:^1.0.0
       '@impfen/eslint-config': workspace:^1.0.0
       '@impfen/jest-config': workspace:^1.0.0
-      '@impfen/postcss-config': workspace:^1.0.0
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/kit': next
       '@typescript-eslint/eslint-plugin': ^5.11.0
@@ -299,13 +284,11 @@ importers:
       eslint-plugin-regexp: ^1.5.1
       eslint-plugin-svelte3: ^3.4.0
       eslint-plugin-testing-library: ^5.0.5
-      normalize.css: ^8.0.1
       onchange: ^7.1.0
       postcss-html: ^1.3.0
       postcss-load-config: ^3.1.2
       prettier: ^2.5.1
       prettier-plugin-svelte: ^2.6.0
-      sanitize.css: ^13.0.0
       stylelint: ^14.4.0
       stylelint-config-recommended: ^7.0.0
       stylelint-no-unsupported-browser-features: ^5.0.2
@@ -322,7 +305,6 @@ importers:
       '@impfen/browserslist-config': link:../browserlist-config
       '@impfen/eslint-config': link:../eslint-config
       '@impfen/jest-config': link:../jest-config
-      '@impfen/postcss-config': link:../postcss-config
       '@impfen/stylelint-config': link:../stylelint-config
       '@sveltejs/kit': 1.0.0-next.265_svelte@3.46.4
       '@typescript-eslint/eslint-plugin': 5.11.0_de5a1ddccd75ca1e499b8b8491d3dcba
@@ -335,13 +317,11 @@ importers:
       eslint-plugin-regexp: 1.5.1_eslint@8.8.0
       eslint-plugin-svelte3: 3.4.0_eslint@8.8.0+svelte@3.46.4
       eslint-plugin-testing-library: 5.0.5_eslint@8.8.0+typescript@4.5.5
-      normalize.css: 8.0.1
       onchange: 7.1.0
       postcss-html: 1.3.0
       postcss-load-config: 3.1.2
       prettier: 2.5.1
       prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.4
-      sanitize.css: 13.0.0
       stylelint: 14.5.0
       stylelint-config-recommended: 7.0.0_stylelint@14.5.0
       stylelint-no-unsupported-browser-features: 5.0.2_stylelint@14.5.0
@@ -381,15 +361,6 @@ importers:
       svelte: 3.46.4
       ts-jest: 27.1.3_1e2406a8ca2ae3dc934d01f9ee2aebbb
       typescript: 4.5.5
-
-  packages/postcss-config:
-    specifiers:
-      '@impfen/browserslist-config': workspace:^1.0.0
-      browserslist: ^4.19.1
-    dependencies:
-      '@impfen/browserslist-config': link:../browserlist-config
-    devDependencies:
-      browserslist: 4.19.1
 
   packages/stylelint-config:
     specifiers:
@@ -822,10 +793,6 @@ packages:
 
   /@blakeembrey/template/1.0.0:
     resolution: {integrity: sha512-J6WGZqCLdRMHUkyRG6fBSIFJ0rL60/nsQNh5rQvsYZ5u0PsKw6XQcJcA3DWvd9cN3j/IQx5yB1fexhCafwwUUw==}
-    dev: true
-
-  /@csstools/normalize.css/12.0.0:
-    resolution: {integrity: sha512-M0qqxAcwCsIVfpFQSlGN5XjXWu8l5JDZN+fPt1LeW5SZexQTgnaEvgXAY+CeygRw0EeppWHi12JxESWiWrB0Sg==}
     dev: true
 
   /@csstools/postcss-font-format-keywords/1.0.0_postcss@8.4.6:
@@ -4625,10 +4592,6 @@ packages:
     resolution: {integrity: sha1-0LFF62kRicY6eNIB3E/bEpPvDAM=}
     dev: true
 
-  /normalize.css/8.0.1:
-    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
-    dev: true
-
   /npm-run-path/4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
@@ -4828,17 +4791,6 @@ packages:
     dependencies:
       postcss: 8.4.6
       postcss-selector-parser: 6.0.9
-    dev: true
-
-  /postcss-browser-comments/4.0.0_3762e1ae487ee11145f4d9b6e71ce368:
-    resolution: {integrity: sha512-X9X9/WN3KIvY9+hNERUqX9gncsgBA25XaeR+jshHz2j8+sYyHktHw1JdKuMjeLpGktXidqDhA7b/qm1mrBDmgg==}
-    engines: {node: '>=8'}
-    peerDependencies:
-      browserslist: '>=4'
-      postcss: '>=8'
-    dependencies:
-      browserslist: 4.19.1
-      postcss: 8.4.6
     dev: true
 
   /postcss-clamp/3.0.0_postcss@8.4.6:
@@ -5071,20 +5023,6 @@ packages:
       postcss-selector-parser: 6.0.9
     dev: true
 
-  /postcss-normalize/10.0.1_3762e1ae487ee11145f4d9b6e71ce368:
-    resolution: {integrity: sha512-+5w18/rDev5mqERcG3W5GZNMJa1eoYYNGo8gB7tEwaos0ajk3ZXAI4mHGcNT47NE+ZnZD1pEpUOFLvltIwmeJA==}
-    engines: {node: '>= 12'}
-    peerDependencies:
-      browserslist: '>= 4'
-      postcss: '>= 8'
-    dependencies:
-      '@csstools/normalize.css': 12.0.0
-      browserslist: 4.19.1
-      postcss: 8.4.6
-      postcss-browser-comments: 4.0.0_3762e1ae487ee11145f4d9b6e71ce368
-      sanitize.css: 13.0.0
-    dev: true
-
   /postcss-opacity-percentage/1.1.2:
     resolution: {integrity: sha512-lyUfF7miG+yewZ8EAk9XUBIlrHyUE6fijnesuz+Mj5zrIHIEw6KcIZSOk/elVMqzLvREmXB83Zi/5QpNRYd47w==}
     engines: {node: ^12 || ^14 || >=16}
@@ -5248,15 +5186,6 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       fast-diff: 1.2.0
-    dev: true
-
-  /prettier-plugin-svelte/2.6.0_prettier@2.5.1:
-    resolution: {integrity: sha512-NPSRf6Y5rufRlBleok/pqg4+1FyGsL0zYhkYP6hnueeL1J/uCm3OfOZPsLX4zqD9VAdcXfyEL2PYqGv8ZoOSfA==}
-    peerDependencies:
-      prettier: ^1.16.4 || ^2.0.0
-      svelte: ^3.2.0
-    dependencies:
-      prettier: 2.5.1
     dev: true
 
   /prettier-plugin-svelte/2.6.0_prettier@2.5.1+svelte@3.46.4:
@@ -5538,10 +5467,6 @@ packages:
       graceful-fs: 4.2.9
       mkdirp: 0.5.5
       rimraf: 2.7.1
-    dev: true
-
-  /sanitize.css/13.0.0:
-    resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
     dev: true
 
   /saxes/5.0.1:

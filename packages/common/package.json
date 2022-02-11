@@ -21,7 +21,6 @@
     "@fontsource/ibm-plex-sans": "^4.5.3",
     "@impfen/browserslist-config": "workspace:^1.0.0",
     "@impfen/jest-config": "workspace:^1.0.0",
-    "@impfen/postcss-config": "workspace:^1.0.0",
     "@impfen/stylelint-config": "workspace:^1.0.0",
     "@impfen/eslint-config": "workspace:^1.0.0",
     "@sveltejs/kit": "next",

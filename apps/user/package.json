@@ -19,7 +19,6 @@
     "@impfen/common": "workspace:^1.0.0",
     "@impfen/eslint-config": "workspace:^1.0.0",
     "@impfen/jest-config": "workspace:^1.0.0",
-    "@impfen/postcss-config": "workspace:^1.0.0",
     "@impfen/stylelint-config": "workspace:^1.0.0",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
