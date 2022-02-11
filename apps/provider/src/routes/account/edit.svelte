@@ -2,7 +2,7 @@
   import { goto } from "$app/navigation";
   import { storeProvider } from "$lib/api";
   import { ProviderForm } from "$lib/components";
-  import { unverifiedProvider } from "$lib/stores";
+  import { keyPairs, unverifiedProvider } from "$lib/stores";
   import {
     addNotification,
     Content,
@@ -22,12 +22,19 @@
       addNotification($t("provider.account.edit.notification-success"));
     } catch (error) {
       console.error(error);
+
       addNotification(
         $t("provider.account.edit.notification-error"),
         NotificationType.DANGER
       );
     }
   };
+
+  $: if (!$keyPairs) {
+    goto("/").catch((error) => {
+      console.error(error);
+    });
+  }
 </script>
 
 <Page title={$t("provider.account.edit.page-title")}>

@@ -10,11 +10,11 @@
   > = async () => {
     logout();
 
-    await goto("/")
-      .then(() => addNotification($t("mediator.logout.notification.success")))
-      .catch((error) => {
-        console.error(error);
-      });
+    await goto("/").catch((error) => {
+      console.error(error);
+    });
+
+    addNotification($t("mediator.logout.notification.success"));
   };
 </script>
 

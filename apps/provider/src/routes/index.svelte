@@ -1,7 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { login } from "$lib/api";
-  import { keyPairs } from "$lib/stores";
   import { addNotification, Content, Page } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { AESData } from "vanellus";
@@ -43,12 +42,6 @@
       reader.readAsBinaryString(files[0]);
     }
   };
-
-  $: if ($keyPairs) {
-    goto("/schedule").catch((error) => {
-      console.error(error);
-    });
-  }
 </script>
 
 <Page title={$t("provider.welcome.page-title")}>
@@ -94,7 +87,7 @@
         />
       </div>
 
-      <button type="submit" class="button primary l"
+      <button type="submit" class="button primary m"
         >{$t("provider.welcome.button-submit")}</button
       >
     </form>

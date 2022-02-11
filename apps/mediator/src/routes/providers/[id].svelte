@@ -13,7 +13,7 @@
 
   const id = decodeBase64url($page.params.id);
 
-  let provider = getProvider(id);
+  let providerPromise = getProvider(id);
 
   const handleConfirm = async (unverifiedProvider: Provider) => {
     if (confirm($t("mediator.providers.details.confirm-question"))) {
@@ -28,14 +28,14 @@
           addNotification($t("mediator.providers.details.notification.error"));
         });
 
-      provider = getProvider(id);
+      providerPromise = getProvider(id);
     }
   };
 </script>
 
 <Page title={$t("mediator.providers.details.page-title")}>
   <Content class="stack-v gap-l">
-    {#await provider}
+    {#await providerPromise}
       <Loading />
     {:then { status, unverifiedProvider, verifiedProvider }}
       {@const doHandleConfirm = () => handleConfirm(unverifiedProvider)}

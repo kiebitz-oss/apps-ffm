@@ -16,7 +16,7 @@
 <Page title={$t("provider.onboarding.index.page-title")}>
   <Content size="l">
     <PageHeader>
-      <h1 class="h1" slot="title">{$t("provider.onboarding.index.title")}</h1>
+      <h1 class="h1">{$t("provider.onboarding.index.title")}</h1>
     </PageHeader>
 
     <ProviderForm on:submit={handleSubmit} provider={$unverifiedProvider} />

@@ -82,5 +82,6 @@
   "provider.account.edit.notification-error": "Beim speichern der Daten ist ein Fehler aufgetreten",
   "provider.welcome.login.notification.upload-error": "Die hochgeladene Datei scheint ungültig zu sein",
   "provider.welcome.login.notification.decrypt-error": "Bei der Anmeldung ist ein Problem aufgetreten",
-  "provider.global.notification.verified": "Der Account wurde soeben verifiziert. Sie können nun Impftermine anlegen."
+  "provider.global.notification.verified": "Der Account wurde soeben verifiziert. Sie können nun Impftermine anlegen.",
+  "provider.logout.notification.success": "Erfolgreich abgemeldet"
 }

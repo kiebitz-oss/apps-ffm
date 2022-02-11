@@ -1,4 +1,3 @@
-import { keyPairs, verifiedProvider } from "$lib/stores";
 import { getApiConfig, type Vaccine } from "@impfen/common";
 import type { Dayjs } from "dayjs";
 import { get } from "svelte/store";
@@ -11,7 +10,12 @@ import type {
   UnpublishedPublicAppointment,
 } from "vanellus";
 import { AuthError, ProviderApi } from "vanellus";
-import { secret, unverifiedProvider } from "./stores";
+import {
+  keyPairs,
+  secret,
+  unverifiedProvider,
+  verifiedProvider,
+} from "./stores";
 
 const api = new ProviderApi<Vaccine>(getApiConfig());
 
@@ -26,7 +30,7 @@ export const createAppointment = async (
     duration,
     vaccine,
     slotCount,
-    getVerifiedProvider(),
+    get(verifiedProvider),
     getKeyPairs()
   );
 
@@ -46,7 +50,7 @@ export const createAppointmentSeries = async (
     interval,
     lanes,
     vaccine,
-    getVerifiedProvider(),
+    get(verifiedProvider),
     getKeyPairs()
   );
 
@@ -63,8 +67,20 @@ export const getProviderAppointments = (from: Dayjs, to?: Dayjs) => {
   return api.getProviderAppointments(from, to, getKeyPairs());
 };
 
-export const getProviderData = async () => {
-  return api.checkProvider(getKeyPairs());
+export const getVerifiedProvider = async () => {
+  try {
+    const { verifiedProvider: verifiedProviderData } = await api.checkProvider(
+      getKeyPairs()
+    );
+
+    if (verifiedProvider) {
+      verifiedProvider.set(verifiedProviderData);
+    }
+
+    return verifiedProviderData;
+  } catch (error) {
+    return null;
+  }
 };
 
 export const storeProvider = async (
@@ -211,10 +227,6 @@ const setUnverifiedProvider = (newUnverifiedProvider: Provider) => {
 
 const getUnverifiedProvider = () => {
   return get(unverifiedProvider);
-};
-
-const getVerifiedProvider = () => {
-  return get(verifiedProvider);
 };
 
 const publishAppointments = (

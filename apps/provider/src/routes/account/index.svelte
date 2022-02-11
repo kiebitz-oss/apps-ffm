@@ -1,13 +1,27 @@
 <script lang="ts">
   import { ProviderSummary } from "$lib/components";
-  import { unverifiedProvider } from "$lib/stores";
+  import { unverifiedProvider, verified } from "$lib/stores";
   import { Content, Page, PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { ProviderInput } from "vanellus";
-  import { ProviderStatus } from "vanellus";
 
   const provider: ProviderInput = $unverifiedProvider;
-  const providerState: ProviderStatus = ProviderStatus.VERIFIED;
+
+  // getVerifiedProvider()
+  //   .then((verifiedProvider) => {
+  //     console.log($verified, verifiedProvider);
+
+  //     return verifiedProvider;
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
+
+  // $: if (!$keyPairs) {
+  //   goto("/").catch((error) => {
+  //     console.error(error);
+  //   });
+  // }
 </script>
 
 <Page title="Account">
@@ -20,13 +34,13 @@
       </a>
     </PageHeader>
 
-    {#if providerState !== ProviderStatus.VERIFIED}
+    {#if !$verified}
       <p class="mb-8">
         {$t("provider.account.not-verified-yet")}
       </p>
     {/if}
 
-    <div class="max-w-3xl">
+    <div class="max-w-m">
       <ProviderSummary {provider} />
     </div>
   </Content>

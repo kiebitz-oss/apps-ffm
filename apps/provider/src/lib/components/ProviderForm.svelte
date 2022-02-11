@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { unverifiedProvider } from "$lib/stores";
   import { Field } from "@impfen/common";
   import { createEventDispatcher } from "svelte";
   import { t } from "svelte-intl-precompile";
   import type { ProviderInput } from "vanellus";
 
-  export let provider: ProviderInput = $unverifiedProvider || {
+  export let provider: ProviderInput = {
     name: "",
     street: "",
     zipCode: "",
@@ -66,6 +65,8 @@
           bind:value={provider.zipCode}
           required
           name="zipCode"
+          min={1}
+          max={99999}
           minlength={5}
           maxlength={5}
           pattern={`[0-9]{5}`}

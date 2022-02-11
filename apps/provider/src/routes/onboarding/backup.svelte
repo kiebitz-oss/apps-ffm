@@ -30,7 +30,7 @@
       </DownloadBackupDataButton>
     </div>
 
-    <a href="/schedule" class="button primary l">
+    <a href="/schedule" class="button primary m">
       {$t("provider.onboarding.backup.next")}
     </a>
   </Content>
