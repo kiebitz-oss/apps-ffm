@@ -1,10 +1,17 @@
 <script lang="ts">
   import { getAppointments } from "$lib/api";
   import AppointmentsList from "$lib/components/AppointmentsList.svelte";
-  import type { Vaccine } from "@impfen/common";
-  import { Content, Loading, Page, PageHeader } from "@impfen/common";
+  import { vaccine } from "$lib/stores";
+  import {
+    Content,
+    Loading,
+    Page,
+    PageHeader,
+    vaccines,
+    type Vaccine,
+  } from "@impfen/common";
   import dayjs from "dayjs";
-  import { t } from "svelte-intl-precompile";
+  import { locale, t } from "svelte-intl-precompile";
   import type { AggregatedPublicAppointment } from "vanellus";
 
   const appointments: Promise<AggregatedPublicAppointment<Vaccine>[]> =
@@ -20,6 +27,15 @@
         >{$t("user.finder.appointment.back-link")}</a
       >
     </PageHeader>
+
+    {#if $vaccine}
+      <p class="notice">
+        Aus den gemachten Angaben über die zu Impfende Person ergibt sich gemäß
+        aktueller Empfehlungen eine Impfung mit <strong
+          >{vaccines[$locale][$vaccine].name}</strong
+        >. Dies wird bei den Terminvorschlägen berücksichtigt.
+      </p>
+    {/if}
 
     {#await appointments}
       <Loading />

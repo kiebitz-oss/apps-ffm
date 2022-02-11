@@ -8,6 +8,8 @@
   export let appointment: AggregatedPublicAppointment;
   export let border = false;
 
+  $: console.log($locale);
+
   const vaccine = vaccines[$locale][appointment.vaccine as Vaccine];
 </script>
 

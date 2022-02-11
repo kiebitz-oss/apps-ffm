@@ -74,12 +74,6 @@
   />
 </form>
 
-<p class="notice">
-  Aus den gemachten Angaben über die zu Impfende Person ergibt sich gemäß
-  aktueller Empfehlungen eine Impfung mit XX& oder XX . Dies wird bei den
-  Terminvorschlägen berücksichtigt.
-</p>
-
 {#if dayjs(date).isBefore(dayjs().subtract(10, "minutes"), "minutes")}
   <p class="error">{$t("user.appointments-list.date-past")}</p>
 {:else if filteredAppointments.length > 0}
@@ -102,7 +96,15 @@
   </ul>
 {:else}
   <p class="text-center text-l">
-    {@html $t("user.appointments-list.no-results")}
+    {#if $provider === true}
+      {@html $t("user.appointments-list.no-results-any-provider")}
+    {:else}
+      {@html $t("user.appointments-list.no-results-specific-provider", {
+        values: {
+          provider: $provider.name,
+        },
+      })}
+    {/if}
   </p>
 {/if}
 
