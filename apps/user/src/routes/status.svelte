@@ -47,6 +47,8 @@
       await cancelBooking($booking);
 
       await goto("/");
+
+      addNotification("Buchung abgesagt");
     }
   };
 </script>

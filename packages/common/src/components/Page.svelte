@@ -2,7 +2,6 @@
   /** eslint-disable @typescript-eslint/no-unsafe-call */
   /** eslint-disable @typescript-eslint/no-unsafe-call */
 
-  import { browser } from "$app/env";
   import { supportedBrowsers } from "@impfen/browserslist-config/supported-browsers";
   import dayjs from "dayjs";
   import utc from "dayjs/plugin/utc";
@@ -14,9 +13,9 @@
   // stupid hack to make ts happy...
   const forcedSupportedBrowsers: string = (supportedBrowsers as string) || "";
 
-  if (browser && !forcedSupportedBrowsers.match(navigator.userAgent)) {
-    alert("Your browser is supported.");
-  }
+  // if (browser && !forcedSupportedBrowsers.test(navigator.userAgent)) {
+  //   alert("Your browser is supported.");
+  // }
 </script>
 
 <script lang="ts">

@@ -74,6 +74,12 @@
   />
 </form>
 
+<p class="notice">
+  Aus den gemachten Angaben über die zu Impfende Person ergibt sich gemäß
+  aktueller Empfehlungen eine Impfung mit XX& oder XX . Dies wird bei den
+  Terminvorschlägen berücksichtigt.
+</p>
+
 {#if dayjs(date).isBefore(dayjs().subtract(10, "minutes"), "minutes")}
   <p class="error">{$t("user.appointments-list.date-past")}</p>
 {:else if filteredAppointments.length > 0}
@@ -99,3 +105,12 @@
     {@html $t("user.appointments-list.no-results")}
   </p>
 {/if}
+
+<style lang="postcss">
+  .notice {
+    margin: 0 auto;
+    max-width: 66%;
+    padding-bottom: 2rem;
+    font-size: 115%;
+  }
+</style>
