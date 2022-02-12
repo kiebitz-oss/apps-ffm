@@ -83,7 +83,7 @@
   </section>
 {/await}
 
-<style lange="postcss">
+<style lang="postcss">
   section {
     max-width: 40rem;
   }
