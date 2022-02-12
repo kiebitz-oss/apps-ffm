@@ -66,7 +66,6 @@
     <li aria-label={provider.name}>
       <a
         href="/finder/appointment"
-        class="block"
         on:click={() => handleSelectProvider(provider)}
       >
         <ProviderCard {provider} />
@@ -85,20 +84,31 @@
 
 <style lang="postcss">
   #providers-filter {
-    margin: 0 2rem;
+    margin: 0;
+
+    @media (--m-n-above) {
+      margin: 0 2rem;
+    }
   }
 
   #providers-list {
     display: flex;
     flex-direction: column;
+    justify-content: stretch;
     gap: 1rem;
     list-style-type: none;
+
     padding-left: 0;
     max-width: 40rem;
 
-    & a {
-      color: var(--black);
-      text-decoration: none;
+    & li {
+      max-width: initial;
+
+      & a {
+        display: block;
+        color: var(--color-black);
+        text-decoration: none;
+      }
     }
   }
 </style>

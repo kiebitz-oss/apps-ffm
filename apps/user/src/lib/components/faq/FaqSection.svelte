@@ -2,7 +2,7 @@
   export let title: string;
 </script>
 
-<section class="faq-section flex flex-col mb-16" {...$$restProps}>
+<section {...$$restProps}>
   <h2 class="h3 section mb-5 text-lg font-semibold tracking-wider uppercase">
     {title}
   </h2>
@@ -11,3 +11,26 @@
     <slot />
   </div>
 </section>
+
+<style lange="postcss">
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 1rem;
+  }
+</style>

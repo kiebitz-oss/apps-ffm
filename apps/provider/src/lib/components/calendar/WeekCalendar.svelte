@@ -16,33 +16,31 @@
   dayjs.extend(isBetween);
 
   export let appointments: Appointment<Vaccine>[] = [];
-  export let week: number | string | undefined = undefined;
+  export let week: number;
   export let autoAdjustHours = true;
   export let defaultFromHour = 9;
   export let defaultToHour = 16;
 
-  const selectedWeekOfYear = Number(
-    week && week >= 1 && week <= 52 ? week : dayjs().week()
-  );
+  let selectedWeek = dayjs().week(week);
 
-  const selectedWeek = dayjs().week(selectedWeekOfYear);
+  $: console.log(selectedWeek);
 
-  const lastWeek = selectedWeek.subtract(7, "day").week();
-  const nextWeek = selectedWeek.add(7, "day").week();
+  let lastWeek = selectedWeek.subtract(7, "day").week();
+  let nextWeek = selectedWeek.add(7, "day").week();
 
-  const startAt = selectedWeek
+  let startAt = selectedWeek
     .startOf("week")
     .set("hour", 0)
     .set("minute", 0)
     .set("second", 0);
 
-  const endAt = selectedWeek
+  let endAt = selectedWeek
     .endOf("week")
     .set("hour", 23)
     .set("minute", 59)
     .set("second", 59);
 
-  const filteredAppointments = appointments.filter((appointment) =>
+  let filteredAppointments = appointments.filter((appointment) =>
     appointment.startAt.isBetween(startAt, endAt, "minute", "[)")
   );
 
@@ -144,44 +142,39 @@
   }
 </script>
 
-<section id="week-calendar" class="stack-v gap-m">
+<section id="week-calendar">
+  <div class="stack-h">
+    <div>
+      start: {startAt.set("hour", fromHour).toDate().toLocaleString($locale)}
+    </div>
+    <div>
+      end: {endAt.set("hour", toHour).toDate().toLocaleString($locale)}
+    </div>
+
+    <span
+      style:backgroundColor={`hsl(${
+        ((100 - bookedSlots / slots) / 100) * 120
+      }, 88%, 43%)`}
+    >
+      stats: {bookedSlots}/{slots}
+    </span>
+  </div>
+
   <header id="week-calendar-header" class="stack-v">
-    <div class="stack-h">
-      <a href={`/schedule/${lastWeek < 0 ? 52 : lastWeek}`}> ❮ zurück </a>
+    <a href={`/schedule/${lastWeek < 0 ? 52 : lastWeek}`}> ❮ zurück </a>
 
-      <h1 class="h1">Impftermine</h1>
+    <h3 class="h4">Woche {selectedWeek.week()}</h3>
 
-      <a href={`/schedule/${nextWeek > 52 ? 1 : nextWeek}`}> vor ❯ </a>
-    </div>
-
-    <div class="stack-h">
-      <div>
-        week: {selectedWeek.week()}
-      </div>
-      <div>
-        start: {startAt.set("hour", fromHour).toDate().toLocaleString($locale)}
-      </div>
-      <div>
-        end: {endAt.set("hour", toHour).toDate().toLocaleString($locale)}
-      </div>
-
-      <span
-        style:backgroundColor={`hsl(${
-          ((100 - bookedSlots / slots) / 100) * 120
-        }, 88%, 43%)`}
-      >
-        stats: {bookedSlots}/{slots}
-      </span>
-    </div>
+    <a href={`/schedule/${nextWeek > 52 ? 1 : nextWeek}`}> vor ❯ </a>
   </header>
 
   <table class="table">
     <thead>
       <tr>
-        <th class="w-[75px] border border-gray-300">&nbsp;</th>
+        <th>&nbsp;</th>
 
         {#each days as day}
-          <th scope="row" class="bg-gray-50 border border-gray-300">
+          <th scope="row">
             {day.format("dd")}
             <br />
             {day.format("DD.MM.")}
@@ -193,12 +186,12 @@
     <tbody>
       {#each hours as hour}
         <tr>
-          <th scope="col" class="bg-gray-50 border border-gray-300">
+          <th scope="col">
             {hour}:00
           </th>
 
           {#each days as day}
-            <td class="relative h-[100px] border border-gray-300">
+            <td>
               {#each appointmentsMatrix[day.format("DD-MM")]?.[hour] || [] as item}
                 <AppointmentCell on:open {item} />
               {/each}
@@ -211,6 +204,11 @@
 </section>
 
 <style lang="postcss">
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   th,
   td {
     border: 1px solid #eee;

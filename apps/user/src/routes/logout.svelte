@@ -3,7 +3,7 @@
   import { logout } from "$lib/api";
   import { SecretBox } from "$lib/components";
   import { secret } from "$lib/stores";
-  import { addNotification, Content, Page } from "@impfen/common";
+  import { addNotification } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
 
   const handleLogout: svelte.JSX.EventHandler<
@@ -18,28 +18,27 @@
   };
 </script>
 
-<Page title={$t("user.logout.page-title")}>
-  <Content class="stack-v m gap-l">
-    <h1 class="h1">{$t("user.logout.title")}</h1>
+<svelte:head><title>{$t("user.logout.page-title")}</title></svelte:head>
 
-    <p class="text-1">
-      {$t("user.logout.intro")}
-    </p>
+<form>
+  <h1 class="h1">{$t("user.logout.title")}</h1>
 
-    <div>
-      <h2 class="book">{$t("user.logout.step-1")}</h2>
-      <SecretBox secret={$secret} copy />
-    </div>
+  <p class="text-1">
+    {$t("user.logout.intro")}
+  </p>
 
-    <div>
-      <h2 class="book">{$t("user.logout.step-2")}</h2>
+  <div>
+    <h2 class="book">{$t("user.logout.step-1")}</h2>
+    <SecretBox secret={$secret} copy />
+  </div>
 
-      <button
-        class="button primary l"
-        type="submit"
-        on:click|preventDefault={handleLogout}
-        >{$t("user.logout.button")}</button
-      >
-    </div>
-  </Content>
-</Page>
+  <div>
+    <h2 class="book">{$t("user.logout.step-2")}</h2>
+
+    <button
+      class="button primary l"
+      type="submit"
+      on:click|preventDefault={handleLogout}>{$t("user.logout.button")}</button
+    >
+  </div>
+</form>

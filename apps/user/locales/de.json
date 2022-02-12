@@ -1,5 +1,5 @@
 {
-  "user.finder.location.accessible.label": "Nur barrierefreie Impfstellen",
+  "user.finder.location.accessible.label": "Nur barrierefreie Impfstellen anzeigen",
   "user.welcome.title": "Willkommen!",
   "user.welcome.intro-1": "Sie sind jetzt nur noch wenige Klicks von Ihrem Termin entfernt.",
   "user.welcome.intro-2": "Wir stellen Ihnen im Folgenden ein paar Fragen, damit Sie den richtigen Impfstoff erhalten. Die Daten verbleiben auf Ihrem Gerät und werden nicht übermittelt.",
@@ -82,5 +82,6 @@
   "user.appointments-list.title-date": "Tag auswählen",
   "user.appointments-list.title-provider": "Impfstelle ändern",
   "user.welcome.question0_error": "Leider sind zur Zeit Impfungen für unter 5-Jährige noch nicht verfügbar",
-  "user.login.intro": "Hier können Sie ihren Impfterminstatus prüfen"
+  "user.login.intro": "Hier können Sie ihren Impfterminstatus prüfen",
+  "user.finder.success.notification.booking-not-found": "Leider konnte die Buchung nicht gefunden werden"
 }

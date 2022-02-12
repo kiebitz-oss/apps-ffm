@@ -1,6 +1,5 @@
 <script lang="ts" context="module">
   import { dev } from "$app/env";
-  import { Content, Page } from "@impfen/common";
   import type { ErrorLoad } from "@sveltejs/kit";
 
   export const load: ErrorLoad = ({ error, status }) => {
@@ -15,14 +14,12 @@
   export let status: number;
 </script>
 
-<Page title={`Error ${status}`}>
-  <Content size="m">
-    <h1 class="h1">{status}</h1>
+<svelte:head><title>{`Error ${status}`}</title></svelte:head>
 
-    <p>{error.message}</p>
+<h1 class="h1">{status}</h1>
 
-    {#if dev && error.stack}
-      <pre>{error.stack}</pre>
-    {/if}
-  </Content>
-</Page>
+<p>{error.message}</p>
+
+{#if dev && error.stack}
+  <pre>{error.stack}</pre>
+{/if}

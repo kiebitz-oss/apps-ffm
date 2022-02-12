@@ -43,7 +43,7 @@
     justify-content: center;
     gap: 1rem;
 
-    background-color: var(--black);
+    background-color: var(--color-black);
     border-radius: var(--radius-m);
     padding: 1rem;
     text-align: center;
@@ -71,12 +71,5 @@
       content: "";
       margin: 0;
     }
-  }
-
-  button {
-    /* appearance: none;
-    background-color: transparent;
-    color: currentColor;
-    padding: 0; */
   }
 </style>

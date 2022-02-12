@@ -21,7 +21,6 @@ const config = {
 
   kit: {
     adapter: adapter({
-      precompress: true,
       pages: "dist",
       assets: "dist",
       fallback: null,

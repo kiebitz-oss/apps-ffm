@@ -5,9 +5,7 @@
   import { unverifiedProvider } from "$lib/stores";
   import {
     addNotification,
-    Content,
     NotificationType,
-    Page,
     PageHeader,
   } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
@@ -29,22 +27,22 @@
   }
 </script>
 
-<Page title={$t("provider.onboarding.verify.page-title")}>
-  <Content size="l">
-    <PageHeader>
-      <h1 class="h1">{$t("provider.onboarding.verify.title")}</h1>
-    </PageHeader>
+<svelte:head
+  ><title>{$t("provider.onboarding.verify.page-title")}</title></svelte:head
+>
 
-    <ProviderSummary provider={$unverifiedProvider} />
+<PageHeader>
+  <h1 class="h1">{$t("provider.onboarding.verify.title")}</h1>
+</PageHeader>
 
-    <div class="stack-h">
-      <a href="/onboarding" class="button secondary m">
-        {$t("provider.onboarding.verify.edit-data")}
-      </a>
+<ProviderSummary provider={$unverifiedProvider} />
 
-      <button on:click|preventDefault={handleSubmit} class="button primary m">
-        {$t("provider.onboarding.verify.button")}
-      </button>
-    </div>
-  </Content>
-</Page>
+<div class="stack-h">
+  <a href="/onboarding" class="button secondary m">
+    {$t("provider.onboarding.verify.edit-data")}
+  </a>
+
+  <button on:click|preventDefault={handleSubmit} class="button primary m">
+    {$t("provider.onboarding.verify.button")}
+  </button>
+</div>

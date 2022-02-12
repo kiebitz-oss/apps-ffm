@@ -20,7 +20,9 @@
 </script>
 
 {#if $notifications?.message}
-  <Notification type={$notifications.type}
+  <Notification
+    type={$notifications.type}
+    on:close={() => notifications.set(null)}
     >{$notifications.message}</Notification
   >
 {/if}

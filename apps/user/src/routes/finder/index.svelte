@@ -1,32 +1,31 @@
 <script lang="ts">
   import { getProviders } from "$lib/api";
   import ProvidersList from "$lib/components/ProvidersList.svelte";
-  import { Content, Loading, Page, PageHeader } from "@impfen/common";
+  import { Loading, PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { PublicProvider } from "vanellus";
 
   const providers: Promise<PublicProvider[]> = getProviders();
 </script>
 
-<Page title={$t("user.finder.location.page-title")}>
-  <Content class="stack-v gap-l">
-    <PageHeader>
-      <h1 class="h1 mb-s">{$t("user.finder.location.title")}</h1>
+<svelte:head><title>{$t("user.finder.location.page-title")}</title></svelte:head
+>
 
-      <a href="/" slot="backLink" class="back-link"
-        >{$t("user.finder.location.back-link")}</a
-      >
-      <p slot="intro" class="text-1">{$t("user.finder.location.intro")}</p>
-    </PageHeader>
+<PageHeader>
+  <h1 class="h1 mb-s">{$t("user.finder.location.title")}</h1>
 
-    {#await providers}
-      <Loading />
-    {:then loadedProviders}
-      <ProvidersList providers={loadedProviders} />
-    {:catch error}
-      <p class="error">
-        {error.message}
-      </p>
-    {/await}
-  </Content>
-</Page>
+  <a href="/" slot="backLink" class="back-link"
+    >{$t("user.finder.location.back-link")}</a
+  >
+  <p slot="intro" class="text-1">{$t("user.finder.location.intro")}</p>
+</PageHeader>
+
+{#await providers}
+  <Loading />
+{:then loadedProviders}
+  <ProvidersList providers={loadedProviders} />
+{:catch error}
+  <p class="error">
+    {error.message}
+  </p>
+{/await}

@@ -11,13 +11,7 @@
   const vaccine = vaccines[$locale][appointment.vaccine as Vaccine];
 </script>
 
-<article
-  class="appointment-card"
-  class:border
-  on:click
-  tabIndex={-1}
-  {...$$restProps}
->
+<article class:border on:click tabIndex={-1} {...$$restProps}>
   <address>
     <h3>
       {appointment.provider.name}
@@ -55,3 +49,25 @@
 
   <slot />
 </article>
+
+<style lang="postcss">
+  article {
+    text-align: center;
+    padding: 1rem;
+    color: var(--color-black);
+    font-weight: 500;
+    max-width: 25rem;
+
+    & time {
+      font-size: var(--font-size-4);
+      font-weight: 700;
+    }
+
+    & > p {
+      word-break: break-word;
+    }
+
+    border: 1px solid var(--color-black);
+    border-radius: var(--radius-m);
+  }
+</style>

@@ -5,9 +5,7 @@
   import { keyPairs, unverifiedProvider } from "$lib/stores";
   import {
     addNotification,
-    Content,
     NotificationType,
-    Page,
     PageHeader,
   } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
@@ -37,16 +35,16 @@
   }
 </script>
 
-<Page title={$t("provider.account.edit.page-title")}>
-  <Content class="stack-v gap-l">
-    <PageHeader>
-      <h1 class="h1">{$t("provider.account.edit.title")}</h1>
+<svelte:head
+  ><title>{$t("provider.account.edit.page-title")}</title></svelte:head
+>
 
-      <a href="/account" class="button s secondary" slot="actions">
-        {$t("provider.account.edit.show-button")}
-      </a>
-    </PageHeader>
+<PageHeader>
+  <h1 class="h1">{$t("provider.account.edit.title")}</h1>
 
-    <ProviderForm provider={$unverifiedProvider} on:submit={handleSubmit} />
-  </Content>
-</Page>
+  <a href="/account" class="button s secondary">
+    {$t("provider.account.edit.show-button")}
+  </a>
+</PageHeader>
+
+<ProviderForm provider={$unverifiedProvider} on:submit={handleSubmit} />

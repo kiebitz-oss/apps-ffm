@@ -2,12 +2,14 @@
   <slot name="backLink" />
 
   {#if $$slots.actions}
-    <div class="stack-h">
+    <div class="actions">
       <slot />
       <slot name="actions" />
     </div>
   {:else}
-    <slot />
+    <div class="actions">
+      <slot />
+    </div>
   {/if}
 
   <slot name="intro" />

@@ -2,13 +2,22 @@
 @import "../../ui.css";
 
 :root {
-  --primary: #005793;
-  --highlight: #77a9ff;
-  --link: var(--primary);
-  --link-hover: var(--highlight);
-  --black: #1b1b1b;
-  --white: white;
-  --page-bg: #f3f4f6;
+  --color-primary: #005793;
+  --color-highlight: #77a9ff;
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-highlight);
+  --color-black: #1b1b1b;
+  --color-white: white;
+  --color-page-bg: #f3f4f6;
+
+  --color-info: #00529B;
+  --color-info-bg: #BDE5F8;
+  --color-warning: #9F6000;
+  --color-warning-bg: #FEEFB3;
+  --color-success: #4F8A10;
+  --color-success-bg: #DFF2BF;
+  --color-danger: #D8000C;
+  --color-danger-bg: #FFD2D2;
 
   --font-sans: "IBM Plex Sans", "Helvetica Neue", "Arial", "sans-serif";
 }

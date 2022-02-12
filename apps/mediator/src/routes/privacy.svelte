@@ -1,12 +1,10 @@
 <script lang="ts">
-  import { Content, Page, theme } from "@impfen/common";
+  import { theme } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
 </script>
 
-<Page title={$t("mediator.privacy.page-title")}>
-  <Content>
-    <div class="stack-v gap-m max-w-m">
-      <svelte:component this={theme.content.privacy} />
-    </div>
-  </Content>
-</Page>
+<svelte:head>
+  <title>{$t("mediator.privacy.page-title")}</title>
+</svelte:head>
+
+<svelte:component this={theme.content.privacy} />

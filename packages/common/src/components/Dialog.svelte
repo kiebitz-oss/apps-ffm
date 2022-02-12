@@ -8,13 +8,13 @@
   export let ignoreEscape = false;
   export let ignoreClickOutside = false;
 
-  const dispatch = createEventDispatcher<{ close: never }>();
-
   let ref: HTMLDivElement;
+
+  const dispatch = createEventDispatcher<{ close: never }>();
 
   onMount(() => {
     const focusableElements =
-      "a, button, input, textarea, select, [contenteditable]";
+      "button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1']):not([disabled]), details:not([disabled]), summary:not(:disabled), [contenteditable]";
 
     ref.querySelector<HTMLElement>(focusableElements).focus();
   });
@@ -39,7 +39,7 @@
         aria-label="Schließen"
         on:click={() => dispatch("close")}
       >
-        <CloseIcon aria-hidden />
+        <CloseIcon class="close-icon" aria-hidden />
       </button>
 
       <slot />
@@ -66,19 +66,26 @@
     overscroll-behavior: contain;
 
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  }
 
-  button {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    height: 2.5rem;
-    width: 2.5rem;
-    color: var(--black);
-    stroke-width: 3px;
+    & > button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      border: none;
+      color: var(--color-black);
 
-    &:hover {
-      color: var(--primary);
+      & :global(.close-icon) {
+        height: 2rem;
+        width: 2rem;
+
+        &:hover {
+          color: currentColor;
+        }
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
     }
   }
 </style>

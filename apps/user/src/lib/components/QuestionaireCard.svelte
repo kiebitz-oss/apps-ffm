@@ -10,7 +10,7 @@
 </script>
 
 {#if condition}
-  <div class="questionaire-card" aria-live="polite">
+  <article aria-live="polite">
     <fieldset aria-errormessage={error ? `${name}-error` : undefined}>
       <legend class="h4"><slot /></legend>
 
@@ -46,11 +46,7 @@
     </fieldset>
 
     {#if error}
-      <div
-        class="mx-4 sm:w-[500px] xl:mt-2"
-        id={`${name}-error`}
-        aria-live="assertive"
-      >
+      <div id={`${name}-error`} aria-live="assertive">
         {#if errorMessage}
           {errorMessage}
         {:else}
@@ -58,11 +54,11 @@
         {/if}
       </div>
     {/if}
-  </div>
+  </article>
 {/if}
 
 <style lang="postcss">
-  .questionaire-card {
+  article {
     display: flex;
     flex-direction: column;
     gap: 1rem;

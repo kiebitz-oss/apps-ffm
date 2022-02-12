@@ -7,9 +7,13 @@
   import AppointmentForm from "$lib/components/schedule/AppointmentForm.svelte";
   import AppointmentSeriesForm from "$lib/components/schedule/AppointmentSeriesForm.svelte";
   import { verified } from "$lib/stores";
-  import { Content, Dialog, Page, type Vaccine } from "@impfen/common";
+  import { Dialog, PageHeader, type Vaccine } from "@impfen/common";
   import dayjs from "dayjs";
+  import weekOfYear from "dayjs/plugin/weekOfYear";
+  import { t } from "svelte-intl-precompile";
   import type { Appointment } from "vanellus";
+
+  dayjs.extend(weekOfYear);
 
   enum Modal {
     CREATE_APPOINTMENT,
@@ -23,6 +27,8 @@
 
   let appointmentPromise: Promise<Appointment<Vaccine>[]>;
 
+  $: selectedWeekOfYear = $page.params.week || dayjs().week();
+
   $: if (!$verified) {
     goto("/account");
   }
@@ -35,38 +41,44 @@
   }
 </script>
 
-<Page title="Impftermine">
-  <Content>
-    <div>
-      <button
-        class="button primary s"
-        on:click={() => (modal = Modal.CREATE_APPOINTMENT)}
-        >Create Appointment</button
-      >
-      <button
-        class="button primary s"
-        on:click={() => (modal = Modal.CREATE_SERIES)}
-        >Create Appointment series</button
-      >
-    </div>
+<svelte:head>
+  <title>{$t("provider.schedule.page-title")}</title>
+</svelte:head>
 
-    {#await appointmentPromise then appointments}
-      <WeekCalendar
-        week={$page.params.week}
-        {appointments}
-        on:open={({ detail }) => {
-          selectedDetail = detail;
+<PageHeader>
+  <h1 class="h1">
+    {$t("provider.schedule.title")}
+  </h1>
 
-          if (detail.isSeries === true) {
-            modal = Modal.SHOW_SERIES;
-          } else {
-            modal = Modal.SHOW_APPOINTMENT;
-          }
-        }}
-      />
-    {/await}
-  </Content>
-</Page>
+  <div>
+    <button
+      class="button primary s"
+      on:click={() => (modal = Modal.CREATE_APPOINTMENT)}
+      >Create Appointment</button
+    >
+    <button
+      class="button primary s"
+      on:click={() => (modal = Modal.CREATE_SERIES)}
+      >Create Appointment series</button
+    >
+  </div>
+</PageHeader>
+
+{#await appointmentPromise then appointments}
+  <WeekCalendar
+    week={selectedWeekOfYear}
+    {appointments}
+    on:open={({ detail }) => {
+      selectedDetail = detail;
+
+      if (detail.isSeries === true) {
+        modal = Modal.SHOW_SERIES;
+      } else {
+        modal = Modal.SHOW_APPOINTMENT;
+      }
+    }}
+  />
+{/await}
 
 {#if modal === Modal.CREATE_APPOINTMENT}
   <Dialog

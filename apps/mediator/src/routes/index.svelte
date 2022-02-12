@@ -2,12 +2,7 @@
   import { goto } from "$app/navigation";
   import { login } from "$lib/api";
   import { keyPairs } from "$lib/stores";
-  import {
-    addNotification,
-    Content,
-    NotificationType,
-    Page,
-  } from "@impfen/common";
+  import { addNotification, NotificationType } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { MediatorKeyPairs } from "vanellus";
 
@@ -62,27 +57,27 @@
   }
 </script>
 
-<Page title={$t("mediator.welcome.page-title")}>
-  <Content class="m stack-v gap-m">
-    <h1 class="h1">{$t("mediator.welcome.title")}</h1>
+<svelte:head>
+  <title>{$t("mediator.welcome.page-title")}</title>
+</svelte:head>
 
-    <p class="text-1">{$t("mediator.welcome.intro")}</p>
+<h1 class="h1">{$t("mediator.welcome.title")}</h1>
 
-    <form
-      name="login"
-      on:submit|preventDefault={handleSubmit}
-      class="stack-v gap-m"
-    >
-      <div class="field">
-        <label for="keyPairs" class="label"
-          >{$t("mediator.welcome.input-select-keypairs")}
-        </label>
-        <input id="keyPairs" type="file" name="keyPairs" required bind:files />
-      </div>
+<p class="text-1">{$t("mediator.welcome.intro")}</p>
 
-      <button type="submit" class="button primary l">
-        {$t("mediator.welcome.button-submit")}
-      </button>
-    </form>
-  </Content>
-</Page>
+<form
+  name="login"
+  class="stack-v gap-m"
+  on:submit|preventDefault={handleSubmit}
+>
+  <div class="field">
+    <label for="keyPairs" class="label"
+      >{$t("mediator.welcome.input-select-keypairs")}
+    </label>
+    <input id="keyPairs" type="file" name="keyPairs" required bind:files />
+  </div>
+
+  <button type="submit" class="button primary l">
+    {$t("mediator.welcome.button-submit")}
+  </button>
+</form>

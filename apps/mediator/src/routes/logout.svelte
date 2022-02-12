@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { logout } from "$lib/api";
-  import { addNotification, Content, Page } from "@impfen/common";
+  import { addNotification } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
 
   const handleLogout: svelte.JSX.EventHandler<
@@ -18,20 +18,20 @@
   };
 </script>
 
-<Page title={$t("mediator.logout.page-title")}>
-  <Content class="stack-v gap-m m">
-    <h1 class="h1">{$t("mediator.logout.title")}</h1>
+<svelte:head>
+  <title>{$t("mediator.welcome.page-title")}</title>
+</svelte:head>
 
-    <p class="text-2">
-      {$t("mediator.logout.intro")}
-    </p>
+<h1 class="h1">{$t("mediator.logout.title")}</h1>
 
-    <button
-      class="button primary l"
-      type="submit"
-      on:click|preventDefault={handleLogout}
-    >
-      {$t("mediator.logout.button")}
-    </button>
-  </Content>
-</Page>
+<p class="text-2">
+  {$t("mediator.logout.intro")}
+</p>
+
+<button
+  class="button primary l"
+  type="submit"
+  on:click|preventDefault={handleLogout}
+>
+  {$t("mediator.logout.button")}
+</button>

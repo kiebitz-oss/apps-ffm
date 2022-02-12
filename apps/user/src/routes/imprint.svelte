@@ -1,12 +1,18 @@
+<script lang="ts" context="module">
+  export const prerender = true;
+</script>
+
 <script lang="ts">
-  import { Content, Page, theme } from "@impfen/common";
+  import { theme } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
 </script>
 
-<Page title={$t("user.imprint.page-title")}>
-  <Content>
-    <div class="stack-v gap-m max-w-m">
-      <svelte:component this={theme.content.imprint} />
-    </div>
-  </Content>
-</Page>
+<svelte:head><title>{$t("user.imprint.page-title")}</title></svelte:head>
+
+<svelte:component this={theme.content.imprint} />
+
+<style lang="postcss">
+  :root {
+    --flow-max-width: 40rem;
+  }
+</style>

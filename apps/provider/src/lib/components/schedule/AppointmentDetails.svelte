@@ -6,7 +6,6 @@
   import { AppointmentStatus } from "vanellus";
 
   export let appointment: Appointment<Vaccine>;
-  export let border: true | undefined = undefined;
 
   const handleCancelAppointment = async () => {
     await cancelAppointment(appointment);
@@ -15,10 +14,7 @@
   const vaccine = vaccines[$locale][appointment.vaccine];
 </script>
 
-<div
-  class="flex flex-col gap-4 items-center p-4 font-semibold default-focus"
-  class:border
->
+<div>
   <!-- svelte-ignore component-name-lowercase -->
   <time class="flex flex-col font-semibold text-center">
     <div class="text-4xl">

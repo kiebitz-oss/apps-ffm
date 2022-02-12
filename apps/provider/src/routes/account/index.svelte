@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ProviderSummary } from "$lib/components";
   import { unverifiedProvider, verified } from "$lib/stores";
-  import { Content, Page, PageHeader } from "@impfen/common";
+  import { PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { ProviderInput } from "vanellus";
 
@@ -24,24 +24,20 @@
   // }
 </script>
 
-<Page title="Account">
-  <Content class="stack-v gap-l">
-    <PageHeader>
-      <h1 class="h1">{$t("provider.account.index.title")}</h1>
+<svelte:head><title>{$t("provider.account.index.title")}</title></svelte:head>
 
-      <a href="/account/edit" class="button s secondary" slot="actions">
-        {$t("provider.account.index.edit-button")}
-      </a>
-    </PageHeader>
+<PageHeader>
+  <h1 class="h1">{$t("provider.account.index.title")}</h1>
 
-    {#if !$verified}
-      <p class="mb-8">
-        {$t("provider.account.not-verified-yet")}
-      </p>
-    {/if}
+  <a href="/account/edit" class="button s secondary">
+    {$t("provider.account.index.edit-button")}
+  </a>
+</PageHeader>
 
-    <div class="max-w-m">
-      <ProviderSummary {provider} />
-    </div>
-  </Content>
-</Page>
+{#if !$verified}
+  <p class="mb-8">
+    {$t("provider.account.not-verified-yet")}
+  </p>
+{/if}
+
+<ProviderSummary {provider} />
