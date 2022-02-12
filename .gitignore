@@ -1,49 +1,9 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-# and https://github.com/github/gitignore for examples
-
-# local env files (followinf dotenv-flow / nextjs convention)
-
-# dependencies
-node_modules
-.pnp
-.pnp.js
-
-# testing
-coverage
-
-# next.js
-.next
-out
-
-# production
-dist
-locales/**/messages.js
-
-# Cache
-.tsbuildinfo
-.eslintcache
-.cache/*
-__pycache__
-.turbo
-
-# misc
 .DS_Store
-*.pem
-~*
-.tmp
-*.orig
-*.log
-**/locales/**/messages.ts
-**/locales/**/messages.d.ts
-.out
-
-# debug
-pnpm-debug.log*
-pnpm-error.log*
-
-# local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-*.enc
+node_modules
+.svelte-kit
+/dist
+.env
+.env.*
+!.env.example
+.pnpm-debug.log
+.cache

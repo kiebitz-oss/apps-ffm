@@ -1,10 +1,8 @@
 {
+  "editor.fontLigatures": true,
   "editor.quickSuggestions": {
     "strings": true
   },
-  "css.validate": false, // Disable css built-in lint
-  "scss.validate": false,
-  "stylelint.enable": true, // Enable sytlelint
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": [
     "source.addMissingImports",
@@ -12,15 +10,39 @@
     "source.fixAll"
   ],
   "editor.guides.bracketPairs": true,
-  "files.exclude": {
-    "node_module": true
+
+  "files.associations": {
+    "*.css": "postcss",
+    "*.mdx": "markdown"
   },
+
+  "svelte.plugin.svelte.defaultScriptLanguage": "ts",
+  "svelte.enable-ts-plugin": true,
+
+  // styling
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "less", "scss", "postcss"],
+
+  "i18n-ally.enabledFrameworks": ["svelte"],
+  "i18n-ally.extract.autoDetect": true,
+  "i18n-ally.keystyle": "flat",
+  "i18n-ally.displayLanguage": "de",
+  "i18n-ally.sourceLanguage": "de",
+  "i18n-ally.localesPaths": [
+    "apps/user/locales",
+    "apps/provider/locales",
+    "apps/mediator/locales"
+  ],
+
   "eslint.workingDirectories": [
-    {
-      "pattern": "./apps/*/"
-    },
-    {
-      "pattern": "./packages/*/"
-    }
-  ]
+    "./apps/user",
+    "./apps/provider",
+    "./apps/mediator",
+    "./packages/common",
+    "./packages/vanellus"
+  ],
+  "eslint.validate": ["javascript", "typescript", "svelte"]
 }

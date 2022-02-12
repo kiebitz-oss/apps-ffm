@@ -1,0 +1,19 @@
+{
+  "name": "@impfen/browserslist-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "supported-browsers.js"
+  ],
+  "exports": {
+    "./supported-browsers": "./supported-browsers.js",
+    ".": "./index.js"
+  },
+  "scripts": {
+    "postinstall": "echo \"export const supportedBrowsers = $(browserslist-useragent-regexp --allowHigherVersions);\" > supported-browsers.js"
+  },
+  "dependencies": {
+    "browserslist-useragent-regexp": "^3.0.2"
+  }
+}

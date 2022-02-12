@@ -1,0 +1,6 @@
+{
+  "mediator.welcome.intro": "Please load the backup file with your secret broker information.",
+  "mediator.welcome.title": "Register as a mediator",
+  "mediator.welcome.select-keypairs": "Select mediator key",
+  "mediator.providers.show.not-given": ""
+}

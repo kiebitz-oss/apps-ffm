@@ -2,13 +2,19 @@
   // See https://go.microsoft.com/fwlink/?LinkId=827846
   // for the documentation about the extensions.json format
   "recommendations": [
+    // Svelte
+    "svelte.svelte-vscode",
     // ESLint
     "dbaeumer.vscode-eslint",
+    // Prettier
+    "esbenp.prettier-vscode",
     // EditorConfig
     "editorconfig.editorconfig",
-    // Tailwind
-    "bradlc.vscode-tailwindcss",
-    // CSS
-    "stylelint.vscode-stylelint"
+    // Postcss
+    "vunguyentuan.vscode-postcss",
+    // Stylelint
+    "stylelint.vscode-stylelint",
+    // i18n
+    "lokalise.i18n-ally"
   ]
 }

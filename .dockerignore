@@ -1,7 +1,7 @@
 node_modules
 **/node_modules/**
 **/dist/**
-**/.next/**
+**/.svelte-kit/**
 
 Dockerfile*
 .dockerignore
