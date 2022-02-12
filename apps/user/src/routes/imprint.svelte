@@ -9,7 +9,7 @@
 
 <svelte:head><title>{$t("user.imprint.page-title")}</title></svelte:head>
 
-<article>
+<article class:flow={true}>
   <Imprint />
 </article>
 

@@ -3,11 +3,11 @@
 </script>
 
 <section {...$$restProps}>
-  <h2 class="h3 section mb-5 text-lg font-semibold tracking-wider uppercase">
+  <h2 class="h3">
     {title}
   </h2>
 
-  <div class="faq-questions flex flex-col px-8 md:gap-10 md:px-0 md:ml-6">
+  <div class="faq-questions">
     <slot />
   </div>
 </section>

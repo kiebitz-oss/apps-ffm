@@ -9,4 +9,12 @@
 
 <svelte:head><title>{$t("user.faq.page-title")}</title></svelte:head>
 
-<Faq />
+<article class:flow={true}>
+  <Faq />
+</article>
+
+<style lang="postcss">
+  article {
+    --flow-max-width: 40rem;
+  }
+</style>

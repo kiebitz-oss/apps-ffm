@@ -19,8 +19,10 @@
   register("en", () => import("$locales/en"));
   register("de", () => import("$locales/de"));
 
+  const locale = getLocaleFromNavigator("de").substring(0, 2);
+
   init({
-    initialLocale: getLocaleFromNavigator(),
+    initialLocale: locale === "de" || locale === "en" ? locale : "de",
     fallbackLocale: "de",
   });
 </script>

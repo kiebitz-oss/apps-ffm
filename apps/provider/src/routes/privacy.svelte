@@ -2,7 +2,7 @@
   import { theme } from "@impfen/common";
 </script>
 
-<article>
+<article class:flow={true}>
   <svelte:component this={theme.content.privacy} />
 </article>
 

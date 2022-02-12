@@ -7,7 +7,7 @@
   <title>{$t("mediator.imprint.page-title")}</title>
 </svelte:head>
 
-<article>
+<article class:flow={true}>
   <svelte:component this={theme.content.imprint} />
 </article>
 
