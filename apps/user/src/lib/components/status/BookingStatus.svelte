@@ -90,12 +90,10 @@
 
   #booking-details {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
 
-    @media (--m-n-above) {
-      flex-direction: row;
-    }
+    flex-wrap: wrap;
+    gap: 2rem;
 
     & > div {
       flex: 1;
@@ -108,6 +106,7 @@
         display: grid;
         place-content: center;
         border-radius: var(--radius-m);
+        min-width: 250px;
       }
 
       & > div {

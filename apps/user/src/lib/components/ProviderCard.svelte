@@ -6,7 +6,7 @@
   export let provider: PublicProvider;
 </script>
 
-<article>
+<article class:provider-card={true}>
   <div>
     <h2 class="h4">{provider.name}</h2>
 
@@ -20,19 +20,3 @@
     <IconAccessibility aria-label={$t("user.provider-card.accessibility")} />
   {/if}
 </article>
-
-<style lang="postcss">
-  article {
-    border: 2px solid var(--color-black);
-    border-radius: var(--radius-l);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    &:hover {
-      box-shadow: var(--shadow-highlight);
-      border: 2px solid var(--color-highlight);
-    }
-  }
-</style>

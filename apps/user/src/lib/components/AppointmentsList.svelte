@@ -61,8 +61,6 @@
             ? $provider.name
             : $t("user.appointments-list.any-provider")}
           class="flex-1"
-          style:pointer-event="none"
-          style:text-decoration="none"
         />
         <span>
           <IconEdit aria-hidden />
@@ -129,6 +127,17 @@
       display: flex;
       flex-direction: column;
       min-width: 300px;
+    }
+
+    & .field-group {
+      color: var(--color-black);
+      pointer-event: none;
+      text-decoration: none;
+
+      & input[type]:focus,
+      & input[type]:focus-visible {
+        outline: none;
+      }
     }
   }
 

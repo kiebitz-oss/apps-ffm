@@ -611,3 +611,18 @@ button {
     opacity: 1 !important;
   }
 }
+
+.provider-card {
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-l);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &:hover {
+    box-shadow: var(--shadow-highlight);
+    border: 2px solid var(--color-highlight);
+  }
+  
+}
