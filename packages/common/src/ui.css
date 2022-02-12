@@ -281,7 +281,11 @@ a {
   &::before {
     content: url("data:image/svg+xml;utf8,<svg preserveAspectRatio='xMidYMid meet' aria-hidden='true' width='14' height='14' viewbox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M6.7 12.3L2.9 8.5 15 8.5 15 7.5 2.9 7.5 6.7 3.7 6 3 1 8 6 13z' /></svg>");
     position: absolute;
-    left: -2rem;
+    left: -1.5rem;
+
+    @media (--m-n-above) {
+      left: -2rem;
+    }
   }
 
   &:hover {

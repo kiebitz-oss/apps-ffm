@@ -84,7 +84,11 @@
 
 <style lang="postcss">
   #providers-filter {
-    margin: 0 2vmax;
+    margin: 0;
+
+    @media (--m-n-above) {
+      margin: 0 2vmax;
+    }
   }
 
   #providers-list {
