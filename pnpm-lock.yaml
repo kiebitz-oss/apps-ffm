@@ -47,7 +47,6 @@ importers:
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/adapter-static': next
       '@sveltejs/kit': next
-      buffer: ^6.0.3
       eslint: ^8.9.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-compat: ^4.0.2
@@ -82,7 +81,6 @@ importers:
       '@impfen/stylelint-config': link:../../packages/stylelint-config
       '@sveltejs/adapter-static': 1.0.0-next.28
       '@sveltejs/kit': 1.0.0-next.266_svelte@3.46.4
-      buffer: 6.0.3
       eslint: 8.9.0
       eslint-config-prettier: 8.3.0_eslint@8.9.0
       eslint-plugin-compat: 4.0.2_eslint@8.9.0
@@ -119,7 +117,6 @@ importers:
       '@impfen/stylelint-config': workspace:^1.0.0
       '@sveltejs/adapter-static': next
       '@sveltejs/kit': next
-      buffer: ^6.0.3
       dayjs: ^1.10.7
       eslint: ^8.9.0
       eslint-config-prettier: ^8.3.0
@@ -155,7 +152,6 @@ importers:
       '@impfen/stylelint-config': link:../../packages/stylelint-config
       '@sveltejs/adapter-static': 1.0.0-next.28
       '@sveltejs/kit': 1.0.0-next.266_svelte@3.46.4
-      buffer: 6.0.3
       dayjs: 1.10.7
       eslint: 8.9.0
       eslint-config-prettier: 8.3.0_eslint@8.9.0
@@ -1897,6 +1893,7 @@ packages:
 
   /base64-js/1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+    dev: false
 
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
@@ -1971,6 +1968,7 @@ packages:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
+    dev: false
 
   /bundle-require/3.0.4_esbuild@0.14.21:
     resolution: {integrity: sha512-VXG6epB1yrLAvWVQpl92qF347/UXmncQj7J3U8kZEbdVZ1ZkQyr4hYeL/9RvcE8vVVdp53dY78Fd/3pqfRqI1A==}
@@ -3375,6 +3373,7 @@ packages:
 
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
+    dev: false
 
   /ignore/4.0.6:
     resolution: {integrity: sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==}

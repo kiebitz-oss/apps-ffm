@@ -24,7 +24,6 @@
     "@impfen/stylelint-config": "workspace:^1.0.0",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
-    "buffer": "^6.0.3",
     "dayjs": "^1.10.7",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
