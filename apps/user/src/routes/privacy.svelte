@@ -10,3 +10,9 @@
 <svelte:head><title>{$t("user.privacy.page-title")}</title></svelte:head>
 
 <svelte:component this={theme.content.privacy} />
+
+<style lang="postcss">
+  :root {
+    --flow-max-width: 40rem;
+  }
+</style>

@@ -102,7 +102,7 @@
     align-self: center;
     border: none;
 
-    & :global(#hamburger) {
+    & #hamburger {
       width: 2rem;
       height: 2rem;
     }
@@ -255,6 +255,7 @@ a {
   align-items: center;
   gap: var(--gap-s);
   text-decoration: none;
+  color: var(--color-link);
 
   &:visited {
     color: var(--color-link-visited);

@@ -35,3 +35,9 @@
 >
   {$t("mediator.logout.button")}
 </button>
+
+<style lang="postcss">
+  :root {
+    --flow-max-width: 40rem;
+  }
+</style>

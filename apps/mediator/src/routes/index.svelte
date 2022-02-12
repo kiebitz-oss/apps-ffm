@@ -81,3 +81,9 @@
     {$t("mediator.welcome.button-submit")}
   </button>
 </form>
+
+<style lang="postcss">
+  :root {
+    --flow-max-width: 40rem;
+  }
+</style>
