@@ -83,7 +83,7 @@
 </form>
 
 <style lang="postcss">
-  :root {
+  form {
     --flow-max-width: 40rem;
   }
 </style>

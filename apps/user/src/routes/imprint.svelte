@@ -9,10 +9,12 @@
 
 <svelte:head><title>{$t("user.imprint.page-title")}</title></svelte:head>
 
-<Imprint />
+<article>
+  <Imprint />
+</article>
 
 <style lang="postcss">
-  :root {
+  article {
     --flow-max-width: 40rem;
   }
 </style>

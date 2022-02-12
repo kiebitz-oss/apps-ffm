@@ -49,3 +49,9 @@
     >{$t("user.welcome.button-submit")}</button
   >
 </form>
+
+<style lang="postcss">
+  form {
+    --flow-max-width: 40rem;
+  }
+</style>

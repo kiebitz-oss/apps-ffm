@@ -7,10 +7,12 @@
   <title>{$t("mediator.privacy.page-title")}</title>
 </svelte:head>
 
-<svelte:component this={theme.content.privacy} />
+<article>
+  <svelte:component this={theme.content.privacy} />
+</article>
 
 <style lang="postcss">
-  :root {
+  article {
     --flow-max-width: 40rem;
   }
 </style>

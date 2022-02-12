@@ -7,10 +7,12 @@
   <title>{$t("mediator.imprint.page-title")}</title>
 </svelte:head>
 
-<svelte:component this={theme.content.imprint} />
+<article>
+  <svelte:component this={theme.content.imprint} />
+</article>
 
 <style lang="postcss">
-  :root {
+  article {
     --flow-max-width: 40rem;
   }
 </style>

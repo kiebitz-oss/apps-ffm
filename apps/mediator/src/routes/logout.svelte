@@ -22,22 +22,24 @@
   <title>{$t("mediator.welcome.page-title")}</title>
 </svelte:head>
 
-<h1 class="h1">{$t("mediator.logout.title")}</h1>
+<form>
+  <h1 class="h1">{$t("mediator.logout.title")}</h1>
 
-<p class="text-2">
-  {$t("mediator.logout.intro")}
-</p>
+  <p class="text-2">
+    {$t("mediator.logout.intro")}
+  </p>
 
-<button
-  class="button primary l"
-  type="submit"
-  on:click|preventDefault={handleLogout}
->
-  {$t("mediator.logout.button")}
-</button>
+  <button
+    class="button primary l"
+    type="submit"
+    on:click|preventDefault={handleLogout}
+  >
+    {$t("mediator.logout.button")}
+  </button>
+</form>
 
 <style lang="postcss">
-  :root {
+  form {
     --flow-max-width: 40rem;
   }
 </style>

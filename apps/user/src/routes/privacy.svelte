@@ -9,10 +9,12 @@
 
 <svelte:head><title>{$t("user.privacy.page-title")}</title></svelte:head>
 
-<Privacy />
+<article>
+  <Privacy />
+</article>
 
 <style lang="postcss">
-  :root {
+  article {
     --flow-max-width: 40rem;
   }
 </style>
