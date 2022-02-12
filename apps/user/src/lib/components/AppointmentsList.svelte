@@ -131,12 +131,15 @@
 
     & .field-group {
       color: var(--color-black);
-      pointer-event: none;
       text-decoration: none;
 
-      & input[type]:focus,
-      & input[type]:focus-visible {
-        outline: none;
+      & input[type] {
+        pointer-events: none;
+
+        &:focus,
+        &:focus-visible {
+          outline: none;
+        }
       }
     }
   }

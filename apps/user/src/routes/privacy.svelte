@@ -3,13 +3,13 @@
 </script>
 
 <script lang="ts">
-  import { theme } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
+  import Privacy from "../content/privacy.mdx";
 </script>
 
 <svelte:head><title>{$t("user.privacy.page-title")}</title></svelte:head>
 
-<svelte:component this={theme.content.privacy} />
+<Privacy />
 
 <style lang="postcss">
   :root {

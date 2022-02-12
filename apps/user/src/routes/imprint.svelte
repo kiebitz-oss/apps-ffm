@@ -3,13 +3,13 @@
 </script>
 
 <script lang="ts">
-  import { theme } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
+  import Imprint from "../content/imprint.mdx";
 </script>
 
 <svelte:head><title>{$t("user.imprint.page-title")}</title></svelte:head>
 
-<svelte:component this={theme.content.imprint} />
+<Imprint />
 
 <style lang="postcss">
   :root {

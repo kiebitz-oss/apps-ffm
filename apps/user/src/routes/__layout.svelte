@@ -1,19 +1,26 @@
 <script lang="ts" context="module">
   import { booking } from "$lib/stores";
-  import de from "$locales/de";
-  import en from "$locales/en";
+  // import de from "$locales/de";
+  // import en from "$locales/en";
   import { Layout, NavLink } from "@impfen/common";
-  import { addMessages, init, t } from "svelte-intl-precompile";
+  import {
+    getLocaleFromNavigator,
+    init,
+    register,
+    t,
+  } from "svelte-intl-precompile";
   import CalendarIcon from "~icons/carbon/calendar";
   import HelpIcon from "~icons/carbon/help";
   import LoginIcon from "~icons/carbon/login";
   import LogoutIcon from "~icons/carbon/logout";
 
-  addMessages("de", de);
-  addMessages("en", en);
+  // addMessages("de", de);
+  // addMessages("en", en);
+  register("en", () => import("$locales/en"));
+  register("de", () => import("$locales/de"));
 
   init({
-    initialLocale: "de",
+    initialLocale: getLocaleFromNavigator(),
     fallbackLocale: "de",
   });
 </script>
