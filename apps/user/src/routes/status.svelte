@@ -69,8 +69,10 @@
         {/each}
       </ul>
 
-      <h3 class="h3">Ist die zu impfende Person weniger als 18 Jahre alt?</h3>
+      <h3 class="h2">Ist die zu impfende Person weniger als 18 Jahre alt?</h3>
+
       <p>Dann ist zusätzlich folgendes zu beachten:</p>
+
       <ul>
         <li>
           ausgefüllten Anamnese- und Einwilligungsbogen mitbringen. <strong

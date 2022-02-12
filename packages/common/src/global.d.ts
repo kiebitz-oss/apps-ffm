@@ -1,16 +1,6 @@
 /// <reference types="@sveltejs/kit" />
 /// <reference types="unplugin-icons/types/svelte" />
 
-interface ImportMetaEnv {
-  readonly VITE_IMPFEN_APPOINTMENTS_ENDPOINT?: string;
-  readonly VITE_IMPFEN_STORAGE_ENDPOINT?: string;
-  // more env variables...
-}
-
-interface ImportMeta {
-  readonly env: ImportMetaEnv;
-}
-
 interface ActionReturn<Parameters = unknown> {
   update?: (parameters: Parameters) => void;
   destroy?: () => void;

@@ -43,7 +43,8 @@
       ($provider === true ||
         ($provider?.id && appointment.provider.id === $provider.id)) &&
       appointment.startAt.local().isAfter(date, "minute") &&
-      (!$vaccine || $vaccine === appointment.vaccine)
+      ((!$vaccine && $vaccine !== "biontechchildren") ||
+        $vaccine === appointment.vaccine)
   );
 </script>
 

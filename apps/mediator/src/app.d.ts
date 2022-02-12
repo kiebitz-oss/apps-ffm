@@ -9,6 +9,18 @@ interface ImportMetaEnv {
   // more env variables...
 }
 
+interface ActionReturn<Parameters = unknown> {
+  update?: (parameters: Parameters) => void;
+  destroy?: () => void;
+}
+
+interface Action<Parameters = unknown, Element = HTMLElement> {
+  <Node extends Element>(
+    node: Node,
+    parameters?: Parameters
+  ): void | ActionReturn<Parameters>;
+}
+
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
