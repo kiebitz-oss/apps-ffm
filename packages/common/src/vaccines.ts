@@ -55,7 +55,7 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
       id: "BT",
       name: "BioNTech/Pfizer (Comirnaty®)",
       pdfDescription:
-        "Vor dem Impftermin und Ihrem medizinischen Aufklärungsgespräch können Sie sich das Aufklärungsmerkblatt zum Impfstoff, den Anamnesebogen und die Einwilligungserklärung zur Impfung als PDF-Datei herunterladen und ausdrucken. Dort erhalten Sie ebenfalls wichtige Informationen zu Ihrer Impfung und dem Impfstoff gegen das Coronavirus.",
+        "Vor dem Impftermin und Ihrem medizinischen Aufklärungsgespräch können Sie sich das Aufklärungsmerkblatt zum Impfstoff, den Anamnesebogen und die Einwilligungserklärung zur Impfung als PDF-Datei herunterladen und ausdrucken. Dort erhalten Sie ebenfalls wichtige Informationen zu Ihrer Impfung und dem Impfstoff gegen das Coronavirus. Bei Minderjährigen muss der ausgefüllte Anamnese- und Einwilligungsbogen von einer sorgeberechtigten Person unterschrieben sein.",
       pdfs: [
         {
           label: "Aufklärungsmerkblatt",

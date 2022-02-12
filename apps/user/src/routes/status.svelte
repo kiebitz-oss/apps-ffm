@@ -68,6 +68,28 @@
           </li>
         {/each}
       </ul>
+
+      <h3 class="h3">Ist die zu impfende Person weniger als 18 Jahre alt?</h3>
+      <p>Dann ist zusätzlich folgendes zu beachten:</p>
+      <ul>
+        <li>
+          ausgefüllten Anamnese- und Einwilligungsbogen mitbringen. <strong
+            >Wichtig:</strong
+          > unterschrieben durch Sorgeberechtigte
+        </li>
+        <li>
+          zu Impfende ab 16 Jahre können allein kommen, müssen aber eine
+          Ausweiskopie einer/s Sorgeberechtigten mitbringen
+        </li>
+        <li>
+          Personen unter 16 müssen durch eine/n Sorgeberechtigte/n begleitet
+          werden
+        </li>
+        <li>
+          Sorgeberechtigte müssen ebenfalls ein amtliches Ausweisdokument
+          mitbringen
+        </li>
+      </ul>
     </section>
 
     <section>
