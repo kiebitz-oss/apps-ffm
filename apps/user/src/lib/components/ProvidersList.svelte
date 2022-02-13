@@ -1,19 +1,18 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { ProviderCard } from "$lib/components";
-  import { provider } from "$lib/stores";
+  import { accessible, provider } from "$lib/stores";
   import { t } from "svelte-intl-precompile";
   import type { PublicProvider } from "vanellus";
 
   export let providers: PublicProvider[];
 
   let filteredProviders: PublicProvider[] = [];
-  let accessible = false;
 
   const handleAccessibleChange: svelte.JSX.ChangeEventHandler<
     HTMLInputElement
   > = (event) => {
-    accessible = !!event.currentTarget.checked;
+    $accessible = !!event.currentTarget.checked;
   };
 
   const handleSelectProvider = async (
@@ -24,7 +23,7 @@
   };
 
   $: filteredProviders =
-    Array.isArray(providers) && accessible === true
+    Array.isArray(providers) && $accessible === true
       ? providers.filter((provider) => provider.accessible === true)
       : providers;
 </script>
@@ -35,7 +34,7 @@
       type="checkbox"
       name="accessible"
       class="checkbox primary m"
-      checked={accessible}
+      bind:checked={$accessible}
       on:change|preventDefault={handleAccessibleChange}
     />
     {$t("user.finder.location.accessible.label")}

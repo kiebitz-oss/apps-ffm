@@ -1,4 +1,5 @@
 import { persistantWriteable, type Vaccine } from "@impfen/common";
+import { writable } from "svelte/store";
 import type {
   AggregatedPublicAppointment,
   Booking,
@@ -27,3 +28,5 @@ export const vaccine = persistantWriteable<Vaccine>(
   undefined,
   true
 );
+
+export const accessible = writable<boolean>(false);

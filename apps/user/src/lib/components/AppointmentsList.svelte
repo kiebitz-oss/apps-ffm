@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { AppointmentCard } from "$lib/components";
-  import { appointment, provider, vaccine } from "$lib/stores";
+  import { accessible, appointment, provider, vaccine } from "$lib/stores";
   import type { Vaccine } from "@impfen/common";
   import type { Dayjs } from "dayjs";
   import dayjs from "dayjs";
@@ -40,6 +40,7 @@
 
   $: filteredAppointments = appointments.filter(
     (appointment) =>
+      ($accessible !== true || appointment.provider.accessible === true) &&
       ($provider === true ||
         ($provider?.id && appointment.provider.id === $provider.id)) &&
       appointment.startAt.local().isAfter(date, "minute") &&
