@@ -45,7 +45,11 @@
       vaccine,
       slotCount
     ).then((result) => {
-      addNotification("success");
+      addNotification(
+        $t(
+          "provider.appointment-form.notification.success.appointment-series-create"
+        )
+      );
       dispatcher("success", result);
 
       isSubmitting = false;

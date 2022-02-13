@@ -90,5 +90,7 @@
   "provider.schedule.button-create-appointment-series": "Impfterminserie anlegen",
   "provider.appointment-series-form.title": "Impfterminserie anlegen",
   "provider.appointment-form.title": "Impftermin anlegen",
-  "user.finder.appointment-series.card.button-cancel": "Impfterminserie absagen"
+  "user.finder.appointment-series.card.button-cancel": "Impfterminserie absagen",
+  "provider.appointment-form.notification.success.appointment-create": "Impftermin erfolgreich angelegt",
+  "provider.appointment-form.notification.success.appointment-series-create": "Impfterminserie erfolgreich angelegt"
 }

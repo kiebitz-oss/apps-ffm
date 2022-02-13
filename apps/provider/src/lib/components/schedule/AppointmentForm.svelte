@@ -35,7 +35,11 @@
 
     await createAppointment(dayjs(startAt), duration, vaccine, slotCount)
       .then((result) => {
-        addNotification("success");
+        addNotification(
+          $t(
+            "provider.appointment-form.notification.success.appointment-create"
+          )
+        );
         dispatcher("success", result);
 
         return result;
