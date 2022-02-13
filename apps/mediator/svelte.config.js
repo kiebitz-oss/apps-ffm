@@ -24,7 +24,7 @@ const config = {
       pages: "dist",
       assets: "dist",
       // fallback: "200.html",
-      // precompress: true,
+      precompress: true,
     }),
 
     prerender: {

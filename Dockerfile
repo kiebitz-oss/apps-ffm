@@ -73,6 +73,7 @@ USER 101
 
 COPY --from=origin /tmp/harden/ .
 
+
 EXPOSE 3000
 
 ENTRYPOINT ["/usr/sbin/nginx","-g","daemon off;"]

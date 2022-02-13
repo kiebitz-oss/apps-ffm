@@ -68,13 +68,13 @@
   <div>
     {#if $$slots.nav}
       <section>
-        <h3 class="h4">Informationen</h3>
+        <strong class="h4">Informationen</strong>
         <slot name="nav" />
       </section>
     {/if}
 
     <section>
-      <h3 class="h4">Sprache</h3>
+      <strong class="h4">Sprache</strong>
 
       <ul>
         {#each $locales as loc}
@@ -82,7 +82,7 @@
             <a
               href={$page.url.pathname}
               hreflang={$locale}
-              class="link m"
+              class="link"
               aria-current={loc === $locale && "current" ? "page" : undefined}
               on:click={() => ($locale = loc)}
               >{loc === "de" ? "Deutsch" : "English"}</a
@@ -93,13 +93,13 @@
     </section>
   </div>
 
-  <section class="sm:flex-[1]">
+  <section>
     <ul>
-      <li><a class="link md" href="/imprint/">Impressum</a></li>
-      <li><a class="link md" href="/privacy/">Datenschutz</a></li>
+      <li><a class="link" href="/imprint/">Impressum</a></li>
+      <li><a class="link" href="/privacy/">Datenschutz</a></li>
       <li>
         <a
-          class="link md"
+          class="link"
           rel="noreferrer"
           target="_blank"
           href="https://github.com/impfen">Github</a
@@ -107,7 +107,7 @@
       </li>
       <li>
         <a
-          class="link md"
+          class="link"
           rel="noreferrer"
           target="_blank"
           href="https://kiebitz.eu/">Realisiert mit Kiebitz</a
