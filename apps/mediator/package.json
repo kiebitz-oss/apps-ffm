@@ -1,6 +1,6 @@
 {
   "name": "@impfen/mediator",
-  "version": "1.0.0",
+  "version": "0.8.0",
   "scripts": {
     "dev": "svelte-kit dev --port 3002",
     "build": "svelte-kit build",
@@ -20,12 +20,12 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.0.15",
-    "@impfen/browserslist-config": "workspace:^1.0.0",
-    "@impfen/common": "workspace:^1.0.0",
-    "@impfen/eslint-config": "workspace:^1.0.0",
-    "@impfen/jest-config": "workspace:^1.0.0",
-    "@impfen/postcss-config": "workspace:^1.0.0",
-    "@impfen/stylelint-config": "workspace:^1.0.0",
+    "@impfen/browserslist-config": "workspace:^0.8.0",
+    "@impfen/common": "workspace:^0.8.0",
+    "@impfen/eslint-config": "workspace:^0.8.0",
+    "@impfen/jest-config": "workspace:^0.8.0",
+    "@impfen/postcss-config": "workspace:^0.8.0",
+    "@impfen/stylelint-config": "workspace:^0.8.0",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "eslint": "^8.9.0",
