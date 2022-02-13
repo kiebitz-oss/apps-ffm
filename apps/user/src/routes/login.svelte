@@ -47,7 +47,7 @@
     />
   </div>
 
-  <button type="submit" class="button primary l"
+  <button type="submit" class="button primary m"
     >{$t("user.welcome.button-submit")}</button
   >
 </form>

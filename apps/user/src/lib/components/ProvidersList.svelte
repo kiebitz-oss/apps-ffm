@@ -34,7 +34,7 @@
     <input
       type="checkbox"
       name="accessible"
-      class="checkbox primary l"
+      class="checkbox primary m"
       checked={accessible}
       on:change|preventDefault={handleAccessibleChange}
     />

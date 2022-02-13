@@ -1,14 +1,12 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
+  import { fade } from "svelte/transition";
   import CloseIcon from "~icons/carbon/close";
   import { NotificationType } from "../stores";
 
   export let type: NotificationType = NotificationType.SUCCESS;
 
   const dispatch = createEventDispatcher<{ close: never }>();
-
-  // export let notification: Notification;
-  // const typeClass = `type-${type}`;
 </script>
 
 <div
@@ -21,6 +19,7 @@
   class:info={type === NotificationType.INFO}
   class:danger={type === NotificationType.DANGER}
   class:success={type === NotificationType.SUCCESS}
+  transition:fade={{ duration: 250 }}
 >
   <p>
     <slot />

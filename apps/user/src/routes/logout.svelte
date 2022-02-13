@@ -38,7 +38,7 @@
     <h2 class="book">{$t("user.logout.step-2")}</h2>
 
     <button
-      class="button primary l"
+      class="button primary m"
       type="submit"
       on:click|preventDefault={handleLogout}>{$t("user.logout.button")}</button
     >
