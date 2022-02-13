@@ -196,7 +196,7 @@
   </QuestionaireCard>
 
   {#if error && !valid}
-    <div class="mx-8 mt-8 md:mx-0" aria-live="assertive">
+    <div class="error" aria-live="assertive">
       {$t("user.welcome.form_error")}
     </div>
   {/if}

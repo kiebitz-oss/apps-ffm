@@ -16,7 +16,7 @@
 <PageHeader>
   <h1 class="h1">{$t("user.finder.location.title")}</h1>
 
-  <a slot="backLink" href="/">
+  <a slot="backLink" href="/" class="back-link">
     {$t("user.finder.location.back-link")}
   </a>
 

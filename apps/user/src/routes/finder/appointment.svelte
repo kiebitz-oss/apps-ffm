@@ -20,7 +20,7 @@
     {$t("user.finder.appointment.title")}
   </h1>
 
-  <a slot="backLink" href="/finder">
+  <a slot="backLink" href="/finder" class="back-link">
     {$t("user.finder.appointment.back-link")}
   </a>
 </PageHeader>

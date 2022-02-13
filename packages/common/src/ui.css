@@ -349,7 +349,7 @@ textarea, input[type], select {
   border-radius: var(--radius-m);  
 
   &:focus {
-    border-color: var(--color-primary);
+    border-color: var(--color-highlight);
   }
 
   &[readonly] {
@@ -365,10 +365,31 @@ textarea, input[type], select {
   }
 }
 
+
 input[type="radio"], input[type="checkbox"] {
   width: 1.25rem;
   height: 1.25rem;
   cursor: pointer;
+}
+
+input[type="file"] {
+  padding: 0;
+  
+
+  &::-webkit-file-upload-button {
+    border-color: transparent;
+    background-color: #4589ff1a;
+    color: rgb(14 127 206 / 1);
+    font-weight: 600;
+    
+    padding: 1ch 2ch;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(14 127 206 / 1);
+      color: rgb(255 255 255 / 1);
+    }
+  }
 }
 
 label {
@@ -394,6 +415,7 @@ button {
   border-width: 1px;
   display: inline-flex;
   align-items: center;
+  font-weight: 600;
   gap: var(--gap-s);
   align-items: center;
   align-self: flex-start;
@@ -571,7 +593,7 @@ button {
   letter-spacing: 4px;
 }
 
-.badge {
+.tag {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -581,11 +603,29 @@ button {
   width: fit-content;
   letter-spacing: 1.5px;
 
-  /* @apply inline-flex transition duration-200 ease-in-out justify-center items-center; */
-  /* @apply text-sm leading-5 h-5; */
+  padding: .5ch 2ch;
+  border-radius: var(--radius-m);
 
-  padding-left: 0.563rem;
-  padding-right: 0.563rem;
+
+  &.warning {
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning);
+  }
+
+  &.info {
+    background-color: var(--color-info-bg);
+    color: var(--color-info);
+  }
+
+  &.danger {
+    background-color: var(--color-danger-bg);
+    color: var(--color-danger);
+  }
+
+  &.success {
+    background-color: var(--color-success-bg);
+    color: var(--color-success);
+  }
 }
 
 
@@ -602,7 +642,7 @@ button {
 }
 
 :focus-visible {
-  outline-color: var(--color-link);
+  outline-color: var(--color-highlight);
 }
 
 /* Respect reduce motion preferences */
@@ -640,6 +680,22 @@ button {
   &:hover {
     box-shadow: var(--shadow-highlight);
     border: 2px solid var(--color-highlight);
+  } 
+}
+
+.error {
+  color: var(--color-danger);
+  font-weight: 600;
+  position: relative;
+  margin-left: 2rem;
+
+  &::before {
+    content: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M10 1.49512C5 1.49512 1 5.48281 1 10.4674C1 15.452 5 19.4397 10 19.4397C15 19.4397 19 15.452 19 10.4674C19 5.48281 15 1.49512 10 1.49512ZM6.5 14.9536L14.5 6.97819L13.5 5.98127L5.5 13.9567L6.5 14.9536Z' fill='%23DA1E28'/><path opacity='0.01' fill-rule='evenodd' clip-rule='evenodd' d='M6.5 14.9538L14.5 6.97837L13.5 5.98145L5.5 13.9568L6.5 14.9538Z' fill='%23DA1E28'/></svg>");
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -1.75rem;
+    top: -2px;
   }
-  
 }

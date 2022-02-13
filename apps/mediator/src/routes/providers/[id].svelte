@@ -41,7 +41,11 @@
   <PageHeader>
     <h1 class="h1">
       {$t("mediator.providers.details.provider")} "{unverifiedProvider.name}"
-      <small class="badge">{status}</small>
+      <small
+        class:tag={true}
+        class:warning={status === ProviderStatus.UNVERIFIED}
+        class:info={status !== ProviderStatus.UNVERIFIED}>{status}</small
+      >
     </h1>
 
     <a href="/" slot="backLink" class="back-link"

@@ -10,43 +10,45 @@
 </script>
 
 {#if condition}
-  <article aria-live="polite">
-    <fieldset aria-errormessage={error ? `${name}-error` : undefined}>
-      <legend class="h4"><slot /></legend>
+  <div>
+    <article aria-live="polite">
+      <fieldset aria-errormessage={error ? `${name}-error` : undefined}>
+        <legend class="h4"><slot /></legend>
 
-      <slot name="options">
-        <div>
-          <label class="label">
-            <input
-              class="radio black l"
-              type="radio"
-              id={`${name}-yes`}
-              {name}
-              value={true}
-              bind:group={$value}
-              required
-            />
-            {$t("user.questionaire.yes")}
-          </label>
+        <slot name="options">
+          <div>
+            <label class="label">
+              <input
+                class="radio black l"
+                type="radio"
+                id={`${name}-yes`}
+                {name}
+                value={true}
+                bind:group={$value}
+                required
+              />
+              {$t("user.questionaire.yes")}
+            </label>
 
-          <label class="label">
-            <input
-              class="radio black l"
-              type="radio"
-              id={`${name}-no`}
-              {name}
-              value={false}
-              bind:group={$value}
-              required
-            />
-            {$t("user.questionaire.no")}
-          </label>
-        </div>
-      </slot>
-    </fieldset>
+            <label class="label">
+              <input
+                class="radio black l"
+                type="radio"
+                id={`${name}-no`}
+                {name}
+                value={false}
+                bind:group={$value}
+                required
+              />
+              {$t("user.questionaire.no")}
+            </label>
+          </div>
+        </slot>
+      </fieldset>
+    </article>
 
     {#if error}
-      <div id={`${name}-error`} aria-live="assertive">
+      <div id={`${name}-error`} class="error" aria-live="assertive">
         {#if errorMessage}
           {errorMessage}
         {:else}
@@ -54,7 +56,7 @@
         {/if}
       </div>
     {/if}
-  </article>
+  </div>
 {/if}
 
 <style lang="postcss">
@@ -62,11 +64,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    --tw-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
-    --tw-shadow-colored: 0px 2px 6px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-
+    box-shadow: var(--shadow-box);
     border-radius: var(--radius-m);
     padding: 1rem;
   }
@@ -83,5 +81,9 @@
         font-weight: 700;
       }
     }
+  }
+
+  .error {
+    margin-top: 0.5rem;
   }
 </style>
