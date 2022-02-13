@@ -1,18 +1,18 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { goto } from "$app/navigation";
   import { logout } from "$lib/api";
   import { addNotification } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
+</script>
 
+<script lang="ts">
   const handleLogout: svelte.JSX.EventHandler<
     MouseEvent,
     HTMLButtonElement
   > = async () => {
     logout();
 
-    await goto("/").catch((error) => {
-      console.error(error);
-    });
+    await goto("/");
 
     addNotification($t("mediator.logout.notification.success"));
   };
@@ -30,7 +30,7 @@
   </p>
 
   <button
-    class="button primary l"
+    class="button primary m"
     type="submit"
     on:click|preventDefault={handleLogout}
   >

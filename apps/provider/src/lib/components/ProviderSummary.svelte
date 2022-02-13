@@ -12,49 +12,49 @@
     <dt>
       {$t("provider.provider-data.name")}
     </dt>
-    <dd>{provider.name}</dd>
+    <dd>{provider?.name}</dd>
 
     <dt>
       {$t("provider.provider-data.street")}
     </dt>
-    <dd>{provider.street}</dd>
+    <dd>{provider?.street}</dd>
 
     <dt>
       {$t("provider.provider-data.zip-code")}
     </dt>
-    <dd>{provider.zipCode}</dd>
+    <dd>{provider?.zipCode}</dd>
 
     <dt>
       {$t("provider.provider-data.city")}
     </dt>
-    <dd>{provider.city}</dd>
+    <dd>{provider?.city}</dd>
 
     <dt>
       {$t("provider.provider-data.website")}
     </dt>
     <dd>
-      {provider.website || $t("provider.provider-data.not-given")}
+      {provider?.website || $t("provider.provider-data.not-given")}
     </dd>
 
     <dt>
       {$t("provider.provider-data.description")}
     </dt>
     <dd>
-      {provider.description || $t("provider.provider-data.not-given")}
+      {provider?.description || $t("provider.provider-data.not-given")}
     </dd>
 
     <dt>
       {$t("provider.provider-data.email")}
     </dt>
     <dd>
-      {provider.email || $t("provider.provider-data.not-given")}
+      {provider?.email || $t("provider.provider-data.not-given")}
     </dd>
 
     <dt>
       {$t("provider.provider-data.accessible")}
     </dt>
     <dd>
-      {provider.accessible
+      {provider?.accessible
         ? $t("provider.provider-data.accessible-yes")
         : $t("provider.provider-data.accessible-no")}
     </dd>

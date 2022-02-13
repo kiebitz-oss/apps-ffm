@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { Vaccine } from "@impfen/common";
   import dayjs, { Dayjs } from "dayjs";
-  import isBetween from "dayjs/plugin/isBetween";
-  import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
-  import isSameOrBefore from "dayjs/plugin/isSameOrBefore";
-  import weekOfYear from "dayjs/plugin/weekOfYear";
+  import isBetween from "dayjs/plugin/isBetween.js";
+  import isSameOrAfter from "dayjs/plugin/isSameOrAfter.js";
+  import isSameOrBefore from "dayjs/plugin/isSameOrBefore.js";
+  import weekOfYear from "dayjs/plugin/weekOfYear.js";
   import { locale } from "svelte-intl-precompile";
   import type { Appointment } from "vanellus";
   import AppointmentCell from "./AppointmentCell.svelte";

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { Questionaire } from "$lib/components";
   import BookingStatus from "$lib/components/status/BookingStatus.svelte";
   import { booking } from "$lib/stores";

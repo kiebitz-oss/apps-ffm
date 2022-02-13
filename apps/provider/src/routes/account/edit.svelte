@@ -1,8 +1,8 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { goto } from "$app/navigation";
   import { storeProvider } from "$lib/api";
   import { ProviderForm } from "$lib/components";
-  import { keyPairs, unverifiedProvider } from "$lib/stores";
+  import { unverifiedProvider } from "$lib/stores";
   import {
     addNotification,
     NotificationType,
@@ -10,7 +10,9 @@
   } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { ProviderInput } from "vanellus";
+</script>
 
+<script lang="ts">
   const handleSubmit = async ({ detail }: CustomEvent<ProviderInput>) => {
     try {
       await storeProvider(detail);
@@ -27,12 +29,6 @@
       );
     }
   };
-
-  $: if (!$keyPairs) {
-    goto("/").catch((error) => {
-      console.error(error);
-    });
-  }
 </script>
 
 <svelte:head

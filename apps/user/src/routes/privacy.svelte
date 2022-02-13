@@ -1,8 +1,6 @@
 <script lang="ts" context="module">
   export const prerender = true;
-</script>
 
-<script lang="ts">
   import { t } from "svelte-intl-precompile";
   import Privacy from "../content/privacy.mdx";
 </script>

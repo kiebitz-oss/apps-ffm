@@ -1,11 +1,14 @@
-<script lang="ts">
+<script lang="ts" context="module">
+  import { browser } from "$app/env";
   import { goto } from "$app/navigation";
   import { login } from "$lib/api";
   import { keyPairs } from "$lib/stores";
   import { addNotification, NotificationType } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { MediatorKeyPairs } from "vanellus";
+</script>
 
+<script lang="ts">
   let files: FileList;
   let uploadedKeyPairs: MediatorKeyPairs;
 
@@ -51,9 +54,9 @@
   };
 
   $: if ($keyPairs) {
-    goto("/providers").catch((error) => {
-      console.error(error);
-    });
+    if (browser) {
+      goto("/providers");
+    }
   }
 </script>
 
@@ -65,11 +68,7 @@
 
 <p class="text-1">{$t("mediator.welcome.intro")}</p>
 
-<form
-  name="login"
-  class="stack-v gap-m"
-  on:submit|preventDefault={handleSubmit}
->
+<form name="login" on:submit|preventDefault={handleSubmit}>
   <div class="field">
     <label for="keyPairs" class="label"
       >{$t("mediator.welcome.input-select-keypairs")}
@@ -77,7 +76,7 @@
     <input id="keyPairs" type="file" name="keyPairs" required bind:files />
   </div>
 
-  <button type="submit" class="button primary l">
+  <button type="submit" class="button primary m">
     {$t("mediator.welcome.button-submit")}
   </button>
 </form>

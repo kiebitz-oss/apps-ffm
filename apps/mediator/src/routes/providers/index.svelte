@@ -1,16 +1,12 @@
-<script lang="ts">
-  import { goto } from "$app/navigation";
+<script lang="ts" context="module">
   import { getPendingProviders, getVerifiedProviders } from "$lib/api";
-  import { keyPairs } from "$lib/stores";
-  import { Loading, PageHeader } from "@impfen/common";
+  import { PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { Provider } from "vanellus";
   import { encodeBase64url } from "vanellus";
+</script>
 
-  $: if (!$keyPairs) {
-    goto("/");
-  }
-
+<script lang="ts">
   let unverified = true;
   let providersPromise: Promise<Provider[]>;
 
@@ -32,8 +28,7 @@
       class:primary={unverified === true}
       class:secondary={unverified === false}
       href="/providers/"
-      on:click={(e) => {
-        e.preventDefault();
+      on:click|preventDefault={() => {
         unverified = true;
       }}
     >
@@ -44,8 +39,7 @@
       class:primary={unverified === false}
       class:secondary={unverified === true}
       href="/providers/"
-      on:click={(e) => {
-        e.preventDefault();
+      on:click|preventDefault={() => {
         unverified = false;
       }}
     >
@@ -54,9 +48,7 @@
   </div>
 </PageHeader>
 
-{#await providersPromise}
-  <Loading />
-{:then providers}
+{#await providersPromise then providers}
   <table id="providers-list" class="table striped">
     <caption class="sr-only">
       {$t("mediator.providers.index.table.caption")}
@@ -81,7 +73,7 @@
 
         <tr>
           <th scope="row" id={`provider-${id}`}>
-            <a href={link} class:text-l={true}>
+            <a href={link}>
               {provider.name}
             </a>
           </th>

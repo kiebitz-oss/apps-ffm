@@ -3,7 +3,6 @@ import type {
   AggregatedPublicAppointment,
   Booking,
   PublicProvider,
-  UserKeyPairs,
   UserQueueToken,
 } from "vanellus";
 
@@ -11,7 +10,6 @@ import type {
 export const booking = persistantWriteable<Booking<Vaccine>>("user:booking");
 export const token = persistantWriteable<UserQueueToken>("user:token");
 export const secret = persistantWriteable<string>("user:secret");
-export const keypairs = persistantWriteable<UserKeyPairs>("user:keypairs");
 
 // sessionStorage
 export const provider = persistantWriteable<PublicProvider | true>(

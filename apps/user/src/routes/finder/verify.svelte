@@ -1,15 +1,18 @@
-<script lang="ts">
+<script lang="ts" context="module">
+  import { browser } from "$app/env";
   import { goto } from "$app/navigation";
   import { bookAppointment } from "$lib/api";
   import { AppointmentCard } from "$lib/components";
   import { appointment } from "$lib/stores";
   import { addNotification, PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
+</script>
 
-  $: if (!$appointment) {
-    goto("/finder").catch((error) => {
-      console.error(error);
-    });
+<script lang="ts">
+  if (!$appointment) {
+    if (browser) {
+      goto("/finder");
+    }
   }
 
   const handleBooking = async () => {

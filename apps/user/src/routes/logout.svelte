@@ -1,11 +1,13 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { goto } from "$app/navigation";
   import { logout } from "$lib/api";
   import { SecretBox } from "$lib/components";
   import { secret } from "$lib/stores";
   import { addNotification } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
+</script>
 
+<script lang="ts">
   const handleLogout: svelte.JSX.EventHandler<
     MouseEvent,
     HTMLButtonElement

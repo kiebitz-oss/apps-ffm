@@ -1,10 +1,12 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { getProviders } from "$lib/api";
   import ProvidersList from "$lib/components/ProvidersList.svelte";
   import { Loading, PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { PublicProvider } from "vanellus";
+</script>
 
+<script lang="ts">
   const providers: Promise<PublicProvider[]> = getProviders();
 </script>
 
@@ -12,12 +14,15 @@
 >
 
 <PageHeader>
-  <h1 class="h1 mb-s">{$t("user.finder.location.title")}</h1>
+  <h1 class="h1">{$t("user.finder.location.title")}</h1>
 
-  <a href="/" slot="backLink" class="back-link"
-    >{$t("user.finder.location.back-link")}</a
-  >
-  <p slot="intro" class="text-1">{$t("user.finder.location.intro")}</p>
+  <a slot="backLink" href="/">
+    {$t("user.finder.location.back-link")}
+  </a>
+
+  <p slot="intro">
+    {$t("user.finder.location.intro")}
+  </p>
 </PageHeader>
 
 {#await providers}

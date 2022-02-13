@@ -13,6 +13,10 @@
     "lint:fix": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "type": "module",
+  "dependencies": {
+    "dayjs": "^1.10.7",
+    "vanellus": "workspace:^0.7.0"
+  },
   "devDependencies": {
     "@iconify-json/carbon": "^1.0.15",
     "@impfen/browserslist-config": "workspace:^1.0.0",
@@ -23,7 +27,6 @@
     "@impfen/stylelint-config": "workspace:^1.0.0",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
-    "dayjs": "^1.10.7",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-compat": "^4.0.2",

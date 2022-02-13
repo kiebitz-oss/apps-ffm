@@ -1,33 +1,62 @@
 <script lang="ts" context="module">
+  import { browser } from "$app/env";
   import { isVerified } from "$lib/api";
   import { keyPairs, verified } from "$lib/stores";
   import de from "$locales/de";
-  import en from "$locales/en";
   import {
     addNotification,
     Layout,
     NavLink,
     NotificationType,
   } from "@impfen/common";
-  import { addMessages, init, t } from "svelte-intl-precompile";
+  import dayjs from "dayjs";
+  import "dayjs/locale/de.js";
+  import "dayjs/locale/en.js";
+  import localeData from "dayjs/plugin/localeData.js";
+  import timezone from "dayjs/plugin/timezone.js";
+  import utc from "dayjs/plugin/utc.js";
+  import {
+    addMessages,
+    getLocaleFromNavigator,
+    init,
+    locale,
+    register,
+    t,
+  } from "svelte-intl-precompile";
   import CalendarIcon from "~icons/carbon/calendar";
   import LoginIcon from "~icons/carbon/login";
   import LogoutIcon from "~icons/carbon/logout";
   import SettingsIcon from "~icons/carbon/settings";
 
-  addMessages("de", de);
-  addMessages("en", en);
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  dayjs.extend(localeData);
 
-  init({
-    initialLocale: "de",
-    fallbackLocale: "de",
-  });
+  addMessages("de", de);
+  register("en", () => import("$locales/en"));
 </script>
 
 <script lang="ts">
+  const defaultLocale = "de";
+
+  const userLocale = getLocaleFromNavigator(defaultLocale).substring(0, 2);
+
+  init({
+    initialLocale:
+      userLocale === "de" || userLocale === "en" ? userLocale : defaultLocale,
+    fallbackLocale: defaultLocale,
+  });
+
+  dayjs.locale(defaultLocale);
+  dayjs.tz.setDefault("Europe/Berlin");
+
+  locale.subscribe((l) => {
+    dayjs.locale(l);
+  });
+
   let firstRun = true;
 
-  const runEveryXseconds = 5;
+  const runEveryXseconds = 15;
 
   const checkVerified = () => {
     isVerified()
@@ -57,7 +86,9 @@
   };
 
   $: if ($keyPairs) {
-    checkVerified();
+    if (browser) {
+      checkVerified();
+    }
   }
 </script>
 

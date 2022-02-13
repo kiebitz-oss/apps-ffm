@@ -1,6 +1,8 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { theme } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
+
+  export const prerender = true;
 </script>
 
 <svelte:head>

@@ -22,11 +22,6 @@ export const bookAppointment = async (
 
   const newUserToken = await createUserQueueToken(secret);
 
-  // const publicAppointment =
-  //   appointment && "slotData" in appointment === false
-  //     ? await getAppointment(appointment.id, appointment.provider.id)
-  //     : (appointment as PublicAppointment<Vaccine>);
-
   const publicAppointment = await getAppointment(
     appointment.id,
     appointment.provider.id

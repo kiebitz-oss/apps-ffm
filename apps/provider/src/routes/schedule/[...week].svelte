@@ -9,7 +9,8 @@
   import { verified } from "$lib/stores";
   import { Dialog, PageHeader, type Vaccine } from "@impfen/common";
   import dayjs from "dayjs";
-  import weekOfYear from "dayjs/plugin/weekOfYear";
+  import weekOfYear from "dayjs/plugin/weekOfYear.js";
+  import { onMount } from "svelte";
   import { t } from "svelte-intl-precompile";
   import type { Appointment } from "vanellus";
 
@@ -29,9 +30,11 @@
 
   $: selectedWeekOfYear = $page.params.week || dayjs().week();
 
-  $: if (!$verified) {
-    goto("/account");
-  }
+  onMount(() => {
+    if (!$verified) {
+      goto("/account");
+    }
+  });
 
   $: if (modal === undefined) {
     appointmentPromise = getProviderAppointments(

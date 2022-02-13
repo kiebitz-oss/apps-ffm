@@ -1,5 +1,5 @@
 <div id="page-header">
-  <slot name="backLink" />
+  <slot name="backLink" class="back-link" />
 
   {#if $$slots.actions}
     <div class="actions">
@@ -12,5 +12,5 @@
     </div>
   {/if}
 
-  <slot name="intro" />
+  <slot name="intro" class="text-1" />
 </div>

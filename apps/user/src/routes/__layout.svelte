@@ -1,11 +1,18 @@
 <script lang="ts" context="module">
   import { booking } from "$lib/stores";
-  // import de from "$locales/de";
-  // import en from "$locales/en";
+  import de from "$locales/de";
   import { Layout, NavLink } from "@impfen/common";
+  import dayjs from "dayjs";
+  import "dayjs/locale/de.js";
+  import "dayjs/locale/en.js";
+  import localeData from "dayjs/plugin/localeData.js";
+  import timezone from "dayjs/plugin/timezone.js";
+  import utc from "dayjs/plugin/utc.js";
   import {
+    addMessages,
     getLocaleFromNavigator,
     init,
+    locale,
     register,
     t,
   } from "svelte-intl-precompile";
@@ -14,16 +21,30 @@
   import LoginIcon from "~icons/carbon/login";
   import LogoutIcon from "~icons/carbon/logout";
 
-  // addMessages("de", de);
-  // addMessages("en", en);
-  register("en", () => import("$locales/en"));
-  register("de", () => import("$locales/de"));
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  dayjs.extend(localeData);
 
-  const locale = getLocaleFromNavigator("de").substring(0, 2);
+  addMessages("de", de);
+  register("en", () => import("$locales/en"));
+</script>
+
+<script lang="ts">
+  const defaultLocale = "de";
+
+  const userLocale = getLocaleFromNavigator(defaultLocale).substring(0, 2);
 
   init({
-    initialLocale: locale === "de" || locale === "en" ? locale : "de",
-    fallbackLocale: "de",
+    initialLocale:
+      userLocale === "de" || userLocale === "en" ? userLocale : defaultLocale,
+    fallbackLocale: defaultLocale,
+  });
+
+  dayjs.locale(defaultLocale);
+  dayjs.tz.setDefault("Europe/Berlin");
+
+  locale.subscribe((l) => {
+    dayjs.locale(l);
   });
 </script>
 

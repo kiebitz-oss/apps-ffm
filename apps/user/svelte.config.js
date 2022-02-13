@@ -23,12 +23,16 @@ const config = {
     adapter: adapter({
       pages: "dist",
       assets: "dist",
-      fallback: null,
+      // fallback: "200.html",
+      // precompress: true,
     }),
 
     prerender: {
       crawl: true,
+      enabled: true,
     },
+
+    trailingSlash: "always",
 
     // csp: {
     //   mode: "auto",

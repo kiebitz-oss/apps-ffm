@@ -69,13 +69,9 @@ export const getProviderAppointments = (from: Dayjs, to?: Dayjs) => {
 
 export const getVerifiedProvider = async () => {
   try {
-    const { verifiedProvider: verifiedProviderData } = await api.checkProvider(
-      getKeyPairs()
-    );
+    const verifiedProviderData = await api.checkProvider(getKeyPairs());
 
-    if (verifiedProvider) {
-      verifiedProvider.set(verifiedProviderData);
-    }
+    verifiedProvider.set(verifiedProviderData);
 
     return verifiedProviderData;
   } catch (error) {

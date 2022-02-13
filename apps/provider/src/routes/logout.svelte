@@ -1,11 +1,14 @@
-<script lang="ts">
+<script lang="ts" context="module">
+  import { browser } from "$app/env";
   import { goto } from "$app/navigation";
   import { logout } from "$lib/api";
   import { DownloadBackupDataButton, SecretBox } from "$lib/components";
   import { keyPairs, secret, unverifiedProvider } from "$lib/stores";
   import { addNotification } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
+</script>
 
+<script lang="ts">
   const handleLogout: svelte.JSX.EventHandler<
     MouseEvent,
     HTMLButtonElement
@@ -15,8 +18,10 @@
     addNotification($t("provider.logout.notification.success"));
   };
 
-  $: if (!$keyPairs) {
-    goto("/");
+  if (!$keyPairs) {
+    if (browser) {
+      goto("/");
+    }
   }
 </script>
 

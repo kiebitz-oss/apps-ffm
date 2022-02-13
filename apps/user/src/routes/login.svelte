@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { goto } from "$app/navigation";
   import { login } from "$lib/api";
   import {
@@ -7,7 +7,9 @@
     PageHeader,
   } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
+</script>
 
+<script lang="ts">
   let secret: string;
 
   const handleSubmit = async () => {

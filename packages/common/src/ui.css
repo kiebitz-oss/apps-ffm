@@ -157,7 +157,7 @@
     }
   }
 
-  & > svg {
+  & svg {
     display: none;
   }
 
@@ -515,7 +515,7 @@ button {
     }
   }
 
-  & th {
+  & thead th {
     font-size: 0.75rem;
     line-height: 1rem;
     font-weight: 500;
@@ -547,6 +547,17 @@ button {
 
   @media (--m-n-above) {
     font-size: 1.5rem;
+  }
+}
+
+.h3, h3 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  max-width: 100%;
+
+  @media (--m-n-above) {
+    font-size: 1.2rem;
   }
 }
 

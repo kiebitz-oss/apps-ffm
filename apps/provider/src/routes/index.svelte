@@ -1,10 +1,12 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { goto } from "$app/navigation";
   import { login } from "$lib/api";
   import { addNotification } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { AESData } from "vanellus";
+</script>
 
+<script lang="ts">
   let secret: string;
   let files: FileList;
   let encryptedBackupData: AESData;

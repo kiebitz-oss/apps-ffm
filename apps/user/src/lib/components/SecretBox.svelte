@@ -1,7 +1,7 @@
 <script lang="ts">
   import IconCopy from "~icons/carbon/copy";
 
-  export let secret: string;
+  export let secret = "1234567890";
   export let copy: undefined | true = undefined;
 
   const secretChunks = secret.match(/.{1,4}/g);
@@ -18,7 +18,7 @@
   };
 
   // eslint-disable-next-line compat/compat
-  const supportsClipboard = typeof navigator?.clipboard === "object";
+  const supportsClipboard = false; // typeof navigator?.clipboard === "object";
 </script>
 
 <section {...$$restProps}>

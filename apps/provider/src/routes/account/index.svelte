@@ -1,10 +1,12 @@
-<script lang="ts">
+<script lang="ts" context="module">
   import { ProviderSummary } from "$lib/components";
   import { unverifiedProvider, verified } from "$lib/stores";
   import { PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
   import type { ProviderInput } from "vanellus";
+</script>
 
+<script lang="ts">
   const provider: ProviderInput = $unverifiedProvider;
 
   // getVerifiedProvider()
@@ -16,12 +18,6 @@
   //   .catch((error) => {
   //     console.error(error);
   //   });
-
-  // $: if (!$keyPairs) {
-  //   goto("/").catch((error) => {
-  //     console.error(error);
-  //   });
-  // }
 </script>
 
 <svelte:head><title>{$t("provider.account.index.title")}</title></svelte:head>

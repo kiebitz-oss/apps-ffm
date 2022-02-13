@@ -6,14 +6,10 @@
   import { afterNavigate } from "$app/navigation";
   import { page } from "$app/stores";
   import { supportedBrowsers } from "@impfen/browserslist-config/supported-browsers";
-  import dayjs from "dayjs";
-  import utc from "dayjs/plugin/utc";
   import { locale, locales } from "svelte-intl-precompile";
   import MenuIcon from "~icons/carbon/menu";
   import { theme } from "../theme";
   import Notifications from "./Notifications.svelte";
-
-  dayjs.extend(utc);
 
   // stupid hack to make ts happy...
   if (
@@ -25,7 +21,7 @@
 </script>
 
 <script lang="ts">
-  export let title = "en";
+  export let title = "de";
   export let lang = "en";
   export let dir = "ltr";
 
@@ -33,10 +29,6 @@
 
   afterNavigate(() => {
     open = false;
-  });
-
-  locale.subscribe((l) => {
-    dayjs.locale(l);
   });
 </script>
 

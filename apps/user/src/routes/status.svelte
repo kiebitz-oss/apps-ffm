@@ -1,18 +1,30 @@
-<script lang="ts">
+<script lang="ts" context="module">
+  import { browser } from "$app/env";
   import { goto } from "$app/navigation";
   import { BookingStatus } from "$lib/components";
   import { booking } from "$lib/stores";
-  import { addNotification, vaccines, type VaccineData } from "@impfen/common";
+  import {
+    addNotification,
+    vaccines,
+    type Vaccine,
+    type VaccineData,
+  } from "@impfen/common";
   import { locale, t } from "svelte-intl-precompile";
   import GeneratePdf from "~icons/carbon/edit";
+</script>
 
-  const vaccine: VaccineData = vaccines[$locale]["mrna"]; // vaccines[locale][booking.appointment.vaccine as Vaccine];
+<script lang="ts">
+  let vaccine: VaccineData;
 
-  $: if (!$booking) {
-    goto("/").catch((error) => {
-      console.error(error);
-      addNotification("BOOKING NOT FOUND");
-    });
+  if (!$booking) {
+    if (browser) {
+      goto("/").catch((error) => {
+        console.error(error);
+        addNotification("BOOKING NOT FOUND");
+      });
+    }
+  } else {
+    vaccine = vaccines[$locale][$booking.appointment.vaccine as Vaccine];
   }
 </script>
 
@@ -54,12 +66,12 @@
       <h3 class="h2">Impfvorbereitungen</h3>
 
       <p class="text-2">
-        {vaccine.pdfDescription}
+        {vaccine?.pdfDescription}
       </p>
 
       <!-- svelte-ignore a11y-no-redundant-roles -->
       <ul role="list">
-        {#each vaccine.pdfs as pdf}
+        {#each vaccine?.pdfs || [] as pdf}
           <li>
             <a href={pdf.url} class="button tertiary m external">
               <GeneratePdf aria-hidden />

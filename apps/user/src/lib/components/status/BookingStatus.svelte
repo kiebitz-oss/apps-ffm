@@ -13,7 +13,7 @@
   let statusPromise = checkBookingStatus(booking).catch(async (error) => {
     console.error(error);
 
-    await goto("/");
+    // await goto("/");
 
     addNotification($t("user.finder.success.notification.booking-not-found"));
   });

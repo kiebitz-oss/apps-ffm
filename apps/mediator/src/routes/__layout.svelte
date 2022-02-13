@@ -1,18 +1,42 @@
 <script lang="ts" context="module">
   import { keyPairs } from "$lib/stores";
   import de from "$locales/de";
-  import en from "$locales/en";
   import { Layout, NavLink } from "@impfen/common";
-  import { addMessages, init, t } from "svelte-intl-precompile";
+  import dayjs from "dayjs";
+  import "dayjs/locale/de.js";
+  import "dayjs/locale/en.js";
+  import localeData from "dayjs/plugin/localeData.js";
+  import timezone from "dayjs/plugin/timezone.js";
+  import utc from "dayjs/plugin/utc.js";
+  import {
+    addMessages,
+    init,
+    locale,
+    register,
+    t,
+  } from "svelte-intl-precompile";
   import LogoutIcon from "~icons/carbon/logout";
   import SettingsIcon from "~icons/carbon/settings";
 
-  addMessages("de", de);
-  addMessages("en", en);
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  dayjs.extend(localeData);
 
+  addMessages("de", de);
+  register("en", () => import("$locales/en"));
+</script>
+
+<script lang="ts">
   init({
     initialLocale: "de",
     fallbackLocale: "de",
+  });
+
+  dayjs.locale("de");
+  dayjs.tz.setDefault("Europe/Berlin");
+
+  locale.subscribe((l) => {
+    dayjs.locale(l);
   });
 </script>
 
