@@ -49,27 +49,30 @@
 
 <style lang="postcss">
   div {
-    margin: 10vh auto;
-    width: 100%;
-    padding: 2rem;
-    display: flex;
-    place-items: center;
-    max-width: 65ch;
-
-    z-index: 99;
     position: relative;
 
-    background: #ffffff;
-    border-radius: 15px;
+    width: 100%;
+    max-width: 65ch;
 
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    margin-top: 5vh;
+    box-sizing: content-box;
+    margin-bottom: auto;
 
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    z-index: 999;
+
+    background: var(--color-white);
+    border-radius: var(--radius-m);
+
+    box-shadow: var(--shadow-box);
 
     & > button {
       position: absolute;
-      top: 1rem;
+      top: 2rem;
       right: 1rem;
       border: none;
       color: var(--color-black);

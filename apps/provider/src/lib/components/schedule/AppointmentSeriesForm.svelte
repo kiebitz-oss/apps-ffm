@@ -55,6 +55,8 @@
   };
 </script>
 
+<h1 class="h2">{$t("provider.appointment-series-form.title")}</h1>
+
 <form
   name="appointment-series-form"
   class="stack-v gap-m"
@@ -89,7 +91,7 @@
     </select>
   </Field>
 
-  <div class="flex flex-row gap-m">
+  <div class="field-row">
     <Field
       name="hourFrom"
       label={$t("provider.schedule.appointment-series-form.hour-from.label")}
@@ -110,30 +112,7 @@
     >
   </div>
 
-  <div class="flex flex-row gap-m">
-    <!-- {...register("slotCount", {
-        valueAsNumber: true,
-        required: t({
-          id: "provider.schedule.appointment-series-form.slots.error.required",
-          message: "Bitte gegen Sie die Anzahl der Impfdosen ein",
-        }),
-        min: {
-          value: 1,
-          message: t({
-            id: "provider.schedule.appointment-series-form.slots.error.min",
-            message:
-              "Die minimale Anzahl der Impfdosen pro Termin beträgt 1",
-          }),
-        },
-        max: {
-          value: 50,
-          message: t({
-            id: "provider.schedule.appointment-series-form.slots.error.max",
-            message:
-              "Die maximale Anzahl der Impfdosen pro Termin beträgt 50",
-          }),
-        },
-      })} -->
+  <div class="field-row">
     <Field
       name="slotCount"
       label={$t("provider.schedule.appointment-series-form.slots.label")}
@@ -151,30 +130,6 @@
       /></Field
     >
 
-    <!-- {...register("interval", {
-        valueAsNumber: true,
-        required: t({
-          id: "provider.schedule.appointment-series-form.duration.error-required",
-          message: "Bitte gegen Sie die Anzahl der Impfdosen ein",
-        }),
-        min: {
-          value: 5,
-          message: t({
-            id: "provider.schedule.appointment-series-form.duration.error.min",
-            message:
-              "Die minimale Dauer eines Impftermins beträgt 5 Minuten",
-          }),
-        },
-        max: {
-          value: 240,
-          message: t({
-            id: "provider.schedule.appointment-series-form.duration.error.max",
-            message:
-              "Die maximale Dauer eines Impftermins beträgt 240 Minuten",
-          }),
-        },
-      })} -->
-
     <Field
       name="interval"
       label={$t("provider.schedule.appointment-series-form.duration.label")}
@@ -186,19 +141,6 @@
       <input type="number" name="interval" required bind:value={interval} />
     </Field>
   </div>
-
-  <!-- <Field
-        label={$t("provider.schedule.appointment-series-form.vaccine-label")}
-        description={$t("provider.schedule.appointment-series-form.vaccine.description",
-          message: "Der verimpfte Impfstoff",
-        })}
-        required
-        {...register("vaccine", {
-          required: t({
-            id: "provider.schedule.appointment-series-form.vaccine.error-required",
-            message: "Bitte gegen Sie den Impfstoff an",
-          }),
-        })} -->
 
   <button type="submit" class="button primary m" disabled={isSubmitting}>
     {$t("provider.schedule.appointment-series-form.button")}

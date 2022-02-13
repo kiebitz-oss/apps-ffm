@@ -349,6 +349,16 @@ a {
   }
 }
 
+.field-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+  & > * {
+    flex: 1;
+  }
+}
+
 form {
   display: flex;
   flex-direction: column;

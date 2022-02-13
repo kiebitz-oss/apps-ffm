@@ -1,16 +1,18 @@
 <script lang="ts">
+  import { browser } from "$app/env";
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
   import { getProviderAppointments } from "$lib/api";
   import { WeekCalendar } from "$lib/components";
+  import type { CalendarItem } from "$lib/components/calendar/CalendarItem";
   import AppointmentDetails from "$lib/components/schedule/AppointmentDetails.svelte";
   import AppointmentForm from "$lib/components/schedule/AppointmentForm.svelte";
+  import AppointmentSeriesDetails from "$lib/components/schedule/AppointmentSeriesDetails.svelte";
   import AppointmentSeriesForm from "$lib/components/schedule/AppointmentSeriesForm.svelte";
   import { verified } from "$lib/stores";
   import { Dialog, PageHeader, type Vaccine } from "@impfen/common";
   import dayjs from "dayjs";
   import weekOfYear from "dayjs/plugin/weekOfYear.js";
-  import { onMount } from "svelte";
   import { t } from "svelte-intl-precompile";
   import type { Appointment } from "vanellus";
 
@@ -23,24 +25,26 @@
     SHOW_SERIES,
   }
 
-  let selectedDetail;
+  let selectedDetail: CalendarItem;
   let modal: Modal;
 
   let appointmentPromise: Promise<Appointment<Vaccine>[]>;
 
-  $: selectedWeekOfYear = $page.params.week || dayjs().week();
+  $: selectedWeekOfYear = $page.params.week || 7;
 
-  onMount(() => {
-    if (!$verified) {
+  if ($verified === false) {
+    if (browser) {
       goto("/account");
     }
-  });
+  }
 
   $: if (modal === undefined) {
-    appointmentPromise = getProviderAppointments(
-      dayjs(),
-      dayjs().add(13, "days")
-    );
+    if (browser) {
+      appointmentPromise = getProviderAppointments(
+        dayjs(),
+        dayjs().add(13, "days")
+      );
+    }
   }
 </script>
 
@@ -57,12 +61,12 @@
     <button
       class="button primary s"
       on:click={() => (modal = Modal.CREATE_APPOINTMENT)}
-      >Create Appointment</button
+      >{$t("provider.schedule.button-create-appointment")}</button
     >
     <button
       class="button primary s"
       on:click={() => (modal = Modal.CREATE_SERIES)}
-      >Create Appointment series</button
+      >{$t("provider.schedule.button-create-appointment-series")}</button
     >
   </div>
 </PageHeader>
@@ -117,7 +121,12 @@
       modal = undefined;
     }}
   >
-    <AppointmentDetails appointment={selectedDetail.item} />
+    <AppointmentDetails
+      item={selectedDetail}
+      on:close={() => {
+        modal = undefined;
+      }}
+    />
   </Dialog>
 {:else if modal === Modal.SHOW_SERIES}
   <Dialog
@@ -126,8 +135,12 @@
       modal = undefined;
     }}
   >
-    Appointment series
-    <!-- <AppointmentDetails /> -->
+    <AppointmentSeriesDetails
+      item={selectedDetail}
+      on:close={() => {
+        modal = undefined;
+      }}
+    />
   </Dialog>
 
   <!-- <CreateAppointmentSeriesModal onClose={closeModal} /> -->

@@ -1,6 +1,6 @@
 import type { Vaccine } from "@impfen/common";
 import type { Dayjs } from "dayjs";
-import type { Appointment } from "vanellus";
+import type { Appointment, AppointmentStatus } from "vanellus";
 
 export class CalendarItem {
   public id: string;
@@ -16,6 +16,8 @@ export class CalendarItem {
   public vaccine: Vaccine;
   public slots = 0;
   public bookedSlots = 0;
+  public percentUsed = 0;
+  public status: AppointmentStatus;
 
   constructor(item: Appointment<Vaccine>) {
     this.id = item.properties?.seriesId
@@ -29,6 +31,9 @@ export class CalendarItem {
     this.vaccine = item.vaccine;
     this.bookedSlots = item.bookings.length;
     this.slots = item.slotData.length;
+    this.status = item.status;
+
+    this.percentUsed = this.bookedSlots * (this.slots / 100);
 
     if (this.isSeries) {
       this.items.push(item);
@@ -49,5 +54,6 @@ export class CalendarItem {
     this.bookedSlots += item.bookings.length;
     this.slots += item.slotData.length;
     this.duration += item.duration;
+    this.percentUsed = this.bookedSlots * (this.slots / 100);
   }
 }

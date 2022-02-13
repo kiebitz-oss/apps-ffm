@@ -1,11 +1,11 @@
 <script lang="ts">
   import type { Vaccine } from "@impfen/common";
-  import dayjs, { Dayjs } from "dayjs";
+  import dayjs, { type Dayjs } from "dayjs";
   import isBetween from "dayjs/plugin/isBetween.js";
   import isSameOrAfter from "dayjs/plugin/isSameOrAfter.js";
   import isSameOrBefore from "dayjs/plugin/isSameOrBefore.js";
+  import utc from "dayjs/plugin/utc.js";
   import weekOfYear from "dayjs/plugin/weekOfYear.js";
-  import { locale } from "svelte-intl-precompile";
   import type { Appointment } from "vanellus";
   import AppointmentCell from "./AppointmentCell.svelte";
   import { CalendarItem } from "./CalendarItem";
@@ -14,158 +14,170 @@
   dayjs.extend(isSameOrBefore);
   dayjs.extend(weekOfYear);
   dayjs.extend(isBetween);
+  dayjs.extend(utc);
 
   export let appointments: Appointment<Vaccine>[] = [];
-  export let week: number;
+  export let week = 10;
   export let autoAdjustHours = true;
-  export let defaultFromHour = 9;
+  export let defaultFromHour = 7;
   export let defaultToHour = 16;
 
+  let filteredAppointments: Appointment<Vaccine>[] = [];
   let selectedWeek = dayjs().week(week);
+  let fromHour = defaultFromHour;
+  let toHour = defaultToHour;
+  let days: Dayjs[] = [];
+  let hours: number[] = [];
+  let startAt = selectedWeek;
+  let endAt = selectedWeek;
+  let appointmentsMatrix: Record<string, Record<number, CalendarItem[]>> = {};
 
-  $: console.log(selectedWeek);
+  let slots = 0;
+  let bookedSlots = 0;
 
-  let lastWeek = selectedWeek.subtract(7, "day").week();
-  let nextWeek = selectedWeek.add(7, "day").week();
-
-  let startAt = selectedWeek
+  $: selectedWeek = dayjs().week(week);
+  $: startAt = selectedWeek
     .startOf("week")
     .set("hour", 0)
     .set("minute", 0)
     .set("second", 0);
 
-  let endAt = selectedWeek
+  $: endAt = selectedWeek
     .endOf("week")
     .set("hour", 23)
     .set("minute", 59)
     .set("second", 59);
 
-  let filteredAppointments = appointments.filter((appointment) =>
-    appointment.startAt.isBetween(startAt, endAt, "minute", "[)")
-  );
+  $: lastWeek = selectedWeek.subtract(7, "day").week();
+  $: nextWeek = selectedWeek.add(7, "day").week();
 
-  let fromHour = defaultFromHour;
-  let toHour = defaultToHour;
+  // $: filteredAppointments = appointments.filter((appointment) =>
+  //   appointment.startAt.isBetween(startAt, endAt, "minute", "[)")
+  // );
 
-  let appointmentsMatrix: Record<string, Record<number, CalendarItem[]>> = {};
-  let seriesMatrix: Record<string, CalendarItem> = {};
+  const processAppointments = (appointments) => {
+    const appointmentsMatrix: Record<
+      string,
+      Record<number, CalendarItem[]>
+    > = {};
+    const seriesMatrix: Record<string, CalendarItem> = {};
+    let fromHour = defaultFromHour;
+    let toHour = defaultToHour;
 
-  let slots = 0;
-  let bookedSlots = 0;
+    appointments.forEach((appointment) => {
+      const dateIdx = appointment.startAt.local().format("DD-MM");
 
-  filteredAppointments.forEach((appointment) => {
-    const dateIdx = appointment.startAt.local().format("DD-MM");
+      if (dateIdx in appointmentsMatrix === false) {
+        appointmentsMatrix[dateIdx] = {};
+      }
 
-    if (dateIdx in appointmentsMatrix === false) {
-      appointmentsMatrix[dateIdx] = {};
-    }
+      const hourIdx = Number(appointment.startAt.local().format("H"));
 
-    const hourIdx = Number(appointment.startAt.local().format("H"));
+      if (hourIdx in appointmentsMatrix[dateIdx] === false) {
+        appointmentsMatrix[dateIdx][hourIdx] = [];
+      }
 
-    if (hourIdx in appointmentsMatrix[dateIdx] === false) {
-      appointmentsMatrix[dateIdx][hourIdx] = [];
-    }
+      if (autoAdjustHours || (fromHour <= hourIdx && toHour >= hourIdx)) {
+        slots += appointment.slotData.length;
+        bookedSlots += appointment.bookings.length;
 
-    if (autoAdjustHours || (fromHour <= hourIdx && toHour >= hourIdx)) {
-      slots += appointment.slotData.length;
-      bookedSlots += appointment.bookings.length;
+        if (!appointment.properties?.seriesId) {
+          const item = new CalendarItem(appointment);
 
-      if (!appointment.properties?.seriesId) {
-        const item = new CalendarItem(appointment);
-
-        appointmentsMatrix[dateIdx][hourIdx].push(item);
-      } else {
-        if (
-          (appointment.properties.seriesId as string) in seriesMatrix ===
-          false
-        ) {
-          seriesMatrix[appointment.properties.seriesId as string] =
-            new CalendarItem(appointment);
+          appointmentsMatrix[dateIdx][hourIdx].push(item);
         } else {
-          seriesMatrix[appointment.properties.seriesId as string].add(
-            appointment
-          );
+          if (
+            (appointment.properties.seriesId as string) in seriesMatrix ===
+            false
+          ) {
+            seriesMatrix[appointment.properties.seriesId as string] =
+              new CalendarItem(appointment);
+          } else {
+            seriesMatrix[appointment.properties.seriesId as string].add(
+              appointment
+            );
+          }
         }
       }
-    }
 
-    if (autoAdjustHours && fromHour > hourIdx) {
-      fromHour = hourIdx;
-    }
+      if (autoAdjustHours && fromHour > hourIdx) {
+        fromHour = hourIdx;
+      }
 
-    const endHour = Number(appointment.endAt.format("H"));
+      const endHour = Number(appointment.endAt.local().format("H"));
 
-    if (autoAdjustHours && toHour <= endHour) {
-      toHour = endHour;
-    }
-  });
+      if (autoAdjustHours && toHour <= endHour) {
+        toHour = endHour;
+      }
+    });
 
-  Object.keys(seriesMatrix).forEach((seriesId) => {
-    const series = seriesMatrix[seriesId];
-    const dateIdx = series.startAt.format("DD-MM");
+    Object.keys(seriesMatrix).forEach((seriesId) => {
+      const series = seriesMatrix[seriesId];
+      const dateIdx = series.startAt.local().format("DD-MM");
 
-    if (dateIdx in appointmentsMatrix === false) {
-      appointmentsMatrix[dateIdx] = {};
-    }
+      if (dateIdx in appointmentsMatrix === false) {
+        appointmentsMatrix[dateIdx] = {};
+      }
 
-    const hourIdx = Number(series.startAt.format("H"));
+      const hourIdx = Number(series.startAt.local().format("H"));
 
-    if (hourIdx in appointmentsMatrix[dateIdx] === false) {
-      appointmentsMatrix[dateIdx][hourIdx] = [];
-    }
+      if (hourIdx in appointmentsMatrix[dateIdx] === false) {
+        appointmentsMatrix[dateIdx][hourIdx] = [];
+      }
 
-    if (autoAdjustHours || (fromHour <= hourIdx && toHour >= hourIdx)) {
-      appointmentsMatrix[dateIdx][hourIdx].push(series);
-    }
+      if (autoAdjustHours || (fromHour <= hourIdx && toHour >= hourIdx)) {
+        appointmentsMatrix[dateIdx][hourIdx].push(series);
+      }
 
-    if (autoAdjustHours && fromHour > hourIdx) {
-      fromHour = hourIdx;
-    }
+      if (autoAdjustHours && fromHour > hourIdx) {
+        fromHour = hourIdx;
+      }
 
-    const endHour = Number(series.endAt.format("H"));
+      const endHour = Number(series.endAt.local().format("H"));
 
-    if (autoAdjustHours && toHour <= endHour) {
-      toHour = endHour;
-    }
-  });
+      if (autoAdjustHours && toHour <= endHour) {
+        toHour = endHour;
+      }
+    });
 
-  let days: Dayjs[] = [];
+    return { fromHour, toHour, appointmentsMatrix };
+  };
 
-  for (let i = 0; i <= 6; i++) {
-    days.push(startAt.add(i, "days"));
+  $: {
+    ({ fromHour, toHour, appointmentsMatrix } =
+      processAppointments(appointments));
   }
 
-  let hours: number[] = [];
+  const fillDays = (startAtDay) => {
+    const days = [];
 
-  for (let i = fromHour; i <= toHour; i++) {
+    for (let i = 0; i <= 6; i++) {
+      days.push(startAtDay.add(i, "days"));
+    }
+
+    return days;
+  };
+
+  $: days = fillDays(startAt);
+
+  $: for (let i = fromHour; i <= toHour; i++) {
     hours.push(i);
   }
 </script>
 
 <section id="week-calendar">
-  <div class="stack-h">
-    <div>
-      start: {startAt.set("hour", fromHour).toDate().toLocaleString($locale)}
-    </div>
-    <div>
-      end: {endAt.set("hour", toHour).toDate().toLocaleString($locale)}
-    </div>
-
-    <span
-      style:backgroundColor={`hsl(${
-        ((100 - bookedSlots / slots) / 100) * 120
-      }, 88%, 43%)`}
-    >
-      stats: {bookedSlots}/{slots}
-    </span>
-  </div>
-
   <header id="week-calendar-header" class="stack-v">
-    <a href={`/schedule/${lastWeek < 0 ? 52 : lastWeek}`}> ❮ zurück </a>
+    <button
+      on:click|preventDefault={() => {
+        week = week - 1;
+      }}
+    >
+      ❮ zurück
+    </button>
 
     <h3 class="h4">Woche {selectedWeek.week()}</h3>
 
-    <a href={`/schedule/${nextWeek > 52 ? 1 : nextWeek}`}> vor ❯ </a>
+    <button on:click|preventDefault={() => (week = week + 1)}> vor ❯ </button>
   </header>
 
   <table class="table">

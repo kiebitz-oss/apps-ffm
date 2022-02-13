@@ -28,15 +28,14 @@
   div {
     position: fixed;
     inset: 0;
-    display: flex;
-    place-items: center;
+    display: grid;
+    justify-content: center;
 
-    overflow: hidden;
+    overflow: auto;
     background: rgba(250, 249, 249, 0.4);
     backdrop-filter: blur(4px);
 
-    z-index: 999;
-    overflow-y: auto;
+    z-index: 900;
 
     overscroll-behavior: contain;
     pointer-events: auto;

@@ -1,63 +1,69 @@
 <script lang="ts">
   import { cancelAppointment } from "$lib/api";
-  import { vaccines, type Vaccine } from "@impfen/common";
+  import { vaccines } from "@impfen/common";
+  import { createEventDispatcher } from "svelte";
   import { date, locale, t, time } from "svelte-intl-precompile";
-  import type { Appointment } from "vanellus";
   import { AppointmentStatus } from "vanellus";
+  import type { CalendarItem } from "../calendar/CalendarItem";
 
-  export let appointment: Appointment<Vaccine>;
+  export let item: CalendarItem;
+
+  const dispatch = createEventDispatcher<{ close: never }>();
 
   const handleCancelAppointment = async () => {
-    await cancelAppointment(appointment);
+    await cancelAppointment(item.item);
+    dispatch("close");
   };
 
-  const vaccine = vaccines[$locale][appointment.vaccine];
+  const vaccine = vaccines[$locale][item.vaccine];
 </script>
 
-<div>
-  <!-- svelte-ignore component-name-lowercase -->
-  <time class="flex flex-col font-semibold text-center">
-    <div class="text-4xl">
-      {$t("user.finder.appointment.card.time", {
-        values: {
-          time: $time(appointment.startAt.local().toDate(), {
-            format: "short",
-          }),
-        },
-      })}
-    </div>
+<h1 class="h2">Impftermin</h1>
 
-    <div class="text-xl">
-      {$t("user.finder.appointment.card.date", {
-        values: {
-          date: $date(appointment.startAt.local().toDate(), {
-            format: "short",
-          }),
-        },
-      })}
-    </div>
-  </time>
+<dl>
+  <dt>Beginn</dt>
+  <dd>
+    {$date(item.startAt.local().toDate(), {
+      format: "short",
+    })}, {$time(item.startAt.local().toDate(), {
+      format: "short",
+    })} Uhr
+  </dd>
 
-  <p class="text-center">
+  <dt>Ende</dt>
+  <dd>
+    {$date(item.endAt.local().toDate(), {
+      format: "short",
+    })}, {$time(item.endAt.local().toDate(), {
+      format: "short",
+    })} Uhr
+  </dd>
+
+  <dt>Impfstoff</dt>
+  <dd>
     {vaccine.name}
-  </p>
+  </dd>
 
-  <ul>
-    {#each appointment.slotData as slot}
-      <li>
-        {slot.id.slice(0, 4).toUpperCase()} ({slot.open ? "frei" : "belegt"})
-      </li>
-    {/each}
-  </ul>
+  <dt>Plätze <small>(belegt/gesamt)</small></dt>
+  <dd>
+    {item.bookedSlots}/{item.slots}
+  </dd>
 
-  <div class="text-center">
-    Slots: {appointment.bookings.length}/
-    {appointment.slotData.length} -{appointment.status}
-    <br />
-    {#if appointment.status !== AppointmentStatus.CANCELED}
-      <button class="button primary s" on:click={handleCancelAppointment}
-        >{$t("user.finder.appointment.card.button-cancel")}</button
-      >
-    {/if}
-  </div>
+  <dt>Auslastung</dt>
+  <dd>
+    {item.percentUsed}%
+  </dd>
+
+  <dt>Status</dt>
+  <dd>
+    {item.status}
+  </dd>
+</dl>
+
+<div>
+  {#if item.status !== AppointmentStatus.CANCELED}
+    <button class="button primary s" on:click={handleCancelAppointment}
+      >{$t("user.finder.appointment.card.button-cancel")}</button
+    >
+  {/if}
 </div>

@@ -61,6 +61,10 @@ export const cancelAppointment = (appointment: Appointment<Vaccine>) => {
   return api.cancelAppointment(appointment, getKeyPairs());
 };
 
+export const cancelAppointmentSeries = (seriesId: string) => {
+  return api.cancelAppointmentSeries(seriesId, getKeyPairs());
+};
+
 export const getProviderAppointments = (from: Dayjs, to?: Dayjs) => {
   to = to ? to : from.add(1, "day");
 

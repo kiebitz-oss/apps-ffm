@@ -12,4 +12,4 @@ export const secret = persistantWriteable<string>("provider:secret");
 export const keyPairs =
   persistantWriteable<ProviderKeyPairs>("provider:keyPairs");
 
-export const verified = writable<boolean>(false);
+export const verified = writable<boolean>();

@@ -55,7 +55,7 @@
       ><input type="text" name="street" required bind:value={street} /></Field
     >
 
-    <div class="stack-h">
+    <div class="field-row">
       <Field label="Postleitzahl" name="zipCode" required
         ><input
           type="number"

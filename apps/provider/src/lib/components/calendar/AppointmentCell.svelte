@@ -20,7 +20,7 @@
   //   return null;
   // }
 
-  const percentUsed = item.bookedSlots * (item.slots / 100);
+  const percentUsed = item.percentUsed;
 
   const dispatcher = createEventDispatcher<{
     open: CalendarItem;
@@ -49,33 +49,48 @@
       : `hsl(${((100 - percentUsed) / 100) * 120}, 75%, 90%)`}
   >
     <h4>
-      {item.startAt.format("HH:mm")} - {item.endAt.format("HH:mm")}
+      {#if item.isSeries}
+        Impfserie
+      {:else}
+        Impftermin
+      {/if}
     </h4>
+
+    <string
+      >{item.startAt.format("HH:mm")} - {item.endAt.format("HH:mm")}</string
+    >
 
     <div>
       {#if item.isSeries}
         SERIE -
       {/if}
-      {item.bookedSlots}/{item.slots}
+
+      <p>
+        {item.bookedSlots}/{item.slots}
+      </p>
+
       {#if item.isSeries}
         <br />
-        {item.items.length} x {item.items[0].duration} Min auf
+        {item.items.length} x {item.items[0].duration} Min<br />
+        auf
         {item.items[0].slotData.length} Lanes mit {item.vaccine}
       {:else}
         " " + item.vaccine
       {/if}
     </div>
-
-    {item.vaccine}
   </div>
 </button>
 
 <style lang="postcss">
-  div {
+  button {
+    display: block;
+  }
+  button > div {
     overflow: hidden;
     position: absolute;
     z-index: 10;
     padding: 8px;
     cursor: pointer;
+    font-size: 0.9rem;
   }
 </style>

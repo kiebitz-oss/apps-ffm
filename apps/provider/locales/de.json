@@ -25,10 +25,10 @@
   "provider.schedule.appointment-series-form.hour-end.label": "Bis",
   "provider.schedule.appointment-series-form.slots.label": "Anzahl Impfdosen",
   "provider.schedule.appointment-series-form.duration.label": "Vstl. Dauer",
-  "provider.schedule.appointment-series-form.duration.description": "Vstl. Dauer pro Impftermin in Minuten",
+  "provider.schedule.appointment-series-form.duration.description": "Vstl. Dauer in Minuten",
   "provider.schedule.appointment-series-form.vaccine-label": "Impfstoff",
   "provider.schedule.appointment-series-form.vaccine.description": "Der verimpfte Impfstoff",
-  "provider.schedule.appointment-series-form.slots.description": "Die verfügbaren Impfdosen pro Zeiteinheit.",
+  "provider.schedule.appointment-series-form.slots.description": "pro Zeiteinheit",
   "provider.schedule.appointment-series-form.button": "Impfserie anlegen",
   "provider.provider-data.name": "Name der Impfstelle",
   "provider.provider-data.street": "Straße und Hausnummer",
@@ -85,5 +85,10 @@
   "provider.global.notification.verified": "Der Account wurde soeben verifiziert. Sie können nun Impftermine anlegen.",
   "provider.logout.notification.success": "Erfolgreich abgemeldet",
   "provider.schedule.title": "Impftermine",
-  "provider.schedule.page-title": "Impftermine"
+  "provider.schedule.page-title": "Impftermine",
+  "provider.schedule.button-create-appointment": "Impftermin anlegen",
+  "provider.schedule.button-create-appointment-series": "Impfterminserie anlegen",
+  "provider.appointment-series-form.title": "Impfterminserie anlegen",
+  "provider.appointment-form.title": "Impftermin anlegen",
+  "user.finder.appointment-series.card.button-cancel": "Impfterminserie absagen"
 }
