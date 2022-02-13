@@ -73,7 +73,7 @@
 
         <tr>
           <th scope="row" id={`provider-${id}`}>
-            <a href={link}>
+            <a href={link} class="link">
               {provider.name}
             </a>
           </th>
@@ -105,7 +105,7 @@
         </tr>
       {:else}
         <tr>
-          <td colspan="4" class="font-medium text-center">
+          <td colspan="4" class="notice">
             {$t("mediator.providers.index.table.row.no-data")}
           </td>
         </tr>

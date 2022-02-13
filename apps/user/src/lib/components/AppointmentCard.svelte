@@ -53,21 +53,32 @@
 <style lang="postcss">
   article {
     text-align: center;
-    padding: 1rem;
+    padding: 2rem 1rem;
     color: var(--color-black);
     font-weight: 500;
     max-width: 25rem;
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-m);
+
+    & address {
+      margin-bottom: 1rem;
+
+      & h3 {
+        font-size: var(--font-size-4);
+        font-weight: 700;
+      }
+    }
 
     & time {
-      font-size: var(--font-size-4);
+      display: block;
+      font-size: var(--font-size-3);
       font-weight: 700;
+      margin-bottom: 0.75rem;
     }
 
     & > p {
       word-break: break-word;
+      margin-bottom: 0.75rem;
     }
-
-    border: 1px solid var(--color-black);
-    border-radius: var(--radius-m);
   }
 </style>

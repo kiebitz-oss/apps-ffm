@@ -325,6 +325,10 @@ a {
   border-radius: var(--radius-m);
   min-width: 100%;
 
+  &:hover {
+    border-color: var(--color-highlight);
+  }
+
   & input {
     border: 0 !important;
     flex: 1;
@@ -391,13 +395,13 @@ input[type="radio"], input[type="checkbox"] {
 
 input[type="file"] {
   padding: 0;
-  
 
   &::-webkit-file-upload-button {
     border-color: transparent;
     background-color: #4589ff1a;
     color: rgb(14 127 206 / 1);
     font-weight: 600;
+    margin-right: 2ch;
     
     padding: 1ch 2ch;
     cursor: pointer;
@@ -441,9 +445,7 @@ button {
 
   cursor: pointer;
   text-decoration: none;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.15s;
+  transition: all var(--duration-1) cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid transparent;
 
 
@@ -536,6 +538,7 @@ button {
     table-layout: auto;
   }
 
+
   & thead {
     border-width: 1px 0;
     background-color: rgb(249 250 251/1);
@@ -560,6 +563,10 @@ button {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: rgb(107 114 128 / 1);
+  }
+
+  &.striped tbody tr:nth-child(even) {
+    background-color: #f4f4f4; 
   }
 }
 
@@ -597,6 +604,13 @@ button {
   @media (--m-n-above) {
     font-size: 1.2rem;
   }
+}
+
+.h4, h4 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  max-width: 100%;
+
 }
 
 .book {
@@ -688,15 +702,23 @@ button {
 .provider-card {
   border: 2px solid var(--color-black);
   border-radius: var(--radius-l);
-  padding: 1rem;
+  padding: .75rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  transition: all var(--duration-1) cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    box-shadow: var(--shadow-highlight);
-    border: 2px solid var(--color-highlight);
-  } 
+    border-color: var(--color-highlight);
+
+    @media (--motionOK) {
+      box-shadow: var(--shadow-highlight);
+    }
+  }
+
+  & h2 {
+    margin: .25rem 0;
+  }
 }
 
 .error {
@@ -714,4 +736,10 @@ button {
     left: -1.75rem;
     top: -2px;
   }
+}
+
+.notice {
+  font-size: 1.1rem; 
+  font-weight: 600;
+  text-align: center;
 }

@@ -104,7 +104,7 @@
     {/each}
   </ul>
 {:else}
-  <p>
+  <p class="notice">
     {#if $provider === true}
       {@html $t("user.appointments-list.no-results-any-provider")}
     {:else}
@@ -144,6 +144,10 @@
         }
       }
     }
+
+    & input[type="datetime-local"]:hover {
+      border-color: var(--color-highlight);
+    }
   }
 
   ul {
@@ -157,5 +161,19 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    & :global(article) {
+      box-shadow: var(--shadow-appointment);
+
+      transition: all var(--duration-1) cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    & a:hover :global(article) {
+      border-color: var(--color-highlight);
+
+      @media (--motionOK) {
+        box-shadow: var(--shadow-highlight);
+      }
+    }
   }
 </style>

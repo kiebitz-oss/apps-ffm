@@ -87,7 +87,7 @@
   --shadow-box: 0px 2px 6px rgba(0, 0, 0, 0.25);
   --shadow-appointment: 0px 4px 11px rgba(0, 0, 0, 0.25);
   --shadow-appointment-2: 0px 12px 16px rgba(0, 0, 0, 0.25);
-  --shadow-highligh: 0px 0px 8px var(--color-highlight);
+  --shadow-highlight: 0px 0px 8px var(--color-highlight);
 
-  
+  --duration-1: 0.15s;
 }

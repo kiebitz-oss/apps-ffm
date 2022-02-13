@@ -26,7 +26,7 @@
 </PageHeader>
 
 {#if $vaccine && vaccines?.[$locale]?.[$vaccine]?.name}
-  <p class="notice">
+  <p>
     {$t("user.finder.appointment.info", {
       values: {
         vaccine: vaccines[$locale][$vaccine].name,

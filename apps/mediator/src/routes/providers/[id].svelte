@@ -51,6 +51,16 @@
     <a href="/" slot="backLink" class="back-link"
       >{$t("mediator.providers.details.back-link")}</a
     >
+
+    <div slot="actions">
+      {#if status !== ProviderStatus.VERIFIED}
+        <button
+          class="button primary m"
+          on:click|preventDefault={doHandleConfirm}
+          >{$t("mediator.providers.show.button-confirm")}</button
+        >
+      {/if}
+    </div>
   </PageHeader>
 
   <div class:provider-data={true}>
@@ -106,12 +116,6 @@
       </dd>
     </dl>
   </div>
-
-  {#if status !== ProviderStatus.VERIFIED}
-    <button class="button primary m" on:click|preventDefault={doHandleConfirm}
-      >{$t("mediator.providers.show.button-confirm")}</button
-    >
-  {/if}
 {:catch error}
   <p class="error">{error}</p>
 {/await}
