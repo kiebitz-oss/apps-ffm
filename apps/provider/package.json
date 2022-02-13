@@ -16,7 +16,7 @@
   "type": "module",
   "dependencies": {
     "dayjs": "^1.10.7",
-    "vanellus": "workspace:^0.7.0"
+    "vanellus": "workspace:^0.8.0"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.0.15",
