@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
+  import { theme } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
-  import Imprint from "../content/imprint.mdx";
 
   export const prerender = true;
 </script>
@@ -8,7 +8,7 @@
 <svelte:head><title>{$t("user.imprint.page-title")}</title></svelte:head>
 
 <article class:flow={true}>
-  <Imprint />
+  <svelte:component this={theme.content.imprint} />
 </article>
 
 <style lang="postcss">

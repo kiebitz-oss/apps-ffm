@@ -1,14 +1,14 @@
 <script lang="ts" context="module">
-  export const prerender = true;
-
+  import { theme } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
-  import Privacy from "../content/privacy.mdx";
+
+  export const prerender = true;
 </script>
 
 <svelte:head><title>{$t("user.privacy.page-title")}</title></svelte:head>
 
 <article class:flow={true}>
-  <Privacy />
+  <svelte:component this={theme.content.privacy} />
 </article>
 
 <style lang="postcss">
