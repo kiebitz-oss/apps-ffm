@@ -33,7 +33,7 @@ export class CalendarItem {
     this.slots = item.slotData.length;
     this.status = item.status;
 
-    this.percentUsed = this.bookedSlots * (this.slots / 100);
+    this.percentUsed = (100 / this.slots) * this.bookedSlots;
 
     if (this.isSeries) {
       this.items.push(item);
