@@ -42,7 +42,7 @@
 "user.provider-card.accessibility": "Barrierefreie Impfstelle",
 "user.welcome.question5_error": "Leider gibt es aktuell (noch) keine Termine für Kinder unter 5 Jahren über das Portal. Wir bemühen uns das Angebot schnellstmöglich zu erweitern und bitten bis dahin um Geduld.",
 "user.welcome.question5_value": "Sind Sie jünger als 5?",
-"user.appointments-list.no-results": "Es sind keine freien Termine verfügbar.<br /> Bitte versuchen Sie es später erneut, oder wählen Sie einen anderen Zeitpunkt oder <a href="/finder">eine andere Impfstelle</a>.",
+"user.appointments-list.no-results": "Es sind keine freien Termine verfügbar.<br /> Bitte versuchen Sie es später erneut, oder wählen Sie einen anderen Zeitpunkt oder <a href=\"/finder\">eine andere Impfstelle</a>.",
 "user.appointments-list.list-of-appointments": "Liste der Impftermine",
 "user.appointments-list.date-past": "Impftermine in der Vergangenheit können nicht mehr gebucht werden.",
 "user.finder.success.cancelation-confirm": "Sind Sie sicher, dass Sie den gebuchten Termin absagen wollen?",
