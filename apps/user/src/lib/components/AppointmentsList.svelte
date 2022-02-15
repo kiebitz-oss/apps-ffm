@@ -24,14 +24,6 @@
     await goto("/finder/verify");
   };
 
-  $: console.log(time);
-  $: console.log(date);
-  $: console.log(
-    dayjs(date)
-      .set("hour", Number(time.split(":")[0]))
-      .toString()
-  );
-
   $: filteredAppointments = appointments.filter(
     (appointment) =>
       ($accessible !== true || appointment.provider.accessible === true) &&
