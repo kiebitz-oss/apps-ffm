@@ -8,7 +8,7 @@
   --flow-max-width: 100%;
 }
 
-:where(html) {
+html {
   --color-scrollbar: #dddddd;
 
   background-color: var(--color-page-bg);
@@ -334,7 +334,7 @@ a {
     flex: 1;
   }
 
-  & :where(span) {
+  & span {
     --tw-bg-opacity: 1;
     background-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
     display: flex;

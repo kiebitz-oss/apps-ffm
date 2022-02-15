@@ -5,20 +5,20 @@
   background-origin: border-box;
   background-repeat: no-repeat;
 
-  &:where(:not(fieldset)) {
+  &:not(fieldset) {
     border-width: 0;
     border-style: solid;
   }
 }
 
-:where(html) {
+html {
   position: relative;
   width: 100%;
   height: 100%;
   min-height: 100vh;
   font-size: 100%;
   line-height: 1.5;
-  font-family: var(--font-sans);
+  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none; /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
@@ -35,69 +35,69 @@
   }
 }
 
-:where(body) {
+body {
   margin: 0;
 }
 
-:where(p, h1, h2, h3, h4, h5, h6) {
+p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
+h1, h2, h3, h4, h5, h6 {
   line-height: var(--font-lineheight-1);
   font-weight: var(--font-weight-9);
   margin: 0;
 }
 
-:where(h1) { 
+h1 { 
   font-size: var(--font-size-8); 
   /* max-width: var(--size-header-1);  */
 }
 
-:where(h2) { 
+h2 { 
   font-size: var(--font-size-6); 
   /* max-width: var(--size-header-2); */
 }
 
-:where(h3) { font-size: var(--font-size-5) }
-:where(h4) { font-size: var(--font-size-4) }
-:where(h5) { font-size: var(--font-size-3) }
+h3 { font-size: var(--font-size-5) }
+h4 { font-size: var(--font-size-4) }
+h5 { font-size: var(--font-size-3) }
 
-:where(h3, h4, h5, h6, dt) {
+h3, h4, h5, h6, dt {
   max-width: var(--size-header-3);
 }
 
-:where(p, ul, ol, dl, h6) {
+p, ul, ol, dl, h6 {
   font-size: var(--font-size-2);
 }
 
-:where(p) {
+p {
   margin: 0;
 }
 
-:where(dd) {
+dd {
   margin: 0 0 1rem 0.5rem;
 }
 
-:where(ul, ol) {
+ul, ol {
   margin: 0;
   padding: 0;
 
-  &:where([role="list"]) {
+  &[role="list"] {
     list-style: none;
   }
 }
 
-:where(a, u) {
+a, u {
   text-underline-offset: 1px;
 }
 
-:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
+a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"]) {
   cursor: pointer;
   touch-action: manipulation;
 }
 
-:where(a) {
+a {
   text-decoration: none;
 
   &:not([class]) {
@@ -105,50 +105,50 @@
     text-underline-offset: 0.15em;
   }
 
-  &:where(:not(:hover)) {
+  &:not(:hover) {
     text-decoration: inherit;
   }
 }
 
-:where(button) {
+button {
   appearance: none;
   background-color: transparent;
   border: none;
 }
 
-:where(img, svg) {
+img, svg {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-:where(input, button, textarea, select),
-:where(input[type="file"])::-webkit-file-upload-button {
+input, button, textarea, select,
+input[type="file"]::-webkit-file-upload-button {
   font: inherit;
   color: inherit;
   letter-spacing: inherit;
 }
 
-:where(input[type]) {
+input[type] {
   padding: var(--size-2) var(--size-1);
 }
 
-:where(select) {
+select {
   padding: var(--size-2) var(--size-1);
 }
 
-:where(textarea) { resize: block }
+textarea { resize: block }
 
-:where(input[type="checkbox"], input[type="radio"]) {
+input[type="checkbox"], input[type="radio"] {
   width: 1.25rem;
   height: 1.25rem;
 }
 
-:where(svg) {
+svg {
   stroke: none;
   fill: currentColor;
 
-  &:where(:not([fill])) {
+  &:not([fill]) {
     stroke: currentColor;
     fill: none;
     stroke-linecap: round;
@@ -156,35 +156,35 @@
   }
 }
 
-:where(dt, summary) { font-weight: var(--font-weight-7) }
+dt, summary { font-weight: var(--font-weight-7) }
 
-:where(small) { 
+small { 
   font-size: max(.5em, var(--font-size-0)); 
   
 }
 
-:where(hr) {
+hr {
   margin: var(--size-fluid-5) 0 var(--size-fluid-5) 0;
   height: var(--border-size-2);
   background-color: var(--surface-3);
 }
 
-:where(summary) {
+summary {
   display: list-item;
 }
 
-:where(details) {
+details {
   background: var(--surface-2);
   border-radius: var(--radius-2);
 }
 
-:where(details[open] > summary) {
+details[open] > summary {
   margin-bottom: var(--size-2);
   border-end-start-radius: 0;
   border-end-end-radius: 0;
 }
 
-:where(fieldset) {
+fieldset {
   border-radius: var(--radius-2);
   padding: 0;
 }
