@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
   import { browser } from "$app/env";
   import { goto } from "$app/navigation";
-  import { register } from "$lib/api";
+  import { createProvider } from "$lib/api";
   import { ProviderSummary } from "$lib/components";
   import { unverifiedProvider } from "$lib/stores";
   import {
@@ -14,7 +14,7 @@
 
 <script lang="ts">
   const handleSubmit = async () => {
-    await register($unverifiedProvider).catch((error) => {
+    await createProvider($unverifiedProvider).catch((error) => {
       console.error(error);
 
       addNotification(

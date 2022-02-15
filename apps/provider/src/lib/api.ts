@@ -4,10 +4,11 @@ import { get } from "svelte/store";
 import type {
   AESData,
   Appointment,
+  CreateProviderInput,
   Provider,
-  ProviderInput,
   ProviderKeyPairs,
   UnpublishedPublicAppointment,
+  UpdateProviderInput,
 } from "vanellus";
 import { AuthError, ProviderApi } from "vanellus";
 import {
@@ -83,13 +84,40 @@ export const getVerifiedProvider = async () => {
   }
 };
 
-export const storeProvider = async (
-  providerInput: ProviderInput,
-  code?: string
-) => {
+export const updateProvider = async (provider: UpdateProviderInput) => {
   const keyPairs = getKeyPairs();
 
-  const unverifiedProvider = await api.storeProvider(
+  const updatedProvider = await api.updateProvider(
+    {
+      ...provider,
+      name: String(provider.name),
+      street: String(provider.street),
+      zipCode: String(provider.zipCode),
+      city: String(provider.city),
+      email: String(provider.email),
+      description: String(provider.description || ""),
+      website: String(provider.website || ""),
+      accessible: Boolean(provider.accessible || false),
+    },
+    keyPairs
+  );
+
+  setUnverifiedProvider(updatedProvider);
+
+  return updatedProvider;
+};
+
+export const createProvider = async (
+  providerInput: CreateProviderInput,
+  signupCode?: string
+) => {
+  const newKeyPairs = await api.generateKeyPairs();
+  const newSecret = api.generateSecret();
+
+  setSecret(newSecret);
+  await setKeyPairs(newKeyPairs, false);
+
+  const newProvider = await api.createProvider(
     {
       name: String(providerInput.name),
       street: String(providerInput.street),
@@ -100,26 +128,13 @@ export const storeProvider = async (
       website: String(providerInput.website || ""),
       accessible: Boolean(providerInput.accessible || false),
     },
-    keyPairs,
-    code
+    newKeyPairs,
+    signupCode
   );
 
-  setUnverifiedProvider(unverifiedProvider);
+  setUnverifiedProvider(newProvider);
 
-  return unverifiedProvider;
-};
-
-export const register = async (
-  providerInput: ProviderInput,
-  signupCode?: string
-) => {
-  const newKeyPairs = await api.generateKeyPairs();
-  const newSecret = api.generateSecret();
-
-  setSecret(newSecret);
-  await setKeyPairs(newKeyPairs, false);
-
-  return storeProvider(providerInput, signupCode);
+  return newProvider;
 };
 
 export const login = async (backupData: AESData, newSecret: string) => {

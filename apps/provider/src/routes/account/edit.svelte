@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   import { goto } from "$app/navigation";
-  import { storeProvider } from "$lib/api";
+  import { updateProvider } from "$lib/api";
   import { ProviderForm } from "$lib/components";
   import { unverifiedProvider } from "$lib/stores";
   import {
@@ -9,13 +9,13 @@
     PageHeader,
   } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
-  import type { ProviderInput } from "vanellus";
+  import type { UpdateProviderInput } from "vanellus";
 </script>
 
 <script lang="ts">
-  const handleSubmit = async ({ detail }: CustomEvent<ProviderInput>) => {
+  const handleSubmit = async ({ detail }: CustomEvent<UpdateProviderInput>) => {
     try {
-      await storeProvider(detail);
+      await updateProvider(detail);
 
       await goto("/account");
 
