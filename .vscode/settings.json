@@ -31,12 +31,19 @@
   "i18n-ally.keystyle": "flat",
   "i18n-ally.displayLanguage": "de",
   "i18n-ally.sourceLanguage": "de",
-  "i18n-ally.localesPaths": [
-    "apps/user/locales",
-    "apps/provider/locales",
-    "apps/mediator/locales"
-  ],
+  "i18n-ally.sortKeys": true,
 
+  "i18n-ally.localesPaths": ["apps/**/locales"],
+  "i18n-ally.pathMatcher": "{locale}.json",
+
+  "i18n-ally.dirStructure": "auto",
+  "i18n-ally.extract.keygenStyle": "kebab-case",
+  "i18n-ally.extract.targetPickingStrategy": "most-similar",
+  "i18n-ally.review.enabled": false,
+  "i18n-ally.translate.engines": ["deepl"],
+  "i18n-ally.translate.deepl.apiKey": "62ea3132-f4f5-4e05-9823-938307bc6171:fx",
+  "i18n-ally.translate.deepl.useFreeApiEntry": true,
+  "i18n-ally.translate.deepl.enableLog": true,
   "eslint.workingDirectories": [
     "./apps/user",
     "./apps/provider",
