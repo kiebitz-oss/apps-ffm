@@ -3,7 +3,6 @@
   import { AppointmentCard } from "$lib/components";
   import { accessible, appointment, provider, vaccine } from "$lib/stores";
   import type { Vaccine } from "@impfen/common";
-  import type { Dayjs } from "dayjs";
   import dayjs from "dayjs";
   import { t } from "svelte-intl-precompile";
   import type { AggregatedPublicAppointment } from "vanellus";
@@ -14,21 +13,8 @@
   let filteredAppointments: AggregatedPublicAppointment<Vaccine>[] =
     appointments;
 
-  let date: Dayjs = dayjs();
-
-  const handleDateChange: svelte.JSX.ChangeEventHandler<HTMLInputElement> = (
-    event
-  ) => {
-    // safeguarding against stupid things browsers may do with datetime-local-inputs...
-    try {
-      const newDate = dayjs(event.currentTarget.value);
-
-      date = newDate.isValid() ? newDate : dayjs();
-    } catch (error) {
-      console.error(error);
-      date = dayjs();
-    }
-  };
+  let date = dayjs().format("YYYY-MM-DD");
+  let time = "08:00";
 
   const handleSelectAppointment = async (
     chosenAppointment: AggregatedPublicAppointment<Vaccine>
@@ -38,12 +24,26 @@
     await goto("/finder/verify");
   };
 
+  $: console.log(time);
+  $: console.log(date);
+  $: console.log(
+    dayjs(date)
+      .set("hour", Number(time.split(":")[0]))
+      .toString()
+  );
+
   $: filteredAppointments = appointments.filter(
     (appointment) =>
       ($accessible !== true || appointment.provider.accessible === true) &&
       ($provider === true ||
         ($provider?.id && appointment.provider.id === $provider.id)) &&
-      appointment.startAt.local().isAfter(date, "minute") &&
+      appointment.startAt.local().isAfter(dayjs(), "minute") &&
+      appointment.startAt
+        .local()
+        .isAfter(
+          dayjs(date).set("hour", Number(time.split(":")[0])),
+          "minute"
+        ) &&
       ($vaccine === appointment.vaccine ||
         (!$vaccine && appointment.vaccine !== "biontechchildren"))
   );
@@ -77,16 +77,24 @@
     >
     <input
       name="date"
-      type="datetime-local"
-      min={dayjs().format("YYYY-MM-DDTHH:mm")}
-      max={date.add(30, "days").format("YYYY-MM-DDTHH:mm")}
-      value={date.format("YYYY-MM-DDTHH:mm")}
-      on:blur|preventDefault={handleDateChange}
+      type="date"
+      min={dayjs().format("YYYY-MM-DD")}
+      max={dayjs().add(30, "days").format("YYYY-MM-DD")}
+      bind:value={date}
     />
+  </div>
+
+  <div>
+    <label for="provider" class="book"
+      >{$t("user.appointments-list.title-time")}</label
+    >
+    <input name="date" type="time" bind:value={time} />
   </div>
 </form>
 
-{#if dayjs(date).isBefore(dayjs().subtract(10, "minutes"), "minutes")}
+<hr />
+
+{#if dayjs(date).isBefore(dayjs().subtract(1, "day"), "day")}
   <p class="error">{$t("user.appointments-list.date-past")}</p>
 {:else if filteredAppointments.length > 0}
   <ul aria-label={$t("user.appointments-list.list-of-appointments")}>
@@ -145,7 +153,8 @@
       }
     }
 
-    & input[type="datetime-local"]:hover {
+    & input[type="date"]:hover,
+    & input[type="time"]:hover {
       border-color: var(--color-highlight);
     }
   }
