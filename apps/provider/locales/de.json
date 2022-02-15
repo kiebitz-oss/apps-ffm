@@ -79,7 +79,7 @@
     "provider.provider-data.street": "Straße und Hausnummer",
     "provider.provider-data.website": "Webseite",
     "provider.provider-data.zip-code": "Postleitzahl",
-    "provider.provider-form.contact-data.intro": "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit dem Support-Team.",
+    "provider.provider-form.contact-data.intro": "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit dem Support-Team:",
     "provider.provider-form.contact-data.title": "Kontaktdaten",
     "provider.schedule.button-create-appointment": "Impftermin anlegen",
     "provider.schedule.button-create-appointment-series": "Impfterminserie anlegen",
