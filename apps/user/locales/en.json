@@ -49,7 +49,7 @@
     "user.finder.verify.appointment-title": "Your appointment",
     "user.finder.verify.back-link": "Back to appointment selection",
     "user.finder.verify.button-submit": "Book appointment now",
-    "user.finder.verify.intro": "This is your selected appointment. Please check carefully that everything is correct. Then you may finalize your booking.",
+    "user.finder.verify.intro": "This is your selected appointment. Please check carefully that everything is correct.<0/> Then you may finalize your booking.",
     "user.finder.verify.notification.error": "Booking failed",
     "user.finder.verify.notification.success": "Booking successful",
     "user.finder.verify.title": "Overview",
