@@ -86,7 +86,7 @@
     "user.welcome.form-title": "Vaccination questionnaire",
     "user.welcome.form_error": "Please answer all questions, otherwise we will not be able to find fitting appointments for you. All your personal data will be stored on your personal device only and will not be transmitted or passed on to a server.",
     "user.welcome.intro-1": "You are now only a few clicks away from your appointment.",
-    "user.welcome.intro-2": "We will ask you a few questions so you can get appointments for the correct vaccine. The data remains on your device and is not transmitted.",
+    "user.welcome.intro-2": "We will ask you a few questions so you can get appointments for the recommended vaccine. The data remains on your device and is not transmitted.",
     "user.welcome.page-title": "Vaccination Appointment Search",
     "user.welcome.question0_error": "Unfortunately, vaccinations for under-5s are not currently available",
     "user.welcome.question0_value": "How old are you resp. the person to be vaccinated?",
