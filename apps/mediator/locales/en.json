@@ -1,8 +1,8 @@
 {
     "mediator.imprint.page-title": "Imprint",
     "mediator.logout.button": "Log out",
-    "mediator.logout.intro": "Do you really want to log out? Please make sure you have saved your login data.",
-    "mediator.logout.notification.success": "Succesfully logged out",
+    "mediator.logout.intro": "Do you really want to log out? Please make sure you have access to your login data. Without them you will not be able to log in again.",
+    "mediator.logout.notification.success": "Successfully logged out",
     "mediator.logout.page-title": "Log out",
     "mediator.logout.title": "Log out",
     "mediator.nav.logout": "Log out",
