@@ -1,7 +1,7 @@
 {
     "mediator.imprint.page-title": "Impressum",
     "mediator.logout.button": "Abmelden",
-    "mediator.logout.intro": "Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie die Sicherungsdatei mit Ihren Login-Daten zur Verfügung haben.",
+    "mediator.logout.intro": "Möchten Sie sich wirklich abmelden? Bitte stellen Sie sicher, dass Sie die Sicherungsdatei mit Ihren Login-Daten zur Verfügung haben. Ohne diese können Sie sich nicht wieder anmelden. Es gibt keine \"Passwort vergessen\"-Funktion.",
     "mediator.logout.notification.success": "Erfolgreich abgemeldet",
     "mediator.logout.page-title": "Abmelden",
     "mediator.logout.title": "Abmelden",
