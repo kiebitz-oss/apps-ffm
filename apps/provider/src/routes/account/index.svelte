@@ -3,11 +3,11 @@
   import { unverifiedProvider, verified } from "$lib/stores";
   import { PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
-  import type { ProviderInput } from "vanellus";
+  import type { UpdateProviderInput } from "vanellus";
 </script>
 
 <script lang="ts">
-  const provider: ProviderInput = $unverifiedProvider;
+  const provider: UpdateProviderInput = $unverifiedProvider;
 
   // getVerifiedProvider()
   //   .then((verifiedProvider) => {

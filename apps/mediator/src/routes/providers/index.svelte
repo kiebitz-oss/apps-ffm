@@ -1,18 +1,16 @@
 <script lang="ts" context="module">
-  import { getPendingProviders, getVerifiedProviders } from "$lib/api";
+  import { getProviders } from "$lib/api";
   import { PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
-  import type { Provider } from "vanellus";
-  import { encodeBase64url } from "vanellus";
+  import type { MediatorProviderView } from "vanellus";
+  import { encodeBase64url, ProviderStatus } from "vanellus";
 </script>
 
 <script lang="ts">
   let unverified = true;
-  let providersPromise: Promise<Provider[]>;
+  let providersPromise: Promise<MediatorProviderView[]>;
 
-  $: providersPromise = unverified
-    ? getPendingProviders()
-    : getVerifiedProviders();
+  $: providersPromise = getProviders();
 </script>
 
 <svelte:head>
@@ -58,7 +56,7 @@
       <tr>
         <th scope="col">{$t("mediator.providers.index.table.head.name")}</th>
         <th scope="col">{$t("mediator.providers.index.table.head.adress")}</th>
-        <!-- <th scope="col">{$t("mediator.providers.index.table.head.status")}</th> -->
+        <th scope="col">{$t("mediator.providers.index.table.head.status")}</th>
         <th scope="col">
           <span class="sr-only"
             >{$t("mediator.providers.index.table.head.actions")}</span
@@ -87,15 +85,19 @@
             </address>
           </td>
 
-          <!-- <td>
-              <Tag variant={provider.verified ? "success" : "warning"}>
-                {provider.verified ? (
-                  <Trans id="mediator.provider-row.valid">bestätigt</Trans>
-                ) : (
-                  <Trans id="mediator.provider-row.invalid">unbestätigt</Trans>
-                )}
-              </Tag>
-            </td>  -->
+          <td>
+            <small
+              class:tag={true}
+              class:warning={provider.status === ProviderStatus.UNVERIFIED}
+              class:info={provider.status !== ProviderStatus.UNVERIFIED}
+            >
+              {#if provider.status !== ProviderStatus.UNVERIFIED}
+                {$t("mediator.provider-row.valid")}
+              {:else}
+                {$t("mediator.provider-row.invalid")}
+              {/if}
+            </small>
+          </td>
 
           <td class:actions={true}>
             <a href={link} class="button tertiary s">

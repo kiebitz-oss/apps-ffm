@@ -1,8 +1,15 @@
 import { persistantWriteable } from "@impfen/common";
 import { writable } from "svelte/store";
-import type { Provider, ProviderInput, ProviderKeyPairs } from "vanellus";
+import type {
+  CreateProviderInput,
+  Provider,
+  ProviderKeyPairs,
+  UpdateProviderInput,
+} from "vanellus";
 
-export const unverifiedProvider = persistantWriteable<ProviderInput>(
+export const newProvider = writable<CreateProviderInput>();
+
+export const unverifiedProvider = persistantWriteable<UpdateProviderInput>(
   "provider:unverifiedProvider"
 );
 export const verifiedProvider = persistantWriteable<Provider>(

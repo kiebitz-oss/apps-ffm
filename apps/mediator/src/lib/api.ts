@@ -27,12 +27,7 @@ export const getPendingProviders = async () => {
 };
 
 export const getProviders = async () => {
-  const [pendingProviders, verifiedProviders] = await Promise.all([
-    getPendingProviders(),
-    getVerifiedProviders(),
-  ]);
-
-  return [...pendingProviders, ...verifiedProviders];
+  return api.getProviders(getKeyPairs());
 };
 
 export const logout = () => keyPairs.set(null);

@@ -3,7 +3,7 @@
   import { goto } from "$app/navigation";
   import { createProvider } from "$lib/api";
   import { ProviderSummary } from "$lib/components";
-  import { unverifiedProvider } from "$lib/stores";
+  import { newProvider, unverifiedProvider } from "$lib/stores";
   import {
     addNotification,
     NotificationType,
@@ -14,19 +14,25 @@
 
 <script lang="ts">
   const handleSubmit = async () => {
-    await createProvider($unverifiedProvider).catch((error) => {
-      console.error(error);
+    await createProvider($newProvider)
+      .then((provider) => {
+        $newProvider = undefined;
 
-      addNotification(
-        $t("provider.onboarding.verify.notification-error"),
-        NotificationType.DANGER
-      );
-    });
+        return provider;
+      })
+      .catch((error) => {
+        console.error(error);
+
+        addNotification(
+          $t("provider.onboarding.verify.notification-error"),
+          NotificationType.DANGER
+        );
+      });
 
     await goto("/onboarding/backup");
   };
 
-  if (!$unverifiedProvider) {
+  if (!$newProvider && !$unverifiedProvider) {
     if (browser) {
       goto("/onboarding");
     }

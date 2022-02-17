@@ -117,7 +117,7 @@ export const createProvider = async (
   setSecret(newSecret);
   await setKeyPairs(newKeyPairs, false);
 
-  const newProvider = await api.createProvider(
+  const unverifiedProvider = await api.createProvider(
     {
       name: String(providerInput.name),
       street: String(providerInput.street),
@@ -132,9 +132,9 @@ export const createProvider = async (
     signupCode
   );
 
-  setUnverifiedProvider(newProvider);
+  setUnverifiedProvider(unverifiedProvider);
 
-  return newProvider;
+  return unverifiedProvider;
 };
 
 export const login = async (backupData: AESData, newSecret: string) => {

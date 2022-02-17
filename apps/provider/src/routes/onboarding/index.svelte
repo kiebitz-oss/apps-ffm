@@ -1,20 +1,20 @@
 <script lang="ts" context="module">
   import { goto } from "$app/navigation";
   import { ProviderForm } from "$lib/components";
-  import { unverifiedProvider } from "$lib/stores";
+  import { newProvider } from "$lib/stores";
   import { PageHeader } from "@impfen/common";
   import { t } from "svelte-intl-precompile";
-  import type { ProviderInput } from "vanellus";
+  import type { CreateProviderInput } from "vanellus";
 </script>
 
 <script lang="ts">
-  const handleSubmit = async ({ detail }: CustomEvent<ProviderInput>) => {
-    $unverifiedProvider = detail;
+  const handleSubmit = async ({ detail }: CustomEvent<CreateProviderInput>) => {
+    $newProvider = detail;
 
     await goto("/onboarding/verify");
   };
 
-  const providerPromise = Promise.resolve($unverifiedProvider);
+  const providerPromise = Promise.resolve($newProvider);
 </script>
 
 <svelte:head

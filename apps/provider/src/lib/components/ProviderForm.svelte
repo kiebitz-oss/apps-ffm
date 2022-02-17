@@ -2,9 +2,9 @@
   import { Field } from "@impfen/common";
   import { createEventDispatcher } from "svelte";
   import { t } from "svelte-intl-precompile";
-  import type { ProviderInput } from "vanellus";
+  import type { CreateProviderInput } from "vanellus";
 
-  export let provider: ProviderInput;
+  export let provider: CreateProviderInput;
 
   let name = provider?.name || "";
   let street = provider?.street || "";
@@ -16,7 +16,7 @@
   let website = provider?.website || undefined;
 
   const dispatcher = createEventDispatcher<{
-    submit: ProviderInput;
+    submit: CreateProviderInput;
   }>();
 
   const handleSubmit: svelte.JSX.EventHandler<

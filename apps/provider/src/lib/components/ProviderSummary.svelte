@@ -1,8 +1,8 @@
 <script lang="ts">
   import { t } from "svelte-intl-precompile";
-  import type { ProviderInput } from "vanellus";
+  import type { CreateProviderInput } from "vanellus";
 
-  export let provider: ProviderInput;
+  export let provider: CreateProviderInput;
 
   const verified = false;
 </script>
