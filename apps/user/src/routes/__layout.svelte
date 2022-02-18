@@ -1,8 +1,7 @@
 <script lang="ts" context="module">
-  import { browser, dev } from "$app/env";
   import { booking } from "$lib/stores";
   import de from "$locales/de";
-  import { Layout, NavLink } from "@impfen/common";
+  import { handleErrors, Layout, NavLink } from "@impfen/common";
   import dayjs from "dayjs";
   import "dayjs/locale/de.js";
   import "dayjs/locale/en.js";
@@ -28,42 +27,6 @@
 
   addMessages("de", de);
   register("en", () => import("$locales/en"));
-
-  // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon
-  // https://w3c.github.io/beacon/#sendbeacon-method
-  const handleErrors = (event) => {
-    try {
-      const { message, filename, lineno, colno, error } = event;
-      const body = { message, filename, lineno, colno, error };
-      const beaconUrl = import.meta.env.VITE_IMPFEN_BEACON_ENDPOINT as string;
-
-      if (browser && beaconUrl) {
-        if (dev) {
-          console.log("[beacon]", JSON.stringify(body, null, 2));
-        }
-
-        const blob = new Blob(
-          [new URLSearchParams(JSON.stringify(body)).toString()],
-          {
-            // This content type is necessary for `sendBeacon`:
-            type: "application/x-www-form-urlencoded",
-          }
-        );
-
-        if (navigator.sendBeacon) {
-          navigator.sendBeacon(beaconUrl, blob);
-        } else
-          fetch(beaconUrl, {
-            body: blob,
-            method: "POST",
-            credentials: "omit",
-            keepalive: true,
-          });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
 </script>
 
 <script lang="ts">
