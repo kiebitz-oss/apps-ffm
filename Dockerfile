@@ -12,7 +12,7 @@ ARG PNPM_VERSION=6.29.1
 RUN npm --global install pnpm@${PNPM_VERSION}
 
 # Add app source and install Node deps offline.
-COPY .npmrc package.json pnpm-lock.yaml .
+COPY .npmrc package.json pnpm-lock.yaml ./
 RUN pnpm fetch
 
 ADD . .
@@ -24,6 +24,9 @@ ENV VITE_IMPFEN_APPOINTMENTS_ENDPOINT $VITE_IMPFEN_APPOINTMENTS_ENDPOINT
 
 ARG VITE_IMPFEN_STORAGE_ENDPOINT
 ENV VITE_IMPFEN_STORAGE_ENDPOINT $VITE_IMPFEN_STORAGE_ENDPOINT
+
+ARG VITE_IMPFEN_BEACON_ENDPOINT
+ENV VITE_IMPFEN_BEACON_ENDPOINT $VITE_IMPFEN_BEACON_ENDPOINT
 
 # if those vars are set while doing the build, the apps will use those api-urls.
 # if not, the url of the app will be used: $(origin)/api/v1/[appointments|storage]
@@ -61,9 +64,9 @@ RUN chmod +x /harden
 RUN mkdir /tmp/harden
 
 RUN /harden  -d /usr/sbin/nginx \
-             -f /etc/nginx  /var/log/nginx/ /var/run/nginx.pid /var/cache/nginx  /etc/passwd /etc/group \
-                /usr/share/nginx /usr/share/licenses/ /var/run /app /tmp \
-             -c /var/log/nginx/ /var/cache/nginx /var/run
+  -f /etc/nginx  /var/log/nginx/ /var/run/nginx.pid /var/cache/nginx  /etc/passwd /etc/group \
+  /usr/share/nginx /usr/share/licenses/ /var/run /app /tmp \
+  -c /var/log/nginx/ /var/cache/nginx /var/run
 
 ## bring everything together for release
 FROM scratch
