@@ -5,11 +5,23 @@ import { browser, dev } from "$app/env";
 // https://w3c.github.io/beacon/#sendbeacon-method
 export const handleErrors = (event) => {
   try {
-    const { message, filename, lineno, colno, error } = event;
-    const body = { message, filename, lineno, colno, error };
     const beaconUrl = import.meta.env.VITE_IMPFEN_BEACON_ENDPOINT as string;
 
     if (browser && beaconUrl) {
+      const body = {
+        message: `${
+          event.reason?.message ? event.reason.message : event.message
+        }`,
+        filename: `${
+          event.reason?.filename ? event.reason.filename : event.filename
+        }`,
+        lineno: `${event.reason?.lineno ? event.reason.lineno : event.lineno}`,
+        colno: `${event.reason?.colno ? event.reason.colno : event.colno}`,
+        error: `${event.error}`,
+        reason: `${event.reason}`,
+        stack: `${event.reason?.stack}`,
+      };
+
       if (dev) {
         console.log("[beacon]", JSON.stringify(body, null, 2));
       }
