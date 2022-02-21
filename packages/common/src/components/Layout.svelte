@@ -43,14 +43,17 @@
 </svelte:head>
 
 <header id="navbar">
-  <div id="logo"><a href="/"><img src={theme.logoUrl} alt="logo" /></a></div>
+  <div id="logo">
+    <a href="/"><img src={theme.logoUrl} alt={theme.logoAlt} /></a>
+  </div>
 
   <button
     on:click={() => {
       open = !open;
     }}
+    aria-label="Navigation öffnen"
   >
-    <MenuIcon id="hamburger" />
+    <MenuIcon id="hamburger" aria-hidden />
   </button>
 
   <nav class:open aria-label="Hauptnavigation">
