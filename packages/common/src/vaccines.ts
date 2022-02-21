@@ -83,6 +83,22 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
         },
       ],
     },
+    novavax: {
+      id: "NOVA",
+      name: "Novavax (Nuvaxovid®)",
+      pdfDescription:
+        "Vor dem Impftermin und Ihrem medizinischen Aufklärungsgespräch können Sie sich das Aufklärungsmerkblatt zum Impfstoff, den Anamnesebogen und die Einwilligungserklärung zur Impfung als PDF-Datei herunterladen und ausdrucken. Dort erhalten Sie ebenfalls wichtige Informationen zu Ihrer Impfung und dem Impfstoff gegen das Coronavirus.",
+      pdfs: [
+        {
+          label: "Aufklärungsmerkblatt",
+          url: "https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Proteinimpfstoff/Aufklaerungsbogen-de.pdf?__blob=publicationFile",
+        },
+        {
+          label: "Anamnese-/Einwilligungsbogen",
+          url: "https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Proteinimpfstoff/Einwilligung-de.pdf?__blob=publicationFile",
+        },
+      ],
+    },
     // astrazeneca: {
     //   id: "AZ",
     //   name: "AstraZeneca (Vaxzevria®)",
@@ -310,6 +326,22 @@ export const vaccines: Record<string, Record<Vaccine, VaccineData>> = {
           url: "https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19/Aufklaerungsbogen-Englisch.pdf?__blob=publicationFile",
         },
       ],
+    },
+    novavax: {
+      id: "NOVA",
+      name: "Novavax (Nuvaxovid®)",
+      pdfDescription:
+        "Before your vaccination appointment and your medical consultation, you can download and print out the vaccine information sheet, the medical history form and the vaccination consent form as a PDF file. Those documents also offer important information about your vaccination and the coronavirus vaccine. Currently this paperwork is only available in German.",
+        pdfs: [
+          {
+            label: "Information sheet (German only)",
+            url: "https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Proteinimpfstoff/Aufklaerungsbogen-de.pdf?__blob=publicationFile",
+          },
+          {
+            label: "Medical history and consent form (German only)",
+            url: "https://www.rki.de/DE/Content/Infekt/Impfen/Materialien/Downloads-COVID-19-Proteinimpfstoff/Einwilligung-de.pdf?__blob=publicationFile",
+          },
+        ],
     },
     //   astrazeneca: {
     //     id: "AZ",
