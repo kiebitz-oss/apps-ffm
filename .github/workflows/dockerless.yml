@@ -1,0 +1,54 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Create and publish dockerless artefacts
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        name: "Checkout Repository"
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - uses: pnpm/action-setup@v2.1.0
+        name: "Setup pnpm"
+        with:
+          version: 6.32.0
+
+      - run: pnpm fetch
+
+      - run: pnpm install --prefer-offline --frozen-lockfile --recursive --ignore-scripts --no-optional
+
+      - run: pnpm build
+
+      - name: "Upload Artifact (Users)"
+        uses: actions/upload-artifact@v2
+        with:
+          name: user
+          path: apps/user/dist
+
+      - name: "Upload Artifact (Providers)"
+        uses: actions/upload-artifact@v2
+        with:
+          name: provider
+          path: apps/provider/dist
+
+      - name: "Upload Artifact (Mediators)"
+        uses: actions/upload-artifact@v2
+        with:
+          name: mediator
+          path: apps/mediator/dist
