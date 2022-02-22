@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+  import { browser } from "$app/env";
   import { getAppointments } from "$lib/api";
   import AppointmentsList from "$lib/components/AppointmentsList.svelte";
   import { vaccine } from "$lib/stores";
@@ -9,8 +10,12 @@
 </script>
 
 <script lang="ts">
-  const appointmentsPromise: Promise<AggregatedPublicAppointment<Vaccine>[]> =
-    getAppointments(dayjs());
+  let appointmentsPromise: Promise<AggregatedPublicAppointment<Vaccine>[]> =
+    Promise.resolve([]);
+
+  if (browser) {
+    appointmentsPromise = getAppointments(dayjs());
+  }
 </script>
 
 <svelte:head><title>{$t("user.finder.appointment.title")}</title></svelte:head>
