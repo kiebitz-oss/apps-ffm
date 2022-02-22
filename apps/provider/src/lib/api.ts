@@ -18,7 +18,11 @@ import {
   verifiedProvider,
 } from "./stores";
 
-const api = new ProviderApi<Vaccine>(getApiConfig());
+let api: ProviderApi<Vaccine>;
+
+const getApi = () => {
+  return !api ? (api = new ProviderApi<Vaccine>(getApiConfig())) : api;
+};
 
 export const createAppointment = async (
   start: Dayjs,
@@ -26,7 +30,7 @@ export const createAppointment = async (
   vaccine: Vaccine,
   slotCount: number
 ) => {
-  const appointment = api.createAppointment(
+  const appointment = getApi().createAppointment(
     start,
     duration,
     vaccine,
@@ -45,7 +49,7 @@ export const createAppointmentSeries = async (
   vaccine: Vaccine,
   lanes: number
 ) => {
-  const series = api.createAppointmentSeries(
+  const series = getApi().createAppointmentSeries(
     startAt,
     endAt,
     interval,
@@ -59,22 +63,22 @@ export const createAppointmentSeries = async (
 };
 
 export const cancelAppointment = (appointment: Appointment<Vaccine>) => {
-  return api.cancelAppointment(appointment, getKeyPairs());
+  return getApi().cancelAppointment(appointment, getKeyPairs());
 };
 
 export const cancelAppointmentSeries = (seriesId: string) => {
-  return api.cancelAppointmentSeries(seriesId, getKeyPairs());
+  return getApi().cancelAppointmentSeries(seriesId, getKeyPairs());
 };
 
 export const getProviderAppointments = (from: Dayjs, to?: Dayjs) => {
   to = to ? to : from.add(1, "day");
 
-  return api.getProviderAppointments(from, to, getKeyPairs());
+  return getApi().getProviderAppointments(from, to, getKeyPairs());
 };
 
 export const getVerifiedProvider = async () => {
   try {
-    const verifiedProviderData = await api.checkProvider(getKeyPairs());
+    const verifiedProviderData = await getApi().checkProvider(getKeyPairs());
 
     verifiedProvider.set(verifiedProviderData);
 
@@ -87,7 +91,7 @@ export const getVerifiedProvider = async () => {
 export const updateProvider = async (provider: UpdateProviderInput) => {
   const keyPairs = getKeyPairs();
 
-  const updatedProvider = await api.updateProvider(
+  const updatedProvider = await getApi().updateProvider(
     {
       ...provider,
       name: String(provider.name),
@@ -111,13 +115,13 @@ export const createProvider = async (
   providerInput: CreateProviderInput,
   signupCode?: string
 ) => {
-  const newKeyPairs = await api.generateKeyPairs();
-  const newSecret = api.generateSecret();
+  const newKeyPairs = await getApi().generateKeyPairs();
+  const newSecret = getApi().generateSecret();
 
   setSecret(newSecret);
   await setKeyPairs(newKeyPairs, false);
 
-  const unverifiedProvider = await api.createProvider(
+  const unverifiedProvider = await getApi().createProvider(
     {
       name: String(providerInput.name),
       street: String(providerInput.street),
@@ -140,7 +144,9 @@ export const createProvider = async (
 export const login = async (backupData: AESData, newSecret: string) => {
   const backup = await restore(backupData, newSecret);
 
-  const isValidKeyPairs = await api.isValidKeyPairs(backup.providerKeyPairs);
+  const isValidKeyPairs = await getApi().isValidKeyPairs(
+    backup.providerKeyPairs
+  );
 
   if (isValidKeyPairs) {
     setUnverifiedProvider(backup.publicProvider);
@@ -171,7 +177,7 @@ export const isVerified = async () => {
   }
 
   try {
-    const isVerified = await api.isValidatedKeyPairs(getKeyPairs());
+    const isVerified = await getApi().isValidatedKeyPairs(getKeyPairs());
 
     return isVerified;
   } catch (e) {
@@ -184,21 +190,25 @@ export const backup = async () => {
     throw new AuthError("error...");
   }
 
-  return api.backupData(getUnverifiedProvider(), getKeyPairs(), getSecret());
+  return getApi().backupData(
+    getUnverifiedProvider(),
+    getKeyPairs(),
+    getSecret()
+  );
 };
 
 export const restore = async (
   encryptedLocalBackup: AESData,
   secret: string
 ) => {
-  return api.restoreFromBackup(encryptedLocalBackup, secret);
+  return getApi().restoreFromBackup(encryptedLocalBackup, secret);
 };
 
 // Private helpers
 const setKeyPairs = async (newKeyPairs: ProviderKeyPairs, doCheck = true) => {
   // checks if a keyPair is valid
   if (doCheck) {
-    const isValid = await api.isValidKeyPairs(newKeyPairs);
+    const isValid = await getApi().isValidKeyPairs(newKeyPairs);
 
     if (!isValid) {
       throw new AuthError("Please authenticate");
@@ -247,7 +257,7 @@ const getUnverifiedProvider = () => {
 const publishAppointments = (
   unpublishedAppointments: UnpublishedPublicAppointment<Vaccine>[]
 ) => {
-  return api.publishAppointments(unpublishedAppointments, getKeyPairs());
+  return getApi().publishAppointments(unpublishedAppointments, getKeyPairs());
 };
 
 export const reset = () => {
