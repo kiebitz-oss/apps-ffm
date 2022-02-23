@@ -6,7 +6,6 @@
     "mediator.providers.index.table.row.show-details": "",
     "mediator.providers.index.table.head.name": "Navn",
     "mediator.providers.index.table.head.adress": "Adresse",
-    "mediator.providers.details.table.header.value": "Verdi",
     "mediator.logout.page-title": "",
     "mediator.providers.show.street": "",
     "mediator.providers.show.zip-code": "Postnummer",
@@ -44,5 +43,6 @@
     "mediator.providers.show.button-confirm": "",
     "mediator.nav.providers": "",
     "mediator.welcome.login.notification.success": "",
-    "mediator.welcome.login.notification.error": ""
+    "mediator.welcome.login.notification.error": "",
+    "mediator.providers.index.table.head.status": ""
 }
