@@ -6,7 +6,6 @@
     "mediator.providers.index.table.row.show-details": "",
     "mediator.providers.index.table.head.name": "Nom",
     "mediator.providers.index.table.head.adress": "Adresse",
-    "mediator.providers.details.table.header.value": "",
     "mediator.logout.page-title": "",
     "mediator.providers.show.street": "Rue",
     "mediator.providers.show.zip-code": "Code postal",
@@ -44,5 +43,6 @@
     "mediator.providers.show.button-confirm": "",
     "mediator.nav.providers": "",
     "mediator.welcome.login.notification.success": "",
-    "mediator.welcome.login.notification.error": ""
+    "mediator.welcome.login.notification.error": "",
+    "mediator.providers.index.table.head.status": ""
 }
