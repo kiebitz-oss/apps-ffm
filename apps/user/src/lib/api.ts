@@ -18,7 +18,7 @@ let userApi: UserApi<Vaccine>;
 export const bookAppointment = async (
   appointment: AggregatedPublicAppointment<Vaccine> | PublicAppointment<Vaccine>
 ): Promise<Booking<Vaccine>> => {
-  const secret = getSecret();
+  const secret = await getSecret();
 
   const newUserToken = await createUserQueueToken(secret);
 
@@ -27,10 +27,9 @@ export const bookAppointment = async (
     appointment.provider.id
   );
 
-  const newBooking = await getApi().bookAppointment(
-    publicAppointment,
-    newUserToken
-  );
+  const newBooking = await (
+    await getApi()
+  ).bookAppointment(publicAppointment, newUserToken);
 
   booking.set(newBooking);
   token.set(newUserToken);
@@ -39,7 +38,7 @@ export const bookAppointment = async (
 };
 
 export const cancelBooking = async (booking: Booking<Vaccine>) => {
-  const result = await getApi().cancelBooking(booking);
+  const result = await (await getApi()).cancelBooking(booking);
 
   if (result) {
     reset();
@@ -52,30 +51,34 @@ export const getAppointment = async (
   appointmentId: string,
   providerId: string
 ) => {
-  return getAnonymousApi().getAppointment(appointmentId, providerId);
+  return (await getAnonymousApi()).getAppointment(appointmentId, providerId);
 };
 
-export const getAppointments = (
+export const getAppointments = async (
   date: Dayjs,
   zipFrom: number | string = "00001",
   zipTo: number | string = "99999"
 ) => {
-  return getAnonymousApi().getAggregatedAppointments(date, zipFrom, zipTo);
+  return (await getAnonymousApi()).getAggregatedAppointments(
+    date,
+    zipFrom,
+    zipTo
+  );
 };
 
-export const checkBookingStatus = (booking: Booking<Vaccine>) => {
-  return getApi().checkBookingStatus(booking);
+export const checkBookingStatus = async (booking: Booking<Vaccine>) => {
+  return (await getApi()).checkBookingStatus(booking);
 };
 
 export const getProviders = async (
   zipFrom: number | string = "00001",
   zipTo: number | string = "99999"
 ) => {
-  return getAnonymousApi().getProviders(zipFrom, zipTo);
+  return (await getAnonymousApi()).getProviders(zipFrom, zipTo);
 };
 
 export const backup = async () => {
-  const secret = getSecret();
+  const secret = await getSecret();
   const booking = getBooking();
   const token = getToken();
 
@@ -83,7 +86,9 @@ export const backup = async () => {
     return false;
   }
 
-  const result = await getApi().backupData(
+  const result = await (
+    await getApi()
+  ).backupData(
     {
       userQueueToken: token,
       bookings: booking ? [booking] : [],
@@ -99,7 +104,7 @@ export const backup = async () => {
 };
 
 export const restore = async (restoreSecret: string) => {
-  const backup = await getApi().restoreFromBackup(restoreSecret);
+  const backup = await (await getApi()).restoreFromBackup(restoreSecret);
 
   booking.set(backup.bookings[0]);
   token.set(backup.userQueueToken);
@@ -109,11 +114,11 @@ export const restore = async (restoreSecret: string) => {
 };
 
 // private helpers
-const getSecret = () => {
+const getSecret = async () => {
   let storedSecret = get(secret);
 
   if (!storedSecret) {
-    storedSecret = getApi().generateSecret();
+    storedSecret = (await getApi()).generateSecret();
 
     secret.set(storedSecret);
   }
@@ -148,16 +153,18 @@ const createUserQueueToken = async (
   contactData?: ContactData,
   inviteCode?: string
 ) => {
-  return getApi().getQueueToken(secret, contactData, inviteCode);
+  return (await getApi()).getQueueToken(secret, contactData, inviteCode);
 };
 
-const getApi = () => {
-  return !userApi ? (userApi = new UserApi<Vaccine>(getApiConfig())) : userApi;
+const getApi = async () => {
+  return !userApi
+    ? (userApi = new UserApi<Vaccine>(await getApiConfig()))
+    : userApi;
 };
 
-const getAnonymousApi = () => {
+const getAnonymousApi = async () => {
   return !anonymousApi
-    ? (anonymousApi = new AnonymousApi<Vaccine>(getApiConfig()))
+    ? (anonymousApi = new AnonymousApi<Vaccine>(await getApiConfig()))
     : anonymousApi;
 };
 

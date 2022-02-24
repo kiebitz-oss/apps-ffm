@@ -1,12 +1,11 @@
 export const getApiConfig = () => {
-  return {
-    jsonrpc: {
-      appointments:
-        import.meta.env.VITE_IMPFEN_APPOINTMENTS_ENDPOINT ||
-        window.origin + "/api/v1/appointments",
-      storage:
-        import.meta.env.VITE_IMPFEN_STORAGE_ENDPOINT ||
-        window.origin + "/api/v1/storage",
-    },
-  };
+  return import.meta.env.VITE_IMPFEN_APPOINTMENTS_ENDPOINT &&
+    import.meta.env.VITE_IMPFEN_STORAGE_ENDPOINT
+    ? Promise.resolve({
+        jsonrpc: {
+          appointments: import.meta.env.VITE_IMPFEN_APPOINTMENTS_ENDPOINT,
+          storage: import.meta.env.VITE_IMPFEN_STORAGE_ENDPOINT,
+        },
+      })
+    : fetch("/api.json").then((result) => result.json());
 };
