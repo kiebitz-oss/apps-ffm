@@ -1,11 +1,12 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon
 
 import { browser, dev } from "$app/env";
+import { getApiConfig } from ".";
 
 // https://w3c.github.io/beacon/#sendbeacon-method
-export const handleErrors = (event) => {
+export const handleErrors = async (event) => {
   try {
-    const beaconUrl = import.meta.env.VITE_IMPFEN_BEACON_ENDPOINT as string;
+    const beaconUrl = (await getApiConfig()).beacon || false;
 
     if (browser && beaconUrl) {
       const body = {
