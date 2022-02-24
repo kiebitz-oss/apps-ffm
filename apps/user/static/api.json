@@ -1,7 +1,7 @@
 {
   "jsonrpc": {
-    "appointments": "/api/v1/appointments",
-    "storage": "/api/v1/storage"
+    "appointments": "/api/v1/appointments/",
+    "storage": "/api/v1/storage/"
   },
-  "beacon": "/beacon"
+  "beacon": "https://beacon.dev-cd.impfterm.in/response"
 }
