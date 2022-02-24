@@ -10,7 +10,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/svelte": "^3.0.3",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^27.4.1",
     "jest-axe": "^5.0.1",
     "svelte": "^3.46.4",
     "ts-jest": "^27.1.3",
