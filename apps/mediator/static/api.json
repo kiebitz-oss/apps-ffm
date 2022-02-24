@@ -1,0 +1,7 @@
+{
+  "jsonrpc": {
+    "appointments": "/api/v1/appointments",
+    "storage": "/api/v1/storage"
+  },
+  "beacon": "/beacon"
+}

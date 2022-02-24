@@ -8,6 +8,7 @@ services:
       args:
         - VITE_IMPFEN_APPOINTMENTS_ENDPOINT=${VITE_IMPFEN_APPOINTMENTS_ENDPOINT:-http://localhost:22222/jsonrpc}
         - VITE_IMPFEN_STORAGE_ENDPOINT=${VITE_IMPFEN_STORAGE_ENDPOINT:-http://localhost:11111/jsonrpc}
+        - VITE_IMPFEN_BEACON_ENDPOINT=${VITE_IMPFEN_BEACON_ENDPOINT:-https://beacon.dev-cd.impfterm.in/response}
     image: "apps-inoeg:main"
     depends_on:
       - backend

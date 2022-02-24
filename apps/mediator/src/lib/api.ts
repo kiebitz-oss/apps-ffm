@@ -10,34 +10,34 @@ import { keyPairs } from "./stores";
 
 let api: MediatorApi;
 
-const getApi = () => {
-  return !api ? (api = new MediatorApi(getApiConfig())) : api;
+const getApi = async () => {
+  return !api ? (api = new MediatorApi(await getApiConfig())) : api;
 };
 
-export const getProvider = (providerId: string) => {
-  return getApi().getProvider(providerId, getKeyPairs());
+export const getProvider = async (providerId: string) => {
+  return (await getApi()).getProvider(providerId, getKeyPairs());
 };
 
 export const confirmProvider = async (provider: Provider) => {
-  return getApi().confirmProvider(provider, getKeyPairs());
+  return (await getApi()).confirmProvider(provider, getKeyPairs());
 };
 
 export const getVerifiedProviders = async () => {
-  return getApi().getVerifiedProviders(getKeyPairs());
+  return (await getApi()).getVerifiedProviders(getKeyPairs());
 };
 
 export const getPendingProviders = async () => {
-  return getApi().getPendingProviders(getKeyPairs());
+  return (await getApi()).getPendingProviders(getKeyPairs());
 };
 
 export const getProviders = async () => {
-  return getApi().getProviders(getKeyPairs());
+  return (await getApi()).getProviders(getKeyPairs());
 };
 
 export const logout = () => keyPairs.set(null);
 
 export const login = async (newKeyPairs: MediatorKeyPairs) => {
-  if (getApi().isValidKeyPairs(newKeyPairs)) {
+  if ((await getApi()).isValidKeyPairs(newKeyPairs)) {
     keyPairs.set(newKeyPairs);
 
     return true;
