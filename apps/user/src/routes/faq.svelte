@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
-  import { t } from "svelte-intl-precompile";
-  import Faq from "../content/faq.de.mdx";
+  import { theme } from "@impfen/common";
+  import { locale, t } from "svelte-intl-precompile";
 
   export const prerender = true;
 </script>
@@ -8,7 +8,9 @@
 <svelte:head><title>{$t("user.faq.page-title")}</title></svelte:head>
 
 <article class:flow={true}>
-  <Faq />
+  <svelte:component
+    this={$locale === "de" ? theme.content.faqDe : theme.content.faqEn}
+  />
 </article>
 
 <style lang="postcss">
