@@ -1,5 +1,7 @@
 import type { Theme } from "../Theme";
 import logoUrl from "./assets/demo-logo.svg";
+import FaqDe from "./content/faq.de.mdx";
+import FaqEn from "./content/faq.en.mdx";
 import Imprint from "./content/imprint.mdx";
 import Privacy from "./content/privacy.mdx";
 import "./demo.css";
@@ -14,6 +16,8 @@ export const demoTheme: Theme = {
     imprint: Imprint,
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     privacy: Privacy,
+    faqDe: FaqDe,
+    faqEn: FaqEn,
   },
   meta: {
     title: "Impfterm.in",

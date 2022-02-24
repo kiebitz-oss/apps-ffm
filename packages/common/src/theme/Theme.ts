@@ -8,6 +8,10 @@ export interface Theme {
     imprint: any;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     privacy: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    faqDe: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    faqEn: any;
   };
   meta: {
     title: string;
