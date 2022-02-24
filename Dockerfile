@@ -28,11 +28,6 @@ ENV VITE_IMPFEN_STORAGE_ENDPOINT $VITE_IMPFEN_STORAGE_ENDPOINT
 ARG VITE_IMPFEN_BEACON_ENDPOINT
 ENV VITE_IMPFEN_BEACON_ENDPOINT $VITE_IMPFEN_BEACON_ENDPOINT
 
-# if those vars are set while doing the build, the apps will use those api-urls.
-# if not, the url of the app will be used: $(origin)/api/v1/[appointments|storage]
-# ENV VITE_IMPFEN_APPOINTMENTS_ENDPOINT "http://localhost:22222/jsonrpc"
-# ENV VITE_IMPFEN_STORAGE_ENDPOINT "http://localhost:11111/jsonrpc"
-
 # Build application for production.
 RUN pnpm build
 
