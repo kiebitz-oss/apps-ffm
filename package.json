@@ -1,7 +1,7 @@
 {
   "name": "impfen",
   "description": "Impfen Web Applications",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "license": "AGPL-3.0-or-later",
   "contributors": [
@@ -37,9 +37,9 @@
     "docker:import-mediator-key": " docker exec -it impfen-backend-1 ./kiebitz admin mediators upload /settings/secret-mediator-keys.json"
   },
   "devDependencies": {
-    "@impfen/browserslist-config": "workspace:^0.8.0",
-    "@impfen/postcss-config": "workspace:^0.8.0",
-    "@impfen/stylelint-config": "workspace:^0.8.0",
+    "@impfen/browserslist-config": "workspace:^0.8.1",
+    "@impfen/postcss-config": "workspace:^0.8.1",
+    "@impfen/stylelint-config": "workspace:^0.8.1",
     "browserslist": "^4.19.3",
     "jest": "^27.5.1",
     "postcss": "^8.4.6",

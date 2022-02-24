@@ -1,12 +1,12 @@
 {
   "name": "@impfen/postcss-config",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "main": "index.js",
   "files": [
     "index.js"
   ],
   "dependencies": {
-    "@impfen/browserslist-config": "workspace:^0.8.0"
+    "@impfen/browserslist-config": "workspace:^0.8.1"
   },
   "devDependencies": {
     "browserslist": "^4.19.3"

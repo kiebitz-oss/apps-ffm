@@ -1,12 +1,12 @@
 {
   "name": "@impfen/stylelint-config",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "main": "index.js",
   "files": [
     "index.js"
   ],
   "devDependencies": {
-    "@impfen/browserslist-config": "workspace:^0.8.0",
+    "@impfen/browserslist-config": "workspace:^0.8.1",
     "postcss-html": "^1.3.0",
     "stylelint": "^14.5.3",
     "stylelint-config-recommended": "^7.0.0",

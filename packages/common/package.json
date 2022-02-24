@@ -1,6 +1,6 @@
 {
   "name": "@impfen/common",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "scripts": {
     "dev": "onchange -i 'src/**' -- svelte-kit package",
     "buildx": "svelte-kit package",
@@ -20,11 +20,11 @@
   "devDependencies": {
     "@fontsource/ibm-plex-sans": "^4.5.4",
     "@iconify-json/carbon": "^1.1.1",
-    "@impfen/browserslist-config": "workspace:^0.8.0",
-    "@impfen/eslint-config": "workspace:^0.8.0",
-    "@impfen/jest-config": "workspace:^0.8.0",
-    "@impfen/postcss-config": "workspace:^0.8.0",
-    "@impfen/stylelint-config": "workspace:^0.8.0",
+    "@impfen/browserslist-config": "workspace:^0.8.1",
+    "@impfen/eslint-config": "workspace:^0.8.1",
+    "@impfen/jest-config": "workspace:^0.8.1",
+    "@impfen/postcss-config": "workspace:^0.8.1",
+    "@impfen/stylelint-config": "workspace:^0.8.1",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",

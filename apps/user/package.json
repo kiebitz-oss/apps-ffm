@@ -1,6 +1,6 @@
 {
   "name": "user",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "scripts": {
     "dev": "svelte-kit dev --port 3000",
     "build": "svelte-kit build",
@@ -15,16 +15,16 @@
   "type": "module",
   "dependencies": {
     "dayjs": "^1.10.7",
-    "vanellus": "workspace:^0.8.0"
+    "vanellus": "workspace:^0.8.1"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.1",
-    "@impfen/browserslist-config": "workspace:^0.8.0",
-    "@impfen/common": "workspace:^0.8.0",
-    "@impfen/eslint-config": "workspace:^0.8.0",
-    "@impfen/jest-config": "workspace:^0.8.0",
-    "@impfen/postcss-config": "workspace:^0.8.0",
-    "@impfen/stylelint-config": "workspace:^0.8.0",
+    "@impfen/browserslist-config": "workspace:^0.8.1",
+    "@impfen/common": "workspace:^0.8.1",
+    "@impfen/eslint-config": "workspace:^0.8.1",
+    "@impfen/jest-config": "workspace:^0.8.1",
+    "@impfen/postcss-config": "workspace:^0.8.1",
+    "@impfen/stylelint-config": "workspace:^0.8.1",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "eslint": "^8.9.0",
@@ -50,7 +50,7 @@
     "tslib": "^2.3.1",
     "typescript": "^4.5.5",
     "unplugin-icons": "^0.13.2",
-    "vanellus": "workspace:^0.8.0"
+    "vanellus": "workspace:^0.8.1"
   },
   "jest": {
     "preset": "@impfen/jest-config"
