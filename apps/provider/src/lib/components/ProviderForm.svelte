@@ -89,8 +89,7 @@
       />
 
       <small class="hint">
-        Informationen für Impfwillige (z.B. wenn Sie einen Impfstoff nur
-        bestimmten Gruppen empfehlen)
+      {$t("provider.provider-data.description")}
       </small>
     </Field>
 
@@ -106,7 +105,7 @@
           bind:checked={accessible}
         />
 
-        Barrierefreier Zugang zur Praxis/zur Impfstelle
+        {$t("provider.provider-data.accessible")}
       </label>
     </Field>
   </fieldset>
@@ -123,7 +122,9 @@
     </Field>
   </fieldset>
 
-  <button class="button primary m" type="submit">Speichern und weiter</button>
+  <button class="button primary m" type="submit">
+    {$t(provider.onboarding.verify.button")}
+  </button>
 </form>
 
 <style lang="postcss">
