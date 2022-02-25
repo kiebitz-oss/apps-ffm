@@ -43,9 +43,9 @@
   on:submit|preventDefault={handleSubmit}
 >
   <fieldset class="fieldset">
-    <legend>Allgemeine Daten</legend>
+    <legend>{$t("provider.provider-form.title")}</legend>
 
-    <p class="text">Dies sind die allgemeinen Kontaktdaten.</p>
+    <p class="text">>{$t("provider.provider-form.description")</p>
 
     <Field label="Vollständiger Name" name="name" required
       ><input type="text" name="name" required bind:value={name} /></Field
