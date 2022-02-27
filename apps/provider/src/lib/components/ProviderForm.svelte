@@ -45,7 +45,7 @@
   <fieldset class="fieldset">
     <legend>{$t("provider.provider-form.title")}</legend>
 
-    <p class="text">>{$t("provider.provider-form.description")</p>
+    <p class="text">>{$t("provider.provider-form.description")}</p>
 
     <Field label="Vollständiger Name" name="name" required
       ><input type="text" name="name" required bind:value={name} /></Field
@@ -89,7 +89,7 @@
       />
 
       <small class="hint">
-      {$t("provider.provider-data.description")}
+        {$t("provider.provider-data.description")}
       </small>
     </Field>
 
@@ -123,7 +123,7 @@
   </fieldset>
 
   <button class="button primary m" type="submit">
-    {$t(provider.onboarding.verify.button")}
+    {$t("provider.onboarding.verify.button")}
   </button>
 </form>
 
