@@ -47,16 +47,22 @@
 
     <p class="text">>{$t("provider.provider-form.description")}</p>
 
-    <Field label="Vollständiger Name" name="name" required
+    <Field label={$t("provider.provider-data.name.label")} name="name" required
       ><input type="text" name="name" required bind:value={name} /></Field
     >
 
-    <Field label="Straße & Hausnummer" name="street" required
+    <Field
+      label={$t("provider.provider-data.street.label")}
+      name="street"
+      required
       ><input type="text" name="street" required bind:value={street} /></Field
     >
 
     <div class="field-row">
-      <Field label="Postleitzahl" name="zipCode" required
+      <Field
+        label={$t("provider.provider-data.zipcode.label")}
+        name="zipCode"
+        required
         ><input
           type="number"
           name="zipCode"
@@ -71,17 +77,23 @@
       >
 
       <div style:flex={1}>
-        <Field label="Ort" name="city" required
+        <Field
+          label={$t("provider.provider-data.city.label")}
+          name="city"
+          required
           ><input type="text" name="city" required bind:value={city} /></Field
         >
       </div>
     </div>
 
-    <Field label="Webseite" name="website"
+    <Field label={$t("provider.provider-data.website.label")} name="website"
       ><input type="url" name="website" bind:value={website} /></Field
     >
 
-    <Field label="Beschreibung" name="description">
+    <Field
+      label={$t("provider.provider-data.description.label")}
+      name="description"
+    >
       <textarea
         name="description"
         class:textarea={true}
@@ -117,7 +129,11 @@
       {$t("provider.provider-form.contact-data.intro")}
     </p>
 
-    <Field label="E-Mail-Adresse" name="email" required>
+    <Field
+      label={$t("provider.provider-data.email.label")}
+      name="email"
+      required
+    >
       <input type="email" name="email" required bind:value={email} />
     </Field>
   </fieldset>

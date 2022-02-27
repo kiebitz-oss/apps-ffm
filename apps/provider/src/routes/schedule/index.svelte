@@ -73,7 +73,7 @@
 
 {#await appointmentPromise then appointments}
   <WeekCalendar
-    week={selectedWeekOfYear}
+    week={Number(selectedWeekOfYear)}
     {appointments}
     on:open={({ detail }) => {
       selectedDetail = detail;

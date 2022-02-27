@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from "svelte-intl-precompile";
   import IconCopy from "~icons/carbon/copy";
 
   export let secret = "123456789";
@@ -30,7 +31,7 @@
 
   {#if copy && supportsClipboard}
     <button
-      aria-label="Secret in Zwischenablage kopieren"
+      aria-label={$t("provider.secret-box.copy-action")}
       on:click|preventDefault={handleCopy}><IconCopy aria-hidden /></button
     >
   {/if}
@@ -75,8 +76,8 @@
 
   button {
     /* appearance: none;
-    background-color: transparent;
-    color: currentColor;
-    padding: 0; */
+  background-color: transparent;
+  color: currentColor;
+  padding: 0; */
   }
 </style>
