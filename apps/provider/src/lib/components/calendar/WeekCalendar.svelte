@@ -22,18 +22,15 @@
   export let defaultFromHour = 7;
   export let defaultToHour = 16;
 
-  let filteredAppointments: Appointment<Vaccine>[] = [];
+  // let filteredAppointments: Appointment<Vaccine>[] = [];
   let selectedWeek = dayjs().week(week);
   let fromHour = defaultFromHour;
   let toHour = defaultToHour;
   let days: Dayjs[] = [];
   let hours: number[] = [];
   let startAt = selectedWeek;
-  let endAt = selectedWeek;
-  let appointmentsMatrix: Record<string, Record<number, CalendarItem[]>> = {};
 
-  let slots = 0;
-  let bookedSlots = 0;
+  let appointmentsMatrix: Record<string, Record<number, CalendarItem[]>> = {};
 
   $: selectedWeek = dayjs().week(week);
   $: startAt = selectedWeek
@@ -41,19 +38,6 @@
     .set("hour", 0)
     .set("minute", 0)
     .set("second", 0);
-
-  $: endAt = selectedWeek
-    .endOf("week")
-    .set("hour", 23)
-    .set("minute", 59)
-    .set("second", 59);
-
-  $: lastWeek = selectedWeek.subtract(7, "day").week();
-  $: nextWeek = selectedWeek.add(7, "day").week();
-
-  // $: filteredAppointments = appointments.filter((appointment) =>
-  //   appointment.startAt.isBetween(startAt, endAt, "minute", "[)")
-  // );
 
   const processAppointments = (appointments) => {
     const appointmentsMatrix: Record<
@@ -78,9 +62,6 @@
       }
 
       if (autoAdjustHours || (fromHour <= hourIdx && toHour >= hourIdx)) {
-        slots += appointment.slotData.length;
-        bookedSlots += appointment.bookings.length;
-
         if (!appointment.properties?.seriesId) {
           const item = new CalendarItem(appointment);
 
