@@ -70,21 +70,20 @@
   "provider.provider-data.accessible": "Besteht barrierefreier Zugang zur Praxis/zur Impfstelle?",
   "provider.provider-data.accessible-no": "Nein",
   "provider.provider-data.accessible-yes": "Ja",
-  "provider.provider-data.city": "Ort",
+
   "provider.provider-data.city.label": "Ort",
-  "provider.provider-data.description": "Informationen für Impfinteressierte",
-  "provider.provider-data.description.label": "Beschreibung",
-  "provider.provider-data.email": "E-Mail-Adresse",
+  "provider.provider-data.description.label": "Informationen für Impfinteressierte",
+  "provider.provider-data.description.hint": "z.B. Beschreibung zum Auffinden der Impfstelle oder andere allgemeine Hinweise.",
+
   "provider.provider-data.email.label": "E-Mail-Adresse",
-  "provider.provider-data.name": "Name der Impfstelle",
-  "provider.provider-data.name.label": "Vollständiger Name",
+  "provider.provider-data.name.label": "Name der Impfstelle",
   "provider.provider-data.not-given": "(keine Angabe)",
-  "provider.provider-data.phone": "Telefonnummer",
-  "provider.provider-data.street": "Straße und Hausnummer",
-  "provider.provider-data.street.label": "Straße & Hausnummer",
-  "provider.provider-data.website": "Webseite",
+  "provider.provider-data.phone.label": "Telefonnummer",      // not used so far
+  "provider.provider-data.street.label": "Straße und Hausnummer",
+
+
   "provider.provider-data.website.label": "Webseite",
-  "provider.provider-data.zip-code": "Postleitzahl",
+
   "provider.provider-data.zipcode.label": "Postleitzahl",
   "provider.provider-form.contact-data.intro": "Die folgenden Kontaktdaten dienen ausschließlich zur Kommunikation mit dem Support-Team, und sind nicht öffentlich einsehbar:",
   "provider.provider-form.contact-data.title": "Kontaktdaten",

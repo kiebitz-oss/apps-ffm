@@ -10,12 +10,12 @@
 <div class:provider-data={true} class:verified>
   <dl>
     <dt>
-      {$t("provider.provider-data.name")}
+      {$t("provider.provider-data.name.label")}
     </dt>
     <dd>{provider?.name}</dd>
 
     <dt>
-      {$t("provider.provider-data.street")}
+      {$t("provider.provider-data.street.label")}
     </dt>
     <dd>{provider?.street}</dd>
 
@@ -25,26 +25,26 @@
     <dd>{provider?.zipCode}</dd>
 
     <dt>
-      {$t("provider.provider-data.city")}
+      {$t("provider.provider-data.city.label")}
     </dt>
     <dd>{provider?.city}</dd>
 
     <dt>
-      {$t("provider.provider-data.website")}
+      {$t("provider.provider-data.website.label")}
     </dt>
     <dd>
       {provider?.website || $t("provider.provider-data.not-given")}
     </dd>
 
     <dt>
-      {$t("provider.provider-data.description")}
+      {$t("provider.provider-data.description.label")}
     </dt>
     <dd>
       {provider?.description || $t("provider.provider-data.not-given")}
     </dd>
 
     <dt>
-      {$t("provider.provider-data.email")}
+      {$t("provider.provider-data.email.label")}
     </dt>
     <dd>
       {provider?.email || $t("provider.provider-data.not-given")}
