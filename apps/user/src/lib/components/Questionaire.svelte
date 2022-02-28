@@ -224,7 +224,7 @@
     </svelte:fragment>
   </QuestionaireCard>
 
-  <!-- booster more than 3 month ago -->
+  <!-- last vaccination more than interval ago -->
   <QuestionaireCard
     name="q2"
     value={q2Value}
@@ -234,7 +234,9 @@
       ? $t("user.welcome.question2_series2_error")
       : $t("user.welcome.question2_series3_error")}
   >
-    {#if $q1Value === SERIES.SERIES_2}
+    {#if $q1Value === SERIES.SERIES_2 && $q0Value === AGE_RANGES.AGE_30_OR_ABOVE}
+      {$t("user.welcome.question2_series2_age_above_30_value")}
+    {:else if $q1Value === SERIES.SERIES_2}
       {$t("user.welcome.question2_series2_value")}
     {:else}
       {$t("user.welcome.question2_series3_value")}
