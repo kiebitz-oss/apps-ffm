@@ -15,7 +15,6 @@
     <dd>{provider?.name}</dd>
 
     <dt>
-      {$t("provider.provider-data.street")}
       {$t("provider.provider-data.street.label")}
     </dt>
     <dd>{provider?.street}</dd>
