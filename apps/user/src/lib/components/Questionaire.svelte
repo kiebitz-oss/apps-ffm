@@ -16,6 +16,12 @@
     AGE_30_OR_ABOVE = "age_30_or_above",
   }
 
+  enum SERIES {
+    SERIES_1 = "series_1",
+    SERIES_2 = "series_2",
+    SERIES_3 = "series_3",
+  }
+
   const handleSubmit: svelte.JSX.EventHandler<
     SubmitEvent,
     HTMLFormElement
@@ -27,8 +33,8 @@
     }
   };
 
-  const q0Value = writable<string | undefined>();
-  const q1Value = writable<boolean | undefined>();
+  const q0Value = writable<AGE_RANGES | undefined>();
+  const q1Value = writable<SERIES | undefined>();
   const q2Value = writable<boolean | undefined>();
   const q3Value = writable<boolean | undefined>();
 
@@ -76,7 +82,7 @@
     $q0Value === AGE_RANGES.AGE_5_TO_11 ||
     (($q0Value === AGE_RANGES.AGE_12_TO_17 ||
       $q0Value === AGE_RANGES.AGE_18_TO_29) &&
-      $q1Value === false) ||
+      $q1Value === SERIES.SERIES_1) ||
     (($q0Value === AGE_RANGES.AGE_12_TO_17 ||
       $q0Value === AGE_RANGES.AGE_18_TO_29) &&
       $q2Value === true) ||
@@ -167,22 +173,72 @@
   <QuestionaireCard
     name="q1"
     value={q1Value}
-    condition={$q0Value === AGE_RANGES.AGE_12_TO_17 ||
+    condition={$q0Value === AGE_RANGES.AGE_5_TO_11 ||
+      $q0Value === AGE_RANGES.AGE_12_TO_17 ||
       $q0Value === AGE_RANGES.AGE_18_TO_29 ||
       $q0Value === AGE_RANGES.AGE_30_OR_ABOVE}
   >
     {$t("user.welcome.question1_value")}
+
+    <svelte:fragment slot="options">
+      <div class="stack-v gap-m">
+        <label class="label">
+          <input
+            class="radio black l"
+            type="radio"
+            id={`series-${SERIES.SERIES_1}`}
+            name="series"
+            value={SERIES.SERIES_1}
+            bind:group={$q1Value}
+            required
+          />
+          {$t("user.questionaire.series_1")}
+        </label>
+        <label class="label">
+          <input
+            class="radio black l"
+            type="radio"
+            id={`series-${SERIES.SERIES_2}`}
+            name="series"
+            value={SERIES.SERIES_2}
+            bind:group={$q1Value}
+            required
+          />
+          {$t("user.questionaire.series_2")}
+        </label>
+        {#if $q0Value !== AGE_RANGES.AGE_5_TO_11}
+          <label class="label">
+            <input
+              class="radio black l"
+              type="radio"
+              id={`series-${SERIES.SERIES_3}`}
+              name="series"
+              value={SERIES.SERIES_3}
+              bind:group={$q1Value}
+              required
+            />
+            {$t("user.questionaire.series_3")}
+          </label>
+        {/if}
+      </div>
+    </svelte:fragment>
   </QuestionaireCard>
 
   <!-- booster more than 3 month ago -->
   <QuestionaireCard
     name="q2"
     value={q2Value}
-    condition={$q1Value === true}
+    condition={$q1Value === SERIES.SERIES_2 || $q1Value === SERIES.SERIES_3}
     error={$q2Value === false}
-    errorMessage={$t("user.welcome.question2_error")}
+    errorMessage={$q1Value === SERIES.SERIES_2
+      ? $t("user.welcome.question2_series2_error")
+      : $t("user.welcome.question2_series3_error")}
   >
-    {$t("user.welcome.question2_value")}
+    {#if $q1Value === SERIES.SERIES_2}
+      {$t("user.welcome.question2_series2_value")}
+    {:else}
+      {$t("user.welcome.question2_series3_value")}
+    {/if}
   </QuestionaireCard>
 
   <!-- are you pregnant -->
@@ -190,7 +246,7 @@
     name="q3"
     value={q3Value}
     condition={$q0Value === AGE_RANGES.AGE_30_OR_ABOVE &&
-      ($q1Value === false || $q2Value === true)}
+      ($q1Value === SERIES.SERIES_1 || $q2Value === true)}
   >
     {$t("user.welcome.question3_value")}
   </QuestionaireCard>
