@@ -101,7 +101,7 @@
       />
 
       <small class="hint">
-        {$t("provider.provider-data.description")}
+        {$t("provider.provider-data.description.hint")}
       </small>
     </Field>
 
