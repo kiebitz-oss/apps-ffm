@@ -99,7 +99,14 @@
   <section>
     <ul>
       <li><a class="link" href="/imprint/">Impressum</a></li>
-      <li><a class="link" href="/privacy/">Datenschutz</a></li>
+      <li>
+        <a
+          class="link"
+          href="https://frankfurt.de/service-und-rathaus/verwaltung/aemter-und-institutionen/gesundheitsamt/informationen-zum-neuartigen-coronavirus-sars-cov-2/datenschutz-information-des-gesundheitsamtes"
+          rel="noreferrer">Datenschutz</a
+        >
+      </li>
+
       <li>
         <a
           class="link"
