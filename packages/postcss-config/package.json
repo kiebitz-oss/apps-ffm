@@ -9,7 +9,7 @@
     "@impfen/browserslist-config": "workspace:^0.8.1"
   },
   "devDependencies": {
-    "browserslist": "^4.19.3"
+    "browserslist": "^4.20.2"
   },
   "peerDependencies": {
     "postcss": "^8",
