@@ -30,6 +30,6 @@
     aria-label="Schließen"
     on:click={() => dispatch("close")}
   >
-    <CloseIcon class="close-icon" aria-hidden focusable={false} />
+    <CloseIcon class="close-icon" aria-hidden />
   </button>
 </div>

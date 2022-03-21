@@ -59,7 +59,7 @@ RUN chmod +x /harden
 RUN mkdir /tmp/harden
 
 RUN /harden  -d /usr/sbin/nginx \
-  -f /etc/nginx  /var/log/nginx/ /var/run/nginx.pid /var/cache/nginx  /etc/passwd /etc/group \
+  -f /etc/nginx  /var/log/nginx/ /var/cache/nginx  /etc/passwd /etc/group \
   /usr/share/nginx /usr/share/licenses/ /var/run /app /tmp \
   -c /var/log/nginx/ /var/cache/nginx /var/run
 
@@ -70,7 +70,6 @@ WORKDIR /
 USER 101
 
 COPY --from=origin /tmp/harden/ .
-
 
 EXPOSE 3000
 

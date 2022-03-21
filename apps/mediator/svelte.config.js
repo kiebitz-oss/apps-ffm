@@ -25,11 +25,13 @@ const config = {
       assets: "dist",
       // fallback: "200.html",
       precompress: true,
+      
     }),
 
     prerender: {
       crawl: true,
-      // enabled: true,
+      enabled: true,
+      default: true
     },
 
     trailingSlash: "always",
