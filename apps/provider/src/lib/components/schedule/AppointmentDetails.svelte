@@ -18,50 +18,50 @@
   const vaccine = vaccines[$locale][item.vaccine];
 </script>
 
-<h1 class="h2">{$t("provider.schedure.appointment-details.title")}</h1>
+<h1 class="h2">{$t("provider.schedule.appointment-details.title")}</h1>
 
 <dl>
-  <dt>{$t("provider.schedure.appointment-details.start-at")}</dt>
+  <dt>{$t("provider.schedule.appointment-details.start-at")}</dt>
   <dd>
     {$date(item.startAt.local().toDate(), {
       format: "short",
     })}, {$time(item.startAt.local().toDate(), {
       format: "short",
     })}
-    {$t("provider.schedure.appointment-details.o-clock")}
+    {$t("provider.schedule.appointment-details.o-clock")}
   </dd>
 
-  <dt>{$t("provider.schedure.appointment-details.end-at")}</dt>
+  <dt>{$t("provider.schedule.appointment-details.end-at")}</dt>
   <dd>
     {$date(item.endAt.local().toDate(), {
       format: "short",
     })}, {$time(item.endAt.local().toDate(), {
       format: "short",
     })}
-    {$t("provider.schedure.appointment-details.o-clock")}
+    {$t("provider.schedule.appointment-details.o-clock")}
   </dd>
 
-  <dt>{$t("provider.schedure.appointment-details.vaccine")}</dt>
+  <dt>{$t("provider.schedule.appointment-details.vaccine")}</dt>
   <dd>
     {vaccine.name}
   </dd>
 
   <dt>
-    {$t("provider.schedure.appointment-details.slots")}
+    {$t("provider.schedule.appointment-details.slots")}
     <small
-      >({$t("provider.schedure.appointment-details.slots-description")})</small
+      >({$t("provider.schedule.appointment-details.slots-description")})</small
     >
   </dt>
   <dd>
     {item.bookedSlots}/{item.slots}
   </dd>
 
-  <dt>{$t("provider.schedure.appointment-details.utilization")}</dt>
+  <dt>{$t("provider.schedule.appointment-details.utilization")}</dt>
   <dd>
     {item.percentUsed}%
   </dd>
 
-  <dt>{$t("provider.schedure.appointment-details.status")}</dt>
+  <dt>{$t("provider.schedule.appointment-details.status")}</dt>
   <dd>
     {item.status}
   </dd>
@@ -70,7 +70,7 @@
 <div>
   {#if item.status !== AppointmentStatus.CANCELED}
     <button class="button primary s" on:click={handleCancelAppointment}
-      >{$t("provider.schedure.appointment-details.button-cancel")}</button
+      >{$t("provider.schedule.appointment-details.button-cancel")}</button
     >
   {/if}
 </div>

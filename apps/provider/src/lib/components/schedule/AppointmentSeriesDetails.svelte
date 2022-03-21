@@ -22,36 +22,36 @@
 <h1 class="h2">Impfterminserie</h1>
 
 <dl>
-  <dt>{$t("provider.schedure.appointment-series-details.start-at")}</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.start-at")}</dt>
   <dd>
     {$date(item.startAt.local().toDate(), {
       format: "short",
     })}, {$time(item.startAt.local().toDate(), {
       format: "short",
     })}
-    {$t("provider.schedure.appointment-series-details.o-clock")}
+    {$t("provider.schedule.appointment-series-details.o-clock")}
   </dd>
 
-  <dt>{$t("provider.schedure.appointment-series-details.end-at")}</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.end-at")}</dt>
   <dd>
     {$date(item.endAt.local().toDate(), {
       format: "short",
     })}, {$time(item.endAt.local().toDate(), {
       format: "short",
     })}
-    {$t("provider.schedure.appointment-series-details.o-clock")}
+    {$t("provider.schedule.appointment-series-details.o-clock")}
   </dd>
 
-  <dt>{$t("provider.schedure.appointment-series-details.vaccine")}</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.vaccine")}</dt>
   <dd>
     {vaccine.name}
   </dd>
 
   <dt>
-    {$t("provider.schedure.appointment-series-details.slots")}
+    {$t("provider.schedule.appointment-series-details.slots")}
     <small
       >({$t(
-        "provider.schedure.appointment-series-details.slots-description"
+        "provider.schedule.appointment-series-details.slots-description"
       )})</small
     >
   </dt>
@@ -60,12 +60,12 @@
     {item.slots}
   </dd>
 
-  <dt>{$t("provider.schedure.appointment-series-details.utilization")}</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.utilization")}</dt>
   <dd>
     {item.percentUsed}%
   </dd>
 
-  <dt>{$t("provider.schedure.appointment-series-details.status")}</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.status")}</dt>
   <dd>
     {item.status}
   </dd>
@@ -75,7 +75,7 @@
   {#if item.status !== AppointmentStatus.CANCELED}
     <button class="button primary s" on:click={handleCancelAppointmentSeries}
       >{$t(
-        "provider.schedure.appointment-series-details.button-cancel"
+        "provider.schedule.appointment-series-details.button-cancel"
       )}</button
     >
   {/if}
