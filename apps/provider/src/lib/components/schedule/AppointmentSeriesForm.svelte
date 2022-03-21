@@ -47,7 +47,7 @@
     ).then((result) => {
       addNotification(
         $t(
-          "provider.appointment-form.notification.success.appointment-series-create"
+          "provider.schedule.appointment-form.notification.success.appointment-series-create"
         )
       );
       dispatcher("success", result);
@@ -59,7 +59,7 @@
   };
 </script>
 
-<h1 class="h2">{$t("provider.appointment-series-form.title")}</h1>
+<h1 class="h2">{$t("provider.schedule.appointment-series-form.title")}</h1>
 
 <form
   name="appointment-series-form"
