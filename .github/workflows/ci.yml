@@ -37,7 +37,7 @@ jobs:
 
       - name: Linter
         run: |
-          pnpm lint -- --stream
+          pnpm lint
 
       - name: Unit tests
         run: |
