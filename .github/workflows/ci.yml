@@ -35,9 +35,9 @@ jobs:
           version: 6.27.1
           run_install: true
 
-      # - name: Linter
-      #   run: |
-      #     pnpm lint
+      - name: Linter
+        run: |
+          pnpm lint -- --workspace-concurrency=1
 
       - name: Unit tests
         run: |
