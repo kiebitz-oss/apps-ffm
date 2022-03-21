@@ -22,7 +22,7 @@
   <!-- svelte-ignore component-name-lowercase -->
   <time class="flex flex-col font-semibold text-center">
     <div class="text-4xl">
-      {$t("user.finder.appointment.card.time", {
+      {$t("provider.schedule.appointment-card.time", {
         values: {
           time: $time(appointment.startAt.local().toDate(), {
             format: "short",
@@ -32,7 +32,7 @@
     </div>
 
     <div class="text-xl">
-      {$t("user.finder.appointment.card.date", {
+      {$t("provider.schedule.appointment-card.date", {
         values: {
           date: $date(appointment.startAt.local().toDate(), {
             format: "short",
@@ -47,12 +47,13 @@
   </p>
 
   <div class="text-center">
-    Slots: {appointment.bookings.length}/
+    {$t("provider.schedule.appointment-card.slots")}: {appointment.bookings
+      .length}/
     {appointment.slotData.length} -{appointment.status}
     <br />
     {#if appointment.status !== AppointmentStatus.CANCELED}
       <button class="button primary s" on:click={handleCancelAppointment}
-        >Cancel</button
+        >{$t("provider.schedule.appointment-card.button-cancel")}</button
       >
     {/if}
   </div>

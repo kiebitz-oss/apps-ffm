@@ -22,41 +22,50 @@
 <h1 class="h2">Impfterminserie</h1>
 
 <dl>
-  <dt>Beginn</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.start-at")}</dt>
   <dd>
     {$date(item.startAt.local().toDate(), {
       format: "short",
     })}, {$time(item.startAt.local().toDate(), {
       format: "short",
-    })} Uhr
+    })}
+    {$t("provider.schedule.appointment-series-details.o-clock")}
   </dd>
 
-  <dt>Ende</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.end-at")}</dt>
   <dd>
     {$date(item.endAt.local().toDate(), {
       format: "short",
     })}, {$time(item.endAt.local().toDate(), {
       format: "short",
-    })} Uhr
+    })}
+    {$t("provider.schedule.appointment-series-details.o-clock")}
   </dd>
 
-  <dt>Impfstoff</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.vaccine")}</dt>
   <dd>
     {vaccine.name}
   </dd>
 
-  <dt>Plätze <small>(belegt/gesamt)</small></dt>
+  <dt>
+    {$t("provider.schedule.appointment-series-details.slots")}
+    <small
+      >({$t(
+        "provider.schedule.appointment-series-details.slots-description"
+      )})</small
+    >
+  </dt>
   <dd>
     {item.bookedSlots}/
     {item.slots}
   </dd>
 
-  <dt>Auslastung</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.utilization")}</dt>
   <dd>
     {item.percentUsed}%
   </dd>
 
-  <dt>Status</dt>
+  <dt>{$t("provider.schedule.appointment-series-details.status")}</dt>
   <dd>
     {item.status}
   </dd>
@@ -65,7 +74,9 @@
 <div>
   {#if item.status !== AppointmentStatus.CANCELED}
     <button class="button primary s" on:click={handleCancelAppointmentSeries}
-      >{$t("user.finder.appointment-series.card.button-cancel")}</button
+      >{$t(
+        "provider.schedule.appointment-series-details.button-cancel"
+      )}</button
     >
   {/if}
 </div>
