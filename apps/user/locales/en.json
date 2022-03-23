@@ -91,7 +91,7 @@
     "user.welcome.page-title": "Vaccination Appointment Search",
     "user.welcome.question0_error": "Unfortunately, vaccinations for under-5s are not currently available",
     "user.welcome.question0_value": "How old are you resp. the person to be vaccinated?",
-    "user.welcome.question1_value": "Is this a booster vaccination?",
+    "user.welcome.question1_value": "Is this a …",
     "user.welcome.question2_error": "3 months must have passed since the last vaccination before you can receive a booster.",
     "user.welcome.question2_value": "Did the last vaccination take place more than 3 months ago?",
     "user.welcome.question3_value": "Are you pregnant?",
@@ -99,5 +99,13 @@
     "user.welcome.question4_value": "Are you younger than 12?",
     "user.welcome.question5_error": "Unfortunately, there are currently (still) no appointments for children under 5 years via the portal. We are trying to expand the offer as soon as possible and ask for your patience until then.",
     "user.welcome.question5_value": "Are you younger than 5?",
-    "user.welcome.title": "Welcome!"
+    "user.welcome.title": "Welcome!",
+    "user.questionaire.series_1": "Initial vaccination?",
+    "user.questionaire.series_2": "Second vaccination?",
+    "user.questionaire.series_3": "Third vaccination?",
+    "user.welcome.question2_series2_age_above_30_value": "Was your last vaccination 3 weeks ago (all vaccines except Moderna) or 4 weeks ago (Moderna)?",
+    "user.welcome.question2_series2_error": "Your last vaccination was not long enough ago.",
+    "user.welcome.question2_series3_error": "Your last vaccination was not long enough ago.",
+    "user.welcome.question2_series3_value": "Was your last vaccination more than 3 months ago?",
+    "user.welcome.question2_series2_value": "Has it been more than 3 weeks since your last vaccination (all vaccines except Moderna)?"
 }
