@@ -67,6 +67,5 @@
     "provider.schedule.title": "",
     "provider.schedule.page-title": "",
     "provider.schedule.button-create-appointment": "",
-    "provider.schedule.button-create-appointment-series": "",
-    "provider.appointment-form.notification.success.appointment-series-create": ""
+    "provider.schedule.button-create-appointment-series": ""
 }
