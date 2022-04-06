@@ -51,5 +51,14 @@
     "./packages/common",
     "./packages/vanellus"
   ],
-  "eslint.validate": ["javascript", "typescript", "svelte"]
+  "eslint.validate": ["javascript", "typescript", "svelte"],
+  "i18n-ally.extract.ignoredByFiles": {
+    "apps/user/src/lib/components/Questionaire.svelte": [
+      "&",
+      "& $q0Value === AGE_RANGES.AGE_30_OR_ABOVE}\n      {$t(\"user.welcome.question2_series2_age_above_30_value\")}\n    {:else if $q1Value === SERIES.SERIES_2}\n      {$t(\"user.welcome.question2_series2_value\")}\n    {:else}\n      {$t(\"user.welcome.question2_series3_value\")}\n    {/if}\n  ",
+      "\n    {#if $q1Value === SERIES.SERIES_2 ",
+      "\n\n  {#if error ",
+      "& !valid}\n    "
+    ]
+  }
 }
