@@ -1,7 +1,7 @@
 {
     "mediator.imprint.page-title": "Imprint",
     "mediator.logout.button": "Log out",
-    "mediator.logout.intro": "Do you really want to log out? Please make sure you have access to your login data. Without them you will not be able to log in again. There is no \"Forgotton password\"-function.",
+    "mediator.logout.intro": "Do you really want to log out? Please make sure you have the backup file to your login data. Without them, you will not be able to log in again. There is no \"Forgotton password\"-function.",
     "mediator.logout.notification.success": "Successfully logged out",
     "mediator.logout.page-title": "Log out",
     "mediator.logout.title": "Log out",

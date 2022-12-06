@@ -2,11 +2,8 @@
     "provider.welcome.title": "",
     "provider.account.index.title": "",
     "provider.account.not-verified-yet": "",
-    "provider.provider-data.street": "",
     "provider.provider-data.zip-code": "",
-    "provider.provider-data.website": "",
     "provider.provider-data.not-given": "",
-    "provider.provider-data.phone": "",
     "provider.provider-data.accessible": "",
     "provider.provider-data.accessible-yes": "",
     "provider.provider-data.accessible-no": "",
@@ -70,7 +67,5 @@
     "provider.schedule.title": "",
     "provider.schedule.page-title": "",
     "provider.schedule.button-create-appointment": "",
-    "provider.schedule.button-create-appointment-series": "",
-    "provider.appointment-form.title": "",
-    "provider.appointment-form.notification.success.appointment-series-create": ""
+    "provider.schedule.button-create-appointment-series": ""
 }
